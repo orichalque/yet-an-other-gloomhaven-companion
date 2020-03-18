@@ -12,7 +12,9 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/cookiealert/css/cookiealert.css">
   <link href="css/style.css" rel="stylesheet">
+  
 
 </head>
 
@@ -165,14 +167,27 @@
     </div> <!-- main row ends -->
     </div> <!-- main container ends -->
     </div> <!-- main wrapper ends -->
+
+    <div v-if="acceptedCookies" class="alert text-center" role="alert">
+      <b>Do you like cookies?</b> &#x1F36A; We use cookies to store the cards you picked. This makes sure you do not have to re-enter them every time you launch this application. <a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+  
+      <button type="button" class="btn btn-primary btn-sm" v-on:click="acceptCookie()" aria-label="Close">
+          I agree
+      </button>
+    </div>
+
   </main>
 
-  <!-- Bootstrap core JavaScript -->
+  <!-- Bootstrap core JavaScript -->  
   <script src="vendor/jquery/jquery.min.js"></script>
+  <script type="module" src="vendor/jquery/jquery.cookie.min.js"></script>
   <script src="vendor/vuejs/vue.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  
   <script src="js/database.js"></script>
+  <script src="vendor/cookiealert/cookiealert.js"></script>
   <script src="js/main.js"></script>
+  
+  
 
 
 </body>

@@ -2,6 +2,7 @@ new Vue({
     el: '#app',
     data: {
         menu : 'home',
+        acceptedCookies: false,
         modifiers : null,        
         modifierCategory: null,        
         modifiersChosen: [],
@@ -141,9 +142,10 @@ new Vue({
                     this.showAlert('You have to select two cards.')
                 }
             } else {
+                this.saveData()
                 this.twoAbilitiesSelected.forEach(card => card.played = true)   
                 this.twoAbilitiesSelected = []             
-                this.$forceUpdate();
+                this.$forceUpdate()
             }            
         },
         showAlert: function(alert){
@@ -152,13 +154,27 @@ new Vue({
         },
         dismissAlert: function(alert) {
             $('#abilityAlert').hide()
-        }     
+        },
+        saveData: function() {
+            $.cookie("abilities", JSON.stringify(this.abilitiesChosen))
+            $.cookie("modifiers", JSON.stringify(this.modifiersChosen))
+        },
+        getAcceptedCookie: function() {            
+            this.acceptedCookie = JSON.parse($.cookie("acceptedCookies"));
+        },
+        acceptCookie: function() {
+            this.acceptedCookie = true
+            $.cookie("acceptedCookies", JSON.stringify(this.acceptedCookie))
+        }
     }, 
     beforeMount(){
         this.loadDatabase()
+        this.getAcceptedCookie()
     }
   })
 
   function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
+
+  
