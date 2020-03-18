@@ -68,8 +68,7 @@ new Vue({
             this.abilities.push(character)
 
         },
-        addAbility: function(card) {     
-            card.played = false       
+        addAbility: function(card) {   
             this.abilitiesChosen.push(card)
         },
         removeAbility: function(card) {
@@ -88,9 +87,9 @@ new Vue({
             this.abilitiesSelected.push(card)
         },
         cancelCard: function(card) {
-            console.log(JSON.stringify(card))
-            card.played = false
-            console.log(JSON.stringify(card))        }
+            this.abilitiesSelected.pop(card)     
+        }
+        
 
     }, 
     beforeMount(){

@@ -62,13 +62,13 @@
                   <div class="abilityContainer" v-for="ability in abilitiesChosen">
                     <div class="col" >
                       <img v-bind:src="'data/'+ability.image" style="width:10em" class="image"></img>           
-                      <div class="abilityButtons">
-                        <button v-if="ability.played" v-on:click="playCard(ability)" class="btn btn-light add">
-                          Play
-                        </button>     
-                        <button v-if="ability.played" v-on:click="cancelCard(ability)" class="btn btn-light remove">
+                      <div class="abilityButtons">     
+                        <button v-if="abilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)" class="btn btn-light remove">
                           Cancel
-                        </button>      
+                        </button>     
+                        <button v-else v-on:click="playCard(ability)" class="btn btn-light add">
+                          Play
+                        </button> 
                       </div>         
                     </div>           
                   </div>
