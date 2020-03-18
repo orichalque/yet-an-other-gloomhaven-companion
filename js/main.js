@@ -159,17 +159,18 @@ new Vue({
             $.cookie("abilities", JSON.stringify(this.abilitiesChosen))
             $.cookie("modifiers", JSON.stringify(this.modifiersChosen))
         },
-        getAcceptedCookie: function() {            
-            this.acceptedCookie = JSON.parse($.cookie("acceptedCookies"));
+        getAcceptedCookie: function() {    
+            console.log(Cookies.get('accepted'))
+            return Cookies.get('accepted')
         },
         acceptCookie: function() {
-            this.acceptedCookie = true
-            $.cookie("acceptedCookies", JSON.stringify(this.acceptedCookie))
+            Cookies.set('accepted', true)
+            this.$forceUpdate()
+
         }
     }, 
     beforeMount(){
         this.loadDatabase()
-        this.getAcceptedCookie()
     }
   })
 
