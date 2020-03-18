@@ -51,6 +51,9 @@
           In this page we shall see the two defined decks (abilities/modifiers),
           split in two sections for drawing/shuffling/resting
         </div>
+
+
+        <!-- MODIFIERS -->
         <div class="col-lg-12 text-center" id="modifiers" v-if="menu == 'modifiers'">
           <div v-for="modifier in modifiers">
             <button v-on:click="displayModifiers(modifier.cards[0].name)"> <img v-bind:src="'data/'+modifier.cards[0].image" style="width:5em"/> </button>
@@ -59,23 +62,36 @@
             </div>            
           </div>          
         </div>
-        <div class="col-lg-12 text-center" id="abilities" v-if="menu == 'abilities'">          
-          <div v-for='ability in abilities' class="container">
-              <button v-on:click="displayAbilities(ability.cards[0].name)"><img v-bind:src="'data/'+ability.cards[0].image" style="width:8em"/></button>
-              <div v-if='abilityCategory == ability.cards[0].name' class="row align-items-start">
-                <div class="abilityContainer col align-self-start" v-for='(card,i) in ability.cards' >
-                    <img v-if="i != 0" v-bind:src="'data/'+card.image" style="width:8em" class="image"></img>             
-                    <div class="abilityButtons">
-                      <button v-if="!abilitiesChosen.includes(card)" v-on:click="addAbility(card)" class="add">
-                        Add
-                      </button>
-                      <button v-else v-on:click="removeAbility(card)" class="remove">
-                        Remove
-                      </button>
-                    </div>
+
+
+
+
+        <!-- ABILITIES -->
+        <div class="col-lg-12 text-center container" id="abilities" v-if="menu == 'abilities'">    
+          <div class="row justify-content-start">
+            <div class="col"v-for='ability in abilities' >
+              <button v-if='abilityCategory == null || abilityCategory == ability' class="btn btn-light" v-on:click="displayAbilities(ability)">
+                <img v-bind:src="'data/'+ability.cards[0].image" style="width:8em"/>
+              </button>                           
+            </div>                
+          </div>      
+
+          <div v-if='abilityCategory != null' class="row justify-content-start">
+            <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards' >
+              <div class="col" v-if="i != 0">
+                <img v-bind:src="'data/'+card.image" style="width:8em" class="image"></img>             
+                <div class="abilityButtons">
+                  <button v-if="!abilitiesChosen.includes(card)" v-on:click="addAbility(card)" class="add btn btn-light">
+                    Add
+                  </button>
+                  <button v-else v-on:click="removeAbility(card)" class="remove btn btn-light">
+                    Remove
+                  </button>
                 </div>
-              </div>                       
-          </div>    
+              </div>                    
+            </div>
+          </div>   
+        
         </div>
       </div>
     </div>
