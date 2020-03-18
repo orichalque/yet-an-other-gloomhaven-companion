@@ -31,6 +31,7 @@ new Vue({
             modifiers = database.attack_modifiers 
             abilities = database.characters_abilities
             currentId = null
+
             modifier = null
             modifiers.forEach(elem => {
                 id = elem.name.substring(0,5)
@@ -47,18 +48,22 @@ new Vue({
                 }
                 modifier.cards.push(elem)
             })
+            this.modifiers.push(modifier)
+
             character = null
             abilities.forEach(elem => {
                 if(elem.name.endsWith('-back')) {                    
                     if (character != null) {
                         this.abilities.push(character)
                     }
-                    character = {name: '', abilities: []}         
-                    character.name = elem.name.substring(0,2)             
-                    character.abilities = []                                                             
+                    character = {name: '', cards: []}         
+                    character.name = elem.name.substring(0,2)                                        
                 }
-                character.abilities.push(elem)
+                character.cards.push(elem)
             })
+
+            this.abilities.push(character)
+
         }
     }, 
     beforeMount(){
