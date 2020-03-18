@@ -75,7 +75,8 @@ new Vue({
             this.abilitiesChosen.push(card)
         },
         removeAbility: function(card) {
-            this.abilitiesChosen.pop(card)
+            indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
+            this.abilitiesChosen.splice(indexOfCardToRemove, 1)
         },
         newGame: function() {
             this.abilitiesChosen.forEach(card => {
@@ -156,18 +157,19 @@ new Vue({
             $('#abilityAlert').hide()
         },
         saveData: function() {
+            console.log("saved data")
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen))
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))
         },
         loadData: function() {
-            
             oldAbilities = JSON.parse(Cookies.get("abilities"));
             oldAbilities.forEach(ability => {
                 this.abilities.forEach(inDataBaseAbility => {
-                    if (inDataBaseAbility.name === ability.name) {
-                        console.log("adding ability "+inDataBaseAbility)
-                        abilitiesChosen.push(inDataBaseAbility)
-                    }
+                    inDataBaseAbility.cards.forEach(card => {
+                        if (card.name === ability.name) {                        
+                            this.abilitiesChosen.push(card)
+                        }
+                    })                   
                 })
             })
 
