@@ -156,8 +156,12 @@ new Vue({
             $('#abilityAlert').hide()
         },
         saveData: function() {
-            $.cookie("abilities", JSON.stringify(this.abilitiesChosen))
-            $.cookie("modifiers", JSON.stringify(this.modifiersChosen))
+            Cookies.set("abilities", JSON.stringify(this.abilitiesChosen))
+            Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))
+        },
+        loadData: function() {
+            this.abilitiesChosen = JSON.parse(Cookies.get("abilities"));
+            this.modifiersChosen = JSON.parse(Cookies.get("modifiers"));
         },
         getAcceptedCookie: function() {    
             console.log(Cookies.get('accepted'))
@@ -165,12 +169,11 @@ new Vue({
         },
         acceptCookie: function() {
             Cookies.set('accepted', true)
-            this.$forceUpdate()
-
         }
     }, 
     beforeMount(){
         this.loadDatabase()
+        this.loadData()
     }
   })
 
