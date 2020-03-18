@@ -52,7 +52,7 @@
   }
 
   .selected {
-    border:1px solid grey;    
+    border:4px solid #4CAF50;    
   }
 
   .played {

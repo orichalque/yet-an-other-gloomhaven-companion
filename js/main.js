@@ -9,7 +9,8 @@ new Vue({
         abilityCategory: null,
         abilitiesChosen: [],
         twoAbilitiesSelected: [],
-        longRestMode: false
+        longRestMode: false,
+        abilityAlert: ''
     },
     methods: {
         set: function (param) {
@@ -84,20 +85,23 @@ new Vue({
 
         },
         shortRest: function() {
-            var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed))
-            var cardIndexToDestroy = getRandomInt(cardsPlayed.length)    
-            cardsPlayed[cardIndexToDestroy].destroyed = true
-            cardsPlayed.splice(cardIndexToDestroy, 1)
-            cardsPlayed.forEach(card => card.played = false)
-            
-            if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                this.showAlert('#notEnoughCards')
-            }
-
+            if (this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played).length >0) {
+                var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed))
+                var cardIndexToDestroy = getRandomInt(cardsPlayed.length)    
+                cardsPlayed[cardIndexToDestroy].destroyed = true
+                cardsPlayed.splice(cardIndexToDestroy, 1)
+                cardsPlayed.forEach(card => card.played = false)
+                
+                if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
+                    this.showAlert('You do not have enough cards in your end to continue.')
+                }
+            }   
             this.$forceUpdate()
         },
         longRest: function() {
-            this.longRestMode = true
+            if (this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played).length >0) {
+                this.longRestMode = true    
+            }            
         },
         destroyLongRestCard: function(card) {
             card.destroyed = true
@@ -105,7 +109,7 @@ new Vue({
             cardsPlayed.forEach(card => card.played = false)
             
             if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                this.showAlert('#notEnoughCards')
+                this.showAlert('You do not have enough cards in your end to continue.')
             }
             this.longRestMode = false
             this.$forceUpdate()
@@ -114,7 +118,7 @@ new Vue({
             if (this.twoAbilitiesSelected.length < 2) {
                 this.twoAbilitiesSelected.push(card)
             } else {
-                this.showAlert('#tooManyCardsInHand')                        
+                this.showAlert('You already picked two cards')                        
             }            
         },
         cancelCard: function(card) {
@@ -131,7 +135,11 @@ new Vue({
         },
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
-                this.showAlert('#notEnoughCardsPicked')
+                if(this.twoAbilitiesSelected.length == 0) {
+                    this.showAlert('You need to build you deck in the Character Abilities section.')
+                } else {
+                    this.showAlert('You have to select two cards.')
+                }
             } else {
                 this.twoAbilitiesSelected.forEach(card => card.played = true)   
                 this.twoAbilitiesSelected = []             
@@ -139,10 +147,11 @@ new Vue({
             }            
         },
         showAlert: function(alert){
-            $(alert).show()            
+            this.abilityAlert = alert
+            $('#abilityAlert').show()            
         },
         dismissAlert: function(alert) {
-            $(alert).hide()
+            $('#abilityAlert').hide()
         }     
     }, 
     beforeMount(){
