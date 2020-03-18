@@ -27,15 +27,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#" v-on:click.prevent="set('home')">Home
-                <span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item" v-bind:class="{active: menu === 'home'}"> 
+              <a class="nav-link" href="#" v-on:click="set('home')">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" v-bind:class="{active: menu === 'abilities'}">
               <a class="nav-link" href="#" v-on:click="set('abilities')">Character abilities</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" v-bind:class="{active: menu ==='modifiers'}">
               <a class="nav-link" href="#" v-on:click="set('modifiers')">Deck modifiers</a>
             </li>
           </ul>
