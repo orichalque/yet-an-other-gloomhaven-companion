@@ -3,11 +3,27 @@ new Vue({
     data: {
         menu : 'home',
         modifiers : null,
-        abilities : null
+        abilities : null,
+        modifierCategory: null,
+        abilityCategory: null
     },
     methods: {
         set: function (param) {
             this.menu = param
+        },
+        displayModifiers: function(param) {
+            if (this.modifierCategory == param) {
+                this.modifierCategory = null
+            } else {
+                this.modifierCategory = param
+            }
+        },
+        displayAbilities: function(param) {
+            if (this.abilityCategory == param) {
+                this.abilityCategory = null
+            } else {
+                this.abilityCategory = param
+            }
         },
         loadDatabase: function() {
             this.modifiers = []
@@ -47,7 +63,5 @@ new Vue({
     }, 
     beforeMount(){
         this.loadDatabase()
-        console.log(JSON.stringify(this.modifiers))
-        console.log(JSON.stringify(this.abilities))
     }
   })

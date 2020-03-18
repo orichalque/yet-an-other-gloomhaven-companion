@@ -50,15 +50,19 @@
         </div>
         <div class="col-lg-12 text-center" id="modifiers" v-if="menu == 'modifiers'">
           <div v-for="modifier in modifiers">
-            <span v-for='card in modifier.cards'><img v-bind:src="'data/'+card.image" style="width:5em"/></span>
-
+            <button v-on:click="displayModifiers(modifier.cards[0].name)"> <img v-bind:src="'data/'+modifier.cards[0].image" style="width:5em"/> </button>
+            <div v-if="modifierCategory == modifier.cards[0].name">
+              <span v-for='card in modifier.cards'><img v-bind:src="'data/'+card.image" style="width:5em"/></span>
+            </div>            
           </div>          
         </div>
         <div class="col-lg-12 text-center" id="abilities" v-if="menu == 'abilities'">          
           <div v-for='ability in abilities'>
-            <!--            <img v-bind:src="'data/'+ability.abilities[0].image" style="width:8em"/> -->
-                          
-              <span v-for='card in ability.abilities'><img v-bind:src="'data/'+card.image" style="width:5em"/></span>
+              <button v-on:click="displayAbilities(ability.abilities[0].name)"><img v-bind:src="'data/'+ability.abilities[0].image" style="width:8em"/></button>
+              <div v-if='abilityCategory == ability.abilities[0].name'>
+                <span v-for='card in ability.abilities'><img v-bind:src="'data/'+card.image" style="width:5em"/></span>
+              </div>           
+              
           </div>    
         </div>
       </div>
