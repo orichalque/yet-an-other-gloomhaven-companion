@@ -83,14 +83,31 @@ new Vue({
         longRest: function() {
 
         },
-        playCard: function(card) {
-            this.abilitiesSelected.push(card)
+        pickCard: function(card) {
+            if (this.abilitiesSelected.length < 2) {
+                this.abilitiesSelected.push(card)
+            } else {
+                this.showAlert('#tooManyCardsInHand')        
+                
+            }            
         },
         cancelCard: function(card) {
             this.abilitiesSelected.pop(card)     
-        }
-        
-
+        },
+        play: function() {
+            if (this.abilitiesSelected.length != 2) {
+                this.showAlert('#notEnoughCardsPicked')
+            } else {
+                this.abilitiesSelected.forEach(card => card.played = true)                
+                this.$forceUpdate();
+            }            
+        },
+        showAlert: function(alert){
+            $(alert).show()            
+        },
+        dismissAlert: function(alert) {
+            $(alert).hide()
+        }     
     }, 
     beforeMount(){
         this.loadDatabase()
