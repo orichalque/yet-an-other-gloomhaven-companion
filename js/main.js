@@ -7,7 +7,8 @@ new Vue({
         modifierCategory: null,
         abilityCategory: null,
         abilitiesChosen: [],
-        modifiersChosen: []
+        modifiersChosen: [],
+        abilitiesSelected: []
     },
     methods: {
         set: function (param) {
@@ -67,12 +68,30 @@ new Vue({
             this.abilities.push(character)
 
         },
-        addAbility: function(card) {
+        addAbility: function(card) {     
+            card.played = false       
             this.abilitiesChosen.push(card)
         },
         removeAbility: function(card) {
             this.abilitiesChosen.pop(card)
-        }
+        },
+        newGame: function() {
+
+        },
+        shortRest: function() {
+
+        },
+        longRest: function() {
+
+        },
+        playCard: function(card) {
+            this.abilitiesSelected.push(card)
+        },
+        cancelCard: function(card) {
+            console.log(JSON.stringify(card))
+            card.played = false
+            console.log(JSON.stringify(card))        }
+
     }, 
     beforeMount(){
         this.loadDatabase()

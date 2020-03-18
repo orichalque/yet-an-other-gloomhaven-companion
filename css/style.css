@@ -39,3 +39,7 @@
     font-size: 16px;
     padding: 16px 32px;
   }
+
+  .selected {
+    border:1px solid grey;    
+  }
