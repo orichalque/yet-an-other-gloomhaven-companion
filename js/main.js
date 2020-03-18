@@ -5,7 +5,9 @@ new Vue({
         modifiers : null,
         abilities : null,
         modifierCategory: null,
-        abilityCategory: null
+        abilityCategory: null,
+        abilitiesChosen: [],
+        modifiersChosen: []
     },
     methods: {
         set: function (param) {
@@ -64,6 +66,12 @@ new Vue({
 
             this.abilities.push(character)
 
+        },
+        addAbility: function(card) {
+            this.abilitiesChosen.push(card)
+        },
+        removeAbility: function(card) {
+            this.abilitiesChosen.pop(card)
         }
     }, 
     beforeMount(){

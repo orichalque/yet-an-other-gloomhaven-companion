@@ -12,6 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -59,12 +60,21 @@
           </div>          
         </div>
         <div class="col-lg-12 text-center" id="abilities" v-if="menu == 'abilities'">          
-          <div v-for='ability in abilities'>
+          <div v-for='ability in abilities' class="container">
               <button v-on:click="displayAbilities(ability.cards[0].name)"><img v-bind:src="'data/'+ability.cards[0].image" style="width:8em"/></button>
-              <div v-if='abilityCategory == ability.cards[0].name'>
-                <span v-for='(card,i) in ability.cards'><img v-if="i != 0" v-bind:src="'data/'+card.image" style="width:8em"></img></span>
-              </div>           
-              
+              <div v-if='abilityCategory == ability.cards[0].name' class="row align-items-start">
+                <div class="abilityContainer col align-self-start" v-for='(card,i) in ability.cards' >
+                    <img v-if="i != 0" v-bind:src="'data/'+card.image" style="width:8em" class="image"></img>             
+                    <div class="abilityButtons">
+                      <button v-if="!abilitiesChosen.includes(card)" v-on:click="addAbility(card)" class="add">
+                        Add
+                      </button>
+                      <button v-else v-on:click="removeAbility(card)" class="remove">
+                        Remove
+                      </button>
+                    </div>
+                </div>
+              </div>                       
           </div>    
         </div>
       </div>
