@@ -8,7 +8,7 @@ new Vue({
         abilityCategory: null,
         abilitiesChosen: [],
         modifiersChosen: [],
-        abilitiesSelected: []
+        twoAbilitiesSelected: []
     },
     methods: {
         set: function (param) {
@@ -78,27 +78,46 @@ new Vue({
 
         },
         shortRest: function() {
+            var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed))
+            var cardIndexToDestroy = getRandomInt(cardsPlayed.length)    
+            cardsPlayed[cardIndexToDestroy].destroyed = true
+            cardsPlayed.splice(cardIndexToDestroy, 1)
+            cardsPlayed.forEach(card => card.played = false)
+            
+            if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
+                this.showAlert('#notEnoughCards')
+            }
 
+            this.$forceUpdate();
         },
         longRest: function() {
 
         },
         pickCard: function(card) {
-            if (this.abilitiesSelected.length < 2) {
-                this.abilitiesSelected.push(card)
+            if (this.twoAbilitiesSelected.length < 2) {
+                this.twoAbilitiesSelected.push(card)
             } else {
-                this.showAlert('#tooManyCardsInHand')        
-                
+                this.showAlert('#tooManyCardsInHand')                        
             }            
         },
         cancelCard: function(card) {
-            this.abilitiesSelected.pop(card)     
+            this.twoAbilitiesSelected.pop(card)     
+        },
+        fetchCard: function(card) {
+            card.played = false
+            card.destroyed = false
+            this.$forceUpdate()
+        },
+        destroyCard: function(card) {
+            card.destroyed = true
+            this.$forceUpdate()
         },
         play: function() {
-            if (this.abilitiesSelected.length != 2) {
+            if (this.twoAbilitiesSelected.length != 2) {
                 this.showAlert('#notEnoughCardsPicked')
             } else {
-                this.abilitiesSelected.forEach(card => card.played = true)                
+                this.twoAbilitiesSelected.forEach(card => card.played = true)   
+                this.twoAbilitiesSelected = []             
                 this.$forceUpdate();
             }            
         },
@@ -113,3 +132,7 @@ new Vue({
         this.loadDatabase()
     }
   })
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
