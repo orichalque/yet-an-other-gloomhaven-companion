@@ -165,15 +165,15 @@ new Vue({
             oldAbilities.forEach(ability => {
                 this.abilities.forEach(inDataBaseAbility => {
                     if (inDataBaseAbility.name === ability.name) {
+                        console.log("adding ability "+inDataBaseAbility)
                         abilitiesChosen.push(inDataBaseAbility)
                     }
                 })
             })
-            
+
             oldModifies = JSON.parse(Cookies.get("modifiers"));
         },
         getAcceptedCookie: function() {    
-            console.log(Cookies.get('accepted'))
             return Cookies.get('accepted')
         },
         acceptCookie: function() {
