@@ -2,13 +2,14 @@ new Vue({
     el: '#app',
     data: {
         menu : 'home',
-        modifiers : null,
+        modifiers : null,        
+        modifierCategory: null,        
+        modifiersChosen: [],
         abilities : null,
-        modifierCategory: null,
         abilityCategory: null,
         abilitiesChosen: [],
-        modifiersChosen: [],
-        twoAbilitiesSelected: []
+        twoAbilitiesSelected: [],
+        longRestMode: false
     },
     methods: {
         set: function (param) {
@@ -75,6 +76,11 @@ new Vue({
             this.abilitiesChosen.pop(card)
         },
         newGame: function() {
+            this.abilitiesChosen.forEach(card => {
+                card.played = false
+                card.destroyed = false
+            })
+            this.$forceUpdate()
 
         },
         shortRest: function() {
@@ -88,10 +94,21 @@ new Vue({
                 this.showAlert('#notEnoughCards')
             }
 
-            this.$forceUpdate();
+            this.$forceUpdate()
         },
         longRest: function() {
-
+            this.longRestMode = true
+        },
+        destroyLongRestCard: function(card) {
+            card.destroyed = true
+            var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed))
+            cardsPlayed.forEach(card => card.played = false)
+            
+            if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
+                this.showAlert('#notEnoughCards')
+            }
+            this.longRestMode = false
+            this.$forceUpdate()
         },
         pickCard: function(card) {
             if (this.twoAbilitiesSelected.length < 2) {
