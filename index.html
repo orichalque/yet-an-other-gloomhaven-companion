@@ -12,6 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="vendor/cookiealert/css/cookiealert.css">
   <link href="css/style.css" rel="stylesheet">
   
@@ -21,24 +22,27 @@
 <body>
   <main id="app" class="wrapper">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+    <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top navbar-dark bg-dark py-0">
       <div class="container">
-        <a class="navbar-brand" href="#">Yet Another Gloomhaven Companion</a>
+        <a class="navbar-brand" href="#"><h4>Gloomhaven Deckbuilder</h4></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
           aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item" v-bind:class="{active: menu === 'home'}">
-              <a class="nav-link" href="#" v-on:click="set('home')">Home</a>
+            <li class="nav-item py-0" v-bind:class="{active: menu === 'home'}">
+              <a class="nav-link" href="#" v-on:click="set('home')">Play</a>
             </li>
-            <li class="nav-item" v-bind:class="{active: menu === 'abilities'}">
-              <a class="nav-link" href="#" v-on:click="set('abilities')">Character abilities</a>
+            <li class="nav-item py-0" v-bind:class="{active: menu === 'abilities'}">
+              <a class="nav-link" href="#" v-on:click="set('abilities')">Abilities</a>
             </li>
-            <li class="nav-item" v-bind:class="{active: menu ==='modifiers'}">
-              <a class="nav-link" href="#" v-on:click="set('modifiers')">Deck modifiers</a>
+            <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
+              <a class="nav-link" href="#" v-on:click="set('modifiers')">Modifiers</a>
             </li>
+            <li class="nav-item py-0" v-bind:class="{active: menu ==='about'}" data-toggle="modal" data-target="#exampleModal">
+              <a class="nav-link" href="#" v-on:click="displayAbout()">About</a>
+            </li>            
           </ul>
         </div>
       </div>
@@ -51,7 +55,7 @@
         <!-- MAIN PAGE -->
         <div class="col-lg-12 text-center container-fluid" id="main_menu" v-if="menu == 'home'">
           <div class="row ">
-            <div class="col-lg-6" id="abilitiesSection">
+            <div class="col-lg-6 border-right" id="abilitiesSection">
               <h1>Abilities</h1>
               <div class="container">
                 <div class="row mt-3">
@@ -64,11 +68,11 @@
                   </div>
                 </div>
                 <div class="row mt-3">
-                  <div class="abilityContainer" v-for="ability in abilitiesChosen">
+                  <div class="abilityContainer scrollCardContainer" v-for="ability in abilitiesChosen">
                     <div class="col">
                       <img v-bind:src="'data/'+ability.image"
-                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}]" style="width:10em"
-                        class="image"></img>
+                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]"
+                        class="image rounded"></img>
                       
                       <!-- On-cards buttons when not on rest mode-->
                       <div v-if="!longRestMode">
@@ -121,6 +125,10 @@
           </div>
         </div>
       </div>
+
+      <div class="row mt-3 h-100">
+        <div class="col-lg-12 text-center"><button class="btn btn-outline-secondary" v-on:click="saveData()">Save</button></div>
+      </div>
     </div>
     
 
@@ -142,17 +150,17 @@
     <div class="col-lg-12 container-fluid" id="abilities" v-if="menu == 'abilities'">
 
       <!-- ABILITY CATEGORY -->
-      <div class="row flex-nowrap overflow-auto">
+      <div class="row flex-nowrap overflow-auto scrollCardContainer">
         <div class="col" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
-          <input type="image" v-on:click="displayAbilities(ability)" class="image" v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+          <input type="image" v-on:click="displayAbilities(ability)" class="image rounded" style="width:8em" v-bind:src="'data/'+ability.cards[0].image" />
         </div>
       </div>
 
       <!-- PER CATEGORY CARDS -->
-      <div v-if='abilityCategory != null' class="row flex-nowrap overflow-auto">
+      <div v-if='abilityCategory != null' class="row scrollCardContainer flex-nowrap overflow-auto">
         <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards' v-if="i != 0">
           <div class="col mt-3" >
-            <img v-bind:src="'data/'+card.image" v-bind:class="{selected: abilitiesChosen.includes(card)}" style="width:10em" class="image"></img>
+            <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
             <div class="abilityButtons">
               <button v-if="!abilitiesChosen.includes(card)" v-on:click="addAbility(card)" class="add btn btn-light">
                 Add
@@ -168,10 +176,30 @@
     </div> <!-- main container ends -->
     </div> <!-- main wrapper ends -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">About</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            blabla 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
       <b>Do you like cookies?</b> &#x1F36A; We use cookies to store the cards you picked. This makes sure you do not have to re-enter them every time you launch this application. <a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
   
-      <button type="button" class="btn btn-primary btn-sm" v-on:click="acceptCookie()" aria-label="Close">
+      <button type="button" class="btn btn-primary btn-sm" v-on:click="acceptCookie() === 'true'" aria-label="Close">
           I agree
       </button>
     </div>
