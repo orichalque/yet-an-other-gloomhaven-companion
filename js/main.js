@@ -99,6 +99,13 @@ new Vue({
             }
             this.lastDrawnModifier = null
         },
+        addModifier: function(card) {   
+            this.modifiersChosen.push(card)
+        },
+        removeModifier: function(card) {
+            indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
+            this.modifiersChosen.splice(indexOfCardToRemove, 1)
+        },
         addAbility: function(card) {   
             card.duration = 0
             this.abilitiesChosen.push(card)
