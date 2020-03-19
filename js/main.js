@@ -71,6 +71,13 @@ new Vue({
             this.abilities.push(character)
 
         },
+        addModifier: function(card) {   
+            this.modifiersChosen.push(card)
+        },
+        removeModifier: function(card) {
+            indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
+            this.modifiersChosen.splice(indexOfCardToRemove, 1)
+        },
         addAbility: function(card) {   
             this.abilitiesChosen.push(card)
         },
