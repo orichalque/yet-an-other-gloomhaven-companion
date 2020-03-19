@@ -65,7 +65,7 @@ new Vue({
                     character = {name: '', cards: []}         
                     character.name = elem.name.substring(0,2)                                        
                 }
-                character.cards.push(elem)
+                character.cards.push(elem)                
             })
 
             this.abilities.push(character)
@@ -137,13 +137,12 @@ new Vue({
         },
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
-                if(this.twoAbilitiesSelected.length == 0) {
-                    this.showAlert('You need to build you deck in the Character Abilities section.')
+                if(this.abilitiesChosen.length == 0) {
+                    this.showAlert('You need to build you deck in the Abilities section.')
                 } else {
                     this.showAlert('You have to select two cards.')
                 }
             } else {
-                this.saveData()
                 this.twoAbilitiesSelected.forEach(card => card.played = true)   
                 this.twoAbilitiesSelected = []             
                 this.$forceUpdate()
@@ -157,7 +156,6 @@ new Vue({
             $('#abilityAlert').hide()
         },
         saveData: function() {
-            console.log("saved data")
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen))
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))
         },
@@ -179,7 +177,7 @@ new Vue({
             return Cookies.get('accepted')
         },
         acceptCookie: function() {
-            Cookies.set('accepted', true)
+            Cookies.set('accepted', 'true')
         }
     }, 
     beforeMount(){
