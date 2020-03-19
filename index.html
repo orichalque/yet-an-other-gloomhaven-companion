@@ -176,7 +176,6 @@
 
 
     <!-- MODIFIERS -->
-<<<<<<< HEAD
     <div class="col-lg-12 container-fluid" id="modifiers" v-if="menu == 'modifiers'">
       <!-- CATEGORY BACK -->
       <div class="row flex-nowrap overflow-auto scrollCardContainer">
@@ -184,25 +183,42 @@
           v-if='modifierCategory == null || modifierCategory == ability.name.substring(0,2)'>
           <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
             v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
-=======
-    <div class="col-lg-12 text-center" id="modifiers" v-if="menu == 'modifiers'">
-      <!-- <div v-for="modifier in modifiers">
-        <button v-on:click="displayModifiers(modifier.cards[0].name)"> <img v-bind:src="'data/'+modifier.cards[0].image"
-            style="width:5em" /> </button>
-        <div v-if="modifierCategory == modifier.cards[0].name">
-          <span v-for='card in modifier.cards'><img v-bind:src="'data/'+card.image" style="width:8em" /></span>
->>>>>>> Display base modifier deck
-        </div>
-      </div> -->
-      <div v-for="modifier in modifiers">
-        <div class="row justify-content-start" v-if="modifier.name == 'top'">
-          <img v-bind:src="'data/'+modifier.cards[0].image" style="width:8em" />
-        </div>
-        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
-          <img v-bind:src="'data/'+modifier.cards[0].image" style="width:5em" />
-          <span v-for='card in modifier.cards'><img v-bind:src="'data/'+card.image" style="width:8em" /></span>
         </div>
       </div>
+        <!-- BASE DECK FRONT -->
+        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
+          <div class="abilityContainer" v-for='card in modifier.cards'>
+            <div class="col mt-3">
+              <img v-bind:src="'data/'+card.image" style="width:8em" />
+              <div class="abilityButtons">
+                <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)" class="add btn btn-light">
+                  Add
+                </button>
+                <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CATEGORY DECK FRONT -->
+        <div class="row flex-nowrap overflow-auto" v-if="modifier.name.substring(3,5) == modifierCategory">
+          <div class="abilityContainer" v-for='card in modifier.cards'>
+            <div class="col mt-3">
+              <img v-bind:src="'data/'+card.image" style="width:8em" />
+              <div class="abilityButtons">
+                <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)" class="add btn btn-light">
+                  Add
+                </button>
+                <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<<<<<<< HEAD
 
       <div v-for="modifier in modifiers" v-if='modifierCategory != null'>
         <!-- BASE DECK BACK -->
@@ -246,6 +262,7 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
       <div v-for="modifier in modifiers" v-if='modifierCategory != null'>
         <!-- BASE DECK FRONT -->
@@ -340,15 +357,25 @@
           </div>
         </div>
       </div>
+=======
+=======
+>>>>>>> Display both base modifier deck and category modifier deck
+>>>>>>> Display both base modifier deck and category modifier deck
     </div>
 
     <!-- ABILITIES -->
     <div class="col-lg-12 container-fluid" id="abilities" v-if="menu == 'abilities'">
 
       <!-- ABILITY CATEGORY -->
+<<<<<<< HEAD
       <div class="row flex-nowrap overflow-auto scrollCardContainer">
         <div class="col mt-3" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
           <input type="image" v-on:click="displayAbilities(ability)" class="image rounded"
+=======
+      <div class="row justify-content-start">
+        <div class="col mt-3" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
+          <input type="image" v-on:click="displayAbilities(ability)" class="image"
+>>>>>>> Display both base modifier deck and category modifier deck
             v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
         </div>
       </div>
