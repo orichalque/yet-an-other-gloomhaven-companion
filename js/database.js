@@ -2,6 +2,12 @@ database = {
     "attack_modifiers" :
     [
     {
+      "name": "top",
+      "points": 618,
+      "image": "attack-modifiers/back/top.png",
+      "xws": "amm01"
+    },
+    {
       "name": "am-m-01",
       "points": 0,
       "image": "attack-modifiers/base/monster/am-m-01.png",
