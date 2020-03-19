@@ -139,6 +139,7 @@
 
 
     <!-- MODIFIERS -->
+<<<<<<< HEAD
     <div class="col-lg-12 container-fluid" id="modifiers" v-if="menu == 'modifiers'">
       <!-- CATEGORY BACK -->
       <div class="row justify-content-start">
@@ -146,6 +147,23 @@
           v-if='modifierCategory == null || modifierCategory == ability.name.substring(0,2)'>
           <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image"
             v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+=======
+    <div class="col-lg-12 text-center" id="modifiers" v-if="menu == 'modifiers'">
+      <!-- <div v-for="modifier in modifiers">
+        <button v-on:click="displayModifiers(modifier.cards[0].name)"> <img v-bind:src="'data/'+modifier.cards[0].image"
+            style="width:5em" /> </button>
+        <div v-if="modifierCategory == modifier.cards[0].name">
+          <span v-for='card in modifier.cards'><img v-bind:src="'data/'+card.image" style="width:8em" /></span>
+>>>>>>> Display base modifier deck
+        </div>
+      </div> -->
+      <div v-for="modifier in modifiers">
+        <div class="row justify-content-start" v-if="modifier.name == 'top'">
+          <img v-bind:src="'data/'+modifier.cards[0].image" style="width:8em" />
+        </div>
+        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
+          <img v-bind:src="'data/'+modifier.cards[0].image" style="width:5em" />
+          <span v-for='card in modifier.cards'><img v-bind:src="'data/'+card.image" style="width:8em" /></span>
         </div>
       </div>
 
