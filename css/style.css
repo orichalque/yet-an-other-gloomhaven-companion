@@ -31,6 +31,54 @@
     object-fit: cover;
   }
   
+  .bottomIconContainer {
+    transition: .5s ease;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;   
+    overflow: hidden; 
+    display: flex; 
+    justify-content:space-around;
+  }
+
+  .topIconContainer {
+    transition: .5s ease;
+    position: absolute;
+    bottom: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;   
+    overflow: hidden; 
+    display: flex; 
+    justify-content:space-around;
+  }
+
+  .iconContainer {
+    opacity: 0;
+  }
+
+  .abilityContainer:hover  .iconContainer {
+    opacity: 1;
+    transition: .5s ease;
+  }
+
+  .bottomIcon {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10%;
+    float: left;
+  }
+
+  .bottomIcon:hover  {
+    opacity: 0.3;
+    transition: .5s ease;
+  }
+
   .abilityButtons {
     transition: .5s ease;
     opacity: 0;
@@ -92,5 +140,7 @@
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
     border:4px solid black;    
+    transition: .5s ease;
+
   }
 

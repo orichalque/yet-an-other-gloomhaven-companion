@@ -2,6 +2,7 @@ new Vue({
     el: '#app',
     data: {
         menu : 'home',
+        turn: 1,
         acceptedCookies: false,
         modifiers : null,        
         modifierCategory: null,        
@@ -10,6 +11,7 @@ new Vue({
         abilityCategory: null,
         abilitiesChosen: [],
         twoAbilitiesSelected: [],
+        abilitiesOnBoard: [],
         longRestMode: false,
         abilityAlert: ''
     },
@@ -72,6 +74,7 @@ new Vue({
 
         },
         addAbility: function(card) {   
+            card.duration = 0
             this.abilitiesChosen.push(card)
         },
         removeAbility: function(card) {
@@ -82,7 +85,11 @@ new Vue({
             this.abilitiesChosen.forEach(card => {
                 card.played = false
                 card.destroyed = false
+                card.duration = 0
             })
+
+            //TODO: shuffle modifiers
+            this.turn = 1            
             this.$forceUpdate()
 
         },
@@ -135,6 +142,14 @@ new Vue({
             card.destroyed = true
             this.$forceUpdate()
         },
+        keepAbilityOneTurn(card) {
+            card.duration = 1
+            this.$forceUpdate()
+        },
+        keepAbilityManyTurns(card) {
+            card.duration = -1
+            this.$forceUpdate()
+        },
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
                 if(this.abilitiesChosen.length == 0) {
@@ -145,6 +160,8 @@ new Vue({
             } else {
                 this.twoAbilitiesSelected.forEach(card => card.played = true)   
                 this.twoAbilitiesSelected = []             
+                this.abilitiesChosen.filter(elem => elem.duration > 0).forEach(elem => elem.duration --)
+                this.turn ++
                 this.$forceUpdate()
             }            
         },
@@ -178,6 +195,8 @@ new Vue({
             if (modifierCookie != null) {
                 oldModifies = JSON.parse(modifierCookie);
             }
+
+            this.newGame();
             
         },
         getAcceptedCookie: function() {    
