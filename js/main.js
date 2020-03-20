@@ -98,6 +98,7 @@ new Vue({
                 this.modifiersDrawPile.push(this.modifiersChosen[i])
             }
             this.lastDrawnModifier = null
+<<<<<<< HEAD
         },
         addModifier: function(card) {   
             this.modifiersChosen.push(card)
@@ -119,6 +120,8 @@ new Vue({
                 this.modifiersDrawPile.push(this.modifiersChosen[i])
             }
             this.lastDrawnModifier = null
+=======
+>>>>>>> 9ca956250973978358b83b698dcacb420fc0a414
         },
         addAbility: function(card) {   
             card.duration = 0
