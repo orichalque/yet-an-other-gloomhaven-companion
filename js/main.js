@@ -104,7 +104,7 @@ new Vue({
             this.modifiersDrawPile.push(card)
         },
         removeModifier: function(card) {
-            indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
+            indexOfCardToRemove = this.modifiersChosen.indexOf(card)
             this.modifiersChosen.splice(indexOfCardToRemove, 1)
             this.modifiersDrawPile.splice(indexOfCardToRemove, 1)
         },
