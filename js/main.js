@@ -7,6 +7,8 @@ new Vue({
         modifiers : null,        
         modifierCategory: null,        
         modifiersChosen: [],
+        modifiersDrawPile: [],
+        lastDrawnModifier: null,
         abilities : null,
         abilityCategory: null,
         abilitiesChosen: [],        
@@ -75,10 +77,23 @@ new Vue({
         },
         addModifier: function(card) {   
             this.modifiersChosen.push(card)
+            this.modifiersDrawPile.push(card)
         },
         removeModifier: function(card) {
             indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
             this.modifiersChosen.splice(indexOfCardToRemove, 1)
+            this.modifiersDrawPile.splice(indexOfCardToRemove, 1)
+        },
+        drawModifier: function() {
+            var randomint = getRandomInt(this.modifiersDrawPile.length)
+            this.lastDrawnModifier = this.modifiersDrawPile[randomint]
+            this.modifiersDrawPile.splice(randomint,1)
+        },
+        shuffleModifiersDeck: function() {
+            for(let i = this.modifiersChosen.length - 1; i > 0; i--){
+                this.modifiersDrawPile.push(this.modifiersChosen[i])
+            }
+            this.lastDrawnModifier = null
         },
         addAbility: function(card) {   
             card.duration = 0
