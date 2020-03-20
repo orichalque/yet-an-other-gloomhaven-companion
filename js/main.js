@@ -46,7 +46,7 @@ new Vue({
                 if (id.endsWith('-')) {
                     id = elem.name.substring(0,4)
                 }
-                if (id != currentId) {                
+                if (id != currentId) {  
                     if ( modifier != null) {
                         this.modifiers.push(modifier)
                     }
@@ -54,6 +54,10 @@ new Vue({
                     currentId = id           
                     modifier = {name : id, cards : []}                    
                 }
+                if(id == "am-p") {
+                    this.modifiersChosen.push(elem)
+                    this.modifiersDrawPile.push(elem)
+                } 
                 modifier.cards.push(elem)
             })
             this.modifiers.push(modifier)
@@ -71,14 +75,13 @@ new Vue({
             })
 
             this.abilities.push(character)
-
         },
         addModifier: function(card) {   
             this.modifiersChosen.push(card)
             this.modifiersDrawPile.push(card)
         },
         removeModifier: function(card) {
-            indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
+            indexOfCardToRemove = this.modifiersChosen.indexOf(card)
             this.modifiersChosen.splice(indexOfCardToRemove, 1)
             this.modifiersDrawPile.splice(indexOfCardToRemove, 1)
         },
