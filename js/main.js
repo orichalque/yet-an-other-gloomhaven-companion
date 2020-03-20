@@ -9,7 +9,7 @@ new Vue({
         modifiersChosen: [],
         abilities : null,
         abilityCategory: null,
-        abilitiesChosen: [],
+        abilitiesChosen: [],        
         twoAbilitiesSelected: [],
         abilitiesOnBoard: [],
         longRestMode: false,

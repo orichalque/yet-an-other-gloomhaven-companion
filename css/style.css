@@ -144,3 +144,7 @@
 
   }
 
+  [v-cloak] {
+    display: none;
+  }
+
