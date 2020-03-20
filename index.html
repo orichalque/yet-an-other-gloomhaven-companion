@@ -201,16 +201,24 @@
 <<<<<<< HEAD
 
       <div v-for="modifier in modifiers" v-if='modifierCategory != null'>
-        <!-- BASE DECK BACK -->
-        <div class="row justify-content-start" v-if="modifier.name == 'top'">
-          <div class="abilityContainer">
+        <!-- BASE DECK FRONT -->
+        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
+          <div class="abilityContainer" v-for='card in modifier.cards'>
             <div class="col mt-3">
-              <img v-bind:src="'data/'+modifier.cards[0].image" style="width:8em" class="image rounded"/>
+              <img v-bind:src="'data/'+card.image" style="width:8em" v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded"/>
+              <div class="abilityButtons">
+                <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)" class="add btn btn-light">
+                  Add
+                </button>
+                <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
+                  Remove
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <!-- BASE DECK FRONT -->
-        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
+        <!-- BENEDICTION/MALEDICTION FRONT -->
+        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-pm'">
           <div class="abilityContainer" v-for='card in modifier.cards'>
             <div class="col mt-3">
               <img v-bind:src="'data/'+card.image" style="width:8em" v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded"/>
