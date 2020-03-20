@@ -160,18 +160,25 @@ new Vue({
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))            
         },
         loadData: function() {
-            oldAbilities = JSON.parse(Cookies.get("abilities"));
-            oldAbilities.forEach(ability => {
-                this.abilities.forEach(inDataBaseAbility => {
-                    inDataBaseAbility.cards.forEach(card => {
-                        if (card.name === ability.name) {                        
-                            this.abilitiesChosen.push(card)
-                        }
-                    })                   
+            abilityCookie = Cookies.get('abilities')
+            if (abilityCookie != null) {
+                oldAbilities = JSON.parse(abilityCookie)
+                oldAbilities.forEach(ability => {
+                    this.abilities.forEach(inDataBaseAbility => {
+                        inDataBaseAbility.cards.forEach(card => {
+                            if (card.name === ability.name) {                        
+                                this.abilitiesChosen.push(card)
+                            }
+                        })                   
+                    })
                 })
-            })
-
-            oldModifies = JSON.parse(Cookies.get("modifiers"));
+            }
+            
+            modifierCookie = Cookies.get("modifiers");
+            if (modifierCookie != null) {
+                oldModifies = JSON.parse(modifierCookie);
+            }
+            
         },
         getAcceptedCookie: function() {    
             return Cookies.get('accepted')

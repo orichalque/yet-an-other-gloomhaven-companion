@@ -10,6 +10,31 @@
 
   <title>Gloomhaven Companion</title>
 
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="data/favicons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="data/favicons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="data/favicons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="data/favicons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="data/favicons/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="data/favicons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="data/favicons/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="data/favicons/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="data/favicons/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="data/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="data/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="data/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="data/favicons/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="&nbsp;"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="data/favicons/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="data/favicons/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="data/favicons/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="data/favicons/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="data/favicons/mstile-310x310.png" />
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="data/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
@@ -41,7 +66,7 @@
               <a class="nav-link" href="#" v-on:click="set('modifiers')">Modifiers</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='about'}" data-toggle="modal" data-target="#exampleModal">
-              <a class="nav-link" href="#" v-on:click="displayAbout()">About</a>
+              <a class="nav-link" href="#">About</a>
             </li>            
           </ul>
         </div>
@@ -67,9 +92,9 @@
                   <div class="col-lg-3"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New game</button>
                   </div>
                 </div>
-                <div class="row mt-3">
-                  <div class="abilityContainer scrollCardContainer" v-for="ability in abilitiesChosen">
-                    <div class="col">
+                <div class="row" style="display: table-cell">
+                  <div  style="display: inline-block; padding-top: 1em;" class="abilityContainer scrollCardContainer" v-for="ability in abilitiesChosen">
+                    <div class="col" >
                       <img v-bind:src="'data/'+ability.image"
                         v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]"
                         class="image rounded"></img>
@@ -200,7 +225,7 @@
     </div>
 
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
-      <b>Do you like cookies?</b> &#x1F36A; We use cookies to store the cards you picked. This makes sure you do not have to re-enter them every time you launch this application. <a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+      <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do not have to re-enter them every time you launch this application. </span><a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
   
       <button type="button" class="btn btn-primary btn-sm" v-on:click="acceptCookie() === 'true'" aria-label="Close">
           I agree
