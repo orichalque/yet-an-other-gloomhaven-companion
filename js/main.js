@@ -88,7 +88,7 @@ new Vue({
             this.modifiersDrawPile.splice(randomint,1)
         },
         shuffleModifiersDeck: function() {
-            modifiersDrawPile = []
+            this.modifiersDrawPile = []
             for(let i = this.modifiersChosen.length - 1; i > 0; i--){
                 this.modifiersDrawPile.push(this.modifiersChosen[i])
             }
