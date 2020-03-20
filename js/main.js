@@ -157,7 +157,7 @@ new Vue({
         },
         saveData: function() {
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen))
-            Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))
+            Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))            
         },
         loadData: function() {
             oldAbilities = JSON.parse(Cookies.get("abilities"));
@@ -178,6 +178,7 @@ new Vue({
         },
         acceptCookie: function() {
             Cookies.set('accepted', 'true')
+            this.$forceUpdate()
         }
     }, 
     beforeMount(){
