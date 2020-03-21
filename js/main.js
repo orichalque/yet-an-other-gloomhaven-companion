@@ -8,6 +8,7 @@ new Vue({
         modifierCategory: null,        
         modifiersChosen: [],
         modifiersDrawPile: [],
+        specialModifiers : false,
         lastDrawnModifier: null,
         abilities : null,
         abilityCategory: null,
@@ -98,6 +99,13 @@ new Vue({
                 this.modifiersDrawPile.push(this.modifiersChosen[i])
             }
             this.lastDrawnModifier = null
+        },
+        displaySpecialModifiers: function() {
+            if(this.specialModifiers){
+                this.specialModifiers = false
+            }else{
+                this.specialModifiers = true
+            }
         },
         addModifier: function(card) {   
             this.modifiersChosen.push(card)

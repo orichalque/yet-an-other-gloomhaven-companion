@@ -200,16 +200,31 @@
     <div class="col-lg-12 container-fluid" id="modifiers" v-if="menu == 'modifiers'">
       <!-- CATEGORY BACK -->
       <div class="row flex-nowrap overflow-auto scrollCardContainer">
-        <div class="col mt-3" v-for='ability in abilities'
-          v-if='modifierCategory == null || modifierCategory == ability.name.substring(0,2)'>
-          <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
+        <div v-for='ability in abilities'>
+          <div v-if='modifierCategory == null' class="col mt-3" >
+            <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
             v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+          </div>
+          
+          <div v-if='modifierCategory == ability.name.substring(0,2)'>
+            <div class="col mt-3">
+              <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
+            v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+            </div>
+            <div class="col mt-3">
+              <div class="btn-group-toggle" data-toggle="buttons" v-on:click="displaySpecialModifiers()">
+                <label class="btn btn-secondary active">
+                  <input type="checkbox" checked autocomplete="off" > Display special modifiers
+                </label>
+              </div>
+            </div>            
+          </div>
         </div>
       </div>
 
       <div v-for="modifier in modifiers" v-if='modifierCategory != null'>
-        <!-- BASE DECK FRONT -->
-        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
+        <!-- SPECIAL MODIFIERS FRONT -->
+        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-pm' && specialModifiers">
           <div class="abilityContainer" v-for='card in modifier.cards'>
             <div class="col mt-3">
               <img v-bind:src="'data/'+card.image" style="width:8em" v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded"/>
@@ -224,8 +239,8 @@
             </div>
           </div>
         </div>
-        <!-- BENEDICTION/MALEDICTION FRONT -->
-        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-pm'">
+        <!-- BASE DECK FRONT -->
+        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
           <div class="abilityContainer" v-for='card in modifier.cards'>
             <div class="col mt-3">
               <img v-bind:src="'data/'+card.image" style="width:8em" v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded"/>
