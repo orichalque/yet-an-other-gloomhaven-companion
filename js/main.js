@@ -143,7 +143,7 @@ new Vue({
                 card.duration = 0
             })
 
-            //TODO: shuffle modifiers
+            this.shuffleModifiersDeck()
             this.turn = 1            
             this.$forceUpdate()
 
