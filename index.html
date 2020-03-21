@@ -222,7 +222,7 @@
         </div>
       </div>
 
-      <div v-for="modifier in modifiers" v-if='modifierCategory != null'>
+      <div v-for="modifier in modifiers">
         <!-- SPECIAL MODIFIERS FRONT -->
         <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-pm' && specialModifiers">
           <div class="abilityContainer" v-for='card in modifier.cards'>
