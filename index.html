@@ -161,12 +161,12 @@
             </div>                        
 
             <div class="col-lg-6">
-              <h1>Modifiers</h1>
+              <h3>Modifiers</h3>
               <!-- BASE DECK BACK -->
               <div class="row justify-content-start" >
                 <div class="abilityContainer">
                   <div class="col mt-3" v-if="modifiersDrawPile.length != 0">
-                    <img v-bind:src="'data/attack-modifiers/back/top.png'" style="width:8em" />
+                    <img v-bind:src="'data/attack-modifiers/back/top.png'" style="width:8em" class="image rounded"/>
                     <div class="abilityButtons">
                       <button v-on:click="drawModifier()" class="add btn btn-light">
                         Draw
@@ -176,7 +176,7 @@
                 </div>
                 <div class="abilityContainer">
                   <div class="col mt-3" v-if="lastDrawnModifier != null">
-                    <img v-bind:src="'data/'+lastDrawnModifier.image" style="width:8em" />
+                    <img v-bind:src="'data/'+lastDrawnModifier.image" style="width:8em" class="image rounded"/>
                     <div class="abilityButtons">
                       <button v-on:click="shuffleModifiersDeck()" class="add btn btn-light">
                         Shuffle
@@ -186,14 +186,12 @@
                 </div>
               </div>
             </div>
-          </div>
+
             <div class="col-lg-12 text-center">
               <button class="btn btn-outline-secondary" v-on:click="saveData()">Save</button>          
             </div>
           </div>
         </div>
-        
-
       </div>
     </div>
 
@@ -312,7 +310,7 @@
             Thanks to:</p>
 
             <ul>
-              <li><a href=https://github.com/any2cards/gloomhaven">https://github.com/any2cards/gloomhaven</a></li>
+              <li><a href="https://github.com/any2cards/gloomhaven">https://github.com/any2cards/gloomhaven</a></li>
               <li><a href="https://github.com/wruczek/bootstrap-cookie-alert">https://github.com/wruczek/bootstrap-cookie-alert</a></li>                
             </ul>
 
