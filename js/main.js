@@ -194,8 +194,10 @@ new Vue({
             }            
         },
         cancelCard: function(card) {
-            indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card)
-            this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1)
+            if (this.twoAbilitiesSelected.includes(card)) {
+                indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card)
+                this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1)
+            }
         },
         fetchCard: function(card) {
             card.played = false
@@ -203,6 +205,7 @@ new Vue({
             this.$forceUpdate()
         },
         destroyCard: function(card) {
+            this.cancelCard(card)
             card.destroyed = true
             card.played = true
             card.duration = 0
