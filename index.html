@@ -123,9 +123,9 @@
                         <!-- On-cards buttons when cards have been played -->
                         <div class="iconContainer">
 
-                          <div class="bottomIconContainer" v-if="ability.played">
+                          <div class="bottomIconContainer" >
                             <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon" style="width:3em" v-on:click="destroyCard(ability)"/>
-                            <img src="data/icons/keep-on-board.png" class="bottomIcon" style="width:3em"  v-on:click="keepAbilityManyTurns(ability)"/>
+                            <img v-if="ability.played" src="data/icons/keep-on-board.png" class="bottomIcon" style="width:3em"  v-on:click="keepAbilityManyTurns(ability)"/>
                           </div>
 
                           <div class="topIconContainer" v-if="ability.played">

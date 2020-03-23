@@ -196,6 +196,7 @@ new Vue({
         },
         destroyCard: function(card) {
             card.destroyed = true
+            card.played = true
             this.$forceUpdate()
         },
         keepAbilityOneTurn(card) {
