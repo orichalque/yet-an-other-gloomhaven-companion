@@ -186,7 +186,8 @@ new Vue({
             }            
         },
         cancelCard: function(card) {
-            this.twoAbilitiesSelected.pop(card)     
+            indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card)
+            this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1)
         },
         fetchCard: function(card) {
             card.played = false
