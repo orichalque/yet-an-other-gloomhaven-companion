@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" href="data/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="data/favicons/favicon-16x16.png" sizes="16x16" />
   <link rel="icon" type="image/png" href="data/favicons/favicon-128.png" sizes="128x128" />
-  <meta name="application-name" content="&nbsp;"/>
+  <meta name="application-name" content="&nbsp;" />
   <meta name="msapplication-TileColor" content="#FFFFFF" />
   <meta name="msapplication-TileImage" content="data/favicons/mstile-144x144.png" />
   <meta name="msapplication-square70x70logo" content="data/favicons/mstile-70x70.png" />
@@ -49,7 +49,9 @@
     <!-- Navigation -->
     <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top navbar-dark bg-dark py-0">
       <div class="container">
-        <a class="navbar-brand" href="#"><h4>Gloomhaven Deckbuilder</h4></a>
+        <a class="navbar-brand" href="#">
+          <h4>Gloomhaven Deckbuilder</h4>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
           aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -65,9 +67,10 @@
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
               <a class="nav-link" href="#" v-on:click="set('modifiers')">Modifiers</a>
             </li>
-            <li class="nav-item py-0" v-bind:class="{active: menu ==='about'}" data-toggle="modal" data-target="#exampleModal">
+            <li class="nav-item py-0" v-bind:class="{active: menu ==='about'}" data-toggle="modal"
+              data-target="#exampleModal">
               <a class="nav-link" href="#">About</a>
-            </li>            
+            </li>
           </ul>
         </div>
       </div>
@@ -79,234 +82,272 @@
         <!-- MAIN PAGE -->
         <div v-cloak class="col-lg-12 text-center container-fluid" id="main_menu" v-if="menu == 'home'">
           <div class="col-lg-12 text-center container-fluid" id="main_menu" v-if="menu == 'home'">
-          
-          <div class="row ">
-            <div class="col-lg-12 text-center">
-              <h3>Turn: {{ turn }}</h3>
-            </div>
 
-            <div class="col-lg-6 border-right" id="abilitiesSection">
-              <h3>Abilities</h3>
-              <div class="container">
-                <div class="row mt-3">
-                  <div class="col-lg-3"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
-                      cards</button></div>
-                  <div class="col-lg-3"><button v-on:click="shortRest()"
-                      class="btn btn-block btn-outline-secondary">Short
-                      rest</button></div>
-                  <div class="col-lg-3"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
-                      rest</button></div>
-                  <div class="col-lg-3"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
-                      game</button>
+            <div class="row ">
+              <div class="col-lg-12 text-center">
+                <h3>Turn: {{ turn }}</h3>
+              </div>
+
+              <div class="col-lg-6 border-right" id="abilitiesSection">
+                <h3>Abilities</h3>
+                <div class="container">
+
+                  <div class="row mt-3">
+                    <div class="col-lg-3"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
+                        cards</button></div>
+                    <div class="col-lg-3"><button v-on:click="shortRest()"
+                        class="btn btn-block btn-outline-secondary">Short rest</button></div>
+                    <div class="col-lg-3"><button v-on:click="longRest()"
+                        class="btn btn-block btn-outline-secondary">Long rest</button></div>
+                    <div class="col-lg-3"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
+                        game</button></div>
                   </div>
-                </div>
-                <div class="row" style="display: table-cell">
-                  <div style="display: inline-block; padding-top: 1em;" class="abilityContainer scrollCardContainer" v-for="ability in abilitiesChosen">
-                    <div class="col" v-if="ability.duration == 0">
-                      <img v-bind:src="'data/'+ability.image"
-                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]" style="width:10em"
-                        class="image rounded"></img>
 
-                      <!-- On-cards buttons when not on rest mode-->
-                      <div v-if="!longRestMode">
-                        <!-- On-cards buttons when cards are ready to be played -->
-                        <div class="abilityButtons" v-if="!ability.played">
-                          <button v-if="twoAbilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)"
-                            class="btn btn-light remove">
-                            Cancel
-                          </button>
-                          <button v-else v-on:click="pickCard(ability)" class="btn btn-light add">
-                            Select
-                          </button>
+                  <div class="row" style="display: table-cell">
+                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer scrollCardContainer"
+                      v-for="ability in abilitiesChosen">
+                      <div class="col" v-if="ability.duration == 0">
+                        <img v-bind:src="'data/'+ability.image"
+                          v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]"
+                          style="width:10em" class="image rounded"></img>
+
+                        <!-- On-cards buttons when not on rest mode-->
+                        <div v-if="!longRestMode">
+                          <!-- On-cards buttons when cards are ready to be played -->
+                          <div class="abilityButtons" v-if="!ability.played">
+                            <button v-if="twoAbilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)"
+                              class="btn btn-light remove">
+                              Cancel
+                            </button>
+                            <button v-else v-on:click="pickCard(ability)" class="btn btn-light add">
+                              Select
+                            </button>
+                          </div>
+
+                          <!-- On-cards buttons when cards have been played -->
+                          <div class="iconContainer">
+
+                            <div class="bottomIconContainer">
+                              <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon"
+                                style="width:3em" v-on:click="destroyCard(ability)" />
+                              <img v-if="ability.played" src="data/icons/keep-on-board.png" class="bottomIcon"
+                                style="width:3em" v-on:click="keepAbilityManyTurns(ability)" />
+                            </div>
+
+                            <div class="topIconContainer" v-if="ability.played">
+                              <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
+                                v-on:click="fetchCard(ability)" />
+                              <img src="data/icons/keep-on-board-one-turn.png" class="bottomIcon" style="width:3em"
+                                v-on:click="keepAbilityOneTurn(ability)" />
+                            </div>
+
+                          </div>
                         </div>
 
-                        <!-- On-cards buttons when cards have been played -->
+                        <!-- On-cards buttons on rest mode -->
+                        <div v-else>
+                          <div class="longRestAbilityButtons" v-if="ability.played && !ability.destroyed">
+                            <img src="data/icons/lost.png" style="width:3em"
+                              v-on:click="destroyLongRestCard(ability)" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3>On board</h3>
+                  <div class="row mt-3" style="display: table-cell">
+                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
+                      v-for="ability in abilitiesChosen" v-if="ability.duration != 0">
+                      <div class="col">
+                        <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
                         <div class="iconContainer">
-
-                          <div class="bottomIconContainer" >
-                            <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon" style="width:3em" v-on:click="destroyCard(ability)"/>
-                            <img v-if="ability.played" src="data/icons/keep-on-board.png" class="bottomIcon" style="width:3em"  v-on:click="keepAbilityManyTurns(ability)"/>
+                          <div class="bottomIconContainer">
+                            <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon"
+                              style="width:3em" v-on:click="destroyCard(ability)" />
                           </div>
-
-                          <div class="topIconContainer" v-if="ability.played">
-                            <img src="data/icons/recover.png" class="bottomIcon" style="width:3em" v-on:click="fetchCard(ability)"/>
-                            <img src="data/icons/keep-on-board-one-turn.png" class="bottomIcon" style="width:3em" v-on:click="keepAbilityOneTurn(ability)"/>
-                          </div>
-
-                        </div>
-                      </div>
-
-                      <!-- On-cards buttons on rest mode -->
-                      <div v-else>
-                        <div class="longRestAbilityButtons" v-if="ability.played && !ability.destroyed">
-                          <img src="data/icons/lost.png" style="width:3em" v-on:click="destroyLongRestCard(ability)"/>
                         </div>
                       </div>
                     </div>
                   </div>
+
                 </div>
-              </div>    
+              </div>
+
+              <div class="col-lg-6" style="padding-top: 1em; padding-bottom: 1em">
+                <h3>Modifiers</h3>
+                <!-- BASE DECK BACK -->
+                <div class="row justify-content-start">
+                  <div class="abilityContainer">
+                    <div class="col mt-3" v-if="modifiersDrawPile.length != 0">
+                      <img v-bind:src="'data/attack-modifiers/back/top.png'" style="width:8em" class="image rounded" />
+                      <div class="abilityButtons">
+                        <button v-on:click="drawModifier()" class="add btn btn-light">
+                          Draw
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="abilityContainer">
+                    <div class="col mt-3" v-if="lastDrawnModifier != null">
+                      <img v-bind:src="'data/'+lastDrawnModifier.image" style="width:8em" class="image rounded" />
+                      <div class="abilityButtons">
+                        <button v-on:click="shuffleModifiersDeck()" class="add btn btn-light">
+                          Shuffle
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               
-              <div>
-                <h3>On board</h3>
-                <div class="row mt-3" >
-                  
-                    <div  class="col" v-for="ability in abilitiesChosen">
-                      <img v-bind:src="'data/'+ability.image" v-if="ability.duration > 0 || ability.duration == -1" class="image rounded"></img>
-                    </div>
-
-                </div>
-                
+                  <!-- ALERTS -->
+              <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="redAlert">
+                {{ alert }}
+                <button type="button" class="close" aria-label="Close" v-on:click="dismissRedAlert('#redAlert')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-            </div>                        
 
-            <div class="col-lg-6" style="padding-top: 1em; padding-bottom: 1em">
-              <h3>Modifiers</h3>
-              <!-- BASE DECK BACK -->
-              <div class="row justify-content-start" >
-                <div class="abilityContainer">
-                  <div class="col mt-3" v-if="modifiersDrawPile.length != 0">
-                    <img v-bind:src="'data/attack-modifiers/back/top.png'" style="width:8em" class="image rounded"/>
-                    <div class="abilityButtons">
-                      <button v-on:click="drawModifier()" class="add btn btn-light">
-                        Draw
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="abilityContainer">
-                  <div class="col mt-3" v-if="lastDrawnModifier != null">
-                    <img v-bind:src="'data/'+lastDrawnModifier.image" style="width:8em" class="image rounded"/>
-                    <div class="abilityButtons">
-                      <button v-on:click="shuffleModifiersDeck()" class="add btn btn-light">
-                        Shuffle
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              <div class="mx-auto col-lg-6 alert alert-success collapse" role="alert" id="greenAlert">
+                {{ alert }}
+                <button type="button" class="close" aria-label="Close" v-on:click="dismissGreenAlert('#greenAlert')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-            </div>
-
-            <div class="col-lg-12 text-center">
-              <button class="btn btn-outline-secondary" v-on:click="saveData()">Save</button>          
+  
+              <div class="col-lg-12 text-center">
+                <button class="btn btn-outline-secondary" v-on:click="saveData()">Save</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
 
-    <!-- MODIFIERS -->
-    <div class="col-lg-12 container-fluid" id="modifiers" v-if="menu == 'modifiers'">
-      <!-- CATEGORY BACK -->
-      <div class="row flex-nowrap overflow-auto scrollCardContainer">
-        <div v-for='ability in abilities'>
-          <div v-if='modifierCategory == null' class="col mt-3" >
-            <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
-            v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
-          </div>
-          
-          <div v-if='modifierCategory == ability.name.substring(0,2)'>
-            <div class="col mt-3">
+      <!-- MODIFIERS -->
+      <div class="col-lg-12 container-fluid" id="modifiers" v-if="menu == 'modifiers'">
+        <!-- CATEGORY BACK -->
+        <div class="row flex-nowrap overflow-auto scrollCardContainer">
+          <div v-for='ability in abilities'>
+            <div v-if='modifierCategory == null' class="col mt-3">
               <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
-            v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+                v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
             </div>
-            <div class="col mt-3">
-              <div class="btn-group-toggle" data-toggle="buttons" v-on:click="displaySpecialModifiers()">
-                <label class="btn btn-secondary active">
-                  <input type="checkbox" checked autocomplete="off" > Display special modifiers
-                </label>
+
+            <div v-if='modifierCategory == ability.name.substring(0,2)'>
+              <div class="col mt-3">
+                <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
+                  v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
               </div>
-            </div>            
+              <div class="col mt-3">
+                <div class="btn-group-toggle" data-toggle="buttons" v-on:click="displaySpecialModifiers()">
+                  <label class="btn btn-secondary active">
+                    <input type="checkbox" checked autocomplete="off"> Display special modifiers
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-for="modifier in modifiers">
+          <!-- SPECIAL MODIFIERS FRONT -->
+          <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-pm' && specialModifiers">
+            <div class="abilityContainer" v-for='card in modifier.cards'>
+              <div class="col mt-3">
+                <img v-bind:src="'data/'+card.image" style="width:8em"
+                  v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <div class="abilityButtons">
+                  <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)"
+                    class="add btn btn-light">
+                    Add
+                  </button>
+                  <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- BASE DECK FRONT -->
+          <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
+            <div class="abilityContainer" v-for='card in modifier.cards'>
+              <div class="col mt-3">
+                <img v-bind:src="'data/'+card.image" style="width:8em"
+                  v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <div class="abilityButtons">
+                  <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)"
+                    class="add btn btn-light">
+                    Add
+                  </button>
+                  <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- CATEGORY DECK FRONT -->
+          <div class="row flex-nowrap overflow-auto" v-if="modifier.name.substring(3,5) == modifierCategory">
+            <div class="abilityContainer" v-for='card in modifier.cards'>
+              <div class="col mt-3">
+                <img v-bind:src="'data/'+card.image" style="width:8em"
+                  v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <div class="abilityButtons">
+                  <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)"
+                    class="add btn btn-light">
+                    Add
+                  </button>
+                  <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div v-for="modifier in modifiers">
-        <!-- SPECIAL MODIFIERS FRONT -->
-        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-pm' && specialModifiers">
-          <div class="abilityContainer" v-for='card in modifier.cards'>
+      <!-- ABILITIES -->
+      <div class="col-lg-12 container-fluid" id="abilities" v-if="menu == 'abilities'">
+
+        <!-- ABILITY CATEGORY -->
+        <div class="row flex-nowrap overflow-auto scrollCardContainer">
+          <div class="col mt-3" v-for='ability in abilities'
+            v-if='abilityCategory == null || abilityCategory == ability'>
+            <input type="image" v-on:click="displayAbilities(ability)" class="image rounded"
+              v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+          </div>
+        </div>
+
+        <!-- PER CATEGORY CARDS -->
+        <div v-if='abilityCategory != null' class="row scrollCardContainer flex-nowrap overflow-auto">
+          <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards' v-if="i != 0">
             <div class="col mt-3">
-              <img v-bind:src="'data/'+card.image" style="width:8em" v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded"/>
+              <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"
+                v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
               <div class="abilityButtons">
-                <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)" class="add btn btn-light">
+                <button v-if="!abilitiesChosen.includes(card)" v-on:click="addAbility(card)" class="add btn btn-light">
                   Add
                 </button>
-                <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
+                <button v-else v-on:click="removeAbility(card)" class="remove btn btn-light">
                   Remove
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <!-- BASE DECK FRONT -->
-        <div class="row flex-nowrap overflow-auto" v-if="modifier.name == 'am-p'">
-          <div class="abilityContainer" v-for='card in modifier.cards'>
-            <div class="col mt-3">
-              <img v-bind:src="'data/'+card.image" style="width:8em" v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded"/>
-              <div class="abilityButtons">
-                <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)" class="add btn btn-light">
-                  Add
-                </button>
-                <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
-                  Remove
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- CATEGORY DECK FRONT -->
-        <div class="row flex-nowrap overflow-auto" v-if="modifier.name.substring(3,5) == modifierCategory">
-          <div class="abilityContainer" v-for='card in modifier.cards'>
-            <div class="col mt-3">
-              <img v-bind:src="'data/'+card.image" style="width:8em" v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded"/>
-              <div class="abilityButtons">
-                <button v-if="!modifiersChosen.includes(card)" v-on:click="addModifier(card)" class="add btn btn-light">
-                  Add
-                </button>
-                <button v-else v-on:click="removeModifier(card)" class="remove btn btn-light">
-                  Remove
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- ABILITIES -->
-    <div class="col-lg-12 container-fluid" id="abilities" v-if="menu == 'abilities'">
-
-      <!-- ABILITY CATEGORY -->
-      <div class="row flex-nowrap overflow-auto scrollCardContainer">
-        <div class="col mt-3" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
-          <input type="image" v-on:click="displayAbilities(ability)" class="image rounded"
-            v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
-        </div>
-      </div>
-
-      <!-- PER CATEGORY CARDS -->
-      <div v-if='abilityCategory != null' class="row scrollCardContainer flex-nowrap overflow-auto">
-        <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards' v-if="i != 0">
-          <div class="col mt-3" >
-            <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
-            <div class="abilityButtons">              
-              <button v-if="!abilitiesChosen.includes(card)" v-on:click="addAbility(card)" class="add btn btn-light">
-                Add
-              </button>
-              <button v-else v-on:click="removeAbility(card)" class="remove btn btn-light">
-                Remove
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> <!-- main row ends -->
+      </div> <!-- main row ends -->
     </div> <!-- main container ends -->
     </div> <!-- main wrapper ends -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -317,16 +358,20 @@
           </div>
           <div class="modal-body">
             <p>
-            We made this website in order to play <i>Gloomhaven</i> during Covid-19 confinement, without having to print decks of abilities and modifiers.<br/>
-            It's entirely free, without ads, and we hope you enjoy it.<br/>
-            You can check the source code here:<br/>
-            <a href="https://github.com/orichalque/yet-an-other-gloomhaven-companion">https://github.com/orichalque/yet-an-other-gloomhaven-companion</a><br/>
-            If you encounter any bug, or have suggestions, please open an issue so that we can correct it asap.<br/>
-            Thanks to:</p>
+              We made this website in order to play <i>Gloomhaven</i> during Covid-19 confinement, without having to
+              print decks of abilities and modifiers.<br />
+              It's entirely free, without ads, and we hope you enjoy it.<br />
+              You can check the source code here:<br />
+              <a
+                href="https://github.com/orichalque/yet-an-other-gloomhaven-companion">https://github.com/orichalque/yet-an-other-gloomhaven-companion</a><br />
+              If you encounter any bug, or have suggestions, please open an issue so that we can correct it asap.<br />
+              Thanks to:</p>
 
             <ul>
               <li><a href="https://github.com/any2cards/gloomhaven">https://github.com/any2cards/gloomhaven</a></li>
-              <li><a href="https://github.com/wruczek/bootstrap-cookie-alert">https://github.com/wruczek/bootstrap-cookie-alert</a></li>                
+              <li><a
+                  href="https://github.com/wruczek/bootstrap-cookie-alert">https://github.com/wruczek/bootstrap-cookie-alert</a>
+              </li>
             </ul>
 
             <span>You can help us maintaining and improving the website here:
@@ -334,11 +379,12 @@
                 <input type="hidden" name="cmd" value="_donations" />
                 <input type="hidden" name="business" value="QDHSY8LBF3WRY" />
                 <input type="hidden" name="currency_code" value="EUR" />
-                <input type="image" src="data/icons/btn_donate_SM.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                
-                </form>                
-                
-            </span>            
+                <input type="image" src="data/icons/btn_donate_SM.gif" name="submit"
+                  title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+
+              </form>
+
+            </span>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -347,19 +393,14 @@
       </div>
     </div>
 
-    <!-- ALERTS -->
-    <div class="alert alert-danger collapse" role="alert" id="abilityAlert">
-      {{ abilityAlert }}
-      <button type="button" class="close" aria-label="Close" v-on:click="dismissAlert('#abilityAlert')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div> 
 
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
-      <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do not have to re-enter them every time you launch this application. </span><a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
-  
+      <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do
+        not have to re-enter them every time you launch this application. </span><a href="https://cookiesandyou.com/"
+        target="_blank">Learn more</a>
+
       <button type="button" class="btn btn-primary btn-sm" v-on:click="acceptCookie() === 'true'" aria-label="Close">
-          I agree
+        I agree
       </button>
     </div>
 
