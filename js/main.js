@@ -1,22 +1,30 @@
 new Vue({
     el: '#app',
     data: {
+        /* Platform information */
         menu : 'home',
-        turn: 1,
         acceptedCookies: false,
+        isMobile: false,
+        alert: '',
+
+        /* General game information */ 
+        turn: 1,
+
+        /* Modifier information */
         modifiers : null,        
         modifierCategory: null,        
         modifiersChosen: [],
         modifiersDrawPile: [],
         specialModifiers : false,
         lastDrawnModifier: null,
+
+        /* Ability information */
         abilities : null,
         abilityCategory: null,
         abilitiesChosen: [],        
         twoAbilitiesSelected: [],
         abilitiesOnBoard: [],
-        longRestMode: false,
-        abilityAlert: ''
+        longRestMode: false
     },
     methods: {
         set: function (param) {
@@ -157,7 +165,7 @@ new Vue({
                 cardsPlayed.forEach(card => card.played = false)
                 
                 if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                    this.showAlert('You do not have enough cards in your end to continue.')
+                    this.showRedAlert('You do not have enough cards in your end to continue.')
                 }
             }   
             this.$forceUpdate()
@@ -173,7 +181,7 @@ new Vue({
             cardsPlayed.forEach(card => card.played = false)
             
             if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                this.showAlert('You do not have enough cards in your end to continue.')
+                this.showRedAlert('You do not have enough cards in your end to continue.')
             }
             this.longRestMode = false
             this.$forceUpdate()
@@ -182,12 +190,14 @@ new Vue({
             if (this.twoAbilitiesSelected.length < 2) {
                 this.twoAbilitiesSelected.push(card)
             } else {
-                this.showAlert('You already picked two cards')                        
+                this.showRedAlert('You already picked two cards')                        
             }            
         },
         cancelCard: function(card) {
-            indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card)
-            this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1)
+            if (this.twoAbilitiesSelected.includes(card)) {
+                indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card)
+                this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1)
+            }
         },
         fetchCard: function(card) {
             card.played = false
@@ -195,8 +205,10 @@ new Vue({
             this.$forceUpdate()
         },
         destroyCard: function(card) {
+            this.cancelCard(card)
             card.destroyed = true
             card.played = true
+            card.duration = 0
             this.$forceUpdate()
         },
         keepAbilityOneTurn(card) {
@@ -210,9 +222,9 @@ new Vue({
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
                 if(this.abilitiesChosen.length == 0) {
-                    this.showAlert('You need to build you deck in the Abilities section.')
+                    this.showRedAlert('You need to build you deck in the Abilities section.')
                 } else {
-                    this.showAlert('You have to select two cards.')
+                    this.showRedAlert('You have to select two cards.')
                 }
             } else {
                 this.twoAbilitiesSelected.forEach(card => card.played = true)   
@@ -222,16 +234,10 @@ new Vue({
                 this.$forceUpdate()
             }            
         },
-        showAlert: function(alert){
-            this.abilityAlert = alert
-            $('#abilityAlert').show()            
-        },
-        dismissAlert: function(alert) {
-            $('#abilityAlert').hide()
-        },
         saveData: function() {
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen))
-            Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))            
+            Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))    
+            this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
             abilityCookie = Cookies.get('abilities')
@@ -262,16 +268,32 @@ new Vue({
         acceptCookie: function() {
             Cookies.set('accepted', 'true')
             this.$forceUpdate()
+        },
+        showRedAlert: function(alert){
+            this.alert = alert
+            $('#redAlert').show()            
+        },
+        dismissRedAlert: function(alert) {
+            $('#redAlert').hide()
+        },
+        showGreenAlert: function(alert){
+            this.alert = alert
+            $('#greenAlert').show()            
+        },
+        dismissGreenAlert: function(alert) {
+            $('#greenAlert').hide()
         }
     }, 
     beforeMount(){
         this.loadDatabase()
         this.loadData()
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            this.isMobile = true
+        }
     }
   })
 
-  function getRandomInt(max) {
+function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
-  }
+}
 
-  
