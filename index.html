@@ -162,12 +162,21 @@
                     <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
                       v-for="ability in abilitiesChosen" v-if="ability.duration != 0">
                       <div class="col">
-                        <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
+                        <img v-bind:src="'data/'+ability.image" class="image rounded"></img>                        
                         <div class="iconContainer">
+                          <div class="topIconContainer">
+                            <button v-on:click="useCard(ability)" class="btn btn-light add">
+                              Use
+                            </button>
+                          </div>
+                          
+                          <div class="abilityButtons">
+                            <h4>{{ ability.numberOfTimesUsed }}</h4>
+                          </div>
                           <div class="bottomIconContainer">
                             <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon"
                               style="width:3em" v-on:click="destroyCard(ability)" />
-                          </div>
+                          </div>                          
                         </div>
                       </div>
                     </div>

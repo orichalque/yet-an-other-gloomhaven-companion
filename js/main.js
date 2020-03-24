@@ -211,12 +211,17 @@ new Vue({
             card.duration = 0
             this.$forceUpdate()
         },
+        useCard: function(card) {
+            card.numberOfTimesUsed ++     
+            this.$forceUpdate()       
+        },
         keepAbilityOneTurn(card) {
             card.duration = 1
             this.$forceUpdate()
         },
         keepAbilityManyTurns(card) {
             card.duration = -1
+            card.numberOfTimesUsed = 0            
             this.$forceUpdate()
         },
         play: function() {
