@@ -127,8 +127,8 @@
                           <!-- On-cards buttons when cards have been played -->
                           <div class="iconContainer">
 
-                            <div class="bottomIconContainer">
-                              <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon"
+                            <div class="bottomIconContainer" v-if="!ability.destroyed">
+                              <img src="data/icons/lost.png" class="bottomIcon"
                                 style="width:3em" v-on:click="destroyCard(ability)" />
                               <img v-if="ability.played" src="data/icons/keep-on-board.png" class="bottomIcon"
                                 style="width:3em" v-on:click="keepAbilityManyTurns(ability)" />
@@ -137,7 +137,7 @@
                             <div class="topIconContainer" v-if="ability.played">
                               <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
                                 v-on:click="fetchCard(ability)" />
-                              <img src="data/icons/keep-on-board-one-turn.png" class="bottomIcon" style="width:3em"
+                              <img src="data/icons/keep-on-board-one-turn.png" v-if="!ability.destroyed" class="bottomIcon" style="width:3em"
                                 v-on:click="keepAbilityOneTurn(ability)" />
                             </div>
 
