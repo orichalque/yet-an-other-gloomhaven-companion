@@ -8,186 +8,6 @@ database = {
       "xws": "amm01"
     },
     {
-      "name": "am-m-01",
-      "points": 0,
-      "image": "attack-modifiers/base/monster/am-m-01.png",
-      "xws": "amm01"
-    },
-    {
-      "name": "am-m-02",
-      "points": 1,
-      "image": "attack-modifiers/base/monster/am-m-02.png",
-      "xws": "amm02"
-    },
-    {
-      "name": "am-m-03",
-      "points": 2,
-      "image": "attack-modifiers/base/monster/am-m-03.png",
-      "xws": "amm03"
-    },
-    {
-      "name": "am-m-04",
-      "points": 3,
-      "image": "attack-modifiers/base/monster/am-m-04.png",
-      "xws": "amm04"
-    },
-    {
-      "name": "am-m-05",
-      "points": 4,
-      "image": "attack-modifiers/base/monster/am-m-05.png",
-      "xws": "amm05"
-    },
-    {
-      "name": "am-m-06",
-      "points": 5,
-      "image": "attack-modifiers/base/monster/am-m-06.png",
-      "xws": "amm06"
-    },
-    {
-      "name": "am-m-07",
-      "points": 6,
-      "image": "attack-modifiers/base/monster/am-m-07.png",
-      "xws": "amm07"
-    },
-    {
-      "name": "am-m-08",
-      "points": 7,
-      "image": "attack-modifiers/base/monster/am-m-08.png",
-      "xws": "amm08"
-    },
-    {
-      "name": "am-m-09",
-      "points": 8,
-      "image": "attack-modifiers/base/monster/am-m-09.png",
-      "xws": "amm09"
-    },
-    {
-      "name": "am-m-10",
-      "points": 9,
-      "image": "attack-modifiers/base/monster/am-m-10.png",
-      "xws": "amm10"
-    },
-    {
-      "name": "am-m-11",
-      "points": 10,
-      "image": "attack-modifiers/base/monster/am-m-11.png",
-      "xws": "amm11"
-    },
-    {
-      "name": "am-m-12",
-      "points": 11,
-      "image": "attack-modifiers/base/monster/am-m-12.png",
-      "xws": "amm12"
-    },
-    {
-      "name": "am-m-13",
-      "points": 12,
-      "image": "attack-modifiers/base/monster/am-m-13.png",
-      "xws": "amm13"
-    },
-    {
-      "name": "am-m-14",
-      "points": 13,
-      "image": "attack-modifiers/base/monster/am-m-14.png",
-      "xws": "amm14"
-    },
-    {
-      "name": "am-m-15",
-      "points": 14,
-      "image": "attack-modifiers/base/monster/am-m-15.png",
-      "xws": "amm15"
-    },
-    {
-      "name": "am-m-16",
-      "points": 15,
-      "image": "attack-modifiers/base/monster/am-m-16.png",
-      "xws": "amm16"
-    },
-    {
-      "name": "am-m-17",
-      "points": 16,
-      "image": "attack-modifiers/base/monster/am-m-17.png",
-      "xws": "amm17"
-    },
-    {
-      "name": "am-m-18",
-      "points": 17,
-      "image": "attack-modifiers/base/monster/am-m-18.png",
-      "xws": "amm18"
-    },
-    {
-      "name": "am-m-19",
-      "points": 18,
-      "image": "attack-modifiers/base/monster/am-m-19.png",
-      "xws": "amm19"
-    },
-    {
-      "name": "am-m-20",
-      "points": 19,
-      "image": "attack-modifiers/base/monster/am-m-20.png",
-      "xws": "amm20"
-    },
-    {
-      "name": "am-mm-01",
-      "points": 20,
-      "image": "attack-modifiers/base/monster-mod/am-mm-01.png",
-      "xws": "ammm01"
-    },
-    {
-      "name": "am-mm-02",
-      "points": 21,
-      "image": "attack-modifiers/base/monster-mod/am-mm-02.png",
-      "xws": "ammm02"
-    },
-    {
-      "name": "am-mm-03",
-      "points": 22,
-      "image": "attack-modifiers/base/monster-mod/am-mm-03.png",
-      "xws": "ammm03"
-    },
-    {
-      "name": "am-mm-04",
-      "points": 23,
-      "image": "attack-modifiers/base/monster-mod/am-mm-04.png",
-      "xws": "ammm04"
-    },
-    {
-      "name": "am-mm-05",
-      "points": 24,
-      "image": "attack-modifiers/base/monster-mod/am-mm-05.png",
-      "xws": "ammm05"
-    },
-    {
-      "name": "am-mm-06",
-      "points": 25,
-      "image": "attack-modifiers/base/monster-mod/am-mm-06.png",
-      "xws": "ammm06"
-    },
-    {
-      "name": "am-mm-07",
-      "points": 26,
-      "image": "attack-modifiers/base/monster-mod/am-mm-07.png",
-      "xws": "ammm07"
-    },
-    {
-      "name": "am-mm-08",
-      "points": 27,
-      "image": "attack-modifiers/base/monster-mod/am-mm-08.png",
-      "xws": "ammm08"
-    },
-    {
-      "name": "am-mm-09",
-      "points": 28,
-      "image": "attack-modifiers/base/monster-mod/am-mm-09.png",
-      "xws": "ammm09"
-    },
-    {
-      "name": "am-mm-10",
-      "points": 29,
-      "image": "attack-modifiers/base/monster-mod/am-mm-10.png",
-      "xws": "ammm10"
-    },
-    {
       "name": "am-p-01",
       "points": 30,
       "image": "attack-modifiers/base/player/am-p-01.png",
@@ -196,31 +16,31 @@ database = {
     {
       "name": "am-p-02",
       "points": 31,
-      "image": "attack-modifiers/base/player/am-p-02.png",
+      "image": "attack-modifiers/base/player/am-p-01.png",
       "xws": "amp02"
     },
     {
       "name": "am-p-03",
       "points": 32,
-      "image": "attack-modifiers/base/player/am-p-03.png",
+      "image": "attack-modifiers/base/player/am-p-01.png",
       "xws": "amp03"
     },
     {
       "name": "am-p-04",
       "points": 33,
-      "image": "attack-modifiers/base/player/am-p-04.png",
+      "image": "attack-modifiers/base/player/am-p-01.png",
       "xws": "amp04"
     },
     {
       "name": "am-p-05",
       "points": 34,
-      "image": "attack-modifiers/base/player/am-p-05.png",
+      "image": "attack-modifiers/base/player/am-p-01.png",
       "xws": "amp05"
     },
     {
       "name": "am-p-06",
       "points": 35,
-      "image": "attack-modifiers/base/player/am-p-06.png",
+      "image": "attack-modifiers/base/player/am-p-01.png",
       "xws": "amp06"
     },
     {
@@ -232,25 +52,25 @@ database = {
     {
       "name": "am-p-08",
       "points": 37,
-      "image": "attack-modifiers/base/player/am-p-08.png",
+      "image": "attack-modifiers/base/player/am-p-07.png",
       "xws": "amp08"
     },
     {
       "name": "am-p-09",
       "points": 38,
-      "image": "attack-modifiers/base/player/am-p-09.png",
+      "image": "attack-modifiers/base/player/am-p-07.png",
       "xws": "amp09"
     },
     {
       "name": "am-p-10",
       "points": 39,
-      "image": "attack-modifiers/base/player/am-p-10.png",
+      "image": "attack-modifiers/base/player/am-p-07.png",
       "xws": "amp10"
     },
     {
       "name": "am-p-11",
       "points": 40,
-      "image": "attack-modifiers/base/player/am-p-11.png",
+      "image": "attack-modifiers/base/player/am-p-07.png",
       "xws": "amp11"
     },
     {
@@ -262,25 +82,25 @@ database = {
     {
       "name": "am-p-13",
       "points": 42,
-      "image": "attack-modifiers/base/player/am-p-13.png",
+      "image": "attack-modifiers/base/player/am-p-12.png",
       "xws": "amp13"
     },
     {
       "name": "am-p-14",
       "points": 43,
-      "image": "attack-modifiers/base/player/am-p-14.png",
+      "image": "attack-modifiers/base/player/am-p-12.png",
       "xws": "amp14"
     },
     {
       "name": "am-p-15",
       "points": 44,
-      "image": "attack-modifiers/base/player/am-p-15.png",
+      "image": "attack-modifiers/base/player/am-p-12.png",
       "xws": "amp15"
     },
     {
       "name": "am-p-16",
       "points": 45,
-      "image": "attack-modifiers/base/player/am-p-16.png",
+      "image": "attack-modifiers/base/player/am-p-12.png",
       "xws": "amp16"
     },
     {
@@ -316,55 +136,55 @@ database = {
     {
       "name": "am-pm-02",
       "points": 51,
-      "image": "attack-modifiers/base/player-mod/am-pm-02.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm02"
     },
     {
       "name": "am-pm-03",
       "points": 52,
-      "image": "attack-modifiers/base/player-mod/am-pm-03.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm03"
     },
     {
       "name": "am-pm-04",
       "points": 53,
-      "image": "attack-modifiers/base/player-mod/am-pm-04.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm04"
     },
     {
       "name": "am-pm-05",
       "points": 54,
-      "image": "attack-modifiers/base/player-mod/am-pm-05.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm05"
     },
     {
       "name": "am-pm-06",
       "points": 55,
-      "image": "attack-modifiers/base/player-mod/am-pm-06.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm06"
     },
     {
       "name": "am-pm-07",
       "points": 56,
-      "image": "attack-modifiers/base/player-mod/am-pm-07.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm07"
     },
     {
       "name": "am-pm-08",
       "points": 57,
-      "image": "attack-modifiers/base/player-mod/am-pm-08.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm08"
     },
     {
       "name": "am-pm-09",
       "points": 58,
-      "image": "attack-modifiers/base/player-mod/am-pm-09.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm09"
     },
     {
       "name": "am-pm-10",
       "points": 59,
-      "image": "attack-modifiers/base/player-mod/am-pm-10.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-01.png",
       "xws": "ampm10"
     },
     {
@@ -376,55 +196,55 @@ database = {
     {
       "name": "am-pm-12",
       "points": 61,
-      "image": "attack-modifiers/base/player-mod/am-pm-12.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm12"
     },
     {
       "name": "am-pm-13",
       "points": 62,
-      "image": "attack-modifiers/base/player-mod/am-pm-13.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm13"
     },
     {
       "name": "am-pm-14",
       "points": 63,
-      "image": "attack-modifiers/base/player-mod/am-pm-14.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm14"
     },
     {
       "name": "am-pm-15",
       "points": 64,
-      "image": "attack-modifiers/base/player-mod/am-pm-15.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm15"
     },
     {
       "name": "am-pm-16",
       "points": 65,
-      "image": "attack-modifiers/base/player-mod/am-pm-16.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm16"
     },
     {
       "name": "am-pm-17",
       "points": 66,
-      "image": "attack-modifiers/base/player-mod/am-pm-17.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm17"
     },
     {
       "name": "am-pm-18",
       "points": 67,
-      "image": "attack-modifiers/base/player-mod/am-pm-18.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm18"
     },
     {
       "name": "am-pm-19",
       "points": 68,
-      "image": "attack-modifiers/base/player-mod/am-pm-19.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm19"
     },
     {
       "name": "am-pm-20",
       "points": 69,
-      "image": "attack-modifiers/base/player-mod/am-pm-20.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-11.png",
       "xws": "ampm20"
     },
     {
@@ -436,86 +256,56 @@ database = {
     {
       "name": "am-pm-22",
       "points": 71,
-      "image": "attack-modifiers/base/player-mod/am-pm-22.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm22"
     },
     {
       "name": "am-pm-23",
       "points": 72,
-      "image": "attack-modifiers/base/player-mod/am-pm-23.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm23"
     },
     {
       "name": "am-pm-24",
       "points": 73,
-      "image": "attack-modifiers/base/player-mod/am-pm-24.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm24"
     },
     {
       "name": "am-pm-25",
       "points": 74,
-      "image": "attack-modifiers/base/player-mod/am-pm-25.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm25"
     },
     {
       "name": "am-pm-26",
       "points": 75,
-      "image": "attack-modifiers/base/player-mod/am-pm-26.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm26"
     },
     {
       "name": "am-pm-27",
       "points": 76,
-      "image": "attack-modifiers/base/player-mod/am-pm-27.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm27"
     },
     {
       "name": "am-pm-28",
       "points": 77,
-      "image": "attack-modifiers/base/player-mod/am-pm-28.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm28"
     },
     {
       "name": "am-pm-29",
       "points": 78,
-      "image": "attack-modifiers/base/player-mod/am-pm-29.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm29"
     },
     {
       "name": "am-pm-30",
       "points": 79,
-      "image": "attack-modifiers/base/player-mod/am-pm-30.png",
+      "image": "attack-modifiers/base/player-mod/am-pm-21.png",
       "xws": "ampm30"
-    },
-    {
-      "name": "am-pm-31",
-      "points": 80,
-      "image": "attack-modifiers/base/player-mod/am-pm-31.png",
-      "xws": "ampm31"
-    },
-    {
-      "name": "am-pm-32",
-      "points": 81,
-      "image": "attack-modifiers/base/player-mod/am-pm-32.png",
-      "xws": "ampm32"
-    },
-    {
-      "name": "am-pm-33",
-      "points": 82,
-      "image": "attack-modifiers/base/player-mod/am-pm-33.png",
-      "xws": "ampm33"
-    },
-    {
-      "name": "am-pm-34",
-      "points": 83,
-      "image": "attack-modifiers/base/player-mod/am-pm-34.png",
-      "xws": "ampm34"
-    },
-    {
-      "name": "am-pm-35",
-      "points": 84,
-      "image": "attack-modifiers/base/player-mod/am-pm-35.png",
-      "xws": "ampm35"
     },
     {
       "name": "am-be-01",
@@ -532,19 +322,19 @@ database = {
     {
       "name": "am-be-03",
       "points": 87,
-      "image": "attack-modifiers/BE/am-be-03.png",
+      "image": "attack-modifiers/BE/am-be-02.png",
       "xws": "ambe03"
     },
     {
       "name": "am-be-04",
       "points": 88,
-      "image": "attack-modifiers/BE/am-be-04.png",
+      "image": "attack-modifiers/BE/am-be-02.png",
       "xws": "ambe04"
     },
     {
       "name": "am-be-05",
       "points": 89,
-      "image": "attack-modifiers/BE/am-be-05.png",
+      "image": "attack-modifiers/BE/am-be-02.png",
       "xws": "ambe05"
     },
     {
@@ -556,7 +346,7 @@ database = {
     {
       "name": "am-be-07",
       "points": 91,
-      "image": "attack-modifiers/BE/am-be-07.png",
+      "image": "attack-modifiers/BE/am-be-06.png",
       "xws": "ambe07"
     },
     {
@@ -574,7 +364,7 @@ database = {
     {
       "name": "am-be-10",
       "points": 94,
-      "image": "attack-modifiers/BE/am-be-10.png",
+      "image": "attack-modifiers/BE/am-be-09.png",
       "xws": "ambe10"
     },
     {
@@ -586,7 +376,7 @@ database = {
     {
       "name": "am-be-12",
       "points": 96,
-      "image": "attack-modifiers/BE/am-be-12.png",
+      "image": "attack-modifiers/BE/am-be-11.png",
       "xws": "ambe12"
     },
     {
@@ -598,7 +388,7 @@ database = {
     {
       "name": "am-be-14",
       "points": 98,
-      "image": "attack-modifiers/BE/am-be-14.png",
+      "image": "attack-modifiers/BE/am-be-13.png",
       "xws": "ambe14"
     },
     {
@@ -614,6 +404,12 @@ database = {
       "xws": "ambr01"
     },
     {
+      "name": "am-br-22",
+      "points": 121,
+      "image": "attack-modifiers/BR/am-br-01.png",
+      "xws": "ambr22"
+    },
+    {
       "name": "am-br-02",
       "points": 101,
       "image": "attack-modifiers/BR/am-br-02.png",
@@ -622,7 +418,7 @@ database = {
     {
       "name": "am-br-03",
       "points": 102,
-      "image": "attack-modifiers/BR/am-br-03.png",
+      "image": "attack-modifiers/BR/am-br-02.png",
       "xws": "ambr03"
     },
     {
@@ -646,7 +442,7 @@ database = {
     {
       "name": "am-br-07",
       "points": 106,
-      "image": "attack-modifiers/BR/am-br-07.png",
+      "image": "attack-modifiers/BR/am-br-06.png",
       "xws": "ambr07"
     },
     {
@@ -664,31 +460,31 @@ database = {
     {
       "name": "am-br-10",
       "points": 109,
-      "image": "attack-modifiers/BR/am-br-10.png",
+      "image": "attack-modifiers/BR/am-br-09.png",
       "xws": "ambr10"
     },
     {
       "name": "am-br-11",
       "points": 110,
-      "image": "attack-modifiers/BR/am-br-11.png",
+      "image": "attack-modifiers/BR/am-br-09.png",
       "xws": "ambr11"
     },
     {
       "name": "am-br-12",
       "points": 111,
-      "image": "attack-modifiers/BR/am-br-12.png",
+      "image": "attack-modifiers/BR/am-br-09.png",
       "xws": "ambr12"
     },
     {
       "name": "am-br-13",
       "points": 112,
-      "image": "attack-modifiers/BR/am-br-13.png",
+      "image": "attack-modifiers/BR/am-br-09.png",
       "xws": "ambr13"
     },
     {
       "name": "am-br-14",
       "points": 113,
-      "image": "attack-modifiers/BR/am-br-14.png",
+      "image": "attack-modifiers/BR/am-br-09.png",
       "xws": "ambr14"
     },
     {
@@ -706,38 +502,32 @@ database = {
     {
       "name": "am-br-17",
       "points": 116,
-      "image": "attack-modifiers/BR/am-br-17.png",
+      "image": "attack-modifiers/BR/am-br-16.png",
       "xws": "ambr17"
     },
     {
       "name": "am-br-18",
       "points": 117,
-      "image": "attack-modifiers/BR/am-br-18.png",
+      "image": "attack-modifiers/BR/am-br-16.png",
       "xws": "ambr18"
     },
     {
       "name": "am-br-19",
       "points": 118,
-      "image": "attack-modifiers/BR/am-br-19.png",
+      "image": "attack-modifiers/BR/am-br-16.png",
       "xws": "ambr19"
     },
     {
       "name": "am-br-20",
       "points": 119,
-      "image": "attack-modifiers/BR/am-br-20.png",
+      "image": "attack-modifiers/BR/am-br-16.png",
       "xws": "ambr20"
     },
     {
       "name": "am-br-21",
       "points": 120,
-      "image": "attack-modifiers/BR/am-br-21.png",
+      "image": "attack-modifiers/BR/am-br-16.png",
       "xws": "ambr21"
-    },
-    {
-      "name": "am-br-22",
-      "points": 121,
-      "image": "attack-modifiers/BR/am-br-22.png",
-      "xws": "ambr22"
     },
     {
       "name": "am-bs-01",
@@ -752,10 +542,34 @@ database = {
       "xws": "ambs02"
     },
     {
+      "name": "am-bs-05",
+      "points": 126,
+      "image": "attack-modifiers/BS/am-bs-02.png",
+      "xws": "ambs05"
+    },
+    {
+      "name": "am-bs-08",
+      "points": 129,
+      "image": "attack-modifiers/BS/am-bs-02.png",
+      "xws": "ambs08"
+    },
+    {
+      "name": "am-bs-12",
+      "points": 133,
+      "image": "attack-modifiers/BS/am-bs-02.png",
+      "xws": "ambs12"
+    },
+    {
       "name": "am-bs-03",
       "points": 124,
       "image": "attack-modifiers/BS/am-bs-03.png",
       "xws": "ambs03"
+    },
+    {
+      "name": "am-bs-10",
+      "points": 131,
+      "image": "attack-modifiers/BS/am-bs-03.png",
+      "xws": "ambs10"
     },
     {
       "name": "am-bs-04",
@@ -764,16 +578,16 @@ database = {
       "xws": "ambs04"
     },
     {
-      "name": "am-bs-05",
-      "points": 126,
-      "image": "attack-modifiers/BS/am-bs-05.png",
-      "xws": "ambs05"
-    },
-    {
       "name": "am-bs-06",
       "points": 127,
       "image": "attack-modifiers/BS/am-bs-06.png",
       "xws": "ambs06"
+    },
+    {
+      "name": "am-bs-09",
+      "points": 130,
+      "image": "attack-modifiers/BS/am-bs-06.png",
+      "xws": "ambs09"
     },
     {
       "name": "am-bs-07",
@@ -782,39 +596,15 @@ database = {
       "xws": "ambs07"
     },
     {
-      "name": "am-bs-08",
-      "points": 129,
-      "image": "attack-modifiers/BS/am-bs-08.png",
-      "xws": "ambs08"
-    },
-    {
-      "name": "am-bs-09",
-      "points": 130,
-      "image": "attack-modifiers/BS/am-bs-09.png",
-      "xws": "ambs09"
-    },
-    {
-      "name": "am-bs-10",
-      "points": 131,
-      "image": "attack-modifiers/BS/am-bs-10.png",
-      "xws": "ambs10"
-    },
-    {
       "name": "am-bs-11",
       "points": 132,
       "image": "attack-modifiers/BS/am-bs-11.png",
       "xws": "ambs11"
     },
     {
-      "name": "am-bs-12",
-      "points": 133,
-      "image": "attack-modifiers/BS/am-bs-12.png",
-      "xws": "ambs12"
-    },
-    {
       "name": "am-bs-13",
       "points": 134,
-      "image": "attack-modifiers/BS/am-bs-13.png",
+      "image": "attack-modifiers/BS/am-bs-11.png",
       "xws": "ambs13"
     },
     {
