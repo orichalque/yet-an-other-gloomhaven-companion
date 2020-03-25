@@ -836,21 +836,33 @@ database = {
       "xws": "amds01"
     },
     {
+      "name": "am-ds-16",
+      "points": 187,
+      "image": "attack-modifiers/DS/am-ds-01.png",
+      "xws": "amds16"
+    },
+    {
+      "name": "am-ds-17",
+      "points": 188,
+      "image": "attack-modifiers/DS/am-ds-01.png",
+      "xws": "amds17"
+    },
+    {
       "name": "am-ds-02",
       "points": 173,
-      "image": "attack-modifiers/DS/am-ds-02.png",
+      "image": "attack-modifiers/DS/am-ds-01.png",
       "xws": "amds02"
     },
     {
       "name": "am-ds-03",
       "points": 174,
-      "image": "attack-modifiers/DS/am-ds-03.png",
+      "image": "attack-modifiers/DS/am-ds-01.png",
       "xws": "amds03"
     },
     {
       "name": "am-ds-04",
       "points": 175,
-      "image": "attack-modifiers/DS/am-ds-04.png",
+      "image": "attack-modifiers/DS/am-ds-01.png",
       "xws": "amds04"
     },
     {
@@ -862,19 +874,19 @@ database = {
     {
       "name": "am-ds-06",
       "points": 177,
-      "image": "attack-modifiers/DS/am-ds-06.png",
+      "image": "attack-modifiers/DS/am-ds-05.png",
       "xws": "amds06"
     },
     {
       "name": "am-ds-07",
       "points": 178,
-      "image": "attack-modifiers/DS/am-ds-07.png",
+      "image": "attack-modifiers/DS/am-ds-05.png",
       "xws": "amds07"
     },
     {
       "name": "am-ds-08",
       "points": 179,
-      "image": "attack-modifiers/DS/am-ds-08.png",
+      "image": "attack-modifiers/DS/am-ds-05.png",
       "xws": "amds08"
     },
     {
@@ -916,20 +928,8 @@ database = {
     {
       "name": "am-ds-15",
       "points": 186,
-      "image": "attack-modifiers/DS/am-ds-15.png",
+      "image": "attack-modifiers/DS/am-ds-14.png",
       "xws": "amds15"
-    },
-    {
-      "name": "am-ds-16",
-      "points": 187,
-      "image": "attack-modifiers/DS/am-ds-16.png",
-      "xws": "amds16"
-    },
-    {
-      "name": "am-ds-17",
-      "points": 188,
-      "image": "attack-modifiers/DS/am-ds-17.png",
-      "xws": "amds17"
     },
     {
       "name": "am-el-01",
