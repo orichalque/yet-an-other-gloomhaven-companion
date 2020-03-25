@@ -1310,12 +1310,6 @@ database = {
       "xws": "amns19"
     },
     {
-      "name": "am-ph-01",
-      "points": 252,
-      "image": "attack-modifiers/PH/am-ph-01.png",
-      "xws": "amph01"
-    },
-    {
       "name": "am-ph-02",
       "points": 253,
       "image": "attack-modifiers/PH/am-ph-02.png",
@@ -1324,7 +1318,7 @@ database = {
     {
       "name": "am-ph-03",
       "points": 254,
-      "image": "attack-modifiers/PH/am-ph-03.png",
+      "image": "attack-modifiers/PH/am-ph-02.png",
       "xws": "amph03"
     },
     {
@@ -1336,13 +1330,13 @@ database = {
     {
       "name": "am-ph-05",
       "points": 256,
-      "image": "attack-modifiers/PH/am-ph-05.png",
+      "image": "attack-modifiers/PH/am-ph-04.png",
       "xws": "amph05"
     },
     {
       "name": "am-ph-06",
       "points": 257,
-      "image": "attack-modifiers/PH/am-ph-06.png",
+      "image": "attack-modifiers/PH/am-ph-04.png",
       "xws": "amph06"
     },
     {
@@ -1354,13 +1348,13 @@ database = {
     {
       "name": "am-ph-08",
       "points": 259,
-      "image": "attack-modifiers/PH/am-ph-08.png",
+      "image": "attack-modifiers/PH/am-ph-07.png",
       "xws": "amph08"
     },
     {
       "name": "am-ph-09",
       "points": 260,
-      "image": "attack-modifiers/PH/am-ph-09.png",
+      "image": "attack-modifiers/PH/am-ph-07.png",
       "xws": "amph09"
     },
     {
@@ -1372,7 +1366,7 @@ database = {
     {
       "name": "am-ph-11",
       "points": 262,
-      "image": "attack-modifiers/PH/am-ph-11.png",
+      "image": "attack-modifiers/PH/am-ph-10.png",
       "xws": "amph11"
     },
     {
@@ -1384,7 +1378,7 @@ database = {
     {
       "name": "am-ph-13",
       "points": 264,
-      "image": "attack-modifiers/PH/am-ph-13.png",
+      "image": "attack-modifiers/PH/am-ph-12.png",
       "xws": "amph13"
     },
     {
@@ -1396,7 +1390,7 @@ database = {
     {
       "name": "am-ph-15",
       "points": 266,
-      "image": "attack-modifiers/PH/am-ph-15.png",
+      "image": "attack-modifiers/PH/am-ph-14.png",
       "xws": "amph15"
     },
     {
@@ -1408,26 +1402,32 @@ database = {
     {
       "name": "am-ph-17",
       "points": 268,
-      "image": "attack-modifiers/PH/am-ph-17.png",
+      "image": "attack-modifiers/PH/am-ph-01.png",
       "xws": "amph17"
     },
     {
       "name": "am-ph-18",
       "points": 269,
-      "image": "attack-modifiers/PH/am-ph-18.png",
+      "image": "attack-modifiers/PH/am-ph-01.png",
       "xws": "amph18"
     },
     {
       "name": "am-ph-19",
       "points": 270,
-      "image": "attack-modifiers/PH/am-ph-19.png",
+      "image": "attack-modifiers/PH/am-ph-01.png",
       "xws": "amph19"
     },
     {
       "name": "am-ph-20",
       "points": 271,
-      "image": "attack-modifiers/PH/am-ph-20.png",
+      "image": "attack-modifiers/PH/am-ph-01.png",
       "xws": "amph20"
+    },
+    {
+      "name": "am-ph-01",
+      "points": 252,
+      "image": "attack-modifiers/PH/am-ph-01.png",
+      "xws": "amph01"
     },
     {
       "name": "am-qm-01",
