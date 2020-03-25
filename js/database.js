@@ -2278,7 +2278,7 @@ database = {
     {
       "name": "am-dr-02",
       "points": 413,
-      "image": "attack-modifiers/DR/am-dr-02.png",
+      "image": "attack-modifiers/DR/am-dr-01.png",
       "xws": "amdr02"
     },
     {
@@ -2290,7 +2290,7 @@ database = {
     {
       "name": "am-dr-04",
       "points": 415,
-      "image": "attack-modifiers/DR/am-dr-04.png",
+      "image": "attack-modifiers/DR/am-dr-03.png",
       "xws": "amdr04"
     },
     {
@@ -2344,7 +2344,7 @@ database = {
     {
       "name": "am-dr-13",
       "points": 424,
-      "image": "attack-modifiers/DR/am-dr-13.png",
+      "image": "attack-modifiers/DR/am-dr-12.png",
       "xws": "amdr13"
     },
     {
@@ -2356,7 +2356,7 @@ database = {
     {
       "name": "am-dr-15",
       "points": 426,
-      "image": "attack-modifiers/DR/am-dr-15.png",
+      "image": "attack-modifiers/DR/am-dr-14.png",
       "xws": "amdr15"
     }
   ],
