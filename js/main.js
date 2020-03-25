@@ -9,6 +9,7 @@ new Vue({
 
         /* General game information */ 
         turn: 1,
+        level: 1,
 
         /* Modifier information */
         modifiers : [],        
@@ -42,8 +43,9 @@ new Vue({
                 this.abilityCategory = null
             } else {
                 this.abilityCategory = param
+                this.abilityCategory.cards.sort((a, b) => a.level - b.level)
             }
-            this.abilityCategory.cards.sort((a, b) => a.level - b.level)
+            
         },
         loadDatabase: function() {
             currentId = 0
