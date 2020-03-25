@@ -157,7 +157,7 @@ new Vue({
 
         },
         shortRest: function() {
-            if (this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played).length >0) {
+            if (!this.longRestMode && this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played).length >0) {
                 var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed))
                 var cardIndexToDestroy = getRandomInt(cardsPlayed.length)    
                 cardsPlayed[cardIndexToDestroy].destroyed = true
