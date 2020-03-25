@@ -299,6 +299,7 @@
               </div>
             </div>
           </div>
+          
           <!-- CATEGORY DECK FRONT -->
           <div class="row flex-nowrap overflow-auto" v-if="modifier.name.substring(3,5) == modifierCategory">
             <div class="abilityContainer" v-for='card in modifier.cards'>
@@ -333,7 +334,8 @@
         </div>
 
         <!-- PER CATEGORY CARDS -->
-        <div v-if='abilityCategory != null' class="row scrollCardContainer flex-nowrap overflow-auto">
+        <!--<div v-if='abilityCategory != null' class="row scrollCardContainer flex-nowrap overflow-auto">-->
+          <div v-if='abilityCategory != null' class="row scrollCardContainer">
           <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards' v-if="i != 0">
             <div class="col mt-3">
               <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"

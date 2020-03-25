@@ -11,7 +11,7 @@ new Vue({
         turn: 1,
 
         /* Modifier information */
-        modifiers : null,        
+        modifiers : [],        
         modifierCategory: null,        
         modifiersChosen: [],
         modifiersDrawPile: [],
@@ -19,7 +19,7 @@ new Vue({
         lastDrawnModifier: null,
 
         /* Ability information */
-        abilities : null,
+        abilities : [],
         abilityCategory: null,
         abilitiesChosen: [],        
         twoAbilitiesSelected: [],
@@ -43,16 +43,13 @@ new Vue({
             } else {
                 this.abilityCategory = param
             }
+            this.abilityCategory.cards.sort((a, b) => a.level - b.level)
         },
         loadDatabase: function() {
-            this.modifiers = []
-            this.abilities = []
-            modifiers = database.attack_modifiers 
-            abilities = database.characters_abilities
-            currentId = null
+            currentId = 0
 
             modifier = null
-            modifiers.forEach(elem => {
+            attack_modifiers.forEach(elem => {
                 id = elem.name.substring(0,5)
                 if (id.endsWith('-')) {
                     id = elem.name.substring(0,4)
@@ -73,20 +70,9 @@ new Vue({
             })
             this.modifiers.push(modifier)
 
-            character = null
-            abilities.forEach(elem => {
-                if(elem.name.endsWith('-back')) {                    
-                    if (character != null) {
-                        this.abilities.push(character)
-                    }
-                    character = {name: '', cards: []}         
-                    character.name = elem.name.substring(0,2)                                        
-                }
-                character.cards.push(elem)                
-            })
+            this.abilities = abilities
 
-            this.abilities.push(character)
-        },
+        },        
         addModifier: function(card) {   
             this.modifiersChosen.push(card)
             this.modifiersDrawPile.push(card)
@@ -287,6 +273,10 @@ new Vue({
         },
         dismissGreenAlert: function(alert) {
             $('#greenAlert').hide()
+        },
+        printCategory: function(category) {
+            category.cards.forEach(card => card.level = parseInt(card.level))
+            console.log(JSON.stringify(category));
         }
     }, 
     beforeMount(){
