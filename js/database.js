@@ -932,12 +932,6 @@ database = {
       "xws": "amds15"
     },
     {
-      "name": "am-el-01",
-      "points": 189,
-      "image": "attack-modifiers/EL/am-el-01.png",
-      "xws": "amel01"
-    },
-    {
       "name": "am-el-02",
       "points": 190,
       "image": "attack-modifiers/EL/am-el-02.png",
@@ -946,19 +940,19 @@ database = {
     {
       "name": "am-el-03",
       "points": 191,
-      "image": "attack-modifiers/EL/am-el-03.png",
+      "image": "attack-modifiers/EL/am-el-02.png",
       "xws": "amel03"
     },
     {
       "name": "am-el-04",
       "points": 192,
-      "image": "attack-modifiers/EL/am-el-04.png",
+      "image": "attack-modifiers/EL/am-el-02.png",
       "xws": "amel04"
     },
     {
       "name": "am-el-05",
       "points": 193,
-      "image": "attack-modifiers/EL/am-el-05.png",
+      "image": "attack-modifiers/EL/am-el-02.png",
       "xws": "amel05"
     },
     {
@@ -970,19 +964,19 @@ database = {
     {
       "name": "am-el-07",
       "points": 195,
-      "image": "attack-modifiers/EL/am-el-07.png",
+      "image": "attack-modifiers/EL/am-el-06.png",
       "xws": "amel07"
     },
     {
       "name": "am-el-08",
       "points": 196,
-      "image": "attack-modifiers/EL/am-el-08.png",
+      "image": "attack-modifiers/EL/am-el-06.png",
       "xws": "amel08"
     },
     {
       "name": "am-el-09",
       "points": 197,
-      "image": "attack-modifiers/EL/am-el-09.png",
+      "image": "attack-modifiers/EL/am-el-06.png",
       "xws": "amel09"
     },
     {
@@ -1000,13 +994,13 @@ database = {
     {
       "name": "am-el-12",
       "points": 200,
-      "image": "attack-modifiers/EL/am-el-12.png",
+      "image": "attack-modifiers/EL/am-el-11.png",
       "xws": "amel12"
     },
     {
       "name": "am-el-13",
       "points": 201,
-      "image": "attack-modifiers/EL/am-el-13.png",
+      "image": "attack-modifiers/EL/am-el-11.png",
       "xws": "amel13"
     },
     {
@@ -1018,19 +1012,19 @@ database = {
     {
       "name": "am-el-15",
       "points": 203,
-      "image": "attack-modifiers/EL/am-el-15.png",
+      "image": "attack-modifiers/EL/am-el-14.png",
       "xws": "amel15"
     },
     {
       "name": "am-el-16",
       "points": 204,
-      "image": "attack-modifiers/EL/am-el-16.png",
+      "image": "attack-modifiers/EL/am-el-14.png",
       "xws": "amel16"
     },
     {
       "name": "am-el-17",
       "points": 205,
-      "image": "attack-modifiers/EL/am-el-17.png",
+      "image": "attack-modifiers/EL/am-el-14.png",
       "xws": "amel17"
     },
     {
@@ -1042,7 +1036,7 @@ database = {
     {
       "name": "am-el-19",
       "points": 207,
-      "image": "attack-modifiers/EL/am-el-19.png",
+      "image": "attack-modifiers/EL/am-el-18.png",
       "xws": "amel19"
     },
     {
@@ -1072,8 +1066,14 @@ database = {
     {
       "name": "am-el-24",
       "points": 212,
-      "image": "attack-modifiers/EL/am-el-24.png",
+      "image": "attack-modifiers/EL/am-el-01.png",
       "xws": "amel24"
+    },
+    {
+      "name": "am-el-01",
+      "points": 189,
+      "image": "attack-modifiers/EL/am-el-01.png",
+      "xws": "amel01"
     },
     {
       "name": "am-mt-01",
