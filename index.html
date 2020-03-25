@@ -351,7 +351,7 @@
             </div>
           </div>
         </div>
-        <h3>Level: <button v-for='theLevel in 9' class="btn btn-light" v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel"><h3>{{ theLevel }}</h3></button></h3>
+        <h3 v-if="abilityCategory != null">Level: <button v-for='theLevel in 9' class="btn btn-light" v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel"><h3>{{ theLevel }}</h3></button></h3>
 
       </div> <!-- main row ends -->
     </div> <!-- main container ends -->
