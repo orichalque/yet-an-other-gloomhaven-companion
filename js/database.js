@@ -730,13 +730,13 @@ database = {
     {
       "name": "am-ch-02",
       "points": 155,
-      "image": "attack-modifiers/CH/am-ch-02.png",
+      "image": "attack-modifiers/CH/am-ch-01.png",
       "xws": "amch02"
     },
     {
       "name": "am-ch-03",
       "points": 156,
-      "image": "attack-modifiers/CH/am-ch-03.png",
+      "image": "attack-modifiers/CH/am-ch-01.png",
       "xws": "amch03"
     },
     {
@@ -754,7 +754,7 @@ database = {
     {
       "name": "am-ch-06",
       "points": 159,
-      "image": "attack-modifiers/CH/am-ch-06.png",
+      "image": "attack-modifiers/CH/am-ch-05.png",
       "xws": "amch06"
     },
     {
@@ -766,7 +766,7 @@ database = {
     {
       "name": "am-ch-08",
       "points": 161,
-      "image": "attack-modifiers/CH/am-ch-08.png",
+      "image": "attack-modifiers/CH/am-ch-07.png",
       "xws": "amch08"
     },
     {
@@ -778,7 +778,7 @@ database = {
     {
       "name": "am-ch-10",
       "points": 163,
-      "image": "attack-modifiers/CH/am-ch-10.png",
+      "image": "attack-modifiers/CH/am-ch-09.png",
       "xws": "amch10"
     },
     {
@@ -790,7 +790,7 @@ database = {
     {
       "name": "am-ch-12",
       "points": 165,
-      "image": "attack-modifiers/CH/am-ch-12.png",
+      "image": "attack-modifiers/CH/am-ch-11.png",
       "xws": "amch12"
     },
     {
@@ -802,19 +802,19 @@ database = {
     {
       "name": "am-ch-14",
       "points": 167,
-      "image": "attack-modifiers/CH/am-ch-14.png",
+      "image": "attack-modifiers/CH/am-ch-13.png",
       "xws": "amch14"
     },
     {
       "name": "am-ch-15",
       "points": 168,
-      "image": "attack-modifiers/CH/am-ch-15.png",
+      "image": "attack-modifiers/CH/am-ch-13.png",
       "xws": "amch15"
     },
     {
       "name": "am-ch-16",
       "points": 169,
-      "image": "attack-modifiers/CH/am-ch-16.png",
+      "image": "attack-modifiers/CH/am-ch-13.png",
       "xws": "amch16"
     },
     {
@@ -826,7 +826,7 @@ database = {
     {
       "name": "am-ch-18",
       "points": 171,
-      "image": "attack-modifiers/CH/am-ch-18.png",
+      "image": "attack-modifiers/CH/am-ch-17.png",
       "xws": "amch18"
     },
     {
