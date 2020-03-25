@@ -3876,105 +3876,105 @@ abilities = [
               "points": 1,
               "image": "character-ability-cards/BE/blood-pact.png",
               "xws": "bloodpact",
-              "level": 0
+              "level": 1
           },
           {
               "name": "bone breaker",
               "points": 2,
               "image": "character-ability-cards/BE/bone-breaker.png",
               "xws": "bonebreaker",
-              "level": 0
+              "level": 8
           },
           {
               "name": "bounce back",
               "points": 3,
               "image": "character-ability-cards/BE/bounce-back.png",
               "xws": "bounceback",
-              "level": 0
+              "level": 1
           },
           {
               "name": "break the chains",
               "points": 4,
               "image": "character-ability-cards/BE/break-the-chains.png",
               "xws": "breakthechains",
-              "level": 0
+              "level": 2
           },
           {
               "name": "burning hatred",
               "points": 5,
               "image": "character-ability-cards/BE/burning-hatred.png",
               "xws": "burninghatred",
-              "level": 0
+              "level": 7
           },
           {
               "name": "careless charge",
               "points": 6,
               "image": "character-ability-cards/BE/careless-charge.png",
               "xws": "carelesscharge",
-              "level": 0
+              "level": 7
           },
           {
               "name": "cauterize",
               "points": 7,
               "image": "character-ability-cards/BE/cauterize.png",
               "xws": "cauterize",
-              "level": 0
+              "level": 1
           },
           {
               "name": "dazing wound",
               "points": 8,
               "image": "character-ability-cards/BE/dazing-wound.png",
               "xws": "dazingwound",
-              "level": 0
+              "level": 1
           },
           {
               "name": "defiance of death",
               "points": 9,
               "image": "character-ability-cards/BE/defiance-of-death.png",
               "xws": "defianceofdeath",
-              "level": 0
+              "level": 1
           },
           {
               "name": "devil horns",
               "points": 10,
               "image": "character-ability-cards/BE/devil-horns.png",
               "xws": "devilhorns",
-              "level": 0
+              "level": 6
           },
           {
               "name": "fatal fury",
               "points": 11,
               "image": "character-ability-cards/BE/fatal-fury.png",
               "xws": "fatalfury",
-              "level": 0
+              "level": 3
           },
           {
               "name": "final fight",
               "points": 12,
               "image": "character-ability-cards/BE/final-fight.png",
               "xws": "finalfight",
-              "level": 0
+              "level": 5
           },
           {
               "name": "flurry of axes",
               "points": 13,
               "image": "character-ability-cards/BE/flurry-of-axes.png",
               "xws": "flurryofaxes",
-              "level": 0
+              "level": 4
           },
           {
               "name": "from the brink",
               "points": 14,
               "image": "character-ability-cards/BE/from-the-brink.png",
               "xws": "fromthebrink",
-              "level": 0
+              "level": 1
           },
           {
               "name": "furious aid",
               "points": 15,
               "image": "character-ability-cards/BE/furious-aid.png",
               "xws": "furiousaid",
-              "level": 0
+              "level": 1
           },
           {
               "name": "glass hammer",
@@ -3988,14 +3988,14 @@ abilities = [
               "points": 17,
               "image": "character-ability-cards/BE/growing-rage.png",
               "xws": "growingrage",
-              "level": 0
+              "level": 1
           },
           {
               "name": "immortality",
               "points": 18,
               "image": "character-ability-cards/BE/immortality.png",
               "xws": "immortality",
-              "level": 0
+              "level": 9
           },
           {
               "name": "numb the pain",
@@ -4009,49 +4009,49 @@ abilities = [
               "points": 20,
               "image": "character-ability-cards/BE/reckless-offensive.png",
               "xws": "recklessoffensive",
-              "level": 0
+              "level": 2
           },
           {
               "name": "resolute stand",
               "points": 21,
               "image": "character-ability-cards/BE/resolute-stand.png",
               "xws": "resolutestand",
-              "level": 0
+              "level": 1
           },
           {
               "name": "seeing red",
               "points": 22,
               "image": "character-ability-cards/BE/seeing-red.png",
               "xws": "seeingred",
-              "level": 0
+              "level": 5
           },
           {
               "name": "shiny distraction",
               "points": 23,
               "image": "character-ability-cards/BE/shiny-distraction.png",
               "xws": "shinydistraction",
-              "level": 0
+              "level": 4
           },
           {
               "name": "spiked armor",
               "points": 24,
               "image": "character-ability-cards/BE/spiked-armor.png",
               "xws": "spikedarmor",
-              "level": 0
+              "level": 3
           },
           {
               "name": "strength in agony",
               "points": 25,
               "image": "character-ability-cards/BE/strength-in-agony.png",
               "xws": "strengthinagony",
-              "level": 0
+              "level": 1
           },
           {
               "name": "the maw of madness",
               "points": 26,
               "image": "character-ability-cards/BE/the-maw-of-madness.png",
               "xws": "themawofmadness",
-              "level": 0
+              "level": 9
           },
           {
               "name": "unbridled power",
@@ -4065,14 +4065,14 @@ abilities = [
               "points": 28,
               "image": "character-ability-cards/BE/unstoppable-destruction.png",
               "xws": "unstoppabledestruction",
-              "level": 0
+              "level": 6
           },
           {
               "name": "vengeful barrage",
               "points": 29,
               "image": "character-ability-cards/BE/vengeful-barrage.png",
               "xws": "vengefulbarrage",
-              "level": 0
+              "level": 8
           }
       ]
   },
@@ -4091,70 +4091,70 @@ abilities = [
               "points": 61,
               "image": "character-ability-cards/BS/bioluminescence.png",
               "xws": "bioluminescence",
-              "level": 0
+              "level": 5
           },
           {
               "name": "blood drain",
               "points": 62,
               "image": "character-ability-cards/BS/blood-drain.png",
               "xws": "blooddrain",
-              "level": 0
+              "level": 8
           },
           {
               "name": "bone daggers",
               "points": 63,
               "image": "character-ability-cards/BS/bone-daggers.png",
               "xws": "bonedaggers",
-              "level": 0
+              "level": 5
           },
           {
               "name": "call of the grave",
               "points": 64,
               "image": "character-ability-cards/BS/call-of-the-grave.png",
               "xws": "callofthegrave",
-              "level": 0
+              "level": 1
           },
           {
               "name": "corrupting parasites",
               "points": 65,
               "image": "character-ability-cards/BS/corrupting-parasites.png",
               "xws": "corruptingparasites",
-              "level": 0
+              "level": 1
           },
           {
               "name": "death march",
               "points": 66,
               "image": "character-ability-cards/BS/death-march.png",
               "xws": "deathmarch",
-              "level": 0
+              "level": 1
           },
           {
               "name": "deflecting blades",
               "points": 67,
               "image": "character-ability-cards/BS/deflecting-blades.png",
               "xws": "deflectingblades",
-              "level": 0
+              "level": 1
           },
           {
               "name": "engulfing stingers",
               "points": 68,
               "image": "character-ability-cards/BS/engulfing-stingers.png",
               "xws": "engulfingstingers",
-              "level": 0
+              "level": 1
           },
           {
               "name": "erosion",
               "points": 69,
               "image": "character-ability-cards/BS/erosion.png",
               "xws": "erosion",
-              "level": 0
+              "level": 6
           },
           {
               "name": "focused scourge",
               "points": 70,
               "image": "character-ability-cards/BS/focused-scourge.png",
               "xws": "focusedscourge",
-              "level": 0
+              "level": 8
           },
           {
               "name": "grasping advance",
@@ -4168,98 +4168,98 @@ abilities = [
               "points": 72,
               "image": "character-ability-cards/BS/hive-mind.png",
               "xws": "hivemind",
-              "level": 0
+              "level": 1
           },
           {
               "name": "incubation",
               "points": 73,
               "image": "character-ability-cards/BS/incubation.png",
               "xws": "incubation",
-              "level": 0
+              "level": 4
           },
           {
               "name": "infest",
               "points": 74,
               "image": "character-ability-cards/BS/infest.png",
               "xws": "infest",
-              "level": 0
+              "level": 2
           },
           {
               "name": "oasis",
               "points": 75,
               "image": "character-ability-cards/BS/oasis.png",
               "xws": "oasis",
-              "level": 0
+              "level": 9
           },
           {
               "name": "omniscient assault",
               "points": 76,
               "image": "character-ability-cards/BS/omniscient-assault.png",
               "xws": "omniscientassault",
-              "level": 0
+              "level": 1
           },
           {
               "name": "prismatic cyclone",
               "points": 77,
               "image": "character-ability-cards/BS/prismatic-cyclone.png",
               "xws": "prismaticcyclone",
-              "level": 0
+              "level": 6
           },
           {
               "name": "putrid grubs",
               "points": 78,
               "image": "character-ability-cards/BS/putrid-grubs.png",
               "xws": "putridgrubs",
-              "level": 0
+              "level": 3
           },
           {
               "name": "sand scythe",
               "points": 79,
               "image": "character-ability-cards/BS/sand-scythe.png",
               "xws": "sandscythe",
-              "level": 0
+              "level": 3
           },
           {
               "name": "scattered defense",
               "points": 80,
               "image": "character-ability-cards/BS/scattered-defense.png",
               "xws": "scattereddefense",
-              "level": 0
+              "level": 1
           },
           {
               "name": "solitary horde",
               "points": 81,
               "image": "character-ability-cards/BS/solitary-horde.png",
               "xws": "solitaryhorde",
-              "level": 0
+              "level": 7
           },
           {
               "name": "sunstroke",
               "points": 82,
               "image": "character-ability-cards/BS/sunstroke.png",
               "xws": "sunstroke",
-              "level": 0
+              "level": 7
           },
           {
               "name": "swarming minions",
               "points": 83,
               "image": "character-ability-cards/BS/swarming-minions.png",
               "xws": "swarmingminions",
-              "level": 0
+              "level": 1
           },
           {
               "name": "sword of tenacity",
               "points": 84,
               "image": "character-ability-cards/BS/sword-of-tenacity.png",
               "xws": "swordoftenacity",
-              "level": 0
+              "level": 4
           },
           {
               "name": "the storm's edge",
               "points": 85,
               "image": "character-ability-cards/BS/the-storms-edge.png",
               "xws": "thestormsedge",
-              "level": 0
+              "level": 1
           },
           {
               "name": "tomb of the immortal",
@@ -4280,63 +4280,63 @@ abilities = [
               "points": 88,
               "image": "character-ability-cards/BS/vampiric-tempest.png",
               "xws": "vampirictempest",
-              "level": 0
+              "level": 2
           },
           {
               "name": "venomous barbs",
               "points": 89,
               "image": "character-ability-cards/BS/venomous-barbs.png",
               "xws": "venomousbarbs",
-              "level": 0
+              "level": 1
           },
           {
               "name": "wasteland",
               "points": 90,
               "image": "character-ability-cards/BS/wasteland.png",
               "xws": "wasteland",
-              "level": 0
+              "level": 9
           },
           {
               "name": "lightning moths",
               "points": 574,
               "image": "character-ability-cards/BS/bioluminescence.png",
               "xws": "bioluminescence",
-              "level": 0
+              "level": 5
           },
           {
               "name": "soul leeches",
               "points": 575,
               "image": "character-ability-cards/BS/corrupting-parasites.png",
               "xws": "corruptingparasites",
-              "level": 0
+              "level": 1
           },
           {
               "name": "creeping beetles",
               "points": 576,
               "image": "character-ability-cards/BS/death-march.png",
               "xws": "deathmarch",
-              "level": 0
+              "level": 1
           },
           {
               "name": "angry wasps",
               "points": 577,
               "image": "character-ability-cards/BS/engulfing-stingers.png",
               "xws": "engulfingstingers",
-              "level": 0
+              "level": 1
           },
           {
               "name": "bloat maggots",
               "points": 578,
               "image": "character-ability-cards/BS/putrid-grubs.png",
               "xws": "putridgrubs",
-              "level": 0
+              "level": 3
           },
           {
               "name": "dueling hornets",
               "points": 579,
               "image": "character-ability-cards/BS/solitary-horde.png",
               "xws": "solitaryhorde",
-              "level": 0
+              "level": 7
           },
           {
               "name": "steel scarabs",
@@ -4350,7 +4350,7 @@ abilities = [
               "points": 581,
               "image": "character-ability-cards/BS/wasteland.png",
               "xws": "wasteland",
-              "level": 0
+              "level": 9
           }
       ]
   },
@@ -4369,14 +4369,14 @@ abilities = [
               "points": 91,
               "image": "character-ability-cards/BT/ancient-ward.png",
               "xws": "ancientward",
-              "level": 0
+              "level": 4
           },
           {
               "name": "blood hunger",
               "points": 92,
               "image": "character-ability-cards/BT/blood-hunger.png",
               "xws": "bloodhunger",
-              "level": 0
+              "level": 6
           },
           {
               "name": "borrowed essence",
@@ -4390,35 +4390,35 @@ abilities = [
               "points": 95,
               "image": "character-ability-cards/BT/concentrated-rage.png",
               "xws": "concentratedrage",
-              "level": 0
+              "level": 1
           },
           {
               "name": "disappearing wounds",
               "points": 96,
               "image": "character-ability-cards/BT/disappearing-wounds.png",
               "xws": "disappearingwounds",
-              "level": 0
+              "level": 1
           },
           {
               "name": "disorienting roar",
               "points": 97,
               "image": "character-ability-cards/BT/disorienting-roar.png",
               "xws": "disorientingroar",
-              "level": 0
+              "level": 1
           },
           {
               "name": "earthen spikes",
               "points": 98,
               "image": "character-ability-cards/BT/earthen-spikes.png",
               "xws": "earthenspikes",
-              "level": 0
+              "level": 2
           },
           {
               "name": "energizing strike",
               "points": 99,
               "image": "character-ability-cards/BT/energizing-strike.png",
               "xws": "energizingstrike",
-              "level": 0
+              "level": 2
           },
           {
               "name": "focused aggression",
@@ -4432,77 +4432,77 @@ abilities = [
               "points": 101,
               "image": "character-ability-cards/BT/forceful-swipe.png",
               "xws": "forcefulswipe",
-              "level": 0
+              "level": 1
           },
           {
               "name": "howling bolts",
               "points": 102,
               "image": "character-ability-cards/BT/howling-bolts.png",
               "xws": "howlingbolts",
-              "level": 0
+              "level": 1
           },
           {
               "name": "jaws of death",
               "points": 103,
               "image": "character-ability-cards/BT/jaws-of-death.png",
               "xws": "jawsofdeath",
-              "level": 0
+              "level": 9
           },
           {
               "name": "lash out",
               "points": 104,
               "image": "character-ability-cards/BT/lash-out.png",
               "xws": "lashout",
-              "level": 0
+              "level": 8
           },
           {
               "name": "maul",
               "points": 105,
               "image": "character-ability-cards/BT/maul.png",
               "xws": "maul",
-              "level": 0
+              "level": 1
           },
           {
               "name": "natural remedy",
               "points": 106,
               "image": "character-ability-cards/BT/natural-remedy.png",
               "xws": "naturalremedy",
-              "level": 0
+              "level": 8
           },
           {
               "name": "patch fur",
               "points": 107,
               "image": "character-ability-cards/BT/patch-fur.png",
               "xws": "patchfur",
-              "level": 0
+              "level": 1
           },
           {
               "name": "primal blessing",
               "points": 108,
               "image": "character-ability-cards/BT/primal-blessing.png",
               "xws": "primalblessing",
-              "level": 0
+              "level": 6
           },
           {
               "name": "punch through",
               "points": 109,
               "image": "character-ability-cards/BT/punch-through.png",
               "xws": "punchthrough",
-              "level": 0
+              "level": 4
           },
           {
               "name": "rampage",
               "points": 110,
               "image": "character-ability-cards/BT/rampage.png",
               "xws": "rampage",
-              "level": 0
+              "level": 5
           },
           {
               "name": "relentless ally",
               "points": 111,
               "image": "character-ability-cards/BT/relentless-ally.png",
               "xws": "relentlessally",
-              "level": 0
+              "level": 1
           },
           {
               "name": "soaring ally",
@@ -4516,63 +4516,63 @@ abilities = [
               "points": 113,
               "image": "character-ability-cards/BT/spirit-swap.png",
               "xws": "spiritswap",
-              "level": 0
+              "level": 1
           },
           {
               "name": "stone sigil",
               "points": 114,
               "image": "character-ability-cards/BT/stone-sigil.png",
               "xws": "stonesigil",
-              "level": 0
+              "level": 5
           },
           {
               "name": "storm sigil",
               "points": 115,
               "image": "character-ability-cards/BT/storm-sigil.png",
               "xws": "stormsigil",
-              "level": 0
+              "level": 7
           },
           {
               "name": "tribal sigil",
               "points": 116,
               "image": "character-ability-cards/BT/tribal-sigil.png",
               "xws": "tribalsigil",
-              "level": 0
+              "level": 9
           },
           {
               "name": "tyrannical force",
               "points": 117,
               "image": "character-ability-cards/BT/tyrannical-force.png",
               "xws": "tyrannicalforce",
-              "level": 0
+              "level": 7
           },
           {
               "name": "unstoppable beast",
               "points": 118,
               "image": "character-ability-cards/BT/unstoppable-beast.png",
               "xws": "unstoppablebeast",
-              "level": 0
+              "level": 3
           },
           {
               "name": "venomous ally",
               "points": 119,
               "image": "character-ability-cards/BT/venomous-ally.png",
               "xws": "venomousally",
-              "level": 0
+              "level": 1
           },
           {
               "name": "vicious ally",
               "points": 120,
               "image": "character-ability-cards/BT/vicious-ally.png",
               "xws": "viciousally",
-              "level": 0
+              "level": 3
           },
           {
               "name": "tattered wolf",
               "points": 582,
               "image": "character-ability-cards/BT/relentless-ally.png",
               "xws": "relentlessally",
-              "level": 0
+              "level": 1
           },
           {
               "name": "red falcon",
@@ -4586,35 +4586,35 @@ abilities = [
               "points": 584,
               "image": "character-ability-cards/BT/stone-sigil.png",
               "xws": "stonesigil",
-              "level": 0
+              "level": 5
           },
           {
               "name": "wind totem",
               "points": 585,
               "image": "character-ability-cards/BT/storm-sigil.png",
               "xws": "stormsigil",
-              "level": 0
+              "level": 7
           },
           {
               "name": "spirit banner",
               "points": 586,
               "image": "character-ability-cards/BT/tribal-sigil.png",
               "xws": "tribalsigil",
-              "level": 0
+              "level": 9
           },
           {
               "name": "green adder",
               "points": 587,
               "image": "character-ability-cards/BT/venomous-ally.png",
               "xws": "venomousally",
-              "level": 0
+              "level": 1
           },
           {
               "name": "swamp alligator",
               "points": 588,
               "image": "character-ability-cards/BT/vicious-ally.png",
               "xws": "viciousally",
-              "level": 0
+              "level": 3
           },
           {
               "name": "bear-reference",
@@ -4640,77 +4640,77 @@ abilities = [
               "points": 152,
               "image": "character-ability-cards/DS/a-moments-peace.png",
               "xws": "amomentspeace",
-              "level": 0
+              "level": 1
           },
           {
               "name": "camouflage",
               "points": 153,
               "image": "character-ability-cards/DS/camouflage.png",
               "xws": "camouflage",
-              "level": 0
+              "level": 6
           },
           {
               "name": "crashing wave",
               "points": 154,
               "image": "character-ability-cards/DS/crashing-wave.png",
               "xws": "crashingwave",
-              "level": 0
+              "level": 7
           },
           {
               "name": "crippling noose",
               "points": 155,
               "image": "character-ability-cards/DS/crippling-noose.png",
               "xws": "cripplingnoose",
-              "level": 0
+              "level": 1
           },
           {
               "name": "darkened skies",
               "points": 156,
               "image": "character-ability-cards/DS/darkened-skies.png",
               "xws": "darkenedskies",
-              "level": 0
+              "level": 3
           },
           {
               "name": "detonation",
               "points": 157,
               "image": "character-ability-cards/DS/detonation.png",
               "xws": "detonation",
-              "level": 0
+              "level": 1
           },
           {
               "name": "expose",
               "points": 159,
               "image": "character-ability-cards/DS/expose.png",
               "xws": "expose",
-              "level": 0
+              "level": 2
           },
           {
               "name": "felling swoop",
               "points": 160,
               "image": "character-ability-cards/DS/felling-swoop.png",
               "xws": "fellingswoop",
-              "level": 0
+              "level": 1
           },
           {
               "name": "feral instincts",
               "points": 161,
               "image": "character-ability-cards/DS/feral-instincts.png",
               "xws": "feralinstincts",
-              "level": 0
+              "level": 8
           },
           {
               "name": "flight of flame",
               "points": 162,
               "image": "character-ability-cards/DS/flight-of-flame.png",
               "xws": "flightofflame",
-              "level": 0
+              "level": 4
           },
           {
               "name": "foot snare",
               "points": 163,
               "image": "character-ability-cards/DS/foot-snare.png",
               "xws": "footsnare",
-              "level": 0
+              "level": 1
           },
           {
               "name": "fresh kill",
@@ -4724,84 +4724,84 @@ abilities = [
               "points": 165,
               "image": "character-ability-cards/DS/frightening-curse.png",
               "xws": "frighteningcurse",
-              "level": 0
+              "level": 1
           },
           {
               "name": "impending end",
               "points": 166,
               "image": "character-ability-cards/DS/impending-end.png",
               "xws": "impendingend",
-              "level": 0
+              "level": 7
           },
           {
               "name": "inescapable fate",
               "points": 167,
               "image": "character-ability-cards/DS/inescapable-fate.png",
               "xws": "inescapablefate",
-              "level": 0
+              "level": 5
           },
           {
               "name": "lead to slaughter",
               "points": 168,
               "image": "character-ability-cards/DS/lead-to-slaughter.png",
               "xws": "leadtoslaughter",
-              "level": 0
+              "level": 9
           },
           {
               "name": "multi-pronged assault",
               "points": 169,
               "image": "character-ability-cards/DS/multi-pronged-assault.png",
               "xws": "multiprongedassault",
-              "level": 0
+              "level": 1
           },
           {
               "name": "nature's hunger",
               "points": 170,
               "image": "character-ability-cards/DS/natures-hunger.png",
               "xws": "natureshunger",
-              "level": 0
+              "level": 6
           },
           {
               "name": "predator and prey",
               "points": 171,
               "image": "character-ability-cards/DS/predator-and-prey.png",
               "xws": "predatorandprey",
-              "level": 0
+              "level": 9
           },
           {
               "name": "press the attack",
               "points": 172,
               "image": "character-ability-cards/DS/press-the-attack.png",
               "xws": "presstheattack",
-              "level": 0
+              "level": 3
           },
           {
               "name": "race to the grave",
               "points": 173,
               "image": "character-ability-cards/DS/race-to-the-grave.png",
               "xws": "racetothegrave",
-              "level": 0
+              "level": 1
           },
           {
               "name": "rain of arrows",
               "points": 174,
               "image": "character-ability-cards/DS/rain-of-arrows.png",
               "xws": "rainofarrows",
-              "level": 0
+              "level": 1
           },
           {
               "name": "relentless offensive",
               "points": 175,
               "image": "character-ability-cards/DS/relentless-offensive.png",
               "xws": "relentlessoffensive",
-              "level": 0
+              "level": 2
           },
           {
               "name": "rising momentum",
               "points": 176,
               "image": "character-ability-cards/DS/rising-momentum.png",
               "xws": "risingmomentum",
-              "level": 0
+              "level": 8
           },
           {
               "name": "sap life",
@@ -4815,63 +4815,63 @@ abilities = [
               "points": 178,
               "image": "character-ability-cards/DS/singular-focus.png",
               "xws": "singularfocus",
-              "level": 0
+              "level": 4
           },
           {
               "name": "solid bow",
               "points": 179,
               "image": "character-ability-cards/DS/solid-bow.png",
               "xws": "solidbow",
-              "level": 0
+              "level": 1
           },
           {
               "name": "swift trickery",
               "points": 180,
               "image": "character-ability-cards/DS/swift-trickery.png",
               "xws": "swifttrickery",
-              "level": 0
+              "level": 1
           },
           {
               "name": "the hunt begins",
               "points": 181,
               "image": "character-ability-cards/DS/the-hunt-begins.png",
               "xws": "thehuntbegins",
-              "level": 0
+              "level": 8
           },
           {
               "name": "vital charge",
               "points": 182,
               "image": "character-ability-cards/DS/vital-charge.png",
               "xws": "vitalcharge",
-              "level": 0
+              "level": 1
           },
           {
               "name": "wild command",
               "points": 183,
               "image": "character-ability-cards/DS/wild-command.png",
               "xws": "wildcommand",
-              "level": 0
+              "level": 5
           },
           {
               "name": "war hawk",
               "points": 589,
               "image": "character-ability-cards/DS/felling-swoop.png",
               "xws": "fellingswoop",
-              "level": 0
+              "level": 1
           },
           {
               "name": "giant toad",
               "points": 590,
               "image": "character-ability-cards/DS/natures-hunger.png",
               "xws": "natureshunger",
-              "level": 0
+              "level": 6
           },
           {
               "name": "spitting cobra",
               "points": 591,
               "image": "character-ability-cards/DS/predator-and-prey.png",
               "xws": "predatorandprey",
-              "level": 0
+              "level": 9
           },
           {
               "name": "vicious jackal",
@@ -4885,7 +4885,7 @@ abilities = [
               "points": 593,
               "image": "character-ability-cards/DS/vital-charge.png",
               "xws": "vitalcharge",
-              "level": 0
+              "level": 1
           }
       ]
   },
@@ -4904,7 +4904,7 @@ abilities = [
               "points": 184,
               "image": "character-ability-cards/EL/boiling-arc.png",
               "xws": "boilingarc",
-              "level": 0
+              "level": 2
           },
           {
               "name": "brilliant flash",
@@ -4918,28 +4918,28 @@ abilities = [
               "points": 186,
               "image": "character-ability-cards/EL/burial.png",
               "xws": "burial",
-              "level": 0
+              "level": 3
           },
           {
               "name": "chain lightning",
               "points": 187,
               "image": "character-ability-cards/EL/chain-lightning.png",
               "xws": "chainlightning",
-              "level": 0
+              "level": 3
           },
           {
               "name": "crystallizing blast",
               "points": 188,
               "image": "character-ability-cards/EL/crystallizing-blast.png",
               "xws": "crystallizingblast",
-              "level": 0
+              "level": 2
           },
           {
               "name": "elemental aegis",
               "points": 190,
               "image": "character-ability-cards/EL/elemental-aegis.png",
               "xws": "elementalaegis",
-              "level": 0
+              "level": 8
           },
           {
               "name": "encompassing shadow",
@@ -4953,63 +4953,63 @@ abilities = [
               "points": 192,
               "image": "character-ability-cards/EL/eternal-equilibrium.png",
               "xws": "eternalequilibrium",
-              "level": 0
+              "level": 9
           },
           {
               "name": "ethereal manifestation",
               "points": 193,
               "image": "character-ability-cards/EL/ethereal-manifestation.png",
               "xws": "etherealmanifestation",
-              "level": 0
+              "level": 9
           },
           {
               "name": "eye of the hurricane",
               "points": 194,
               "image": "character-ability-cards/EL/eye-of-the-hurricane.png",
               "xws": "eyeofthehurricane",
-              "level": 0
+              "level": 6
           },
           {
               "name": "formless power",
               "points": 195,
               "image": "character-ability-cards/EL/formless-power.png",
               "xws": "formlesspower",
-              "level": 0
+              "level": 1
           },
           {
               "name": "frigid torrent",
               "points": 196,
               "image": "character-ability-cards/EL/frigid-torrent.png",
               "xws": "frigidtorrent",
-              "level": 0
+              "level": 1
           },
           {
               "name": "gravel vortex",
               "points": 197,
               "image": "character-ability-cards/EL/gravel-vortex.png",
               "xws": "gravelvortex",
-              "level": 0
+              "level": 4
           },
           {
               "name": "ice spikes",
               "points": 198,
               "image": "character-ability-cards/EL/ice-spikes.png",
               "xws": "icespikes",
-              "level": 0
+              "level": 1
           },
           {
               "name": "infernal vortex",
               "points": 199,
               "image": "character-ability-cards/EL/infernal-vortex.png",
               "xws": "infernalvortex",
-              "level": 0
+              "level": 1
           },
           {
               "name": "lava eruption",
               "points": 200,
               "image": "character-ability-cards/EL/lava-eruption.png",
               "xws": "lavaeruption",
-              "level": 0
+              "level": 1
           },
           {
               "name": "malleable evocation",
@@ -5023,98 +5023,98 @@ abilities = [
               "points": 202,
               "image": "character-ability-cards/EL/obsidian-shards.png",
               "xws": "obsidianshards",
-              "level": 0
+              "level": 5
           },
           {
               "name": "pragmatic reinforcement",
               "points": 203,
               "image": "character-ability-cards/EL/pragmatic-reinforcement.png",
               "xws": "pragmaticreinforcement",
-              "level": 0
+              "level": 7
           },
           {
               "name": "primal duality",
               "points": 204,
               "image": "character-ability-cards/EL/primal-duality.png",
               "xws": "primalduality",
-              "level": 0
+              "level": 4
           },
           {
               "name": "pure augmentation",
               "points": 205,
               "image": "character-ability-cards/EL/pure-augmentation.png",
               "xws": "pureaugmentation",
-              "level": 0
+              "level": 1
           },
           {
               "name": "raw enhancement",
               "points": 206,
               "image": "character-ability-cards/EL/raw-enhancement.png",
               "xws": "rawenhancement",
-              "level": 0
+              "level": 1
           },
           {
               "name": "shaping the ether",
               "points": 207,
               "image": "character-ability-cards/EL/shaping-the-ether.png",
               "xws": "shapingtheether",
-              "level": 0
+              "level": 1
           },
           {
               "name": "simulacrum",
               "points": 208,
               "image": "character-ability-cards/EL/simulacrum.png",
               "xws": "simulacrum",
-              "level": 0
+              "level": 6
           },
           {
               "name": "stoking hail",
               "points": 209,
               "image": "character-ability-cards/EL/stoking-hail.png",
               "xws": "stokinghail",
-              "level": 0
+              "level": 1
           },
           {
               "name": "tremulant cyclone",
               "points": 210,
               "image": "character-ability-cards/EL/tremulant-cyclone.png",
               "xws": "tremulantcyclone",
-              "level": 0
+              "level": 1
           },
           {
               "name": "vengeance",
               "points": 211,
               "image": "character-ability-cards/EL/vengeance.png",
               "xws": "vengeance",
-              "level": 0
+              "level": 7
           },
           {
               "name": "volatile consumption",
               "points": 212,
               "image": "character-ability-cards/EL/volatile-consumption.png",
               "xws": "volatileconsumption",
-              "level": 0
+              "level": 8
           },
           {
               "name": "winter's edge",
               "points": 213,
               "image": "character-ability-cards/EL/winters-edge.png",
               "xws": "wintersedge",
-              "level": 0
+              "level": 5
           },
           {
               "name": "mana sphere",
               "points": 594,
               "image": "character-ability-cards/EL/ethereal-manifestation.png",
               "xws": "etherealmanifestation",
-              "level": 0
+              "level": 9
           },
           {
               "name": "doppelganger",
               "points": 595,
               "image": "character-ability-cards/EL/simulacrum.png",
               "xws": "simulacrum",
-              "level": 0
+              "level": 6
           }
       ]
   },
@@ -5133,42 +5133,42 @@ abilities = [
               "points": 244,
               "image": "character-ability-cards/NS/angel-of-death.png",
               "xws": "angelofdeath",
-              "level": 0
+              "level": 9
           },
           {
               "name": "armor of the night",
               "points": 245,
               "image": "character-ability-cards/NS/armor-of-the-night.png",
               "xws": "armorofthenight",
-              "level": 0
+              "level": 3
           },
           {
               "name": "black arrow",
               "points": 246,
               "image": "character-ability-cards/NS/black-arrow.png",
               "xws": "blackarrow",
-              "level": 0
+              "level": 5
           },
           {
               "name": "black knives",
               "points": 247,
               "image": "character-ability-cards/NS/black-knives.png",
               "xws": "blackknives",
-              "level": 0
+              "level": 1
           },
           {
               "name": "claws of the night",
               "points": 248,
               "image": "character-ability-cards/NS/claws-of-the-night.png",
               "xws": "clawsofthenight",
-              "level": 0
+              "level": 5
           },
           {
               "name": "cloak of shade",
               "points": 249,
               "image": "character-ability-cards/NS/cloak-of-shade.png",
               "xws": "cloakofshade",
-              "level": 0
+              "level": 1
           },
           {
               "name": "concealed dominance",
@@ -5182,7 +5182,7 @@ abilities = [
               "points": 251,
               "image": "character-ability-cards/NS/dancing-shadows.png",
               "xws": "dancingshadows",
-              "level": 0
+              "level": 1
           },
           {
               "name": "dark cloud",
@@ -5196,126 +5196,126 @@ abilities = [
               "points": 253,
               "image": "character-ability-cards/NS/doomed-breeze.png",
               "xws": "doomedbreeze",
-              "level": 0
+              "level": 1
           },
           {
               "name": "empowering void",
               "points": 254,
               "image": "character-ability-cards/NS/empowering-void.png",
               "xws": "empoweringvoid",
-              "level": 0
+              "level": 1
           },
           {
               "name": "enervating wound",
               "points": 255,
               "image": "character-ability-cards/NS/enervating-wound.png",
               "xws": "enervatingwound",
-              "level": 0
+              "level": 1
           },
           {
               "name": "eyes of the night",
               "points": 256,
               "image": "character-ability-cards/NS/eyes-of-the-night.png",
               "xws": "eyesofthenight",
-              "level": 0
+              "level": 7
           },
           {
               "name": "gloom darts",
               "points": 257,
               "image": "character-ability-cards/NS/gloom-darts.png",
               "xws": "gloomdarts",
-              "level": 0
+              "level": 8
           },
           {
               "name": "grim sustenance",
               "points": 258,
               "image": "character-ability-cards/NS/grim-sustenance.png",
               "xws": "grimsustenance",
-              "level": 0
+              "level": 4
           },
           {
               "name": "lurking ruin",
               "points": 259,
               "image": "character-ability-cards/NS/lurking-ruin.png",
               "xws": "lurkingruin",
-              "level": 0
+              "level": 8
           },
           {
               "name": "nightfall",
               "points": 260,
               "image": "character-ability-cards/NS/nightfall.png",
               "xws": "nightfall",
-              "level": 0
+              "level": 4
           },
           {
               "name": "prepare for the kill",
               "points": 262,
               "image": "character-ability-cards/NS/prepare-for-the-kill.png",
               "xws": "prepareforthekill",
-              "level": 0
+              "level": 2
           },
           {
               "name": "quiet frenzy",
               "points": 263,
               "image": "character-ability-cards/NS/quiet-frenzy.png",
               "xws": "quietfrenzy",
-              "level": 0
+              "level": 7
           },
           {
               "name": "silent force",
               "points": 264,
               "image": "character-ability-cards/NS/silent-force.png",
               "xws": "silentforce",
-              "level": 0
+              "level": 1
           },
           {
               "name": "smoke step",
               "points": 265,
               "image": "character-ability-cards/NS/smoke-step.png",
               "xws": "smokestep",
-              "level": 0
+              "level": 1
           },
           {
               "name": "soulfire",
               "points": 266,
               "image": "character-ability-cards/NS/soulfire.png",
               "xws": "soulfire",
-              "level": 0
+              "level": 2
           },
           {
               "name": "spirit of the night",
               "points": 267,
               "image": "character-ability-cards/NS/spirit-of-the-night.png",
               "xws": "spiritofthenight",
-              "level": 0
+              "level": 1
           },
           {
               "name": "swallowed by fear",
               "points": 268,
               "image": "character-ability-cards/NS/swallowed-by-fear.png",
               "xws": "swallowedbyfear",
-              "level": 0
+              "level": 6
           },
           {
               "name": "terror blade",
               "points": 269,
               "image": "character-ability-cards/NS/terror-blade.png",
               "xws": "terrorblade",
-              "level": 0
+              "level": 3
           },
           {
               "name": "unseen dread",
               "points": 270,
               "image": "character-ability-cards/NS/unseen-dread.png",
               "xws": "unseendread",
-              "level": 0
+              "level": 6
           },
           {
               "name": "voice of the night",
               "points": 271,
               "image": "character-ability-cards/NS/voice-of-the-night.png",
               "xws": "voiceofthenight",
-              "level": 0
+              "level": 9
           },
           {
               "name": "wings of the night",
@@ -5341,35 +5341,35 @@ abilities = [
               "points": 273,
               "image": "character-ability-cards/PH/accelerated-end.png",
               "xws": "acceleratedend",
-              "level": 0
+              "level": 5
           },
           {
               "name": "airborne toxin",
               "points": 274,
               "image": "character-ability-cards/PH/airborne-toxin.png",
               "xws": "airbornetoxin",
-              "level": 0
+              "level": 7
           },
           {
               "name": "baneful hex",
               "points": 275,
               "image": "character-ability-cards/PH/baneful-hex.png",
               "xws": "banefulhex",
-              "level": 0
+              "level": 7
           },
           {
               "name": "biting gnats",
               "points": 276,
               "image": "character-ability-cards/PH/biting-gnats.png",
               "xws": "bitinggnats",
-              "level": 0
+              "level": 1
           },
           {
               "name": "black tides",
               "points": 277,
               "image": "character-ability-cards/PH/black-tides.png",
               "xws": "blacktides",
-              "level": 0
+              "level": 6
           },
           {
               "name": "blistering vortex",
@@ -5383,14 +5383,14 @@ abilities = [
               "points": 279,
               "image": "character-ability-cards/PH/convert-the-flock.png",
               "xws": "converttheflock",
-              "level": 0
+              "level": 9
           },
           {
               "name": "creeping curse",
               "points": 280,
               "image": "character-ability-cards/PH/creeping-curse.png",
               "xws": "creepingcurse",
-              "level": 0
+              "level": 1
           },
           {
               "name": "epidemic",
@@ -5404,119 +5404,119 @@ abilities = [
               "points": 282,
               "image": "character-ability-cards/PH/fetid-flurry.png",
               "xws": "fetidflurry",
-              "level": 0
+              "level": 3
           },
           {
               "name": "foul wind",
               "points": 283,
               "image": "character-ability-cards/PH/foul-wind.png",
               "xws": "foulwind",
-              "level": 0
+              "level": 1
           },
           {
               "name": "gathering doom",
               "points": 284,
               "image": "character-ability-cards/PH/gathering-doom.png",
               "xws": "gatheringdoom",
-              "level": 0
+              "level": 1
           },
           {
               "name": "grasping vermin",
               "points": 285,
               "image": "character-ability-cards/PH/grasping-vermin.png",
               "xws": "graspingvermin",
-              "level": 0
+              "level": 1
           },
           {
               "name": "grim bargain",
               "points": 286,
               "image": "character-ability-cards/PH/grim-bargain.png",
               "xws": "grimbargain",
-              "level": 0
+              "level": 8
           },
           {
               "name": "mass extinction",
               "points": 287,
               "image": "character-ability-cards/PH/mass-extinction.png",
               "xws": "massextinction",
-              "level": 0
+              "level": 9
           },
           {
               "name": "nightmarish affliction",
               "points": 288,
               "image": "character-ability-cards/PH/nightmarish-affliction.png",
               "xws": "nightmarishaffliction",
-              "level": 0
+              "level": 4
           },
           {
               "name": "paralyzing bite",
               "points": 289,
               "image": "character-ability-cards/PH/paralyzing-bite.png",
               "xws": "paralyzingbite",
-              "level": 0
+              "level": 1
           },
           {
               "name": "rot maggots",
               "points": 291,
               "image": "character-ability-cards/PH/rot-maggots.png",
               "xws": "rotmaggots",
-              "level": 0
+              "level": 2
           },
           {
               "name": "scattered terror",
               "points": 292,
               "image": "character-ability-cards/PH/scattered-terror.png",
               "xws": "scatteredterror",
-              "level": 0
+              "level": 1
           },
           {
               "name": "spreading scourge",
               "points": 293,
               "image": "character-ability-cards/PH/spreading-scourge.png",
               "xws": "spreadingscourge",
-              "level": 0
+              "level": 8
           },
           {
               "name": "spread the plague",
               "points": 294,
               "image": "character-ability-cards/PH/spread-the-plague.png",
               "xws": "spreadtheplague",
-              "level": 0
+              "level": 1
           },
           {
               "name": "stinging cloud",
               "points": 295,
               "image": "character-ability-cards/PH/stinging-cloud.png",
               "xws": "stingingcloud",
-              "level": 0
+              "level": 6
           },
           {
               "name": "storm of wings",
               "points": 296,
               "image": "character-ability-cards/PH/storm-of-wings.png",
               "xws": "stormofwings",
-              "level": 0
+              "level": 4
           },
           {
               "name": "succumb to the gift",
               "points": 297,
               "image": "character-ability-cards/PH/succumb-to-the-gift.png",
               "xws": "succumbtothegift",
-              "level": 0
+              "level": 3
           },
           {
               "name": "under the skin",
               "points": 298,
               "image": "character-ability-cards/PH/under-the-skin.png",
               "xws": "undertheskin",
-              "level": 0
+              "level": 2
           },
           {
               "name": "vile pestilence",
               "points": 299,
               "image": "character-ability-cards/PH/vile-pestilence.png",
               "xws": "vilepestilence",
-              "level": 0
+              "level": 1
           },
           {
               "name": "virulent strain",
@@ -5530,21 +5530,21 @@ abilities = [
               "points": 301,
               "image": "character-ability-cards/PH/willing-sacrifice.png",
               "xws": "willingsacrifice",
-              "level": 0
+              "level": 5
           },
           {
               "name": "winged congregation",
               "points": 302,
               "image": "character-ability-cards/PH/winged-congregation.png",
               "xws": "wingedcongregation",
-              "level": 0
+              "level": 1
           },
           {
               "name": "wretched swarm",
               "points": 303,
               "image": "character-ability-cards/PH/wretched-swarm.png",
               "xws": "wretchedswarm",
-              "level": 0
+              "level": 1
           }
       ]
   },
@@ -5563,42 +5563,42 @@ abilities = [
               "points": 304,
               "image": "character-ability-cards/QM/bag-of-holding.png",
               "xws": "bagofholding",
-              "level": 0
+              "level": 9
           },
           {
               "name": "bladed boomerang",
               "points": 305,
               "image": "character-ability-cards/QM/bladed-boomerang.png",
               "xws": "bladedboomerang",
-              "level": 0
+              "level": 2
           },
           {
               "name": "catastrophic bomb",
               "points": 306,
               "image": "character-ability-cards/QM/catastrophic-bomb.png",
               "xws": "catastrophicbomb",
-              "level": 0
+              "level": 6
           },
           {
               "name": "cleaving axe",
               "points": 307,
               "image": "character-ability-cards/QM/cleaving-axe.png",
               "xws": "cleavingaxe",
-              "level": 0
+              "level": 1
           },
           {
               "name": "continual supply",
               "points": 308,
               "image": "character-ability-cards/QM/continual-supply.png",
               "xws": "continualsupply",
-              "level": 0
+              "level": 3
           },
           {
               "name": "crippling bow",
               "points": 309,
               "image": "character-ability-cards/QM/crippling-bow.png",
               "xws": "cripplingbow",
-              "level": 0
+              "level": 1
           },
           {
               "name": "crushing hammer",
@@ -5612,84 +5612,84 @@ abilities = [
               "points": 311,
               "image": "character-ability-cards/QM/fortified-position.png",
               "xws": "fortifiedposition",
-              "level": 0
+              "level": 8
           },
           {
               "name": "giant club",
               "points": 312,
               "image": "character-ability-cards/QM/giant-club.png",
               "xws": "giantclub",
-              "level": 0
+              "level": 4
           },
           {
               "name": "hastened step",
               "points": 313,
               "image": "character-ability-cards/QM/hastened-step.png",
               "xws": "hastenedstep",
-              "level": 0
+              "level": 1
           },
           {
               "name": "impaling spear",
               "points": 314,
               "image": "character-ability-cards/QM/impaling-spear.png",
               "xws": "impalingspear",
-              "level": 0
+              "level": 1
           },
           {
               "name": "iron bulwark",
               "points": 315,
               "image": "character-ability-cards/QM/iron-bulwark.png",
               "xws": "ironbulwark",
-              "level": 0
+              "level": 1
           },
           {
               "name": "oversized pack",
               "points": 316,
               "image": "character-ability-cards/QM/oversized-pack.png",
               "xws": "oversizedpack",
-              "level": 0
+              "level": 1
           },
           {
               "name": "portable ballista",
               "points": 317,
               "image": "character-ability-cards/QM/portable-ballista.png",
               "xws": "portableballista",
-              "level": 0
+              "level": 8
           },
           {
               "name": "proficiency",
               "points": 318,
               "image": "character-ability-cards/QM/proficiency.png",
               "xws": "proficiency",
-              "level": 0
+              "level": 1
           },
           {
               "name": "quiver of arrows",
               "points": 320,
               "image": "character-ability-cards/QM/quiver-of-arrows.png",
               "xws": "quiverofarrows",
-              "level": 0
+              "level": 6
           },
           {
               "name": "refreshment",
               "points": 321,
               "image": "character-ability-cards/QM/refreshment.png",
               "xws": "refreshment",
-              "level": 0
+              "level": 7
           },
           {
               "name": "reforge",
               "points": 322,
               "image": "character-ability-cards/QM/reforge.png",
               "xws": "reforge",
-              "level": 0
+              "level": 2
           },
           {
               "name": "reinforced steel",
               "points": 323,
               "image": "character-ability-cards/QM/reinforced-steel.png",
               "xws": "reinforcedsteel",
-              "level": 0
+              "level": 5
           },
           {
               "name": "reserved energy",
@@ -5703,35 +5703,35 @@ abilities = [
               "points": 325,
               "image": "character-ability-cards/QM/restock.png",
               "xws": "restock",
-              "level": 0
+              "level": 1
           },
           {
               "name": "scroll of annihilation",
               "points": 326,
               "image": "character-ability-cards/QM/scroll-of-annihilation.png",
               "xws": "scrollofannihilation",
-              "level": 0
+              "level": 9
           },
           {
               "name": "scroll of blizzards",
               "points": 327,
               "image": "character-ability-cards/QM/scroll-of-blizzards.png",
               "xws": "scrollofblizzards",
-              "level": 0
+              "level": 7
           },
           {
               "name": "scroll of judgment",
               "points": 328,
               "image": "character-ability-cards/QM/scroll-of-judgment.png",
               "xws": "scrollofjudgment",
-              "level": 0
+              "level": 5
           },
           {
               "name": "scroll of lightning",
               "points": 329,
               "image": "character-ability-cards/QM/scroll-of-lightning.png",
               "xws": "scrolloflightning",
-              "level": 0
+              "level": 3
           },
           {
               "name": "scroll of recall",
@@ -5745,14 +5745,14 @@ abilities = [
               "points": 331,
               "image": "character-ability-cards/QM/sharpening-kit.png",
               "xws": "sharpeningkit",
-              "level": 0
+              "level": 1
           },
           {
               "name": "side pouch",
               "points": 332,
               "image": "character-ability-cards/QM/side-pouch.png",
               "xws": "sidepouch",
-              "level": 0
+              "level": 4
           }
       ]
   },
@@ -5771,105 +5771,105 @@ abilities = [
               "points": 333,
               "image": "character-ability-cards/SB/amputate.png",
               "xws": "amputate",
-              "level": 0
+              "level": 5
           },
           {
               "name": "battlefield medicine",
               "points": 334,
               "image": "character-ability-cards/SB/battlefield-medicine.png",
               "xws": "battlefieldmedicine",
-              "level": 0
+              "level": 1
           },
           {
               "name": "bedside manner",
               "points": 335,
               "image": "character-ability-cards/SB/bedside-manner.png",
               "xws": "bedsidemanner",
-              "level": 0
+              "level": 8
           },
           {
               "name": "blood transfusion",
               "points": 336,
               "image": "character-ability-cards/SB/blood-transfusion.png",
               "xws": "bloodtransfusion",
-              "level": 0
+              "level": 4
           },
           {
               "name": "bloody saw",
               "points": 337,
               "image": "character-ability-cards/SB/bloody-saw.png",
               "xws": "bloodysaw",
-              "level": 0
+              "level": 1
           },
           {
               "name": "booster shot",
               "points": 338,
               "image": "character-ability-cards/SB/booster-shot.png",
               "xws": "boostershot",
-              "level": 0
+              "level": 1
           },
           {
               "name": "curative mixture",
               "points": 339,
               "image": "character-ability-cards/SB/curative-mixture.png",
               "xws": "curativemixture",
-              "level": 0
+              "level": 1
           },
           {
               "name": "do no harm",
               "points": 340,
               "image": "character-ability-cards/SB/do-no-harm.png",
               "xws": "donoharm",
-              "level": 0
+              "level": 4
           },
           {
               "name": "euthanize",
               "points": 341,
               "image": "character-ability-cards/SB/euthanize.png",
               "xws": "euthanize",
-              "level": 0
+              "level": 6
           },
           {
               "name": "first aid",
               "points": 342,
               "image": "character-ability-cards/SB/first-aid.png",
               "xws": "firstaid",
-              "level": 0
+              "level": 1
           },
           {
               "name": "gentleman's anger",
               "points": 343,
               "image": "character-ability-cards/SB/gentlemans-anger.png",
               "xws": "gentlemansanger",
-              "level": 0
+              "level": 8
           },
           {
               "name": "grisly trauma",
               "points": 344,
               "image": "character-ability-cards/SB/grisly-trauma.png",
               "xws": "grislytrauma",
-              "level": 0
+              "level": 9
           },
           {
               "name": "hamstring",
               "points": 345,
               "image": "character-ability-cards/SB/hamstring.png",
               "xws": "hamstring",
-              "level": 0
+              "level": 2
           },
           {
               "name": "hand of the surgeon",
               "points": 346,
               "image": "character-ability-cards/SB/hand-of-the-surgeon.png",
               "xws": "handofthesurgeon",
-              "level": 0
+              "level": 1
           },
           {
               "name": "hold back the pain",
               "points": 347,
               "image": "character-ability-cards/SB/hold-back-the-pain.png",
               "xws": "holdbackthepain",
-              "level": 0
+              "level": 1
           },
           {
               "name": "large medical pack",
@@ -5883,7 +5883,7 @@ abilities = [
               "points": 349,
               "image": "character-ability-cards/SB/master-physician.png",
               "xws": "masterphysician",
-              "level": 0
+              "level": 7
           },
           {
               "name": "medical pack",
@@ -5897,21 +5897,21 @@ abilities = [
               "points": 351,
               "image": "character-ability-cards/SB/precaution.png",
               "xws": "precaution",
-              "level": 0
+              "level": 2
           },
           {
               "name": "prep for surgery",
               "points": 352,
               "image": "character-ability-cards/SB/prep-for-surgery.png",
               "xws": "prepforsurgery",
-              "level": 0
+              "level": 9
           },
           {
               "name": "prescription",
               "points": 353,
               "image": "character-ability-cards/SB/prescription.png",
               "xws": "prescription",
-              "level": 0
+              "level": 6
           },
           {
               "name": "prevention is key",
@@ -5925,28 +5925,28 @@ abilities = [
               "points": 355,
               "image": "character-ability-cards/SB/regenerative-tissue.png",
               "xws": "regenerativetissue",
-              "level": 0
+              "level": 3
           },
           {
               "name": "research the cure",
               "points": 356,
               "image": "character-ability-cards/SB/research-the-cure.png",
               "xws": "researchthecure",
-              "level": 0
+              "level": 5
           },
           {
               "name": "surgeon's satchel",
               "points": 358,
               "image": "character-ability-cards/SB/surgeons-satchel.png",
               "xws": "surgeonssatchel",
-              "level": 0
+              "level": 7
           },
           {
               "name": "syringe",
               "points": 359,
               "image": "character-ability-cards/SB/syringe.png",
               "xws": "syringe",
-              "level": 0
+              "level": 1
           },
           {
               "name": "teamwork",
@@ -5960,7 +5960,7 @@ abilities = [
               "points": 361,
               "image": "character-ability-cards/SB/triage.png",
               "xws": "triage",
-              "level": 0
+              "level": 1
           },
           {
               "name": "vaccine",
@@ -5974,14 +5974,14 @@ abilities = [
               "points": 363,
               "image": "character-ability-cards/SB/vital-strike.png",
               "xws": "vitalstrike",
-              "level": 0
+              "level": 3
           },
           {
               "name": "mobile response",
               "points": 573,
               "image": "character-ability-cards/SB/mobile-response.png",
               "xws": "mobileresponse",
-              "level": 0
+              "level": 1
           }
       ]
   },
@@ -6000,7 +6000,7 @@ abilities = [
               "points": 393,
               "image": "character-ability-cards/SK/angelic-ascension.png",
               "xws": "angelicascension",
-              "level": 0
+              "level": 9
           },
           {
               "name": "beacon of light",
@@ -6014,35 +6014,35 @@ abilities = [
               "points": 395,
               "image": "character-ability-cards/SK/bright-aegis.png",
               "xws": "brightaegis",
-              "level": 0
+              "level": 7
           },
           {
               "name": "brilliant prayer",
               "points": 396,
               "image": "character-ability-cards/SK/brilliant-prayer.png",
               "xws": "brilliantprayer",
-              "level": 0
+              "level": 1
           },
           {
               "name": "burning flash",
               "points": 397,
               "image": "character-ability-cards/SK/burning-flash.png",
               "xws": "burningflash",
-              "level": 0
+              "level": 3
           },
           {
               "name": "cautious advance",
               "points": 398,
               "image": "character-ability-cards/SK/cautious-advance.png",
               "xws": "cautiousadvance",
-              "level": 0
+              "level": 1
           },
           {
               "name": "cleansing force",
               "points": 399,
               "image": "character-ability-cards/SK/cleansing-force.png",
               "xws": "cleansingforce",
-              "level": 0
+              "level": 8
           },
           {
               "name": "daybreak",
@@ -6056,35 +6056,35 @@ abilities = [
               "points": 401,
               "image": "character-ability-cards/SK/dazzling-charge.png",
               "xws": "dazzlingcharge",
-              "level": 0
+              "level": 1
           },
           {
               "name": "defensive stance",
               "points": 402,
               "image": "character-ability-cards/SK/defensive-stance.png",
               "xws": "defensivestance",
-              "level": 0
+              "level": 1
           },
           {
               "name": "divine intervention",
               "points": 403,
               "image": "character-ability-cards/SK/divine-intervention.png",
               "xws": "divineintervention",
-              "level": 0
+              "level": 9
           },
           {
               "name": "empowering command",
               "points": 404,
               "image": "character-ability-cards/SK/empowering-command.png",
               "xws": "empoweringcommand",
-              "level": 0
+              "level": 1
           },
           {
               "name": "engulfing radiance",
               "points": 405,
               "image": "character-ability-cards/SK/engulfing-radiance.png",
               "xws": "engulfingradiance",
-              "level": 0
+              "level": 4
           },
           {
               "name": "glorious bolt",
@@ -6098,112 +6098,112 @@ abilities = [
               "points": 407,
               "image": "character-ability-cards/SK/hammer-blow.png",
               "xws": "hammerblow",
-              "level": 0
+              "level": 1
           },
           {
               "name": "holy strike",
               "points": 408,
               "image": "character-ability-cards/SK/holy-strike.png",
               "xws": "holystrike",
-              "level": 0
+              "level": 1
           },
           {
               "name": "illuminate the target",
               "points": 409,
               "image": "character-ability-cards/SK/illuminate-the-target.png",
               "xws": "illuminatethetarget",
-              "level": 0
+              "level": 6
           },
           {
               "name": "inspiring sanctity",
               "points": 410,
               "image": "character-ability-cards/SK/inspiring-sanctity.png",
               "xws": "inspiringsanctity",
-              "level": 0
+              "level": 8
           },
           {
               "name": "lay on hands",
               "points": 411,
               "image": "character-ability-cards/SK/lay-on-hands.png",
               "xws": "layonhands",
-              "level": 0
+              "level": 1
           },
           {
               "name": "mobilizing axiom",
               "points": 412,
               "image": "character-ability-cards/SK/mobilizing-axiom.png",
               "xws": "mobilizingaxiom",
-              "level": 0
+              "level": 3
           },
           {
               "name": "path of glory",
               "points": 413,
               "image": "character-ability-cards/SK/path-of-glory.png",
               "xws": "pathofglory",
-              "level": 0
+              "level": 5
           },
           {
               "name": "practical plans",
               "points": 414,
               "image": "character-ability-cards/SK/practical-plans.png",
               "xws": "practicalplans",
-              "level": 0
+              "level": 2
           },
           {
               "name": "protective blessing",
               "points": 415,
               "image": "character-ability-cards/SK/protective-blessing.png",
               "xws": "protectiveblessing",
-              "level": 0
+              "level": 1
           },
           {
               "name": "purifying aura",
               "points": 416,
               "image": "character-ability-cards/SK/purifying-aura.png",
               "xws": "purifyingaura",
-              "level": 0
+              "level": 1
           },
           {
               "name": "righteous strength",
               "points": 417,
               "image": "character-ability-cards/SK/righteous-strength.png",
               "xws": "righteousstrength",
-              "level": 0
+              "level": 4
           },
           {
               "name": "scales of justice",
               "points": 418,
               "image": "character-ability-cards/SK/scales-of-justice.png",
               "xws": "scalesofjustice",
-              "level": 0
+              "level": 5
           },
           {
               "name": "supportive chant",
               "points": 420,
               "image": "character-ability-cards/SK/supportive-chant.png",
               "xws": "supportivechant",
-              "level": 0
+              "level": 6
           },
           {
               "name": "tactical order",
               "points": 421,
               "image": "character-ability-cards/SK/tactical-order.png",
               "xws": "tacticalorder",
-              "level": 0
+              "level": 1
           },
           {
               "name": "unwavering mandate",
               "points": 422,
               "image": "character-ability-cards/SK/unwavering-mandate.png",
               "xws": "visageoftheinevitable",
-              "level": 0
+              "level": 2
           },
           {
               "name": "weapon of purity",
               "points": 423,
               "image": "character-ability-cards/SK/weapon-of-purity.png",
               "xws": "weaponofpurity",
-              "level": 0
+              "level": 7
           }
       ]
   },
@@ -6222,98 +6222,98 @@ abilities = [
               "points": 424,
               "image": "character-ability-cards/SS/booming-proclamation.png",
               "xws": "boomingproclamation",
-              "level": 0
+              "level": 7
           },
           {
               "name": "call to action",
               "points": 425,
               "image": "character-ability-cards/SS/call-to-action.png",
               "xws": "calltoaction",
-              "level": 0
+              "level": 1
           },
           {
               "name": "captivating performance",
               "points": 426,
               "image": "character-ability-cards/SS/captivating-performance.png",
               "xws": "captivatingperformance",
-              "level": 0
+              "level": 9
           },
           {
               "name": "change tempo",
               "points": 427,
               "image": "character-ability-cards/SS/change-tempo.png",
               "xws": "changetempo",
-              "level": 0
+              "level": 2
           },
           {
               "name": "commanding presence",
               "points": 428,
               "image": "character-ability-cards/SS/commanding-presence.png",
               "xws": "commandingpresence",
-              "level": 0
+              "level": 8
           },
           {
               "name": "crippling chorus",
               "points": 429,
               "image": "character-ability-cards/SS/crippling-chorus.png",
               "xws": "cripplingchorus",
-              "level": 0
+              "level": 3
           },
           {
               "name": "defensive ditty",
               "points": 430,
               "image": "character-ability-cards/SS/defensive-ditty.png",
               "xws": "defensiveditty",
-              "level": 0
+              "level": 1
           },
           {
               "name": "disorienting dirge",
               "points": 431,
               "image": "character-ability-cards/SS/disorienting-dirge.png",
               "xws": "disorientingdirge",
-              "level": 0
+              "level": 4
           },
           {
               "name": "echoing aria",
               "points": 432,
               "image": "character-ability-cards/SS/echoing-aria.png",
               "xws": "echoingaria",
-              "level": 0
+              "level": 3
           },
           {
               "name": "inspiring anthem",
               "points": 433,
               "image": "character-ability-cards/SS/inspiring-anthem.png",
               "xws": "inspiringanthem",
-              "level": 0
+              "level": 4
           },
           {
               "name": "marching beat",
               "points": 434,
               "image": "character-ability-cards/SS/marching-beat.png",
               "xws": "marchingbeat",
-              "level": 0
+              "level": 1
           },
           {
               "name": "melody and harmony",
               "points": 435,
               "image": "character-ability-cards/SS/melody-and-harmony.png",
               "xws": "melodyandharmony",
-              "level": 0
+              "level": 5
           },
           {
               "name": "mobilizing measure",
               "points": 436,
               "image": "character-ability-cards/SS/mobilizing-measure.png",
               "xws": "mobilizingmeasure",
-              "level": 0
+              "level": 5
           },
           {
               "name": "nightmare serenade",
               "points": 437,
               "image": "character-ability-cards/SS/nightmare-serenade.png",
               "xws": "nightmareserenade",
-              "level": 0
+              "level": 7
           },
           {
               "name": "nimble knife",
@@ -6327,70 +6327,70 @@ abilities = [
               "points": 439,
               "image": "character-ability-cards/SS/power-ballad.png",
               "xws": "powerballad",
-              "level": 0
+              "level": 1
           },
           {
               "name": "provoke terror",
               "points": 440,
               "image": "character-ability-cards/SS/provoke-terror.png",
               "xws": "provoketerror",
-              "level": 0
+              "level": 6
           },
           {
               "name": "pull the strings",
               "points": 441,
               "image": "character-ability-cards/SS/pull-the-strings.png",
               "xws": "pullthestrings",
-              "level": 0
+              "level": 6
           },
           {
               "name": "shadow puppets",
               "points": 442,
               "image": "character-ability-cards/SS/shadow-puppets.png",
               "xws": "shadowpuppets",
-              "level": 0
+              "level": 9
           },
           {
               "name": "singing arrow",
               "points": 443,
               "image": "character-ability-cards/SS/singing-arrow.png",
               "xws": "singingarrow",
-              "level": 0
+              "level": 1
           },
           {
               "name": "song of speed",
               "points": 444,
               "image": "character-ability-cards/SS/song-of-speed.png",
               "xws": "songofspeed",
-              "level": 0
+              "level": 1
           },
           {
               "name": "soothing lullaby",
               "points": 445,
               "image": "character-ability-cards/SS/soothing-lullaby.png",
               "xws": "soothinglullaby",
-              "level": 0
+              "level": 2
           },
           {
               "name": "throw voice",
               "points": 447,
               "image": "character-ability-cards/SS/throw-voice.png",
               "xws": "throwvoice",
-              "level": 0
+              "level": 1
           },
           {
               "name": "tranquil trill",
               "points": 448,
               "image": "character-ability-cards/SS/tranquil-trill.png",
               "xws": "tranquiltrill",
-              "level": 0
+              "level": 8
           },
           {
               "name": "tuning the outcome",
               "points": 449,
               "image": "character-ability-cards/SS/tuning-the-outcome.png",
               "xws": "tuningtheoutcome",
-              "level": 0
+              "level": 1
           },
           {
               "name": "unending chant",
@@ -6404,7 +6404,7 @@ abilities = [
               "points": 451,
               "image": "character-ability-cards/SS/warding-dagger.png",
               "xws": "wardingdagger",
-              "level": 0
+              "level": 1
           },
           {
               "name": "wistful wounding",
@@ -6430,49 +6430,49 @@ abilities = [
               "points": 453,
               "image": "character-ability-cards/SU/biting-wind.png",
               "xws": "bitingwind",
-              "level": 0
+              "level": 1
           },
           {
               "name": "black fire",
               "points": 454,
               "image": "character-ability-cards/SU/black-fire.png",
               "xws": "blackfire",
-              "level": 0
+              "level": 1
           },
           {
               "name": "bonded might",
               "points": 455,
               "image": "character-ability-cards/SU/bonded-might.png",
               "xws": "bondedmight",
-              "level": 0
+              "level": 1
           },
           {
               "name": "conjured aid",
               "points": 456,
               "image": "character-ability-cards/SU/conjured-aid.png",
               "xws": "conjuredaid",
-              "level": 0
+              "level": 5
           },
           {
               "name": "divided mind",
               "points": 457,
               "image": "character-ability-cards/SU/divided-mind.png",
               "xws": "dividedmind",
-              "level": 0
+              "level": 4
           },
           {
               "name": "earthen steed",
               "points": 458,
               "image": "character-ability-cards/SU/earthen-steed.png",
               "xws": "earthensteed",
-              "level": 0
+              "level": 2
           },
           {
               "name": "endless spikes",
               "points": 459,
               "image": "character-ability-cards/SU/endless-spikes.png",
               "xws": "endlessspikes",
-              "level": 0
+              "level": 6
           },
           {
               "name": "ethereal vines",
@@ -6486,42 +6486,42 @@ abilities = [
               "points": 461,
               "image": "character-ability-cards/SU/forged-ferocity.png",
               "xws": "forgedferocity",
-              "level": 0
+              "level": 1
           },
           {
               "name": "grasping the void",
               "points": 462,
               "image": "character-ability-cards/SU/grasping-the-void.png",
               "xws": "graspingthevoid",
-              "level": 0
+              "level": 2
           },
           {
               "name": "horned majesty",
               "points": 463,
               "image": "character-ability-cards/SU/horned-majesty.png",
               "xws": "hornedmajesty",
-              "level": 0
+              "level": 9
           },
           {
               "name": "inexorable momentum",
               "points": 464,
               "image": "character-ability-cards/SU/inexorable-momentum.png",
               "xws": "inexorablemomentum",
-              "level": 0
+              "level": 6
           },
           {
               "name": "interplanar mastery",
               "points": 465,
               "image": "character-ability-cards/SU/interplanar-mastery.png",
               "xws": "interplanarmastery",
-              "level": 0
+              "level": 9
           },
           {
               "name": "intervening apparitions",
               "points": 466,
               "image": "character-ability-cards/SU/intervening-apparitions.png",
               "xws": "interveningapparitions",
-              "level": 0
+              "level": 8
           },
           {
               "name": "leathery wings",
@@ -6535,77 +6535,77 @@ abilities = [
               "points": 468,
               "image": "character-ability-cards/SU/living-mountain.png",
               "xws": "livingmountain",
-              "level": 0
+              "level": 4
           },
           {
               "name": "living night",
               "points": 469,
               "image": "character-ability-cards/SU/living-night.png",
               "xws": "livingnight",
-              "level": 0
+              "level": 1
           },
           {
               "name": "mighty bond",
               "points": 470,
               "image": "character-ability-cards/SU/mighty-bond.png",
               "xws": "mightybond",
-              "level": 0
+              "level": 1
           },
           {
               "name": "negative energy",
               "points": 471,
               "image": "character-ability-cards/SU/negative-energy.png",
               "xws": "negativeenergy",
-              "level": 0
+              "level": 7
           },
           {
               "name": "oozing manifestation",
               "points": 472,
               "image": "character-ability-cards/SU/oozing-manifestation.png",
               "xws": "oozingmanifestation",
-              "level": 0
+              "level": 3
           },
           {
               "name": "otherworldly rage",
               "points": 473,
               "image": "character-ability-cards/SU/otherworldly-rage.png",
               "xws": "otherworldlyrage",
-              "level": 0
+              "level": 8
           },
           {
               "name": "staff of visions",
               "points": 474,
               "image": "character-ability-cards/SU/staff-of-visions.png",
               "xws": "staffofvisions",
-              "level": 0
+              "level": 7
           },
           {
               "name": "strength in numbers",
               "points": 475,
               "image": "character-ability-cards/SU/strength-in-numbers.png",
               "xws": "strengthinnumbers",
-              "level": 0
+              "level": 5
           },
           {
               "name": "tear the fabric",
               "points": 477,
               "image": "character-ability-cards/SU/tear-the-fabric.png",
               "xws": "tearthefabric",
-              "level": 0
+              "level": 3
           },
           {
               "name": "unending dominance",
               "points": 478,
               "image": "character-ability-cards/SU/unending-dominance.png",
               "xws": "unendingdominance",
-              "level": 0
+              "level": 1
           },
           {
               "name": "unwavering hand",
               "points": 479,
               "image": "character-ability-cards/SU/unwavering-hand.png",
               "xws": "unwaveringhand",
-              "level": 0
+              "level": 1
           },
           {
               "name": "volatile flame",
@@ -6619,35 +6619,35 @@ abilities = [
               "points": 481,
               "image": "character-ability-cards/SU/wild-animation.png",
               "xws": "wildanimation",
-              "level": 0
+              "level": 1
           },
           {
               "name": "healing sprite",
               "points": 599,
               "image": "character-ability-cards/SU/conjured-aid.png",
               "xws": "conjuredaid",
-              "level": 0
+              "level": 5
           },
           {
               "name": "nail spheres",
               "points": 600,
               "image": "character-ability-cards/SU/endless-spikes.png",
               "xws": "endlessspikes",
-              "level": 0
+              "level": 6
           },
           {
               "name": "iron beast",
               "points": 601,
               "image": "character-ability-cards/SU/forged-ferocity.png",
               "xws": "forgedferocity",
-              "level": 0
+              "level": 1
           },
           {
               "name": "black unicorn",
               "points": 602,
               "image": "character-ability-cards/SU/horned-majesty.png",
               "xws": "hornedmajesty",
-              "level": 0
+              "level": 9
           },
           {
               "name": "bat swarm",
@@ -6661,35 +6661,35 @@ abilities = [
               "points": 604,
               "image": "character-ability-cards/SU/living-mountain.png",
               "xws": "livingmountain",
-              "level": 0
+              "level": 4
           },
           {
               "name": "shadow wolves",
               "points": 605,
               "image": "character-ability-cards/SU/living-night.png",
               "xws": "livingnight",
-              "level": 0
+              "level": 1
           },
           {
               "name": "void eater",
               "points": 606,
               "image": "character-ability-cards/SU/negative-energy.png",
               "xws": "negativeenergy",
-              "level": 0
+              "level": 7
           },
           {
               "name": "slime spirit",
               "points": 607,
               "image": "character-ability-cards/SU/oozing-manifestation.png",
               "xws": "oozingmanifestation",
-              "level": 0
+              "level": 3
           },
           {
               "name": "lava golem",
               "points": 608,
               "image": "character-ability-cards/SU/unending-dominance.png",
               "xws": "unendingdominance",
-              "level": 0
+              "level": 1
           },
           {
               "name": "living bomb",
@@ -6703,7 +6703,7 @@ abilities = [
               "points": 610,
               "image": "character-ability-cards/SU/wild-animation.png",
               "xws": "wildanimation",
-              "level": 0
+              "level": 1
           }
       ]
   },
@@ -6722,14 +6722,14 @@ abilities = [
               "points": 542,
               "image": "character-ability-cards/DR/anguish-and-salvation.png",
               "xws": "anguishandsalvation",
-              "level": 0
+              "level": 8
           },
           {
               "name": "anticipate intricacies",
               "points": 543,
               "image": "character-ability-cards/DR/anticipate-intricacies.png",
               "xws": "anticipateintricacies",
-              "level": 0
+              "level": 1
           },
           {
               "name": "bad omen",
@@ -6743,63 +6743,63 @@ abilities = [
               "points": 545,
               "image": "character-ability-cards/DR/call-of-the-nether.png",
               "xws": "callofthenether",
-              "level": 0
+              "level": 3
           },
           {
               "name": "careful attunement",
               "points": 546,
               "image": "character-ability-cards/DR/careful-attunement.png",
               "xws": "carefulattunement",
-              "level": 0
+              "level": 6
           },
           {
               "name": "clairvoyance",
               "points": 547,
               "image": "character-ability-cards/DR/clairvoyance.png",
               "xws": "clairvoyance",
-              "level": 0
+              "level": 1
           },
           {
               "name": "cleansing rite",
               "points": 548,
               "image": "character-ability-cards/DR/cleansing-rite.png",
               "xws": "cleansingrite",
-              "level": 0
+              "level": 4
           },
           {
               "name": "curative flux",
               "points": 549,
               "image": "character-ability-cards/DR/curative-flux.png",
               "xws": "curativeflux",
-              "level": 0
+              "level": 7
           },
           {
               "name": "cursed ground",
               "points": 550,
               "image": "character-ability-cards/DR/cursed-ground.png",
               "xws": "cursedground",
-              "level": 0
+              "level": 1
           },
           {
               "name": "deep contemplation",
               "points": 551,
               "image": "character-ability-cards/DR/deep-contemplation.png",
               "xws": "deepcontemplation",
-              "level": 0
+              "level": 8
           },
           {
               "name": "dimensional divide",
               "points": 552,
               "image": "character-ability-cards/DR/dimensional-divide.png",
               "xws": "dimensionaldivide",
-              "level": 0
+              "level": 5
           },
           {
               "name": "dimensional transfer",
               "points": 553,
               "image": "character-ability-cards/DR/dimensional-transfer.png",
               "xws": "dimensionaltransfer",
-              "level": 0
+              "level": 1
           },
           {
               "name": "duality shards",
@@ -6813,35 +6813,35 @@ abilities = [
               "points": 556,
               "image": "character-ability-cards/DR/enfeebling-hex.png",
               "xws": "enfeeblinghex",
-              "level": 0
+              "level": 6
           },
           {
               "name": "envision the course",
               "points": 557,
               "image": "character-ability-cards/DR/envision-the-course.png",
               "xws": "envisionthecourse",
-              "level": 0
+              "level": 3
           },
           {
               "name": "ethereal vortex",
               "points": 558,
               "image": "character-ability-cards/DR/ethereal-vortex.png",
               "xws": "etherealvortex",
-              "level": 0
+              "level": 7
           },
           {
               "name": "gift of the void",
               "points": 559,
               "image": "character-ability-cards/DR/gift-of-the-void.png",
               "xws": "giftofthevoid",
-              "level": 0
+              "level": 2
           },
           {
               "name": "hand of destiny",
               "points": 560,
               "image": "character-ability-cards/DR/hand-of-destiny.png",
               "xws": "handofdestiny",
-              "level": 0
+              "level": 9
           },
           {
               "name": "inspiration from beyond",
@@ -6855,77 +6855,77 @@ abilities = [
               "points": 562,
               "image": "character-ability-cards/DR/otherworldly-journey.png",
               "xws": "otherworldlyjourney",
-              "level": 0
+              "level": 1
           },
           {
               "name": "peer into battle",
               "points": 563,
               "image": "character-ability-cards/DR/peer-into-battle.png",
               "xws": "peerintobattle",
-              "level": 0
+              "level": 1
           },
           {
               "name": "planar fissure",
               "points": 564,
               "image": "character-ability-cards/DR/planar-fissure.png",
               "xws": "planarfissure",
-              "level": 0
+              "level": 9
           },
           {
               "name": "preordain the path",
               "points": 565,
               "image": "character-ability-cards/DR/preordain-the-path.png",
               "xws": "preordainthepath",
-              "level": 0
+              "level": 4
           },
           {
               "name": "protective aura",
               "points": 567,
               "image": "character-ability-cards/DR/protective-aura.png",
               "xws": "protectiveaura",
-              "level": 0
+              "level": 1
           },
           {
               "name": "ray of light",
               "points": 568,
               "image": "character-ability-cards/DR/ray-of-light.png",
               "xws": "rayoflight",
-              "level": 0
+              "level": 1
           },
           {
               "name": "revitalizing fount",
               "points": 569,
               "image": "character-ability-cards/DR/revitalizing-fount.png",
               "xws": "revitalizingfount",
-              "level": 0
+              "level": 2
           },
           {
               "name": "seal their fate",
               "points": 570,
               "image": "character-ability-cards/DR/seal-their-fate.png",
               "xws": "sealtheirfate",
-              "level": 0
+              "level": 5
           },
           {
               "name": "void snare",
               "points": 571,
               "image": "character-ability-cards/DR/void-snare.png",
               "xws": "voidsnare",
-              "level": 0
+              "level": 1
           },
           {
               "name": "ghost falcons",
               "points": 616,
               "image": "character-ability-cards/DR/envision-the-course.png",
               "xws": "envisionthecourse",
-              "level": 0
+              "level": 3
           },
           {
               "name": "twilight archon",
               "points": 617,
               "image": "character-ability-cards/DR/planar-fissure.png",
               "xws": "planarfissure",
-              "level": 0
+              "level": 9
           }
       ]
   }
