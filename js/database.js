@@ -1204,7 +1204,7 @@ database = {
     {
       "name": "am-ns-02",
       "points": 234,
-      "image": "attack-modifiers/NS/am-ns-02.png",
+      "image": "attack-modifiers/NS/am-ns-01.png",
       "xws": "amns02"
     },
     {
@@ -1216,7 +1216,7 @@ database = {
     {
       "name": "am-ns-04",
       "points": 236,
-      "image": "attack-modifiers/NS/am-ns-04.png",
+      "image": "attack-modifiers/NS/am-ns-03.png",
       "xws": "amns04"
     },
     {
@@ -1228,31 +1228,31 @@ database = {
     {
       "name": "am-ns-06",
       "points": 238,
-      "image": "attack-modifiers/NS/am-ns-06.png",
+      "image": "attack-modifiers/NS/am-ns-05.png",
       "xws": "amns06"
     },
     {
       "name": "am-ns-07",
       "points": 239,
-      "image": "attack-modifiers/NS/am-ns-07.png",
+      "image": "attack-modifiers/NS/am-ns-05.png",
       "xws": "amns07"
     },
     {
       "name": "am-ns-08",
       "points": 240,
-      "image": "attack-modifiers/NS/am-ns-08.png",
+      "image": "attack-modifiers/NS/am-ns-05.png",
       "xws": "amns08"
     },
     {
       "name": "am-ns-09",
       "points": 241,
-      "image": "attack-modifiers/NS/am-ns-09.png",
+      "image": "attack-modifiers/NS/am-ns-05.png",
       "xws": "amns09"
     },
     {
       "name": "am-ns-10",
       "points": 242,
-      "image": "attack-modifiers/NS/am-ns-10.png",
+      "image": "attack-modifiers/NS/am-ns-05.png",
       "xws": "amns10"
     },
     {
@@ -1264,7 +1264,7 @@ database = {
     {
       "name": "am-ns-12",
       "points": 244,
-      "image": "attack-modifiers/NS/am-ns-12.png",
+      "image": "attack-modifiers/NS/am-ns-11.png",
       "xws": "amns12"
     },
     {
@@ -1276,7 +1276,7 @@ database = {
     {
       "name": "am-ns-14",
       "points": 246,
-      "image": "attack-modifiers/NS/am-ns-14.png",
+      "image": "attack-modifiers/NS/am-ns-13.png",
       "xws": "amns14"
     },
     {
@@ -1294,7 +1294,7 @@ database = {
     {
       "name": "am-ns-17",
       "points": 249,
-      "image": "attack-modifiers/NS/am-ns-17.png",
+      "image": "attack-modifiers/NS/am-ns-16.png",
       "xws": "amns17"
     },
     {
@@ -1306,7 +1306,7 @@ database = {
     {
       "name": "am-ns-19",
       "points": 251,
-      "image": "attack-modifiers/NS/am-ns-19.png",
+      "image": "attack-modifiers/NS/am-ns-18.png",
       "xws": "amns19"
     },
     {
