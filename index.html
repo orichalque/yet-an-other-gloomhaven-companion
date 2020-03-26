@@ -301,6 +301,7 @@
               </div>
             </div>
           </div>
+          
           <!-- CATEGORY DECK FRONT -->
           <div class="row flex-nowrap overflow-auto" v-if="modifier.name.substring(3,5) == modifierCategory">
             <div class="abilityContainer" v-for='card in modifier.cards'>
@@ -335,8 +336,9 @@
         </div>
 
         <!-- PER CATEGORY CARDS -->
-        <div v-if='abilityCategory != null' class="row scrollCardContainer flex-nowrap overflow-auto">
-          <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards' v-if="i != 0">
+        
+        <div v-if='abilityCategory != null' class="row scrollCardContainer flex-nowrap overflow-auto">          
+          <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards' v-if="i != 0 && card.level <= level">
             <div class="col mt-3">
               <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"
                 v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
@@ -351,6 +353,7 @@
             </div>
           </div>
         </div>
+        <h3 v-if="abilityCategory != null">Level: <button v-for='theLevel in 9' class="btn btn-light" v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel"><h3>{{ theLevel }}</h3></button></h3>
 
       </div> <!-- main row ends -->
     </div> <!-- main container ends -->
