@@ -1538,18 +1538,6 @@ database = {
       "xws": "amqm02"
     },
     {
-      "name": "am-sb-01",
-      "points": 290,
-      "image": "attack-modifiers/SB/am-sb-01.png",
-      "xws": "amsb01"
-    },
-    {
-      "name": "am-sb-02",
-      "points": 291,
-      "image": "attack-modifiers/SB/am-sb-02.png",
-      "xws": "amsb02"
-    },
-    {
       "name": "am-sb-03",
       "points": 292,
       "image": "attack-modifiers/SB/am-sb-03.png",
@@ -1558,7 +1546,7 @@ database = {
     {
       "name": "am-sb-04",
       "points": 293,
-      "image": "attack-modifiers/SB/am-sb-04.png",
+      "image": "attack-modifiers/SB/am-sb-03.png",
       "xws": "amsb04"
     },
     {
@@ -1570,19 +1558,19 @@ database = {
     {
       "name": "am-sb-06",
       "points": 295,
-      "image": "attack-modifiers/SB/am-sb-06.png",
+      "image": "attack-modifiers/SB/am-sb-05.png",
       "xws": "amsb06"
     },
     {
       "name": "am-sb-07",
       "points": 296,
-      "image": "attack-modifiers/SB/am-sb-07.png",
+      "image": "attack-modifiers/SB/am-sb-05.png",
       "xws": "amsb07"
     },
     {
       "name": "am-sb-08",
       "points": 297,
-      "image": "attack-modifiers/SB/am-sb-08.png",
+      "image": "attack-modifiers/SB/am-sb-05.png",
       "xws": "amsb08"
     },
     {
@@ -1600,7 +1588,7 @@ database = {
     {
       "name": "am-sb-11",
       "points": 300,
-      "image": "attack-modifiers/SB/am-sb-11.png",
+      "image": "attack-modifiers/SB/am-sb-10.png",
       "xws": "amsb11"
     },
     {
@@ -1612,14 +1600,26 @@ database = {
     {
       "name": "am-sb-13",
       "points": 302,
-      "image": "attack-modifiers/SB/am-sb-13.png",
+      "image": "attack-modifiers/SB/am-sb-01.png",
       "xws": "amsb13"
     },
     {
       "name": "am-sb-14",
       "points": 303,
-      "image": "attack-modifiers/SB/am-sb-14.png",
+      "image": "attack-modifiers/SB/am-sb-01.png",
       "xws": "amsb14"
+    },
+    {
+      "name": "am-sb-01",
+      "points": 290,
+      "image": "attack-modifiers/SB/am-sb-01.png",
+      "xws": "amsb01"
+    },
+    {
+      "name": "am-sb-02",
+      "points": 291,
+      "image": "attack-modifiers/SB/am-sb-01.png",
+      "xws": "amsb02"
     },
     {
       "name": "am-sc-01",
