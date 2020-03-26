@@ -2188,7 +2188,7 @@ database = {
     {
       "name": "am-ti-03",
       "points": 398,
-      "image": "attack-modifiers/TI/am-ti-03.png",
+      "image": "attack-modifiers/TI/am-ti-02.png",
       "xws": "amti03"
     },
     {
@@ -2206,7 +2206,7 @@ database = {
     {
       "name": "am-ti-06",
       "points": 401,
-      "image": "attack-modifiers/TI/am-ti-06.png",
+      "image": "attack-modifiers/TI/am-ti-05.png",
       "xws": "amti06"
     },
     {
@@ -2218,13 +2218,13 @@ database = {
     {
       "name": "am-ti-08",
       "points": 403,
-      "image": "attack-modifiers/TI/am-ti-08.png",
+      "image": "attack-modifiers/TI/am-ti-07.png",
       "xws": "amti08"
     },
     {
       "name": "am-ti-09",
       "points": 404,
-      "image": "attack-modifiers/TI/am-ti-09.png",
+      "image": "attack-modifiers/TI/am-ti-07.png",
       "xws": "amti09"
     },
     {
@@ -2236,7 +2236,7 @@ database = {
     {
       "name": "am-ti-11",
       "points": 406,
-      "image": "attack-modifiers/TI/am-ti-11.png",
+      "image": "attack-modifiers/TI/am-ti-10.png",
       "xws": "amti11"
     },
     {
@@ -2248,7 +2248,7 @@ database = {
     {
       "name": "am-ti-13",
       "points": 408,
-      "image": "attack-modifiers/TI/am-ti-13.png",
+      "image": "attack-modifiers/TI/am-ti-12.png",
       "xws": "amti13"
     },
     {
@@ -2260,7 +2260,7 @@ database = {
     {
       "name": "am-ti-15",
       "points": 410,
-      "image": "attack-modifiers/TI/am-ti-15.png",
+      "image": "attack-modifiers/TI/am-ti-14.png",
       "xws": "amti15"
     },
     {
