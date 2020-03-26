@@ -1888,13 +1888,13 @@ database = {
     {
       "name": "am-ss-09",
       "points": 348,
-      "image": "attack-modifiers/SS/am-ss-09.png",
+      "image": "attack-modifiers/SS/am-ss-08.png",
       "xws": "amss09"
     },
     {
       "name": "am-ss-10",
       "points": 349,
-      "image": "attack-modifiers/SS/am-ss-10.png",
+      "image": "attack-modifiers/SS/am-ss-08.png",
       "xws": "amss10"
     },
     {
@@ -1906,19 +1906,19 @@ database = {
     {
       "name": "am-ss-12",
       "points": 351,
-      "image": "attack-modifiers/SS/am-ss-12.png",
+      "image": "attack-modifiers/SS/am-ss-11.png",
       "xws": "amss12"
     },
     {
       "name": "am-ss-13",
       "points": 352,
-      "image": "attack-modifiers/SS/am-ss-13.png",
+      "image": "attack-modifiers/SS/am-ss-11.png",
       "xws": "amss13"
     },
     {
       "name": "am-ss-14",
       "points": 353,
-      "image": "attack-modifiers/SS/am-ss-14.png",
+      "image": "attack-modifiers/SS/am-ss-11.png",
       "xws": "amss14"
     },
     {
@@ -1930,7 +1930,7 @@ database = {
     {
       "name": "am-ss-16",
       "points": 355,
-      "image": "attack-modifiers/SS/am-ss-16.png",
+      "image": "attack-modifiers/SS/am-ss-15.png",
       "xws": "amss16"
     },
     {
