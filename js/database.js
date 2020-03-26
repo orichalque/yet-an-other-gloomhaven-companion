@@ -1942,8 +1942,26 @@ database = {
     {
       "name": "am-su-02",
       "points": 357,
-      "image": "attack-modifiers/SU/am-su-02.png",
+      "image": "attack-modifiers/SU/am-su-01.png",
       "xws": "amsu02"
+    },
+    {
+      "name": "am-su-20",
+      "points": 375,
+      "image": "attack-modifiers/SU/am-su-01.png",
+      "xws": "amsu20"
+    },
+    {
+      "name": "am-su-21",
+      "points": 376,
+      "image": "attack-modifiers/SU/am-su-01.png",
+      "xws": "amsu21"
+    },
+    {
+      "name": "am-su-22",
+      "points": 377,
+      "image": "attack-modifiers/SU/am-su-01.png",
+      "xws": "amsu22"
     },
     {
       "name": "am-su-03",
@@ -1954,7 +1972,7 @@ database = {
     {
       "name": "am-su-04",
       "points": 359,
-      "image": "attack-modifiers/SU/am-su-04.png",
+      "image": "attack-modifiers/SU/am-su-03.png",
       "xws": "amsu04"
     },
     {
@@ -1966,7 +1984,7 @@ database = {
     {
       "name": "am-su-06",
       "points": 361,
-      "image": "attack-modifiers/SU/am-su-06.png",
+      "image": "attack-modifiers/SU/am-su-05.png",
       "xws": "amsu06"
     },
     {
@@ -1978,7 +1996,7 @@ database = {
     {
       "name": "am-su-08",
       "points": 363,
-      "image": "attack-modifiers/SU/am-su-08.png",
+      "image":  "attack-modifiers/SU/am-su-07.png",
       "xws": "amsu08"
     },
     {
@@ -1990,31 +2008,31 @@ database = {
     {
       "name": "am-su-10",
       "points": 365,
-      "image": "attack-modifiers/SU/am-su-10.png",
+      "image": "attack-modifiers/SU/am-su-09.png",
       "xws": "amsu10"
     },
     {
       "name": "am-su-11",
       "points": 366,
-      "image": "attack-modifiers/SU/am-su-11.png",
+      "image": "attack-modifiers/SU/am-su-09.png",
       "xws": "amsu11"
     },
     {
       "name": "am-su-12",
       "points": 367,
-      "image": "attack-modifiers/SU/am-su-12.png",
+      "image": "attack-modifiers/SU/am-su-09.png",
       "xws": "amsu12"
     },
     {
       "name": "am-su-13",
       "points": 368,
-      "image": "attack-modifiers/SU/am-su-13.png",
+      "image": "attack-modifiers/SU/am-su-09.png",
       "xws": "amsu13"
     },
     {
       "name": "am-su-14",
       "points": 369,
-      "image": "attack-modifiers/SU/am-su-14.png",
+      "image": "attack-modifiers/SU/am-su-09.png",
       "xws": "amsu14"
     },
     {
@@ -2046,24 +2064,6 @@ database = {
       "points": 374,
       "image": "attack-modifiers/SU/am-su-19.png",
       "xws": "amsu19"
-    },
-    {
-      "name": "am-su-20",
-      "points": 375,
-      "image": "attack-modifiers/SU/am-su-20.png",
-      "xws": "amsu20"
-    },
-    {
-      "name": "am-su-21",
-      "points": 376,
-      "image": "attack-modifiers/SU/am-su-21.png",
-      "xws": "amsu21"
-    },
-    {
-      "name": "am-su-22",
-      "points": 377,
-      "image": "attack-modifiers/SU/am-su-22.png",
-      "xws": "amsu22"
     },
     {
       "name": "am-sw-01",
