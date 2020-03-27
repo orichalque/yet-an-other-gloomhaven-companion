@@ -2362,6 +2362,7 @@ attack_modifiers = [
 abilities = [
   {
       "name": "br",
+      "max" : 10,
       "cards": [
           {
               "name": "br-back",
@@ -2577,6 +2578,7 @@ abilities = [
   },
   {
       "name": "ch",
+      "max" : "11",
       "cards": [
           {
               "name": "ch-back",
@@ -2798,7 +2800,8 @@ abilities = [
       ]
   },
   {
-      "name": "mt",
+      "name": "mt",      
+      "max" : 10,
       "cards": [
           {
               "name": "mt-back",
@@ -3013,7 +3016,8 @@ abilities = [
       ]
   },
   {
-      "name": "sc",
+      "name": "sc",      
+      "max" : 9,
       "cards": [
           {
               "name": "sc-back",
@@ -3221,7 +3225,8 @@ abilities = [
       ]
   },
   {
-      "name": "sw",
+      "name": "sw",      
+      "max" : 8,
       "cards": [
           {
               "name": "sw-back",
@@ -3422,7 +3427,8 @@ abilities = [
       ]
   },
   {
-      "name": "ti",
+      "name": "ti",      
+      "max" : 12,
       "cards": [
           {
               "name": "ti-back",
@@ -3652,6 +3658,7 @@ abilities = [
   },
   {
       "name": "be",
+      "max": 10,
       "cards": [
           {
               "name": "be-back",
@@ -3867,6 +3874,7 @@ abilities = [
   },
   {
       "name": "bs",
+      "max" : 11,
       "cards": [
           {
               "name": "bs-back",
@@ -4145,6 +4153,7 @@ abilities = [
   },
   {
       "name": "bt",
+      "max": 10,
       "cards": [
           {
               "name": "bt-back",
@@ -4415,7 +4424,231 @@ abilities = [
       ]
   },
   {
+      "name": "dr",            
+      "max" : 9,
+      "cards": [
+          {
+              "name": "dr-back",
+              "points": 554,
+              "image": "character-ability-cards/DR/dr-back.png",
+              "xws": "drback",
+              "level": 0
+          },
+          {
+              "name": "anguish and salvation",
+              "points": 542,
+              "image": "character-ability-cards/DR/anguish-and-salvation.png",
+              "xws": "anguishandsalvation",
+              "level": 8
+          },
+          {
+              "name": "anticipate intricacies",
+              "points": 543,
+              "image": "character-ability-cards/DR/anticipate-intricacies.png",
+              "xws": "anticipateintricacies",
+              "level": 1
+          },
+          {
+              "name": "bad omen",
+              "points": 544,
+              "image": "character-ability-cards/DR/bad-omen.png",
+              "xws": "badomen",
+              "level": 0
+          },
+          {
+              "name": "call of the nether",
+              "points": 545,
+              "image": "character-ability-cards/DR/call-of-the-nether.png",
+              "xws": "callofthenether",
+              "level": 3
+          },
+          {
+              "name": "careful attunement",
+              "points": 546,
+              "image": "character-ability-cards/DR/careful-attunement.png",
+              "xws": "carefulattunement",
+              "level": 6
+          },
+          {
+              "name": "clairvoyance",
+              "points": 547,
+              "image": "character-ability-cards/DR/clairvoyance.png",
+              "xws": "clairvoyance",
+              "level": 1
+          },
+          {
+              "name": "cleansing rite",
+              "points": 548,
+              "image": "character-ability-cards/DR/cleansing-rite.png",
+              "xws": "cleansingrite",
+              "level": 4
+          },
+          {
+              "name": "curative flux",
+              "points": 549,
+              "image": "character-ability-cards/DR/curative-flux.png",
+              "xws": "curativeflux",
+              "level": 7
+          },
+          {
+              "name": "cursed ground",
+              "points": 550,
+              "image": "character-ability-cards/DR/cursed-ground.png",
+              "xws": "cursedground",
+              "level": 1
+          },
+          {
+              "name": "deep contemplation",
+              "points": 551,
+              "image": "character-ability-cards/DR/deep-contemplation.png",
+              "xws": "deepcontemplation",
+              "level": 8
+          },
+          {
+              "name": "dimensional divide",
+              "points": 552,
+              "image": "character-ability-cards/DR/dimensional-divide.png",
+              "xws": "dimensionaldivide",
+              "level": 5
+          },
+          {
+              "name": "dimensional transfer",
+              "points": 553,
+              "image": "character-ability-cards/DR/dimensional-transfer.png",
+              "xws": "dimensionaltransfer",
+              "level": 1
+          },
+          {
+              "name": "duality shards",
+              "points": 555,
+              "image": "character-ability-cards/DR/duality-shards.png",
+              "xws": "dualityshards",
+              "level": 0
+          },
+          {
+              "name": "enfeebling hex",
+              "points": 556,
+              "image": "character-ability-cards/DR/enfeebling-hex.png",
+              "xws": "enfeeblinghex",
+              "level": 6
+          },
+          {
+              "name": "envision the course",
+              "points": 557,
+              "image": "character-ability-cards/DR/envision-the-course.png",
+              "xws": "envisionthecourse",
+              "level": 3
+          },
+          {
+              "name": "ethereal vortex",
+              "points": 558,
+              "image": "character-ability-cards/DR/ethereal-vortex.png",
+              "xws": "etherealvortex",
+              "level": 7
+          },
+          {
+              "name": "gift of the void",
+              "points": 559,
+              "image": "character-ability-cards/DR/gift-of-the-void.png",
+              "xws": "giftofthevoid",
+              "level": 2
+          },
+          {
+              "name": "hand of destiny",
+              "points": 560,
+              "image": "character-ability-cards/DR/hand-of-destiny.png",
+              "xws": "handofdestiny",
+              "level": 9
+          },
+          {
+              "name": "inspiration from beyond",
+              "points": 561,
+              "image": "character-ability-cards/DR/inspiration-from-beyond.png",
+              "xws": "inspirationfrombeyond",
+              "level": 0
+          },
+          {
+              "name": "otherworldly journey",
+              "points": 562,
+              "image": "character-ability-cards/DR/otherworldly-journey.png",
+              "xws": "otherworldlyjourney",
+              "level": 1
+          },
+          {
+              "name": "peer into battle",
+              "points": 563,
+              "image": "character-ability-cards/DR/peer-into-battle.png",
+              "xws": "peerintobattle",
+              "level": 1
+          },
+          {
+              "name": "planar fissure",
+              "points": 564,
+              "image": "character-ability-cards/DR/planar-fissure.png",
+              "xws": "planarfissure",
+              "level": 9
+          },
+          {
+              "name": "preordain the path",
+              "points": 565,
+              "image": "character-ability-cards/DR/preordain-the-path.png",
+              "xws": "preordainthepath",
+              "level": 4
+          },
+          {
+              "name": "protective aura",
+              "points": 567,
+              "image": "character-ability-cards/DR/protective-aura.png",
+              "xws": "protectiveaura",
+              "level": 1
+          },
+          {
+              "name": "ray of light",
+              "points": 568,
+              "image": "character-ability-cards/DR/ray-of-light.png",
+              "xws": "rayoflight",
+              "level": 1
+          },
+          {
+              "name": "revitalizing fount",
+              "points": 569,
+              "image": "character-ability-cards/DR/revitalizing-fount.png",
+              "xws": "revitalizingfount",
+              "level": 2
+          },
+          {
+              "name": "seal their fate",
+              "points": 570,
+              "image": "character-ability-cards/DR/seal-their-fate.png",
+              "xws": "sealtheirfate",
+              "level": 5
+          },
+          {
+              "name": "void snare",
+              "points": 571,
+              "image": "character-ability-cards/DR/void-snare.png",
+              "xws": "voidsnare",
+              "level": 1
+          },
+          {
+              "name": "ghost falcons",
+              "points": 616,
+              "image": "character-ability-cards/DR/envision-the-course.png",
+              "xws": "envisionthecourse",
+              "level": 3
+          },
+          {
+              "name": "twilight archon",
+              "points": 617,
+              "image": "character-ability-cards/DR/planar-fissure.png",
+              "xws": "planarfissure",
+              "level": 9
+          }
+      ]
+  },
+  {
       "name": "ds",
+      "max": 12,
       "cards": [
           {
               "name": "ds-back",
@@ -4680,6 +4913,7 @@ abilities = [
   },
   {
       "name": "el",
+      "max" : 10,
       "cards": [
           {
               "name": "el-back",
@@ -4908,7 +5142,8 @@ abilities = [
       ]
   },
   {
-      "name": "ns",
+      "name": "ns",      
+      "max" : 9,
       "cards": [
           {
               "name": "ns-back",
@@ -5116,7 +5351,8 @@ abilities = [
       ]
   },
   {
-      "name": "ph",
+      "name": "ph",      
+      "max" : 11,
       "cards": [
           {
               "name": "ph-back",
@@ -5338,7 +5574,8 @@ abilities = [
       ]
   },
   {
-      "name": "qm",
+      "name": "qm",      
+      "max" : 9,
       "cards": [
           {
               "name": "qm-back",
@@ -5546,7 +5783,8 @@ abilities = [
       ]
   },
   {
-      "name": "sb",
+      "name": "sb",      
+      "max" : 10,
       "cards": [
           {
               "name": "sb-back",
@@ -5775,7 +6013,8 @@ abilities = [
       ]
   },
   {
-      "name": "sk",
+      "name": "sk",            
+      "max" : 11,
       "cards": [
           {
               "name": "sk-back",
@@ -5997,7 +6236,8 @@ abilities = [
       ]
   },
   {
-      "name": "ss",
+      "name": "ss",            
+      "max" : 9,
       "cards": [
           {
               "name": "ss-back",
@@ -6205,7 +6445,8 @@ abilities = [
       ]
   },
   {
-      "name": "su",
+      "name": "su",      
+      "max" : 9,
       "cards": [
           {
               "name": "su-back",
@@ -6493,228 +6734,6 @@ abilities = [
               "image": "character-ability-cards/SU/wild-animation.png",
               "xws": "wildanimation",
               "level": 1
-          }
-      ]
-  },
-  {
-      "name": "dr",
-      "cards": [
-          {
-              "name": "dr-back",
-              "points": 554,
-              "image": "character-ability-cards/DR/dr-back.png",
-              "xws": "drback",
-              "level": 0
-          },
-          {
-              "name": "anguish and salvation",
-              "points": 542,
-              "image": "character-ability-cards/DR/anguish-and-salvation.png",
-              "xws": "anguishandsalvation",
-              "level": 8
-          },
-          {
-              "name": "anticipate intricacies",
-              "points": 543,
-              "image": "character-ability-cards/DR/anticipate-intricacies.png",
-              "xws": "anticipateintricacies",
-              "level": 1
-          },
-          {
-              "name": "bad omen",
-              "points": 544,
-              "image": "character-ability-cards/DR/bad-omen.png",
-              "xws": "badomen",
-              "level": 0
-          },
-          {
-              "name": "call of the nether",
-              "points": 545,
-              "image": "character-ability-cards/DR/call-of-the-nether.png",
-              "xws": "callofthenether",
-              "level": 3
-          },
-          {
-              "name": "careful attunement",
-              "points": 546,
-              "image": "character-ability-cards/DR/careful-attunement.png",
-              "xws": "carefulattunement",
-              "level": 6
-          },
-          {
-              "name": "clairvoyance",
-              "points": 547,
-              "image": "character-ability-cards/DR/clairvoyance.png",
-              "xws": "clairvoyance",
-              "level": 1
-          },
-          {
-              "name": "cleansing rite",
-              "points": 548,
-              "image": "character-ability-cards/DR/cleansing-rite.png",
-              "xws": "cleansingrite",
-              "level": 4
-          },
-          {
-              "name": "curative flux",
-              "points": 549,
-              "image": "character-ability-cards/DR/curative-flux.png",
-              "xws": "curativeflux",
-              "level": 7
-          },
-          {
-              "name": "cursed ground",
-              "points": 550,
-              "image": "character-ability-cards/DR/cursed-ground.png",
-              "xws": "cursedground",
-              "level": 1
-          },
-          {
-              "name": "deep contemplation",
-              "points": 551,
-              "image": "character-ability-cards/DR/deep-contemplation.png",
-              "xws": "deepcontemplation",
-              "level": 8
-          },
-          {
-              "name": "dimensional divide",
-              "points": 552,
-              "image": "character-ability-cards/DR/dimensional-divide.png",
-              "xws": "dimensionaldivide",
-              "level": 5
-          },
-          {
-              "name": "dimensional transfer",
-              "points": 553,
-              "image": "character-ability-cards/DR/dimensional-transfer.png",
-              "xws": "dimensionaltransfer",
-              "level": 1
-          },
-          {
-              "name": "duality shards",
-              "points": 555,
-              "image": "character-ability-cards/DR/duality-shards.png",
-              "xws": "dualityshards",
-              "level": 0
-          },
-          {
-              "name": "enfeebling hex",
-              "points": 556,
-              "image": "character-ability-cards/DR/enfeebling-hex.png",
-              "xws": "enfeeblinghex",
-              "level": 6
-          },
-          {
-              "name": "envision the course",
-              "points": 557,
-              "image": "character-ability-cards/DR/envision-the-course.png",
-              "xws": "envisionthecourse",
-              "level": 3
-          },
-          {
-              "name": "ethereal vortex",
-              "points": 558,
-              "image": "character-ability-cards/DR/ethereal-vortex.png",
-              "xws": "etherealvortex",
-              "level": 7
-          },
-          {
-              "name": "gift of the void",
-              "points": 559,
-              "image": "character-ability-cards/DR/gift-of-the-void.png",
-              "xws": "giftofthevoid",
-              "level": 2
-          },
-          {
-              "name": "hand of destiny",
-              "points": 560,
-              "image": "character-ability-cards/DR/hand-of-destiny.png",
-              "xws": "handofdestiny",
-              "level": 9
-          },
-          {
-              "name": "inspiration from beyond",
-              "points": 561,
-              "image": "character-ability-cards/DR/inspiration-from-beyond.png",
-              "xws": "inspirationfrombeyond",
-              "level": 0
-          },
-          {
-              "name": "otherworldly journey",
-              "points": 562,
-              "image": "character-ability-cards/DR/otherworldly-journey.png",
-              "xws": "otherworldlyjourney",
-              "level": 1
-          },
-          {
-              "name": "peer into battle",
-              "points": 563,
-              "image": "character-ability-cards/DR/peer-into-battle.png",
-              "xws": "peerintobattle",
-              "level": 1
-          },
-          {
-              "name": "planar fissure",
-              "points": 564,
-              "image": "character-ability-cards/DR/planar-fissure.png",
-              "xws": "planarfissure",
-              "level": 9
-          },
-          {
-              "name": "preordain the path",
-              "points": 565,
-              "image": "character-ability-cards/DR/preordain-the-path.png",
-              "xws": "preordainthepath",
-              "level": 4
-          },
-          {
-              "name": "protective aura",
-              "points": 567,
-              "image": "character-ability-cards/DR/protective-aura.png",
-              "xws": "protectiveaura",
-              "level": 1
-          },
-          {
-              "name": "ray of light",
-              "points": 568,
-              "image": "character-ability-cards/DR/ray-of-light.png",
-              "xws": "rayoflight",
-              "level": 1
-          },
-          {
-              "name": "revitalizing fount",
-              "points": 569,
-              "image": "character-ability-cards/DR/revitalizing-fount.png",
-              "xws": "revitalizingfount",
-              "level": 2
-          },
-          {
-              "name": "seal their fate",
-              "points": 570,
-              "image": "character-ability-cards/DR/seal-their-fate.png",
-              "xws": "sealtheirfate",
-              "level": 5
-          },
-          {
-              "name": "void snare",
-              "points": 571,
-              "image": "character-ability-cards/DR/void-snare.png",
-              "xws": "voidsnare",
-              "level": 1
-          },
-          {
-              "name": "ghost falcons",
-              "points": 616,
-              "image": "character-ability-cards/DR/envision-the-course.png",
-              "xws": "envisionthecourse",
-              "level": 3
-          },
-          {
-              "name": "twilight archon",
-              "points": 617,
-              "image": "character-ability-cards/DR/planar-fissure.png",
-              "xws": "planarfissure",
-              "level": 9
           }
       ]
   }
