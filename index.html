@@ -343,17 +343,17 @@
               <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"
                 v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
               <div class="abilityButtons">
-                <button v-if="!abilitiesChosen.includes(card)" v-on:click="addAbility(card)" class="add btn btn-light">
+                <button v-if="!abilitiesChosen.includes(card) && abilitiesChosen.length < abilityCategory.max" v-on:click="addAbility(card)" class="add btn btn-light">
                   Add
                 </button>
-                <button v-else v-on:click="removeAbility(card)" class="remove btn btn-light">
+                <button v-if="abilitiesChosen.includes(card)" v-on:click="removeAbility(card)" class="remove btn btn-light">
                   Remove
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <h3 v-if="abilityCategory != null">Level: <button v-for='theLevel in 9' class="btn btn-light" v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel"><h3>{{ theLevel }}</h3></button></h3>
+        <h3 v-if="abilityCategory != null">Level: <button v-for='theLevel in 9' class="btn btn-light" v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel"><h3>{{ theLevel }}</h3></button> {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
 
       </div> <!-- main row ends -->
     </div> <!-- main container ends -->
