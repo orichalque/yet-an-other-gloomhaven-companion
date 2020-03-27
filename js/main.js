@@ -159,7 +159,7 @@ new Vue({
             this.$forceUpdate()
         },
         longRest: function() {
-            if (this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played).length >0) {
+            if (this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played && ! card.destroyed).length >0) {
                 this.longRestMode = true    
             }            
         },
