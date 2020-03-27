@@ -88,7 +88,7 @@
                 <h3>Turn: {{ turn }}</h3>
               </div>
 
-              <div class="col-lg-6 border-right" id="abilitiesSection">
+              <div class="col-lg-6 border-right" v-if="abilitiesChosen.length > 0" id="abilitiesSection">
                 <h3>Abilities</h3>
                 <div class="container">
 
@@ -183,6 +183,9 @@
                   </div>
 
                 </div>
+              </div>
+              <div class="col-lg-6 border-right" v-else id="abilitiesSection">
+                Build your deck in the <a href="#" v-on:click="set('abilities')">Abilities</a> section first !
               </div>
 
               <div class="col-lg-6" style="padding-top: 1em; padding-bottom: 1em">
