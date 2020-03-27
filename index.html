@@ -328,11 +328,10 @@
 
         <!-- ABILITY CATEGORY -->
         <div class="row flex-nowrap overflow-auto scrollCardContainer">
-          <div class="col mt-3" v-for='ability in abilities'
-            v-if='abilityCategory == null || abilityCategory == ability'>
-            <input type="image" v-on:click="displayAbilities(ability)" class="image rounded"
-              v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+          <div class="col mt-3" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
+            <input type="image" v-on:click="displayAbilities(ability)" class="image rounded" v-bind:src="'data/'+ability.cards[0].image" style="width:8em"/>            
           </div>
+          <h3 v-if="abilityCategory != null" class="align-baseline"> Cards: {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
         </div>
 
         <!-- PER CATEGORY CARDS -->
@@ -353,7 +352,10 @@
             </div>
           </div>
         </div>
-        <h3 v-if="abilityCategory != null">Level: <button v-for='theLevel in 9' class="btn btn-light" v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel"><h3>{{ theLevel }}</h3></button> {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
+        <div v-if="abilityCategory != null">
+          <h3 class="align-baseline" style="display: inline;">Level:</h3> 
+          <button v-for='theLevel in 9' class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel"><h3>{{ theLevel }}</h3></button>
+        </div>
 
       </div> <!-- main row ends -->
     </div> <!-- main container ends -->
