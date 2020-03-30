@@ -161,22 +161,23 @@
                   <div class="row mt-3" style="display: table-cell">
                     <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
                       v-for="ability in abilitiesChosen" v-if="ability.duration != 0">
+                      <!-- On board cards -->
                       <div class="col">
                         <img v-bind:src="'data/'+ability.image" class="image rounded"></img>                        
                         <div class="iconContainer">
-                          <div class="topIconContainer">
+                          <div v-if="ability.duration < 0" class="topIconContainer">
                             <button v-on:click="useCard(ability)" class="btn btn-light add">
                               Use
                             </button>
-                          </div>
-                          
-                          <div class="abilityButtons">
-                            <h4>{{ ability.numberOfTimesUsed }}</h4>
-                          </div>
+                          </div>                          
+
                           <div class="bottomIconContainer">
                             <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon"
                               style="width:3em" v-on:click="destroyCard(ability)" />
                           </div>                          
+                        </div>
+                        <div class="onCardNoHover">
+                          <h4>{{ ability.numberOfTimesUsed }}</h4>
                         </div>
                       </div>
                     </div>
@@ -256,6 +257,7 @@
             <div v-if='modifierCategory == null' class="col mt-3">
               <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
                 v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false" src="data/layers/locked_layer.png" style="width:8em">  
             </div>
 
             <div v-if='modifierCategory == ability.name.substring(0,2)'>
@@ -334,8 +336,9 @@
 
         <!-- ABILITY CATEGORY -->
         <div class="row flex-nowrap overflow-auto scrollCardContainer">
-          <div class="col mt-3" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
-            <input type="image" v-on:click="displayAbilities(ability)" class="image rounded" v-bind:src="'data/'+ability.cards[0].image" style="width:8em"/>            
+          <div class="col mt-3 parentImage" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
+            <input type="image" class="image rounded" v-on:click="displayAbilities(ability)"  v-bind:src="'data/'+ability.cards[0].image" style="width:8em"/>            
+            <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false" src="data/layers/locked_layer.png" style="width:8em">                        
           </div>
           <h3 v-if="abilityCategory != null" class="align-baseline"> Cards: {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
         </div>
