@@ -22,7 +22,13 @@
   h4 {
     font-family: 'fantaisieartistiquemedium';
   }
+
+  .parentImage {
+    position: relative;
+  }
+
   .image {
+    position: relative;
     opacity: 1;
     display: block;
     transition: .5s ease;
@@ -31,6 +37,13 @@
     object-fit: cover;
   }
   
+  .layer {
+    position: absolute;
+    width: 10em;
+    top: 0em;
+    left: 1em;
+  }
+
   .bottomIconContainer {
     transition: .5s ease;
     position: absolute;
