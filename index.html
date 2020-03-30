@@ -331,8 +331,9 @@
 
         <!-- ABILITY CATEGORY -->
         <div class="row flex-nowrap overflow-auto scrollCardContainer">
-          <div class="col mt-3" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
-            <input type="image" v-on:click="displayAbilities(ability)" class="image rounded" v-bind:src="'data/'+ability.cards[0].image" style="width:8em"/>            
+          <div class="col mt-3 parentImage" v-for='ability in abilities' v-if='abilityCategory == null || abilityCategory == ability'>
+            <input type="image" class="image rounded" v-on:click="displayAbilities(ability)"  v-bind:src="'data/'+ability.cards[0].image" style="width:8em"/>            
+            <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false" src="data/layers/locked_layer.png" style="width:8em">                        
           </div>
           <h3 v-if="abilityCategory != null" class="align-baseline"> Cards: {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
         </div>
