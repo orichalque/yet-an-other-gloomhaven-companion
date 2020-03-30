@@ -56,7 +56,6 @@ new Vue({
             this.modifiersSpecial = attack_modifiers_special
             this.modifiers = attack_modifiers_categories
             this.abilities = abilities
-
         },        
         addModifier: function(card) {   
             this.modifiersChosen.push(card)
