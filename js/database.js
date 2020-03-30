@@ -2363,6 +2363,7 @@ abilities = [
   {
       "name": "br",
       "max" : 10,
+      "hidden" : false,
       "cards": [
           {
               "name": "br-back",
@@ -2579,6 +2580,7 @@ abilities = [
   {
       "name": "ch",
       "max" : "11",
+      "hidden" : false,
       "cards": [
           {
               "name": "ch-back",
@@ -2802,6 +2804,7 @@ abilities = [
   {
       "name": "mt",      
       "max" : 10,
+      "hidden" : false,
       "cards": [
           {
               "name": "mt-back",
@@ -3018,6 +3021,7 @@ abilities = [
   {
       "name": "sc",      
       "max" : 9,
+      "hidden" : false,
       "cards": [
           {
               "name": "sc-back",
@@ -3227,6 +3231,7 @@ abilities = [
   {
       "name": "sw",      
       "max" : 8,
+      "hidden" : false,
       "cards": [
           {
               "name": "sw-back",
@@ -3429,6 +3434,7 @@ abilities = [
   {
       "name": "ti",      
       "max" : 12,
+      "hidden" : false,
       "cards": [
           {
               "name": "ti-back",
@@ -3659,6 +3665,7 @@ abilities = [
   {
       "name": "be",
       "max": 10,
+      "hidden" : true,
       "cards": [
           {
               "name": "be-back",
@@ -3875,6 +3882,7 @@ abilities = [
   {
       "name": "bs",
       "max" : 11,
+      "hidden" : true,
       "cards": [
           {
               "name": "bs-back",
@@ -4154,6 +4162,7 @@ abilities = [
   {
       "name": "bt",
       "max": 10,
+      "hidden" : true,
       "cards": [
           {
               "name": "bt-back",
@@ -4426,6 +4435,7 @@ abilities = [
   {
       "name": "dr",            
       "max" : 9,
+      "hidden" : true,
       "cards": [
           {
               "name": "dr-back",
@@ -4649,6 +4659,7 @@ abilities = [
   {
       "name": "ds",
       "max": 12,
+      "hidden" : true,
       "cards": [
           {
               "name": "ds-back",
@@ -4914,6 +4925,7 @@ abilities = [
   {
       "name": "el",
       "max" : 10,
+      "hidden" : true,
       "cards": [
           {
               "name": "el-back",
@@ -5144,6 +5156,7 @@ abilities = [
   {
       "name": "ns",      
       "max" : 9,
+      "hidden" : true,
       "cards": [
           {
               "name": "ns-back",
@@ -5353,6 +5366,7 @@ abilities = [
   {
       "name": "ph",      
       "max" : 11,
+      "hidden" : true,
       "cards": [
           {
               "name": "ph-back",
@@ -5576,6 +5590,7 @@ abilities = [
   {
       "name": "qm",      
       "max" : 9,
+      "hidden" : true,
       "cards": [
           {
               "name": "qm-back",
@@ -5785,6 +5800,7 @@ abilities = [
   {
       "name": "sb",      
       "max" : 10,
+      "hidden" : true,
       "cards": [
           {
               "name": "sb-back",
@@ -6015,6 +6031,7 @@ abilities = [
   {
       "name": "sk",            
       "max" : 11,
+      "hidden" : true,
       "cards": [
           {
               "name": "sk-back",
@@ -6238,6 +6255,7 @@ abilities = [
   {
       "name": "ss",            
       "max" : 9,
+      "hidden" : true,
       "cards": [
           {
               "name": "ss-back",
@@ -6447,6 +6465,7 @@ abilities = [
   {
       "name": "su",      
       "max" : 9,
+      "hidden" : true,
       "cards": [
           {
               "name": "su-back",
