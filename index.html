@@ -256,6 +256,7 @@
             <div v-if='modifierCategory == null' class="col mt-3">
               <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
                 v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
+                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false" src="data/layers/locked_layer.png" style="width:8em">  
             </div>
 
             <div v-if='modifierCategory == ability.name.substring(0,2)'>
