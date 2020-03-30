@@ -12,7 +12,9 @@ new Vue({
         level: 1,
 
         /* Modifier information */
-        modifiers : [],        
+        modifiers : [],
+        modifiersBase : [],
+        modifiersSpecial : [],        
         modifierCategory: null,        
         modifiersChosen: [],
         modifiersDrawPile: [],
@@ -48,30 +50,11 @@ new Vue({
             
         },
         loadDatabase: function() {
-            currentId = 0
-
-            modifier = null
-            attack_modifiers.forEach(elem => {
-                id = elem.name.substring(0,5)
-                if (id.endsWith('-')) {
-                    id = elem.name.substring(0,4)
-                }
-                if (id != currentId) {  
-                    if ( modifier != null) {
-                        this.modifiers.push(modifier)
-                    }
-
-                    currentId = id           
-                    modifier = {name : id, cards : []}                    
-                }
-                if(id == "am-p") {
-                    this.modifiersChosen.push(elem)
-                    this.modifiersDrawPile.push(elem)
-                } 
-                modifier.cards.push(elem)
-            })
-            this.modifiers.push(modifier)
-
+            this.modifiersBase = attack_modifiers_base
+            this.modifiersChosen = this.modifiersBase.slice()
+            this.modifiersDrawPile = this.modifiersBase.slice()
+            this.modifiersSpecial = attack_modifiers_special
+            this.modifiers = attack_modifiers_categories
             this.abilities = abilities
 
         },        
