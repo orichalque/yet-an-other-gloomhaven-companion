@@ -5521,13 +5521,6 @@ abilities = [
                 "image": "character-ability-cards/DS/the-hunt-begins.png",
                 "xws": "thehuntbegins",
                 "level": 0
-            },
-            {
-                "name": "battle boar",
-                "points": 593,
-                "image": "character-ability-cards/DS/vital-charge.png",
-                "xws": "vitalcharge",
-                "level": 1
             }
         ]
     },
