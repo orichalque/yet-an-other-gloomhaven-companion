@@ -1,10 +1,15 @@
 var gearManagement = {
     data: {
-        allGear : []
+        allGear : [],
+        gearCategory : null
     },
     methods: {
-        
-    },
-    beforeMount(){
+        displayGearCategory: function(cat) {
+            if (this.gearCategory == null) {
+                this.gearCategory = cat
+            } else {
+                this.gearCategory = null
+            }             
+        }
     }
 }
