@@ -173,6 +173,11 @@
 
   }
 
+  .tapped {
+    transition: .5s ease;
+    transform: rotate(90deg);
+  }
+
   [v-cloak] {
     display: none;
   }
