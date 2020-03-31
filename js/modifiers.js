@@ -8,7 +8,8 @@ var modifiersManagement = {
         modifiersChosen: [],
         modifiersDrawPile: [],
         specialModifiers : false,
-        lastDrawnModifier: null  
+        lastDrawnModifier: null,
+        modifiersDiscardPile : [] 
     },
     methods: {
         displayModifiers: function(param) {
@@ -29,6 +30,9 @@ var modifiersManagement = {
         },
         drawModifier: function() {
             var randomint = getRandomInt(this.modifiersDrawPile.length)
+            if(this.lastDrawnModifier != null ){
+                this.modifiersDiscardPile.unshift(this.lastDrawnModifier)
+            }
             this.lastDrawnModifier = this.modifiersDrawPile[randomint]
             this.modifiersDrawPile.splice(randomint,1)
         },
@@ -38,6 +42,7 @@ var modifiersManagement = {
                 this.modifiersDrawPile.push(this.modifiersChosen[i])
             }
             this.lastDrawnModifier = null
+            this.modifiersDiscardPile = []
         },
         displaySpecialModifiers: function() {
             if(this.specialModifiers){
@@ -45,27 +50,6 @@ var modifiersManagement = {
             }else{
                 this.specialModifiers = true
             }
-        },
-        addModifier: function(card) {   
-            this.modifiersChosen.push(card)
-            this.modifiersDrawPile.push(card)
-        },
-        removeModifier: function(card) {
-            indexOfCardToRemove = this.modifiersChosen.indexOf(card)
-            this.modifiersChosen.splice(indexOfCardToRemove, 1)
-            this.modifiersDrawPile.splice(indexOfCardToRemove, 1)
-        },
-        drawModifier: function() {
-            var randomint = getRandomInt(this.modifiersDrawPile.length)
-            this.lastDrawnModifier = this.modifiersDrawPile[randomint]
-            this.modifiersDrawPile.splice(randomint,1)
-        },
-        shuffleModifiersDeck: function() {
-            this.modifiersDrawPile = []
-            for(let i = this.modifiersChosen.length - 1; i > 0; i--){
-                this.modifiersDrawPile.push(this.modifiersChosen[i])
-            }
-            this.lastDrawnModifier = null
-        }        
+        }, 
     }
 }
