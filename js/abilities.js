@@ -43,6 +43,11 @@ var abilitiesManagement = {
         longRest: function() {
             if (this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played && ! card.destroyed).length >0) {
                 this.longRestMode = true    
+                this.gearChosen.forEach(gear => {
+                    if (gear.played && ! gear.lost) {
+                        gear.played = false
+                    }
+                })
             }            
         },
         destroyLongRestCard: function(card) {
