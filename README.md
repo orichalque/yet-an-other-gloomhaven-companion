@@ -6,6 +6,9 @@ Our favorite way to do it was by placing a camera above the board, video share i
 
 https://www.gloomhaven-deck.com/
 
+Nightly version:
+https://gloomhaven-dev.netlify.com/
+
 We've used it for a few sessions and it's pretty fun. Here's how it looks :
 
 The 'Play' view allows the player to :
