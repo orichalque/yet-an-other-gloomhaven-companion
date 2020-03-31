@@ -9,26 +9,26 @@ https://www.gloomhaven-deck.com/
 We've used it for a few sessions and it's pretty fun. Here's how it looks :
 
 The 'Play' view allows the player to :
--Draw a modifier
--Shuffle the modifier deck
--Select cards to be played
--Burn a card
--Discard a card
--Restore a card
--Place a card on the board for one turn
--Place a card on the board until the end of the game
--Track the number of time a card placed on the board was used
--Perform a long or short sleep
--Save the player's deck
+- Draw a modifier
+- Shuffle the modifier deck
+- Select cards to be played
+- Burn a card
+- Discard a card
+- Restore a card
+- Place a card on the board for one turn
+- Place a card on the board until the end of the game
+- Track the number of time a card placed on the board was used
+- Perform a long or short sleep
+- Save the player's deck
 
 The 'Abilities' view allows the player to :
--Select a faction
--Build the player's ability deck from the faction's card pool
--Filter the cards available by level
+- Select a faction
+- Build the player's ability deck from the faction's card pool
+- Filter the cards available by level
 
 The 'Modifiers' view allows the player to :
--Select a faction
--Build the player's modifiers deck from the base deck (selected by default), the faction's card pool and the special modifiers
+- Select a faction
+- Build the player's modifiers deck from the base deck (selected by default), the faction's card pool and the special modifiers
 
 We hope you find it as useful as we do! Feedback is very welcome, and don't hesitate to signal any bugs in the issue tracker
 
