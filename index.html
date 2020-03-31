@@ -379,7 +379,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">About</h5>
+            <h3 class="modal-title" id="exampleModalLabel">About</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -410,9 +410,14 @@
                 <input type="image" src="data/icons/btn_donate_SM.gif" name="submit"
                   title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 
-              </form>
-
+              </form>              
             </span>
+
+            <h3>Spoiler section</h3>
+            <button v-if="!showSpoiler" v-on:click="showSpoiler = true" class="btn btn-secondary">Show</button>
+            <div v-else>              
+              <span><input type="checkbox" @change="loadXEnvelope()"/> Enable envelope X</span>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -440,7 +445,7 @@
   <script src="vendor/vuejs/vue.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  
   <script src="vendor/cookiealert/cookiealert.js"></script>
-  <script src="js/database.js"></script>
+  <script src="js/database.js"></script>  
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>
