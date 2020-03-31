@@ -218,6 +218,14 @@
                     </div>
                   </div>
                 </div>
+                <div style="max-width: 50%;">
+                  <div class="row flex-nowrap overflow-auto scrollCardContainer">
+                    <div class="col mt-3" v-for='modifier in modifiersDiscardPile' style="padding-left: 15px; padding-right: 0px;">
+                      <img v-bind:src="'data/'+modifier.image" style="width:4em" class="image rounded" />
+                    </div>
+                  </div>
+                </div>
+                
               </div>
             </div>
 
