@@ -94,6 +94,7 @@
               <h3>Turn: {{ turn }}</h3>
             </div>
 
+            <!-- left side of the play screen-->
             <div class="col-lg-6 border-right" v-if="abilitiesChosen.length > 0" id="abilitiesSection">
               <h3>Abilities</h3>
               <div class="container">
@@ -193,7 +194,8 @@
             <div class="col-lg-6 border-right" v-else id="abilitiesSection">
               Build your deck in the <a href="#" v-on:click="set('abilities')">Abilities</a> section first !
             </div>
-
+            
+            <!-- Right side of the play screen-->
             <div class="col-lg-6" style="padding-top: 1em; padding-bottom: 1em">
               <h3>Modifiers</h3>
               <!-- BASE DECK BACK -->
@@ -219,7 +221,19 @@
                   </div>
                 </div>
               </div>
+              
+              <hr/>
+
+              <h3>Gear</h3>
+
+              <div class="row" style="display: table-cell">
+                <div v-for="gear in gearChosen" style="display: inline-block; padding-top: 1em;" class="col abilityContainer scrollCardContainer">                  
+                  <img v-bind:src="'data/'+gear.image" style="width:8em" class="image rounded"></img>
+                </div>
+              </div>
+
             </div>
+            
 
             <!-- ALERTS -->
             <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="redAlert">
@@ -390,6 +404,7 @@
 
       <!-- GEAR -->
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
+
         <!-- Categories of items -->
         <div class="row flex-nowrap overflow-auto scrollCardContainer">
           <div class="col-auto"  v-for='gearCat in allGear' v-if='gearCategory == null || gearCat == gearCategory'>
@@ -415,7 +430,6 @@
             </div>            
           </div>          
         </div>
-
       </div> <!-- End of gear -->
 
     </div> <!-- main container ends -->
