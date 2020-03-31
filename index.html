@@ -403,7 +403,8 @@
           
           <div v-for='item in gearCategory.items' class="col-auto mt-3">
             <a href="#">
-              <img v-bind:src="'data/'+item.image" style="width:8em"/>                
+              <img v-bind:src="'data/'+item.image" style="width:8em"/>      
+              <h4 class="onCardNoHover"> {{ item.points +1 }}</h4>          
             </a>
           </div>
           
