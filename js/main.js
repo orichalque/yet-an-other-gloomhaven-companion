@@ -50,27 +50,45 @@ new Vue({
         saveData: function() {
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen))
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))    
+            Cookies.set("gear", JSON.stringify(this.gearChosen))    
             this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
             abilityCookie = Cookies.get('abilities')
+
             if (abilityCookie != null) {
                 oldAbilities = JSON.parse(abilityCookie)
                 oldAbilities.forEach(ability => {
-                    this.abilities.forEach(inDataBaseAbility => {
-                        inDataBaseAbility.cards.forEach(card => {
-                            if (card.name === ability.name) {                        
+                    this.abilities.forEach(cat => {
+                        cat.cards.forEach(card => {
+                            if (card.name === ability.name) {
                                 this.abilitiesChosen.push(card)
                             }
-                        })                   
+                        })
                     })
                 })
             }
             
+            gearCookie = Cookies.get('gear')
+            if (gearCookie != null) {
+                oldGear = JSON.parse(gearCookie)
+                oldGear.forEach(gear => {
+                    this.allGear.forEach(cat => {
+                        cat.items.forEach(item => {
+                            if (gear.name === item.name) {
+                                this.gearChosen.push(item)
+                            }
+                        })
+                    })
+                })
+            }
+
             modifierCookie = Cookies.get("modifiers");
             if (modifierCookie != null) {
                 oldModifies = JSON.parse(modifierCookie);
-            }
+                //TODO
+            }            
+
             this.newGame();        
         },
         getAcceptedCookie: function() {    
