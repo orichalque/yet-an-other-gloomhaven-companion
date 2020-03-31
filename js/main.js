@@ -5,9 +5,10 @@ new Vue({
         /* Platform information */
         menu : 'home',
         acceptedCookies: false,
-        isMobile: false,
-        alert: '',
-
+        isMobile: false,        
+        hasOpenedXEnvelope: false,
+        showSpoiler: false,
+        alert: '',        
         /* General game information */ 
         turn: 1,
         level: 1    
@@ -24,6 +25,14 @@ new Vue({
             this.modifiers = attack_modifiers_categories
             this.abilities = abilities
             this.allGear = allItems
+        },
+        loadXEnvelope: function() {
+            if (! this.hasOpenedXEnvelope) {            
+                console.log("Enabled")                    
+                this.hasOpenedXEnvelope = true
+                this.modifiers.push(XEnvelopeModifiers)
+                this.abilities.push(XEnvelopeAbilities)
+            }
         },
         newGame: function() {
             this.abilitiesChosen.forEach(card => {
