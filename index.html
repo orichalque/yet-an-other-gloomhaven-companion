@@ -337,7 +337,6 @@
 
       <!-- ABILITIES -->
       <div class="col-lg-12 container-fluid" id="abilities" v-if="menu == 'abilities'">
-
         <!-- ABILITY CATEGORY -->
         <div class="row flex-nowrap overflow-auto scrollCardContainer">
           <div class="col mt-3 parentImage" v-for='ability in abilities'
@@ -373,10 +372,12 @@
         </div>
         <div v-if="abilityCategory != null">
           <h3 class="align-baseline" style="display: inline;">Level:</h3>
-          <button v-for='theLevel in 9' class="btn btn-light align-baseline"
-            v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
-            <h3>{{ theLevel }}</h3>
-          </button>
+          <div class="btn-group" role="group">            
+            <button v-for='theLevel in 9' class="btn btn-light align-baseline"
+              v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
+              <h3>{{ theLevel }}</h3>
+            </button>
+          </div>
         </div>
 
       </div> <!-- main row ends -->
