@@ -12,7 +12,7 @@ var modifiersManagement = {
     },
     methods: {
         displayModifiers: function(param) {
-            if (this.modifierCategory == param) {
+            if (this.modifierCategory === param) {
                 this.modifierCategory = null
             } else {
                 this.modifierCategory = param

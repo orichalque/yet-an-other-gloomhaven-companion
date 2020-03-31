@@ -8,6 +8,7 @@ new Vue({
         isMobile: false,        
         hasOpenedXEnvelope: false,
         showSpoiler: false,
+        version: 'vanilla',
         alert: '',        
         /* General game information */ 
         turn: 1,
