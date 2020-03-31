@@ -235,12 +235,24 @@
               <h3>Gear</h3>
               
               <div class="row" style="display: table-cell">
-                <div style="display: inline-block; padding-top: 1em;" class="abilityContainer scrollCardContainer" v-for="gear in gearChosen">
+                <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="gear in gearChosen">
                   <div class="col">                  
-                    <img v-bind:src="'data/'+gear.image" style="width:8em" class="image rounded"></img>
+                    <img v-bind:src="'data/'+gear.image" style="width:8em" class="image rounded" v-bind:class="[{tapped: gear.played}, {played: gear.lost}]"></img>
+                    <div v-if="!gear.played"class="abilityButtons">
+                      <button v-on:click="tapItem(gear)" class="btn btn-light add">
+                        Use once
+                      </button>
+                      <button v-on:click="looseItem(gear)" class="btn btn-light remove">
+                        Consume
+                      </button>
+                    </div>
+                    <div v-if="gear.played" class="abilityButtons">
+                      <button v-on:click="restoreItem(gear)" class="btn btn-light add">
+                        Restore
+                      </button>
+                    </div>
                   </div>
                 </div>
-  
               </div>
               
             </div>
