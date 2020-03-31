@@ -1,7 +1,8 @@
 var gearManagement = {
     data: {
         allGear : [],
-        gearCategory : null
+        gearCategory : null,
+        gearChosen: []
     },
     methods: {
         displayGearCategory: function(cat) {
@@ -10,6 +11,13 @@ var gearManagement = {
             } else {
                 this.gearCategory = null
             }             
+        },
+        addGear: function(item) {
+            this.gearChosen.push(item)
+        },
+        removeGear: function(item) {
+            var indexOfItemToRemove = this.gearChosen.indexOf(item)
+            this.gearChosen.splice(indexOfItemToRemove, 1)
         }
     }
 }
