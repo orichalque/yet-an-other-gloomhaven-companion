@@ -396,9 +396,29 @@
 
       </div> <!-- main row ends -->
 
+      <!-- GEAR -->
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
         <h3>Gear</h3>
+        <div class="row flex-nowrap overflow-auto scrollCardContainer">
+          <div class="col-auto"  v-for='gearCat in allGear' v-if='gearCategory == null || gearCat == gearCategory'>
+            <a href="#" v-on:click="displayGearCategory(gearCat)">
+              <img src="data/items/back.png" style="width:8em"/>
+              <h4 class="onCardNoHover"> {{ gearCat.name }}</h4>
+            </a>
+          </div>
+        </div>
+        <div v-if="gearCategory != null" class="row flex-nowrap overflow-auto scrollCardContainer">
+          
+          <div v-for='item in gearCategory.items' class="col-auto mt-3">
+            <a href="#">
+              <img v-bind:src="'data/'+item.image" style="width:8em"/>      
+              <h4 class="onCardNoHover"> {{ item.points +1 }}</h4>          
+            </a>
+          </div>
+          
+        </div>
       </div>
+
     </div> <!-- main container ends -->
     </div> <!-- main wrapper ends -->
 
