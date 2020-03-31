@@ -20,9 +20,11 @@ new Vue({
         modifiersDrawPile: [],
         specialModifiers : false,
         lastDrawnModifier: null,
+        overlayCard: {},
 
         /* Ability information */
         abilities : [],
+        classChosen: false,
         abilityCategory: null,
         abilitiesChosen: [],        
         twoAbilitiesSelected: [],
@@ -41,6 +43,7 @@ new Vue({
             }
         },
         displayAbilities: function(param) {
+            this.classChosen = true;
             if (this.abilityCategory == param) {
                 this.abilityCategory = null
             } else {
@@ -48,6 +51,11 @@ new Vue({
                 this.abilityCategory.cards.sort((a, b) => a.level - b.level)
             }
             
+        },
+        switchClass: function() {
+            this.classChosen = false;
+            this.abilityCategory = null;
+            this.abilitiesChosen = [];
         },
         loadDatabase: function() {
             this.modifiersBase = attack_modifiers_base
@@ -106,9 +114,15 @@ new Vue({
             }
             this.lastDrawnModifier = null
         },
-        addAbility: function(card) {   
-            card.duration = 0
-            this.abilitiesChosen.push(card)
+        addAbility: function(card) {
+            let levelExists = false
+            if (card.level > 1) {
+                levelExists = this.abilitiesChosen.find(x => x.level === card.level)
+            }
+            if (!this.abilitiesChosen.includes(card) && this.abilitiesChosen.length < this.abilityCategory.max && !levelExists) {
+                card.duration = 0
+                this.abilitiesChosen.push(card)
+            }
         },
         removeAbility: function(card) {
             indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
