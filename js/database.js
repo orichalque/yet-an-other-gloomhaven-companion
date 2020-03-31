@@ -5493,34 +5493,6 @@ abilities = [
                 "image": "character-ability-cards/DS/wild-command.png",
                 "xws": "wildcommand",
                 "level": 5
-            },
-            {
-                "name": "war hawk",
-                "points": 589,
-                "image": "character-ability-cards/DS/felling-swoop.png",
-                "xws": "fellingswoop",
-                "level": 1
-            },
-            {
-                "name": "giant toad",
-                "points": 590,
-                "image": "character-ability-cards/DS/natures-hunger.png",
-                "xws": "natureshunger",
-                "level": 6
-            },
-            {
-                "name": "spitting cobra",
-                "points": 591,
-                "image": "character-ability-cards/DS/predator-and-prey.png",
-                "xws": "predatorandprey",
-                "level": 9
-            },
-            {
-                "name": "vicious jackal",
-                "points": 592,
-                "image": "character-ability-cards/DS/the-hunt-begins.png",
-                "xws": "thehuntbegins",
-                "level": 0
             }
         ]
     },
