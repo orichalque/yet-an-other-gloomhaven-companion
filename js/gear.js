@@ -13,11 +13,29 @@ var gearManagement = {
             }             
         },
         addGear: function(item) {
+            this.restoreItem(item)
             this.gearChosen.push(item)
         },
         removeGear: function(item) {
             var indexOfItemToRemove = this.gearChosen.indexOf(item)
             this.gearChosen.splice(indexOfItemToRemove, 1)
+        },
+        looseItem: function(item) {
+            item.played = true
+            item.lost = true
+            this.$forceUpdate()
+
+        },
+        tapItem: function(item) {
+            item.played = true
+            item.lost = false
+            this.$forceUpdate()
+
+        },
+        restoreItem: function(item) {
+            item.played = false
+            item.lost = false
+            this.$forceUpdate()
         }
     }
 }
