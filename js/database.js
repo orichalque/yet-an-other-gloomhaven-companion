@@ -7418,261 +7418,87 @@ allItems = [
         "items": [
             {
                 "name": "ancient bow",
-                "points": 676,
+                "points": 151,
                 "image": "items/152-165/ancient-bow.png",
                 "xws": "ancientbow"
             },
             {
                 "name": "basin of prophecy",
-                "points": 677,
+                "points": 152,
                 "image": "items/152-165/basin-of-prophecy.png",
                 "xws": "basinofprophecy"
             },
             {
                 "name": "crystal tiara",
-                "points": 678,
+                "points": 153,
                 "image": "items/152-165/crystal-tiara.png",
                 "xws": "crystaltiara"
             },
             {
                 "name": "curseward armor",
-                "points": 679,
+                "points": 154,
                 "image": "items/152-165/curseward-armor.png",
                 "xws": "cursewardarmor"
             },
             {
                 "name": "cutpurse dagger",
-                "points": 680,
+                "points": 155,
                 "image": "items/152-165/cutpurse-dagger.png",
                 "xws": "cutpursedagger"
             },
             {
                 "name": "elemental claymore",
-                "points": 681,
+                "points": 156,
                 "image": "items/152-165/elemental-claymore.png",
                 "xws": "elementalclaymore"
             },
             {
                 "name": "living armor",
-                "points": 682,
+                "points": 157,
                 "image": "items/152-165/living-armor.png",
                 "xws": "livingarmor"
             },
             {
-                "name": "living armor instructions",
-                "points": 683,
-                "image": "items/152-165/living-armor-instructions.png",
-                "xws": "livingarmorinstructions"
-            },
-            {
                 "name": "major antidote",
-                "points": 684,
+                "points": 158,
                 "image": "items/152-165/major-antidote.png",
                 "xws": "majorantidote"
             },
             {
                 "name": "minor antidote",
-                "points": 685,
+                "points": 159,
                 "image": "items/152-165/minor-antidote.png",
                 "xws": "minorantidote"
             },
             {
                 "name": "rejuvenation greaves",
-                "points": 686,
+                "points": 160,
                 "image": "items/152-165/rejuvenation-greaves.png",
                 "xws": "rejuvenationgreaves"
             },
             {
                 "name": "rift device",
-                "points": 687,
+                "points": 161,
                 "image": "items/152-165/rift-device.png",
                 "xws": "riftdevice"
             },
             {
                 "name": "ring of duality",
-                "points": 688,
+                "points": 162,
                 "image": "items/152-165/ring-of-duality.png",
                 "xws": "ringofduality"
             },
             {
                 "name": "scroll of haste",
-                "points": 689,
+                "points": 163,
                 "image": "items/152-165/scroll-of-haste.png",
                 "xws": "scrollofhaste"
             },
             {
                 "name": "throwing axe",
-                "points": 690,
+                "points": 164,
                 "image": "items/152-165/throwing-axe.png",
                 "xws": "throwingaxe"
-            },
-            {
-                "name": "item 152",
-                "points": 691,
-                "image": "items/152-165/ring-of-duality.png",
-                "xws": "ringofduality"
-            },
-            {
-                "name": "item #152",
-                "points": 692,
-                "image": "items/152-165/ring-of-duality.png",
-                "xws": "ringofduality"
-            },
-            {
-                "name": "item 153",
-                "points": 693,
-                "image": "items/152-165/minor-antidote.png",
-                "xws": "minorantidote"
-            },
-            {
-                "name": "item #153",
-                "points": 694,
-                "image": "items/152-165/minor-antidote.png",
-                "xws": "minorantidote"
-            },
-            {
-                "name": "item 154",
-                "points": 695,
-                "image": "items/152-165/major-antidote.png",
-                "xws": "majorantidote"
-            },
-            {
-                "name": "item #154",
-                "points": 696,
-                "image": "items/152-165/major-antidote.png",
-                "xws": "majorantidote"
-            },
-            {
-                "name": "item 155",
-                "points": 697,
-                "image": "items/152-165/curseward-armor.png",
-                "xws": "cursewardarmor"
-            },
-            {
-                "name": "item #155",
-                "points": 698,
-                "image": "items/152-165/curseward-armor.png",
-                "xws": "cursewardarmor"
-            },
-            {
-                "name": "item 156",
-                "points": 699,
-                "image": "items/152-165/elemental-claymore.png",
-                "xws": "elementalclaymore"
-            },
-            {
-                "name": "item #156",
-                "points": 700,
-                "image": "items/152-165/elemental-claymore.png",
-                "xws": "elementalclaymore"
-            },
-            {
-                "name": "item 157",
-                "points": 701,
-                "image": "items/152-165/ancient-bow.png",
-                "xws": "ancientbow"
-            },
-            {
-                "name": "item #157",
-                "points": 702,
-                "image": "items/152-165/ancient-bow.png",
-                "xws": "ancientbow"
-            },
-            {
-                "name": "item 158",
-                "points": 703,
-                "image": "items/152-165/rejuvenation-greaves.png",
-                "xws": "rejuvenationgreaves"
-            },
-            {
-                "name": "item #158",
-                "points": 704,
-                "image": "items/152-165/rejuvenation-greaves.png",
-                "xws": "rejuvenationgreaves"
-            },
-            {
-                "name": "item 159",
-                "points": 705,
-                "image": "items/152-165/scroll-of-haste.png",
-                "xws": "scrollofhaste"
-            },
-            {
-                "name": "item #159",
-                "points": 706,
-                "image": "items/152-165/scroll-of-haste.png",
-                "xws": "scrollofhaste"
-            },
-            {
-                "name": "item 160",
-                "points": 707,
-                "image": "items/152-165/cutpurse-dagger.png",
-                "xws": "cutpursedagger"
-            },
-            {
-                "name": "item #160",
-                "points": 708,
-                "image": "items/152-165/cutpurse-dagger.png",
-                "xws": "cutpursedagger"
-            },
-            {
-                "name": "item 161",
-                "points": 709,
-                "image": "items/152-165/throwing-axe.png",
-                "xws": "throwingaxe"
-            },
-            {
-                "name": "item #161",
-                "points": 710,
-                "image": "items/152-165/throwing-axe.png",
-                "xws": "throwingaxe"
-            },
-            {
-                "name": "item 162",
-                "points": 711,
-                "image": "items/152-165/rift-device.png",
-                "xws": "riftdevice"
-            },
-            {
-                "name": "item #162",
-                "points": 712,
-                "image": "items/152-165/rift-device.png",
-                "xws": "riftdevice"
-            },
-            {
-                "name": "item 163",
-                "points": 713,
-                "image": "items/152-165/crystal-tiara.png",
-                "xws": "crystaltiara"
-            },
-            {
-                "name": "item #163",
-                "points": 714,
-                "image": "items/152-165/crystal-tiara.png",
-                "xws": "crystaltiara"
-            },
-            {
-                "name": "item 164",
-                "points": 715,
-                "image": "items/152-165/basin-of-prophecy.png",
-                "xws": "basinofprophecy"
-            },
-            {
-                "name": "item #164",
-                "points": 716,
-                "image": "items/152-165/basin-of-prophecy.png",
-                "xws": "basinofprophecy"
-            },
-            {
-                "name": "item 165",
-                "points": 717,
-                "image": "items/152-165/living-armor.png",
-                "xws": "livingarmor"
-            },
-            {
-                "name": "item #165",
-                "points": 718,
-                "image": "items/152-165/living-armor.png",
-                "xws": "livingarmor"
             }
         ]
     }
