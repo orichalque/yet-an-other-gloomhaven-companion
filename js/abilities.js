@@ -21,8 +21,13 @@ var abilitiesManagement = {
         },
         addAbility: function(card) {   
             card.duration = 0
-            if (!this.abilitiesChosen.includes(card) && this.abilitiesChosen.length < this.abilityCategory.max)
-                this.abilitiesChosen.push(card)
+            if (!this.abilitiesChosen.includes(card)) {
+                if (this.abilitiesChosen.length < this.abilityCategory.max) 
+                    this.abilitiesChosen.push(card)
+            } else {
+                var cardIndexToRemove = this.abilitiesChosen.find(card)
+                this.abilitiesChosen.splice(cardIndexToRemove, 1)
+            }
         },
         removeAbility: function(card) {
             indexOfCardToRemove = this.abilitiesChosen.indexOf(card)

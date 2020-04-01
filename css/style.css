@@ -89,7 +89,7 @@ html,body .wrapper .container-fluid {
 
   .iconContainer {
     opacity: 0;
-  }
+  } 
 
   .abilityContainer {
     cursor: pointer;
@@ -102,6 +102,7 @@ html,body .wrapper .container-fluid {
   }
 
   .abilityContainer:hover  .iconContainer {
+    opacity: 1;
     transition: .5s ease;
   }
 
