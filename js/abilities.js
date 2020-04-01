@@ -21,7 +21,8 @@ var abilitiesManagement = {
         },
         addAbility: function(card) {   
             card.duration = 0
-            this.abilitiesChosen.push(card)
+            if (!this.abilitiesChosen.includes(card) && this.abilitiesChosen.length < this.abilityCategory.max)
+                this.abilitiesChosen.push(card)
         },
         removeAbility: function(card) {
             indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
