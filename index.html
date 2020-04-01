@@ -23,17 +23,20 @@
   <link rel="icon" type="image/png" href="data/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="data/favicons/favicon-16x16.png" sizes="16x16" />
   <link rel="icon" type="image/png" href="data/favicons/favicon-128.png" sizes="128x128" />
-  <meta name="application-name" content="&nbsp;" />
+
+  <meta charset="UTF-8">
+  <meta name="description" content="A deckbuilder for managing and playing Gloomhaven">
+  <meta name="keywords" content="Gloomhaven,BoardGame,Deckbuilding,Gloomhaven deck,Gloomhaven deckbuilding">
+  <meta name="application-name" content="Gloomhaven Deckbuilder" />
+
   <meta name="msapplication-TileColor" content="#FFFFFF" />
   <meta name="msapplication-TileImage" content="data/favicons/mstile-144x144.png" />
   <meta name="msapplication-square70x70logo" content="data/favicons/mstile-70x70.png" />
   <meta name="msapplication-square150x150logo" content="data/favicons/mstile-150x150.png" />
   <meta name="msapplication-wide310x150logo" content="data/favicons/mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="data/favicons/mstile-310x310.png" />
-
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="data/favicons/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,6 +44,7 @@
   <link rel="stylesheet" href="vendor/cookiealert/css/cookiealert.css">
   <link href="css/style.css" rel="stylesheet">
 
+  <script src="vendor/jquery/jquery.min.js"></script>
 
 </head>
 
@@ -67,6 +71,9 @@
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
               <a class="nav-link" href="#" v-on:click="set('modifiers')">Modifiers</a>
             </li>
+            <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
+              <a class="nav-link" href="#" v-on:click="set('gear')">Gear</a>
+            </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='about'}" data-toggle="modal"
               data-target="#exampleModal">
               <a class="nav-link" href="#">About</a>
@@ -80,160 +87,194 @@
     <div v-cloak class="container-fluid" id="content">
       <div class="row mt-3">
         <!-- MAIN PAGE -->
-        <div  class="col-lg-12 text-center container-fluid" id="main_menu" v-if="menu == 'home'">
-          <div class="col-lg-12 text-center container-fluid" id="main_menu" v-if="menu == 'home'">
+        <div class="col-lg-12 text-center container-fluid" id="main_menu" v-if="menu == 'home'">
+          
+          <div class="row ">
+            <div class="col-lg-12 text-center">
+              <h3>Turn: {{ turn }}</h3>
+            </div>
 
-            <div class="row ">
-              <div class="col-lg-12 text-center">
-                <h3>Turn: {{ turn }}</h3>
-              </div>
+            <!-- left side of the play screen-->
+            <div class="col-lg-6 border-right" v-if="abilitiesChosen.length > 0" id="abilitiesSection">
+              <h3>Abilities</h3>
+              <div class="container">
 
-              <div class="col-lg-6 border-right" v-if="abilitiesChosen.length > 0" id="abilitiesSection">
-                <h3>Abilities</h3>
-                <div class="container">
-
-                  <div class="row mt-3">
-                    <div class="col-lg-3"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
-                        cards</button></div>
-                    <div class="col-lg-3"><button v-on:click="shortRest()"
-                        class="btn btn-block btn-outline-secondary">Short rest</button></div>
-                    <div class="col-lg-3"><button v-on:click="longRest()"
-                        class="btn btn-block btn-outline-secondary">Long rest</button></div>
-                    <div class="col-lg-3"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
-                        game</button></div>
-                  </div>
-
-                  <div class="row" style="display: table-cell">
-                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer scrollCardContainer"
-                      v-for="ability in abilitiesChosen">
-                      <div class="col" v-if="ability.duration == 0">
-                        <img v-bind:src="'data/'+ability.image"
-                          v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]"
-                          style="width:10em" class="image rounded"></img>
-
-                        <!-- On-cards buttons when not on rest mode-->
-                        <div v-if="!longRestMode">
-                          <!-- On-cards buttons when cards are ready to be played -->
-                          <div class="abilityButtons" v-if="!ability.played">
-                            <button v-if="twoAbilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)"
-                              class="btn btn-light remove">
-                              Cancel
-                            </button>
-                            <button v-else v-on:click="pickCard(ability)" class="btn btn-light add">
-                              Select
-                            </button>
-                          </div>
-
-                          <!-- On-cards buttons when cards have been played -->
-                          <div class="iconContainer">
-
-                            <div class="bottomIconContainer" v-if="!ability.destroyed">
-                              <img src="data/icons/lost.png" class="bottomIcon"
-                                style="width:3em" v-on:click="destroyCard(ability)" />
-                              <img v-if="ability.played" src="data/icons/keep-on-board.png" class="bottomIcon"
-                                style="width:3em" v-on:click="keepAbilityManyTurns(ability)" />
-                            </div>
-
-                            <div class="topIconContainer" v-if="ability.played">
-                              <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
-                                v-on:click="fetchCard(ability)" />
-                              <img src="data/icons/keep-on-board-one-turn.png" v-if="!ability.destroyed" class="bottomIcon" style="width:3em"
-                                v-on:click="keepAbilityOneTurn(ability)" />
-                            </div>
-
-                          </div>
-                        </div>
-
-                        <!-- On-cards buttons on rest mode -->
-                        <div v-else>
-                          <div class="longRestAbilityButtons" v-if="ability.played && !ability.destroyed">
-                            <img src="data/icons/lost.png" style="width:3em"
-                              v-on:click="destroyLongRestCard(ability)" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="row mt-3">
+                  <div class="col-lg-3"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
+                      cards</button></div>
+                  <div class="col-lg-3"><button v-on:click="shortRest()"
+                      class="btn btn-block btn-outline-secondary">Short rest</button></div>
+                  <div class="col-lg-3"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
+                      rest</button></div>
+                  <div class="col-lg-3"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
+                      game</button></div>
                 </div>
 
-                <div>
-                  <h3>On board</h3>
-                  <div class="row mt-3" style="display: table-cell">
-                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
-                      v-for="ability in abilitiesChosen" v-if="ability.duration != 0">
-                      <!-- On board cards -->
-                      <div class="col">
-                        <img v-bind:src="'data/'+ability.image" class="image rounded"></img>                        
+                <div class="row" style="display: table-cell">
+                  <div style="display: inline-block; padding-top: 1em;" class="abilityContainer scrollCardContainer"
+                    v-for="ability in abilitiesChosen">
+                    <div class="col" v-if="ability.duration == 0">
+                      <img v-bind:src="'data/'+ability.image"
+                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]"
+                        style="width:10em" class="image rounded"></img>
+
+                      <!-- On-cards buttons when not on rest mode-->
+                      <div v-if="!longRestMode">
+                        <!-- On-cards buttons when cards are ready to be played -->
+                        <div class="abilityButtons" v-if="!ability.played">
+                          <button v-if="twoAbilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)"
+                            class="btn btn-light remove">
+                            Cancel
+                          </button>
+                          <button v-else v-on:click="pickCard(ability)" class="btn btn-light add">
+                            Select
+                          </button>
+                        </div>
+
+                        <!-- On-cards buttons when cards have been played -->
                         <div class="iconContainer">
-                          <div v-if="ability.duration < 0" class="topIconContainer">
-                            <button v-on:click="useCard(ability)" class="btn btn-light add">
-                              Use
-                            </button>
-                          </div>                          
 
-                          <div class="bottomIconContainer">
-                            <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon"
-                              style="width:3em" v-on:click="destroyCard(ability)" />
-                          </div>                          
+                          <div class="bottomIconContainer" v-if="!ability.destroyed">
+                            <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
+                              v-on:click="destroyCard(ability)" />
+                            <img v-if="ability.played" src="data/icons/keep-on-board.png" class="bottomIcon"
+                              style="width:3em" v-on:click="keepAbilityManyTurns(ability)" />
+                          </div>
+
+                          <div class="topIconContainer" v-if="ability.played">
+                            <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
+                              v-on:click="fetchCard(ability)" />
+                            <img src="data/icons/keep-on-board-one-turn.png" v-if="!ability.destroyed"
+                              class="bottomIcon" style="width:3em" v-on:click="keepAbilityOneTurn(ability)" />
+                          </div>
+
                         </div>
-                        <div class="onCardNoHover">
-                          <h4>{{ ability.numberOfTimesUsed }}</h4>
+                      </div>
+
+                      <!-- On-cards buttons on rest mode -->
+                      <div v-else>
+                        <div class="longRestAbilityButtons" v-if="ability.played && !ability.destroyed">
+                          <img src="data/icons/lost.png" style="width:3em" v-on:click="destroyLongRestCard(ability)" />
                         </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
-              <div class="col-lg-6 border-right" v-else id="abilitiesSection">
-                Build your deck in the <a href="#" v-on:click="set('abilities')">Abilities</a> section first !
-              </div>
 
-              <div class="col-lg-6" style="padding-top: 1em; padding-bottom: 1em">
-                <h3>Modifiers</h3>
-                <!-- BASE DECK BACK -->
-                <div class="row justify-content-start">
-                  <div class="abilityContainer">
-                    <div class="col mt-3" v-if="modifiersDrawPile.length != 0">
-                      <img v-bind:src="'data/attack-modifiers/back/top.png'" style="width:8em" class="image rounded" />
-                      <div class="abilityButtons">
-                        <button v-on:click="drawModifier()" class="add btn btn-light">
-                          Draw
-                        </button>
+              <div>
+                <h3>On board</h3>
+                <div class="row mt-3" style="display: table-cell">
+                  <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
+                    v-for="ability in abilitiesChosen" v-if="ability.duration != 0">
+                    <!-- On board cards -->
+                    <div class="col">
+                      <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
+                      <div class="iconContainer">
+                        <div v-if="ability.duration < 0" class="topIconContainer">
+                          <button v-on:click="useCard(ability)" class="btn btn-light add">
+                            Use
+                          </button>
+                        </div>
+
+                        <div class="bottomIconContainer">
+                          <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon" style="width:3em"
+                            v-on:click="destroyCard(ability)" />
+                        </div>
+                      </div>
+                      <div class="onCardNoHover">
+                        <h4>{{ ability.numberOfTimesUsed }}</h4>
                       </div>
                     </div>
                   </div>
-                  <div class="abilityContainer">
-                    <div class="col mt-3" v-if="lastDrawnModifier != null">
-                      <img v-bind:src="'data/'+lastDrawnModifier.image" style="width:8em" class="image rounded" />
-                      <div class="abilityButtons">
-                        <button v-on:click="shuffleModifiersDeck()" class="add btn btn-light">
-                          Shuffle
-                        </button>
-                      </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-lg-6 border-right" v-else id="abilitiesSection">
+              Build your deck in the <a href="#" v-on:click="set('abilities')">Abilities</a> section first !
+            </div>
+            
+            <!-- Right side of the play screen-->
+            <div class="col-lg-6" style="padding-top: 1em; padding-bottom: 1em">
+              <h3>Modifiers</h3>
+              <!-- BASE DECK BACK -->
+              <div class="row justify-content-start">
+                <div class="abilityContainer">
+                  <div class="col mt-3" v-if="modifiersDrawPile.length != 0">
+                    <img v-bind:src="'data/attack-modifiers/back/top.png'" style="width:8em" class="image rounded" />
+                    <div class="abilityButtons">
+                      <button v-on:click="drawModifier()" class="add btn btn-light">
+                        Draw
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="abilityContainer">
+                  <div class="col mt-3" v-if="lastDrawnModifier != null">
+                    <img v-bind:src="'data/'+lastDrawnModifier.image" style="width:8em" class="image rounded" />
+                    <div class="abilityButtons">
+                      <button v-on:click="shuffleModifiersDeck()" class="add btn btn-light">
+                        Shuffle
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div style="max-width: 50%;">
+                  <div class="row flex-nowrap overflow-auto scrollCardContainer">
+                    <div class="col mt-3" v-for='modifier in modifiersDiscardPile' style="padding-left: 15px; padding-right: 0px;">
+                      <img v-bind:src="'data/'+modifier.image" style="width:4em" class="image rounded" />
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <hr/>
+
+              <h3>Gear</h3>
+              
+              <div class="row" style="display: table-cell">
+                <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="gear in gearChosen">
+                  <div class="col">                  
+                    <img v-bind:src="'data/'+gear.image" style="width:8em" class="image rounded" v-bind:class="[{tapped: gear.played}, {played: gear.lost}]"></img>
+                    <div v-if="!gear.played"class="abilityButtons">
+                      <button v-on:click="tapItem(gear)" class="btn btn-light add">
+                        Use once
+                      </button>
+                      <button v-on:click="looseItem(gear)" class="btn btn-light remove">
+                        Consume
+                      </button>
+                    </div>
+                    <div v-if="gear.played" class="abilityButtons">
+                      <button v-on:click="restoreItem(gear)" class="btn btn-light add">
+                        Restore
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
               
-                  <!-- ALERTS -->
-              <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="redAlert">
-                {{ alert }}
-                <button type="button" class="close" aria-label="Close" v-on:click="dismissRedAlert('#redAlert')">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+            </div>
+            
 
-              <div class="mx-auto col-lg-6 alert alert-success collapse" role="alert" id="greenAlert">
-                {{ alert }}
-                <button type="button" class="close" aria-label="Close" v-on:click="dismissGreenAlert('#greenAlert')">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-  
-              <div class="col-lg-12 text-center">
-                <button class="btn btn-outline-secondary" v-on:click="saveData()">Save</button>
-              </div>
+            <!-- ALERTS -->
+            <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="redAlert">
+              {{ alert }}
+              <button type="button" class="close" aria-label="Close" v-on:click="dismissRedAlert('#redAlert')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="mx-auto col-lg-6 alert alert-success collapse" role="alert" id="greenAlert">
+              {{ alert }}
+              <button type="button" class="close" aria-label="Close" v-on:click="dismissGreenAlert('#greenAlert')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="col-lg-12 text-center">
+              <button class="btn btn-outline-secondary" v-on:click="saveData()">Save</button>
             </div>
           </div>
         </div>
@@ -241,8 +282,7 @@
 
 
       <!-- MODIFIERS -->
-      <div class="col-lg-12 container-fluid" id="modifiers" v-if="menu == 'modifiers'">
-        
+      <div class="col-lg-12 container-fluid" id="modifiers" v-if="menu == 'modifiers'">       
         <div>
           <!-- CATEGORY BACK -->
           <div class="row">
@@ -305,7 +345,6 @@
                 </div>
               </div>
             </div>
-
 
             <!-- FINAL DECK -->
             <div class="col-md-3 bg-light" >
@@ -386,16 +425,47 @@
             </div>
         </div>
       </div> <!-- main row ends -->
-    </div> <!-- main container ends -->
-    </div> <!-- main wrapper ends -->
 
-    <!-- Modal -->
+      <!-- GEAR -->
+      <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
+
+        <!-- Categories of items -->
+        <div class="row flex-nowrap overflow-auto scrollCardContainer">
+          <div class="col-auto"  v-for='gearCat in allGear' v-if='gearCategory == null || gearCat == gearCategory'>
+            <a href="#" v-on:click="displayGearCategory(gearCat)">
+              <img src="data/items/back.png" style="width:8em"/>
+              <h4 class="onCardNoHover"> {{ gearCat.name }}</h4>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Listing of items -->
+        <div v-if="gearCategory != null" class="row flex-nowrap overflow-auto scrollCardContainer">        
+          <div v-for='item in gearCategory.items' class="col-auto mt-3 abilityContainer">            
+            <img v-bind:class="[{selected: gearChosen.includes(item)}]" class="image rounded" v-bind:src="'data/'+item.image" style="width:8em"/>      
+            <h4 class="onCardNoHover"> {{ item.points +1 }}</h4>          
+            <div class="abilityButtons">
+              <button v-if="!gearChosen.includes(item)" v-on:click="addGear(item)" class="add btn btn-light">
+                Add
+              </button>
+              <button v-if="gearChosen.includes(item)" v-on:click="removeGear(item)" class="remove btn btn-light">
+                Remove
+              </button>
+            </div>            
+          </div>          
+        </div>
+      </div> <!-- End of gear -->
+
+    </div> <!-- main container ends -->
+  </div> <!-- main wrapper ends -->
+
+    <!-- About modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">About</h5>
+            <h3 class="modal-title" id="exampleModalLabel">About</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -427,8 +497,13 @@
                   title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 
               </form>
-
             </span>
+
+            <h3>Spoiler section</h3>
+            <button v-if="!showSpoiler" v-on:click="showSpoiler = true" class="btn btn-secondary">Show</button>
+            <div v-else>
+              <span><input type="checkbox" @change="loadXEnvelope()" /> Enable envelope X</span>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -436,7 +511,6 @@
         </div>
       </div>
     </div>
-
 
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
       <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do
@@ -452,15 +526,14 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/vuejs/vue.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/database.js"></script>
   <script src="vendor/cookiealert/cookiealert.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/abilities.js"></script>
+  <script src="js/modifiers.js"></script>
+  <script src="js/gear.js"></script>
   <script src="js/main.js"></script>
-
-
-
 
 </body>
 
