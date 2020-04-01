@@ -10,6 +10,7 @@ new Vue({
         showSpoiler: false,
         version: 'vanilla',
         alert: '',        
+        classChosen : false,
         /* General game information */ 
         turn: 1,
         level: 1
