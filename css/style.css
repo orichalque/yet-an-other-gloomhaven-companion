@@ -43,6 +43,17 @@ html,body .wrapper .container-fluid {
     object-fit: cover;
   }
 
+
+  .smallimage {
+    position: relative;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    width: 8em;
+    object-fit: cover;
+  }
+
   .crop {
     height: 60px;
     overflow: hidden;
@@ -97,6 +108,14 @@ html,body .wrapper .container-fluid {
     width: 200px;
   }
 
+  .smallCardContainer {
+    cursor: pointer;
+  }
+
+  .smallCardContainer:hover .smallimage {
+    width: 10em;
+  }
+
   .modifierContainer {
     cursor: pointer;
   }
@@ -109,6 +128,7 @@ html,body .wrapper .container-fluid {
   .abilityContainer:hover .image {
     width: 11.5em;
   }
+
   
   .abilityContainer:hover .abilityButtons {
     opacity: 1;
