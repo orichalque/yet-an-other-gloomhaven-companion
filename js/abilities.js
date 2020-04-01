@@ -11,13 +11,13 @@ var abilitiesManagement = {
     },
     methods: {
         displayAbilities: function(param) {
+            this.classChosen = true;
             if (this.abilityCategory == param) {
                 this.abilityCategory = null
             } else {
                 this.abilityCategory = param
                 this.abilityCategory.cards.sort((a, b) => a.level - b.level)
             }
-            
         },
         addAbility: function(card) {   
             card.duration = 0

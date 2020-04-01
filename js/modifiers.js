@@ -14,12 +14,13 @@ var modifiersManagement = {
     },
     methods: {
         displayModifiers: function(param) {
-            if (this.modifierCategory === param) {
+            this.className = param
+            if (this.modifierCategory == param) {
                 this.modifierCategory = null
             } else {
                 this.modifierCategory = param
             }
-        },            
+        },       
         addModifier: function(card) {   
             this.modifiersChosen.push(card)
             this.modifiersDrawPile.push(card)
@@ -52,5 +53,10 @@ var modifiersManagement = {
                 this.specialModifiers = true
             }
         }, 
+        switchModifierClass: function () {
+            this.modifierCategory = null
+            this.className = ''
+            this.modifiersChosen = this.modifiersBase.slice()
+        }
     }
 }

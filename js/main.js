@@ -18,34 +18,11 @@ new Vue({
         set: function (param) {
             this.menu = param
         },
-        displayModifiers: function(param) {
-            this.className = param
-            if (this.modifierCategory == param) {
-                this.modifierCategory = null
-            } else {
-                this.modifierCategory = param
-            }
-        },
-        displayAbilities: function(param) {
-            this.classChosen = true;
-            if (this.abilityCategory == param) {
-                this.abilityCategory = null
-            } else {
-                this.abilityCategory = param
-                this.abilityCategory.cards.sort((a, b) => a.level - b.level)
-            }
-            
-        },
         switchClass: function() {
             this.classChosen = false;
             this.abilityCategory = null;
             this.abilitiesChosen = [];
         },
-        switchModifierClass: function () {
-            this.modifierCategory = null
-            this.className = ''
-            this.modifiersChosen = this.modifiersBase.slice()
-        },   
         loadDatabase: function() {
             this.modifiersBase = attack_modifiers_base
             this.modifiersSpecial = attack_modifiers_special
@@ -54,6 +31,7 @@ new Vue({
             this.modifiersChosen = this.modifiersBase.slice()
             this.modifiersDrawPile = this.modifiersBase.slice()            
             this.abilities = abilities
+            this.allGear = allItems
         },
         loadXEnvelope: function() {
             if (! this.hasOpenedXEnvelope) {            
