@@ -6,7 +6,8 @@ var abilitiesManagement = {
         abilitiesChosen: [],        
         twoAbilitiesSelected: [],
         abilitiesOnBoard: [],
-        longRestMode: false
+        longRestMode: false,
+        className: ''
     },
     methods: {
         displayAbilities: function(param) {

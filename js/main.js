@@ -12,29 +12,7 @@ new Vue({
         alert: '',        
         /* General game information */ 
         turn: 1,
-        level: 1,
-
-        /* Modifier information */
-        modifiers : [],
-        modifiersBase : [],
-        modifiersSpecial : [],        
-        modifierCategory: null,        
-        modifiersChosen: [],
-        modifiersDrawPile: [],
-        specialModifiers : false,
-        lastDrawnModifier: null,
-        overlayCard: {},
-
-        /* Ability information */
-        abilities : [],
-        classChosen: false,
-        className: '',
-        abilityCategory: null,
-        abilitiesChosen: [],        
-        twoAbilitiesSelected: [],
-        abilitiesOnBoard: [],
-        longRestMode: false,
-        level: 1    
+        level: 1
     },
     methods: {
         set: function (param) {

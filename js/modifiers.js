@@ -9,7 +9,8 @@ var modifiersManagement = {
         modifiersDrawPile: [],
         specialModifiers : false,
         lastDrawnModifier: null,
-        modifiersDiscardPile : [] 
+        modifiersDiscardPile : [],
+        overlayCard: {}        
     },
     methods: {
         displayModifiers: function(param) {
