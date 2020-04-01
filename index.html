@@ -470,7 +470,14 @@
             </div>
           </div>
           <div class="col-lg-3">
-            Selection
+            
+            <div class="centerAbilities">
+              <div v-for='(card,i) in gearChosen'>
+                <div v-bind:class="[{crop: gearChosen.length -1 !== i}]" v-on:click="removeGear(card)">
+                  <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div> <!-- End of gear -->

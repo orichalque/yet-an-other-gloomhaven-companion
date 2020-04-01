@@ -22,8 +22,12 @@ var modifiersManagement = {
             }
         },       
         addModifier: function(card) {   
-            this.modifiersChosen.push(card)
-            this.modifiersDrawPile.push(card)
+            if (!this.modifiersChosen.includes(card)) {
+                this.modifiersChosen.push(card)
+                this.modifiersDrawPile.push(card)
+            } else {
+                this.removeModifier(card)
+            }            
         },
         removeModifier: function(card) {
             indexOfCardToRemove = this.modifiersChosen.indexOf(card)
