@@ -23,19 +23,32 @@ var gearManagement = {
         looseItem: function(item) {
             item.played = true
             item.lost = true
+            item.used = 0
             this.$forceUpdate()
 
         },
         tapItem: function(item) {
             item.played = true
             item.lost = false
+            item.used = 0
             this.$forceUpdate()
 
         },
         restoreItem: function(item) {
             item.played = false
             item.lost = false
+            item.used = 0
             this.$forceUpdate()
+        },
+        useItem: function(item) {
+            console.log(item.used)
+            if (item.used == null) 
+                item.used = 1
+            else 
+                item.used += 1
+                
+            this.$forceUpdate()
+
         }
     }
 }

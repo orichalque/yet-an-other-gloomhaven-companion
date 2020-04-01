@@ -19,11 +19,11 @@ html,body .wrapper .container-fluid {
   height: 100%;
 }
 
-  p, b, span, a, h3, button {
+  p, span, a, h3, button {
     font-family: 'Crimson Text', serif;
   }
 
-  h4 {
+  h4, b {
     font-family: 'fantaisieartistiquemedium';
   }
 
@@ -112,6 +112,11 @@ html,body .wrapper .container-fluid {
     cursor: pointer;
   }
 
+  .smallCardContainer:hover .iconContainer {
+    opacity: 1;
+    transition: .5s ease;
+  }
+
   .smallCardContainer:hover .smallimage {
     width: 10em;
   }
@@ -134,12 +139,26 @@ html,body .wrapper .container-fluid {
     opacity: 1;
   }
 
-  .bottomIcon {
+  .bottomIcon {  
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     padding-left: 10%;
     float: left;
+  }
+
+  .smallIcon {
+    width: 3em;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10%;
+    float: left;
+  }
+  
+  .smallIcon:hover {
+    opacity: 0.3;
+    transition: .5s ease;
   }
 
   .bottomIcon:hover  {

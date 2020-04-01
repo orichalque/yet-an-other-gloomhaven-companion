@@ -240,18 +240,20 @@
                   <div class="col-auto mt-3">
                     <img v-bind:src="'data/'+gear.image" class="smallimage rounded "
                       v-bind:class="[{tapped: gear.played}, {played: gear.lost}]"></img>
-                    <div v-if="!gear.played" class="abilityButtons">
-                      <button v-on:click="tapItem(gear)" class="btn btn-light add">
-                        Use once
-                      </button>
-                      <button v-on:click="looseItem(gear)" class="btn btn-light remove">
-                        Consume
-                      </button>
+                    <div v-if="!gear.played" class="iconContainer">
+                      <div class="topIconContainer">
+                        <img class="smallIcon" src="data/icons/tap.png" v-on:click="tapItem(gear)"></img>                      
+                        <img class="smallIcon" src="data/icons/lost.png" v-on:click="looseItem(gear)"></img>       
+                        <button type="button" class="smallIcon btn btn-light mx-auto" v-on:click="useItem(gear)"><b>+1</b></button>       
+                      </div>
                     </div>
-                    <div v-if="gear.played" class="abilityButtons">
-                      <button v-on:click="restoreItem(gear)" class="btn btn-light add">
-                        Restore
-                      </button>
+                    <div v-if="gear.played" class="iconContainer">
+                      <div class="bottomIconContainer">
+                        <img class="smallIcon" src="data/icons/recover.png" v-on:click="restoreItem(gear)"></img>            
+                      </div>
+                    </div>
+                    <div v-if="gear.used > 0" class="onCardNoHover">
+                      <h4>{{ gear.used }}</h4>
                     </div>
                   </div>
                 </div>
