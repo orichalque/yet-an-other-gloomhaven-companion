@@ -12,20 +12,70 @@ new Vue({
         alert: '',        
         /* General game information */ 
         turn: 1,
+        level: 1,
+
+        /* Modifier information */
+        modifiers : [],
+        modifiersBase : [],
+        modifiersSpecial : [],        
+        modifierCategory: null,        
+        modifiersChosen: [],
+        modifiersDrawPile: [],
+        specialModifiers : false,
+        lastDrawnModifier: null,
+        overlayCard: {},
+
+        /* Ability information */
+        abilities : [],
+        classChosen: false,
+        className: '',
+        abilityCategory: null,
+        abilitiesChosen: [],        
+        twoAbilitiesSelected: [],
+        abilitiesOnBoard: [],
+        longRestMode: false,
         level: 1    
     },
     methods: {
         set: function (param) {
             this.menu = param
-        },        
+        },
+        displayModifiers: function(param) {
+            this.className = param
+            if (this.modifierCategory == param) {
+                this.modifierCategory = null
+            } else {
+                this.modifierCategory = param
+            }
+        },
+        displayAbilities: function(param) {
+            this.classChosen = true;
+            if (this.abilityCategory == param) {
+                this.abilityCategory = null
+            } else {
+                this.abilityCategory = param
+                this.abilityCategory.cards.sort((a, b) => a.level - b.level)
+            }
+            
+        },
+        switchClass: function() {
+            this.classChosen = false;
+            this.abilityCategory = null;
+            this.abilitiesChosen = [];
+        },
+        switchModifierClass: function () {
+            this.modifierCategory = null
+            this.className = ''
+            this.modifiersChosen = this.modifiersBase.slice()
+        },   
         loadDatabase: function() {
             this.modifiersBase = attack_modifiers_base
             this.modifiersChosen = this.modifiersBase.slice()
             this.modifiersDrawPile = this.modifiersBase.slice()
             this.modifiersSpecial = attack_modifiers_special
+            this.classNames = classNames
             this.modifiers = attack_modifiers_categories
             this.abilities = abilities
-            this.allGear = allItems
         },
         loadXEnvelope: function() {
             if (! this.hasOpenedXEnvelope) {            
