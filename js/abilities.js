@@ -25,7 +25,7 @@ var abilitiesManagement = {
                 if (this.abilitiesChosen.length < this.abilityCategory.max) 
                     this.abilitiesChosen.push(card)
             } else {
-                var cardIndexToRemove = this.abilitiesChosen.find(card)
+                var cardIndexToRemove = this.abilitiesChosen.indexOf(card)
                 this.abilitiesChosen.splice(cardIndexToRemove, 1)
             }
         },
