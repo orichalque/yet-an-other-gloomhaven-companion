@@ -25,6 +25,7 @@ new Vue({
         /* Ability information */
         abilities : [],
         classChosen: false,
+        className: '',
         abilityCategory: null,
         abilitiesChosen: [],        
         twoAbilitiesSelected: [],
@@ -36,6 +37,7 @@ new Vue({
             this.menu = param
         },
         displayModifiers: function(param) {
+            this.className = param
             if (this.modifierCategory == param) {
                 this.modifierCategory = null
             } else {
@@ -57,17 +59,25 @@ new Vue({
             this.abilityCategory = null;
             this.abilitiesChosen = [];
         },
+        switchModifierClass: function () {
+            this.modifierCategory = null
+            this.className = ''
+            this.modifiersChosen = this.modifiersBase.slice()
+        },
         loadDatabase: function() {
             this.modifiersBase = attack_modifiers_base
             this.modifiersChosen = this.modifiersBase.slice()
             this.modifiersDrawPile = this.modifiersBase.slice()
             this.modifiersSpecial = attack_modifiers_special
+            this.classNames = classNames
             this.modifiers = attack_modifiers_categories
             this.abilities = abilities
         },        
         addModifier: function(card) {   
-            this.modifiersChosen.push(card)
-            this.modifiersDrawPile.push(card)
+            if (!this.modifiersChosen.includes(card)) {
+                this.modifiersChosen.push(card)
+                this.modifiersDrawPile.push(card)
+            }
         },
         removeModifier: function(card) {
             indexOfCardToRemove = this.modifiersChosen.indexOf(card)
@@ -92,10 +102,6 @@ new Vue({
             }else{
                 this.specialModifiers = true
             }
-        },
-        addModifier: function(card) {   
-            this.modifiersChosen.push(card)
-            this.modifiersDrawPile.push(card)
         },
         removeModifier: function(card) {
             indexOfCardToRemove = this.modifiersChosen.indexOf(card)

@@ -6488,3 +6488,24 @@ abilities = [
         ]
     }
 ]
+
+classNames = {
+     ti: 'Tinkerer',
+     br: 'Brute',
+     sc: 'Scoundrel',
+     sw: 'Spellweaver',
+     ch: 'Cragheart',
+     mt: 'Mindthief',
+     sk: 'Sunkeeper',
+     qm: 'Quartermaster',
+     su: 'Summoner',
+     ns: 'Nightshroud',
+     ph: 'Plagueherald',
+     be: 'Berserker',
+     ss: 'Soothsinger',
+     ds: 'Doomstalker',
+     sb: 'Sawbone',
+     el: 'Elementalist',
+     bt: 'Beast Tyrant',
+     dr: 'Diviner',
+}

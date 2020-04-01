@@ -97,6 +97,10 @@ html,body .wrapper .container-fluid {
     width: 200px;
   }
 
+  .modifierContainer {
+    cursor: pointer;
+  }
+
   .abilityContainer:hover  .iconContainer {
     transition: .5s ease;
   }
@@ -167,7 +171,13 @@ html,body .wrapper .container-fluid {
     text-align: center;
   }
   
-
+  .alignCenter {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
   
   .add {
     background-color: rgb(148, 182, 135);
