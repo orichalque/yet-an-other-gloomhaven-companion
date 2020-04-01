@@ -20,10 +20,10 @@ new Vue({
         },        
         loadDatabase: function() {
             this.modifiersBase = attack_modifiers_base
-            this.modifiersChosen = this.modifiersBase.slice()
-            this.modifiersDrawPile = this.modifiersBase.slice()
             this.modifiersSpecial = attack_modifiers_special
             this.modifiers = attack_modifiers_categories
+            this.modifiersChosen = this.modifiersBase.slice()
+            this.modifiersDrawPile = this.modifiersBase.slice()            
             this.abilities = abilities
             this.allGear = allItems
         },
@@ -87,6 +87,11 @@ new Vue({
             if (modifierCookie != null) {
                 oldModifies = JSON.parse(modifierCookie);
                 //TODO
+                oldModifies.forEach(modifier => {
+                    attack_modifiers_base
+                    attack_modifiers_special
+                    attack_modifiers_categories
+                })
             }            
 
             this.newGame();        
