@@ -41,3 +41,8 @@ If you find the deployed version slow, can can clone this repository and run it 
 - Either directly open the `index.html` file with your favorite browser. This will work but the cookies won't be saved
 - Run it locally on a HTTP Server. [Python's SimpleHttpServer](https://docs.python.org/2/library/simplehttpserver.html) works great for that.
 
+# Want to contribute ?
+
+Check the `dev` branch :-) 
+
+
