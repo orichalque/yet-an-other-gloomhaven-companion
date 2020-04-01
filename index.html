@@ -201,8 +201,8 @@
               <!-- BASE DECK BACK -->
               <div class="row justify-content-start">
                 <div class="abilityContainer">
-                  <div class="col mt-3" v-if="modifiersDrawPile.length != 0">
-                    <img v-bind:src="'data/attack-modifiers/back/top.png'" style="width:8em" class="image rounded" />
+                  <div class="col-auto" v-if="modifiersDrawPile.length != 0">
+                    <img v-bind:src="'data/attack-modifiers/back/top.png'"  class="image rounded" />
                     <div class="abilityButtons">
                       <button v-on:click="drawModifier()" class="add btn btn-light">
                         Draw
@@ -211,8 +211,8 @@
                   </div>
                 </div>
                 <div class="abilityContainer">
-                  <div class="col mt-3" v-if="lastDrawnModifier != null">
-                    <img v-bind:src="'data/'+lastDrawnModifier.image" style="width:8em" class="image rounded" />
+                  <div class="col-auto" v-if="lastDrawnModifier != null">
+                    <img v-bind:src="'data/'+lastDrawnModifier.image" class="image rounded" />
                     <div class="abilityButtons">
                       <button v-on:click="shuffleModifiersDeck()" class="add btn btn-light">
                         Shuffle
