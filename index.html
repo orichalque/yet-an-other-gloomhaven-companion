@@ -294,7 +294,7 @@
                     <h3>{{ classNames[className] || 'Class' }} Deck </h3>
                   </div>
                 <div class="col">
-                  <button v-on:click="switchModifierClass()" class="btn btn-primary">
+                  <button v-on:click="switchModifierClass()" class="btn btn-secondary">
                     Switch Class
                   </button>
                 </div>
@@ -394,7 +394,7 @@
           <div class="col-md-9 border">
             <h3 class="align-baseline" style="display: inline;">Character Level:</h3> 
             <button v-for='theLevel in 9' class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel"><h3>{{ theLevel }}</h3></button>
-            <button v-on:click="switchClass()" class="btn btn-primary">
+            <button v-on:click="switchClass()" class="btn btn-secondary">
               Switch Class
             </button>
           </div>
