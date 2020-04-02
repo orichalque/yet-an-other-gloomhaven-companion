@@ -39,7 +39,7 @@ var gearManagement = {
             } else if (this.gearChosen.filter(chosenItem => chosenItem.type === item.type).length == 0) {
                 this.gearChosen.push(item)
             } else {
-                this.gearAlert("You cannot hold more than item of this kind.")
+                this.gearAlert("You cannot hold more than one item of this kind.")
             }            
         },
         gearAlert: function(message) {
