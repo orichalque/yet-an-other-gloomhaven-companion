@@ -471,7 +471,13 @@
             </div>
           </div>
           <div class="col-lg-3">
-            
+            <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="gearAlert">
+              {{ gearAlertMessage }}
+              <button type="button" class="close" aria-label="Close" v-on:click="dismissAlert('#gearAlert')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
             <div class="centerAbilities">
               <div v-for='(card,i) in gearChosen'>
                 <div v-bind:class="[{crop: gearChosen.length -1 !== i}]" v-on:click="removeGear(card)">

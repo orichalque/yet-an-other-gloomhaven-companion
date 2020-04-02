@@ -114,8 +114,8 @@ new Vue({
             this.alert = alert
             $('#redAlert').show()            
         },
-        dismissRedAlert: function(alert) {
-            $('#redAlert').hide()
+        dismissAlert: function(alert) {
+            $(alert).hide()
         },
         showGreenAlert: function(alert){
             this.alert = alert
