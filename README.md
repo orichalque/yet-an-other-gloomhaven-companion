@@ -23,6 +23,7 @@ The 'Play' view allows the player to :
 - Track the number of time a card placed on the board was used
 - Perform a long or short sleep
 - Save the player's deck
+- Use your equipement 
 
 The 'Abilities' view allows the player to :
 - Select a faction
@@ -32,6 +33,10 @@ The 'Abilities' view allows the player to :
 The 'Modifiers' view allows the player to :
 - Select a faction
 - Build the player's modifiers deck from the base deck (selected by default), the faction's card pool and the special modifiers
+
+The 'Gear' view allows the player to : 
+- Set your gear
+- Pick your potions, considering your character level
 
 We hope you find it as useful as we do! Feedback is very welcome, and don't hesitate to signal any bugs in the issue tracker
 
