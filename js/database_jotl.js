@@ -1,11 +1,11 @@
-classNames = {
+classNames_jotl = {
     de: 'Demolitionist',
     ha: 'Hatchet',
     rg: 'Red Guard',
     vw: 'Voidwarden'
 }
 
-attack_modifiers_categories = [
+attack_modifiers_categories_jotl = [
     {
         "name": "am-de",
         "cards": [
@@ -324,7 +324,7 @@ attack_modifiers_categories = [
     }
   ]
 
-abilities = [
+abilities_jotl = [
     {
         "name": "de",
         "max": 9,

@@ -520,17 +520,14 @@
           <div class="modal-body">
             <h3>Version:</h3>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'vanilla'}"
-              v-on:click="loadDatabase()">Vanilla</button>
+              v-on:click.once="loadDatabaseVersion('vanilla')">Vanilla</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'jotl'}"
-              v-on:click="loadDatabaseJotl()">Jaws of the Lion</button>
-            <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
-              v-on:click="loadDatabaseFrosthaven()">Frosthaven</button>
-
+              v-on:click.once="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
             <hr />
             <h3>Spoiler section</h3>
             <button v-if="!showSpoiler" v-on:click="showSpoiler = true" class="btn btn-secondary">Show</button>
             <div v-else>
-              <span><input type="checkbox" @change="loadXEnvelope()" /> Enable envelope X</span>
+              <span v-if="version=='vanilla'"><input type="checkbox" @change="loadXEnvelope()" /> Enable envelope X</span>
             </div>
           </div>
           <div class="modal-footer">
@@ -604,6 +601,7 @@
   <script src="vendor/cookiealert/cookiealert.js"></script>
   <script src="js/database_vanilla.js"></script>
   <script src="js/database_common.js"></script>
+  <script src="js/database_jotl.js"></script>
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>
