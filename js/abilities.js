@@ -12,12 +12,15 @@ var abilitiesManagement = {
     methods: {
         displayAbilities: function(param) {
             this.classChosen = true;
+            this.displayModifiers(param.name.substring(0,2))
             if (this.abilityCategory == param) {
                 this.abilityCategory = null
             } else {
                 this.abilityCategory = param
                 this.abilityCategory.cards.sort((a, b) => a.level - b.level)
             }
+            this.$forceUpdate()
+
         },
         addAbility: function(card) {   
             card.duration = 0
