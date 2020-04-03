@@ -410,11 +410,13 @@
         <div class="row ">
           <div class="col-lg-9 border-right container-fluid">
             <!-- Categories of items -->
+            <div class="form-group row">
+              <h3 class="col-sm-2 ">Add item by ID:</h3><input class="col-sm-1 form-control" v-model="idToAdd" placeholder="01"><button v-on:click="addItemById()" class="mb-2 button btn btn-secondary">Add</button>
+            </div>
             <div class="row">
-              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear'
-                v-if='gearCategory == null || gearCat == gearCategory'>
+              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear' v-if='gearCategory == null || gearCat == gearCategory'>
                 <a href="#" v-on:click="displayGearCategory(gearCat)">
-                  <img src="data/items/back.png" class="image rounded" />
+                  <img src="data/items/back.png" class="image rounded"/>
                   <h4 class="onCardNoHover"> {{ gearCat.name }}</h4>
                 </a>
               </div>
