@@ -457,16 +457,8 @@
             <div class="row" v-if="gearCategory != null">
               <div v-for='item in gearCategory.items' class="col-auto mt-3 abilityContainer">
                 <img v-bind:class="[{selected: gearChosen.includes(item)}]" class="image rounded"
-                  v-bind:src="'data/'+item.image" />
-                <h4 class="onCardNoHover"> {{ item.points +1 }}</h4>
-                <div class="abilityButtons">
-                  <button v-if="!gearChosen.includes(item)" v-on:click="addGear(item)" class="add btn btn-light">
-                    Add
-                  </button>
-                  <button v-if="gearChosen.includes(item)" v-on:click="removeGear(item)" class="remove btn btn-light">
-                    Remove
-                  </button>
-                </div>
+                  v-bind:src="'data/'+item.image" v-on:click="addGear(item)" />
+                <h4 class="onCardNoHover"> {{ item.points +1 }}</h4>                
               </div>
             </div>
           </div>
