@@ -297,7 +297,7 @@
                 <div class="col">
                   <h3>{{ classNames[className] || 'Class' }} Deck </h3>
                 </div>
-                <div class="col">
+                <div v-if='modifierCategory != null' class="col">
                   <button v-on:click="switchModifierClass()" class="btn btn-secondary">
                     Switch Class
                   </button>
