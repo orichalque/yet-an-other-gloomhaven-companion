@@ -365,18 +365,18 @@
       <!-- ABILITIES -->
       <div class="col-lg-12 container-fluid" id="abilities" v-if="menu == 'abilities'">
         <!-- PER CATEGORY CARDS -->
-        <div class="row" v-if='abilityCategory != null'>
+        <div class="row" >
           <div class="col-md-9 border">
             <h3 class="align-baseline" style="display: inline;">Character Level:</h3>
             <button v-for='theLevel in 9' class="btn btn-light align-baseline"
               v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
               <h3>{{ theLevel }}</h3>
             </button>
-            <button v-on:click="switchClass()" class="btn btn-secondary">
+            <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
               Switch Class
             </button>
           </div>
-          <div class="col-md-3 border alignCenter">
+          <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
             <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
         </div>
@@ -550,7 +550,7 @@
             </div>
             <div class="row border-bottom">
               <div class="col parentImage" v-for='ability in abilities' v-if='!ability.hidden'>
-                <input type="image" class="smallerImage rounded" v-bind:class="{destroyed: abilityCategory != null && abilityCategory != ability}" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
+                <input type="image" class="smallerImage rounded" v-bind:class="{selected: abilityCategory != null && abilityCategory != ability}" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
               </div>
             </div>
                        
