@@ -8,6 +8,7 @@ new Vue({
         isMobile: false,        
         hasOpenedXEnvelope: false,
         showSpoiler: false,
+        showLockedClasses: false,
         version: 'vanilla',
         alert: '',        
         classChosen : false,
@@ -25,6 +26,7 @@ new Vue({
             this.abilitiesChosen = [];
         },
         loadDatabase: function() {
+            this.version = 'vanilla'
             this.modifiersBase = attack_modifiers_base
             this.modifiersSpecial = attack_modifiers_special
             this.classNames = classNames
@@ -33,6 +35,12 @@ new Vue({
             this.modifiersDrawPile = this.modifiersBase.slice()            
             this.abilities = abilities
             this.allGear = allItems
+        },
+        loadDatabaseFrosthaven: function() {
+            this.version = 'frosthaven'
+        },
+        loadDatabaseJotl: function() {
+            this.version = 'jotl'
         },
         loadXEnvelope: function() {
             if (! this.hasOpenedXEnvelope) {            
@@ -138,3 +146,28 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
+const $dropdown = $(".dropdown");
+const $dropdownToggle = $(".dropdown-toggle");
+const $dropdownMenu = $(".dropdown-menu");
+const showClass = "show";
+ 
+$(window).on("load resize", function() {
+  if (this.matchMedia("(min-width: 768px)").matches) {
+    $dropdown.hover(
+      function() {
+        const $this = $(this);
+        $this.addClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "true");
+        $this.find($dropdownMenu).addClass(showClass);
+      },
+      function() {
+        const $this = $(this);
+        $this.removeClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "false");
+        $this.find($dropdownMenu).removeClass(showClass);
+      }
+    );
+  } else {
+    $dropdown.off("mouseenter mouseleave");
+  }
+});
