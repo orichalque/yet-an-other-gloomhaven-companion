@@ -69,7 +69,7 @@
               <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('abilities')">Abilities</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
-              <a class="nav-link" href="#" v-on:click="set('modifiers')">Modifiers</a>
+              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('modifiers')">Modifiers</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
               <a class="nav-link" href="#" v-on:click="set('gear')">Gear</a>
@@ -307,17 +307,7 @@
                     Switch Class
                   </button>
                 </div>
-              </div>
-              <div class="row">
-                <div v-for='ability in abilities'>
-                  <div v-if='modifierCategory == null' class="col mt-3">
-                    <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
-                      v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
-                    <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false"
-                      src="data/layers/locked_layer.png" style="width:8em">
-                  </div>
-                </div>
-              </div>
+              </div>              
               <div v-for="modifier in modifiers">
                 <div class="row" v-if="modifier.name.substring(3,5) == modifierCategory">
                   <div class="modifierContainer" v-for='card in modifier.cards'>
@@ -375,18 +365,18 @@
       <!-- ABILITIES -->
       <div class="col-lg-12 container-fluid" id="abilities" v-if="menu == 'abilities'">
         <!-- PER CATEGORY CARDS -->
-        <div class="row" v-if='abilityCategory != null'>
+        <div class="row" >
           <div class="col-md-9 border">
             <h3 class="align-baseline" style="display: inline;">Character Level:</h3>
             <button v-for='theLevel in 9' class="btn btn-light align-baseline"
               v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
               <h3>{{ theLevel }}</h3>
             </button>
-            <button v-on:click="switchClass()" class="btn btn-secondary">
+            <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
               Switch Class
             </button>
           </div>
-          <div class="col-md-3 border alignCenter">
+          <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
             <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
         </div>
@@ -420,11 +410,13 @@
         <div class="row ">
           <div class="col-lg-9 border-right container-fluid">
             <!-- Categories of items -->
+            <div class="form-group row">
+              <h3 class="col-sm-2 ">Add item by ID:</h3><input class="col-sm-1 form-control" v-model="idToAdd" placeholder="01"><button v-on:click="addItemById()" class="mb-2 button btn btn-secondary">Add</button>
+            </div>
             <div class="row">
-              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear'
-                v-if='gearCategory == null || gearCat == gearCategory'>
+              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear' v-if='gearCategory == null || gearCat == gearCategory'>
                 <a href="#" v-on:click="displayGearCategory(gearCat)">
-                  <img src="data/items/back.png" class="image rounded" />
+                  <img src="data/items/back.png" class="image rounded"/>
                   <h4 class="onCardNoHover"> {{ gearCat.name }}</h4>
                 </a>
               </div>
@@ -556,10 +548,8 @@
               <h3>Available classes</h3>
             </div>
             <div class="row border-bottom">
-              <div class="col parentImage" v-for='ability in abilities'
-                v-if='(abilityCategory == null || abilityCategory == ability) && !ability.hidden'>
-                <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
-                  v-bind:src="'data/'+ability.cards[0].image" />
+              <div class="col parentImage" v-for='ability in abilities' v-if='!ability.hidden'>
+                <input type="image" class="smallerImage rounded" v-bind:class="{selected: abilityCategory != null && abilityCategory != ability}" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
               </div>
             </div>
                        

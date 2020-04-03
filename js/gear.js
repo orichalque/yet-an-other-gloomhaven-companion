@@ -4,6 +4,7 @@ var gearManagement = {
         gearCategory : null,
         gearChosen: [],
         gearAlertMessage: "",
+        idToAdd: 0
     },
     methods: {
         displayGearCategory: function(cat) {
@@ -59,6 +60,14 @@ var gearManagement = {
                 
             this.$forceUpdate()
 
+        },
+        addItemById: function() {
+            var id = parseInt(this.idToAdd)
+            this.allGear.forEach(cat => cat.items.forEach(item => {
+                if ((item.points +1) == id) {
+                    this.gearChosen.push(item)
+                }
+            }))
         }
     }
 }
