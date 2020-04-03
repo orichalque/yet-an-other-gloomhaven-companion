@@ -26,21 +26,41 @@ new Vue({
             this.abilitiesChosen = [];
         },
         loadDatabase: function() {
-            this.version = 'vanilla'
-            this.modifiersBase = attack_modifiers_base
             this.modifiersSpecial = attack_modifiers_special
-            this.classNames = classNames
-            this.modifiers = attack_modifiers_categories
             this.modifiersChosen = this.modifiersBase.slice()
-            this.modifiersDrawPile = this.modifiersBase.slice()            
-            this.abilities = abilities
+            this.modifiersDrawPile = this.modifiersBase.slice() 
             this.allGear = allItems
+            this.loadDatabaseVersion(this.version)
+        },
+        loadDatabaseVersion: function(param){
+            this.version = param
+            switch(param){
+                case 'vanilla':
+                    this.loadDatabaseVanilla()
+                    break
+                case 'jotl':
+                    this.loadDatabaseJotl()
+                    break
+                case 'frosthaven':
+                    this.loadDatabaseFrosthaven()
+                    break
+                default:
+                    this.loadDatabaseVanilla()
+                    break
+            }
+        },
+        loadDatabaseVanilla: function() {
+            this.classNames = classNames
+            this.modifiers = attack_modifiers_categories          
+            this.abilities = abilities
         },
         loadDatabaseFrosthaven: function() {
-            this.version = 'frosthaven'
+            //todo
         },
         loadDatabaseJotl: function() {
-            this.version = 'jotl'
+            this.classNames = classNames_jotl
+            this.modifiers = attack_modifiers_categories_jotl        
+            this.abilities = abilities_jotl
         },
         loadXEnvelope: function() {
             if (! this.hasOpenedXEnvelope) {            
