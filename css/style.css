@@ -276,6 +276,10 @@ html,body .wrapper .container-fluid {
     transform: rotate(90deg);
   }
 
+  .collapse.in {        
+    display: block;       
+  }
+
   [v-cloak] {
     display: none;
   }
