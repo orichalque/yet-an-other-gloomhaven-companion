@@ -121,13 +121,35 @@ new Vue({
 
             modifierCookie = Cookies.get("modifiers");
             if (modifierCookie != null) {
-                oldModifies = JSON.parse(modifierCookie);
-                //TODO
-                oldModifies.forEach(modifier => {
-                    attack_modifiers_base
-                    attack_modifiers_special
-                    attack_modifiers_categories
-                })
+                var oldModifiers = JSON.parse(modifierCookie);
+                if (oldModifiers != null) {
+                    this.modifiersChosen = []
+                    oldModifiers.forEach(modifier => {
+                        attack_modifiers_base.forEach(modif => {
+                            if (modif.name === modifier.name) {
+                                this.modifiersChosen.push(modif)
+                                this.modifiersDrawPile.push(modif)    
+                            }
+                        })
+                        attack_modifiers_special.forEach(modif => {
+                            if (modif.name === modifier.name) {
+                                this.modifiersChosen.push(modif)
+                                this.modifiersDrawPile.push(modif)                                
+                            }
+                        })
+                        attack_modifiers_categories.forEach(catModif => {
+                            catModif.cards.forEach(card => {
+                                if (card.name === modifier.name) {
+                                    this.modifiersChosen.push(card)                                
+                                    this.modifiersDrawPile.push(card)                                    
+                                }
+                            })                            
+                        })
+                    })
+                    
+                    this.modifiersDrawPile = this.modifiersChosen.slice()
+                }
+               
             }            
 
             this.newGame();        
