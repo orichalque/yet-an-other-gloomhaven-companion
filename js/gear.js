@@ -65,7 +65,7 @@ var gearManagement = {
             var id = parseInt(this.idToAdd)
             this.allGear.forEach(cat => cat.items.forEach(item => {
                 if ((item.points +1) == id) {
-                    this.gearChosen.push(item)
+                    this.addGear(item)
                 }
             }))
         }
