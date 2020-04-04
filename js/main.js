@@ -55,7 +55,9 @@ new Vue({
             this.abilities = abilities
         },
         loadDatabaseFrosthaven: function() {
-            //todo
+            this.classNames = classNames_frosthaven
+            this.modifiers =  attack_modifiers_categories_frosthaven
+            this.abilities = abilities_frosthaven
         },
         loadDatabaseJotl: function() {
             this.classNames = classNames_jotl

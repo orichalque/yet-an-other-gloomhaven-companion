@@ -515,6 +515,8 @@
               v-on:click.once="loadDatabaseVersion('vanilla')">Vanilla</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'jotl'}"
               v-on:click.once="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
+            <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
+              v-on:click.once="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <hr />
             <h3>Spoiler section</h3>
             <button v-if="!showSpoiler" v-on:click="showSpoiler = true" class="btn btn-secondary">Show</button>
@@ -592,6 +594,7 @@
   <script src="js/database_vanilla.js"></script>
   <script src="js/database_common.js"></script>
   <script src="js/database_jotl.js"></script>
+  <script src="js/database_frosthaven.js"></script>
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>
