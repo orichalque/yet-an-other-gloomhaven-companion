@@ -119,7 +119,7 @@
                     v-for="ability in abilitiesChosen">
                     <div class="col" v-if="ability.duration == 0">
                       <img v-bind:src="'data/'+ability.image"
-                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]"
+                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]"
                         class="image rounded"></img>
 
                       <!-- On-cards buttons when not on rest mode-->
