@@ -43,10 +43,7 @@ var modifiersManagement = {
             this.modifiersDrawPile.splice(randomint,1)
         },
         shuffleModifiersDeck: function() {
-            this.modifiersDrawPile = []
-            for(let i = this.modifiersChosen.length - 1; i > 0; i--){
-                this.modifiersDrawPile.push(this.modifiersChosen[i])
-            }
+            this.modifiersDrawPile = this.modifiersChosen.slice()
             this.lastDrawnModifier = null
             this.modifiersDiscardPile = []
         },
