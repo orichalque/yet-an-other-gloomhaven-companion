@@ -27,6 +27,7 @@ new Vue({
         },
         loadDatabase: function() {
             this.modifiersSpecial = attack_modifiers_special
+            this.modifiersBase = attack_modifiers_base
             this.modifiersChosen = this.modifiersBase.slice()
             this.modifiersDrawPile = this.modifiersBase.slice() 
             this.allGear = allItems
