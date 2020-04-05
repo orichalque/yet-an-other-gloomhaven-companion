@@ -12,9 +12,12 @@ new Vue({
         version: 'vanilla',
         alert: '',        
         classChosen : false,
+
         /* General game information */ 
         turn: 1,
-        level: 1
+        level: 1,
+        specialClassMode : '',
+        specialClassValue : 0,
     },
     methods: {
         set: function (param) {
