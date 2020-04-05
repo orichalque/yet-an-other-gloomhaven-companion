@@ -319,15 +319,18 @@
                 </div>
               </div>
             </div>
-
             <!-- SPECIAL MODIFIERS FRONT -->
             <div class="col-md-3 border-right border-left">
-              <h3>Special Modifier Deck</h3>
               <div class="row">
-                <div class="modifierContainer" v-for='card in modifiersSpecial'>
-                  <div class="col mt-3" v-on:click="addModifier(card)">
-                    <img v-bind:src="'data/'+card.image" style="width:8em"
-                      v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <h3>Special Modifier Deck</h3>
+              </div>
+              <div v-for="modifier in modifiersSpecial">
+                <div class="row">
+                  <div class="modifierContainer" v-for='card in modifier.cards'>
+                    <div class="col mt-3" v-on:click="addModifier(card)">
+                      <img v-bind:src="'data/'+card.image" style="width:8em"
+                        v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -335,15 +338,19 @@
 
             <!-- BASE DECK FRONT -->
             <div class="col-md-3 border-right">
-              <h3>Base Deck</h3>
               <div class="row">
-                <div class="modifierContainer" v-for='card in modifiersBase'>
-                  <div class="col mt-3" v-on:click="addModifier(card)">
-                    <img v-bind:src="'data/'+card.image" style="width:8em"
-                      v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <h3>Base Deck</h3>
+              </div>
+              <div v-for="modifier in modifiersBase">
+                <div class="row">
+                  <div class="modifierContainer" v-for='card in modifier.cards'>
+                    <div class="col mt-3" v-on:click="addModifier(card)">
+                      <img v-bind:src="'data/'+card.image" style="width:8em"
+                        v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
 
             <!-- FINAL DECK -->
