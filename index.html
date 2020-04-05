@@ -571,8 +571,7 @@
             <button data-toggle="collapse" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
             
             <div v-if="showLockedClasses" class="row border-bottom collapse" id="lockedClasses">
-              <div class="col parentImage" v-for='ability in abilities'
-                v-if='(abilityCategory == null || abilityCategory == ability) && ability.hidden'>
+              <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
                 <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
                   v-bind:src="'data/'+ability.cards[0].image" />
                 <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false"
