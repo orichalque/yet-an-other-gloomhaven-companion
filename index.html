@@ -104,14 +104,20 @@
               <div class="container">
 
                 <div class="row mt-3">
-                  <div class="col-lg-3"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
+                  <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
                       cards</button></div>
-                  <div class="col-lg-3"><button v-on:click="shortRest()"
+                  <div class="col"><button v-on:click="shortRest()"
                       class="btn btn-block btn-outline-secondary">Short rest</button></div>
-                  <div class="col-lg-3"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
+                  <div class="col"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
                       rest</button></div>
-                  <div class="col-lg-3"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
+                  <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
                       game</button></div>
+                  <div class="col btn-group" role="group" v-if="className === 'bb'">
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'slow'}" v-on:click="specialClassMode = 'slow'; specialClassValue++;">Slow</button><button class="btn btn-outline-secondary">{{ specialClassValue }}</button><button v-on:click="specialClassValue > 0 ? specialClassMode = 'fast' : ''; specialClassValue > 0 ? specialClassValue-- : '';" class="btn btn-outline-secondary" :class="{active: specialClassMode === 'fast'}">Fast</button>
+                  </div> 
+                  <div class="col btn-group" role="group"  v-if="className === 'ge'">
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
+                  </div>
                 </div>
 
                 <div class="row" style="display: table-cell">
@@ -119,21 +125,21 @@
                     v-for="ability in abilitiesChosen">
                     <div class="col" v-if="ability.duration == 0">
                       <img v-bind:src="'data/'+ability.image"
-                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]"
+                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]" v-on:click="pickCard(ability)"
                         class="image rounded"></img>
 
                       <!-- On-cards buttons when not on rest mode-->
                       <div v-if="!longRestMode">
-                        <!-- On-cards buttons when cards are ready to be played -->
+                        <!-- On-cards buttons when cards are ready to be played 
                         <div class="abilityButtons" v-if="!ability.played">
                           <button v-if="twoAbilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)"
                             class="btn btn-light remove">
                             Cancel
                           </button>
-                          <button v-else v-on:click="pickCard(ability)" class="btn btn-light add">
+                          <button v-else  class="btn btn-light add">
                             Select
                           </button>
-                        </div>
+                        </div>-->
 
                         <!-- On-cards buttons when cards have been played -->
                         <div class="iconContainer">
@@ -243,7 +249,7 @@
                 <div style="display: inline-block;" class="smallCardContainer" v-for="gear in gearChosen">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+gear.image" class="smallimage rounded "
-                      v-bind:class="[{tapped: gear.played}, {played: gear.lost}]"></img>
+                      v-bind:class="[{tapped: gear.played && !gear.lost}, {played: gear.lost}]"></img>
                     <div v-if="!gear.played" class="iconContainer">
                       <div class="topIconContainer">
                         <img class="smallIcon" src="data/icons/tap.png" v-on:click="tapItem(gear)"></img>
@@ -522,6 +528,8 @@
               v-on:click.once="loadDatabaseVersion('vanilla')">Vanilla</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'jotl'}"
               v-on:click.once="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
+            <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
+              v-on:click.once="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <hr />
             <h3>Spoiler section</h3>
             <button v-if="!showSpoiler" v-on:click="showSpoiler = true" class="btn btn-secondary">Show</button>
@@ -563,8 +571,7 @@
             <button data-toggle="collapse" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
             
             <div v-if="showLockedClasses" class="row border-bottom collapse" id="lockedClasses">
-              <div class="col parentImage" v-for='ability in abilities'
-                v-if='(abilityCategory == null || abilityCategory == ability) && ability.hidden'>
+              <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
                 <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
                   v-bind:src="'data/'+ability.cards[0].image" />
                 <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false"
@@ -599,6 +606,7 @@
   <script src="js/database_vanilla.js"></script>
   <script src="js/database_common.js"></script>
   <script src="js/database_jotl.js"></script>
+  <script src="js/database_frosthaven.js"></script>
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>
