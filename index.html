@@ -74,8 +74,8 @@
             <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
               <a class="nav-link" href="#" v-on:click="set('gear')">Gear</a>
             </li>
-            <li class="nav-item py-0 dropdown" v-bind:class="{active: menu ==='about'}">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Configuration</a>
+            <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Configuration</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                 <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Expansions</a>
                 <a class="dropdown-item" data-target="#characterSelectionModal" data-toggle="modal" href="#">Set character</a>
@@ -125,21 +125,21 @@
                     v-for="ability in abilitiesChosen">
                     <div class="col" v-if="ability.duration == 0">
                       <img v-bind:src="'data/'+ability.image"
-                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]"
+                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]" v-on:click="pickCard(ability)"
                         class="image rounded"></img>
 
                       <!-- On-cards buttons when not on rest mode-->
                       <div v-if="!longRestMode">
-                        <!-- On-cards buttons when cards are ready to be played -->
+                        <!-- On-cards buttons when cards are ready to be played 
                         <div class="abilityButtons" v-if="!ability.played">
                           <button v-if="twoAbilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)"
                             class="btn btn-light remove">
                             Cancel
                           </button>
-                          <button v-else v-on:click="pickCard(ability)" class="btn btn-light add">
+                          <button v-else  class="btn btn-light add">
                             Select
                           </button>
-                        </div>
+                        </div>-->
 
                         <!-- On-cards buttons when cards have been played -->
                         <div class="iconContainer">
@@ -249,7 +249,7 @@
                 <div style="display: inline-block;" class="smallCardContainer" v-for="gear in gearChosen">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+gear.image" class="smallimage rounded "
-                      v-bind:class="[{tapped: gear.played}, {played: gear.lost}]"></img>
+                      v-bind:class="[{tapped: gear.played && !gear.lost}, {played: gear.lost}]"></img>
                     <div v-if="!gear.played" class="iconContainer">
                       <div class="topIconContainer">
                         <img class="smallIcon" src="data/icons/tap.png" v-on:click="tapItem(gear)"></img>
@@ -325,15 +325,18 @@
                 </div>
               </div>
             </div>
-
             <!-- SPECIAL MODIFIERS FRONT -->
             <div class="col-md-3 border-right border-left">
-              <h3>Special Modifier Deck</h3>
               <div class="row">
-                <div class="modifierContainer" v-for='card in modifiersSpecial'>
-                  <div class="col mt-3" v-on:click="addModifier(card)">
-                    <img v-bind:src="'data/'+card.image" style="width:8em"
-                      v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <h3>Special Modifier Deck</h3>
+              </div>
+              <div v-for="modifier in modifiersSpecial">
+                <div class="row">
+                  <div class="modifierContainer" v-for='card in modifier.cards'>
+                    <div class="col mt-3" v-on:click="addModifier(card)">
+                      <img v-bind:src="'data/'+card.image" style="width:8em"
+                        v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -341,15 +344,19 @@
 
             <!-- BASE DECK FRONT -->
             <div class="col-md-3 border-right">
-              <h3>Base Deck</h3>
               <div class="row">
-                <div class="modifierContainer" v-for='card in modifiersBase'>
-                  <div class="col mt-3" v-on:click="addModifier(card)">
-                    <img v-bind:src="'data/'+card.image" style="width:8em"
-                      v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <h3>Base Deck</h3>
+              </div>
+              <div v-for="modifier in modifiersBase">
+                <div class="row">
+                  <div class="modifierContainer" v-for='card in modifier.cards'>
+                    <div class="col mt-3" v-on:click="addModifier(card)">
+                      <img v-bind:src="'data/'+card.image" style="width:8em"
+                        v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
 
             <!-- FINAL DECK -->

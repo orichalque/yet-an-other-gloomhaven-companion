@@ -31,8 +31,12 @@ new Vue({
         loadDatabase: function() {
             this.modifiersSpecial = attack_modifiers_special
             this.modifiersBase = attack_modifiers_base
-            this.modifiersChosen = this.modifiersBase.slice()
-            this.modifiersDrawPile = this.modifiersBase.slice() 
+            this.modifiersBase.forEach(cat => {
+                cat.cards.forEach(modif => {
+                    this.modifiersChosen.push(modif)
+                })
+            })
+            this.modifiersDrawPile = this.modifiersChosen.slice() 
             this.allGear = allItems
             this.loadDatabaseVersion(this.version)
         },
@@ -126,13 +130,43 @@ new Vue({
 
             modifierCookie = Cookies.get("modifiers");
             if (modifierCookie != null) {
-                oldModifies = JSON.parse(modifierCookie);
-                //TODO
-                oldModifies.forEach(modifier => {
-                    attack_modifiers_base
-                    attack_modifiers_special
-                    attack_modifiers_categories
-                })
+                var oldModifiers = JSON.parse(modifierCookie);
+                if (oldModifiers != null) {
+                    this.modifiersChosen = []
+                    oldModifiers.forEach(modifier => {
+
+                        this.modifiersBase.forEach(cat => {
+                            cat.cards.forEach(modif => {
+                                if (modif.name === modifier.name) {
+                                    this.modifiersChosen.push(modif)
+                                    this.modifiersDrawPile.push(modif)    
+                                }
+                            })
+                        })
+                        
+                        
+                        this.modifiersSpecial.forEach(catModif => {
+                            catModif.cards.forEach(modif => {
+                                if (modif.name === modifier.name) {
+                                    this.modifiersChosen.push(modif)
+                                    this.modifiersDrawPile.push(modif)                                
+                                }
+                            })
+                        })
+                        
+                        this.modifiers.forEach(catModif => {
+                            catModif.cards.forEach(card => {
+                                if (card.name === modifier.name) {
+                                    this.modifiersChosen.push(card)                                
+                                    this.modifiersDrawPile.push(card)                                    
+                                }
+                            })                            
+                        })
+                    })
+                    
+                    this.modifiersDrawPile = this.modifiersChosen.slice()
+                }
+               
             }            
 
             this.newGame();        

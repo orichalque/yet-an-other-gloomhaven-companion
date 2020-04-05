@@ -250,6 +250,14 @@ html,body .wrapper .container-fluid {
          filter: grayscale(100%); 
   }
 
+  .picked {
+    -moz-box-shadow: 0 0 5px 5px rgb(58, 124, 52);
+    -webkit-box-shadow: 0 0 5px 5px rgb(58, 124, 52);
+    box-shadow: 0 0px 5px 5px rgb(58, 124, 52);
+    transition: .5s ease;
+
+  }
+
   .played {
     -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
     filter: grayscale(80%);
@@ -268,8 +276,13 @@ html,body .wrapper .container-fluid {
     transform: rotate(90deg);
   }
 
+  .collapse.in {        
+    display: block;       
+  }
+
   [v-cloak] {
     display: none;
   }
 
 
+  .dropdown-menu { margin-top: 0; }
