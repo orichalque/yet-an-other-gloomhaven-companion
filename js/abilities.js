@@ -78,12 +78,10 @@ var abilitiesManagement = {
             this.$forceUpdate()
         },
         pickCard: function(card) {
-            if (this.twoAbilitiesSelected.length < 2 && !card.played && !card.destroyed) {
-                if (this.twoAbilitiesSelected.includes(card)) {
-                    this.cancelCard(card)
-                } else {
-                    this.twoAbilitiesSelected.push(card)
-                }                
+            if (this.twoAbilitiesSelected.includes(card)) {
+                this.cancelCard(card)
+            } else if (this.twoAbilitiesSelected.length < 2 && !card.played && !card.destroyed) {
+                this.twoAbilitiesSelected.push(card)                
             }       
         },
         cancelCard: function(card) {
