@@ -242,7 +242,7 @@
                 <div style="display: inline-block;" class="smallCardContainer" v-for="gear in gearChosen">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+gear.image" class="smallimage rounded "
-                      v-bind:class="[{tapped: gear.played}, {played: gear.lost}]"></img>
+                      v-bind:class="[{tapped: gear.played && !gear.lost}, {played: gear.lost}]"></img>
                     <div v-if="!gear.played" class="iconContainer">
                       <div class="topIconContainer">
                         <img class="smallIcon" src="data/icons/tap.png" v-on:click="tapItem(gear)"></img>
