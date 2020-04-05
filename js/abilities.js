@@ -36,37 +36,44 @@ var abilitiesManagement = {
             this.abilitiesChosen.splice(indexOfCardToRemove, 1)
         },
         shortRest: function() {
-            if (!this.longRestMode && this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played).length >0) {
-                var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed))
-                var cardIndexToDestroy = getRandomInt(cardsPlayed.length)    
-                cardsPlayed[cardIndexToDestroy].destroyed = true
-                cardsPlayed.splice(cardIndexToDestroy, 1)
-                cardsPlayed.forEach(card => card.played = false)
                 
-                if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                    this.showRedAlert('You do not have enough cards in your end to continue.')
-                }
-            }   
-            this.$forceUpdate()
-        },
-        longRest: function() {
-            if (this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played && ! card.destroyed).length >0) {
-                this.longRestMode = true    
-                this.gearChosen.forEach(gear => {
-                    if (gear.played && ! gear.lost) {
-                        gear.played = false
-                    }
-                })
-            }            
-        },
-        destroyLongRestCard: function(card) {
-            card.destroyed = true
-            var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed))
+            var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed && (card.duration == 0 || card.duration == null)))
+            var cardIndexToDestroy = getRandomInt(cardsPlayed.length)    
+            cardsPlayed[cardIndexToDestroy].destroyed = true
+            cardsPlayed.splice(cardIndexToDestroy, 1)
             cardsPlayed.forEach(card => card.played = false)
             
             if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
                 this.showRedAlert('You do not have enough cards in your end to continue.')
             }
+                
+            this.$forceUpdate()
+        },
+        longRest: function() {
+            this.longRestMode = true    
+            this.$forceUpdate()    
+        },
+        canRest: function() {
+            return this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played && ! card.destroyed).filter(card => card.duration == 0 || card.duration == null).length >= 2
+        },
+        destroyLongRestCard: function(card) {
+            card.destroyed = true
+            var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed && (card.duration == 0 || card.duration == null)))
+            cardsPlayed.forEach(card => card.played = false)
+            
+            this.abilitiesChosen.filter(elem => elem.duration > 0).forEach(elem => elem.duration --)
+            this.turn ++
+            
+            this.gearChosen.forEach(gear => {
+                if (gear.played && ! gear.lost) {
+                    gear.played = false
+                }
+            })
+            
+            if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
+                this.showRedAlert('You do not have enough cards in your end to continue.')
+            }
+            
             this.longRestMode = false
             this.$forceUpdate()
         },
@@ -100,10 +107,10 @@ var abilitiesManagement = {
             this.$forceUpdate()       
         },
         keepAbilityOneTurn(card) {
-            card.duration = 1
+            card.duration = 1        
             this.$forceUpdate()
         },
-        keepAbilityManyTurns(card) {
+        keepAbilityManyTurns(card) {    
             card.duration = -1
             card.numberOfTimesUsed = 0            
             this.$forceUpdate()
