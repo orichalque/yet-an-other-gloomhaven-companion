@@ -8,12 +8,16 @@ new Vue({
         isMobile: false,        
         hasOpenedXEnvelope: false,
         showSpoiler: false,
+        showLockedClasses: false,
         version: 'vanilla',
         alert: '',        
         classChosen : false,
+
         /* General game information */ 
         turn: 1,
-        level: 1
+        level: 1,
+        specialClassMode : '',
+        specialClassValue : 0,
     },
     methods: {
         set: function (param) {
@@ -25,14 +29,48 @@ new Vue({
             this.abilitiesChosen = [];
         },
         loadDatabase: function() {
-            this.modifiersBase = attack_modifiers_base
             this.modifiersSpecial = attack_modifiers_special
-            this.classNames = classNames
-            this.modifiers = attack_modifiers_categories
-            this.modifiersChosen = this.modifiersBase.slice()
-            this.modifiersDrawPile = this.modifiersBase.slice()            
-            this.abilities = abilities
+            this.modifiersBase = attack_modifiers_base
+            this.modifiersBase.forEach(cat => {
+                cat.cards.forEach(modif => {
+                    this.modifiersChosen.push(modif)
+                })
+            })
+            this.modifiersDrawPile = this.modifiersChosen.slice() 
             this.allGear = allItems
+            this.loadDatabaseVersion(this.version)
+        },
+        loadDatabaseVersion: function(param){
+            this.version = param
+            switch(param){
+                case 'vanilla':
+                    this.loadDatabaseVanilla()
+                    break
+                case 'jotl':
+                    this.loadDatabaseJotl()
+                    break
+                case 'frosthaven':
+                    this.loadDatabaseFrosthaven()
+                    break
+                default:
+                    this.loadDatabaseVanilla()
+                    break
+            }
+        },
+        loadDatabaseVanilla: function() {
+            this.classNames = classNames
+            this.modifiers = attack_modifiers_categories          
+            this.abilities = abilities
+        },
+        loadDatabaseFrosthaven: function() {
+            this.classNames = classNames_frosthaven
+            this.modifiers =  attack_modifiers_categories_frosthaven
+            this.abilities = abilities_frosthaven
+        },
+        loadDatabaseJotl: function() {
+            this.classNames = classNames_jotl
+            this.modifiers = attack_modifiers_categories_jotl        
+            this.abilities = abilities_jotl
         },
         loadXEnvelope: function() {
             if (! this.hasOpenedXEnvelope) {            
@@ -92,13 +130,43 @@ new Vue({
 
             modifierCookie = Cookies.get("modifiers");
             if (modifierCookie != null) {
-                oldModifies = JSON.parse(modifierCookie);
-                //TODO
-                oldModifies.forEach(modifier => {
-                    attack_modifiers_base
-                    attack_modifiers_special
-                    attack_modifiers_categories
-                })
+                var oldModifiers = JSON.parse(modifierCookie);
+                if (oldModifiers != null) {
+                    this.modifiersChosen = []
+                    oldModifiers.forEach(modifier => {
+
+                        this.modifiersBase.forEach(cat => {
+                            cat.cards.forEach(modif => {
+                                if (modif.name === modifier.name) {
+                                    this.modifiersChosen.push(modif)
+                                    this.modifiersDrawPile.push(modif)    
+                                }
+                            })
+                        })
+                        
+                        
+                        this.modifiersSpecial.forEach(catModif => {
+                            catModif.cards.forEach(modif => {
+                                if (modif.name === modifier.name) {
+                                    this.modifiersChosen.push(modif)
+                                    this.modifiersDrawPile.push(modif)                                
+                                }
+                            })
+                        })
+                        
+                        this.modifiers.forEach(catModif => {
+                            catModif.cards.forEach(card => {
+                                if (card.name === modifier.name) {
+                                    this.modifiersChosen.push(card)                                
+                                    this.modifiersDrawPile.push(card)                                    
+                                }
+                            })                            
+                        })
+                    })
+                    
+                    this.modifiersDrawPile = this.modifiersChosen.slice()
+                }
+               
             }            
 
             this.newGame();        
@@ -114,8 +182,8 @@ new Vue({
             this.alert = alert
             $('#redAlert').show()            
         },
-        dismissRedAlert: function(alert) {
-            $('#redAlert').hide()
+        dismissAlert: function(alert) {
+            $(alert).hide()
         },
         showGreenAlert: function(alert){
             this.alert = alert
@@ -138,3 +206,28 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
+const $dropdown = $(".dropdown");
+const $dropdownToggle = $(".dropdown-toggle");
+const $dropdownMenu = $(".dropdown-menu");
+const showClass = "show";
+ 
+$(window).on("load resize", function() {
+  if (this.matchMedia("(min-width: 768px)").matches) {
+    $dropdown.hover(
+      function() {
+        const $this = $(this);
+        $this.addClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "true");
+        $this.find($dropdownMenu).addClass(showClass);
+      },
+      function() {
+        const $this = $(this);
+        $this.removeClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "false");
+        $this.find($dropdownMenu).removeClass(showClass);
+      }
+    );
+  } else {
+    $dropdown.off("mouseenter mouseleave");
+  }
+});

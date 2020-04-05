@@ -19,7 +19,7 @@ html,body .wrapper .container-fluid {
   height: 100%;
 }
 
-  p, span, a, h3, button {
+  p, span, a, h3, h1, button {
     font-family: 'Crimson Text', serif;
   }
 
@@ -30,7 +30,8 @@ html,body .wrapper .container-fluid {
   .parentImage {
     position: relative;
     flex-grow: 0;
-    margin: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
   .image {
@@ -41,8 +42,17 @@ html,body .wrapper .container-fluid {
     backface-visibility: hidden;
     width: 10em;
     object-fit: cover;
-  }
+  } 
 
+  .smallerImage {
+    position: relative;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    width: 8em;
+    object-fit: cover;
+  }
 
   .smallimage {
     position: relative;
@@ -67,7 +77,7 @@ html,body .wrapper .container-fluid {
   
   .layer {
     position: absolute;
-    width: 10em;
+    width: 8em;
     top: 0em;
     left: 1em;
   }
@@ -240,6 +250,14 @@ html,body .wrapper .container-fluid {
          filter: grayscale(100%); 
   }
 
+  .picked {
+    -moz-box-shadow: 0 0 5px 5px rgb(58, 124, 52);
+    -webkit-box-shadow: 0 0 5px 5px rgb(58, 124, 52);
+    box-shadow: 0 0px 5px 5px rgb(58, 124, 52);
+    transition: .5s ease;
+
+  }
+
   .played {
     -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
     filter: grayscale(80%);
@@ -258,7 +276,13 @@ html,body .wrapper .container-fluid {
     transform: rotate(90deg);
   }
 
+  .collapse.in {        
+    display: block;       
+  }
+
   [v-cloak] {
     display: none;
   }
 
+
+  .dropdown-menu { margin-top: 0; }

@@ -66,17 +66,21 @@
               <a class="nav-link" href="#" v-on:click="set('home')">Play</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'abilities'}">
-              <a class="nav-link" href="#" v-on:click="set('abilities')">Abilities</a>
+              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('abilities')">Abilities</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
-              <a class="nav-link" href="#" v-on:click="set('modifiers')">Modifiers</a>
+              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('modifiers')">Modifiers</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
               <a class="nav-link" href="#" v-on:click="set('gear')">Gear</a>
             </li>
-            <li class="nav-item py-0" v-bind:class="{active: menu ==='about'}" data-toggle="modal"
-              data-target="#exampleModal">
-              <a class="nav-link" href="#">About</a>
+            <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Configuration</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Expansions</a>
+                <a class="dropdown-item" data-target="#characterSelectionModal" data-toggle="modal" href="#">Set character</a>
+                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">About</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -100,14 +104,20 @@
               <div class="container">
 
                 <div class="row mt-3">
-                  <div class="col-lg-3"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
+                  <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
                       cards</button></div>
-                  <div class="col-lg-3"><button v-on:click="shortRest()"
+                  <div class="col"><button v-on:click="shortRest()"
                       class="btn btn-block btn-outline-secondary">Short rest</button></div>
-                  <div class="col-lg-3"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
+                  <div class="col"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
                       rest</button></div>
-                  <div class="col-lg-3"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
+                  <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
                       game</button></div>
+                  <div class="col btn-group" role="group" v-if="className === 'bb'">
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'slow'}" v-on:click="specialClassMode = 'slow'; specialClassValue++;">Slow</button><button class="btn btn-outline-secondary">{{ specialClassValue }}</button><button v-on:click="specialClassValue > 0 ? specialClassMode = 'fast' : ''; specialClassValue > 0 ? specialClassValue-- : '';" class="btn btn-outline-secondary" :class="{active: specialClassMode === 'fast'}">Fast</button>
+                  </div> 
+                  <div class="col btn-group" role="group"  v-if="className === 'ge'">
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
+                  </div>
                 </div>
 
                 <div class="row" style="display: table-cell">
@@ -115,21 +125,21 @@
                     v-for="ability in abilitiesChosen">
                     <div class="col" v-if="ability.duration == 0">
                       <img v-bind:src="'data/'+ability.image"
-                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {selected: twoAbilitiesSelected.includes(ability)}]"
+                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]" v-on:click="pickCard(ability)"
                         class="image rounded"></img>
 
                       <!-- On-cards buttons when not on rest mode-->
                       <div v-if="!longRestMode">
-                        <!-- On-cards buttons when cards are ready to be played -->
+                        <!-- On-cards buttons when cards are ready to be played 
                         <div class="abilityButtons" v-if="!ability.played">
                           <button v-if="twoAbilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)"
                             class="btn btn-light remove">
                             Cancel
                           </button>
-                          <button v-else v-on:click="pickCard(ability)" class="btn btn-light add">
+                          <button v-else  class="btn btn-light add">
                             Select
                           </button>
-                        </div>
+                        </div>-->
 
                         <!-- On-cards buttons when cards have been played -->
                         <div class="iconContainer">
@@ -192,7 +202,7 @@
               </div>
             </div>
             <div class="col-lg-7 border-right" v-else id="abilitiesSection">
-              Build your deck in the <a href="#" v-on:click="set('abilities')">Abilities</a> section first !
+              Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('abilities')">Abilities</a> section first !
             </div>
 
             <!-- Right side of the play screen-->
@@ -202,7 +212,7 @@
               <div class="row flex-nowrap justify-content-start">
                 <div class="abilityContainer">
                   <div class="col-auto" v-if="modifiersDrawPile.length != 0">
-                    <img v-bind:src="'data/attack-modifiers/back/top.png'"  class="image rounded" />
+                    <img v-bind:src="'data/attack-modifiers/back/top.png'" class="image rounded" />
                     <div class="abilityButtons">
                       <button v-on:click="drawModifier()" class="add btn btn-light">
                         Draw
@@ -236,20 +246,21 @@
               <h3>Gear</h3>
 
               <div class="row justify-content-center no-gutters">
-                <div style="display: inline-block;" class="smallCardContainer"  v-for="gear in gearChosen">
+                <div style="display: inline-block;" class="smallCardContainer" v-for="gear in gearChosen">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+gear.image" class="smallimage rounded "
-                      v-bind:class="[{tapped: gear.played}, {played: gear.lost}]"></img>
+                      v-bind:class="[{tapped: gear.played && !gear.lost}, {played: gear.lost}]"></img>
                     <div v-if="!gear.played" class="iconContainer">
                       <div class="topIconContainer">
-                        <img class="smallIcon" src="data/icons/tap.png" v-on:click="tapItem(gear)"></img>                      
-                        <img class="smallIcon" src="data/icons/lost.png" v-on:click="looseItem(gear)"></img>       
-                        <button type="button" class="smallIcon btn btn-light mx-auto" v-on:click="useItem(gear)"><b>+1</b></button>       
+                        <img class="smallIcon" src="data/icons/tap.png" v-on:click="tapItem(gear)"></img>
+                        <img class="smallIcon" src="data/icons/lost.png" v-on:click="looseItem(gear)"></img>
+                        <button type="button" class="smallIcon btn btn-light mx-auto"
+                          v-on:click="useItem(gear)"><b>+1</b></button>
                       </div>
                     </div>
                     <div v-if="gear.played" class="iconContainer">
                       <div class="bottomIconContainer">
-                        <img class="smallIcon" src="data/icons/recover.png" v-on:click="restoreItem(gear)"></img>            
+                        <img class="smallIcon" src="data/icons/recover.png" v-on:click="restoreItem(gear)"></img>
                       </div>
                     </div>
                     <div v-if="gear.used > 0" class="onCardNoHover">
@@ -298,21 +309,11 @@
                   <h3>{{ classNames[className] || 'Class' }} Deck </h3>
                 </div>
                 <div class="col">
-                  <button v-on:click="switchModifierClass()" class="btn btn-secondary">
+                  <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
                     Switch Class
                   </button>
                 </div>
-              </div>
-              <div class="row">
-                <div v-for='ability in abilities'>
-                  <div v-if='modifierCategory == null' class="col mt-3">
-                    <input type="image" v-on:click="displayModifiers(ability.name.substring(0,2))" class="image rounded"
-                      v-bind:src="'data/'+ability.cards[0].image" style="width:8em" />
-                    <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false"
-                      src="data/layers/locked_layer.png" style="width:8em">
-                  </div>
-                </div>
-              </div>
+              </div>              
               <div v-for="modifier in modifiers">
                 <div class="row" v-if="modifier.name.substring(3,5) == modifierCategory">
                   <div class="modifierContainer" v-for='card in modifier.cards'>
@@ -324,15 +325,18 @@
                 </div>
               </div>
             </div>
-
             <!-- SPECIAL MODIFIERS FRONT -->
             <div class="col-md-3 border-right border-left">
-              <h3>Special Modifier Deck</h3>
               <div class="row">
-                <div class="modifierContainer" v-for='card in modifiersSpecial'>
-                  <div class="col mt-3" v-on:click="addModifier(card)">
-                    <img v-bind:src="'data/'+card.image" style="width:8em"
-                      v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <h3>Special Modifier Deck</h3>
+              </div>
+              <div v-for="modifier in modifiersSpecial">
+                <div class="row">
+                  <div class="modifierContainer" v-for='card in modifier.cards'>
+                    <div class="col mt-3" v-on:click="addModifier(card)">
+                      <img v-bind:src="'data/'+card.image" style="width:8em"
+                        v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -340,15 +344,19 @@
 
             <!-- BASE DECK FRONT -->
             <div class="col-md-3 border-right">
-              <h3>Base Deck</h3>
               <div class="row">
-                <div class="modifierContainer" v-for='card in modifiersBase'>
-                  <div class="col mt-3" v-on:click="addModifier(card)">
-                    <img v-bind:src="'data/'+card.image" style="width:8em"
-                      v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                <h3>Base Deck</h3>
+              </div>
+              <div v-for="modifier in modifiersBase">
+                <div class="row">
+                  <div class="modifierContainer" v-for='card in modifier.cards'>
+                    <div class="col mt-3" v-on:click="addModifier(card)">
+                      <img v-bind:src="'data/'+card.image" style="width:8em"
+                        v-bind:class="[{selected: modifiersChosen.includes(card)}]" class="image rounded" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
 
             <!-- FINAL DECK -->
@@ -369,49 +377,19 @@
 
       <!-- ABILITIES -->
       <div class="col-lg-12 container-fluid" id="abilities" v-if="menu == 'abilities'">
-        <div v-if='!classChosen'>
-          <div>
-            <h1>Choose your class</h1>
-          </div>
-          <div>
-            <h3>Starting classes</h3>
-          </div>
-          <!-- ABILITY CATEGORY -->
-          <div class="row border-bottom">
-            <div class="col parentImage" v-for='ability in abilities'
-              v-if='(abilityCategory == null || abilityCategory == ability) && !ability.hidden'>
-              <input type="image" class="image rounded" v-on:click="displayAbilities(ability)"
-                v-bind:src="'data/'+ability.cards[0].image" />
-            </div>
-          </div>
-          <div>
-            <h3>Locked classes</h3>
-          </div>
-          <div class="row border-bottom">
-            <div class="col parentImage" v-for='ability in abilities'
-              v-if='(abilityCategory == null || abilityCategory == ability) && ability.hidden'>
-              <input type="image" class="image rounded" v-on:click="displayAbilities(ability)"
-                v-bind:src="'data/'+ability.cards[0].image" />
-              <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false"
-                src="data/layers/locked_layer.png">
-            </div>
-          </div>
-
-          <!-- PER CATEGORY CARDS -->
-
-        </div>
-        <div class="row" v-if='abilityCategory != null'>
+        <!-- PER CATEGORY CARDS -->
+        <div class="row" >
           <div class="col-md-9 border">
             <h3 class="align-baseline" style="display: inline;">Character Level:</h3>
             <button v-for='theLevel in 9' class="btn btn-light align-baseline"
               v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
               <h3>{{ theLevel }}</h3>
             </button>
-            <button v-on:click="switchClass()" class="btn btn-secondary">
+            <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
               Switch Class
             </button>
           </div>
-          <div class="col-md-3 border alignCenter">
+          <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
             <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
         </div>
@@ -445,11 +423,13 @@
         <div class="row ">
           <div class="col-lg-9 border-right container-fluid">
             <!-- Categories of items -->
+            <div class="form-group row">
+              <h3 class="col-sm-2 ">Add item by ID:</h3><input class="col-sm-1 form-control" v-model="idToAdd" placeholder="01"><button v-on:click="addItemById()" class="mb-2 button btn btn-secondary">Add</button>
+            </div>
             <div class="row">
-              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear'
-                v-if='gearCategory == null || gearCat == gearCategory'>
+              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear' v-if='gearCategory == null || gearCat == gearCategory'>
                 <a href="#" v-on:click="displayGearCategory(gearCat)">
-                  <img src="data/items/back.png" class="image rounded" />
+                  <img src="data/items/back.png" class="image rounded"/>
                   <h4 class="onCardNoHover"> {{ gearCat.name }}</h4>
                 </a>
               </div>
@@ -457,21 +437,19 @@
             <div class="row" v-if="gearCategory != null">
               <div v-for='item in gearCategory.items' class="col-auto mt-3 abilityContainer">
                 <img v-bind:class="[{selected: gearChosen.includes(item)}]" class="image rounded"
-                  v-bind:src="'data/'+item.image" />
+                  v-bind:src="'data/'+item.image" v-on:click="addGear(item)" />
                 <h4 class="onCardNoHover"> {{ item.points +1 }}</h4>
-                <div class="abilityButtons">
-                  <button v-if="!gearChosen.includes(item)" v-on:click="addGear(item)" class="add btn btn-light">
-                    Add
-                  </button>
-                  <button v-if="gearChosen.includes(item)" v-on:click="removeGear(item)" class="remove btn btn-light">
-                    Remove
-                  </button>
-                </div>
               </div>
             </div>
           </div>
           <div class="col-lg-3">
-            
+            <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="gearAlert">
+              {{ gearAlertMessage }}
+              <button type="button" class="close" aria-label="Close" v-on:click="dismissAlert('#gearAlert')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
             <div class="centerAbilities">
               <div v-for='(card,i) in gearChosen'>
                 <div v-bind:class="[{crop: gearChosen.length -1 !== i}]" v-on:click="removeGear(card)">
@@ -485,8 +463,8 @@
     </div> <!-- main container ends -->
     </div> <!-- main wrapper ends -->
 
-    <!-- About modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- Expansion selection modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -525,10 +503,80 @@
               </form>
             </span>
 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="versionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">About</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <h3>Version:</h3>
+            <button class="btn btn-secondary" v-bind:class="{active: version === 'vanilla'}"
+              v-on:click.once="loadDatabaseVersion('vanilla')">Vanilla</button>
+            <button class="btn btn-secondary" v-bind:class="{active: version === 'jotl'}"
+              v-on:click.once="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
+            <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
+              v-on:click.once="loadDatabaseVersion('frosthaven')">Frosthaven</button>
+            <hr />
             <h3>Spoiler section</h3>
             <button v-if="!showSpoiler" v-on:click="showSpoiler = true" class="btn btn-secondary">Show</button>
             <div v-else>
-              <span><input type="checkbox" @change="loadXEnvelope()" /> Enable envelope X</span>
+              <span v-if="version=='vanilla'"><input type="checkbox" @change="loadXEnvelope()" /> Enable envelope X</span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="characterSelectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">About</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body container">
+            <div>
+              <h1>Choose your class</h1>
+            </div>
+            <div>
+              <h3>Available classes</h3>
+            </div>
+            <div class="row border-bottom">
+              <div class="col parentImage" v-for='ability in abilities' v-if='!ability.hidden'>
+                <input type="image" class="smallerImage rounded" v-bind:class="{selected: abilityCategory != null && abilityCategory != ability}" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
+              </div>
+            </div>
+                       
+            <button data-toggle="collapse" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
+            
+            <div v-if="showLockedClasses" class="row border-bottom collapse" id="lockedClasses">
+              <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
+                <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
+                  v-bind:src="'data/'+ability.cards[0].image" />
+                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false"
+                  src="data/layers/locked_layer.png">
+              </div>
             </div>
           </div>
           <div class="modal-footer">
@@ -555,7 +603,10 @@
   <script src="vendor/vuejs/vue.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/cookiealert/cookiealert.js"></script>
-  <script src="js/database.js"></script>
+  <script src="js/database_vanilla.js"></script>
+  <script src="js/database_common.js"></script>
+  <script src="js/database_jotl.js"></script>
+  <script src="js/database_frosthaven.js"></script>
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>

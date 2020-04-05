@@ -2,7 +2,9 @@ var gearManagement = {
     data: {
         allGear : [],
         gearCategory : null,
-        gearChosen: []
+        gearChosen: [],
+        gearAlertMessage: "",
+        idToAdd: 0
     },
     methods: {
         displayGearCategory: function(cat) {
@@ -14,7 +16,16 @@ var gearManagement = {
         },
         addGear: function(item) {
             this.restoreItem(item)
-            this.gearChosen.push(item)
+            if (! this.gearChosen.includes(item)) {
+                this.gearChosen.push(item)           
+            } else {
+                this.removeGear(item)
+            }
+            
+        },
+        gearAlert: function(message) {
+            this.gearAlertMessage = message
+            $("#gearAlert").show()
         },
         removeGear: function(item) {
             var indexOfItemToRemove = this.gearChosen.indexOf(item)
@@ -49,6 +60,14 @@ var gearManagement = {
                 
             this.$forceUpdate()
 
+        },
+        addItemById: function() {
+            var id = parseInt(this.idToAdd)
+            this.allGear.forEach(cat => cat.items.forEach(item => {
+                if ((item.points +1) == id) {
+                    this.addGear(item)
+                }
+            }))
         }
     }
 }
