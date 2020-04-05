@@ -12,9 +12,12 @@ new Vue({
         version: 'vanilla',
         alert: '',        
         classChosen : false,
+
         /* General game information */ 
         turn: 1,
-        level: 1
+        level: 1,
+        specialClassMode : '',
+        specialClassValue : 0,
     },
     methods: {
         set: function (param) {
@@ -60,7 +63,9 @@ new Vue({
             this.abilities = abilities
         },
         loadDatabaseFrosthaven: function() {
-            //todo
+            this.classNames = classNames_frosthaven
+            this.modifiers =  attack_modifiers_categories_frosthaven
+            this.abilities = abilities_frosthaven
         },
         loadDatabaseJotl: function() {
             this.classNames = classNames_jotl

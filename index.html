@@ -104,13 +104,20 @@
               <div class="container">
 
                 <div class="row mt-3">
-                  <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary" :disabled="twoAbilitiesSelected.length < 2">Play
+                  <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
                       cards</button></div>
-                  <div class="col"><button v-on:click="shortRest()" class="btn btn-block btn-outline-secondary" :disabled="! canRest()">Short rest</button></div>
-                  <div class="col"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary" :disabled="! canRest()">Long
+                  <div class="col"><button v-on:click="shortRest()"
+                      class="btn btn-block btn-outline-secondary">Short rest</button></div>
+                  <div class="col"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
                       rest</button></div>
-                  <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New game</button></div>
-    
+                  <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
+                      game</button></div>
+                  <div class="col btn-group" role="group" v-if="className === 'bb'">
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'slow'}" v-on:click="specialClassMode = 'slow'; specialClassValue++;">Slow</button><button class="btn btn-outline-secondary">{{ specialClassValue }}</button><button v-on:click="specialClassValue > 0 ? specialClassMode = 'fast' : ''; specialClassValue > 0 ? specialClassValue-- : '';" class="btn btn-outline-secondary" :class="{active: specialClassMode === 'fast'}">Fast</button>
+                  </div> 
+                  <div class="col btn-group" role="group"  v-if="className === 'ge'">
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
+                  </div>
                 </div>
 
                 <div class="row" style="display: table-cell">
@@ -521,6 +528,8 @@
               v-on:click.once="loadDatabaseVersion('vanilla')">Vanilla</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'jotl'}"
               v-on:click.once="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
+            <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
+              v-on:click.once="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <hr />
             <h3>Spoiler section</h3>
             <button v-if="!showSpoiler" v-on:click="showSpoiler = true" class="btn btn-secondary">Show</button>
@@ -598,6 +607,7 @@
   <script src="js/database_vanilla.js"></script>
   <script src="js/database_common.js"></script>
   <script src="js/database_jotl.js"></script>
+  <script src="js/database_frosthaven.js"></script>
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>
