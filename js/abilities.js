@@ -71,17 +71,17 @@ var abilitiesManagement = {
             this.$forceUpdate()
         },
         pickCard: function(card) {
-            if (this.twoAbilitiesSelected.length < 2) {
-                this.twoAbilitiesSelected.push(card)
-            } else {
-                this.showRedAlert('You already picked two cards')                        
-            }            
+            if (this.twoAbilitiesSelected.length < 2 && !card.played && !card.destroyed) {
+                if (this.twoAbilitiesSelected.includes(card)) {
+                    this.cancelCard(card)
+                } else {
+                    this.twoAbilitiesSelected.push(card)
+                }                
+            }       
         },
         cancelCard: function(card) {
-            if (this.twoAbilitiesSelected.includes(card)) {
-                indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card)
-                this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1)
-            }
+            indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card)
+            this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1)
         },
         fetchCard: function(card) {
             card.played = false

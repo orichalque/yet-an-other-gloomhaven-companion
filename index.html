@@ -118,21 +118,21 @@
                     v-for="ability in abilitiesChosen">
                     <div class="col" v-if="ability.duration == 0">
                       <img v-bind:src="'data/'+ability.image"
-                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]"
+                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]" v-on:click="pickCard(ability)"
                         class="image rounded"></img>
 
                       <!-- On-cards buttons when not on rest mode-->
                       <div v-if="!longRestMode">
-                        <!-- On-cards buttons when cards are ready to be played -->
+                        <!-- On-cards buttons when cards are ready to be played 
                         <div class="abilityButtons" v-if="!ability.played">
                           <button v-if="twoAbilitiesSelected.includes(ability)" v-on:click="cancelCard(ability)"
                             class="btn btn-light remove">
                             Cancel
                           </button>
-                          <button v-else v-on:click="pickCard(ability)" class="btn btn-light add">
+                          <button v-else  class="btn btn-light add">
                             Select
                           </button>
-                        </div>
+                        </div>-->
 
                         <!-- On-cards buttons when cards have been played -->
                         <div class="iconContainer">
