@@ -104,11 +104,10 @@
               <div class="container">
 
                 <div class="row mt-3">
-                  <div class="col-lg-3"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
+                  <div class="col-lg-3"><button v-on:click="play()" class="btn btn-block btn-outline-secondary" :disabled="twoAbilitiesSelected.length < 2">Play
                       cards</button></div>
-                  <div class="col-lg-3"><button v-on:click="shortRest()"
-                      class="btn btn-block btn-outline-secondary">Short rest</button></div>
-                  <div class="col-lg-3"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
+                  <div class="col-lg-3"><button v-on:click="shortRest()" class="btn btn-block btn-outline-secondary" :disabled="abilitiesChosen.filter(card => card.played).length < 2">Short rest</button></div>
+                  <div class="col-lg-3"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary" :disabled="abilitiesChosen.filter(card => card.played).length < 2">Long
                       rest</button></div>
                   <div class="col-lg-3"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
                       game</button></div>
