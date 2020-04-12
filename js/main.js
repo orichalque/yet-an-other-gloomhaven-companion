@@ -87,6 +87,10 @@ new Vue({
                 card.duration = 0
             })
 
+            this.gearChosen.forEach(item => {
+                this.restoreItem(item);
+            })
+
             this.shuffleModifiersDeck()
             this.turn = 1            
             this.$forceUpdate()
