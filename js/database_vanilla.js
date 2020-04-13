@@ -5289,7 +5289,7 @@ abilities = [
                 "points": 181,
                 "image": "character-ability-cards/DS/the-hunt-begins.png",
                 "xws": "thehuntbegins",
-                "level": 8
+                "level": 0
             },
             {
                 "name": "vital charge",
