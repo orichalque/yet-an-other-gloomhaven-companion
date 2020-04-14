@@ -97,9 +97,9 @@ new Vue({
 
         },
         saveData: function() {
-            Cookies.set("abilities", JSON.stringify(this.abilitiesChosen))
-            Cookies.set("modifiers", JSON.stringify(this.modifiersChosen))    
-            Cookies.set("gear", JSON.stringify(this.gearChosen))    
+            Cookies.set("abilities", JSON.stringify(this.abilitiesChosen), { expires: 365 })
+            Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
+            Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
             this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
