@@ -519,8 +519,15 @@
               <div class="col-lg-4 border" >
                 <div class="card-wrap">
                   <div>
-                    <img v-if="cardToEnhance != null" v-bind:id="cardToEnhance.xws" v-bind:src="'data/'+cardToEnhance.image"  class="biggerImage rounded"/>                
-                    <a href="#" style="color: black;" v-on:click="enhancementMode != 'top' ? enhancementMode = 'top' : enhancementMode = ''"><h3 class="card-caption">Upgrade bottom</h3></a>
+                    <img v-if="cardToEnhance != null" v-bind:id="cardToEnhance.xws" v-bind:src="'data/'+cardToEnhance.image"  class="biggerImage rounded"/>  
+                    <a href="#" style="color: black;" v-on:click="enhancementMode != 'top' ? enhancementMode = 'top' : enhancementMode = ''">
+                      <h3 class="card-caption">Upgrade bottom</h3>
+                    </a> 
+                    <span v-if="cardToEnhance != null && cardToEnhance.top != null && cardToEnhance.top.length > 0" class="enhancement">
+                      <a v-for="enhancement in cardToEnhance.top" href="#" v-on:click="removeEnhancement(enhancement)">
+                        <img class="float-left" :src="'data/'+enhancement.image"/> 
+                      </a>
+                    </span>
                     <a href="#" style="color: black;" v-on:click="enhancementMode != 'bottom' ? enhancementMode = 'bottom' : enhancementMode = ''"><h3 class="card-caption above">Upgrade top </h3></a>
                   </div>                  
                 </div>                
