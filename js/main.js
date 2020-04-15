@@ -1,6 +1,6 @@
 new Vue({
     el: '#app',
-    mixins: [gearManagement, abilitiesManagement, modifiersManagement],
+    mixins: [gearManagement, abilitiesManagement, modifiersManagement, enhancementManagement],
     data: {
         /* Platform information */
         menu : 'home',
