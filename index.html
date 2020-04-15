@@ -68,6 +68,9 @@
             <li class="nav-item py-0" v-bind:class="{active: menu === 'abilities'}">
               <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('abilities')">Abilities</a>
             </li>
+            <li class="nav-item py-0" v-bind:class="{active: menu === 'enhancement'}">
+              <a class="nav-link" href="#" v-on:click="set('enhancement')">Enhancement</a>
+            </li>            
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
               <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('modifiers')">Modifiers</a>
             </li>
@@ -460,6 +463,83 @@
           </div>
         </div>
       </div> <!-- End of gear -->
+
+      <!-- ENHANCEMENT -->
+      <div class="col-lg-12 container-fluid" id="enhancement" v-if="menu == 'enhancement'">
+        <div class="row" >
+          <div class="col-md-9 border">
+            <h3>Enhancement</h3>
+          </div>
+          <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
+            <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
+          </div>
+          <div v-else class="col-md-3 border alignCenter">
+            <h3>Deck</h3>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col-md-9 mt-3 container-fluid">
+            <div class="row">
+              <div class="col-lg-8 border">                  
+                <div class="container" v-if="cardToEnhance != null && enhancementMode != ''">
+                  
+                  <div class="row mt-5">
+                    <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'base' ? enhancementDisplay = 'base' : enhancementDisplay = ''">+1    </button>
+                    <div class="col-lg-10">
+                      <button v-on:click="addEnhancement(base)" v-if="enhancementDisplay === 'base'" v-for="base in baseEnhancements" class="btn btn-secondary">{{ base.name }}</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'buff' ? enhancementDisplay = 'buff' : enhancementDisplay = ''">Buffs   </button>
+                    <div class="col-lg-10">
+                      <button v-on:click="addEnhancement(buff)" v-if="enhancementDisplay === 'buff'" v-for="buff in buffEnhancements" class="btn btn-secondary">{{ buff.name }}</button>
+                    </div>
+                  </div>                  
+                  <div class="row">
+                    <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'debuff' ? enhancementDisplay = 'debuff' : enhancementDisplay = ''">Debuffs </button>
+                    <div class="col-lg-10">
+                      <button v-on:click="addEnhancement(debuff)" v-if="enhancementDisplay === 'debuff'" v-for="debuff in debuffEnhancements" class="btn btn-secondary">{{ debuff.name }}</button>
+                    </div>
+                  </div>                  
+                  <div class="row">
+                    <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'elem' ? enhancementDisplay = 'elem' : enhancementDisplay = ''">Elements</button>
+                    <div class="col-lg-10">
+                      <button v-on:click="addEnhancement(elem)" v-if="enhancementDisplay === 'elem'" v-for="elem in elementEnhancements" class="btn btn-secondary">{{ elem.name }}</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button v-on:click="addEnhancement(jump)" class="col-2 btn btn-secondary" v-on:click="enhancementDisplay = 'jump'">Jump    </button>                    
+                  </div>
+                  <div class="row">
+                    <button v-on:click="addEnhancement(hex)" class="col-2 btn btn-secondary" v-on:click="enhancementDisplay = 'hex'">Hex     </button>                                                       
+                  </div>                         
+                </div>                    
+              </div>
+              
+              <div class="col-lg-4 border" >
+                <div class="card-wrap">
+                  <div>
+                    <img v-if="cardToEnhance != null" v-bind:id="cardToEnhance.xws" v-bind:src="'data/'+cardToEnhance.image"  class="biggerImage rounded"/>                
+                    <a href="#" style="color: black;" v-on:click="enhancementMode != 'top' ? enhancementMode = 'top' : enhancementMode = ''"><h3 class="card-caption">Upgrade bottom</h3></a>
+                    <a href="#" style="color: black;" v-on:click="enhancementMode != 'bottom' ? enhancementMode = 'bottom' : enhancementMode = ''"><h3 class="card-caption above">Upgrade top </h3></a>
+                  </div>                  
+                </div>                
+              </div>
+            </div>
+           
+          </div>
+          <div class="col-md-3 mt-3 bg-light border">
+            <div class="centerAbilities">
+              <div v-for='(card,i) in abilitiesChosen'>
+                <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]">
+                  <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded" v-on:click="cardToEnhance = card"></img>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of enhancement -->
+
     </div> <!-- main container ends -->
     </div> <!-- main wrapper ends -->
 
@@ -610,6 +690,7 @@
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>
+  <script src="js/enhancements.js"></script>
   <script src="js/main.js"></script>
 
 </body>
