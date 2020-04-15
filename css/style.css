@@ -34,6 +34,16 @@ html,body .wrapper .container-fluid {
     margin-bottom: 1em;
   }
 
+  .biggerImage {
+    position: relative;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    width: 15em;
+    object-fit: cover;
+  }
+
   .image {
     position: relative;
     opacity: 1;
@@ -80,6 +90,56 @@ html,body .wrapper .container-fluid {
     width: 8em;
     top: 0em;
     left: 1em;
+  } 
+
+  .enhancementLayer {
+    position: absolute;    
+    width: 15em;
+    top: 0em;
+    left: 1em;
+  }
+
+  .card-wrap {
+    text-align: center;
+  }
+
+  /* Default styles for hover block */
+  .card-wrap img {
+    position: relative;
+    display: block;
+  }
+
+  .card-wrap div {
+    position: relative;
+    display: inline-block;
+  }
+
+  .card-caption:hover {
+    opacity: 0.7;  
+  }
+
+  /* Default styles for hover block */
+  .card-caption {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #ffffff;
+    margin: 0;
+    z-index: 1;
+    text-align: center;
+    opacity: 0;
+    transition: all, .5s;    
+    border:2px solid black;    
+    padding: 70px 0;
+  }
+
+  /* Alternate positioning and background color */
+  .card-caption.above {
+    top: 0;
+    background: white;
   }
 
   .bottomIconContainer {
@@ -279,6 +339,13 @@ html,body .wrapper .container-fluid {
   .collapse.in {        
     display: block;       
   }
+
+  .enhancementIcon {
+    width: 1.5em;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
+
 
   [v-cloak] {
     display: none;
