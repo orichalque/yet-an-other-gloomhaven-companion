@@ -157,6 +157,7 @@ html,body .wrapper .container-fluid {
     top: -3em;
     right: 2em;
     z-index: 2;
+    width: 1.5em;
   }
 
   .bottomIconContainer {
