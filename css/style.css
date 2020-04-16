@@ -92,10 +92,6 @@ html,body .wrapper .container-fluid {
     left: 1em;
   } 
 
-  .card-wrap {
-    text-align: center;
-  }
-
   /* Default styles for hover block */
   .card-wrap img {
     position: relative;
@@ -105,6 +101,9 @@ html,body .wrapper .container-fluid {
   .card-wrap {
     position: relative;
     display: inline-block;
+    left: 50%;
+    margin-left: -7.5em;
+
   }
 
   .card-caption:hover {
