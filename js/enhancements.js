@@ -20,7 +20,6 @@ var enhancementManagement = {
                     this.cardToEnhance.top = []                                        
                 }
                 this.cardToEnhance.top.push(enhancement)
-                console.log(JSON.stringify(this.cardToEnhance))
             } 
             if (this.enhancementMode === 'bottom') {
                 if (this.cardToEnhance.bottom == null) {
@@ -31,22 +30,13 @@ var enhancementManagement = {
             this.$forceUpdate()
 
         },
-        removeEnhancement: function(enhancement) {
-            if (this.cardToEnhance.top != null) {
-                var indexOfEnhancementToRemove = this.cardToEnhance.top.indexOf(enhancement)
-                if (indexOfEnhancementToRemove >= 0) {
-                    this.cardToEnhance.top.splice(indexOfEnhancementToRemove,1)
-                }
+        removeEnhancement: function(enhancements, enhancement) {
+            indexOfEnhancementToRemove = enhancements.indexOf(enhancement)
+            if (indexOfEnhancementToRemove >= 0) {
+                enhancements.splice(indexOfEnhancementToRemove,1)
             }
             
-            if (this.cardToEnhance.bottom != null) {
-                indexOfEnhancementToRemove = this.cardToEnhance.bottom.indexOf(enhancement)
-                if (indexOfEnhancementToRemove >= 0) {
-                    this.cardToEnhance.bottom.splice(indexOfEnhancementToRemove,1)
-                }
-            }          
-            this.$forceUpdate()
-  
+            this.$forceUpdate()  
         },
         setTopEnhancement : function(enhancement) {
             if (this.enhancementMode != 'Top') {

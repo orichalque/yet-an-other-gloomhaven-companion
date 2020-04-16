@@ -130,23 +130,33 @@ html,body .wrapper .container-fluid {
   }
 
   .enhancement {
-    display: inline-block;
+    vertical-align: middle;
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 50%;
     margin: 0;
-    z-index: 1;
-    text-align: center;
+    z-index: 0.5;
     opacity: 1;    
     padding: 70px 0;
   }
+
+  .enhancement.above {
+    top: 0;
+  }
+
 
   /* Alternate positioning and background color */
   .card-caption.above {
     top: 0;
     background: white;
+  }
+
+  .enhancementIcon {
+    top: -3em;
+    right: 2em;
+    z-index: 2;
   }
 
   .bottomIconContainer {
@@ -347,11 +357,7 @@ html,body .wrapper .container-fluid {
     display: block;       
   }
 
-  .enhancementIcon {
-    width: 1.5em;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-  }
+
 
 
   [v-cloak] {
