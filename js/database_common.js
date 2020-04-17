@@ -1531,3 +1531,153 @@ allItems = [
         ]
     }
 ]
+
+enhancementsCategories = [        
+    {
+        "name" : "plus1",
+        "enhancements" : [
+            {
+                "name" : "plus1",
+                "image" : "icons/plus1.png"
+            }
+        ]
+    },
+    {
+        "name" : "jump",
+        "enhancements" : [
+            {
+                "name" : "jump",
+                "image" : "icons/buff/jump.png"
+            }
+        ]
+    },
+    {
+        "name" : "hex",
+        "enhancements" : [
+            {
+                "name" : "hex",
+                "image" : "icons/hex.png"
+            }
+        ]
+    },
+    {
+        "name" : "base",
+        "enhancements" : [            
+            {
+                "name": "attack",
+                "image": "icons/base/attack.png"
+            },
+            {
+                "name": "heal",
+                "image": "icons/base/heal.png"
+            },
+            {
+                "name": "move",
+                "image": "icons/base/move.png"
+            },
+            {
+                "name": "pierce",
+                "image": "icons/base/pierce.png"
+            },
+            {
+                "name": "pull",
+                "image": "icons/base/pull.png"
+            },
+            {
+                "name": "push",
+                "image": "icons/base/push.png"
+            },
+            {
+                "name": "range",
+                "image": "icons/base/range.png"
+            },
+            {
+                "name": "retaliate",
+                "image": "icons/base/retaliate.png"
+            },
+            {
+                "name": "shield",
+                "image": "icons/base/shield.png"
+            },
+            {
+                "name": "target",
+                "image": "icons/base/target.png"
+            }
+        ]
+    },
+    {
+        "name": "buffs",
+        "enhancements": [
+            {
+                "name" : "bless",
+                "image": "icons/buff/bless.png"
+            },
+            {
+                "name" : "strengthen",
+                "image": "icons/buff/strengthen.png"
+            }
+        ]
+    },
+    {
+        "name" : "debuffs",
+        "enhancements" : [
+            {
+                "name" : "curse",
+                "image": "icons/debuff/curse.png"
+            },
+            {
+                "name" : "disarm",
+                "image": "icons/debuff/disarm.png"
+            },
+            {
+                "name" : "immobilize",
+                "image": "icons/debuff/immobilize.png"
+            },
+            {
+                "name" : "muddle",
+                "image": "icons/debuff/muddle.png"
+            },
+            {
+                "name" : "poison",
+                "image": "icons/debuff/poison.png"
+            },
+            {
+                "name" : "wound",
+                "image": "icons/debuff/wound.png"
+            }
+        ]
+    },
+    {
+        "name" : "elements",
+        "enhancements" : [
+            {
+                "name" : "all",
+                "image": "icons/elements/all.png"
+            },
+            {
+                "name" : "dark",
+                "image": "icons/elements/dark.png"
+            },
+            {
+                "name" : "earth",
+                "image": "icons/elements/earth.png"
+            },
+            {
+                "name" : "fire",
+                "image": "icons/elements/fire.png"
+            },
+            {
+                "name" : "frost",
+                "image": "icons/elements/frost.png"
+            },
+            {
+                "name" : "light",
+                "image": "icons/elements/light.png"
+            },
+            {
+                "name" : "wind",
+                "image": "icons/elements/wind.png"
+            }
+        ]
+    }
+]
