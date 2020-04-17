@@ -98,12 +98,16 @@ html,body .wrapper .container-fluid {
     display: block;
   }
 
+  .card-wrap-play {
+    position: relative;
+    display: block;
+  }
+
   .card-wrap {
     position: relative;
     display: inline-block;
     left: 50%;
     margin-left: -7.5em;
-
   }
 
   .card-caption:hover {
@@ -138,18 +142,16 @@ html,body .wrapper .container-fluid {
     margin: 0;
     z-index: 0.5;
     opacity: 1;    
-    padding: 70px 0;
   }
 
   .enhancement.above {
     top: 0;
   }
 
-
   /* Alternate positioning and background color */
   .card-caption.above {
     top: 0;
-    background: white;
+    background: white;    
   }
 
   .enhancementIcon {
@@ -219,6 +221,11 @@ html,body .wrapper .container-fluid {
 
   .abilityContainer:hover .image {
     width: 11.5em;
+  }
+
+  .abilityContainer:hover .enhancementIcon {
+    width: 2em;
+    transition: .5s ease;
   }
 
   
