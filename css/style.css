@@ -148,6 +148,16 @@ html,body .wrapper .container-fluid {
     top: 0;
   }
 
+  .played .enhancement {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  }
+
+  .enhancement .destroyed {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  }
+
   /* Alternate positioning and background color */
   .card-caption.above {
     top: 0;

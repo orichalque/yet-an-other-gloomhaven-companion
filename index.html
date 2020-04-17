@@ -126,18 +126,19 @@
                 <div class="row" style="display: table-cell">
                   <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in abilitiesChosen">
                     <div class="col card-wrap-play" v-if="ability.duration == 0">
-                      <img v-bind:src="'data/'+ability.image"
-                        v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]" 
-                        v-on:click="pickCard(ability)" class="image rounded"></img>
+                        <img v-bind:src="'data/'+ability.image"
+                          v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]" 
+                          v-on:click="pickCard(ability)" class="image rounded">
+                        </img>
                         
-                        <span style="pointer-events: none;" v-if="cardToEnhance != null && cardToEnhance.top != null && cardToEnhance.top.length > 0" class="enhancement above">
-                          <div style="padding-bottom: 40%; padding-left: 70%; display:flex; flex-direction:column; ">
-                            <img v-for="enhancement in cardToEnhance.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" v-bind:class="{played: ability.played || ability.destroyed}" class="enhancement above">
+                          <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
                           </div>
                         </span>
-                        <span style="pointer-events: none;" v-if="cardToEnhance != null && cardToEnhance.bottom != null && cardToEnhance.bottom.length > 0"  class="enhancement">             
-                          <div style="padding-bottom: 40%; padding-left: 70%; display:flex; flex-direction:column;">
-                            <img v-for="enhancement in cardToEnhance.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" v-bind:class="{played: ability.played || ability.destroyed}" class="enhancement">             
+                          <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
                           </div>                                     
                         </span>
 
