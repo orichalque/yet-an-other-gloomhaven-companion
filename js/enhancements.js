@@ -73,6 +73,5 @@ var enhancementManagement = {
             }
         })    
 
-        console.log(this.baseEnhancements)
     }
 }

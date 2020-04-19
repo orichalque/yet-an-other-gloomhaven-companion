@@ -618,14 +618,14 @@
           <div class="modal-body">
             <h3>Version:</h3>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'vanilla'}"
-              v-on:click.once="loadDatabaseVersion('vanilla')">Vanilla</button>
+              v-on:click="loadDatabaseVersion('vanilla')">Vanilla</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'jotl'}"
-              v-on:click.once="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
+              v-on:click="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
-              v-on:click.once="loadDatabaseVersion('frosthaven')">Frosthaven</button>
+              v-on:click="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <hr />
             <h3>Spoiler section</h3>
-            <button v-if="!showSpoiler" v-on:click="showSpoiler = true" class="btn btn-secondary">Show</button>
+            <button v-if="!showSpoiler" v-on:click="showSpoiler = !showSpoiler" class="btn btn-secondary">Show</button>
             <div v-else>
               <span v-if="version=='vanilla'"><input type="checkbox" @change="loadXEnvelope()" /> Enable envelope X</span>
             </div>
