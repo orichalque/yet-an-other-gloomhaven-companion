@@ -1276,13 +1276,13 @@ attack_modifiers_categories = [
         {
            "name": "am-sb-13",
            "points": 302,
-           "image": "attack-modifiers/SB/am-sb-01.png",
+           "image": "attack-modifiers/SB/am-sb-13.png",
            "xws": "amsb13"
         },
         {
            "name": "am-sb-14",
            "points": 303,
-           "image": "attack-modifiers/SB/am-sb-01.png",
+           "image": "attack-modifiers/SB/am-sb-13.png",
            "xws": "amsb14"
         },
         {
