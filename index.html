@@ -467,19 +467,19 @@
       <div class="col-lg-12 container-fluid" id="enhancement" v-if="menu == 'enhancement'">
         <div class="row" >
           <div class="col-md-9 border">
-            <h3>Enhancement</h3>
+            <h3 v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
           </div>
-          <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
+          <div v-if='abilityCategory != null' class="col-md-3 alignCenter">
             <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
-          <div v-else class="col-md-3 border alignCenter">
+          <div v-else class="col-md-3 border-bottom border-top border-right border-left alignCenter">
             <h3>Deck</h3>
           </div>
         </div>
         <div class="row" >
           <div class="col-md-9 mt-3 container-fluid">
             <div class="row">
-              <div class="col-lg-8 border">                  
+              <div class="col-lg-8">                  
                 <div class="container" v-if="cardToEnhance != null && enhancementMode != ''">
                   
                   <div class="row mt-5">
@@ -515,7 +515,7 @@
                 </div>                    
               </div>
               
-              <div class="col-lg-4 border " >
+              <div class="col-lg-4" >
                 <div class="card-wrap">
                   <div >
                     <img v-if="cardToEnhance != null" v-bind:id="cardToEnhance.xws" v-bind:src="'data/'+cardToEnhance.image"  class="biggerImage rounded"/>  
@@ -541,7 +541,7 @@
             </div>
            
           </div>
-          <div class="col-md-3 mt-3 bg-light border">
+          <div class="col-md-3 mt-3 bg-light border-left border-top border-right">
             <div class="centerAbilities">
               <div v-for='(card,i) in abilitiesChosen'>
                 <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]">
