@@ -279,14 +279,14 @@
             <!-- ALERTS -->
             <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="redAlert">
               {{ alert }}
-              <button type="button" class="close" aria-label="Close" v-on:click="dismissRedAlert('#redAlert')">
+              <button type="button" class="close" aria-label="Close" v-on:click="dismissAlert('#redAlert')">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
 
             <div class="mx-auto col-lg-6 alert alert-success collapse" role="alert" id="greenAlert">
               {{ alert }}
-              <button type="button" class="close" aria-label="Close" v-on:click="dismissGreenAlert('#greenAlert')">
+              <button type="button" class="close" aria-label="Close" v-on:click="dismissAlert('#greenAlert')">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
