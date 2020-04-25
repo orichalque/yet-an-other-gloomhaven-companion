@@ -81,6 +81,7 @@
                 <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Expansions</a>
                 <a class="dropdown-item" data-target="#characterSelectionModal" data-toggle="modal" href="#">Set character</a>
                 <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">About</a>
+                <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
               </div>
             </li>
           </ul>
@@ -671,6 +672,46 @@
                   src="data/layers/locked_layer.png">
               </div>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Help</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <h3>Basics</h3>
+            <ul>
+              <li>Pick your abilities</li>
+              <li>Select your modifiers</li>
+              <li>Get some gear</li>
+              <li>Customize your abilities with some enhancements</li>
+              <li>Play !</li>
+            </ul>
+            <hr/>
+            <h3>Symbols</h3>
+            <ul class="container">
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/tap.png"/>: Spend item </li>
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/recover.png"/>: Recover ability or item</li>
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/lost.png"/>: Consume item or lose card</li>
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/keep-on-board.png"/>: Persistent bonus</li>
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/keep-on-board-one-turn.png"/>: Round bonus</li>
+              <li class="row">+1: Use persistent item or ability </li>
+            </ul>                                    
+            <hr/>
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
