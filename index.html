@@ -183,6 +183,16 @@
                     <!-- On board cards -->
                     <div class="col">
                       <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
+                      <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
+                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                          <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                        </div>
+                      </span>
+                      <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                          <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                        </div>                                     
+                      </span>
                       <div class="iconContainer">
                         <div v-if="ability.duration < 0" class="topIconContainer">
                           <button v-on:click="useCard(ability)" class="btn btn-light add">
@@ -470,7 +480,7 @@
           <div class="col-md-9 border">
             <h3 v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
           </div>
-          <div v-if='abilityCategory != null' class="col-md-3 alignCenter">
+          <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
             <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
           <div v-else class="col-md-3 border-bottom border-top border-right border-left alignCenter">
@@ -542,15 +552,16 @@
             </div>
            
           </div>
-          <div class="col-md-3 mt-3 bg-light border-left border-top border-right">
+          <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3 bg-light border">
             <div class="centerAbilities">
               <div v-for='(card,i) in abilitiesChosen'>
                 <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]">
-                  <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded" v-on:click="cardToEnhance = card"></img>
+                  <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" v-on:click="cardToEnhance = card" class="image rounded"></img>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div> <!-- End of enhancement -->
 
