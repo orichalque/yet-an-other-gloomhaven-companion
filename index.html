@@ -318,13 +318,12 @@
             <!-- CATEGORY DECK FRONT -->
             <div class="col-md-3">
               <div class="row">
-                <div class="col">
-                  <h3>{{ classNames[className] || 'Class' }} Deck </h3>
+                <div class="col-lg-5">
+                  <h3>{{ classNames[className] || 'Class' }} </h3>
                 </div>
-                <div class="col">
-                  <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
-                    Switch Class
-                  </button>
+                <div class="col-lg-7 row">
+                  <input type="button" data-toggle="modal" data-target="#perksModal" class="col btn btn-secondary" value="Show perks"/>
+                  <input type="button" data-toggle="modal" data-target="#characterSelectionModal" class="col btn btn-secondary" value="Switch class"/>
                 </div>
               </div>              
               <div v-for="modifier in modifiers">
@@ -724,6 +723,29 @@
             <hr/>
 
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="perksModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">{{ classNames[className] }} Perks</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <p>This is only a picture to remind you which perks are available for your class </p>
+            <img v-if="abilityCategory != null" style="width: 100%" :src="'data/perks/'+abilityCategory.name+'.png'"/>
+          </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
