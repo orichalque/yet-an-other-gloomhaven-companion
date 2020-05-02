@@ -5904,55 +5904,6 @@ abilities = [
                 "level": 3
             },
             {
-                "name": "tattered wolf",
-                "points": 582,
-                "image": "character-ability-cards/BT/relentless-ally.png",
-                "xws": "relentlessally",
-                "level": 1
-            },
-            {
-                "name": "red falcon",
-                "points": 583,
-                "image": "character-ability-cards/BT/soaring-ally.png",
-                "xws": "soaringally",
-                "level": 0
-            },
-            {
-                "name": "monolith",
-                "points": 584,
-                "image": "character-ability-cards/BT/stone-sigil.png",
-                "xws": "stonesigil",
-                "level": 5
-            },
-            {
-                "name": "wind totem",
-                "points": 585,
-                "image": "character-ability-cards/BT/storm-sigil.png",
-                "xws": "stormsigil",
-                "level": 7
-            },
-            {
-                "name": "spirit banner",
-                "points": 586,
-                "image": "character-ability-cards/BT/tribal-sigil.png",
-                "xws": "tribalsigil",
-                "level": 9
-            },
-            {
-                "name": "green adder",
-                "points": 587,
-                "image": "character-ability-cards/BT/venomous-ally.png",
-                "xws": "venomousally",
-                "level": 1
-            },
-            {
-                "name": "swamp alligator",
-                "points": 588,
-                "image": "character-ability-cards/BT/vicious-ally.png",
-                "xws": "viciousally",
-                "level": 3
-            },
-            {
                 "name": "bear-reference",
                 "points": 572,
                 "image": "character-ability-cards/BT/bear-reference.png",
