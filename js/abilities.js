@@ -100,6 +100,13 @@ var abilitiesManagement = {
             card.duration = 0
             this.$forceUpdate()
         },
+        playCard: function(card) {
+            this.cancelCard(card)
+            card.destroyed = false
+            card.played = true
+            card.duration = 0
+            this.$forceUpdate()
+        },
         useCard: function(card) {
             card.numberOfTimesUsed ++     
             this.$forceUpdate()       
