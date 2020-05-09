@@ -108,9 +108,16 @@ new Vue({
             if (abilityCookie != null) {
                 oldAbilities = JSON.parse(abilityCookie)
                 oldAbilities.forEach(ability => {
+                    console.log(JSON.stringify(ability))
                     this.abilities.forEach(cat => {
                         cat.cards.forEach(card => {
                             if (card.name === ability.name) {
+                                if (ability.top != null) {
+                                    card.top = ability.top
+                                }
+                                if (ability.bottom != null) {
+                                    card.bottom = ability.bottom
+                                }
                                 this.abilitiesChosen.push(card)
                             }
                         })
