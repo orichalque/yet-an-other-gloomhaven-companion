@@ -108,7 +108,6 @@ new Vue({
             if (abilityCookie != null) {
                 oldAbilities = JSON.parse(abilityCookie)
                 oldAbilities.forEach(ability => {
-                    console.log(JSON.stringify(ability))
                     this.abilities.forEach(cat => {
                         cat.cards.forEach(card => {
                             if (card.name === ability.name) {
