@@ -7,6 +7,9 @@ var abilitiesManagement = {
         twoAbilitiesSelected: [],
         abilitiesOnBoard: [],
         longRestMode: false,
+        shortRestMode: false,
+        cardToLose: null,
+        cardsPlayed: [],
         className: ''
     },
     methods: {
@@ -35,19 +38,33 @@ var abilitiesManagement = {
             indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
             this.abilitiesChosen.splice(indexOfCardToRemove, 1)
         },
-        shortRest: function() {
+        shortRest: function() {            
+            this.cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed && (card.duration == 0 || card.duration == null)))
+
+            if (this.cardsPlayed.length > 0) {
+                this.shortRestMode = true
+                var cardIndexToDestroy = getRandomInt(this.cardsPlayed.length)    
+                this.cardToLose = this.cardsPlayed[cardIndexToDestroy]
+                this.cardToLose.destroyed = true
+                this.cardsPlayed.splice(cardIndexToDestroy, 1)
+                this.cardsPlayed.forEach(card => card.played = false)
                 
-            var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed && (card.duration == 0 || card.duration == null)))
-            var cardIndexToDestroy = getRandomInt(cardsPlayed.length)    
-            cardsPlayed[cardIndexToDestroy].destroyed = true
-            cardsPlayed.splice(cardIndexToDestroy, 1)
-            cardsPlayed.forEach(card => card.played = false)
-            
-            if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                this.showRedAlert('You do not have enough cards in your end to continue.')
+                if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
+                    this.showRedAlert('You do not have enough cards in your end to continue.')                
+                }
+            } else {
+                this.showRedAlert('You need discarded cards to rest.')                
             }
                 
             this.$forceUpdate()
+        },
+        rerollShortRest: function() {
+            this.cardToLose.destroyed = false
+            this.cardToLose.played = false
+            this.cardsPlayed.forEach(c => c.played = true)
+            this.shortRest()
+            this.shortRestMode = false
+            this.$forceUpdate()            
         },
         longRest: function() {
             this.longRestMode = true    
@@ -131,7 +148,8 @@ var abilitiesManagement = {
                 this.twoAbilitiesSelected.forEach(card => card.played = true)   
                 this.twoAbilitiesSelected = []             
                 this.abilitiesChosen.filter(elem => elem.duration > 0).forEach(elem => elem.duration --)
-                this.turn ++
+                this.turn ++                
+                this.shortRestMode = false
                 this.$forceUpdate()
             }            
         }
