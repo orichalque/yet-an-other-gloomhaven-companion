@@ -108,8 +108,10 @@
                 <div class="row mt-3">
                   <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
                       cards</button></div>
-                  <div class="col"><button v-on:click="shortRest()"
+                  <div v-if="!shortRestMode" class="col"><button v-on:click="shortRest()"
                       class="btn btn-block btn-outline-secondary">Short rest</button></div>
+                  <div v-else class="col"><button v-on:click="rerollShortRest()"
+                    class="btn btn-block btn-outline-secondary">Reroll</button></div>
                   <div class="col"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
                       rest</button></div>
                   <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
