@@ -42,13 +42,13 @@ attack_modifiers_categories_jotl = [
               {
                 "name": "am-de-06",
                 "points": 5,
-                "image": "attack-modifiers/DE/am-de-04.png",
+                "image": "attack-modifiers/DE/am-de-06.png",
                 "xws": "amde06"
               },
               {
                 "name": "am-de-07",
                 "points": 6,
-                "image": "attack-modifiers/DE/am-de-04.png",
+                "image": "attack-modifiers/DE/am-de-06.png",
                 "xws": "amde07"
               },
               {
