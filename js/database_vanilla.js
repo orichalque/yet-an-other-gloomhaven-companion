@@ -5670,20 +5670,6 @@ abilities = [
                 "image": "character-ability-cards/EL/winters-edge.png",
                 "xws": "wintersedge",
                 "level": 5
-            },
-            {
-                "name": "mana sphere",
-                "points": 594,
-                "image": "character-ability-cards/EL/ethereal-manifestation.png",
-                "xws": "etherealmanifestation",
-                "level": 9
-            },
-            {
-                "name": "doppelganger",
-                "points": 595,
-                "image": "character-ability-cards/EL/simulacrum.png",
-                "xws": "simulacrum",
-                "level": 6
             }
         ]
     },
