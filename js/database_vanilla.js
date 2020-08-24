@@ -5670,20 +5670,6 @@ abilities = [
                 "image": "character-ability-cards/EL/winters-edge.png",
                 "xws": "wintersedge",
                 "level": 5
-            },
-            {
-                "name": "mana sphere",
-                "points": 594,
-                "image": "character-ability-cards/EL/ethereal-manifestation.png",
-                "xws": "etherealmanifestation",
-                "level": 9
-            },
-            {
-                "name": "doppelganger",
-                "points": 595,
-                "image": "character-ability-cards/EL/simulacrum.png",
-                "xws": "simulacrum",
-                "level": 6
             }
         ]
     },
@@ -6120,20 +6106,6 @@ abilities = [
                 "image": "character-ability-cards/DR/void-snare.png",
                 "xws": "voidsnare",
                 "level": 1
-            },
-            {
-                "name": "ghost falcons",
-                "points": 616,
-                "image": "character-ability-cards/DR/envision-the-course.png",
-                "xws": "envisionthecourse",
-                "level": 3
-            },
-            {
-                "name": "twilight archon",
-                "points": 617,
-                "image": "character-ability-cards/DR/planar-fissure.png",
-                "xws": "planarfissure",
-                "level": 9
             }
         ]
     }
@@ -6357,62 +6329,6 @@ XEnvelopeAbilities = {
         {
             "name": "wasteland",
             "points": 90,
-            "image": "character-ability-cards/BS/wasteland.png",
-            "xws": "wasteland",
-            "level": 9
-        },
-        {
-            "name": "lightning moths",
-            "points": 574,
-            "image": "character-ability-cards/BS/bioluminescence.png",
-            "xws": "bioluminescence",
-            "level": 5
-        },
-        {
-            "name": "soul leeches",
-            "points": 575,
-            "image": "character-ability-cards/BS/corrupting-parasites.png",
-            "xws": "corruptingparasites",
-            "level": 1
-        },
-        {
-            "name": "creeping beetles",
-            "points": 576,
-            "image": "character-ability-cards/BS/death-march.png",
-            "xws": "deathmarch",
-            "level": 1
-        },
-        {
-            "name": "angry wasps",
-            "points": 577,
-            "image": "character-ability-cards/BS/engulfing-stingers.png",
-            "xws": "engulfingstingers",
-            "level": 1
-        },
-        {
-            "name": "bloat maggots",
-            "points": 578,
-            "image": "character-ability-cards/BS/putrid-grubs.png",
-            "xws": "putridgrubs",
-            "level": 3
-        },
-        {
-            "name": "dueling hornets",
-            "points": 579,
-            "image": "character-ability-cards/BS/solitary-horde.png",
-            "xws": "solitaryhorde",
-            "level": 7
-        },
-        {
-            "name": "steel scarabs",
-            "points": 580,
-            "image": "character-ability-cards/BS/unstoppable-army.png",
-            "xws": "unstoppablearmy",
-            "level": 0
-        },
-        {
-            "name": "rust vermin",
-            "points": 581,
             "image": "character-ability-cards/BS/wasteland.png",
             "xws": "wasteland",
             "level": 9
