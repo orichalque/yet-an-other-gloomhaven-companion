@@ -289,12 +289,13 @@
 
               <h3>Battle Goals</h3>
 
-              <div class="row justify-content-center no-gutters">
-                <div style="display: inline-block;" class="smallCardContainer">
+              <div class="row" style="display: table-cell;">
+
+                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer">
                   <div class="col-sm mt-2" >
                     <img v-bind:src="'data/battle-goals/battlegoal-back.png'" class="smallimage rounded" />
                     <div class="iconContainer">
-                      <div class="topIconContainer">
+                      <div class="middleIconContainer">
                         <button type="button" class="add btn btn-light"
                           v-on:click="drawBattleGoals()">Draw</button>
                       </div>
@@ -302,27 +303,29 @@
                   </div>
                 </div>
                 
-                <div style="display: inline-block;" class="smallCardContainer" v-for="goal in battleGoalsDrawn">
+                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer" v-for="goal in battleGoalsDrawn">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+goal.image" class="smallimage rounded"></img>
                     <div class="iconContainer">
                       <div class="topIconContainer">
-                        <button type="button" class="smallIcon btn btn-light mx-auto"
-                          v-on:click="pickBattleGoal(goal)"><b>Choose</b></button>
+                        <button type="button" class="add btn btn-light"
+                          v-on:click="pickBattleGoal(goal)">Pick</button>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div style="display: inline-block;" class="smallCardContainer" v-for="goal in battleGoalPicked">
+                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer" v-for="goal in battleGoalPicked">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+goal.image" class="smallimage rounded"></img>
-                    {{goalCounter}}
                     <div class="iconContainer">
                       <div class="topIconContainer">
                         <button type="button" class="smallIcon btn btn-light mx-auto"
                           v-on:click="incrementGoalCounter()"><b>+1</b></button>
                       </div>
+                    </div>
+                    <div class="onBottomCardNoHover">
+                      <h4>{{goalCounter}}</h4>
                     </div>
                   </div>
                 </div>
