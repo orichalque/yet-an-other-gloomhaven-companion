@@ -1,6 +1,6 @@
 new Vue({
     el: '#app',
-    mixins: [gearManagement, abilitiesManagement, modifiersManagement, enhancementManagement],
+    mixins: [gearManagement, abilitiesManagement, modifiersManagement, enhancementManagement, battleGoalsManagement],
     data: {
         /* Platform information */
         menu : 'home',
@@ -38,6 +38,7 @@ new Vue({
             })
             this.modifiersDrawPile = this.modifiersChosen.slice() 
             this.allGear = allItems
+            this.battleGoals = battle_goals
             this.loadDatabaseVersion(this.version)
         },
         loadDatabaseVersion: function(param){
