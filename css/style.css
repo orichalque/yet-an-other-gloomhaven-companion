@@ -184,6 +184,19 @@ html,body .wrapper .container-fluid {
     justify-content:space-around;
   }
 
+  .middleIconContainer {
+    transition: .5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;   
+    overflow: hidden; 
+    display: flex; 
+    justify-content:space-around;
+  }
+
   .topIconContainer {
     transition: .5s ease;
     position: absolute;
@@ -209,6 +222,8 @@ html,body .wrapper .container-fluid {
 
   .smallCardContainer {
     cursor: pointer;
+    height: 240px;
+    width: 190px;
   }
 
   .smallCardContainer:hover .iconContainer {
@@ -289,6 +304,17 @@ html,body .wrapper .container-fluid {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);    
     text-align: center; 
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
+    color: white;
+  }
+
+  .onBottomCardNoHover {
+    opacity: 1;
+    position: absolute;
+    top: 80%;  
+    left: 41%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); 
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
     color: white;
   }

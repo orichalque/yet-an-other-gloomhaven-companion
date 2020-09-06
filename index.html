@@ -285,6 +285,55 @@
                 </div>
               </div>
 
+              <hr />
+
+              <h3>Battle Goals</h3>
+
+              <div class="row" style="display: table-cell;">
+
+                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer">
+                  <div class="col-sm mt-2" >
+                    <img v-bind:src="'data/battle-goals/battlegoal-back.png'" class="smallimage rounded" />
+                    <div class="iconContainer">
+                      <div class="middleIconContainer">
+                        <button type="button" class="add btn btn-light"
+                          v-on:click="drawBattleGoals()">Draw</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer" v-for="goal in battleGoalsDrawn">
+                  <div class="col-sm mt-2">
+                    <img v-bind:src="'data/'+goal.image" class="smallimage rounded"></img>
+                    <div class="iconContainer">
+                      <div class="topIconContainer">
+                        <button type="button" class="add btn btn-light"
+                          v-on:click="pickBattleGoal(goal)">Pick</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer" v-for="goal in battleGoalPicked">
+                  <div class="col-sm mt-2" >
+                    <img v-bind:src="'data/'+goal.image" class="smallimage rounded"></img>
+                    
+                    <div class="iconContainer">
+                      <div class="topIconContainer">
+                        <button type="button" class="smallIcon btn btn-light mx-auto"
+                          v-on:click="incrementGoalCounter()"><b>+1</b></button>
+                      </div>
+
+                    </div>
+
+                    <div class="onBottomCardNoHover" >
+                      <h4 >{{goalCounter}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
 
@@ -781,7 +830,10 @@
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>
   <script src="js/enhancements.js"></script>
+  <script src="js/battlegoals.js"></script>
+  <script src="js/database_battle-goals.js"></script>
   <script src="js/main.js"></script>
+  
 
 </body>
 
