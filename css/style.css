@@ -311,11 +311,10 @@ html,body .wrapper .container-fluid {
   .onBottomCardNoHover {
     opacity: 1;
     position: absolute;
-    top: 90%;
-    left: 50%;
+    top: 80%;  
+    left: 41%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);    
-    text-align: center; 
+    -ms-transform: translate(-50%, -50%); 
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
     color: white;
   }
