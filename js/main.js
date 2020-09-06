@@ -1,6 +1,6 @@
 new Vue({
     el: '#app',
-    mixins: [gearManagement, abilitiesManagement, modifiersManagement, enhancementManagement],
+    mixins: [gearManagement, abilitiesManagement, modifiersManagement, enhancementManagement, battleGoalsManagement],
     data: {
         /* Platform information */
         menu : 'home',
@@ -29,6 +29,14 @@ new Vue({
             this.abilitiesChosen = [];
         },
         loadDatabase: function() {
+            versionCookie = Cookies.get('version')      
+            console.log(versionCookie)      
+            if (versionCookie != null) {
+                this.loadDatabaseVersion(versionCookie)
+            } else {
+                this.loadDatabaseVersion('vanilla')
+            }
+
             this.modifiersSpecial = attack_modifiers_special
             this.modifiersBase = attack_modifiers_base
             this.modifiersBase.forEach(cat => {
@@ -38,10 +46,12 @@ new Vue({
             })
             this.modifiersDrawPile = this.modifiersChosen.slice() 
             this.allGear = allItems
+            this.battleGoals = battle_goals
             this.loadDatabaseVersion(this.version)
         },
         loadDatabaseVersion: function(param){
             this.version = param
+            
             switch(param){
                 case 'vanilla':
                     this.loadDatabaseVanilla()
@@ -53,6 +63,7 @@ new Vue({
                     this.loadDatabaseFrosthaven()
                     break
                 default:
+                    console.log("default")
                     this.loadDatabaseVanilla()
                     break
             }
@@ -97,6 +108,7 @@ new Vue({
 
         },
         saveData: function() {
+            Cookies.set("version", this.version, { expires: 365 })
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen), { expires: 365 })
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
             Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
