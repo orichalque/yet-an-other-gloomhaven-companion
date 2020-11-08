@@ -122,6 +122,7 @@
                   <div class="col btn-group" role="group"  v-if="className === 'ge'">
                     <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
                   </div>
+                  <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal" data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary">Accept card</button></div>
                 </div>
 
                 <div class="row" style="display: table-cell">
@@ -672,7 +673,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">About</h3>
+            <h3 class="modal-title" id="exampleModalLabel">Expansions</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -687,6 +688,10 @@
             <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
               v-on:click="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <hr />
+            <h3>Configuration section</h3>
+            <div>
+              <span><input type="checkbox" @change="enableCardExchange()"/> Enable card exchange</span>
+            </div>
             <h3>Spoiler section</h3>
             <button v-if="!showSpoiler" v-on:click="showSpoiler = !showSpoiler" class="btn btn-secondary">Show</button>
             <div v-else>
@@ -705,7 +710,7 @@
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">About</h3>
+            <h3 class="modal-title" id="exampleModalLabel">Choose your character</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -798,6 +803,38 @@
             <img v-if="abilityCategory != null" style="width: 100%" :src="'data/perks/'+abilityCategory.name+'.png'"/>
           </div>
 
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="cardExchangeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Accept a card from...</h3>
+          </div>
+
+          <div class="modal-body container">
+            <div class="col parentImage" v-for='ability in abilities' v-if='ability.canExchangeCards'>
+              <input type="image" class="smallerImage rounded" v-bind:class="{selected: chosenCardExchanger != null && chosenCardExchanger != ability}" v-on:click="displayAbilitiesToExchange(ability)" v-bind:src="'data/'+ability.cards[0].image" />
+            </div>
+            <div v-if="chosenCardExchanger != null" id="cardsToExchange">
+              <div class="col-md-9">
+                <div class="row">
+                  <div class="abilityContainer" v-for='(card,i) in chosenCardExchanger.cards'
+                    v-if="i != 0 && card.canBeExchanged">
+                    <div class="col mt-3" v-on:click="addAbility(card)">
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
