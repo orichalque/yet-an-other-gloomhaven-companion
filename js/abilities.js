@@ -166,9 +166,10 @@ var abilitiesManagement = {
                 }
             } else {
                 this.twoAbilitiesSelected.forEach(card => {
-                    card.played = true
                     if(card.canBeExchanged){
                         this.removeAbility(card)
+                    } else {
+                        card.played = true
                     }
                 })   
                 this.twoAbilitiesSelected = []             
