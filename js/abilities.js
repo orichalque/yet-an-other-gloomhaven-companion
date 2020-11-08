@@ -10,7 +10,8 @@ var abilitiesManagement = {
         shortRestMode: false,
         cardToLose: null,
         cardsPlayed: [],
-        className: ''
+        className: '',
+        chosenCardExchanger: null,
     },
     methods: {
         displayAbilities: function(param) {
@@ -25,11 +26,26 @@ var abilitiesManagement = {
             this.$forceUpdate()
 
         },
+        displayAbilitiesToExchange: function(param) {
+            if (this.chosenCardExchanger == param) {
+                this.chosenCardExchanger = null
+            } else {
+                this.chosenCardExchanger = param
+            }
+        },
         addAbility: function(card) {   
             card.duration = 0
             if (!this.abilitiesChosen.includes(card)) {
                 if (this.abilitiesChosen.length < this.abilityCategory.max) 
                     this.abilitiesChosen.push(card)
+            } else {
+                this.removeAbility(card)
+            }
+        },
+        acceptAbility: function(card) {   
+            card.duration = 0
+            if (!this.abilitiesChosen.includes(card)) { 
+                this.abilitiesChosen.push(card)
             } else {
                 this.removeAbility(card)
             }
@@ -111,11 +127,15 @@ var abilitiesManagement = {
             this.$forceUpdate()
         },
         destroyCard: function(card) {
-            this.cancelCard(card)
-            card.destroyed = true
-            card.played = true
-            card.duration = 0
-            this.$forceUpdate()
+            if(card.canBeExchanged){
+                this.removeAbility(card)
+            }else{
+                this.cancelCard(card)
+                card.destroyed = true
+                card.played = true
+                card.duration = 0
+                this.$forceUpdate()
+            }
         },
         playCard: function(card) {
             this.cancelCard(card)
@@ -145,7 +165,12 @@ var abilitiesManagement = {
                     this.showRedAlert('You have to select two cards.')
                 }
             } else {
-                this.twoAbilitiesSelected.forEach(card => card.played = true)   
+                this.twoAbilitiesSelected.forEach(card => {
+                    card.played = true
+                    if(card.canBeExchanged){
+                        this.removeAbility(card)
+                    }
+                })   
                 this.twoAbilitiesSelected = []             
                 this.abilitiesChosen.filter(elem => elem.duration > 0).forEach(elem => elem.duration --)
                 this.turn ++                
