@@ -5227,6 +5227,7 @@ abilities = [
         "name": "sb",
         "max": 10,
         "hidden": true,
+        "canExchangeCards": true,
         "position": 15,
         "cards": [
             {
@@ -5346,7 +5347,8 @@ abilities = [
                 "points": 348,
                 "image": "character-ability-cards/SB/large-medical-pack.png",
                 "xws": "largemedicalpack",
-                "level": 0
+                "level": 0,
+                "canBeExchanged": true
             },
             {
                 "name": "master physician",
@@ -5360,7 +5362,8 @@ abilities = [
                 "points": 350,
                 "image": "character-ability-cards/SB/medical-pack.png",
                 "xws": "medicalpack",
-                "level": 0
+                "level": 0,
+                "canBeExchanged": true
             },
             {
                 "name": "precaution",

@@ -1,411 +1,417 @@
-  @font-face {
-    font-family: 'fantaisieartistiquemedium';
-    src: url('../fonts/fantaisieartistique-webfont.woff2') format('woff2'),
-        url('../fonts/fantaisieartistique-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'fantaisieartistiquemedium';
+  src: url('../fonts/fantaisieartistique-webfont.woff2') format('woff2'),
+      url('../fonts/fantaisieartistique-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
-  font-family: 'Crimson Text';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Crimson Text Regular'), local('CrimsonText-Regular'), url('../fonts/crimson.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+font-family: 'Crimson Text';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: local('Crimson Text Regular'), local('CrimsonText-Regular'), url('../fonts/crimson.woff2') format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 html,body .wrapper .container-fluid {
-  height: 100%;
+height: 100%;
 }
 
-  p, span, a, h3, h1, button {
-    font-family: 'Crimson Text', serif;
-  }
+p, span, a, h3, h1, button {
+  font-family: 'Crimson Text', serif;
+}
 
-  h4, b {
-    font-family: 'fantaisieartistiquemedium';
-  }
+h4, b {
+  font-family: 'fantaisieartistiquemedium';
+}
 
-  .parentImage {
-    position: relative;
-    flex-grow: 0;
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
+.parentImage {
+  position: relative;
+  flex-grow: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
-  .biggerImage {
-    position: relative;
-    opacity: 1;
-    display: block;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    width: 15em;
-    object-fit: cover;
-  }
+.biggerImage {
+  position: relative;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  width: 15em;
+  object-fit: cover;
+}
 
-  .image {
-    position: relative;
-    opacity: 1;
-    display: block;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    width: 10em;
-    object-fit: cover;
-  } 
+.image {
+  position: relative;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  width: 10em;
+  object-fit: cover;
+} 
 
-  .smallerImage {
-    position: relative;
-    opacity: 1;
-    display: block;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    width: 8em;
-    object-fit: cover;
-  }
+.smallerImage {
+  position: relative;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  width: 8em;
+  object-fit: cover;
+}
 
-  .smallimage {
-    position: relative;
-    opacity: 1;
-    display: block;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    width: 8em;
-    object-fit: cover;
-  }
+.smallimage {
+  position: relative;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  width: 8em;
+  object-fit: cover;
+}
 
-  .crop {
-    height: 60px;
-    overflow: hidden;
-    cursor: pointer;
-   }
+.crop {
+  height: 60px;
+  overflow: hidden;
+  cursor: pointer;
+ }
 
-  .crop:hover {
-    height: 100%;
-    overflow: visible;
-  }
-  
-  .layer {
-    position: absolute;
-    width: 8em;
-    top: 0em;
-    left: 1em;
-  } 
+.crop:hover {
+  height: 100%;
+  overflow: visible;
+}
 
-  /* Default styles for hover block */
-  .card-wrap img {
-    position: relative;
-    display: block;
-  }
+.layer {
+  position: absolute;
+  width: 8em;
+  top: 0em;
+  left: 1em;
+} 
 
-  .card-wrap-play {
-    position: relative;
-    display: block;
-  }
+/* Default styles for hover block */
+.card-wrap img {
+  position: relative;
+  display: block;
+}
 
-  .card-wrap {
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    margin-left: -7.5em;
-  }
+.card-wrap-play {
+  position: relative;
+  display: block;
+}
 
-  .card-caption:hover {
-    opacity: 0.7;  
-  }
+.card-wrap {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  margin-left: -7.5em;
+}
 
-  /* Default styles for hover block */
-  .card-caption {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background-color: #ffffff;
-    margin: 0;
-    z-index: 1;
-    text-align: center;
-    opacity: 0;
-    transition: all, .5s;    
-    border:2px solid black;    
-    padding: 70px 0;
-  }
+.card-caption:hover {
+  opacity: 0.7;  
+}
 
-  .enhancement {
-    vertical-align: middle;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    margin: 0;
-    z-index: 0.5;
-    opacity: 1;    
-  }
+/* Default styles for hover block */
+.card-caption {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #ffffff;
+  margin: 0;
+  z-index: 1;
+  text-align: center;
+  opacity: 0;
+  transition: all, .5s;    
+  border:2px solid black;    
+  padding: 70px 0;
+}
 
-  .enhancement.above {
-    top: 0;
-  }
+.enhancement {
+  vertical-align: middle;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  z-index: 0.5;
+  opacity: 1;    
+}
 
-  .played .enhancement {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  }
+.enhancement.above {
+  top: 0;
+}
 
-  .enhancement .destroyed {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  }
+.played .enhancement {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+}
 
-  /* Alternate positioning and background color */
-  .card-caption.above {
-    top: 0;
-    background: white;    
-  }
+.enhancement .destroyed {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+}
 
-  .enhancementIcon {
-    top: -3em;
-    right: 2em;
-    z-index: 2;
-    width: 1.5em;
-  }
+/* Alternate positioning and background color */
+.card-caption.above {
+  top: 0;
+  background: white;    
+}
 
-  .bottomIconContainer {
-    transition: .5s ease;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;   
-    overflow: hidden; 
-    display: flex; 
-    justify-content:space-around;
-  }
+.enhancementIcon {
+  top: -3em;
+  right: 2em;
+  z-index: 2;
+  width: 1.5em;
+}
 
-  .middleIconContainer {
-    transition: .5s ease;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;   
-    overflow: hidden; 
-    display: flex; 
-    justify-content:space-around;
-  }
+.bottomIconContainer {
+  transition: .5s ease;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;   
+  overflow: hidden; 
+  display: flex; 
+  justify-content:space-around;
+}
 
-  .topIconContainer {
-    transition: .5s ease;
-    position: absolute;
-    bottom: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;   
-    overflow: hidden; 
-    display: flex; 
-    justify-content:space-around;
-  }
+.middleIconContainer {
+  transition: .5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;   
+  overflow: hidden; 
+  display: flex; 
+  justify-content:space-around;
+}
 
-  .iconContainer {
-    opacity: 0;
-  } 
+.topIconContainer {
+  transition: .5s ease;
+  position: absolute;
+  bottom: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;   
+  overflow: hidden; 
+  display: flex; 
+  justify-content:space-around;
+}
 
-  .abilityContainer {
-    cursor: pointer;
-    height: 300px;
-    width: 200px;
-  }
+.iconContainer {
+  opacity: 0;
+} 
 
-  .smallCardContainer {
-    cursor: pointer;
-    height: 240px;
-    width: 190px;
-  }
+.abilityContainer {
+  cursor: pointer;
+  height: 300px;
+  width: 200px;
+}
 
-  .smallCardContainer:hover .iconContainer {
-    opacity: 1;
-    transition: .5s ease;
-  }
+.modifiersCardContainer {
+  cursor: pointer;
+  height: 110px;
+  width: 190px;
+}
 
-  .smallCardContainer:hover .smallimage {
-    width: 10em;
-  }
+.smallCardContainer {
+  cursor: pointer;
+  height: 240px;
+  width: 190px;
+}
 
-  .modifierContainer {
-    cursor: pointer;
-  }
+.smallCardContainer:hover .iconContainer {
+  opacity: 1;
+  transition: .5s ease;
+}
 
-  .abilityContainer:hover  .iconContainer {
-    opacity: 1;
-    transition: .5s ease;
-  }
+.smallCardContainer:hover .smallimage {
+  width: 10em;
+}
 
-  .abilityContainer:hover .image {
-    width: 11.5em;
-  }
+.modifierContainer {
+  cursor: pointer;
+}
 
-  .abilityContainer:hover .enhancementIcon {
-    width: 2em;
-    transition: .5s ease;
-  }
+.abilityContainer:hover  .iconContainer {
+  opacity: 1;
+  transition: .5s ease;
+}
 
-  
-  .abilityContainer:hover .abilityButtons {
-    opacity: 1;
-  }
+.abilityContainer:hover .image {
+  width: 11.5em;
+}
 
-  .bottomIcon {  
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10%;
-    float: left;
-  }
-
-  .smallIcon {
-    width: 3em;
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10%;
-    float: left;
-  }
-  
-  .smallIcon:hover {
-    opacity: 0.3;
-    transition: .5s ease;
-  }
-
-  .bottomIcon:hover  {
-    opacity: 0.3;
-    transition: .5s ease;
-  }
-
-  .abilityButtons {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);    
-    text-align: center;    
-  }
-
-  .onCardNoHover {
-    opacity: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);    
-    text-align: center; 
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
-    color: white;
-  }
-
-  .onBottomCardNoHover {
-    opacity: 1;
-    position: absolute;
-    top: 80%;  
-    left: 41%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%); 
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
-    color: white;
-  }
-
-  .centerAbilities {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .scrollCardContainer {
-    padding: 0 0 0.3em 0;
-  }
-
-  .longRestAbilityButtons {
-    transition: .5s ease;
-    opacity: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .alignCenter {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .add {
-    background-color: rgb(148, 182, 135);
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-  }
-
-  .remove {
-    background-color: rgb(223, 144, 139);
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-  }
-
-  .selected {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-      -o-filter: grayscale(100%);
-     -ms-filter: grayscale(100%);
-         filter: grayscale(100%); 
-  }
-
-  .picked {
-    -moz-box-shadow: 0 0 5px 5px rgb(58, 124, 52);
-    -webkit-box-shadow: 0 0 5px 5px rgb(58, 124, 52);
-    box-shadow: 0 0px 5px 5px rgb(58, 124, 52);
-    transition: .5s ease;
-
-  }
-
-  .played {
-    -webkit-filter: grayscale(69%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(69%);
-  }
-
-  .destroyed {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-    border:7px solid black;    
-    transition: .5s ease;
-
-  }
-
-  .tapped {
-    transition: .5s ease;
-    transform: rotate(90deg);
-  }
-
-  .collapse.in {        
-    display: block;       
-  }
+.abilityContainer:hover .enhancementIcon {
+  width: 2em;
+  transition: .5s ease;
+}
 
 
+.abilityContainer:hover .abilityButtons {
+  opacity: 1;
+}
+
+.bottomIcon {  
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10%;
+  float: left;
+}
+
+.smallIcon {
+  width: 3em;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10%;
+  float: left;
+}
+
+.smallIcon:hover {
+  opacity: 0.3;
+  transition: .5s ease;
+}
+
+.bottomIcon:hover  {
+  opacity: 0.3;
+  transition: .5s ease;
+}
+
+.abilityButtons {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);    
+  text-align: center;    
+}
+
+.onCardNoHover {
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);    
+  text-align: center; 
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
+  color: white;
+}
+
+.onBottomCardNoHover {
+  opacity: 1;
+  position: absolute;
+  top: 80%;  
+  left: 41%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); 
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
+  color: white;
+}
+
+.centerAbilities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scrollCardContainer {
+  padding: 0 0 0.3em 0;
+}
+
+.longRestAbilityButtons {
+  transition: .5s ease;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.alignCenter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.add {
+  background-color: rgb(148, 182, 135);
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.remove {
+  background-color: rgb(223, 144, 139);
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.selected {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+   -ms-filter: grayscale(100%);
+       filter: grayscale(100%); 
+}
+
+.picked {
+  -moz-box-shadow: 0 0 5px 5px rgb(58, 124, 52);
+  -webkit-box-shadow: 0 0 5px 5px rgb(58, 124, 52);
+  box-shadow: 0 0px 5px 5px rgb(58, 124, 52);
+  transition: .5s ease;
+
+}
+
+.played {
+  -webkit-filter: grayscale(69%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(69%);
+}
+
+.destroyed {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  border:7px solid black;    
+  transition: .5s ease;
+
+}
+
+.tapped {
+  transition: .5s ease;
+  transform: rotate(90deg);
+}
+
+.collapse.in {        
+  display: block;       
+}
 
 
-  [v-cloak] {
-    display: none;
-  }
 
 
-  .dropdown-menu { margin-top: 0; }
+[v-cloak] {
+  display: none;
+}
+
+
+.dropdown-menu { margin-top: 0; }

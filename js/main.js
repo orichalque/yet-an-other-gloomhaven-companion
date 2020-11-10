@@ -7,6 +7,7 @@ new Vue({
         acceptedCookies: false,
         isMobile: false,        
         hasOpenedXEnvelope: false,
+        hasEnabledCardExchange: false,
         showSpoiler: false,
         showLockedClasses: false,
         version: 'vanilla',
@@ -90,6 +91,9 @@ new Vue({
                 this.modifiers.push(XEnvelopeModifiers)
                 this.abilities.push(XEnvelopeAbilities)
             }
+        },
+        enableCardExchange: function() {
+            this.hasEnabledCardExchange = !this.hasEnabledCardExchange 
         },
         newGame: function() {
             this.abilitiesChosen.forEach(card => {
