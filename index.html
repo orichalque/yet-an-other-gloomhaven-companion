@@ -226,12 +226,12 @@
               <h3>Modifiers</h3>
               <!-- Curse / Blessing -->
               <div class="row no-gutters">
-                <button v-on:click="addBlessing()" class="btn btn-light">
-                  <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="image rounded" />
+                <button v-on:click="addBlessing()" class="btn btn-light btn-sm">
+                  <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="smallimage rounded" />
                   Blessings {{ totalBlessings() }}
                 </button>
-                <button v-on:click="addCurse()" class="btn btn-light">
-                  <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-21.png'" class="image rounded" />
+                <button v-on:click="addCurse()" class="btn btn-light btn-sm">
+                  <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-21.png'" class="smallimage rounded" />
                   Curses {{ totalCurses() }}
                 </button>
               </div>
