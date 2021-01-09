@@ -224,6 +224,17 @@
             <!-- Right side of the play screen-->
             <div class="col-lg-5" style="padding-top: 1em; padding-bottom: 1em">
               <h3>Modifiers</h3>
+              <!-- Curse / Blessing -->
+              <div class="row no-gutters">
+                <button v-on:click="addBlessing()" class="btn btn-light">
+                  <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="image rounded" />
+                  Blessings {{ totalBlessings() }}
+                </button>
+                <button v-on:click="addCurse()" class="btn btn-light">
+                  <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-21.png'" class="image rounded" />
+                  Curses {{ totalCurses() }}
+                </button>
+              </div>
               <!-- BASE DECK BACK -->
               <div class="row no-gutters">
                 <div class="modifiersCardContainer">
