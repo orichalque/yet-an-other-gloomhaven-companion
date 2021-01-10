@@ -44,7 +44,7 @@ var modifiersManagement = {
             this.modifiersDrawPile.splice(indexOfCardToRemove, 1)
 
             if (this.checkIfCurse(card)) this.curses --
-            if (this.checkIfBlessing(card)) this.blessings --
+            if (this.checkIfBlessing(card)) this.blessings --            
         },
         drawModifier: function() {
             var randomint = getRandomInt(this.modifiersDrawPile.length)
@@ -53,13 +53,11 @@ var modifiersManagement = {
             }
             this.lastDrawnModifier = this.modifiersDrawPile[randomint]
 
-            if (this.checkIfCurse(this.lastDrawnModifier)) {
+            if (this.checkIfCurseOrBless(this.lastDrawnModifier)) {
                 this.removeModifier(this.lastDrawnModifier)
-            } else if (this.checkIfBlessing(this.lastDrawnModifier)) {
-                this.removeModifier(this.lastDrawnModifier)
-            }else {
-                this.modifiersDrawPile.splice(randomint,1)
             }
+
+            this.modifiersDrawPile.splice(randomint,1)            
         },
         checkIfCurse: function(card) {
             return this.modifiersSpecial.find(element => element.name == curseName).cards.includes(card) || false
@@ -101,13 +99,23 @@ var modifiersManagement = {
                 .cards
                 .filter(element => !this.modifiersDrawPile.includes(element))
             
+                console.log(this.curses)
+
             if(availableCurses.length > 0) this.addModifier(availableCurses[0])
         },
         resetModifiers: function() {        
             this.shuffleModifiersDeck()
-            this.modifiersDrawPile.filter(element => this.checkIfCurseOrBless(element)).forEach(element => this.removeModifier(element))
-            this.curses = 0
-            this.blessings = 0
+            this.blessings = this.getBlessings()
+            this.curses = this.getCurses()
+            
+            console.log(this.blessings)
+            console.log(this.curses)
+        },
+        getBlessings: function() {
+            return this.modifiersDrawPile.filter(element => this.checkIfBlessing(element)).length
+        },
+        getCurses: function() {
+            return this.modifiersDrawPile.filter(element => this.checkIfCurse(element)).length
         }
     }
 }
