@@ -12,7 +12,9 @@ var modifiersManagement = {
         specialModifiers : false,
         lastDrawnModifier: null,
         modifiersDiscardPile : [],
-        overlayCard: {}        
+        overlayCard: {},
+        blessings: 0,
+        curses: 0        
     },
     methods: {
         displayModifiers: function(param) {
@@ -27,6 +29,10 @@ var modifiersManagement = {
             if (!this.modifiersChosen.includes(card)) {
                 this.modifiersChosen.push(card)
                 this.modifiersDrawPile.push(card)
+
+                if (this.checkIfCurse(card)) this.curses ++
+                if (this.checkIfBlessing(card)) this.blessings ++    
+
             } else {
                 this.removeModifier(card)
             }            
@@ -43,9 +49,14 @@ var modifiersManagement = {
                 this.modifiersDiscardPile.unshift(this.lastDrawnModifier)
             }
             this.lastDrawnModifier = this.modifiersDrawPile[randomint]
-            if(this.checkIfCurseOrBless(this.lastDrawnModifier)){
+
+            if (this.checkIfCurse(this.lastDrawnModifier)) {
                 this.removeModifier(this.lastDrawnModifier)
-            } else {
+                this.curses --
+            } else if (this.checkIfBlessing(this.lastDrawnModifier)) {
+                this.removeModifier(this.lastDrawnModifier)
+                this.blessings --
+            }else {
                 this.modifiersDrawPile.splice(randomint,1)
             }
         },
@@ -74,12 +85,6 @@ var modifiersManagement = {
             this.modifierCategory = null
             this.className = ''
             this.modifiersChosen = this.modifiersBase.slice()
-        },
-        totalBlessings: function() {
-            return this.modifiersDrawPile.filter(element => this.checkIfBlessing(element)).length
-        },
-        totalCurses: function() {
-            return this.modifiersDrawPile.filter(element => this.checkIfCurse(element)).length
         },
         addBlessing: function() {
             const availableBlessings = this.modifiersSpecial
