@@ -42,6 +42,9 @@ var modifiersManagement = {
             this.modifiersChosen.splice(indexOfCardToRemove, 1)
             var indexOfCardToRemove = this.modifiersDrawPile.indexOf(card)
             this.modifiersDrawPile.splice(indexOfCardToRemove, 1)
+
+            if (this.checkIfCurse(card)) this.curses --
+            if (this.checkIfBlessing(card)) this.blessings --
         },
         drawModifier: function() {
             var randomint = getRandomInt(this.modifiersDrawPile.length)
@@ -52,10 +55,8 @@ var modifiersManagement = {
 
             if (this.checkIfCurse(this.lastDrawnModifier)) {
                 this.removeModifier(this.lastDrawnModifier)
-                this.curses --
             } else if (this.checkIfBlessing(this.lastDrawnModifier)) {
                 this.removeModifier(this.lastDrawnModifier)
-                this.blessings --
             }else {
                 this.modifiersDrawPile.splice(randomint,1)
             }
