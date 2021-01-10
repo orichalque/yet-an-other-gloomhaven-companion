@@ -319,6 +319,29 @@ h4, b {
   color: white;
 }
 
+.onCardHover {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);    
+  text-align: center; 
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
+  color: white;
+}
+.onCardHover:hover {
+  opacity: 1;
+  transition: .5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);    
+  text-align: center; 
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;      
+  color: white;
+}
 .onBottomCardNoHover {
   opacity: 1;
   position: absolute;
