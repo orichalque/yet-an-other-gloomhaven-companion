@@ -108,7 +108,8 @@ new Vue({
 
             this.blessings = 0
             this.curses = 0
-            this.shuffleModifiersDeck()
+            this.resetModifiers()
+            
             this.turn = 1            
             this.$forceUpdate()
 
