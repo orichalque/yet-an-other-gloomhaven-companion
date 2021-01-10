@@ -106,10 +106,7 @@ var modifiersManagement = {
         resetModifiers: function() {        
             this.shuffleModifiersDeck()
             this.blessings = this.getBlessings()
-            this.curses = this.getCurses()
-            
-            console.log(this.blessings)
-            console.log(this.curses)
+            this.curses = this.getCurses()            
         },
         getBlessings: function() {
             return this.modifiersDrawPile.filter(element => this.checkIfBlessing(element)).length
