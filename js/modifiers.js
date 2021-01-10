@@ -1,3 +1,5 @@
+const curseName = 'curse'
+const blessingName = 'bless'
 var modifiersManagement = {
     data: {
         /* Modifier information */
@@ -47,11 +49,14 @@ var modifiersManagement = {
                 this.modifiersDrawPile.splice(randomint,1)
             }
         },
-        checkIfCurseOrBless: function(card){
-            var blessDeck = this.modifiersSpecial.find(element => element.name == 'bless')
-            var curseDeck = this.modifiersSpecial.find(element => element.name == 'curse')
-            return ( (blessDeck !== undefined) && (blessDeck.cards.includes(card)) ) ||
-            ( (curseDeck !== undefined) && (curseDeck.cards.includes(card)) )
+        checkIfCurse: function(card) {
+            return this.modifiersSpecial.find(element => element.name == curseName).cards.includes(card) || false
+        },
+        checkIfBlessing: function(card) {
+            return this.modifiersSpecial.find(element => element.name == blessingName).cards.includes(card) || false
+        },
+        checkIfCurseOrBless: function(card) {
+            return this.checkIfCurse(card) || this.checkIfBlessing(card)
         },
         shuffleModifiersDeck: function() {
             this.modifiersDrawPile = this.modifiersChosen.slice()
@@ -69,6 +74,28 @@ var modifiersManagement = {
             this.modifierCategory = null
             this.className = ''
             this.modifiersChosen = this.modifiersBase.slice()
-        }
+        },
+        totalBlessings: function() {
+            return this.modifiersDrawPile.filter(element => this.checkIfBlessing(element)).length
+        },
+        totalCurses: function() {
+            return this.modifiersDrawPile.filter(element => this.checkIfCurse(element)).length
+        },
+        addBlessing: function() {
+            const availableBlessings = this.modifiersSpecial
+                .find(element => element.name == blessingName)
+                .cards
+                .filter(element => !this.modifiersDrawPile.includes(element))
+            
+            if(availableBlessings.length > 0) this.addModifier(availableBlessings[0])
+        },
+        addCurse: function() {
+            const availableCurses = this.modifiersSpecial
+                .find(element => element.name == curseName)
+                .cards
+                .filter(element => !this.modifiersDrawPile.includes(element))
+            
+            if(availableCurses.length > 0) this.addModifier(availableCurses[0])
+        },
     }
 }
