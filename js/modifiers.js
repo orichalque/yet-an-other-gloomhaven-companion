@@ -103,5 +103,11 @@ var modifiersManagement = {
             
             if(availableCurses.length > 0) this.addModifier(availableCurses[0])
         },
+        resetModifiers: function() {        
+            this.shuffleModifiersDeck()
+            this.modifiersDrawPile.filter(element => this.checkIfCurseOrBless(element)).forEach(element => this.removeModifier(element))
+            this.curses = 0
+            this.blessings = 0
+        }
     }
 }
