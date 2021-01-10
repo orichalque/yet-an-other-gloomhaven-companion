@@ -106,8 +106,6 @@ new Vue({
                 this.restoreItem(item);
             })
 
-            this.blessings = 0
-            this.curses = 0
             this.resetModifiers()
             
             this.turn = 1            
