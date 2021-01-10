@@ -55,9 +55,10 @@ var modifiersManagement = {
 
             if (this.checkIfCurseOrBless(this.lastDrawnModifier)) {
                 this.removeModifier(this.lastDrawnModifier)
+            } else {
+                this.modifiersDrawPile.splice(randomint,1)            
             }
-
-            this.modifiersDrawPile.splice(randomint,1)            
+            
         },
         checkIfCurse: function(card) {
             return this.modifiersSpecial.find(element => element.name == curseName).cards.includes(card) || false
@@ -98,9 +99,7 @@ var modifiersManagement = {
                 .find(element => element.name == curseName)
                 .cards
                 .filter(element => !this.modifiersDrawPile.includes(element))
-            
-                console.log(this.curses)
-
+        
             if(availableCurses.length > 0) this.addModifier(availableCurses[0])
         },
         resetModifiers: function() {        
