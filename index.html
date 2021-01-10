@@ -227,7 +227,7 @@
               <!-- Curse / Blessing -->
               <div class="row no-gutters" style="padding-left: 0.3em;">
                 <div class="col-auto">    
-                  <button v-on:click="addBlessing()" class="btn btn-sm">
+                  <button v-on:click="addBlessing()" class="btn btn-sm" style="outline: none; box-shadow: none;">
                     <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="smallimage rounded" />
                     <div v-if="blessings > 0" class="onCardNoHover">
                      <h2> {{ blessings }}</h2>
@@ -238,7 +238,7 @@
                   </button>
                 </div>
                 <div class="col-auto">
-                  <button v-on:click="addCurse()" class="btn btn-sm">
+                  <button v-on:click="addCurse()" class="btn btn-sm" style="outline: none; box-shadow: none;">
                     <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-21.png'" class="smallimage rounded" />
                     <div v-if="curses > 0" class="onCardNoHover">
                       <h2>{{ curses }}</h2>

@@ -106,6 +106,8 @@ new Vue({
                 this.restoreItem(item);
             })
 
+            this.blessings = 0
+            this.curses = 0
             this.shuffleModifiersDeck()
             this.turn = 1            
             this.$forceUpdate()
