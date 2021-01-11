@@ -106,7 +106,8 @@ new Vue({
                 this.restoreItem(item);
             })
 
-            this.shuffleModifiersDeck()
+            this.resetModifiers()
+            
             this.turn = 1            
             this.$forceUpdate()
 

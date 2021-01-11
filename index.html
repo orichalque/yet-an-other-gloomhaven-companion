@@ -224,12 +224,38 @@
             <!-- Right side of the play screen-->
             <div class="col-lg-5" style="padding-top: 1em; padding-bottom: 1em">
               <h3>Modifiers</h3>
+              <!-- Curse / Blessing -->
+              <div class="row no-gutters" style="padding-left: 0.3em;">
+                <div class="col-auto">    
+                  <button v-on:click="addBlessing()" class="btn btn-sm" style="outline: none; box-shadow: none;">
+                    <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="smallimage rounded" />
+                    <div v-if="blessings > 0" class="onCardNoHover">
+                     <h2> {{ blessings }}</h2>
+                    </div>
+                    <div v-else class="onCardHover">
+                      <h3>Blessing </h3>
+                    </div>                      
+                  </button>
+                </div>
+                <div class="col-auto">
+                  <button v-on:click="addCurse()" class="btn btn-sm" style="outline: none; box-shadow: none;"w>
+                    <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-21.png'" class="smallimage rounded" />
+                    <div v-if="curses > 0" class="onCardNoHover">
+                      <h2>{{ curses }}</h2>
+                    </div>
+                    <div v-else class="onCardHover">
+                      <h3>Curse </h3>
+                    </div>                      
+                  </button>
+                </div>
+                
+              </div>
               <!-- BASE DECK BACK -->
               <div class="row no-gutters">
                 <div class="modifiersCardContainer">
                   <div class="col-auto" v-if="modifiersDrawPile.length != 0">
                     <img v-bind:src="'data/attack-modifiers/back/top.png'" class="image rounded" />
-                    <div class="abilityButtons">
+                    <div class="middleIconContainer">
                       <button v-on:click="drawModifier()" class="add btn btn-light">
                         Draw
                       </button>
@@ -239,7 +265,7 @@
                 <div class="modifiersCardContainer">
                   <div class="col-auto" v-if="lastDrawnModifier != null">
                     <img v-bind:src="'data/'+lastDrawnModifier.image" class="image rounded" />
-                    <div class="abilityButtons">
+                    <div class="middleIconContainer">
                       <button v-on:click="shuffleModifiersDeck()" class="add btn btn-light">
                         Shuffle
                       </button>
