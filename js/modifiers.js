@@ -41,10 +41,8 @@ var modifiersManagement = {
             }            
         },
         removeModifier: function(card) {
-            var indexOfCardToRemove = this.modifiersChosen.indexOf(card)
-            this.modifiersChosen.splice(indexOfCardToRemove, 1)
-            var indexOfCardToRemove = this.modifiersDrawPile.indexOf(card)
-            this.modifiersDrawPile.splice(indexOfCardToRemove, 1)
+            this.modifiersChosen = this.modifiersChosen.filter(c => c != card)
+            this.modifiersDrawPile = this.modifiersDrawPile.filter(c => c != card)
 
             if (this.checkIfCurse(card)) this.curses --
             if (this.checkIfBlessing(card)) this.blessings --            
@@ -115,8 +113,9 @@ var modifiersManagement = {
         
             if(availableCurses.length > 0) this.addModifier(availableCurses[0])
         },
-        resetModifiers: function() {        
+        resetModifiers: function() {
             this.shuffleModifiersDeck()
+            this.modifiersDrawPile.map(card => {if(this.checkIfCurseOrBless(card)) this.removeModifier(card)})
             this.blessings = this.getBlessings()
             this.curses = this.getCurses()            
         },
