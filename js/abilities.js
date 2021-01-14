@@ -177,6 +177,7 @@ var abilitiesManagement = {
                 this.turn ++                
                 this.shortRestMode = false
                 this.$forceUpdate()
+                this.roundEndShuffle()
             }            
         }
     }

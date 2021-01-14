@@ -1,5 +1,8 @@
 const curseName = 'curse'
 const blessingName = 'bless'
+const nullName = 'am-p-19'
+const twoXName = 'am-p-20'
+
 var modifiersManagement = {
     data: {
         /* Modifier information */
@@ -60,6 +63,12 @@ var modifiersManagement = {
             }
             
         },
+        checkIfNull: function(card) {
+            return card.name === nullName || false
+        },
+        checkIfTwoX: function(card) {
+            return card.name === twoXName || false
+        },
         checkIfCurse: function(card) {
             return this.modifiersSpecial.find(element => element.name == curseName).cards.includes(card) || false
         },
@@ -68,6 +77,10 @@ var modifiersManagement = {
         },
         checkIfCurseOrBless: function(card) {
             return this.checkIfCurse(card) || this.checkIfBlessing(card)
+        },
+        roundEndShuffle: function() {
+            const filtered = this.modifiersDiscardPile.filter(card => this.checkIfNull(card) || this.checkIfTwoX(card))
+            if(this.checkIfNull(this.lastDrawnModifier) || this.checkIfTwoX(this.lastDrawnModifier) || filtered.length > 0) this.shuffleModifiersDeck()
         },
         shuffleModifiersDeck: function() {
             this.modifiersDrawPile = this.modifiersChosen.slice()
