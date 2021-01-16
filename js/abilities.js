@@ -1,3 +1,9 @@
+Array.prototype.move = function(from, to) {
+    if(from >= 0 && to >= 0 && from < this.length && to < this.length) {
+        this.splice(to, 0, this.splice(from, 1)[0]);           
+    }
+};
+
 var abilitiesManagement = {
     data: {
         /* Ability information */
@@ -156,6 +162,9 @@ var abilitiesManagement = {
             card.duration = -1
             card.numberOfTimesUsed = 0            
             this.$forceUpdate()
+        },
+        updateCardPosition: function(oldIndex, newIndex) {
+            this.abilitiesChosen.move(oldIndex, newIndex)
         },
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
