@@ -62,10 +62,10 @@ var modifiersManagement = {
             
         },
         checkIfNull: function(card) {
-            return card.name === nullName || false
+            return (card && card.name === nullName) || false
         },
         checkIfTwoX: function(card) {
-            return card.name === twoXName || false
+            return (card && card.name === twoXName) || false
         },
         checkIfCurse: function(card) {
             return this.modifiersSpecial.find(element => element.name == curseName).cards.includes(card) || false

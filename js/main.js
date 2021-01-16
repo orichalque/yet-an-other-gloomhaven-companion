@@ -196,7 +196,7 @@ new Vue({
                
             }            
 
-            this.newGame();        
+            this.newGame();
         },
         getAcceptedCookie: function() {    
             return Cookies.get('accepted')
@@ -218,6 +218,12 @@ new Vue({
         },
         dismissGreenAlert: function(alert) {
             $('#greenAlert').hide()
+        },
+        draggableAbilities: function() {
+            new Sortable(document.getElementById('abilities'), {
+                animation: 150,
+                onUpdate: (event) => { this.updateCardPosition(event.oldIndex, event.newIndex) }
+            });
         }
     }, 
     beforeMount(){
@@ -226,7 +232,9 @@ new Vue({
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
             this.isMobile = true
         }
-    }
+    },
+    mounted() { this.$nextTick(() => { this.draggableAbilities() })},
+    updated() { this.$nextTick(() => { this.draggableAbilities() })}
   })
 
 function getRandomInt(max) {

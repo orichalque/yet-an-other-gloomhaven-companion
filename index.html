@@ -125,8 +125,8 @@
                   <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal" data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary">Accept card</button></div>
                 </div>
 
-                <div class="row" style="display: table-cell">
-                  <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in abilitiesChosen">
+                <div id="abilities" class="row" style="display: table-cell">
+                  <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in abilitiesChosen" :key="ability.image">
                     <div class="col card-wrap-play" v-if="ability.duration == 0">
                         <img v-bind:src="'data/'+ability.image"
                           v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]" 
@@ -878,6 +878,7 @@
   <script src="vendor/vuejs/vue.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/cookiealert/cookiealert.js"></script>
+  <script src="vendor/sortable.js"></script>
   <script src="js/database_vanilla.js"></script>
   <script src="js/database_common.js"></script>
   <script src="js/database_jotl.js"></script>
@@ -889,8 +890,6 @@
   <script src="js/battlegoals.js"></script>
   <script src="js/database_battle-goals.js"></script>
   <script src="js/main.js"></script>
-  
-
 </body>
 
 </html>
