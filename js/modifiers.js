@@ -1,5 +1,8 @@
 const curseName = 'curse'
 const blessingName = 'bless'
+const nullName = 'am-p-19'
+const twoXName = 'am-p-20'
+
 var modifiersManagement = {
     data: {
         /* Modifier information */
@@ -38,10 +41,8 @@ var modifiersManagement = {
             }            
         },
         removeModifier: function(card) {
-            var indexOfCardToRemove = this.modifiersChosen.indexOf(card)
-            this.modifiersChosen.splice(indexOfCardToRemove, 1)
-            var indexOfCardToRemove = this.modifiersDrawPile.indexOf(card)
-            this.modifiersDrawPile.splice(indexOfCardToRemove, 1)
+            this.modifiersChosen = this.modifiersChosen.filter(c => c != card)
+            this.modifiersDrawPile = this.modifiersDrawPile.filter(c => c != card)
 
             if (this.checkIfCurse(card)) this.curses --
             if (this.checkIfBlessing(card)) this.blessings --            
@@ -60,6 +61,12 @@ var modifiersManagement = {
             }
             
         },
+        checkIfNull: function(card) {
+            return (card && card.name === nullName) || false
+        },
+        checkIfTwoX: function(card) {
+            return (card && card.name === twoXName) || false
+        },
         checkIfCurse: function(card) {
             return this.modifiersSpecial.find(element => element.name == curseName).cards.includes(card) || false
         },
@@ -68,6 +75,10 @@ var modifiersManagement = {
         },
         checkIfCurseOrBless: function(card) {
             return this.checkIfCurse(card) || this.checkIfBlessing(card)
+        },
+        roundEndShuffle: function() {
+            const filtered = this.modifiersDiscardPile.filter(card => this.checkIfNull(card) || this.checkIfTwoX(card))
+            if(this.checkIfNull(this.lastDrawnModifier) || this.checkIfTwoX(this.lastDrawnModifier) || filtered.length > 0) this.shuffleModifiersDeck()
         },
         shuffleModifiersDeck: function() {
             this.modifiersDrawPile = this.modifiersChosen.slice()
@@ -102,8 +113,9 @@ var modifiersManagement = {
         
             if(availableCurses.length > 0) this.addModifier(availableCurses[0])
         },
-        resetModifiers: function() {        
+        resetModifiers: function() {
             this.shuffleModifiersDeck()
+            this.modifiersDrawPile.map(card => {if(this.checkIfCurseOrBless(card)) this.removeModifier(card)})
             this.blessings = this.getBlessings()
             this.curses = this.getCurses()            
         },
