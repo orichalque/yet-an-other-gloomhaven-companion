@@ -144,7 +144,7 @@
                     <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
                   </div>
                   <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal" data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary">Accept card</button></div>
-                  <div class="col" ><button data-toggle="modal" data-target="#sortModifierModal" class="btn btn-block btn-outline-secondary">Sort modifiers</button></div>
+                  <div class="col" v-if="hasEnabledModifierDisplay"><button data-toggle="modal" data-target="#sortModifierModal" class="btn btn-block btn-outline-secondary">Sort modifiers</button></div>
                 </div>
 
                 <div id="abilities" class="row" style="display: table-cell">
