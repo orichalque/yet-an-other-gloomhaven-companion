@@ -117,7 +117,6 @@ new Vue({
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen), { expires: 365 })
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
             Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
-            Cookies.set("class", JSON.stringify(this.abilityCategory), { expires: 365})     
             this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
@@ -197,13 +196,7 @@ new Vue({
                
             }            
             
-            var abilityCookie = Cookies.get("class");
-            console.log(abilityCookie)
-            if (abilityCookie != null) {
-                this.abilityCategory = JSON.parse(abilityCookie)    
-                this.classChosen = true
-                console.log(this.abilityCategory)
-            }
+
             this.newGame();
         },
         getAcceptedCookie: function() {    
