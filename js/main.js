@@ -112,11 +112,12 @@ new Vue({
             this.$forceUpdate()
 
         },
-        saveData: function() {
+        saveData: function() {                        
             Cookies.set("version", this.version, { expires: 365 })
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen), { expires: 365 })
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
             Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
+            Cookies.set("class", JSON.stringify(this.abilityCategory), { expires: 365})     
             this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
@@ -195,7 +196,14 @@ new Vue({
                 }
                
             }            
-
+            
+            var abilityCookie = Cookies.get("class");
+            console.log(abilityCookie)
+            if (abilityCookie != null) {
+                this.abilityCategory = JSON.parse(abilityCookie)    
+                this.classChosen = true
+                console.log(this.abilityCategory)
+            }
             this.newGame();
         },
         getAcceptedCookie: function() {    
@@ -230,11 +238,15 @@ new Vue({
                 animation: 150,
                 onEnd: (event) => { 
                     this.updateModifierPosition(event.oldIndex, event.newIndex);
-                    if (event.newIndex > this.cardsToDisplayCurrent && (this.cardsToDisplayCurrent > 0)) {
-                        this.cardsToDisplayCurrent --
-                    } else if (event.oldIndex >= this.cardsToDisplayCurrent) {
-                        this.cardsToDisplayCurrent = event.newIndex
-                    }                                   
+                    if (event.newIndex < this.cardsToDisplayCurrent) { // we move a modif in the visibility area
+                        if (event.oldIndex >= this.cardsToDisplayCurrent) // the card comes from the outside
+                            this.cardsToDisplayCurrent = event.newIndex 
+                    }
+
+                    if (event.newIndex >= this.cardsToDisplayCurrent) { // we move a modif outside of the visibility area
+                        if (event.oldIndex < this.cardsToDisplayCurrent)
+                            this.cardsToDisplayCurrent --
+                    }
                 }
             });
         },

@@ -30,7 +30,6 @@ var abilitiesManagement = {
                 this.abilityCategory.cards.sort((a, b) => a.level - b.level)
             }
             this.$forceUpdate()
-
         },
         displayAbilitiesToExchange: function(param) {
             if (this.chosenCardExchanger == param) {
