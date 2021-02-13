@@ -17,7 +17,8 @@ var modifiersManagement = {
         modifiersDiscardPile : [],
         overlayCard: {},
         blessings: 0,
-        curses: 0        
+        curses: 0,
+        hasEnabledModifierDisplay: false
     },
     methods: {
         displayModifiers: function(param) {

@@ -75,13 +75,34 @@
             <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
               <a class="nav-link" href="#" v-on:click="set('gear')">Gear</a>
             </li>
-            <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Configuration</a>
+            <li class="nav-item dropdown" v-bind:class="{active: menu ==='gameoptions'}">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Game options</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Game options</a>
+                <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Expansions</a>
                 <a class="dropdown-item" data-target="#characterSelectionModal" data-toggle="modal" href="#">Set character</a>
-                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">About</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" v-on:click="hasEnabledCardExchange = !hasEnabledCardExchange">
+                  <span v-if="!hasEnabledCardExchange">Accept card</span>
+                  <i v-else>Accept card</i>
+                </a>
+                <a class="dropdown-item" href="#" v-on:click="hasEnabledModifierDisplay = !hasEnabledModifierDisplay">
+                  <span v-if="!hasEnabledModifierDisplay">Sort modifiers</span>
+                  <i v-else>Sort modifiers</i>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">                
                 <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
+                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">About</a>
+                <form class="dropdown-item" id="donate" class="dropdown-item" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                  <input type="hidden" name="cmd" value="_donations" />
+                  <input type="hidden" name="business" value="QDHSY8LBF3WRY" />
+                  <input type="hidden" name="currency_code" value="EUR" />
+                  <input type="hidden" name="lc" value="en_US">           
+                  <a href="#" alt="Donate with PayPal button" onclick="document.getElementById('donate').submit()" title="PayPal - The safer, easier way to pay online!">Donate</a>                  
+                </form>
               </div>
             </li>
           </ul>
@@ -656,7 +677,7 @@
     </div> <!-- main container ends -->
     </div> <!-- main wrapper ends -->
 
-    <!-- Expansion selection modal -->
+    <!-- About modal -->
     <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -669,7 +690,7 @@
           </div>
           <div class="modal-body">
             <p>
-              We made this website in order to play <i>Gloomhaven</i> during Covid-19 confinement, without having to
+              We made this website in order to play <i>Gloomhaven</i> during Covid-19 lockdown, without having to
               print decks of abilities and modifiers.<br />
               It's entirely free, without ads, and we hope you enjoy it.<br />
               You can check the source code here:<br />
@@ -693,7 +714,6 @@
                 <input type="hidden" name="lc" value="en_US">                
                 <input type="image" src="data/icons/btn_donate_SM.gif" name="submit"
                   title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-
               </form>
             </span>
           </div>
@@ -701,12 +721,13 @@
       </div>
     </div>
 
+    <!-- Expansion selection modal -->
     <div class="modal fade" id="versionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title" id="exampleModalLabel">Game options</h1>
+            <h1 class="modal-title" id="exampleModalLabel">Expansion</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -720,11 +741,6 @@
               v-on:click="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
               v-on:click="loadDatabaseVersion('frosthaven')">Frosthaven</button>
-            <hr />
-            <h3>Configuration</h3>
-            <div>
-              <span><input type="checkbox" @change="enableCardExchange()"/> Enable card exchange</span>
-            </div>
             <hr />
             <h3>Spoiler</h3>
             <button v-if="!showSpoiler" v-on:click="showSpoiler = !showSpoiler" class="btn btn-secondary">Show</button>
@@ -757,7 +773,7 @@
             <button data-toggle="collapse" v-if="version === 'vanilla'" style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
 
 
-            
+          
             <div v-if="showLockedClasses" class="row collapse" id="lockedClasses">
               <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
                 <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
