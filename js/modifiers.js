@@ -18,7 +18,8 @@ var modifiersManagement = {
         overlayCard: {},
         cardsToDisplayCurrent: 0,
         blessings: 0,
-        curses: 0        
+        curses: 0,
+        hasEnabledModifierDisplay: false
     },
     methods: {
         displayModifiers: function(param) {
