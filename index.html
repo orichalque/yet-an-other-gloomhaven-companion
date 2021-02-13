@@ -144,6 +144,7 @@
                     <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
                   </div>
                   <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal" data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary">Accept card</button></div>
+                  <div class="col" ><button data-toggle="modal" data-target="#sortModifierModal" class="btn btn-block btn-outline-secondary">Sort modifiers</button></div>
                 </div>
 
                 <div id="abilities" class="row" style="display: table-cell">
@@ -876,6 +877,45 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="sortModifierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Sort modifiers</h3>
+        </div>
+
+        <div class="modal-body container">
+          <h3 class="align-baseline" style="display: inline;">Cards to display:</h3>
+            <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]" v-on:click="cardsToDisplayCurrent = 0">
+              <h3>0</h3>
+            </button>
+            <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
+              v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
+              <h3>{{ cardsToDisplay }}</h3>
+            </button>
+            
+            <div id="sortableModifiers" class="row mt-3 align-items-end"> 
+              <!--
+              <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
+                <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
+              </div>
+              -->
+              <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
+                <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+                <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+              </div>
+            </div>
+            
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="cardsToDisplayCurrent = 0">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
       <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do
