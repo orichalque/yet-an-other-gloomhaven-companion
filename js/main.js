@@ -228,11 +228,14 @@ new Vue({
         draggableModifiers: function() {
             new Sortable(document.getElementById('sortableModifiers'), {
                 animation: 150,
-                onUpdate: (event) => { this.updateModifierPosition(event.oldIndex, event.newIndex);
-                        if (event.newIndex > this.cardsToDisplayCurrent && (this.cardsToDisplayCurrent > 0)) {
-                            this.cardsToDisplayCurrent --
-                        }                    
-                    }
+                onEnd: (event) => { 
+                    this.updateModifierPosition(event.oldIndex, event.newIndex);
+                    if (event.newIndex > this.cardsToDisplayCurrent && (this.cardsToDisplayCurrent > 0)) {
+                        this.cardsToDisplayCurrent --
+                    } else if (event.oldIndex > this.cardsToDisplayCurrent) {
+                        this.cardsToDisplayCurrent = event.newIndex
+                    }                                   
+                }
             });
         },
     }, 
