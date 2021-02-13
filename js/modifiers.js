@@ -16,6 +16,7 @@ var modifiersManagement = {
         lastDrawnModifier: null,
         modifiersDiscardPile : [],
         overlayCard: {},
+        cardsToDisplayCurrent: 0,
         blessings: 0,
         curses: 0        
     },
@@ -52,12 +53,12 @@ var modifiersManagement = {
             if(this.lastDrawnModifier != null ){
                 this.modifiersDiscardPile.unshift(this.lastDrawnModifier)
             }
-            this.lastDrawnModifier = this.modifiersDrawPile[randomint]
+            this.lastDrawnModifier = this.modifiersDrawPile[0]
 
             if (this.checkIfCurseOrBless(this.lastDrawnModifier)) {
                 this.removeModifier(this.lastDrawnModifier)
             } else {
-                this.modifiersDrawPile.splice(randomint,1)            
+                this.modifiersDrawPile.splice(0,1)            
             }
             
         },
@@ -82,6 +83,14 @@ var modifiersManagement = {
         },
         shuffleModifiersDeck: function() {
             this.modifiersDrawPile = this.modifiersChosen.slice()
+
+            // JavaScript implementation of the Durstenfeld shuffle, an optimized version of Fisher-Yates
+            // More here: https://stackoverflow.com/a/12646864
+            for (let i = this.modifiersDrawPile.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [this.modifiersDrawPile[i], this.modifiersDrawPile[j]] = [this.modifiersDrawPile[j], this.modifiersDrawPile[i]];
+            }
+
             this.lastDrawnModifier = null
             this.modifiersDiscardPile = []
         },
@@ -118,6 +127,9 @@ var modifiersManagement = {
             this.modifiersDrawPile.map(card => {if(this.checkIfCurseOrBless(card)) this.removeModifier(card)})
             this.blessings = this.getBlessings()
             this.curses = this.getCurses()            
+        },
+        updateModifierPosition: function(oldIndex, newIndex) {
+            this.modifiersDrawPile.move(oldIndex, newIndex)
         },
         getBlessings: function() {
             return this.modifiersDrawPile.filter(element => this.checkIfBlessing(element)).length

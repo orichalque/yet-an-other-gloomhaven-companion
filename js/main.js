@@ -224,7 +224,17 @@ new Vue({
                 animation: 150,
                 onUpdate: (event) => { this.updateCardPosition(event.oldIndex, event.newIndex) }
             });
-        }
+        },
+        draggableModifiers: function() {
+            new Sortable(document.getElementById('sortableModifiers'), {
+                animation: 150,
+                onUpdate: (event) => { this.updateModifierPosition(event.oldIndex, event.newIndex);
+                        if (event.newIndex > this.cardsToDisplayCurrent && (this.cardsToDisplayCurrent > 0)) {
+                            this.cardsToDisplayCurrent --
+                        }                    
+                    }
+            });
+        },
     }, 
     beforeMount(){
         this.loadDatabase()
@@ -234,7 +244,9 @@ new Vue({
         }
     },
     mounted() { this.$nextTick(() => { this.draggableAbilities() })},
-    updated() { this.$nextTick(() => { this.draggableAbilities() })}
+    updated() { this.$nextTick(() => { this.draggableAbilities() })},
+    mounted() { this.$nextTick(() => { this.draggableModifiers() })},
+    updated() { this.$nextTick(() => { this.draggableModifiers() })},
   })
 
 function getRandomInt(max) {
