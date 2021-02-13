@@ -128,6 +128,9 @@ var modifiersManagement = {
             this.blessings = this.getBlessings()
             this.curses = this.getCurses()            
         },
+        updateModifierPosition: function(oldIndex, newIndex) {
+            this.modifiersDrawPile.move(oldIndex, newIndex)
+        },
         getBlessings: function() {
             return this.modifiersDrawPile.filter(element => this.checkIfBlessing(element)).length
         },

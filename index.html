@@ -877,12 +877,18 @@
             </button>
             <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
               v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
-              <h3>{{ cardsToDisplay}}</h3>
+              <h3>{{ cardsToDisplay }}</h3>
             </button>
             
-            <div class="row">
-              <div class="col-1" v-for='cardsToDisplay in cardsToDisplayCurrent'>
+            <div id="sortableModifiers" class="row mt-3 align-items-end"> 
+              <!--
+              <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
                 <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
+              </div>
+              -->
+              <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
+                <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+                <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
               </div>
             </div>
             
