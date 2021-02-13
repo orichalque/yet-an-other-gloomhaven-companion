@@ -232,7 +232,7 @@ new Vue({
                     this.updateModifierPosition(event.oldIndex, event.newIndex);
                     if (event.newIndex > this.cardsToDisplayCurrent && (this.cardsToDisplayCurrent > 0)) {
                         this.cardsToDisplayCurrent --
-                    } else if (event.oldIndex > this.cardsToDisplayCurrent) {
+                    } else if (event.oldIndex >= this.cardsToDisplayCurrent) {
                         this.cardsToDisplayCurrent = event.newIndex
                     }                                   
                 }
