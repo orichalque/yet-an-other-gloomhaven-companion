@@ -133,6 +133,7 @@ new Vue({
                     if (ability.name == theClass) {
                         this.abilityCategory = ability
                         this.classChosen = true
+                        this.displayModifiers(ability.name)                        
                     }
                 })                             
             }
