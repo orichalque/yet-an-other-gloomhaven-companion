@@ -30,13 +30,8 @@ new Vue({
             this.abilitiesChosen = [];
         },
         loadDatabase: function() {
-            versionCookie = Cookies.get('version')      
-            console.log(versionCookie)      
-            if (versionCookie != null) {
-                this.loadDatabaseVersion(versionCookie)
-            } else {
-                this.loadDatabaseVersion('vanilla')
-            }
+            versionCookie = JSON.parse(Cookies.get('version'))
+            this.loadDatabaseVersion(versionCookie)
 
             this.modifiersSpecial = attack_modifiers_special
             this.modifiersBase = attack_modifiers_base
@@ -48,25 +43,27 @@ new Vue({
             this.modifiersDrawPile = this.modifiersChosen.slice() 
             this.allGear = allItems
             this.battleGoals = battle_goals
-            this.loadDatabaseVersion(this.version)
         },
         loadDatabaseVersion: function(param){
             this.version = param
             
             switch(param){
                 case 'vanilla':
+                    console.log("loaded vanilla")
                     this.loadDatabaseVanilla()
                     break
                 case 'jotl':
+                    console.log("loaded jotl")
                     this.loadDatabaseJotl()
                     break
                 case 'frosthaven':
+                    console.log("loaded frosthaven")
                     this.loadDatabaseFrosthaven()
                     break
                 default:
-                    console.log("default")
+                    console.log("loaded vanilla by default")
+                    this.version = 'vanilla'
                     this.loadDatabaseVanilla()
-                    break
             }
         },
         loadDatabaseVanilla: function() {
@@ -113,15 +110,34 @@ new Vue({
 
         },
         saveData: function() {                        
-            Cookies.set("version", this.version, { expires: 365 })
+            console.log(this.abilityCategory.name)
+            // character
+            Cookies.set("class", JSON.stringify(this.abilityCategory.name), { expires: 365})                                    
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen), { expires: 365 })
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
             Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
+            
+            // game options
+            Cookies.set("hasEnabledModifierDisplay", JSON.stringify(this.hasEnabledModifierDisplay), { expires: 365 })
+            Cookies.set("hasEnabledCardExchange", JSON.stringify(this.hasEnabledCardExchange), { expires: 365})
+            Cookies.set("version", JSON.stringify(this.version), { expires: 365 })            
+
             this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
-            abilityCookie = Cookies.get('abilities')
+                                
+            classCookie = Cookies.get('class')
+            if (classCookie != null) {
+                theClass = JSON.parse(classCookie)   
+                this.abilities.forEach( ability => {
+                    if (ability.name == theClass) {
+                        this.abilityCategory = ability
+                        this.classChosen = true
+                    }
+                })                             
+            }
 
+            abilityCookie = Cookies.get('abilities')
             if (abilityCookie != null) {
                 oldAbilities = JSON.parse(abilityCookie)
                 oldAbilities.forEach(ability => {
@@ -196,7 +212,16 @@ new Vue({
                
             }            
             
+            cardExchange = Cookies.get("hasEnabledCardExchange")
+            if (cardExchange != null)
+                this.hasEnabledCardExchange = JSON.parse(cardExchange)
 
+            modifierDisplay = Cookies.get("hasEnabledModifierDisplay")
+            if (modifierDisplay != null)
+                this.hasEnabledModifierDisplay = JSON.parse(modifierDisplay)
+
+
+            this.$forceUpdate()
             this.newGame();
         },
         getAcceptedCookie: function() {    
