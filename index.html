@@ -746,7 +746,7 @@
             <h3>Spoiler</h3>
             <button v-if="!showSpoiler" v-on:click="showSpoiler = !showSpoiler" class="btn btn-secondary">Show</button>
             <div v-else>
-              <span v-if="version=='vanilla'"><input type="checkbox" @change="loadXEnvelope()" /> Enable envelope X</span>
+              <span v-if="version=='vanilla'"><input type="checkbox" class="form-check-label" v-model="hasOpenedXEnvelope" @change="loadXEnvelope()" /> Enable envelope X</span>
             </div>
           </div>
         </div>

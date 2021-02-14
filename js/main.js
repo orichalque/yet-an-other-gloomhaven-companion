@@ -30,8 +30,12 @@ new Vue({
             this.abilitiesChosen = [];
         },
         loadDatabase: function() {
-            versionCookie = JSON.parse(Cookies.get('version'))
-            this.loadDatabaseVersion(versionCookie)
+            versionCookie = Cookies.get('version')
+
+            if (versionCookie != null)
+                this.loadDatabaseVersion(JSON.parse(versionCookie))
+            else 
+                this.loadDatabaseVersion("vanilla")
 
             this.modifiersSpecial = attack_modifiers_special
             this.modifiersBase = attack_modifiers_base
@@ -81,13 +85,9 @@ new Vue({
             this.modifiers = attack_modifiers_categories_jotl        
             this.abilities = abilities_jotl
         },
-        loadXEnvelope: function() {
-            if (! this.hasOpenedXEnvelope) {            
-                console.log("Enabled")                    
-                this.hasOpenedXEnvelope = true
-                this.modifiers.push(XEnvelopeModifiers)
-                this.abilities.push(XEnvelopeAbilities)
-            }
+        loadXEnvelope: function() {   
+            this.modifiers.push(XEnvelopeModifiers)
+            this.abilities.push(XEnvelopeAbilities)
         },
         enableCardExchange: function() {
             this.hasEnabledCardExchange = !this.hasEnabledCardExchange 
@@ -120,18 +120,28 @@ new Vue({
             // game options
             Cookies.set("hasEnabledModifierDisplay", JSON.stringify(this.hasEnabledModifierDisplay), { expires: 365 })
             Cookies.set("hasEnabledCardExchange", JSON.stringify(this.hasEnabledCardExchange), { expires: 365})
+            Cookies.set("hasOpenedXEnvelope", JSON.stringify(this.hasOpenedXEnvelope), { expires: 365})
+
             Cookies.set("version", JSON.stringify(this.version), { expires: 365 })            
 
             this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
-                                
+            openedX = Cookies.get("hasOpenedXEnvelope")
+            if (openedX != null) {
+                this.hasOpenedXEnvelope = JSON.parse(openedX)
+                if (this.hasOpenedXEnvelope) {
+                    this.loadXEnvelope()
+                }
+            }                
+
             classCookie = Cookies.get('class')
             if (classCookie != null) {
                 theClass = JSON.parse(classCookie)   
                 this.abilities.forEach( ability => {
                     if (ability.name == theClass) {
                         this.abilityCategory = ability
+                        this.abilityCategory.hidden = false
                         this.classChosen = true
                         this.displayModifiers(ability.name)                        
                     }
@@ -220,6 +230,7 @@ new Vue({
             modifierDisplay = Cookies.get("hasEnabledModifierDisplay")
             if (modifierDisplay != null)
                 this.hasEnabledModifierDisplay = JSON.parse(modifierDisplay)
+            
 
 
             this.$forceUpdate()
