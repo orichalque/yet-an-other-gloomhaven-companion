@@ -251,10 +251,8 @@ new Vue({
             this.isMobile = true
         }
     },
-    mounted() { this.$nextTick(() => { this.draggableAbilities() })},
-    updated() { this.$nextTick(() => { this.draggableAbilities() })},
-    mounted() { this.$nextTick(() => { this.draggableModifiers() })},
-    updated() { this.$nextTick(() => { this.draggableModifiers() })},
+    mounted() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers() })},
+    updated() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers() })},
   })
 
 function getRandomInt(max) {
