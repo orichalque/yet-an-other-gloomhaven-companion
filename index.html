@@ -743,10 +743,14 @@
             <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
               v-on:click="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <hr />
-            <h3>Spoiler</h3>
-            <button v-if="!showSpoiler" v-on:click="showSpoiler = !showSpoiler" class="btn btn-secondary">Show</button>
-            <div v-else>
-              <span v-if="version=='vanilla'"><input type="checkbox" class="form-check-label" v-model="hasOpenedXEnvelope" @change="loadXEnvelope()" /> Enable envelope X</span>
+            <button class="btn btn-secondary" data-toggle="collapse" data-target="#spoilers" aria-expanded="false" aria-controls="spoilers">Show spoilers</button>
+
+            <div class="collapse" id="spoilers">
+              <p></p>
+              <button v-if="version=='vanilla'" class="btn btn-dark" v-bind:class="{ disabled: hasOpenedXEnvelope }" type="button" v-on:click="loadXEnvelope()">
+                <span v-if="!hasOpenedXEnvelope">Open envelope X</span>
+                <span v-else>Envelope X opened</span>
+              </button>
             </div>
           </div>
         </div>

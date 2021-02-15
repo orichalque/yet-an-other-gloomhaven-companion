@@ -86,8 +86,12 @@ new Vue({
             this.abilities = abilities_jotl
         },
         loadXEnvelope: function() {   
-            this.modifiers.push(XEnvelopeModifiers)
-            this.abilities.push(XEnvelopeAbilities)
+            if (! this.hasOpenedXEnvelope) {
+                console.log("loading x envelope")
+                this.modifiers.push(XEnvelopeModifiers)
+                this.abilities.push(XEnvelopeAbilities)
+                this.hasOpenedXEnvelope = true
+            }            
         },
         enableCardExchange: function() {
             this.hasEnabledCardExchange = !this.hasEnabledCardExchange 
@@ -130,8 +134,8 @@ new Vue({
         loadData: function() {
             openedX = Cookies.get("hasOpenedXEnvelope")
             if (openedX != null) {
-                this.hasOpenedXEnvelope = JSON.parse(openedX)
-                if (this.hasOpenedXEnvelope) {
+                XEnvelope = JSON.parse(openedX)
+                if (XEnvelope) {
                     this.loadXEnvelope()
                 }
             }                
