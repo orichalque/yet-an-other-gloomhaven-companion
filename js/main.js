@@ -110,9 +110,10 @@ new Vue({
 
         },
         saveData: function() {                        
-            console.log(this.abilityCategory.name)
             // character
-            Cookies.set("class", JSON.stringify(this.abilityCategory.name), { expires: 365})                                    
+            if (this.abilityCategory != null)
+                Cookies.set("class", JSON.stringify(this.abilityCategory.name), { expires: 365})                                    
+
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen), { expires: 365 })
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
             Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
