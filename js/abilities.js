@@ -11,12 +11,16 @@ var abilitiesManagement = {
         abilityCategory: null,
         abilitiesChosen: [],        
         twoAbilitiesSelected: [],
-        abilitiesOnBoard: [],
         classDisplayed: [],
         longRestMode: false,
         shortRestMode: false,
+        cardsDiscardedPreviousTurn: null,
         cardToLose: null,
         cardsPlayed: [],
+        cardsInHand: [],
+        cardsDestroyed : [],
+        cardsDiscarded : [],
+        cardsOnBoard : [],
         className: '',
         chosenCardExchanger: null,
     },
@@ -45,21 +49,20 @@ var abilitiesManagement = {
             if (!this.abilitiesChosen.includes(card)) {
                 if (this.abilitiesChosen.length < this.abilityCategory.max) 
                     this.abilitiesChosen.push(card)
+                    this.cardsInHand.push(card)
             } else {
                 this.removeAbility(card)
             }
         },
         acceptAbility: function(card) {   
             card.duration = 0
-            if (!this.abilitiesChosen.includes(card)) { 
-                this.abilitiesChosen.push(card)
-            } else {
-                this.removeAbility(card)
-            }
+            this.cardsInHand.push(card)
         },
         removeAbility: function(card) {
             indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
             this.abilitiesChosen.splice(indexOfCardToRemove, 1)
+
+            this.removeAbilityFromBoard(card);
         },
         stopHidingAbility: function(abilityCategory)  {
             abilityCategory.hidden = false
@@ -68,19 +71,48 @@ var abilitiesManagement = {
             }
             this.displayAbilities(abilityCategory)
         },
-        shortRest: function() {            
-            this.cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed && (card.duration == 0 || card.duration == null)))
+        removeAbilityFromBoard(card) {
+            if (this.cardsInHand.includes(card)) {
+                indexOfCardToRemove = this.cardsInHand.indexOf(card);
+                this.cardsInHand.splice(indexOfCardToRemove, 1);
+            } else if (this.cardsDestroyed.includes(card)) {
+                indexOfCardToRemove = this.cardsDestroyed.indexOf(card);
+                this.cardsDestroyed.splice(indexOfCardToRemove, 1);
+            } else if (this.cardsDiscarded.includes(card)) {
+                indexOfCardToRemove = this.cardsDiscarded.indexOf(card);
+                this.cardsDiscarded.splice(indexOfCardToRemove, 1);
+            } else if(this.cardsOnBoard.includes(card)){
+                indexOfCardToRemove = this.cardsOnBoard.indexOf(card);
+                this.cardsOnBoard.splice(indexOfCardToRemove, 1);
+            }
+        },
+        shortRest: function() {          
+            if(this.cardsDiscardedPreviousTurn == null){
+                this.cardsDiscardedPreviousTurn = this.cardsDiscarded
+            }  
 
-            if (this.cardsPlayed.length > 0) {
+            if (this.cardsDiscardedPreviousTurn.length > 0) {
                 this.shortRestMode = true
-                var cardIndexToDestroy = getRandomInt(this.cardsPlayed.length)    
-                this.cardToLose = this.cardsPlayed[cardIndexToDestroy]
+
+                //destroy a random discarded card
+                var cardIndexToDestroy = getRandomInt(this.cardsDiscardedPreviousTurn.length)
+                this.cardToLose = this.cardsDiscardedPreviousTurn[cardIndexToDestroy]
                 this.cardToLose.destroyed = true
-                this.cardsPlayed.splice(cardIndexToDestroy, 1)
-                this.cardsPlayed.forEach(card => card.played = false)
+                this.cardsDiscardedPreviousTurn.splice(cardIndexToDestroy, 1)
+                this.cardsDestroyed.push(this.cardToLose)
+
+                //recover the other discarded cards
+                this.cardsDiscardedPreviousTurn.forEach(card => {
+                    indexOfCardToRemove = this.cardsDiscarded.indexOf(card);
+                    this.cardsDiscarded.splice(indexOfCardToRemove, 1);
+
+                    this.cardsInHand.push(card)
+
+                    card.played = false
+                })
                 
                 if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                    this.showRedAlert('You do not have enough cards in your end to continue.')                
+                    this.showRedAlert('You do not have enough cards in your hand to continue.')                
                 }
             } else {
                 this.showRedAlert('You need discarded cards to rest.')                
@@ -89,10 +121,15 @@ var abilitiesManagement = {
             this.$forceUpdate()
         },
         rerollShortRest: function() {
+            //recover the previously destroyed card
             this.cardToLose.destroyed = false
             this.cardToLose.played = false
-            this.cardsPlayed.forEach(c => c.played = true)
+            indexOfCardToRemove = this.cardsDestroyed.indexOf(this.cardToLose);
+            this.cardsDestroyed.splice(indexOfCardToRemove, 1);
+            this.cardsInHand.push(this.cardToLose)
+
             this.shortRest()
+            this.cardsDiscardedPreviousTurn = null
             this.shortRestMode = false
             this.$forceUpdate()            
         },
@@ -101,7 +138,7 @@ var abilitiesManagement = {
             this.$forceUpdate()    
         },
         canRest: function() {
-            return this.abilitiesChosen != null && this.abilitiesChosen.filter(card => card.played && ! card.destroyed).filter(card => card.duration == 0 || card.duration == null).length >= 2
+            return this.cardsDiscarded.length >= 2
         },
         destroyLongRestCard: function(card) {
             card.destroyed = true
@@ -118,7 +155,7 @@ var abilitiesManagement = {
             })
             
             if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                this.showRedAlert('You do not have enough cards in your end to continue.')
+                this.showRedAlert('You do not have enough cards in your hand to continue.')
             }
             
             this.longRestMode = false
@@ -127,7 +164,7 @@ var abilitiesManagement = {
         pickCard: function(card) {
             if (this.twoAbilitiesSelected.includes(card)) {
                 this.cancelCard(card)
-            } else if (this.twoAbilitiesSelected.length < 2 && !card.played && !card.destroyed) {
+            } else if (this.twoAbilitiesSelected.length < 2) {
                 this.twoAbilitiesSelected.push(card)                
             }       
         },
@@ -136,8 +173,14 @@ var abilitiesManagement = {
             this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1)
         },
         fetchCard: function(card) {
-            card.played = false
-            card.destroyed = false
+            if(this.cardsDestroyed.includes(card)){
+                indexOfCardToRemove = this.cardsDestroyed.indexOf(card)
+                this.cardsDestroyed.splice(indexOfCardToRemove, 1)
+            } else if(this.cardsDiscarded.includes(card)){
+                indexOfCardToRemove = this.cardsDiscarded.indexOf(card)
+                this.cardsDiscarded.splice(indexOfCardToRemove, 1)
+            }
+            this.cardsInHand.push(card)
             this.$forceUpdate()
         },
         destroyCard: function(card) {
@@ -145,16 +188,30 @@ var abilitiesManagement = {
                 this.removeAbility(card)
             }else{
                 this.cancelCard(card)
-                card.destroyed = true
-                card.played = true
-                card.duration = 0
+                this.cardsDestroyed.push(card)
+
+                if(this.cardsInHand.includes(card)){
+                    indexOfCardToRemove = this.cardsInHand.indexOf(card)
+                    this.cardsInHand.splice(indexOfCardToRemove, 1)
+                }else if(this.cardsDiscarded.includes(card)){
+                    indexOfCardToRemove = this.cardsDiscarded.indexOf(card)
+                    this.cardsDiscarded.splice(indexOfCardToRemove, 1)
+                }
                 this.$forceUpdate()
             }
         },
         playCard: function(card) {
             this.cancelCard(card)
-            card.destroyed = false
-            card.played = true
+            this.cardsDiscarded.push(card)
+
+            indexOfCardToRemove = this.cardsInHand.indexOf(card)
+            this.cardsInHand.splice(indexOfCardToRemove, 1)
+        },
+        discardOnBoardItem(card) {
+            indexOfCardToRemove = this.cardsOnBoard.indexOf(card)
+            this.cardsOnBoard.splice(indexOfCardToRemove, 1)
+
+            this.cardsDiscarded.push(card)
             card.duration = 0
             this.$forceUpdate()
         },
@@ -163,17 +220,37 @@ var abilitiesManagement = {
             this.$forceUpdate()       
         },
         keepAbilityOneTurn(card) {
-            card.duration = 1        
+            card.duration = 1     
+            this.cardsOnBoard.push(card)
+            
+            indexOfCardToRemove = this.cardsDiscarded.indexOf(card)
+            this.cardsDiscarded.splice(indexOfCardToRemove, 1)
             this.$forceUpdate()
         },
         keepAbilityManyTurns(card) {    
             card.duration = -1
             card.numberOfTimesUsed = 0            
+
+            this.cardsOnBoard.push(card)
+            
+            indexOfCardToRemove = this.cardsDiscarded.indexOf(card)
+            this.cardsDiscarded.splice(indexOfCardToRemove, 1)
             this.$forceUpdate()
         },
-        updateCardPosition: function(oldIndex, newIndex) {
-            this.abilitiesChosen.move(oldIndex, newIndex)
+        updateCardPosition: function(collection, oldIndex, newIndex) {
+            collection.move(oldIndex, newIndex)
         },
+        updateOnBoardCards(){
+            this.cardsOnBoard.forEach(card => {
+                card.duration--;
+                if(card.duration==0){
+                    indexOfCardToRemove = this.cardsOnBoard.indexOf(card)
+                    this.cardsOnBoard.splice(indexOfCardToRemove, 1)
+
+                    this.cardsDiscarded.push(card)
+                }
+            })
+        }, 
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
                 if(this.abilitiesChosen.length == 0) {
@@ -186,11 +263,11 @@ var abilitiesManagement = {
                     if(card.canBeExchanged){
                         this.removeAbility(card)
                     } else {
-                        card.played = true
+                        this.playCard(card)
                     }
                 })   
-                this.twoAbilitiesSelected = []             
-                this.abilitiesChosen.filter(elem => elem.duration > 0).forEach(elem => elem.duration --)
+                this.twoAbilitiesSelected = []   
+                this.updateOnBoardCards()          
                 this.turn ++                
                 this.shortRestMode = false
                 this.$forceUpdate()
@@ -199,3 +276,4 @@ var abilitiesManagement = {
         }
     }
 }
+
