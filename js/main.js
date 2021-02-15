@@ -106,7 +106,8 @@ new Vue({
             this.gearChosen.forEach(item => {
                 this.restoreItem(item);
             })
-
+            
+            this.resetBattlegoals()
             this.resetModifiers()
             
             this.turn = 1            

@@ -28,6 +28,11 @@ var battleGoalsManagement = {
         },
         incrementGoalCounter: function(){
             this.goalCounter+=1;
+        },
+        resetBattlegoals: function() {            
+            this.battleGoalsDrawn = []
+            this.battleGoalPicked = []
+            this.goalCounter = 0
         }
     }
 }
