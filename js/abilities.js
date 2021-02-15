@@ -30,6 +30,7 @@ var abilitiesManagement = {
                 this.abilityCategory = param
                 this.abilityCategory.cards.sort((a, b) => a.level - b.level)
             }
+            $('#characterSelectionModal').modal('hide')
             this.$forceUpdate()
         },
         displayAbilitiesToExchange: function(param) {
@@ -65,6 +66,7 @@ var abilitiesManagement = {
             if (!this.classDisplayed.includes(abilityCategory.name)) {
                 this.classDisplayed.push(abilityCategory.name)                
             }
+            this.displayAbilities(abilityCategory)
         },
         shortRest: function() {            
             this.cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed && (card.duration == 0 || card.duration == null)))
