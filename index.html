@@ -757,6 +757,7 @@
       </div>
     </div>
 
+    <!-- Character selection modal -->
     <div class="modal fade" id="characterSelectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
@@ -776,14 +777,12 @@
             </div>
 
             <button data-toggle="collapse" v-if="version === 'vanilla'" style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
-
-
           
             <div v-if="showLockedClasses" class="row collapse" id="lockedClasses">
               <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
                 <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
                   v-bind:src="'data/'+ability.cards[0].image" />
-                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false"
+                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="stopHidingAbility(ability)"
                   src="data/layers/locked_layer.png">
               </div>
             </div>
@@ -792,6 +791,7 @@
       </div>
     </div>
 
+    <!-- Help modal -->
     <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -827,6 +827,7 @@
       </div>
     </div>
 
+    <!-- Perks display modal -->
     <div class="modal fade" id="perksModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -850,6 +851,7 @@
       </div>
     </div>
 
+    <!-- Card exchange modal -->
     <div class="modal fade" id="cardExchangeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
@@ -882,6 +884,7 @@
       </div>
     </div>
 
+    <!-- Sort modifiers modal -->
     <div class="modal fade" id="sortModifierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">

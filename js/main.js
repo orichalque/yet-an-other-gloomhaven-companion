@@ -122,6 +122,7 @@ new Vue({
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
             Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
             
+            Cookies.set("classDisplayed", JSON.stringify(this.classDisplayed), { expires: 365 })
             // game options
             Cookies.set("hasEnabledModifierDisplay", JSON.stringify(this.hasEnabledModifierDisplay), { expires: 365 })
             Cookies.set("hasEnabledCardExchange", JSON.stringify(this.hasEnabledCardExchange), { expires: 365})
@@ -236,7 +237,15 @@ new Vue({
             if (modifierDisplay != null)
                 this.hasEnabledModifierDisplay = JSON.parse(modifierDisplay)
             
-
+            classNotHidden = Cookies.get("classDisplayed")
+            if (classNotHidden != null) {
+                this.classDisplayed = JSON.parse(classNotHidden)
+                this.abilities.forEach(ab => {
+                    if (this.classDisplayed.includes(ab.name)) {
+                        ab.hidden = false
+                    }
+                })
+            }
 
             this.$forceUpdate()
             this.newGame();
