@@ -12,6 +12,7 @@ var abilitiesManagement = {
         abilitiesChosen: [],        
         twoAbilitiesSelected: [],
         abilitiesOnBoard: [],
+        classDisplayed: [],
         longRestMode: false,
         shortRestMode: false,
         cardToLose: null,
@@ -58,6 +59,12 @@ var abilitiesManagement = {
         removeAbility: function(card) {
             indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
             this.abilitiesChosen.splice(indexOfCardToRemove, 1)
+        },
+        stopHidingAbility: function(abilityCategory)  {
+            abilityCategory.hidden = false
+            if (!this.classDisplayed.includes(abilityCategory.name)) {
+                this.classDisplayed.push(abilityCategory.name)                
+            }
         },
         shortRest: function() {            
             this.cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed && (card.duration == 0 || card.duration == null)))
