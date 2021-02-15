@@ -89,6 +89,10 @@
                   <span v-if="!hasEnabledModifierDisplay">Sort modifiers</span>
                   <i v-else>Sort modifiers</i>
                 </a>
+                <a class="dropdown-item" href="#" v-on:click="hasEnabledCurses = !hasEnabledCurses">
+                  <span v-if="!hasEnabledCurses">Quick curse</span>
+                  <i v-else>Quick curse</i>
+                </a>
               </div>
             </li>
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
@@ -247,7 +251,7 @@
             <div class="col-lg-5" style="padding-top: 1em; padding-bottom: 1em">
               <h3>Modifiers</h3>
               <!-- Curse / Blessing -->
-              <div class="row no-gutters" style="padding-left: 0.3em;">
+              <div v-if="hasEnabledCurses" class="row no-gutters" style="padding-left: 0.3em;">
                 <div class="col-auto">    
                   <button v-on:click="addBlessing()" class="btn btn-sm" style="outline: none; box-shadow: none;">
                     <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="smallimage rounded" />

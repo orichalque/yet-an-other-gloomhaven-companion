@@ -8,6 +8,7 @@ new Vue({
         isMobile: false,        
         hasOpenedXEnvelope: false,
         hasEnabledCardExchange: false,
+        hasEnabledCurses: true,
         showSpoiler: false,
         showLockedClasses: false,
         version: 'vanilla',
@@ -124,11 +125,12 @@ new Vue({
             Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
             
             Cookies.set("classDisplayed", JSON.stringify(this.classDisplayed), { expires: 365 })
+
             // game options
             Cookies.set("hasEnabledModifierDisplay", JSON.stringify(this.hasEnabledModifierDisplay), { expires: 365 })
             Cookies.set("hasEnabledCardExchange", JSON.stringify(this.hasEnabledCardExchange), { expires: 365})
             Cookies.set("hasOpenedXEnvelope", JSON.stringify(this.hasOpenedXEnvelope), { expires: 365})
-
+            Cookies.set("hasEnabledCurses", JSON.stringify(this.hasEnabledCurses), { expires: 365})            
             Cookies.set("version", JSON.stringify(this.version), { expires: 365 })            
 
             this.showGreenAlert("Data saved!")       
@@ -238,6 +240,11 @@ new Vue({
             if (modifierDisplay != null)
                 this.hasEnabledModifierDisplay = JSON.parse(modifierDisplay)
             
+            curseEnabled = Cookies.get("hasEnabledCurses")
+            if (curseEnabled != null) {
+                this.hasEnabledCurses = JSON.parse(curseEnabled)
+            }
+
             classNotHidden = Cookies.get("classDisplayed")
             if (classNotHidden != null) {
                 this.classDisplayed = JSON.parse(classNotHidden)
