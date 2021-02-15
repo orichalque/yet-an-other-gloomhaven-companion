@@ -99,10 +99,12 @@ new Vue({
         },
         newGame: function() {
             this.abilitiesChosen.forEach(card => {
-                card.played = false
-                card.destroyed = false
                 card.duration = 0
             })
+            this.cardsOnBoard = []
+            this.cardsDiscarded = []
+            this.cardsDestroyed = []
+            this.cardsInHand = this.abilitiesChosen
 
             this.gearChosen.forEach(item => {
                 this.restoreItem(item);
@@ -171,6 +173,7 @@ new Vue({
                                     card.bottom = ability.bottom
                                 }
                                 this.abilitiesChosen.push(card)
+                                this.cardsInHand.push(card)
                             }
                         })
                     })
@@ -280,9 +283,16 @@ new Vue({
             $('#greenAlert').hide()
         },
         draggableAbilities: function() {
-            new Sortable(document.getElementById('abilities'), {
+            sortableInHand = this.createSortableAbilities('abilitiesInHandSection', this.cardsInHand)
+            sortableOnBoard = this.createSortableAbilities('abilitiesOnBoardSection', this.cardsOnBoard)
+            sortableDiscarded = this.createSortableAbilities('abilitiesDiscardedSection', this.cardsDiscarded)
+            sortableDestroyed = this.createSortableAbilities('abilitiesDestroyedSection', this.cardsDestroyed)
+            return [sortableInHand, sortableOnBoard, sortableDiscarded, sortableDestroyed]
+        },
+        createSortableAbilities: function(id, collection){
+            new Sortable(document.getElementById(id), {
                 animation: 150,
-                onUpdate: (event) => { this.updateCardPosition(event.oldIndex, event.newIndex) }
+                onUpdate: (event) => { this.updateCardPosition(collection, event.oldIndex, event.newIndex) }
             });
         },
         draggableModifiers: function() {
@@ -310,8 +320,8 @@ new Vue({
             this.isMobile = true
         }
     },
-    mounted() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers() })},
-    updated() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers() })},
+    mounted() { this.$nextTick(() => { this.draggableAbilities()})},
+    updated() { this.$nextTick(() => { this.draggableAbilities()})},
   })
 
 function getRandomInt(max) {
