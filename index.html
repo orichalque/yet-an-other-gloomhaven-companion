@@ -780,10 +780,8 @@
           
             <div v-if="showLockedClasses" class="row collapse" id="lockedClasses">
               <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
-                <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
-                  v-bind:src="'data/'+ability.cards[0].image" />
-                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="stopHidingAbility(ability)"
-                  src="data/layers/locked_layer.png">
+                <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
+                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="stopHidingAbility(ability)" src="data/layers/locked_layer.png">
               </div>
             </div>
           </div>
