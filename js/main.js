@@ -22,7 +22,7 @@ new Vue({
         specialClassValue : 0,
     },
     methods: {
-        set: function (param) {
+        setMenu: function (param) {
             this.menu = param
         },
         switchClass: function() {
@@ -280,28 +280,40 @@ new Vue({
             $('#greenAlert').hide()
         },
         draggableAbilities: function() {
-            new Sortable(document.getElementById('abilities'), {
-                animation: 150,
-                onUpdate: (event) => { this.updateCardPosition(event.oldIndex, event.newIndex) }
-            });
+            if (document.getElementById('abilities')) {
+                new Sortable(document.getElementById('abilities'), {
+                    animation: 150,
+                    onUpdate: (event) => { this.updateCardPosition(event.oldIndex, event.newIndex) }
+                });
+            }            
         },
         draggableModifiers: function() {
-            new Sortable(document.getElementById('sortableModifiers'), {
-                animation: 150,
-                onEnd: (event) => { 
-                    this.updateModifierPosition(event.oldIndex, event.newIndex);
-                    if (event.newIndex < this.cardsToDisplayCurrent) { // we move a modif in the visibility area
-                        if (event.oldIndex >= this.cardsToDisplayCurrent) // the card comes from the outside
-                            this.cardsToDisplayCurrent = event.newIndex 
+            if (document.getElementById('sortableModifiers') != null)  {
+                new Sortable(document.getElementById('sortableModifiers'), {
+                    animation: 150,
+                    onEnd: (event) => { 
+                        this.updateModifierPosition(event.oldIndex, event.newIndex);
+                        if (event.newIndex < this.cardsToDisplayCurrent) { // we move a modif in the visibility area
+                            if (event.oldIndex >= this.cardsToDisplayCurrent) // the card comes from the outside
+                                this.cardsToDisplayCurrent = event.newIndex 
+                        }
+    
+                        if (event.newIndex >= this.cardsToDisplayCurrent) { // we move a modif outside of the visibility area
+                            if (event.oldIndex < this.cardsToDisplayCurrent)
+                                this.cardsToDisplayCurrent --
+                        }
                     }
-
-                    if (event.newIndex >= this.cardsToDisplayCurrent) { // we move a modif outside of the visibility area
-                        if (event.oldIndex < this.cardsToDisplayCurrent)
-                            this.cardsToDisplayCurrent --
-                    }
-                }
-            });
+                });
+            }            
         },
+        draggableGear: function() {
+            if (document.getElementById('gear') != null ) {
+                new Sortable(document.getElementById('gear'), {
+                    animation: 150,
+                    onUpdate: (event) => { this.updateGearPosition(event.oldIndex, event.newIndex) }
+                });
+            }
+        }
     }, 
     beforeMount(){
         this.loadDatabase()
@@ -310,8 +322,8 @@ new Vue({
             this.isMobile = true
         }
     },
-    mounted() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers() })},
-    updated() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers() })},
+    mounted() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers(), this.draggableGear() })},
+    updated() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers(), this.draggableGear() })},
   })
 
 function getRandomInt(max) {
