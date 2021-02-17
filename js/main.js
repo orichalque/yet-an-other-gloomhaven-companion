@@ -31,10 +31,15 @@ new Vue({
             this.abilitiesChosen = [];
         },
         loadDatabase: function() {
+            //versionCookie = Cookies.get('version')
             versionCookie = Cookies.get('version')
-
             if (versionCookie != null)
-                this.loadDatabaseVersion(JSON.parse(versionCookie))
+                try {
+                    this.loadDatabaseVersion(JSON.parse(versionCookie))
+                } catch(e) {
+                    console.log("could not load the version")
+                    this.loadDatabaseVersion("vanilla")
+                }
             else 
                 this.loadDatabaseVersion("vanilla")
 
