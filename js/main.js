@@ -98,13 +98,14 @@ new Vue({
             this.hasEnabledCardExchange = !this.hasEnabledCardExchange 
         },
         newGame: function() {
+            this.cardsInHand = []
             this.abilitiesChosen.forEach(card => {
                 card.duration = 0
+                this.cardsInHand.push(card)
             })
             this.cardsOnBoard = []
             this.cardsDiscarded = []
             this.cardsDestroyed = []
-            this.cardsInHand = this.abilitiesChosen
 
             this.gearChosen.forEach(item => {
                 this.restoreItem(item);
@@ -173,7 +174,6 @@ new Vue({
                                     card.bottom = ability.bottom
                                 }
                                 this.abilitiesChosen.push(card)
-                                this.cardsInHand.push(card)
                             }
                         })
                     })
