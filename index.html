@@ -61,27 +61,52 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item py-0" v-bind:class="{active: menu === 'home'}">
-              <a class="nav-link" href="#" v-on:click="set('home')">Play</a>
+              <a class="nav-link" href="#" v-on:click="setMenu('home')">Play</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'abilities'}">
-              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('abilities')">Abilities</a>
+              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'enhancement'}">
-              <a class="nav-link" href="#" v-on:click="set('enhancement')">Enhancement</a>
+              <a class="nav-link" href="#" v-on:click="setMenu('enhancement')">Enhancement</a>
             </li>            
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
-              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('modifiers')">Modifiers</a>
+              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('modifiers')">Modifiers</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
-              <a class="nav-link" href="#" v-on:click="set('gear')">Gear</a>
+              <a class="nav-link" href="#" v-on:click="setMenu('gear')">Gear</a>
+            </li>
+            <li class="nav-item dropdown" v-bind:class="{active: menu ==='gameoptions'}">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Game options</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Expansions</a>
+                <a class="dropdown-item" data-target="#characterSelectionModal" data-toggle="modal" href="#">Set character</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" v-on:click="hasEnabledCardExchange = !hasEnabledCardExchange">
+                  <span v-if="!hasEnabledCardExchange">Accept card</span>
+                  <i v-else>Accept card</i>
+                </a>
+                <a class="dropdown-item" href="#" v-on:click="hasEnabledModifierDisplay = !hasEnabledModifierDisplay">
+                  <span v-if="!hasEnabledModifierDisplay">Sort modifiers</span>
+                  <i v-else>Sort modifiers</i>
+                </a>
+                <a class="dropdown-item" href="#" v-on:click="hasEnabledCurses = !hasEnabledCurses">
+                  <span v-if="!hasEnabledCurses">Quick curse</span>
+                  <i v-else>Quick curse</i>
+                </a>
+              </div>
             </li>
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Configuration</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Game options</a>
-                <a class="dropdown-item" data-target="#characterSelectionModal" data-toggle="modal" href="#">Set character</a>
-                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">About</a>
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">                
                 <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
+                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">About</a>
+                <form class="dropdown-item" id="donate" class="dropdown-item" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                  <input type="hidden" name="cmd" value="_donations" />
+                  <input type="hidden" name="business" value="QDHSY8LBF3WRY" />
+                  <input type="hidden" name="currency_code" value="EUR" />
+                  <input type="hidden" name="lc" value="en_US">           
+                  <a href="#" alt="Donate with PayPal button" onclick="document.getElementById('donate').submit()" title="PayPal - The safer, easier way to pay online!">Donate</a>                  
+                </form>
               </div>
             </li>
           </ul>
@@ -123,6 +148,7 @@
                     <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
                   </div>
                   <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal" data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary">Accept card</button></div>
+                  <div class="col" v-if="hasEnabledModifierDisplay"><button data-toggle="modal" data-target="#sortModifierModal" class="btn btn-block btn-outline-secondary">Sort modifiers</button></div>
                 </div>
 
                 <div id="abilities" class="row" style="display: table-cell">
@@ -218,14 +244,14 @@
               </div>
             </div>
             <div class="col-lg-7 border-right" v-else id="abilitiesSection">
-              Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('abilities')">Abilities</a> section first !
+              Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a> section first !
             </div>
 
             <!-- Right side of the play screen-->
             <div class="col-lg-5" style="padding-top: 1em; padding-bottom: 1em">
               <h3>Modifiers</h3>
               <!-- Curse / Blessing -->
-              <div class="row no-gutters" style="padding-left: 0.3em;">
+              <div v-if="hasEnabledCurses" class="row no-gutters" style="padding-left: 0.3em;">
                 <div class="col-auto">    
                   <button v-on:click="addBlessing()" class="btn btn-sm" style="outline: none; box-shadow: none;">
                     <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="smallimage rounded" />
@@ -287,11 +313,11 @@
 
               <h3>Gear</h3>
 
-              <div class="row justify-content-center no-gutters">
+              <div class="row justify-content-center no-gutters" id="gear">
                 <div v-if="gearChosen.length == 0" class="smallCardContainer">
-                    Choose your equipment in the <a href="#" v-on:click="set('gear')">Gear</a> section !
+                    Choose your equipment in the <a href="#" v-on:click="setMenu('gear')">Gear</a> section !
                 </div>
-                <div style="display: inline-block;" class="smallCardContainer" v-for="gear in gearChosen">
+                <div style="display: inline-block;" class="smallCardContainer"  v-for="gear in gearChosen" :key="gear.xws">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+gear.image" class="smallimage rounded "
                       v-bind:class="[{tapped: gear.played && !gear.lost}, {played: gear.lost}]"></img>
@@ -557,7 +583,7 @@
       <!-- ENHANCEMENT -->
       <div class="col-lg-12 container-fluid" id="enhancement" v-if="menu == 'enhancement'">
         <div v-if="abilitiesChosen.length == 0" id="enhancementClassChosen" class="text-center">
-            Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="set('abilities')">Abilities</a> section first !
+            Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a> section first !
         </div>
         <div v-else>
           <div class="row" >
@@ -656,7 +682,7 @@
     </div> <!-- main container ends -->
     </div> <!-- main wrapper ends -->
 
-    <!-- Expansion selection modal -->
+    <!-- About modal -->
     <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -669,7 +695,7 @@
           </div>
           <div class="modal-body">
             <p>
-              We made this website in order to play <i>Gloomhaven</i> during Covid-19 confinement, without having to
+              We made this website in order to play <i>Gloomhaven</i> during Covid-19 lockdown, without having to
               print decks of abilities and modifiers.<br />
               It's entirely free, without ads, and we hope you enjoy it.<br />
               You can check the source code here:<br />
@@ -693,7 +719,6 @@
                 <input type="hidden" name="lc" value="en_US">                
                 <input type="image" src="data/icons/btn_donate_SM.gif" name="submit"
                   title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-
               </form>
             </span>
           </div>
@@ -701,12 +726,13 @@
       </div>
     </div>
 
+    <!-- Expansion selection modal -->
     <div class="modal fade" id="versionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title" id="exampleModalLabel">Game options</h1>
+            <h1 class="modal-title" id="exampleModalLabel">Expansion</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -721,21 +747,21 @@
             <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
               v-on:click="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <hr />
-            <h3>Configuration</h3>
-            <div>
-              <span><input type="checkbox" @change="enableCardExchange()"/> Enable card exchange</span>
-            </div>
-            <hr />
-            <h3>Spoiler</h3>
-            <button v-if="!showSpoiler" v-on:click="showSpoiler = !showSpoiler" class="btn btn-secondary">Show</button>
-            <div v-else>
-              <span v-if="version=='vanilla'"><input type="checkbox" @change="loadXEnvelope()" /> Enable envelope X</span>
+            <button class="btn btn-secondary" data-toggle="collapse" data-target="#spoilers" aria-expanded="false" aria-controls="spoilers">Show spoilers</button>
+
+            <div class="collapse" id="spoilers">
+              <p></p>
+              <button v-if="version=='vanilla'" class="btn btn-dark" v-bind:class="{ disabled: hasOpenedXEnvelope }" type="button" v-on:click="loadXEnvelope()">
+                <span v-if="!hasOpenedXEnvelope">Open envelope X</span>
+                <span v-else>Envelope X opened</span>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Character selection modal -->
     <div class="modal fade" id="characterSelectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
@@ -755,15 +781,11 @@
             </div>
 
             <button data-toggle="collapse" v-if="version === 'vanilla'" style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
-
-
-            
+          
             <div v-if="showLockedClasses" class="row collapse" id="lockedClasses">
               <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
-                <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
-                  v-bind:src="'data/'+ability.cards[0].image" />
-                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="ability.hidden = false"
-                  src="data/layers/locked_layer.png">
+                <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
+                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="stopHidingAbility(ability)" src="data/layers/locked_layer.png">
               </div>
             </div>
           </div>
@@ -771,6 +793,7 @@
       </div>
     </div>
 
+    <!-- Help modal -->
     <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -806,6 +829,7 @@
       </div>
     </div>
 
+    <!-- Perks display modal -->
     <div class="modal fade" id="perksModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -829,6 +853,7 @@
       </div>
     </div>
 
+    <!-- Card exchange modal -->
     <div class="modal fade" id="cardExchangeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
@@ -860,6 +885,46 @@
         </div>
       </div>
     </div>
+
+    <!-- Sort modifiers modal -->
+    <div class="modal fade" id="sortModifierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Sort modifiers</h3>
+        </div>
+
+        <div class="modal-body container">
+          <h3 class="align-baseline" style="display: inline;">Cards to display:</h3>
+            <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]" v-on:click="cardsToDisplayCurrent = 0">
+              <h3>0</h3>
+            </button>
+            <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
+              v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
+              <h3>{{ cardsToDisplay }}</h3>
+            </button>
+            
+            <div id="sortableModifiers" class="row mt-3 align-items-end"> 
+              <!--
+              <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
+                <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
+              </div>
+              -->
+              <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
+                <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+                <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+              </div>
+            </div>
+            
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="cardsToDisplayCurrent = 0">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
       <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do
