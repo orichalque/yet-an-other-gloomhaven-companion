@@ -24,6 +24,9 @@ new Vue({
     methods: {
         setMenu: function (param) {
             this.menu = param
+            if(param == 'home'){
+                this.$nextTick(() => { this.draggableAbilities(), this.draggableGear() })
+            }
         },
         switchClass: function() {
             this.classChosen = false;
@@ -322,7 +325,10 @@ new Vue({
                     onUpdate: (event) => { this.updateGearPosition(event.oldIndex, event.newIndex) }
                 });
             }
-        }
+        },
+        updateModifiersDraggable(){
+            this.$nextTick(() => { this.draggableModifiers() })
+        },
     }, 
     beforeMount(){
         this.loadDatabase()
@@ -331,8 +337,7 @@ new Vue({
             this.isMobile = true
         }
     },
-    mounted() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers(), this.draggableGear() })},
-    updated() { this.$nextTick(() => { this.draggableAbilities(), this.draggableModifiers(), this.draggableGear() })},
+    mounted() { this.$nextTick(() => { this.draggableAbilities(), this.draggableGear() })},
   })
 
 function getRandomInt(max) {
