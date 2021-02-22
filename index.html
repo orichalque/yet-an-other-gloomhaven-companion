@@ -98,8 +98,7 @@
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
               <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">                
-                <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
-                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">About</a>
+                <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>                
                 <form class="dropdown-item" id="donate" class="dropdown-item" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                   <input type="hidden" name="cmd" value="_donations" />
                   <input type="hidden" name="business" value="QDHSY8LBF3WRY" />
@@ -107,6 +106,7 @@
                   <input type="hidden" name="lc" value="en_US">           
                   <a href="#" alt="Donate with PayPal button" onclick="document.getElementById('donate').submit()" title="PayPal - The safer, easier way to pay online!">Donate</a>                  
                 </form>
+                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>
               </div>
             </li>
           </ul>
