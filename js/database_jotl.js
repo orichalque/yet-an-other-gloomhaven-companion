@@ -1251,18 +1251,18 @@ abilities_jotl = [
           "points": 12,
           "image": "items/1-13/power-potion.png",
           "xws": "powerpotion"
-        },
-        {
-          "name": "mana potion",
-          "points": 13,
-          "image": "items/14/mana-potion.png",
-          "xws": "manapotion"
-        }
+        }      
       ]
     }, 
     {
       "name": "14-20",
       "items": [
+        {
+          "name": "mana potion",
+          "points": 13,
+          "image": "items/14/mana-potion.png",
+          "xws": "manapotion"
+        },
         {
           "name": "amulet of life",
           "points": 14,
