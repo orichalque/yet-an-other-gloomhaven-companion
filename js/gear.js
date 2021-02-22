@@ -67,6 +67,7 @@ var gearManagement = {
                     this.addGear(item)
                 }
             }))
+            this.idToAdd = ""
         },
         updateGearPosition: function(oldIndex, newIndex) {
             this.gearChosen.move(oldIndex, newIndex)
