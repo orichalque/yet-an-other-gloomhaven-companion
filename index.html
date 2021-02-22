@@ -76,10 +76,9 @@
               <a class="nav-link" href="#" v-on:click="setMenu('gear')">Gear</a>
             </li>
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='gameoptions'}">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Game options</a>
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Options</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Expansions</a>
-                <a class="dropdown-item" data-target="#characterSelectionModal" data-toggle="modal" href="#">Set character</a>
+                <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Set expansion</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" v-on:click="hasEnabledCardExchange = !hasEnabledCardExchange">
                   <span v-if="!hasEnabledCardExchange">Accept card</span>
@@ -98,8 +97,8 @@
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
               <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">                
-                <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
-                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">About</a>
+                <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>                              
+                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>
                 <form class="dropdown-item" id="donate" class="dropdown-item" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                   <input type="hidden" name="cmd" value="_donations" />
                   <input type="hidden" name="business" value="QDHSY8LBF3WRY" />
@@ -108,6 +107,9 @@
                   <a href="#" alt="Donate with PayPal button" onclick="document.getElementById('donate').submit()" title="PayPal - The safer, easier way to pay online!">Donate</a>                  
                 </form>
               </div>
+            </li>
+            <li class="nav-item py-0">
+              <a class="nav-link" href="#" v-on:click="saveData()">Save</a>
             </li>
           </ul>
         </div>
@@ -121,7 +123,7 @@
         <div class="col-lg-12 text-center container-fluid" id="main_menu" v-if="menu == 'home'">
 
           <div class="row ">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-11 text-center">
               <h3>Turn: {{ turn }}</h3>
             </div>
 
@@ -391,26 +393,6 @@
               </div>
 
             </div>
-
-
-            <!-- ALERTS -->
-            <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="redAlert">
-              {{ alert }}
-              <button type="button" class="close" aria-label="Close" v-on:click="dismissAlert('#redAlert')">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-            <div class="mx-auto col-lg-6 alert alert-success collapse" role="alert" id="greenAlert">
-              {{ alert }}
-              <button type="button" class="close" aria-label="Close" v-on:click="dismissAlert('#greenAlert')">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-            <div class="col-lg-12 ">
-              <button class="btn btn-outline-secondary" v-on:click="saveData()">Save</button>
-            </div>
           </div>
         </div>
       </div>
@@ -541,14 +523,13 @@
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
         <div class="row col-lg-9 justify-content-between">
           <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="input-group">
+            <form class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text" id="btnGroupAddon">Add item by ID</div>
               </div>
               <input type="text" class="form-control" placeholder="ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
               <button v-on:click="addItemById()" class="button btn btn-secondary">Add</button>
-
-            </div>
+            </form>
           </div>
 
 
@@ -577,13 +558,6 @@
             </div>
           </div>
           <div class="col-lg-3">
-            <div class="mx-auto col-lg-6 alert alert-danger collapse" role="alert" id="gearAlert">
-              {{ gearAlertMessage }}
-              <button type="button" class="close" aria-label="Close" v-on:click="dismissAlert('#gearAlert')">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
             <div class="centerAbilities">
               <div v-for='(card,i) in gearChosen'>
                 <div v-bind:class="[{crop: gearChosen.length -1 !== i}]" v-on:click="removeGear(card)">
@@ -939,7 +913,37 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+
+
+  <!-- Modal -->
+    <div class="modal fade" id="greenAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body rounded alert-info">
+            {{ alert }}   
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="redAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body rounded alert-danger">
+              {{ alert }}   
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
       <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do

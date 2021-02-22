@@ -277,17 +277,11 @@ new Vue({
         },
         showRedAlert: function(alert){
             this.alert = alert
-            $('#redAlert').show()            
-        },
-        dismissAlert: function(alert) {
-            $(alert).hide()
+            $('#redAlert').modal('show')            
         },
         showGreenAlert: function(alert){
             this.alert = alert
-            $('#greenAlert').show()            
-        },
-        dismissGreenAlert: function(alert) {
-            $('#greenAlert').hide()
+            $('#greenAlert').modal('show')         
         },
         draggableAbilities: function() {
             if (document.getElementById('abilities')) {
