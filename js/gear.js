@@ -24,8 +24,7 @@ var gearManagement = {
             
         },
         gearAlert: function(message) {
-            this.gearAlertMessage = message
-            $("#gearAlert").show()
+            showGreenAlert(message)
         },
         removeGear: function(item) {
             var indexOfItemToRemove = this.gearChosen.indexOf(item)
