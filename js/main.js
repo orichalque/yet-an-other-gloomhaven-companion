@@ -161,10 +161,8 @@ new Vue({
                 theClass = JSON.parse(classCookie)   
                 this.abilities.forEach( ability => {
                     if (ability.name == theClass) {
-                        this.abilityCategory = ability
-                        this.abilityCategory.hidden = false
-                        this.classChosen = true
-                        this.displayModifiers(ability.name)                        
+                        this.displayAbilities(ability)                                                                        
+                        this.abilityCategory.hidden = false                        
                     }
                 })                             
             }

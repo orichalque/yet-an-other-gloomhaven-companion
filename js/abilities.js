@@ -22,13 +22,14 @@ var abilitiesManagement = {
     },
     methods: {
         displayAbilities: function(param) {
-            this.classChosen = true;
-            this.displayModifiers(param.name.substring(0,2))
-            if (this.abilityCategory == param) {
-                this.abilityCategory = null
-            } else {
-                this.abilityCategory = param
-                this.abilityCategory.cards.sort((a, b) => a.level - b.level)
+            this.classChosen = true;            
+            if (this.abilityCategory == param) { // unselecting a class
+                this.abilityCategory = null                
+                this.classChosen = false;
+            } else {                
+                this.displayModifiers(param.name)
+                this.abilityCategory = param                
+                this.abilityCategory.cards.sort((a, b) => a.level - b.level)                
             }
             $('#characterSelectionModal').modal('hide')
             this.$forceUpdate()
