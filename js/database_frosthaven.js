@@ -1633,3 +1633,7 @@ abilities_frosthaven = [
         ]
     }
 ]
+
+allItems_frosthaven = [
+
+]

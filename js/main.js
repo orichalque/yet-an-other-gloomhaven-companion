@@ -59,7 +59,8 @@ new Vue({
         },
         loadDatabaseVersion: function(param){
             this.version = param
-            
+            this.gearCategory = null
+
             switch(param){
                 case 'vanilla':
                     console.log("loaded vanilla")
@@ -83,16 +84,19 @@ new Vue({
             this.classNames = classNames
             this.modifiers = attack_modifiers_categories          
             this.abilities = abilities
+            this.allGear = allItems
         },
         loadDatabaseFrosthaven: function() {
             this.classNames = classNames_frosthaven
             this.modifiers =  attack_modifiers_categories_frosthaven
             this.abilities = abilities_frosthaven
+            this.allGear = allItems_frosthaven // empty 
         },
         loadDatabaseJotl: function() {
             this.classNames = classNames_jotl
             this.modifiers = attack_modifiers_categories_jotl        
             this.abilities = abilities_jotl
+            this.allGear = allItems_jotl
         },
         loadXEnvelope: function() {   
             if (! this.hasOpenedXEnvelope) {
@@ -157,10 +161,8 @@ new Vue({
                 theClass = JSON.parse(classCookie)   
                 this.abilities.forEach( ability => {
                     if (ability.name == theClass) {
-                        this.abilityCategory = ability
-                        this.abilityCategory.hidden = false
-                        this.classChosen = true
-                        this.displayModifiers(ability.name)                        
+                        this.displayAbilities(ability)                                                                        
+                        this.abilityCategory.hidden = false                        
                     }
                 })                             
             }
@@ -275,17 +277,11 @@ new Vue({
         },
         showRedAlert: function(alert){
             this.alert = alert
-            $('#redAlert').show()            
-        },
-        dismissAlert: function(alert) {
-            $(alert).hide()
+            $('#redAlert').modal('show')            
         },
         showGreenAlert: function(alert){
             this.alert = alert
-            $('#greenAlert').show()            
-        },
-        dismissGreenAlert: function(alert) {
-            $('#greenAlert').hide()
+            $('#greenAlert').modal('show')         
         },
         draggableAbilities: function() {
             if (document.getElementById('abilities')) {
