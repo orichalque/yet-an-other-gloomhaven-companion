@@ -202,7 +202,6 @@ var abilitiesManagement = {
             }
         },
         playCard: function(card) {
-            this.cancelCard(card)
             this.cardsDiscarded.push(card)
 
             indexOfCardToRemove = this.cardsInHand.indexOf(card)

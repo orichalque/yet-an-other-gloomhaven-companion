@@ -111,10 +111,12 @@ new Vue({
         },
         newGame: function() {
             this.abilitiesChosen.forEach(card => {
-                card.played = false
-                card.destroyed = false
                 card.duration = 0
             })
+            this.cardsOnBoard = []
+            this.cardsDiscarded = []
+            this.cardsDestroyed = []
+            this.cardsInHand = this.abilitiesChosen
 
             this.gearChosen.forEach(item => {
                 this.restoreItem(item);
