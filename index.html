@@ -129,16 +129,12 @@
 
             <!-- left side of the play screen-->
             <div class="col-lg-7 border-right" v-if="abilitiesChosen.length > 0" >
-              <h3>Abilities</h3>
               <div class="container">
-
                 <div class="row mt-3">
                   <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
                       cards</button></div>
-                  <div v-if="!shortRestMode" class="col"><button v-on:click="shortRest()"
-                      class="btn btn-block btn-outline-secondary">Short rest</button></div>
-                  <div v-else class="col"><button v-on:click="rerollShortRest()"
-                    class="btn btn-block btn-outline-secondary">Reroll</button></div>
+                  <div v-if="!shortRestMode" class="col"><button v-on:click="pickCardToLose()"
+                      class="btn btn-block btn-outline-secondary" data-toggle="modal" data-target="#shortRestModal" :disabled='isShortRestDisabled'>Short rest</button></div>
                   <div class="col"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
                       rest</button></div>
                   <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
@@ -189,7 +185,7 @@
 
                 <!-- On board cards -->
                 <div v-if="cardsOnBoard.length>0">
-                  <h3>Cards On board</h3>
+                  <h3>On board</h3>
                   <div class="row" style="display: table-cell" id="abilitiesOnBoardSection">
                     <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in cardsOnBoard" :key="ability.image">
                       <div class="col card-wrap-play">
@@ -226,7 +222,7 @@
 
                 <!-- Discarded cards -->
                 <div v-if="cardsDiscarded.length>0" >
-                  <h3>Discarded Cards</h3>
+                  <h3>Discarded</h3>
                   <div class="row" style="display: table-cell" id="abilitiesDiscardedSection">
                     <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
                       v-for="ability in cardsDiscarded" :key="ability.image">
@@ -263,9 +259,9 @@
                   </div>
                 </div>
 
-                <!--  Destroyed cards -->
+                <!--  Lost cards -->
                 <div v-if="cardsDestroyed.length>0"  >
-                  <h3>Lost Cards</h3>
+                  <h3>Lost</h3>
                   <div class="row mt-3" style="display: table-cell" id="abilitiesDestroyedSection">
                     <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
                       v-for="ability in cardsDestroyed" :key="ability.image">
@@ -927,41 +923,95 @@
     <!-- Sort modifiers modal -->
     <div class="modal fade" id="sortModifierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel">Sort modifiers</h3>
-        </div>
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Sort modifiers</h3>
+          </div>
 
-        <div class="modal-body container">
-          <h3 class="align-baseline" style="display: inline;">Cards to display:</h3>
-            <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]" v-on:click="cardsToDisplayCurrent = 0">
-              <h3>0</h3>
-            </button>
-            <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
-              v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
-              <h3>{{ cardsToDisplay }}</h3>
-            </button>
-            
-            <div id="sortableModifiers" class="row mt-3 align-items-end"> 
-              <!--
-              <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
-                <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
+          <div class="modal-body container">
+            <h3 class="align-baseline" style="display: inline;">Cards to display:</h3>
+              <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]" v-on:click="cardsToDisplayCurrent = 0">
+                <h3>0</h3>
+              </button>
+              <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
+                v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
+                <h3>{{ cardsToDisplay }}</h3>
+              </button>
+              
+              <div id="sortableModifiers" class="row mt-3 align-items-end"> 
+                <!--
+                <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
+                  <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
+                </div>
+                -->
+                <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
+                  <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+                  <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+                </div>
               </div>
-              -->
-              <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
-                <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
-                <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
-              </div>
-            </div>
-            
-        </div>
+              
+          </div>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="cardsToDisplayCurrent = 0">Close</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="cardsToDisplayCurrent = 0">Close</button>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Short Rest modal -->
+    <div class="modal fade" id="shortRestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Short Rest</h3>
+          </div>
+          <div class="modal-body container">
+            <h3>Lost:</h3>
+            <div v-if="cardToLose!=null" style="display: inline-block; padding-top: 1em;" class="abilityContainer">
+              <img v-bind:src="'data/'+cardToLose.image" class="image rounded destroyed"></img>
+              
+              <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0" class="enhancement above">
+                <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                  <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                </div>
+              </span>
+              <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">             
+                <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                  <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                </div>                                     
+              </span>
+            </div>
+            <h3>Placed in hand:</h3>
+            <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in cardsToRestore">
+              <div v-if="ability != cardToLose"  class="col card-wrap-play">
+                  <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
+                  
+                  <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
+                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                      <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                    </div>
+                  </span>
+                  <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                      <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                    </div>                                     
+                  </span>
+              </div>
+            </div>   
+            <div v-if="!rerolling">
+              Lose 1 health point and lose a different card?
+              <button v-if="!rerolling" type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="reroll()">Reroll</button>
+            </div>     
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="shortRest()">Accept</button>
+          </div>
+        </div>
+      </div>
     </div>
 
 

@@ -16,6 +16,7 @@ var abilitiesManagement = {
         shortRestMode: false,
         cardsDiscardedPreviousTurn: null,
         cardToLose: null,
+        cardsToRestore: null,
         cardsPlayed: [],
         cardsInHand: [],
         cardsDestroyed : [],
@@ -23,6 +24,12 @@ var abilitiesManagement = {
         cardsOnBoard : [],
         className: '',
         chosenCardExchanger: null,
+        rerolling : false
+    },
+    computed: {
+        isShortRestDisabled: function() {
+            return this.cardsDiscarded.length<2
+        },
     },
     methods: {
         displayAbilities: function(param) {
@@ -87,52 +94,41 @@ var abilitiesManagement = {
                 this.cardsOnBoard.splice(indexOfCardToRemove, 1);
             }
         },
-        shortRest: function() {          
-            if(this.cardsDiscardedPreviousTurn == null){
-                this.cardsDiscardedPreviousTurn = this.cardsDiscarded
-            }  
-
-            if (this.cardsDiscardedPreviousTurn.length > 0) {
-                this.shortRestMode = true
-
-                //destroy a random discarded card
-                var cardIndexToDestroy = getRandomInt(this.cardsDiscardedPreviousTurn.length)
-                this.cardToLose = this.cardsDiscardedPreviousTurn[cardIndexToDestroy]
-                this.cardToLose.destroyed = true
-                this.cardsDiscardedPreviousTurn.splice(cardIndexToDestroy, 1)
-                this.cardsDestroyed.push(this.cardToLose)
-
-                //recover the other discarded cards
-                this.cardsDiscardedPreviousTurn.forEach(card => {
-                    indexOfCardToRemove = this.cardsDiscarded.indexOf(card);
-                    this.cardsDiscarded.splice(indexOfCardToRemove, 1);
-
-                    this.cardsInHand.push(card)
-
-                    card.played = false
-                })
-                
-                if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
-                    this.showRedAlert('You do not have enough cards in your hand to continue.')                
-                }
-            } else {
-                this.showRedAlert('You need discarded cards to rest.')                
+        pickCardToLose: function() {
+            this.rerolling = false
+            var cardIndexToDestroy = getRandomInt(this.cardsDiscarded.length)
+            const isSameCard = (element) => element == this.cardToLose
+            while(this.cardToLose != null && cardIndexToDestroy == this.cardsDiscarded.findIndex(isSameCard)){
+                cardIndexToDestroy = getRandomInt(this.cardsDiscarded.length)
             }
+            this.cardToLose = this.cardsDiscarded[cardIndexToDestroy]
+            this.cardsToRestore = []
+            this.cardsDiscarded.forEach(element => {
+                if(element != this.cardToLose){
+                    this.cardsToRestore.push(element)
+                }
+            });
+        },
+        reroll: function() {
+            this.pickCardToLose()
+            this.rerolling = true
+        },
+        shortRest: function() { 
+            //lose the chosen card
+            indexOfCardToRemove = this.cardsDiscarded.indexOf(this.cardToLose);
+            this.cardsDiscarded.splice(indexOfCardToRemove, 1);
+            this.cardsDestroyed.push(this.cardToLose)
+
+            //recover the discarded cards
+            this.cardsDiscarded.forEach(card => {
+                this.cardsInHand.push(card)
+            });
+
+            this.cardsDiscarded = []
+            this.rerolling = false
+            this.cardToLose = null
                 
             this.$forceUpdate()
-        },
-        rerollShortRest: function() {
-            //recover the previously destroyed card
-            this.cardToLose.destroyed = false
-            this.cardToLose.played = false
-            indexOfCardToRemove = this.cardsDestroyed.indexOf(this.cardToLose);
-            this.cardsDestroyed.splice(indexOfCardToRemove, 1);
-            this.cardsInHand.push(this.cardToLose)
-
-            this.shortRest()
-            this.cardsDiscardedPreviousTurn = null
-            this.shortRestMode = false
-            this.$forceUpdate()            
         },
         longRest: function() {
             this.longRestMode = true    
