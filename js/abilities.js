@@ -12,9 +12,6 @@ var abilitiesManagement = {
         abilitiesChosen: [],        
         twoAbilitiesSelected: [],
         classDisplayed: [],
-        longRestMode: false,
-        shortRestMode: false,
-        cardsDiscardedPreviousTurn: null,
         cardToLose: null,
         cardsToRestore: null,
         cardsPlayed: [],
@@ -27,7 +24,7 @@ var abilitiesManagement = {
         rerolling : false
     },
     computed: {
-        isShortRestDisabled: function() {
+        isRestDisabled: function() {
             return this.cardsDiscarded.length<2
         },
     },
@@ -94,7 +91,7 @@ var abilitiesManagement = {
                 this.cardsOnBoard.splice(indexOfCardToRemove, 1);
             }
         },
-        pickCardToLose: function() {
+        pickCardToLoseShortRest: function() {
             this.rerolling = false
             var cardIndexToDestroy = getRandomInt(this.cardsDiscarded.length)
             const isSameCard = (element) => element == this.cardToLose
@@ -109,11 +106,14 @@ var abilitiesManagement = {
                 }
             });
         },
+        pickCardToLoseLongRest: function(ability) {
+            this.cardToLose = ability
+        },
         reroll: function() {
-            this.pickCardToLose()
+            this.pickCardToLoseShortRest()
             this.rerolling = true
         },
-        shortRest: function() { 
+        rest: function() { 
             //lose the chosen card
             indexOfCardToRemove = this.cardsDiscarded.indexOf(this.cardToLose);
             this.cardsDiscarded.splice(indexOfCardToRemove, 1);
@@ -130,33 +130,25 @@ var abilitiesManagement = {
                 
             this.$forceUpdate()
         },
-        longRest: function() {
-            this.longRestMode = true    
-            this.$forceUpdate()    
-        },
-        canRest: function() {
-            return this.cardsDiscarded.length >= 2
-        },
-        destroyLongRestCard: function(card) {
-            card.destroyed = true
-            var cardsPlayed = this.abilitiesChosen.filter( card => (card.played && !card.destroyed && (card.duration == 0 || card.duration == null)))
-            cardsPlayed.forEach(card => card.played = false)
-            
-            this.abilitiesChosen.filter(elem => elem.duration > 0).forEach(elem => elem.duration --)
+        longRest: function() { 
+            this.rest()
+
             this.turn ++
-            
+
+            this.updateOnBoardCards()
+
             this.gearChosen.forEach(gear => {
                 if (gear.played && ! gear.lost) {
                     gear.played = false
                 }
             })
-            
-            if (this.abilitiesChosen.filter(card => !card.played && !card.destroyed).length <2) {
+
+            if (this.cardsInHand.length <2) {
                 this.showRedAlert('You do not have enough cards in your hand to continue.')
             }
-            
-            this.longRestMode = false
-            this.$forceUpdate()
+        },
+        canRest: function() {
+            return this.cardsDiscarded.length >= 2
         },
         pickCard: function(card) {
             if (this.twoAbilitiesSelected.includes(card)) {
@@ -237,15 +229,14 @@ var abilitiesManagement = {
             collection.move(oldIndex, newIndex)
         },
         updateOnBoardCards(){
-            this.cardsOnBoard.forEach(card => {
+            for(var i = this.cardsOnBoard.length -1; i >= 0 ; i--){
+                card = this.cardsOnBoard[i]
                 card.duration--;
                 if(card.duration==0){
-                    indexOfCardToRemove = this.cardsOnBoard.indexOf(card)
-                    this.cardsOnBoard.splice(indexOfCardToRemove, 1)
-
                     this.cardsDiscarded.push(card)
+                    this.cardsOnBoard.splice(i, 1);
                 }
-            })
+            }
         }, 
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
