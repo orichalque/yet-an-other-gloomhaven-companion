@@ -27,6 +27,9 @@ var abilitiesManagement = {
         isRestDisabled: function() {
             return this.cardsDiscarded.length<2
         },
+        islongRestBtnDisabled: function() {
+            return this.cardToLose == null
+        }
     },
     methods: {
         displayAbilities: function(param) {
@@ -143,9 +146,13 @@ var abilitiesManagement = {
                 }
             })
 
+            //idk why, but the modal wont close normally if the button has a :disabled attribute
+            $('#longRestModal').modal('hide')  
+
             if (this.cardsInHand.length <2) {
                 this.showRedAlert('You do not have enough cards in your hand to continue.')
             }
+            this.$forceUpdate()
         },
         canRest: function() {
             return this.cardsDiscarded.length >= 2
