@@ -110,11 +110,14 @@ new Vue({
             this.hasEnabledCardExchange = !this.hasEnabledCardExchange 
         },
         newGame: function() {
+            this.cardsInHand = []
             this.abilitiesChosen.forEach(card => {
-                card.played = false
-                card.destroyed = false
                 card.duration = 0
+                this.cardsInHand.push(card)
             })
+            this.cardsOnBoard = []
+            this.cardsDiscarded = []
+            this.cardsDestroyed = []
 
             this.gearChosen.forEach(item => {
                 this.restoreItem(item);
@@ -284,12 +287,22 @@ new Vue({
             $('#greenAlert').modal('show')         
         },
         draggableAbilities: function() {
-            if (document.getElementById('abilities')) {
-                new Sortable(document.getElementById('abilities'), {
-                    animation: 150,
-                    onUpdate: (event) => { this.updateCardPosition(event.oldIndex, event.newIndex) }
-                });
-            }            
+            draggableAbilities = []
+            this.createSortableAbilities('abilitiesInHandSection', this.cardsInHand, draggableAbilities)
+            this.createSortableAbilities('abilitiesOnBoardSection', this.cardsOnBoard, draggableAbilities)
+            this.createSortableAbilities('abilitiesDiscardedSection', this.cardsDiscarded, draggableAbilities)
+            this.createSortableAbilities('abilitiesDestroyedSection', this.cardsDestroyed, draggableAbilities)
+            return draggableAbilities
+        },
+        createSortableAbilities: function(id, abilities, collection){
+            if (document.getElementById(id)) {
+                collection.push(
+                    new Sortable(document.getElementById(id), {
+                        animation: 150,
+                        onUpdate: (event) => { this.updateCardPosition(abilities, event.oldIndex, event.newIndex) }
+                    })
+                ) 
+            }
         },
         draggableModifiers: function() {
             if (document.getElementById('sortableModifiers') != null)  {
