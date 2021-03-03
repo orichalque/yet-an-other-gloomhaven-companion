@@ -147,7 +147,7 @@ new Vue({
             Cookies.set("hasOpenedXEnvelope", JSON.stringify(this.hasOpenedXEnvelope), { expires: 365})
             Cookies.set("hasEnabledCurses", JSON.stringify(this.hasEnabledCurses), { expires: 365})            
             Cookies.set("version", JSON.stringify(this.version), { expires: 365 })            
-
+            Cookies.set("level", JSON.stringify(this.level), { expires: 365 })            
             this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
@@ -267,6 +267,10 @@ new Vue({
                     }
                 })
             }
+
+            theLevel = Cookies.get("level")
+            if (theLevel != null)  
+                this.level = JSON.parse(theLevel)
 
             this.$forceUpdate()
             this.newGame();
