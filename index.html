@@ -133,9 +133,9 @@
                 <div class="row mt-3">
                   <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
                       cards</button></div>
-                  <div class="col"><button v-on:click="pickCardToLoseShortRest()"
+                  <div class="col"><button v-on:click="initShortRest()"
                       class="btn btn-block btn-outline-secondary" data-toggle="modal" data-target="#shortRestModal" :disabled='isRestDisabled'>Short rest</button></div>
-                  <div class="col"><button  data-toggle="modal" data-target="#longRestModal" :disabled='isRestDisabled' class="btn btn-block btn-outline-secondary">Long
+                  <div class="col"><button v-on:click="initRest()"  data-toggle="modal" data-target="#longRestModal" :disabled='isRestDisabled' class="btn btn-block btn-outline-secondary">Long
                       rest</button></div>
                   <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
                       game</button></div>
@@ -1027,32 +1027,56 @@
             <h3 class="modal-title">Long Rest</h3>
           </div>
           <div class="modal-body container">
-            <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in cardsDiscarded">
-              <div class="col card-wrap-play">
-                  <img v-bind:src="'data/'+ability.image" v-bind:class="[{picked: ability == cardToLose}]" 
-                  v-on:click="pickCardToLoseLongRest(ability)" class="image rounded"></img>
-                  
-                  <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
-                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                      <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
-                    </div>
-                  </span>
-                  <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
-                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                      <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                    </div>                                     
-                  </span>
-              </div>
-            </div> 
-          </div>
+            <div class="row" v-if='abilityCategory != null'>
+              <div class="col-md-6 d-flex justify-content-center centerAbilities">
+                <div v-if="cardToLose!=null">
+                    <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image"
+                      class="image rounded"></img>
 
+                    <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0" class="enhancement above">
+                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                      </div>
+                    </span>
+                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">             
+                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                      </div>                                     
+                    </span>
+                </div>
+                <div v-else>Select a card to lose</div>
+                <div style="padding-top: 10px;">
+                  <button v-if='islongRestBtnEnabled' type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="longRest()">Lose Card</button>
+                </div>
+              </div>
+              <div class="col-md-6 mt-6">
+                <div class="centerAbilities">
+                  <div v-for='(card,i) in cardsToRestore'>
+                    <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]" v-on:click="pickCardToLoseLongRest(card)">
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
+
+                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0" class="enhancement above">
+                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                        </div>
+                      </span>
+                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">             
+                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                        </div>                                     
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
           <div class="modal-footer">
-            <button :disabled='islongRestBtnDisabled' type="button" class="btn btn-secondary" v-on:click="longRest()">Lose card</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-
 
   <!-- Modal -->
     <div class="modal fade" id="greenAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

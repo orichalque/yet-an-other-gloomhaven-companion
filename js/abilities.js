@@ -27,8 +27,8 @@ var abilitiesManagement = {
         isRestDisabled: function() {
             return this.cardsDiscarded.length<2
         },
-        islongRestBtnDisabled: function() {
-            return this.cardToLose == null
+        islongRestBtnEnabled: function() {
+            return this.cardToLose != null
         }
     },
     methods: {
@@ -94,14 +94,17 @@ var abilitiesManagement = {
                 this.cardsOnBoard.splice(indexOfCardToRemove, 1);
             }
         },
-        pickCardToLoseShortRest: function() {
+        initShortRest: function() {
             this.rerolling = false
             var cardIndexToDestroy = getRandomInt(this.cardsDiscarded.length)
-            const isSameCard = (element) => element == this.cardToLose
+            isSameCard = (element) => element == this.cardToLose
             while(this.cardToLose != null && cardIndexToDestroy == this.cardsDiscarded.findIndex(isSameCard)){
                 cardIndexToDestroy = getRandomInt(this.cardsDiscarded.length)
             }
             this.cardToLose = this.cardsDiscarded[cardIndexToDestroy]
+            this.initRest()
+        },
+        initRest: function() {
             this.cardsToRestore = []
             this.cardsDiscarded.forEach(element => {
                 if(element != this.cardToLose){
@@ -109,11 +112,8 @@ var abilitiesManagement = {
                 }
             });
         },
-        pickCardToLoseLongRest: function(ability) {
-            this.cardToLose = ability
-        },
         reroll: function() {
-            this.pickCardToLoseShortRest()
+            this.initShortRest()
             this.rerolling = true
         },
         rest: function() { 
@@ -156,6 +156,10 @@ var abilitiesManagement = {
         },
         canRest: function() {
             return this.cardsDiscarded.length >= 2
+        },
+        pickCardToLoseLongRest: function(card) {
+            this.cardToLose = card
+            this.initRest()
         },
         pickCard: function(card) {
             if (this.twoAbilitiesSelected.includes(card)) {
