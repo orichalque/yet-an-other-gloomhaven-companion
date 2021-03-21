@@ -128,18 +128,14 @@
             </div>
 
             <!-- left side of the play screen-->
-            <div class="col-lg-7 border-right" v-if="abilitiesChosen.length > 0" id="abilitiesSection">
-              <h3>Abilities</h3>
+            <div class="col-lg-7 border-right" v-if="abilitiesChosen.length > 0" >
               <div class="container">
-
                 <div class="row mt-3">
                   <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
                       cards</button></div>
-                  <div v-if="!shortRestMode" class="col"><button v-on:click="shortRest()"
-                      class="btn btn-block btn-outline-secondary">Short rest</button></div>
-                  <div v-else class="col"><button v-on:click="rerollShortRest()"
-                    class="btn btn-block btn-outline-secondary">Reroll</button></div>
-                  <div class="col"><button v-on:click="longRest()" class="btn btn-block btn-outline-secondary">Long
+                  <div class="col"><button v-on:click="initShortRest()"
+                      class="btn btn-block btn-outline-secondary" data-toggle="modal" data-target="#shortRestModal" :disabled='isRestDisabled'>Short rest</button></div>
+                  <div class="col"><button v-on:click="initRest()"  data-toggle="modal" data-target="#longRestModal" :disabled='isRestDisabled' class="btn btn-block btn-outline-secondary">Long
                       rest</button></div>
                   <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
                       game</button></div>
@@ -153,96 +149,143 @@
                   <div class="col" v-if="hasEnabledModifierDisplay"><button v-on:click="updateModifiersDraggable()" data-toggle="modal" data-target="#sortModifierModal" class="btn btn-block btn-outline-secondary">Sort modifiers</button></div>
                 </div>
 
-                <div id="abilities" class="row" style="display: table-cell">
-                  <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in abilitiesChosen" :key="ability.image">
-                    <div class="col card-wrap-play" v-if="ability.duration == 0">
-                        <img v-bind:src="'data/'+ability.image"
-                          v-bind:class="[{played: ability.played}, {destroyed: ability.destroyed}, {picked: twoAbilitiesSelected.includes(ability)}]" 
-                          v-on:click="pickCard(ability)" class="image rounded">
-                        </img>
-                        
-                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" v-bind:class="{played: ability.played || ability.destroyed}" class="enhancement above">
+                <div v-if="cardsInHand.length>0" >
+                  <div class="row" style="display: table-cell" id="abilitiesInHandSection">
+                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in cardsInHand" :key="ability.image">
+                      <div class="col card-wrap-play">
+                          <img v-bind:src="'data/'+ability.image"
+                            v-bind:class="[{picked: twoAbilitiesSelected.includes(ability)}]" 
+                            v-on:click="pickCard(ability)" class="image rounded">
+                          </img>
+                          
+                          <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
+                            <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                              <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                            </div>
+                          </span>
+                          <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                            <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                              <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                            </div>                                     
+                          </span>
+
+                          <!-- On-cards buttons -->
+                          <div class="iconContainer">
+                            <div class="bottomIconContainer">
+                              <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
+                                v-on:click="destroyCard(ability)" />
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- On board cards -->
+                <div v-if="cardsOnBoard.length>0">
+                  <h3>On board</h3>
+                  <div class="row" style="display: table-cell" id="abilitiesOnBoardSection">
+                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in cardsOnBoard" :key="ability.image">
+                      <div class="col card-wrap-play">
+                        <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
+                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
                             <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
                           </div>
                         </span>
-                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" v-bind:class="{played: ability.played || ability.destroyed}" class="enhancement">             
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
                             <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
                           </div>                                     
                         </span>
 
-                      <!-- On-cards buttons when not on rest mode-->
-                      <div v-if="!longRestMode">
-
-                        <!-- On-cards buttons when cards have been played -->
+                        <!-- On-cards buttons -->
                         <div class="iconContainer">
-
-                          <div class="bottomIconContainer" v-if="!ability.destroyed">
-                            <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
-                              v-on:click="destroyCard(ability)" />
-                            <img v-if="ability.played" src="data/icons/keep-on-board.png" class="bottomIcon"
-                              style="width:3em" v-on:click="keepAbilityManyTurns(ability)" />
+                          <div v-if="ability.duration < 0" class="topIconContainer">
+                            <button v-on:click="useCard(ability)" class="btn btn-light add">
+                              Use
+                            </button>
                           </div>
-
-                          <div class="topIconContainer" v-if="ability.played">
-                            <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
-                              v-on:click="fetchCard(ability)" />
-                            <img src="data/icons/keep-on-board-one-turn.png" v-if="!ability.destroyed"
-                              class="bottomIcon" style="width:3em" v-on:click="keepAbilityOneTurn(ability)" />
+                          <div class="bottomIconContainer">
+                            <img src="data/icons/lost.png" class="bottomIcon" style="width:3em" v-on:click="discardOnBoardItem(ability)" />
                           </div>
-
                         </div>
-                      </div>
-
-                      <!-- On-cards buttons on rest mode -->
-                      <div v-else>
-                        <div class="longRestAbilityButtons" v-if="ability.played && !ability.destroyed">
-                          <img src="data/icons/lost.png" style="width:3em" v-on:click="destroyLongRestCard(ability)" />
+                        <div class="onCardNoHover">
+                          <h4>{{ ability.numberOfTimesUsed }}</h4>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div>
-                <h3>On board</h3>
-                <div class="row mt-3" style="display: table-cell">
-                  <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
-                    v-for="ability in abilitiesChosen" v-if="ability.duration != 0">
-                    <!-- On board cards -->
-                    <div class="col">
-                      <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
-                      <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
-                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                          <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
-                        </div>
-                      </span>
-                      <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
-                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                          <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                        </div>                                     
-                      </span>
+                <!-- Discarded cards -->
+                <div v-if="cardsDiscarded.length>0" >
+                  <h3>Discarded</h3>
+                  <div class="row" style="display: table-cell" id="abilitiesDiscardedSection">
+                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
+                      v-for="ability in cardsDiscarded" :key="ability.image">
+                      <div class="col card-wrap-play">
+                        <img v-bind:src="'data/'+ability.image"  class="image rounded played"></img>
+                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
+                          <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                          </div>
+                        </span>
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                          <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                          </div>                                     
+                        </span>
+                      <!-- On-cards buttons -->
                       <div class="iconContainer">
-                        <div v-if="ability.duration < 0" class="topIconContainer">
-                          <button v-on:click="useCard(ability)" class="btn btn-light add">
-                            Use
-                          </button>
+                        <div class="bottomIconContainer">
+                          <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
+                            v-on:click="destroyCard(ability)" />
+                          <img src="data/icons/keep-on-board.png" class="bottomIcon"
+                            style="width:3em" v-on:click="keepAbilityManyTurns(ability)" />
                         </div>
 
-                        <div class="bottomIconContainer">
-                          <img v-if="!ability.destroyed" src="data/icons/lost.png" class="bottomIcon" style="width:3em"
-                            v-on:click="playCard(ability)" />
+                        <div class="topIconContainer">
+                          <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
+                            v-on:click="fetchCard(ability)" />
+                          <img src="data/icons/keep-on-board-one-turn.png"
+                            class="bottomIcon" style="width:3em" v-on:click="keepAbilityOneTurn(ability)" />
                         </div>
                       </div>
-                      <div class="onCardNoHover">
-                        <h4>{{ ability.numberOfTimesUsed }}</h4>
                       </div>
                     </div>
                   </div>
                 </div>
 
+                <!--  Lost cards -->
+                <div v-if="cardsDestroyed.length>0"  >
+                  <h3>Lost</h3>
+                  <div class="row mt-3" style="display: table-cell" id="abilitiesDestroyedSection">
+                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
+                      v-for="ability in cardsDestroyed" :key="ability.image">
+                      <div class="col">
+                        <img v-bind:src="'data/'+ability.image"  class="image rounded destroyed"></img>
+                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
+                          <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                          </div>
+                        </span>
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                          <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                          </div>                                     
+                        </span>
+                      <!-- On-cards buttons -->
+                      <div class="iconContainer">
+                        <div class="topIconContainer">
+                          <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
+                            v-on:click="fetchCard(ability)" />
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-lg-7 border-right" v-else id="abilitiesSection">
@@ -878,43 +921,162 @@
     <!-- Sort modifiers modal -->
     <div class="modal fade" id="sortModifierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel">Sort modifiers</h3>
-        </div>
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Sort modifiers</h3>
+          </div>
 
-        <div class="modal-body container">
-          <h3 class="align-baseline" style="display: inline;">Cards to display:</h3>
-            <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]" v-on:click="cardsToDisplayCurrent = 0">
-              <h3>0</h3>
-            </button>
-            <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
-              v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
-              <h3>{{ cardsToDisplay }}</h3>
-            </button>
-            
-            <div id="sortableModifiers" class="row mt-3 align-items-end"> 
-              <!--
-              <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
-                <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
+          <div class="modal-body container">
+            <h3 class="align-baseline" style="display: inline;">Cards to display:</h3>
+              <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]" v-on:click="cardsToDisplayCurrent = 0">
+                <h3>0</h3>
+              </button>
+              <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
+                v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
+                <h3>{{ cardsToDisplay }}</h3>
+              </button>
+              
+              <div id="sortableModifiers" class="row mt-3 align-items-end"> 
+                <!--
+                <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
+                  <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
+                </div>
+                -->
+                <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
+                  <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+                  <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+                </div>
               </div>
-              -->
-              <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
-                <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
-                <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
-              </div>
-            </div>
-            
-        </div>
+              
+          </div>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="cardsToDisplayCurrent = 0">Close</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="cardsToDisplayCurrent = 0">Close</button>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Short Rest modal -->
+    <div class="modal" id="shortRestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Short Rest</h3>
+          </div>
+          <div class="modal-body container">
+            <div class="row" v-if='abilityCategory != null'>
+              <div class="col-md-6 d-flex justify-content-center centerAbilities">
+                <div v-if="cardToLose!=null">
+                    <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image"
+                      class="image rounded"></img>
+
+                    <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0" class="enhancement above">
+                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                      </div>
+                    </span>
+                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">             
+                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                      </div>                                     
+                    </span>
+                </div>
+                <div style="padding-top: 10px;">
+                  <button title = "Lose one health point a draw a different card" v-if="!rerolling" type="button" class="btn btn-secondary"  v-on:click="reroll()">Reroll</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="rest()">Lose Card</button>
+                </div>
+              </div>
+              <div class="col-md-6 mt-6">
+                <div class="centerAbilities">
+                  <div v-for='(card,i) in cardsToRestore'>
+                    <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]" >
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
+
+                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0" class="enhancement above">
+                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                        </div>
+                      </span>
+                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">             
+                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                        </div>                                     
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Long Rest modal -->
+    <div class="modal" id="longRestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Long Rest</h3>
+          </div>
+          <div class="modal-body container">
+            <div class="row" v-if='abilityCategory != null'>
+              <div class="col-md-6 d-flex justify-content-center centerAbilities">
+                <div v-if="cardToLose!=null">
+                    <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image"
+                      class="image rounded"></img>
+
+                    <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0" class="enhancement above">
+                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                      </div>
+                    </span>
+                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">             
+                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                      </div>                                     
+                    </span>
+                </div>
+                <div v-else>Select a card to lose</div>
+                <div style="padding-top: 10px;">
+                  <button v-if='islongRestBtnEnabled' type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="longRest()">Lose Card</button>
+                </div>
+              </div>
+              <div class="col-md-6 mt-6">
+                <div class="centerAbilities">
+                  <div v-for='(card,i) in cardsToRestore'>
+                    <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]" v-on:click="pickCardToLoseLongRest(card)">
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
+
+                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0" class="enhancement above">
+                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                        </div>
+                      </span>
+                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">             
+                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
+                        </div>                                     
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- Modal -->
     <div class="modal fade" id="greenAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

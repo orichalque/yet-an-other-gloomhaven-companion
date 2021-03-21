@@ -110,11 +110,14 @@ new Vue({
             this.hasEnabledCardExchange = !this.hasEnabledCardExchange 
         },
         newGame: function() {
+            this.cardsInHand = []
             this.abilitiesChosen.forEach(card => {
-                card.played = false
-                card.destroyed = false
                 card.duration = 0
+                this.cardsInHand.push(card)
             })
+            this.cardsOnBoard = []
+            this.cardsDiscarded = []
+            this.cardsDestroyed = []
 
             this.gearChosen.forEach(item => {
                 this.restoreItem(item);
@@ -144,7 +147,7 @@ new Vue({
             Cookies.set("hasOpenedXEnvelope", JSON.stringify(this.hasOpenedXEnvelope), { expires: 365})
             Cookies.set("hasEnabledCurses", JSON.stringify(this.hasEnabledCurses), { expires: 365})            
             Cookies.set("version", JSON.stringify(this.version), { expires: 365 })            
-
+            Cookies.set("level", JSON.stringify(this.level), { expires: 365 })            
             this.showGreenAlert("Data saved!")       
         },
         loadData: function() {
@@ -265,6 +268,10 @@ new Vue({
                 })
             }
 
+            theLevel = Cookies.get("level")
+            if (theLevel != null)  
+                this.level = JSON.parse(theLevel)
+
             this.$forceUpdate()
             this.newGame();
         },
@@ -284,12 +291,22 @@ new Vue({
             $('#greenAlert').modal('show')         
         },
         draggableAbilities: function() {
-            if (document.getElementById('abilities')) {
-                new Sortable(document.getElementById('abilities'), {
-                    animation: 150,
-                    onUpdate: (event) => { this.updateCardPosition(event.oldIndex, event.newIndex) }
-                });
-            }            
+            draggableAbilities = []
+            this.createSortableAbilities('abilitiesInHandSection', this.cardsInHand, draggableAbilities)
+            this.createSortableAbilities('abilitiesOnBoardSection', this.cardsOnBoard, draggableAbilities)
+            this.createSortableAbilities('abilitiesDiscardedSection', this.cardsDiscarded, draggableAbilities)
+            this.createSortableAbilities('abilitiesDestroyedSection', this.cardsDestroyed, draggableAbilities)
+            return draggableAbilities
+        },
+        createSortableAbilities: function(id, abilities, collection){
+            if (document.getElementById(id)) {
+                collection.push(
+                    new Sortable(document.getElementById(id), {
+                        animation: 150,
+                        onUpdate: (event) => { this.updateCardPosition(abilities, event.oldIndex, event.newIndex) }
+                    })
+                ) 
+            }
         },
         draggableModifiers: function() {
             if (document.getElementById('sortableModifiers') != null)  {
