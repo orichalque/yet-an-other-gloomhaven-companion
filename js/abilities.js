@@ -83,6 +83,10 @@ var abilitiesManagement = {
             if (this.cardsInHand.includes(card)) {
                 indexOfCardToRemove = this.cardsInHand.indexOf(card);
                 this.cardsInHand.splice(indexOfCardToRemove, 1);
+                if(this.twoAbilitiesSelected.includes(card)){
+                    indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card);
+                    this.twoAbilitiesSelected.splice(indexOfCardToRemove, 1);
+                }
             } else if (this.cardsDestroyed.includes(card)) {
                 indexOfCardToRemove = this.cardsDestroyed.indexOf(card);
                 this.cardsDestroyed.splice(indexOfCardToRemove, 1);
