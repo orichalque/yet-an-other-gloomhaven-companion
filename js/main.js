@@ -289,6 +289,7 @@ new Vue({
                 this.turn = JSON.parse(theTurn)
             this.loadAbilityGameplayData()
             this.loadBattleGoalsGameplayData()
+            this.loadGearGameplayData()
         },
         getAcceptedCookie: function() {
             return Cookies.get('accepted')

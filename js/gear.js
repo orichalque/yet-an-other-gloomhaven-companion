@@ -7,21 +7,37 @@ var gearManagement = {
         idToAdd: 0
     },
     methods: {
+        loadGearGameplayData: function () {
+            gearCookie = Cookies.get('gear')
+            if (gearCookie != null) {
+                oldGear = JSON.parse(gearCookie)
+                oldGear.forEach(gear => {
+                    this.gearChosen.forEach(item => {
+                        if (gear.name === item.name) {
+                          item.played = gear.played
+                          item.lost = gear.lost
+                          item.used = gear.used
+                        }
+                    })
+                })
+            }
+            this.$forceUpdate()
+        },
         displayGearCategory: function(cat) {
             if (this.gearCategory == null) {
                 this.gearCategory = cat
             } else {
                 this.gearCategory = null
-            }             
+            }
         },
         addGear: function(item) {
             this.restoreItem(item)
             if (! this.gearChosen.includes(item)) {
-                this.gearChosen.push(item)           
+                this.gearChosen.push(item)
             } else {
                 this.removeGear(item)
             }
-            
+
         },
         gearAlert: function(message) {
             showGreenAlert(message)
@@ -52,11 +68,11 @@ var gearManagement = {
         },
         useItem: function(item) {
             console.log(item.used)
-            if (item.used == null) 
+            if (item.used == null)
                 item.used = 1
-            else 
+            else
                 item.used += 1
-                
+
             this.$forceUpdate()
 
         },
