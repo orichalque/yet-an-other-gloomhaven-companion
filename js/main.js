@@ -5,17 +5,17 @@ new Vue({
         /* Platform information */
         menu : 'home',
         acceptedCookies: false,
-        isMobile: false,        
+        isMobile: false,
         hasOpenedXEnvelope: false,
         hasEnabledCardExchange: false,
         hasEnabledCurses: true,
         showSpoiler: false,
         showLockedClasses: false,
         version: 'vanilla',
-        alert: '',        
+        alert: '',
         classChosen : false,
 
-        /* General game information */ 
+        /* General game information */
         turn: 1,
         level: 1,
         specialClassMode : '',
@@ -43,7 +43,7 @@ new Vue({
                     console.log("could not load the version")
                     this.loadDatabaseVersion("vanilla")
                 }
-            else 
+            else
                 this.loadDatabaseVersion("vanilla")
 
             this.modifiersSpecial = attack_modifiers_special
@@ -53,7 +53,7 @@ new Vue({
                     this.modifiersChosen.push(modif)
                 })
             })
-            this.modifiersDrawPile = this.modifiersChosen.slice() 
+            this.modifiersDrawPile = this.modifiersChosen.slice()
             this.allGear = allItems
             this.battleGoals = battle_goals
         },
@@ -82,7 +82,7 @@ new Vue({
         },
         loadDatabaseVanilla: function() {
             this.classNames = classNames
-            this.modifiers = attack_modifiers_categories          
+            this.modifiers = attack_modifiers_categories
             this.abilities = abilities
             this.allGear = allItems
         },
@@ -90,24 +90,24 @@ new Vue({
             this.classNames = classNames_frosthaven
             this.modifiers =  attack_modifiers_categories_frosthaven
             this.abilities = abilities_frosthaven
-            this.allGear = allItems_frosthaven // empty 
+            this.allGear = allItems_frosthaven // empty
         },
         loadDatabaseJotl: function() {
             this.classNames = classNames_jotl
-            this.modifiers = attack_modifiers_categories_jotl        
+            this.modifiers = attack_modifiers_categories_jotl
             this.abilities = abilities_jotl
             this.allGear = allItems_jotl
         },
-        loadXEnvelope: function() {   
+        loadXEnvelope: function() {
             if (! this.hasOpenedXEnvelope) {
                 console.log("loading x envelope")
                 this.modifiers.push(XEnvelopeModifiers)
                 this.abilities.push(XEnvelopeAbilities)
                 this.hasOpenedXEnvelope = true
-            }            
+            }
         },
         enableCardExchange: function() {
-            this.hasEnabledCardExchange = !this.hasEnabledCardExchange 
+            this.hasEnabledCardExchange = !this.hasEnabledCardExchange
         },
         newGame: function() {
             this.cardsInHand = []
@@ -122,33 +122,36 @@ new Vue({
             this.gearChosen.forEach(item => {
                 this.restoreItem(item);
             })
-            
+
             this.resetBattlegoals()
             this.resetModifiers()
-            
-            this.turn = 1            
+
+            this.turn = 1
             this.$forceUpdate()
 
         },
-        saveData: function() {                        
+        saveData: function() {
             // character
             if (this.abilityCategory != null)
-                Cookies.set("class", JSON.stringify(this.abilityCategory.name), { expires: 365})                                    
+                Cookies.set("class", JSON.stringify(this.abilityCategory.name), { expires: 365})
 
             Cookies.set("abilities", JSON.stringify(this.abilitiesChosen), { expires: 365 })
             Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
-            Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })    
-            
+            Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })
+
             Cookies.set("classDisplayed", JSON.stringify(this.classDisplayed), { expires: 365 })
 
             // game options
             Cookies.set("hasEnabledModifierDisplay", JSON.stringify(this.hasEnabledModifierDisplay), { expires: 365 })
             Cookies.set("hasEnabledCardExchange", JSON.stringify(this.hasEnabledCardExchange), { expires: 365})
             Cookies.set("hasOpenedXEnvelope", JSON.stringify(this.hasOpenedXEnvelope), { expires: 365})
-            Cookies.set("hasEnabledCurses", JSON.stringify(this.hasEnabledCurses), { expires: 365})            
-            Cookies.set("version", JSON.stringify(this.version), { expires: 365 })            
-            Cookies.set("level", JSON.stringify(this.level), { expires: 365 })            
-            this.showGreenAlert("Data saved!")       
+            Cookies.set("hasEnabledCurses", JSON.stringify(this.hasEnabledCurses), { expires: 365})
+            Cookies.set("version", JSON.stringify(this.version), { expires: 365 })
+            Cookies.set("level", JSON.stringify(this.level), { expires: 365 })
+
+            this.saveGamePlayData()
+
+            this.showGreenAlert("Data saved!")
         },
         loadData: function() {
             openedX = Cookies.get("hasOpenedXEnvelope")
@@ -157,17 +160,17 @@ new Vue({
                 if (XEnvelope) {
                     this.loadXEnvelope()
                 }
-            }                
+            }
 
             classCookie = Cookies.get('class')
             if (classCookie != null) {
-                theClass = JSON.parse(classCookie)   
+                theClass = JSON.parse(classCookie)
                 this.abilities.forEach( ability => {
                     if (ability.name == theClass) {
-                        this.displayAbilities(ability)                                                                        
-                        this.abilityCategory.hidden = false                        
+                        this.displayAbilities(ability)
+                        this.abilityCategory.hidden = false
                     }
-                })                             
+                })
             }
 
             abilityCookie = Cookies.get('abilities')
@@ -189,7 +192,7 @@ new Vue({
                     })
                 })
             }
-            
+
             gearCookie = Cookies.get('gear')
             if (gearCookie != null) {
                 oldGear = JSON.parse(gearCookie)
@@ -215,36 +218,36 @@ new Vue({
                             cat.cards.forEach(modif => {
                                 if (modif.name === modifier.name) {
                                     this.modifiersChosen.push(modif)
-                                    this.modifiersDrawPile.push(modif)    
+                                    this.modifiersDrawPile.push(modif)
                                 }
                             })
                         })
-                        
-                        
+
+
                         this.modifiersSpecial.forEach(catModif => {
                             catModif.cards.forEach(modif => {
                                 if (modif.name === modifier.name) {
                                     this.modifiersChosen.push(modif)
-                                    this.modifiersDrawPile.push(modif)                                
+                                    this.modifiersDrawPile.push(modif)
                                 }
                             })
                         })
-                        
+
                         this.modifiers.forEach(catModif => {
                             catModif.cards.forEach(card => {
                                 if (card.name === modifier.name) {
-                                    this.modifiersChosen.push(card)                                
-                                    this.modifiersDrawPile.push(card)                                    
+                                    this.modifiersChosen.push(card)
+                                    this.modifiersDrawPile.push(card)
                                 }
-                            })                            
+                            })
                         })
                     })
-                    
+
                     this.modifiersDrawPile = this.modifiersChosen.slice()
                 }
-               
-            }            
-            
+
+            }
+
             cardExchange = Cookies.get("hasEnabledCardExchange")
             if (cardExchange != null)
                 this.hasEnabledCardExchange = JSON.parse(cardExchange)
@@ -252,7 +255,7 @@ new Vue({
             modifierDisplay = Cookies.get("hasEnabledModifierDisplay")
             if (modifierDisplay != null)
                 this.hasEnabledModifierDisplay = JSON.parse(modifierDisplay)
-            
+
             curseEnabled = Cookies.get("hasEnabledCurses")
             if (curseEnabled != null) {
                 this.hasEnabledCurses = JSON.parse(curseEnabled)
@@ -269,13 +272,23 @@ new Vue({
             }
 
             theLevel = Cookies.get("level")
-            if (theLevel != null)  
+            if (theLevel != null)
                 this.level = JSON.parse(theLevel)
 
             this.$forceUpdate()
             this.newGame();
         },
-        getAcceptedCookie: function() {    
+        saveGamePlayData: function () {
+            Cookies.set("turn", JSON.stringify(this.turn), { expires: 365 })
+            this.saveAbilityGameplayData()
+        },
+        loadGamePlayData: function () {
+            theTurn = Cookies.get("turn")
+            if (theTurn != null)
+                this.turn = JSON.parse(theTurn)
+            this.loadAbilityGameplayData()
+        },
+        getAcceptedCookie: function() {
             return Cookies.get('accepted')
         },
         acceptCookie: function() {
@@ -284,11 +297,11 @@ new Vue({
         },
         showRedAlert: function(alert){
             this.alert = alert
-            $('#redAlert').modal('show')            
+            $('#redAlert').modal('show')
         },
         showGreenAlert: function(alert){
             this.alert = alert
-            $('#greenAlert').modal('show')         
+            $('#greenAlert').modal('show')
         },
         draggableAbilities: function() {
             draggableAbilities = []
@@ -305,27 +318,27 @@ new Vue({
                         animation: 150,
                         onUpdate: (event) => { this.updateCardPosition(abilities, event.oldIndex, event.newIndex) }
                     })
-                ) 
+                )
             }
         },
         draggableModifiers: function() {
             if (document.getElementById('sortableModifiers') != null)  {
                 new Sortable(document.getElementById('sortableModifiers'), {
                     animation: 150,
-                    onEnd: (event) => { 
+                    onEnd: (event) => {
                         this.updateModifierPosition(event.oldIndex, event.newIndex);
                         if (event.newIndex < this.cardsToDisplayCurrent) { // we move a modif in the visibility area
                             if (event.oldIndex >= this.cardsToDisplayCurrent) // the card comes from the outside
-                                this.cardsToDisplayCurrent = event.newIndex 
+                                this.cardsToDisplayCurrent = event.newIndex
                         }
-    
+
                         if (event.newIndex >= this.cardsToDisplayCurrent) { // we move a modif outside of the visibility area
                             if (event.oldIndex < this.cardsToDisplayCurrent)
                                 this.cardsToDisplayCurrent --
                         }
                     }
                 });
-            }            
+            }
         },
         draggableGear: function() {
             if (document.getElementById('gear') != null ) {
@@ -338,10 +351,11 @@ new Vue({
         updateModifiersDraggable(){
             this.$nextTick(() => { this.draggableModifiers() })
         },
-    }, 
+    },
     beforeMount(){
         this.loadDatabase()
         this.loadData()
+        this.loadGamePlayData()
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
             this.isMobile = true
         }
@@ -357,7 +371,7 @@ const $dropdown = $(".dropdown");
 const $dropdownToggle = $(".dropdown-toggle");
 const $dropdownMenu = $(".dropdown-menu");
 const showClass = "show";
- 
+
 $(window).on("load resize", function() {
   if (this.matchMedia("(min-width: 768px)").matches) {
     $dropdown.hover(
