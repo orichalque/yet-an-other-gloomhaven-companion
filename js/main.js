@@ -281,12 +281,14 @@ new Vue({
         saveGamePlayData: function () {
             Cookies.set("turn", JSON.stringify(this.turn), { expires: 365 })
             this.saveAbilityGameplayData()
+            this.saveBattleGoalsGameplayData()
         },
         loadGamePlayData: function () {
             theTurn = Cookies.get("turn")
             if (theTurn != null)
                 this.turn = JSON.parse(theTurn)
             this.loadAbilityGameplayData()
+            this.loadBattleGoalsGameplayData()
         },
         getAcceptedCookie: function() {
             return Cookies.get('accepted')
