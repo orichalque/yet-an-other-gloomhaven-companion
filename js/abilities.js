@@ -1,6 +1,6 @@
 Array.prototype.move = function(from, to) {
     if(from >= 0 && to >= 0 && from < this.length && to < this.length) {
-        this.splice(to, 0, this.splice(from, 1)[0]);           
+        this.splice(to, 0, this.splice(from, 1)[0]);
     }
 };
 
@@ -9,7 +9,7 @@ var abilitiesManagement = {
         /* Ability information */
         abilities : [],
         abilityCategory: null,
-        abilitiesChosen: [],        
+        abilitiesChosen: [],
         twoAbilitiesSelected: [],
         classDisplayed: [],
         cardToLose: null,
@@ -32,15 +32,105 @@ var abilitiesManagement = {
         }
     },
     methods: {
+        saveAbilityGameplayData: function () {
+            Cookies.set("twoAbilitiesSelected", JSON.stringify(this.twoAbilitiesSelected), { expires: 365 })
+            Cookies.set("cardsInHand", JSON.stringify(this.cardsInHand), { expires: 365 })
+            Cookies.set("cardsDestroyed", JSON.stringify(this.cardsDestroyed), { expires: 365 })
+            Cookies.set("cardsDiscarded", JSON.stringify(this.cardsDiscarded), { expires: 365 })
+            Cookies.set("cardsOnBoard", JSON.stringify(this.cardsOnBoard), { expires: 365 })
+        },
+        loadAbilityGameplayData: function () {
+            // Load two selected abilities
+            twoAbilitiesSelectedCookie = Cookies.get('twoAbilitiesSelected')
+            if (twoAbilitiesSelectedCookie != null) {
+                oldAbilitiesSelected = JSON.parse(twoAbilitiesSelectedCookie)
+                oldAbilitiesSelected.forEach(ability => {
+                    this.abilities.forEach(cat => {
+                        cat.cards.forEach(card => {
+                            if (card.name === ability.name) {
+                                this.twoAbilitiesSelected.push(card)
+                            }
+                        })
+                    })
+                })
+            }
+
+            // Load abilities currently in hand
+            cardsInHandCookie = Cookies.get('cardsInHand')
+            if (cardsInHandCookie != null) {
+                this.cardsInHand = []
+                oldCardsInHand = JSON.parse(cardsInHandCookie)
+                oldCardsInHand.forEach(ability => {
+                    this.abilities.forEach(cat => {
+                        cat.cards.forEach(card => {
+                            if (card.name === ability.name) {
+                                this.cardsInHand.push(card)
+                            }
+                        })
+                    })
+                })
+            }
+
+            // Load destroyed abilities
+            cardsDestroyedCookie = Cookies.get('cardsDestroyed')
+            if (cardsDestroyedCookie != null) {
+                oldCardsDestroyed = JSON.parse(cardsDestroyedCookie)
+                oldCardsDestroyed.forEach(ability => {
+                    this.abilities.forEach(cat => {
+                        cat.cards.forEach(card => {
+                            if (card.name === ability.name) {
+                                this.cardsDestroyed.push(card)
+                            }
+                        })
+                    })
+                })
+            }
+
+            // Load discarded abilities
+            cardsDiscardedCookie = Cookies.get('cardsDiscarded')
+            if (cardsDiscardedCookie != null) {
+                oldCardsDiscarded = JSON.parse(cardsDiscardedCookie)
+                oldCardsDiscarded.forEach(ability => {
+                    this.abilities.forEach(cat => {
+                        cat.cards.forEach(card => {
+                            if (card.name === ability.name) {
+                                this.cardsDiscarded.push(card)
+                            }
+                        })
+                    })
+                })
+            }
+
+            // Load abilities currently on the board
+            cardsOnBoardCookie = Cookies.get('cardsOnBoard')
+            if (cardsOnBoardCookie != null) {
+                oldCardsOnBoard = JSON.parse(cardsOnBoardCookie)
+                oldCardsOnBoard.forEach(ability => {
+                    this.abilities.forEach(cat => {
+                        cat.cards.forEach(card => {
+                            if (card.name === ability.name) {
+                                if (ability.numberOfTimesUsed != null) {
+                                    card.numberOfTimesUsed = ability.numberOfTimesUsed
+                                }
+                                card.duration = -1
+                                this.cardsOnBoard.push(card)
+                            }
+                        })
+                    })
+                })
+            }
+
+            this.$forceUpdate()
+        },
         displayAbilities: function(param) {
-            this.classChosen = true;            
+            this.classChosen = true;
             if (this.abilityCategory == param) { // unselecting a class
-                this.abilityCategory = null                
+                this.abilityCategory = null
                 this.classChosen = false;
-            } else {                
+            } else {
                 this.displayModifiers(param.name)
-                this.abilityCategory = param                
-                this.abilityCategory.cards.sort((a, b) => a.level - b.level)                
+                this.abilityCategory = param
+                this.abilityCategory.cards.sort((a, b) => a.level - b.level)
             }
             $('#characterSelectionModal').modal('hide')
             this.$forceUpdate()
@@ -52,17 +142,17 @@ var abilitiesManagement = {
                 this.chosenCardExchanger = param
             }
         },
-        addAbility: function(card) {   
+        addAbility: function(card) {
             card.duration = 0
             if (!this.abilitiesChosen.includes(card)) {
-                if (this.abilitiesChosen.length < this.abilityCategory.max) 
+                if (this.abilitiesChosen.length < this.abilityCategory.max)
                     this.abilitiesChosen.push(card)
                     this.cardsInHand.push(card)
             } else {
                 this.removeAbility(card)
             }
         },
-        acceptAbility: function(card) {   
+        acceptAbility: function(card) {
             card.duration = 0
             this.cardsInHand.push(card)
         },
@@ -75,7 +165,7 @@ var abilitiesManagement = {
         stopHidingAbility: function(abilityCategory)  {
             abilityCategory.hidden = false
             if (!this.classDisplayed.includes(abilityCategory.name)) {
-                this.classDisplayed.push(abilityCategory.name)                
+                this.classDisplayed.push(abilityCategory.name)
             }
             this.displayAbilities(abilityCategory)
         },
@@ -120,7 +210,7 @@ var abilitiesManagement = {
             this.initShortRest()
             this.rerolling = true
         },
-        rest: function() { 
+        rest: function() {
             //lose the chosen card
             indexOfCardToRemove = this.cardsDiscarded.indexOf(this.cardToLose);
             this.cardsDiscarded.splice(indexOfCardToRemove, 1);
@@ -134,10 +224,10 @@ var abilitiesManagement = {
             this.cardsDiscarded = []
             this.rerolling = false
             this.cardToLose = null
-                
+
             this.$forceUpdate()
         },
-        longRest: function() { 
+        longRest: function() {
             this.rest()
 
             this.turn ++
@@ -151,7 +241,7 @@ var abilitiesManagement = {
             })
 
             //idk why, but the modal wont close normally if the button has a :disabled attribute
-            $('#longRestModal').modal('hide')  
+            $('#longRestModal').modal('hide')
 
             if (this.cardsInHand.length <2) {
                 this.showRedAlert('You do not have enough cards in your hand to continue.')
@@ -169,8 +259,8 @@ var abilitiesManagement = {
             if (this.twoAbilitiesSelected.includes(card)) {
                 this.cancelCard(card)
             } else if (this.twoAbilitiesSelected.length < 2) {
-                this.twoAbilitiesSelected.push(card)                
-            }       
+                this.twoAbilitiesSelected.push(card)
+            }
         },
         cancelCard: function(card) {
             indexOfCardToRemove = this.twoAbilitiesSelected.indexOf(card)
@@ -219,23 +309,23 @@ var abilitiesManagement = {
             this.$forceUpdate()
         },
         useCard: function(card) {
-            card.numberOfTimesUsed ++     
-            this.$forceUpdate()       
+            card.numberOfTimesUsed ++
+            this.$forceUpdate()
         },
         keepAbilityOneTurn(card) {
-            card.duration = 1     
+            card.duration = 1
             this.cardsOnBoard.push(card)
-            
+
             indexOfCardToRemove = this.cardsDiscarded.indexOf(card)
             this.cardsDiscarded.splice(indexOfCardToRemove, 1)
             this.$forceUpdate()
         },
-        keepAbilityManyTurns(card) {    
+        keepAbilityManyTurns(card) {
             card.duration = -1
-            card.numberOfTimesUsed = 0            
+            card.numberOfTimesUsed = 0
 
             this.cardsOnBoard.push(card)
-            
+
             indexOfCardToRemove = this.cardsDiscarded.indexOf(card)
             this.cardsDiscarded.splice(indexOfCardToRemove, 1)
             this.$forceUpdate()
@@ -252,7 +342,7 @@ var abilitiesManagement = {
                     this.cardsOnBoard.splice(i, 1);
                 }
             }
-        }, 
+        },
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
                 if(this.abilitiesChosen.length == 0) {
@@ -267,15 +357,14 @@ var abilitiesManagement = {
                     } else {
                         this.playCard(card)
                     }
-                })   
-                this.twoAbilitiesSelected = []   
-                this.updateOnBoardCards()          
-                this.turn ++                
+                })
+                this.twoAbilitiesSelected = []
+                this.updateOnBoardCards()
+                this.turn ++
                 this.shortRestMode = false
                 this.$forceUpdate()
                 this.roundEndShuffle()
-            }            
+            }
         }
     }
 }
-
