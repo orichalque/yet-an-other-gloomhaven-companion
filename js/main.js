@@ -9,6 +9,7 @@ new Vue({
         hasOpenedXEnvelope: false,
         hasEnabledCardExchange: false,
         hasEnabledCurses: true,
+        hasEnabledSaveGameplayData: true,
         showSpoiler: false,
         showLockedClasses: false,
         version: 'vanilla',
@@ -146,10 +147,13 @@ new Vue({
             Cookies.set("hasEnabledCardExchange", JSON.stringify(this.hasEnabledCardExchange), { expires: 365})
             Cookies.set("hasOpenedXEnvelope", JSON.stringify(this.hasOpenedXEnvelope), { expires: 365})
             Cookies.set("hasEnabledCurses", JSON.stringify(this.hasEnabledCurses), { expires: 365})
+            Cookies.set("hasEnabledSaveGameplayData", JSON.stringify(this.hasEnabledSaveGameplayData), { expires: 365})
             Cookies.set("version", JSON.stringify(this.version), { expires: 365 })
             Cookies.set("level", JSON.stringify(this.level), { expires: 365 })
 
-            this.saveGamePlayData()
+            if (this.hasEnabledSaveGameplayData) {
+                this.saveGamePlayData()
+            }
 
             this.showGreenAlert("Data saved!")
         },
@@ -255,6 +259,11 @@ new Vue({
                 this.hasEnabledCurses = JSON.parse(curseEnabled)
             }
 
+            hasEnabledSaveGameplayDataCookie = Cookies.get("hasEnabledSaveGameplayData")
+            if (hasEnabledSaveGameplayDataCookie != null) {
+                this.hasEnabledSaveGameplayData = JSON.parse(hasEnabledSaveGameplayDataCookie)
+            }
+
             classNotHidden = Cookies.get("classDisplayed")
             if (classNotHidden != null) {
                 this.classDisplayed = JSON.parse(classNotHidden)
@@ -354,7 +363,9 @@ new Vue({
     beforeMount(){
         this.loadDatabase()
         this.loadData()
-        this.loadGamePlayData()
+        if (this.hasEnabledSaveGameplayData) {
+            this.loadGamePlayData()
+        }
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
             this.isMobile = true
         }
