@@ -8,8 +8,8 @@ var modifiersManagement = {
         /* Modifier information */
         modifiers : [],
         modifiersBase : [],
-        modifiersSpecial : [],        
-        modifierCategory: null,        
+        modifiersSpecial : [],
+        modifierCategory: null,
         modifiersChosen: [],
         modifiersDrawPile: [],
         specialModifiers : false,
@@ -22,6 +22,75 @@ var modifiersManagement = {
         hasEnabledModifierDisplay: false
     },
     methods: {
+        saveModifierGameplayData: function () {
+          Cookies.set("modifiersDrawPile", JSON.stringify(this.modifiersDrawPile), { expires: 365 })
+          Cookies.set("modifiersDiscardPile", JSON.stringify(this.modifiersDiscardPile), { expires: 365 })
+          Cookies.set("lastDrawnModifier", JSON.stringify(this.lastDrawnModifier), { expires: 365 })
+          Cookies.set("blessings", JSON.stringify(this.blessings), { expires: 365 })
+          Cookies.set("curses", JSON.stringify(this.curses), { expires: 365 })
+        },
+        loadModifierGamePlayData: function () {
+
+            // Load modifiers draw pile
+            modifiersDrawPileCookie = Cookies.get("modifiersDrawPile")
+            if (modifiersDrawPileCookie != null) {
+              var oldModifiersDrawPile = JSON.parse(modifiersDrawPileCookie);
+              if (oldModifiersDrawPile != null) {
+                  this.modifiersDrawPile = []
+                  oldModifiersDrawPile.forEach(modifier => {
+                      // Assumes that modifiersChosen is already loaded
+                      this.modifiersChosen.forEach(card => {
+                          if (card.name === modifier.name) {
+                              this.modifiersDrawPile.push(card)
+                          }
+                      })
+                  })
+              }
+            }
+
+            // Load modifiers discard pile
+            modifiersDiscardPileCookie = Cookies.get("modifiersDiscardPile")
+            if (modifiersDiscardPileCookie != null) {
+              var oldModifiersDiscardPile = JSON.parse(modifiersDiscardPileCookie);
+              if (oldModifiersDiscardPile != null) {
+                  this.modifiersDiscardPile = []
+                  oldModifiersDiscardPile.forEach(modifier => {
+                      // Assumes that modifiersChosen is already loaded
+                      this.modifiersChosen.forEach(card => {
+                          if (card.name === modifier.name) {
+                              this.modifiersDiscardPile.push(card)
+                          }
+                      })
+                  })
+              }
+            }
+
+            // Load last drawn modifier
+            lastDrawnModifierCookie = Cookies.get("lastDrawnModifier")
+            if (lastDrawnModifierCookie != null) {
+              var oldLastDrawnModifier = JSON.parse(lastDrawnModifierCookie);
+              if (oldLastDrawnModifier != null) {
+                  this.lastDrawnModifier = null
+                  // Assumes that modifiersChosen is already loaded
+                  this.modifiersChosen.forEach(card => {
+                      if (card.name === oldLastDrawnModifier.name) {
+                          this.lastDrawnModifier = card
+                      }
+                  })
+              }
+            }
+
+            // Load number of blessings/curses
+            blessingsCookie = Cookies.get("blessings")
+            if (blessingsCookie != null)
+                this.blessings = JSON.parse(blessingsCookie)
+
+            cursesCookie = Cookies.get("curses")
+            if (cursesCookie != null)
+                this.curses = JSON.parse(cursesCookie)
+
+            this.$forceUpdate()
+        },
         displayModifiers: function(param) {
             this.className = param
             if (this.modifierCategory == param) {
@@ -29,25 +98,25 @@ var modifiersManagement = {
             } else {
                 this.modifierCategory = param
             }
-        },       
-        addModifier: function(card) {   
+        },
+        addModifier: function(card) {
             if (!this.modifiersChosen.includes(card)) {
                 this.modifiersChosen.push(card)
                 this.modifiersDrawPile.push(card)
 
                 if (this.checkIfCurse(card)) this.curses ++
-                if (this.checkIfBlessing(card)) this.blessings ++    
+                if (this.checkIfBlessing(card)) this.blessings ++
 
             } else {
                 this.removeModifier(card)
-            }            
+            }
         },
         removeModifier: function(card) {
             this.modifiersChosen = this.modifiersChosen.filter(c => c != card)
             this.modifiersDrawPile = this.modifiersDrawPile.filter(c => c != card)
 
             if (this.checkIfCurse(card)) this.curses --
-            if (this.checkIfBlessing(card)) this.blessings --            
+            if (this.checkIfBlessing(card)) this.blessings --
         },
         drawModifier: function() {
             var randomint = getRandomInt(this.modifiersDrawPile.length)
@@ -59,9 +128,9 @@ var modifiersManagement = {
             if (this.checkIfCurseOrBless(this.lastDrawnModifier)) {
                 this.removeModifier(this.lastDrawnModifier)
             } else {
-                this.modifiersDrawPile.splice(0,1)            
+                this.modifiersDrawPile.splice(0,1)
             }
-            
+
         },
         checkIfNull: function(card) {
             return (card && card.name === nullName) || false
@@ -101,7 +170,7 @@ var modifiersManagement = {
             }else{
                 this.specialModifiers = true
             }
-        }, 
+        },
         switchModifierClass: function () {
             this.modifierCategory = null
             this.className = ''
@@ -112,7 +181,7 @@ var modifiersManagement = {
                 .find(element => element.name == blessingName)
                 .cards
                 .filter(element => !this.modifiersDrawPile.includes(element))
-            
+
             if(availableBlessings.length > 0) this.addModifier(availableBlessings[0])
         },
         addCurse: function() {
@@ -120,14 +189,14 @@ var modifiersManagement = {
                 .find(element => element.name == curseName)
                 .cards
                 .filter(element => !this.modifiersDrawPile.includes(element))
-        
+
             if(availableCurses.length > 0) this.addModifier(availableCurses[0])
         },
         resetModifiers: function() {
             this.shuffleModifiersDeck()
-            this.modifiersDrawPile.map(card => {if(this.checkIfCurseOrBless(card)) this.removeModifier(card)})
+            this.modifiersDrawPile.forEach(card => {if(this.checkIfCurseOrBless(card)) this.removeModifier(card)})
             this.blessings = this.getBlessings()
-            this.curses = this.getCurses()            
+            this.curses = this.getCurses()
         },
         updateModifierPosition: function(oldIndex, newIndex) {
             this.modifiersDrawPile.move(oldIndex, newIndex)

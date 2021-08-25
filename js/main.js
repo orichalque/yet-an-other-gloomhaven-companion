@@ -215,20 +215,17 @@ new Vue({
                     oldModifiers.forEach(modifier => {
 
                         this.modifiersBase.forEach(cat => {
-                            cat.cards.forEach(modif => {
-                                if (modif.name === modifier.name) {
-                                    this.modifiersChosen.push(modif)
-                                    this.modifiersDrawPile.push(modif)
+                            cat.cards.forEach(card => {
+                                if (card.name === modifier.name) {
+                                    this.modifiersChosen.push(card)
                                 }
                             })
                         })
 
-
                         this.modifiersSpecial.forEach(catModif => {
-                            catModif.cards.forEach(modif => {
-                                if (modif.name === modifier.name) {
-                                    this.modifiersChosen.push(modif)
-                                    this.modifiersDrawPile.push(modif)
+                            catModif.cards.forEach(card => {
+                                if (card.name === modifier.name) {
+                                    this.modifiersChosen.push(card)
                                 }
                             })
                         })
@@ -237,13 +234,10 @@ new Vue({
                             catModif.cards.forEach(card => {
                                 if (card.name === modifier.name) {
                                     this.modifiersChosen.push(card)
-                                    this.modifiersDrawPile.push(card)
                                 }
                             })
                         })
                     })
-
-                    this.modifiersDrawPile = this.modifiersChosen.slice()
                 }
 
             }
@@ -282,6 +276,7 @@ new Vue({
             Cookies.set("turn", JSON.stringify(this.turn), { expires: 365 })
             this.saveAbilityGameplayData()
             this.saveBattleGoalsGameplayData()
+            this.saveModifierGameplayData()
         },
         loadGamePlayData: function () {
             theTurn = Cookies.get("turn")
@@ -290,6 +285,7 @@ new Vue({
             this.loadAbilityGameplayData()
             this.loadBattleGoalsGameplayData()
             this.loadGearGameplayData()
+            this.loadModifierGamePlayData()
         },
         getAcceptedCookie: function() {
             return Cookies.get('accepted')
