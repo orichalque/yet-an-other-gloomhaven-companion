@@ -92,6 +92,7 @@
                   <span v-if="!hasEnabledCurses">Quick curse</span>
                   <i v-else>Quick curse</i>
                 </a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" v-on:click="hasEnabledSaveGameplayData = !hasEnabledSaveGameplayData">
                   <span v-if="!hasEnabledSaveGameplayData">Gameplay data saving</span>
                   <i v-else>Gameplay data saving</i>
@@ -859,6 +860,15 @@
               <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/keep-on-board.png"/>: Persistent bonus</li>
               <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/keep-on-board-one-turn.png"/>: Round bonus</li>
               <li class="row">+1: Use persistent item or ability </li>
+            </ul>
+            <hr/>
+            <h3>Options</h3>
+            <ul class="container">
+              <li>Set expansion : Access to new classes</li>
+              <li>Accept card : Display a button to add a card from another class to your hand</li>
+              <li>Sort modifiers : Display a button to sort the first X modifiers of your draw pile</li>
+              <li>Quick curse : Display buttons to add a curse or a blessing to your modifiers draw pile</li>
+              <li>Gameplay data saving : Toggle the saving of the state of your board (abilities, modifiers, gear and battle goals)</li>
             </ul>
           </div>
         </div>
