@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="A deckbuilder for managing and playing Gloomhaven">
   <meta name="keywords" content="gloomhaven,boardGame,deckbuilding,gloomhaven deck,gloomhaven deckbuilding,gloomhaven deckbuilder, frosthaven deckbuilder">
   <meta name="application-name" content="Gloomhaven Deckbuilder" />
@@ -68,7 +68,7 @@
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'enhancement'}">
               <a class="nav-link" href="#" v-on:click="setMenu('enhancement')">Enhancement</a>
-            </li>            
+            </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
               <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('modifiers')">Modifiers</a>
             </li>
@@ -92,19 +92,23 @@
                   <span v-if="!hasEnabledCurses">Quick curse</span>
                   <i v-else>Quick curse</i>
                 </a>
+                <a class="dropdown-item" href="#" v-on:click="hasEnabledSaveGameplayData = !hasEnabledSaveGameplayData">
+                  <span v-if="!hasEnabledSaveGameplayData">Gameplay data saving</span>
+                  <i v-else>Gameplay data saving</i>
+                </a>
               </div>
             </li>
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
               <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">                
-                <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>                              
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
                 <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>
                 <form class="dropdown-item" id="donate" class="dropdown-item" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                   <input type="hidden" name="cmd" value="_donations" />
                   <input type="hidden" name="business" value="QDHSY8LBF3WRY" />
                   <input type="hidden" name="currency_code" value="EUR" />
-                  <input type="hidden" name="lc" value="en_US">           
-                  <a href="#" alt="Donate with PayPal button" onclick="document.getElementById('donate').submit()" title="PayPal - The safer, easier way to pay online!">Donate</a>                  
+                  <input type="hidden" name="lc" value="en_US">
+                  <a href="#" alt="Donate with PayPal button" onclick="document.getElementById('donate').submit()" title="PayPal - The safer, easier way to pay online!">Donate</a>
                 </form>
               </div>
             </li>
@@ -141,7 +145,7 @@
                       game</button></div>
                   <div class="col btn-group" role="group" v-if="className === 'bb'">
                     <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'slow'}" v-on:click="specialClassMode = 'slow'; specialClassValue++;">Slow</button><button class="btn btn-outline-secondary">{{ specialClassValue }}</button><button v-on:click="specialClassValue > 0 ? specialClassMode = 'fast' : ''; specialClassValue > 0 ? specialClassValue-- : '';" class="btn btn-outline-secondary" :class="{active: specialClassMode === 'fast'}">Fast</button>
-                  </div> 
+                  </div>
                   <div class="col btn-group" role="group"  v-if="className === 'ge'">
                     <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
                   </div>
@@ -154,19 +158,19 @@
                     <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in cardsInHand" :key="ability.image">
                       <div class="col card-wrap-play">
                           <img v-bind:src="'data/'+ability.image"
-                            v-bind:class="[{picked: twoAbilitiesSelected.includes(ability)}]" 
+                            v-bind:class="[{picked: twoAbilitiesSelected.includes(ability)}]"
                             v-on:click="pickCard(ability)" class="image rounded">
                           </img>
-                          
+
                           <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
                             <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                              <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                              <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
                             </div>
                           </span>
-                          <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                          <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">
                             <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                              <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                            </div>                                     
+                              <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                            </div>
                           </span>
 
                           <!-- On-cards buttons -->
@@ -190,13 +194,13 @@
                         <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
                         <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
                           </div>
                         </span>
-                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                          </div>                                     
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                          </div>
                         </span>
 
                         <!-- On-cards buttons -->
@@ -228,13 +232,13 @@
                         <img v-bind:src="'data/'+ability.image"  class="image rounded played"></img>
                         <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
                           </div>
                         </span>
-                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                          </div>                                     
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                          </div>
                         </span>
                       <!-- On-cards buttons -->
                       <div class="iconContainer">
@@ -267,13 +271,13 @@
                         <img v-bind:src="'data/'+ability.image"  class="image rounded destroyed"></img>
                         <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
                           </div>
                         </span>
-                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">             
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                          </div>                                     
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                          </div>
                         </span>
                       <!-- On-cards buttons -->
                       <div class="iconContainer">
@@ -297,7 +301,7 @@
               <h3>Modifiers</h3>
               <!-- Curse / Blessing -->
               <div v-if="hasEnabledCurses" class="row no-gutters" style="padding-left: 0.3em;">
-                <div class="col-auto">    
+                <div class="col-auto">
                   <button v-on:click="addBlessing()" class="btn btn-sm" style="outline: none; box-shadow: none;">
                     <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="smallimage rounded" />
                     <div v-if="blessings > 0" class="onCardNoHover">
@@ -305,7 +309,7 @@
                     </div>
                     <div v-else class="onCardHover">
                       <h3>Blessing </h3>
-                    </div>                      
+                    </div>
                   </button>
                 </div>
                 <div class="col-auto">
@@ -316,10 +320,10 @@
                     </div>
                     <div v-else class="onCardHover">
                       <h3>Curse </h3>
-                    </div>                      
+                    </div>
                   </button>
                 </div>
-                
+
               </div>
               <!-- BASE DECK BACK -->
               <div class="row no-gutters">
@@ -403,7 +407,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer" v-for="goal in battleGoalsDrawn">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+goal.image" class="smallimage rounded"></img>
@@ -419,7 +423,7 @@
                 <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer" v-for="goal in battleGoalPicked">
                   <div class="col-sm mt-2" >
                     <img v-bind:src="'data/'+goal.image" class="smallimage rounded"></img>
-                    
+
                     <div class="iconContainer">
                       <div class="topIconContainer">
                         <button type="button" class="smallIcon btn btn-light mx-auto"
@@ -457,7 +461,7 @@
                   <input type="button" data-toggle="modal" data-target="#perksModal" class="col btn btn-secondary" value="Show perks"/>
                   <input type="button" data-toggle="modal" data-target="#characterSelectionModal" class="col btn btn-secondary" value="Switch class"/>
                 </div>
-              </div>              
+              </div>
               <div v-for="modifier in modifiers">
                 <div class="row" v-if="modifier.name.substring(3,5) == modifierCategory">
                   <div class="modifierContainer" v-for='card in modifier.cards'>
@@ -500,7 +504,7 @@
                     </div>
                   </div>
                 </div>
-              </div> 
+              </div>
             </div>
 
             <!-- FINAL DECK -->
@@ -634,9 +638,9 @@
           <div class="row" >
             <div class="col-md-9 mt-3 container-fluid">
               <div class="row">
-                <div class="col-lg-8">                  
+                <div class="col-lg-8">
                   <div class="container" v-if="cardToEnhance != null && enhancementMode != ''">
-                    
+
                     <div class="row mt-5">
                       <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'base' ? enhancementDisplay = 'base' : enhancementDisplay = ''">+1    </button>
                       <div class="col-lg-10">
@@ -648,13 +652,13 @@
                       <div class="col-lg-10">
                         <button v-on:click="addEnhancement(buff)" v-if="enhancementDisplay === 'buff'" v-for="buff in buffEnhancements" class="btn btn-secondary">{{ buff.name }}</button>
                       </div>
-                    </div>                  
+                    </div>
                     <div class="row">
                       <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'debuff' ? enhancementDisplay = 'debuff' : enhancementDisplay = ''">Debuffs </button>
                       <div class="col-lg-10">
                         <button v-on:click="addEnhancement(debuff)" v-if="enhancementDisplay === 'debuff'" v-for="debuff in debuffEnhancements" class="btn btn-secondary">{{ debuff.name }}</button>
                       </div>
-                    </div>                  
+                    </div>
                     <div class="row">
                       <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'elem' ? enhancementDisplay = 'elem' : enhancementDisplay = ''">Elements</button>
                       <div class="col-lg-10">
@@ -662,24 +666,24 @@
                       </div>
                     </div>
                     <div class="row">
-                      <button v-on:click="addEnhancement(jump)" class="col-2 btn btn-secondary" v-on:click="enhancementDisplay = 'jump'">Jump    </button>                    
+                      <button v-on:click="addEnhancement(jump)" class="col-2 btn btn-secondary" v-on:click="enhancementDisplay = 'jump'">Jump    </button>
                     </div>
                     <div class="row">
-                      <button v-on:click="addEnhancement(hex)" class="col-2 btn btn-secondary" v-on:click="enhancementDisplay = 'hex'">Hex     </button>                                                       
-                    </div>                         
-                  </div>                    
+                      <button v-on:click="addEnhancement(hex)" class="col-2 btn btn-secondary" v-on:click="enhancementDisplay = 'hex'">Hex     </button>
+                    </div>
+                  </div>
                 </div>
-                
+
                 <div class="col-lg-4" >
                   <div class="card-wrap">
                     <div >
-                      <img v-if="cardToEnhance != null" v-bind:id="cardToEnhance.xws" v-bind:src="'data/'+cardToEnhance.image"  class="biggerImage rounded"/>  
+                      <img v-if="cardToEnhance != null" v-bind:id="cardToEnhance.xws" v-bind:src="'data/'+cardToEnhance.image"  class="biggerImage rounded"/>
                       <a href="#" style="color: black;" v-on:click="enhancementMode != 'bottom' ? enhancementMode = 'bottom' : enhancementMode = ''">
                         <h3 class="card-caption">Upgrade bottom</h3>
-                      </a> 
+                      </a>
                       <span v-if="cardToEnhance != null && cardToEnhance.bottom != null && cardToEnhance.bottom.length > 0"style="padding-top: 30%"  class="enhancement">
                         <a v-for="enhancement in cardToEnhance.bottom" href="#" v-on:click="removeEnhancement(cardToEnhance.bottom, enhancement)">
-                          <img class="float-right enhancementIcon" :src="'data/'+enhancement.image"/> 
+                          <img class="float-right enhancementIcon" :src="'data/'+enhancement.image"/>
                         </a>
                       </span>
                       <a href="#" style="color: black;" v-on:click="enhancementMode != 'top' ? enhancementMode = 'top' : enhancementMode = ''">
@@ -687,14 +691,14 @@
                       </a>
                       <span v-if="cardToEnhance != null && cardToEnhance.top != null && cardToEnhance.top.length > 0" style="padding-top: 30%" class="enhancement above">
                         <a v-for="enhancement in cardToEnhance.top" href="#" v-on:click="removeEnhancement(cardToEnhance.top, enhancement)">
-                          <img class="float-right enhancementIcon" :src="'data/'+enhancement.image"/> 
+                          <img class="float-right enhancementIcon" :src="'data/'+enhancement.image"/>
                         </a>
                       </span>
-                    </div>                  
-                  </div>                
+                    </div>
+                  </div>
                 </div>
               </div>
-             
+
             </div>
             <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3 bg-light border">
               <div class="centerAbilities">
@@ -705,10 +709,10 @@
                 </div>
               </div>
             </div>
-  
+
           </div>
         </div>
-        
+
       </div> <!-- End of enhancement -->
 
     </div> <!-- main container ends -->
@@ -748,7 +752,7 @@
                 <input type="hidden" name="cmd" value="_donations" />
                 <input type="hidden" name="business" value="QDHSY8LBF3WRY" />
                 <input type="hidden" name="currency_code" value="EUR" />
-                <input type="hidden" name="lc" value="en_US">                
+                <input type="hidden" name="lc" value="en_US">
                 <input type="image" src="data/icons/btn_donate_SM.gif" name="submit"
                   title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
               </form>
@@ -813,7 +817,7 @@
             </div>
 
             <button data-toggle="collapse" v-if="version === 'vanilla'" style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
-          
+
             <div v-if="showLockedClasses" class="row collapse" id="lockedClasses">
               <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
                 <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
@@ -936,8 +940,8 @@
                 v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
                 <h3>{{ cardsToDisplay }}</h3>
               </button>
-              
-              <div id="sortableModifiers" class="row mt-3 align-items-end"> 
+
+              <div id="sortableModifiers" class="row mt-3 align-items-end">
                 <!--
                 <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
                   <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
@@ -948,7 +952,7 @@
                   <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
                 </div>
               </div>
-              
+
           </div>
 
           <div class="modal-footer">
@@ -975,13 +979,13 @@
 
                     <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0" class="enhancement above">
                       <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
                       </div>
                     </span>
-                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">             
+                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">
                       <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                      </div>                                     
+                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                      </div>
                     </span>
                 </div>
                 <div style="padding-top: 10px;">
@@ -997,19 +1001,19 @@
 
                       <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0" class="enhancement above">
                         <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
                         </div>
                       </span>
-                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">             
+                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">
                         <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                        </div>                                     
+                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                        </div>
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>  
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -1035,13 +1039,13 @@
 
                     <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0" class="enhancement above">
                       <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
                       </div>
                     </span>
-                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">             
+                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">
                       <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                      </div>                                     
+                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                      </div>
                     </span>
                 </div>
                 <div v-else>Select a card to lose</div>
@@ -1057,19 +1061,19 @@
 
                       <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0" class="enhancement above">
                         <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/> 
+                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
                         </div>
                       </span>
-                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">             
+                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">
                         <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>                           
-                        </div>                                     
+                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                        </div>
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>  
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -1083,7 +1087,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body rounded alert-info">
-            {{ alert }}   
+            {{ alert }}
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -1098,7 +1102,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-body rounded alert-danger">
-              {{ alert }}   
+              {{ alert }}
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
