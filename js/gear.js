@@ -67,7 +67,6 @@ var gearManagement = {
             this.$forceUpdate()
         },
         useItem: function(item) {
-            console.log(item.used)
             if (item.used == null)
                 item.used = 1
             else

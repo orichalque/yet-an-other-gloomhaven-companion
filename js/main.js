@@ -55,7 +55,6 @@ new Vue({
                 })
             })
             this.modifiersDrawPile = this.modifiersChosen.slice()
-            this.allGear = allItems
             this.battleGoals = battle_goals
         },
         loadDatabaseVersion: function(param){
@@ -74,6 +73,10 @@ new Vue({
                 case 'frosthaven':
                     console.log("loaded frosthaven")
                     this.loadDatabaseFrosthaven()
+                    break
+                case 'crimsonscales':
+                    console.log("loaded crimson scales")
+                    this.loadDatabaseCrimsonScales()
                     break
                 default:
                     console.log("loaded vanilla by default")
@@ -98,6 +101,12 @@ new Vue({
             this.modifiers = attack_modifiers_categories_jotl
             this.abilities = abilities_jotl
             this.allGear = allItems_jotl
+        },
+        loadDatabaseCrimsonScales: function() {
+            this.classNames = classNames_cs
+            this.modifiers = attack_modifiers_categories_cs
+            this.abilities = abilities_cs
+            this.allGear = allItems_cs
         },
         loadXEnvelope: function() {
             if (! this.hasOpenedXEnvelope) {
