@@ -818,7 +818,6 @@
                 <input type="image" class="smallerImage rounded" v-bind:class="{selected: abilityCategory != null && abilityCategory != ability}" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
               </div>
             </div>
-
             <button data-toggle="collapse" v-if="version === 'vanilla' || version === 'crimsonscales'" style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
 
             <div v-if="showLockedClasses" class="row collapse" id="lockedClasses">
