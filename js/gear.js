@@ -4,7 +4,9 @@ var gearManagement = {
         gearCategory : null,
         gearChosen: [],
         gearAlertMessage: "",
-        idToAdd: 0
+        idToAdd: null,
+        filteredGear: [],
+        gearSearchExp: ""
     },
     methods: {
         loadGearGameplayData: function () {
@@ -86,6 +88,22 @@ var gearManagement = {
         },
         updateGearPosition: function(oldIndex, newIndex) {
             this.gearChosen.move(oldIndex, newIndex)
+        },
+        filter: function(evt) {
+            
+            this.filteredGear = []
+            this.gearCategory = null
+
+            if (this.gearSearchExp != "" && this.gearSearchExp != null) {
+                this.allGear.forEach(cat => {
+                    cat.items.forEach(item => {
+                        if (item.name.includes(this.gearSearchExp)) {
+                            this.filteredGear.push(item);
+                        }
+                    })
+                })
+            }
+            
         }
     }
 }
