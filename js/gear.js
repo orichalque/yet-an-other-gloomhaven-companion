@@ -89,7 +89,7 @@ var gearManagement = {
         updateGearPosition: function(oldIndex, newIndex) {
             this.gearChosen.move(oldIndex, newIndex)
         },
-        filter: function(evt) {
+        filterGear: function(evt) {
             
             this.filteredGear = []
             this.gearCategory = null
