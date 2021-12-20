@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="A deckbuilder for managing and playing Gloomhaven">
-  <meta name="keywords" content="gloomhaven,boardGame,deckbuilding,gloomhaven deck,gloomhaven deckbuilding,gloomhaven deckbuilder, frosthaven deckbuilder">
+  <meta name="keywords" content="gloomhaven,boardGame,deckbuilding,gloomhaven deck,gloomhaven deckbuilding,gloomhaven deckbuilder, frosthaven deckbuilder, crimson scales deckbuilder">
   <meta name="application-name" content="Gloomhaven Deckbuilder" />
 
   <title>Gloomhaven Deckbuilder</title>
@@ -783,6 +783,8 @@
               v-on:click="loadDatabaseVersion('jotl')">Jaws of the Lion</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'frosthaven'}"
               v-on:click="loadDatabaseVersion('frosthaven')">Frosthaven</button>
+            <button class="btn btn-secondary" v-bind:class="{active: version === 'crimsonscales'}"
+              v-on:click="loadDatabaseVersion('crimsonscales')">Crimson Scales</button>
             <hr />
             <button class="btn btn-secondary" data-toggle="collapse" data-target="#spoilers" aria-expanded="false" aria-controls="spoilers">Show spoilers</button>
 
@@ -816,8 +818,7 @@
                 <input type="image" class="smallerImage rounded" v-bind:class="{selected: abilityCategory != null && abilityCategory != ability}" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
               </div>
             </div>
-
-            <button data-toggle="collapse" v-if="version === 'vanilla'" style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
+            <button data-toggle="collapse" v-if="version === 'vanilla' || version === 'crimsonscales'" style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
 
             <div v-if="showLockedClasses" class="row collapse" id="lockedClasses">
               <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
@@ -1143,6 +1144,7 @@
   <script src="js/database_common.js"></script>
   <script src="js/database_jotl.js"></script>
   <script src="js/database_frosthaven.js"></script>
+  <script src="js/database_cs.js"></script>
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>

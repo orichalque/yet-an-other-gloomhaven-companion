@@ -145,9 +145,12 @@ var abilitiesManagement = {
         addAbility: function(card) {
             card.duration = 0
             if (!this.abilitiesChosen.includes(card)) {
-                if (this.abilitiesChosen.length < this.abilityCategory.max)
+                if (this.abilitiesChosen.length < this.abilityCategory.max) {
                     this.abilitiesChosen.push(card)
                     this.cardsInHand.push(card)
+                } else {
+                    this.showRedAlert('You have selected the maximum number of ability cards this class can take into battle.')
+                }
             } else {
                 this.removeAbility(card)
             }
