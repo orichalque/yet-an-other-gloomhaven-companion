@@ -77,6 +77,13 @@ new Vue({
                 case 'crimsonscales':
                     console.log("loaded crimson scales")
                     this.loadDatabaseCrimsonScales()
+                    this.allGear[0].items.forEach( g => {
+                        g.name = g.name.replace(/\d+/g, '');
+                        g.name = g.name.replace('-', '')
+                        g.name = g.name.replaceAll('-', ' ');                    
+
+                    })
+                    console.log(JSON.stringify(this.allGear))
                     break
                 default:
                     console.log("loaded vanilla by default")
