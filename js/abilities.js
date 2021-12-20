@@ -21,7 +21,9 @@ var abilitiesManagement = {
         cardsOnBoard : [],
         className: '',
         chosenCardExchanger: null,
-        rerolling : false
+        rerolling : false,
+        abilitySearchExp: "",
+        filteredAbilities: []
     },
     computed: {
         isRestDisabled: function() {
@@ -345,6 +347,14 @@ var abilitiesManagement = {
                     this.cardsOnBoard.splice(i, 1);
                 }
             }
+        },
+        filterAbilities: function(evt) {
+            this.filteredAbilities = []
+            this.abilityCategory.cards.forEach(c => {
+                if (c.name.includes(this.abilitySearchExp)) {
+                    this.filteredAbilities.push(c);
+                }
+            });
         },
         play: function() {
             if (this.twoAbilitiesSelected.length != 2) {
