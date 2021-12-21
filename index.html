@@ -47,8 +47,8 @@
 
 </head>
 
-<body>
-  <main id="app" class="wrapper" :class="dark ? 'bg-dark' : 'bg-light'">
+<body class="darkbody">
+  <main id="app" class="wrapper" >
     <!-- Navigation -->
     <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top py-0"
       :class="dark ? ['navbar-light', 'bg-light'] : ['navbar-dark', 'bg-dark']">
@@ -88,7 +88,7 @@
               <a class="nav-link dropdown-toggle" :class="dark ? 'text-dark' : 'text-light'" id="navbarDropdown2"
                 data-toggle="dropdown" role="button" aria-expanded="false" href="#">Options</a>
               <div class="dropdown-menu" :class="dark ? 'text-dark' : 'text-light'" aria-labelledby="navbarDropdown2">
-                <a class="dropdown-item" :class="dark ? 'text-dark' : 'text-light'" data-target="#versionModal"
+                <a class="dropdown-item" data-target="#versionModal"
                   data-toggle="modal" href="#">Set expansion</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" v-on:click="hasEnabledCardExchange = !hasEnabledCardExchange">
@@ -102,6 +102,11 @@
                 <a class="dropdown-item" href="#" v-on:click="hasEnabledCurses = !hasEnabledCurses">
                   <span v-if="!hasEnabledCurses">Quick curse</span>
                   <i v-else>Quick curse</i>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" v-on:click="swapMode()">
+                  <span v-if="!dark">Night mode</span>
+                  <i v-else>Night mode</i>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" v-on:click="hasEnabledSaveGameplayData = !hasEnabledSaveGameplayData">
@@ -147,7 +152,7 @@
             </div>
 
             <!-- left side of the play screen-->
-            <div class="col-lg-7 border-right" v-if="abilitiesChosen.length > 0">
+            <div class="col-lg-7 border-right" :class="dark ? 'border-light' : 'border-dark'"  v-if="abilitiesChosen.length > 0">
               <div class="container">
                 <div class="row mt-3">
                   <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary"
@@ -339,7 +344,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-7 border-right" v-else id="abilitiesSection">
+            <div class="col-lg-7 border-right" :class="dark ? 'border-light' : 'border-dark'" v-else id="abilitiesSection">
               <p :class="dark ? 'text-light' : 'text-dark'">Build your deck in the <a href="#"
                   :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal"
                   v-on:click="setMenu('abilities')">Abilities</a> section first !</p>
@@ -407,7 +412,7 @@
 
               </div>
 
-              <hr :class="dark ? 'border-light' : 'border-white'"/>
+              <hr :class="dark ? 'border-light' : 'border-dark'"/>
 
               <h3 :class="dark ? 'text-light' : 'text-dark'">Gear</h3>
 
@@ -441,7 +446,7 @@
                 </div>
               </div>
 
-              <hr :class="dark ? 'border-light' : 'border-white'"/>
+              <hr :class="dark ? 'border-light' : 'border-dark'"/>
 
               <h3 :class="dark ? 'text-light' : 'text-dark'">Battle Goals</h3>
 
@@ -585,7 +590,7 @@
               <button v-if="dark" v-for='theLevel in 9' class="btn" v-bind:class="[{'btn-light': theLevel == level}, {'btn-dark': theLevel != level}]" v-on:click="level = theLevel">
                 <h3>{{ theLevel }}</h>
               </button>
-              <button v-else v-for='theLevel in 9' class="btn" v-bind:class="[{'btn-dark': theLevel == level}, {'btn-light': theLevel != level}]" v-on:click="level = theLevel">
+              <button v-if="!dark" v-for='theLevel in 9' class="btn" v-bind:class="[{'btn-dark': theLevel == level}, {'btn-light': theLevel != level}]" v-on:click="level = theLevel">
                 <h3>{{ theLevel }}</h>
               </button>
               <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
@@ -594,7 +599,7 @@
             </div>
             <div class="input-group col-lg-2 border" :class="dark ? 'border-light' : 'border-dark'" >              
               <input v-if="dark" class="border-0 text-light darkInputText" style="outline: none; "  type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
-              <input v-else class="border-0 text-dark lightInputText" style="outline: none; "  type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
+              <input v-if="!dark" class="border-0 text-dark lightInputText" style="outline: none; "  type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
             </div>
           </div>
           <div v-if='abilityCategory != null' class="col-lg-3 alignCenter" :class="dark ? 'text-light' : 'text-dark'" >
@@ -718,12 +723,12 @@
         </div>
         <div v-else>
           <div class="row">
-            <div class="col-md-9 border">
+            <div class="col-md-9 border" :class="dark ? 'border-light' : 'border-dark'" >
               <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance == null">Choose a card to upgrade</h3>
               <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance != null && enhancementMode == ''">Select the part of the card to upgrade</h3>
               <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
             </div>
-            <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
+            <div v-if='abilityCategory != null' class="col-md-3 border alignCenter" :class="dark ? 'border-light' : 'border-dark'" >
               <h3 :class="dark ? 'text-light' : 'text-dark'">Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
             </div>
             <div v-else class="col-md-3 border-bottom border-top border-right border-left alignCenter">

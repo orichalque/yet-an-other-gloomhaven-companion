@@ -435,19 +435,30 @@ h4, b {
 }
 
 .darkInputText::placeholder {
-  color: #f8f9fa;
+  color: #adaeaf;
 }
 
 .darkInputText{
+  color: #343a40;
   background-color: #343a40;
+
 }
 
 .lightInputText {
   color: #f8f9fa;
+  background-color: #f8f9fa;
 }
 
 .lightInputText::placeholder {
-  color: #343a40;
+  color: #8d8d91;
+}
+
+.darkbody{
+  background-color: #343a40;
+}
+
+.lightbody{
+  background-color: #f8f9fa;
 }
 
 [v-cloak] {
