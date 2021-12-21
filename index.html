@@ -156,17 +156,17 @@
               <div class="container">
                 <div class="row mt-3">
                   <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary"
-                      :class="dark ? 'btn-light' : 'btn-dark'">Play
+                      :class="dark ? 'btn-light' : ''">Play
                       cards</button></div>
                   <div class="col"><button v-on:click="initShortRest()" class="btn btn-block btn-outline-secondary"
-                      :class="dark ? 'btn-light' : 'btn-dark'" data-toggle="modal" data-target="#shortRestModal"
+                      :class="dark ? 'btn-light' : ''" data-toggle="modal" data-target="#shortRestModal"
                       :disabled='isRestDisabled'>Short rest</button></div>
                   <div class="col"><button v-on:click="initRest()" data-toggle="modal" data-target="#longRestModal"
                       :disabled='isRestDisabled' class="btn btn-block btn-outline-secondary"
-                      :class="dark ? 'btn-light' : 'btn-dark'">Long
+                      :class="dark ? 'btn-light' : ''">Long
                       rest</button></div>
                   <div class="col">
-                    <button v-on:click="newGame()" class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : 'btn-dark'">New game</button>
+                    <button v-on:click="newGame()" class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : ''">New game</button>
                   </div>
                   <div class="col btn-group" role="group" v-if="className === 'bb'">
                     <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'slow'}" v-on:click="specialClassMode = 'slow'; specialClassValue++;">Slow</button>
@@ -179,11 +179,11 @@
                     <button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
                   </div>
                   <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal"
-                      data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : 'btn-dark'">Accept card</button>
+                      data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : ''">Accept card</button>
                   </div>
                   <div class="col" v-if="hasEnabledModifierDisplay"><button v-on:click="updateModifiersDraggable()"
                       data-toggle="modal" data-target="#sortModifierModal"
-                      class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : 'btn-dark'">Sort modifiers</button></div>
+                      class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : ''">Sort modifiers</button></div>
                 </div>
 
                 <div v-if="cardsInHand.length>0">
@@ -514,8 +514,8 @@
                   <h3 :class="dark ? 'text-light' : 'text-dark'">{{ classNames[className] || 'Class' }} </h3>
                 </div>
                 <div class="col-lg-7 row">
-                  <input type="button" data-toggle="modal" data-target="#perksModal" class="col btn btn-secondary"
-                    value="Show perks" :class="dark ? 'btn-light' : 'btn-dark'" />
+                  <input type="button" data-toggle="modal" data-target="#perksModal" class="col btn btn-secondary mr-2"
+                    value="Show perks" :class="dark ? 'btn-light' : 'btn-dark'" /> 
                   <input type="button" data-toggle="modal" data-target="#characterSelectionModal"
                     class="col btn btn-secondary" value="Switch class" :class="dark ? 'btn-light' : 'btn-dark'"/>
                 </div>
@@ -534,7 +534,7 @@
             <!-- SPECIAL MODIFIERS FRONT -->
             <div class="col-md-3 border-right border-left">
               <div class="row">
-                <h3 :class="dark ? 'text-light' : 'text-dark'">Special Modifier Deck</h3>
+                <h3 class="ml-3" :class="dark ? 'text-light' : 'text-dark'">Special Modifier Deck</h3>
               </div>
               <div v-for="modifier in modifiersSpecial">
                 <div class="row">
@@ -551,7 +551,7 @@
             <!-- BASE DECK FRONT -->
             <div class="col-md-3 border-right">
               <div class="row">
-                <h3 :class="dark ? 'text-light' : 'text-dark'">Base Deck</h3>
+                <h3 class="ml-3" :class="dark ? 'text-light' : 'text-dark'">Base Deck</h3>
               </div>
               <div v-for="modifier in modifiersBase">
                 <div class="row">
@@ -585,8 +585,8 @@
       <div class="col-lg-12 container-fluid" v-if="menu == 'abilities'">
         <!-- PER CATEGORY CARDS -->
         <div class="row " >
-          <div class="col-lg-9 row justify-content-between">
-            <div class="col-lg-6">
+          <div class="col-lg-9 row">
+            <div class="col-lg-9">
               <h5 style="display: inline;" :class="dark ? 'text-light' : 'text-dark'">Character Level:</h5>
               <button v-if="dark" v-for='theLevel in 9' class="btn" v-bind:class="[{'btn-light': theLevel == level}, {'btn-dark': theLevel != level}]" v-on:click="level = theLevel">
                 <h3>{{ theLevel }}</h>
@@ -598,7 +598,7 @@
                 Switch Class
               </button>
             </div>
-            <div class="input-group col-lg-2 border" :class="dark ? 'border-light' : 'border-dark'" >              
+            <div class="input-group col-lg-3 border" :class="dark ? 'border-light' : 'border-dark'" >              
               <input v-if="dark" class="border-0 text-light darkInputText" style="outline: none; "  type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
               <input v-if="!dark" class="border-0 text-dark lightInputText" style="outline: none; "  type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
             </div>
@@ -718,12 +718,12 @@
         </div>
         <div v-else>
           <div class="row">
-            <div class="col-md-9 border" :class="dark ? 'border-light' : 'border-dark'" >
-              <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance == null">Choose a card to upgrade</h3>
-              <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance != null && enhancementMode == ''">Select the part of the card to upgrade</h3>
-              <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
+            <div class="col-md-9" :class="dark ? 'text-light' : 'text-dark'">
+              <h3 v-if="cardToEnhance == null">Choose a card to upgrade</h3>
+              <h3 v-if="cardToEnhance != null && enhancementMode == ''">Select the part of the card to upgrade</h3>
+              <h3 v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
             </div>
-            <div v-if='abilityCategory != null' class="col-md-3 border alignCenter" :class="dark ? 'border-light' : 'border-dark'" >
+            <div v-if='abilityCategory != null' class="col-md-3  alignCenter">
               <h3 :class="dark ? 'text-light' : 'text-dark'">Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
             </div>
             <div v-else class="col-md-3 border-bottom border-top border-right border-left alignCenter">
@@ -816,7 +816,7 @@
               </div>
 
             </div>
-            <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3 border" :class="dark ? 'border-light' : 'border-dark'">
+            <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3" >
               <div class="centerAbilities">
                 <div v-for='(card,i) in abilitiesChosen'>
                   <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]">
@@ -839,11 +839,11 @@
     <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="[dark ? 'bg-dark' : 'bg-light', dark ? 'text-light' : 'text-dark']" >
           <div class="modal-header">
             <h1 class="modal-title" id="exampleModalLabel">About</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true" :class="dark ? 'text-light' : 'text-dark'">&times;</span>
             </button>
           </div>
           <div class="modal-body">
@@ -876,6 +876,11 @@
               </form>
             </span>
           </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -884,15 +889,15 @@
     <div class="modal fade" id="versionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="dark ? 'bg-dark' : 'bg-light'" >
           <div class="modal-header">
-            <h1 class="modal-title" id="exampleModalLabel">Expansion</h1>
+            <h1 class="modal-title" id="exampleModalLabel" :class="dark ? 'text-light' : 'text-dark'">Expansions</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
 
-          <div class="modal-body">
+          <div class="modal-body" :class="dark ? 'text-light' : 'text-dark'">
             <h3>Version</h3>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'vanilla'}"
               v-on:click="loadDatabaseVersion('vanilla')">Vanilla</button>
@@ -902,18 +907,22 @@
               v-on:click="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'crimsonscales'}"
               v-on:click="loadDatabaseVersion('crimsonscales')">Crimson Scales</button>
-            <hr />
+            <hr :class="dark ? 'border-light' : 'border-dark'"/>
             <button class="btn btn-secondary" data-toggle="collapse" data-target="#spoilers" aria-expanded="false"
               aria-controls="spoilers">Show spoilers</button>
 
             <div class="collapse" id="spoilers">
               <p></p>
-              <button v-if="version=='vanilla'" class="btn btn-dark" v-bind:class="{ disabled: hasOpenedXEnvelope }"
+              <button v-if="version=='vanilla'" class="btn btn-secondary" v-bind:class="{ disabled: hasOpenedXEnvelope }"
                 type="button" v-on:click="loadXEnvelope()">
                 <span v-if="!hasOpenedXEnvelope">Open envelope X</span>
                 <span v-else>Envelope X opened</span>
               </button>
             </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -923,11 +932,11 @@
     <div class="modal fade" id="characterSelectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="[dark ? 'bg-dark' : 'bg-light', dark ? 'text-light' : 'text-dark']" >
           <div class="modal-header">
-            <h1 class="modal-title" id="exampleModalLabel">Choose your character</h1>
+            <h1 class="modal-title" id="exampleModalLabel"  >Choose your character</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true" :class="dark ? 'text-light' : 'text-dark'">&times;</span>
             </button>
           </div>
 
@@ -961,15 +970,15 @@
     <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="[dark ? 'bg-dark' : 'bg-light', dark ? 'text-light' : 'text-dark']" >
           <div class="modal-header">
             <h1 class="modal-title" id="exampleModalLabel">Help</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true" :class="dark ? 'text-light' : 'text-dark'">&times;</span>
             </button>
           </div>
 
-          <div class="modal-body">
+          <div class="modal-body" >
             <h3>Basics</h3>
             <ul>
               <li>Pick your abilities</li>
@@ -1004,7 +1013,14 @@
                 battle goals)</li>
             </ul>
           </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+          
         </div>
+
+
       </div>
     </div>
 
@@ -1012,11 +1028,11 @@
     <div class="modal fade" id="perksModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="[dark ? 'bg-dark' : 'bg-light', dark ? 'text-light' : 'text-dark']" >
           <div class="modal-header">
             <h3 class="modal-title" id="exampleModalLabel">{{ classNames[className] }} Perks</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true" :class="dark ? 'text-light' : 'text-dark'">&times;</span>
             </button>
           </div>
 
@@ -1036,9 +1052,12 @@
     <div class="modal fade" id="cardExchangeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="[dark ? 'bg-dark' : 'bg-light', dark ? 'text-light' : 'text-dark']" >
           <div class="modal-header">
             <h3 class="modal-title" id="exampleModalLabel">Accept a card from...</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" :class="dark ? 'text-light' : 'text-dark'">&times;</span>
+            </button>
           </div>
 
           <div class="modal-body container">
@@ -1071,19 +1090,24 @@
     <div class="modal fade" id="sortModifierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="[dark ? 'bg-dark' : 'bg-light', dark ? 'text-light' : 'text-dark']" >
           <div class="modal-header">
             <h3 class="modal-title" id="exampleModalLabel">Sort modifiers</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" :class="dark ? 'text-light' : 'text-dark'">&times;</span>
+            </button>
           </div>
 
           <div class="modal-body container">
             <h3 class="align-baseline" style="display: inline;">Cards to display:</h3>
-            <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]"
+            <button class="btn align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0 && !dark}, {'btn-light': cardsToDisplayCurrent == 0 && dark}, 
+                                                              {'btn-dark': cardsToDisplayCurrent != 0 && dark}, {'btn-light': cardsToDisplayCurrent != 0 && !dark}]"
               v-on:click="cardsToDisplayCurrent = 0">
               <h3>0</h3>
             </button>
-            <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
-              v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]"
+            <button v-for='cardsToDisplay in 9' class="btn align-baseline"
+              v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent && !dark}, {'btn-light': cardsToDisplay == cardsToDisplayCurrent && dark},
+                             {'btn-dark': cardsToDisplay != cardsToDisplayCurrent && dark}, {'btn-light': cardsToDisplay != cardsToDisplayCurrent && !dark}]"
               v-on:click="cardsToDisplayCurrent = cardsToDisplay">
               <h3>{{ cardsToDisplay }}</h3>
             </button>
@@ -1096,9 +1120,9 @@
                 -->
               <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
                 <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png"
-                  style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
-                <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;"
-                  class="image rounded" />
+                  style="width:8em; border: 2px solid;" class="image rounded" :class="dark ?'border-dark':'border-light'" />
+                <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid;"
+                :class="dark ?'border-dark':'border-light'" class="image rounded" />
               </div>
             </div>
 
@@ -1116,7 +1140,7 @@
     <div class="modal" id="shortRestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="[dark ? 'bg-dark' : 'bg-light', dark ? 'text-light' : 'text-dark']" >
           <div class="modal-header">
             <h3 class="modal-title">Short Rest</h3>
           </div>
@@ -1184,7 +1208,7 @@
     <div class="modal" id="longRestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
+        <div class="modal-content" :class="[dark ? 'bg-dark' : 'bg-light', dark ? 'text-light' : 'text-dark']" >
           <div class="modal-header">
             <h3 class="modal-title">Long Rest</h3>
           </div>
