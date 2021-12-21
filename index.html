@@ -582,20 +582,23 @@
         <div class="row " >
           <div class="col-lg-9 row justify-content-between">
             <div class="col-lg-6">
-              <h5 style="display: inline;">Character Level:</h5>
-              <button v-for='theLevel in 9' class="btn btn-light "
-                v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
+              <h5 style="display: inline;" :class="dark ? 'text-light' : 'text-dark'">Character Level:</h5>
+              <button v-if="dark" v-for='theLevel in 9' class="btn" v-bind:class="[{'btn-light': theLevel == level}, {'btn-dark': theLevel != level}]" v-on:click="level = theLevel">
+                <h3>{{ theLevel }}</h>
+              </button>
+              <button v-else v-for='theLevel in 9' class="btn" v-bind:class="[{'btn-dark': theLevel == level}, {'btn-light': theLevel != level}]" v-on:click="level = theLevel">
                 <h3>{{ theLevel }}</h>
               </button>
               <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
                 Switch Class
               </button>
             </div>
-            <div class="input-group col-lg-3 border " >              
-              <input class="border-0" style="outline: none;" type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
+            <div class="input-group col-lg-2 border" :class="dark ? 'border-light' : 'border-dark'" >              
+              <input v-if="dark" class="border-0 text-light darkInputText" style="outline: none; "  type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
+              <input v-else class="border-0 text-dark lightInputText" style="outline: none; "  type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
             </div>
           </div>
-          <div v-if='abilityCategory != null' class="col-lg-3 alignCenter">
+          <div v-if='abilityCategory != null' class="col-lg-3 alignCenter" :class="dark ? 'text-light' : 'text-dark'" >
             <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
         </div>
@@ -640,12 +643,15 @@
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
         <div class="col-lg-9">
           <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-            <form id="addItemByID" class="input-group col-lg-4 border" @submit="addItemById">
-              <input type="text" class="form-control border-0 shadow-none" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
+            <form id="addItemByID" class="input-group col-lg-4 border" :class="dark ? 'border-light' : 'border-dark'" @submit="addItemById">
+              <input v-if="dark" type="text" class="text-light darkInputText border-0 " style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
+              <input v-else type="text" class="text-dark lightInputText border-0 " style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
             </form>
             
-            <form class="input-group col-lg-3 border" >
-              <input type="text" class="form-control border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
+            
+            <form class="input-group col-lg-3 border" :class="dark ? 'border-light' : 'border-dark'">
+              <input v-if="dark" type="text" class="text-light darkInputText border-0" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
+              <input v-else type="text" class=" text-dark lightInputText border-0" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
             </form>
 
           </div>      
@@ -655,8 +661,7 @@
             <!-- Categories of items -->
 
             <div class="row ">
-              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear'
-                v-if='gearCategory == null || gearCat == gearCategory'>
+              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear' v-if='((gearCategory == null || gearCat == gearCategory) && gearSearchExp.length == 0)'>
                 <a href="#" v-on:click="displayGearCategory(gearCat)">
                   <img src="data/items/back.png" class="image rounded" />
                   <h4 class="onCardNoHover"> {{ gearCat.name }}</h4>
@@ -703,21 +708,21 @@
       <!-- ENHANCEMENT -->
       <div class="col-lg-12 container-fluid" id="enhancement" v-if="menu == 'enhancement'">
         <div v-if="abilitiesChosen.length == 0" id="enhancementClassChosen" class="text-center">
-          Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false"
-            data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a> section first !
+          <p :class="dark ? 'text-light' : 'text-dark'">Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false"
+            data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a> section first !</p>
         </div>
         <div v-else>
           <div class="row">
             <div class="col-md-9 border">
-              <h3 v-if="cardToEnhance == null">Choose a card to upgrade</h3>
-              <h3 v-if="cardToEnhance != null && enhancementMode == ''">Select the part of the card to upgrade</h3>
-              <h3 v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance == null">Choose a card to upgrade</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance != null && enhancementMode == ''">Select the part of the card to upgrade</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'" v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
             </div>
             <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
-              <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'">Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
             </div>
             <div v-else class="col-md-3 border-bottom border-top border-right border-left alignCenter">
-              <h3>Deck</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'">Deck</h3>
             </div>
           </div>
           <div class="row">
@@ -806,7 +811,7 @@
               </div>
 
             </div>
-            <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3 bg-light border">
+            <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3 border" :class="dark ? 'border-light' : 'border-dark'">
               <div class="centerAbilities">
                 <div v-for='(card,i) in abilitiesChosen'>
                   <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]">
