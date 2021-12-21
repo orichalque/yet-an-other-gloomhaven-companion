@@ -175,8 +175,8 @@
                        :class="{active: specialClassMode === 'fast'}">Fast</button>
                   </div>
                   <div class="col btn-group" role="group" v-if="className === 'ge'">
-                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button>
-                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
+                    <button class="btn btn-outline-secondary" :class="[{active: specialClassMode === 'left'}, dark ? 'btn-light' : 'btn-dark']" v-on:click="specialClassMode = 'left'">Left</button>
+                    <button class="btn btn-outline-secondary" :class="[{active: specialClassMode ==='right'}, dark ? 'btn-light' : 'btn-dark']" v-on:click="specialClassMode = 'right'">Right</button>
                   </div>
                   <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal"
                       data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : ''">Accept card</button>
