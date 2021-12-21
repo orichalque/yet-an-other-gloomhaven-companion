@@ -15,7 +15,7 @@ new Vue({
         version: 'vanilla',
         alert: '',
         classChosen : false,
-
+        dark: true,
         /* General game information */
         turn: 1,
         level: 1,
@@ -374,7 +374,8 @@ new Vue({
         },
         updateModifiersDraggable(){
             this.$nextTick(() => { this.draggableModifiers() })
-        },
+        }
+
     },
     beforeMount(){
         $("#addItemByID").submit(function(e) {

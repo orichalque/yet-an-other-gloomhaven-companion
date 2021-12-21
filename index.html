@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head >
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="A deckbuilder for managing and playing Gloomhaven">
-  <meta name="keywords" content="gloomhaven,boardGame,deckbuilding,gloomhaven deck,gloomhaven deckbuilding,gloomhaven deckbuilder, frosthaven deckbuilder, crimson scales deckbuilder">
+  <meta name="keywords"
+    content="gloomhaven,boardGame,deckbuilding,gloomhaven deck,gloomhaven deckbuilding,gloomhaven deckbuilder, frosthaven deckbuilder, crimson scales deckbuilder">
   <meta name="application-name" content="Gloomhaven Deckbuilder" />
 
   <title>Gloomhaven Deckbuilder</title>
@@ -47,9 +48,10 @@
 </head>
 
 <body>
-  <main id="app" class="wrapper">
+  <main id="app" class="wrapper" :class="dark ? 'bg-dark' : 'bg-light'">
     <!-- Navigation -->
-    <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top navbar-dark bg-dark py-0">
+    <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top py-0"
+      :class="dark ? ['navbar-light', 'bg-light'] : ['navbar-dark', 'bg-dark']">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <h4 class="titlefont">Gloomhaven Deckbuilder</h4>
@@ -61,24 +63,33 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item py-0" v-bind:class="{active: menu === 'home'}">
-              <a class="nav-link" href="#" v-on:click="setMenu('home')">Play</a>
+              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+                v-on:click="setMenu('home')">Play</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'abilities'}">
-              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a>
+              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+                :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal"
+                v-on:click="setMenu('abilities')">Abilities</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'enhancement'}">
-              <a class="nav-link" href="#" v-on:click="setMenu('enhancement')">Enhancement</a>
+              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+                v-on:click="setMenu('enhancement')">Enhancement</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
-              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('modifiers')">Modifiers</a>
+              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+                :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal"
+                v-on:click="setMenu('modifiers')">Modifiers</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
-              <a class="nav-link" href="#" v-on:click="setMenu('gear')">Gear</a>
+              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+                v-on:click="setMenu('gear')">Gear</a>
             </li>
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='gameoptions'}">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Options</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Set expansion</a>
+              <a class="nav-link dropdown-toggle" :class="dark ? 'text-dark' : 'text-light'" id="navbarDropdown2"
+                data-toggle="dropdown" role="button" aria-expanded="false" href="#">Options</a>
+              <div class="dropdown-menu" :class="dark ? 'text-dark' : 'text-light'" aria-labelledby="navbarDropdown2">
+                <a class="dropdown-item" :class="dark ? 'text-dark' : 'text-light'" data-target="#versionModal"
+                  data-toggle="modal" href="#">Set expansion</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" v-on:click="hasEnabledCardExchange = !hasEnabledCardExchange">
                   <span v-if="!hasEnabledCardExchange">Accept card</span>
@@ -99,22 +110,25 @@
                 </a>
               </div>
             </li>
-            <li class="nav-item dropdown" v-bind:class="{active: menu ==='about'}">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
+            <li class="nav-item dropdown" v-bind:class="[{active: menu ==='about'}]">
+              <a class="nav-link dropdown-toggle" :class="dark ? 'text-dark' : 'text-light'" id="navbarDropdown2"
+                data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                 <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
                 <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>
-                <form class="dropdown-item" id="donate" class="dropdown-item" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <form class="dropdown-item" id="donate" class="dropdown-item"
+                  action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                   <input type="hidden" name="cmd" value="_donations" />
                   <input type="hidden" name="business" value="QDHSY8LBF3WRY" />
                   <input type="hidden" name="currency_code" value="EUR" />
                   <input type="hidden" name="lc" value="en_US">
-                  <a href="#" alt="Donate with PayPal button" onclick="document.getElementById('donate').submit()" title="PayPal - The safer, easier way to pay online!">Donate</a>
+                  <a href="#" alt="Donate with PayPal button" onclick="document.getElementById('donate').submit()"
+                    title="PayPal - The safer, easier way to pay online!">Donate</a>
                 </form>
               </div>
             </li>
             <li class="nav-item py-0">
-              <a class="nav-link" href="#" v-on:click="saveData()">Save</a>
+              <a :class="dark ? 'text-dark' : 'text-light'" class="nav-link" href="#" v-on:click="saveData()">Save</a>
             </li>
           </ul>
         </div>
@@ -129,58 +143,76 @@
 
           <div class="row ">
             <div class="col-lg-11 text-center">
-              <h3>Turn: {{ turn }}</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'">Turn: {{ turn }}</h3>
             </div>
 
             <!-- left side of the play screen-->
-            <div class="col-lg-7 border-right" v-if="abilitiesChosen.length > 0" >
+            <div class="col-lg-7 border-right" v-if="abilitiesChosen.length > 0">
               <div class="container">
                 <div class="row mt-3">
-                  <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary">Play
+                  <div class="col"><button v-on:click="play()" class="btn btn-block btn-outline-secondary"
+                      :class="dark ? 'btn-light' : 'btn-dark'">Play
                       cards</button></div>
-                  <div class="col"><button v-on:click="initShortRest()"
-                      class="btn btn-block btn-outline-secondary" data-toggle="modal" data-target="#shortRestModal" :disabled='isRestDisabled'>Short rest</button></div>
-                  <div class="col"><button v-on:click="initRest()"  data-toggle="modal" data-target="#longRestModal" :disabled='isRestDisabled' class="btn btn-block btn-outline-secondary">Long
+                  <div class="col"><button v-on:click="initShortRest()" class="btn btn-block btn-outline-secondary"
+                      :class="dark ? 'btn-light' : 'btn-dark'" data-toggle="modal" data-target="#shortRestModal"
+                      :disabled='isRestDisabled'>Short rest</button></div>
+                  <div class="col"><button v-on:click="initRest()" data-toggle="modal" data-target="#longRestModal"
+                      :disabled='isRestDisabled' class="btn btn-block btn-outline-secondary"
+                      :class="dark ? 'btn-light' : 'btn-dark'">Long
                       rest</button></div>
-                  <div class="col"><button v-on:click="newGame()" class="btn btn-block btn-outline-secondary">New
-                      game</button></div>
+                  <div class="col">
+                    <button v-on:click="newGame()" class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : 'btn-dark'">New game</button>
+                  </div>
                   <div class="col btn-group" role="group" v-if="className === 'bb'">
-                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'slow'}" v-on:click="specialClassMode = 'slow'; specialClassValue++;">Slow</button><button class="btn btn-outline-secondary">{{ specialClassValue }}</button><button v-on:click="specialClassValue > 0 ? specialClassMode = 'fast' : ''; specialClassValue > 0 ? specialClassValue-- : '';" class="btn btn-outline-secondary" :class="{active: specialClassMode === 'fast'}">Fast</button>
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'slow'}" v-on:click="specialClassMode = 'slow'; specialClassValue++;">Slow</button>
+                    <button class="btn btn-outline-secondary">{{ specialClassValue }}</button>
+                    <button class="btn btn-outline-secondary" v-on:click="specialClassValue > 0 ? specialClassMode = 'fast' : ''; specialClassValue > 0 ? specialClassValue-- : '';"
+                       :class="{active: specialClassMode === 'fast'}">Fast</button>
                   </div>
-                  <div class="col btn-group" role="group"  v-if="className === 'ge'">
-                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button><button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
+                  <div class="col btn-group" role="group" v-if="className === 'ge'">
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode === 'left'}" v-on:click="specialClassMode = 'left'">Left</button>
+                    <button class="btn btn-outline-secondary" :class="{active: specialClassMode ==='right'}" v-on:click="specialClassMode = 'right'">Right</button>
                   </div>
-                  <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal" data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary">Accept card</button></div>
-                  <div class="col" v-if="hasEnabledModifierDisplay"><button v-on:click="updateModifiersDraggable()" data-toggle="modal" data-target="#sortModifierModal" class="btn btn-block btn-outline-secondary">Sort modifiers</button></div>
+                  <div class="col" v-if="hasEnabledCardExchange"><button data-toggle="modal"
+                      data-target="#cardExchangeModal" class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : 'btn-dark'">Accept card</button>
+                  </div>
+                  <div class="col" v-if="hasEnabledModifierDisplay"><button v-on:click="updateModifiersDraggable()"
+                      data-toggle="modal" data-target="#sortModifierModal"
+                      class="btn btn-block btn-outline-secondary" :class="dark ? 'btn-light' : 'btn-dark'">Sort modifiers</button></div>
                 </div>
 
-                <div v-if="cardsInHand.length>0" >
+                <div v-if="cardsInHand.length>0">
                   <div class="row" style="display: table-cell" id="abilitiesInHandSection">
-                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in cardsInHand" :key="ability.image">
+                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
+                      v-for="ability in cardsInHand" :key="ability.image">
                       <div class="col card-wrap-play">
-                          <img v-bind:src="'data/'+ability.image"
-                            v-bind:class="[{picked: twoAbilitiesSelected.includes(ability)}]"
-                            v-on:click="pickCard(ability)" class="image rounded">
-                          </img>
+                        <img v-bind:src="'data/'+ability.image"
+                          v-bind:class="[{picked: twoAbilitiesSelected.includes(ability)}]"
+                          v-on:click="pickCard(ability)" class="image rounded">
+                        </img>
 
-                          <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
-                            <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                              <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
-                            </div>
-                          </span>
-                          <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">
-                            <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                              <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
-                            </div>
-                          </span>
-
-                          <!-- On-cards buttons -->
-                          <div class="iconContainer">
-                            <div class="bottomIconContainer">
-                              <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
-                                v-on:click="destroyCard(ability)" />
-                            </div>
+                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0"
+                          class="enhancement above">
+                          <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                            <img v-for="enhancement in ability.top" style="width: 1.3em"
+                              :src="'data/'+enhancement.image" />
                           </div>
+                        </span>
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0"
+                          class="enhancement">
+                          <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;"
+                              :src="'data/'+enhancement.image" />
+                          </div>
+                        </span>
+
+                        <!-- On-cards buttons -->
+                        <div class="iconContainer">
+                          <div class="bottomIconContainer">
+                            <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
+                              v-on:click="destroyCard(ability)" />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -188,19 +220,24 @@
 
                 <!-- On board cards -->
                 <div v-if="cardsOnBoard.length>0">
-                  <h3>On board</h3>
+                  <h3 :class="dark ? 'text-light' : 'text-dark'">On board</h3>
                   <div class="row" style="display: table-cell" id="abilitiesOnBoardSection">
-                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer" v-for="ability in cardsOnBoard" :key="ability.image">
+                    <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
+                      v-for="ability in cardsOnBoard" :key="ability.image">
                       <div class="col card-wrap-play">
                         <img v-bind:src="'data/'+ability.image" class="image rounded"></img>
-                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
+                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0"
+                          class="enhancement above">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
+                            <img v-for="enhancement in ability.top" style="width: 1.3em"
+                              :src="'data/'+enhancement.image" />
                           </div>
                         </span>
-                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0"
+                          class="enhancement">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;"
+                              :src="'data/'+enhancement.image" />
                           </div>
                         </span>
 
@@ -212,7 +249,8 @@
                             </button>
                           </div>
                           <div class="bottomIconContainer">
-                            <img src="data/icons/lost.png" class="bottomIcon" style="width:3em" v-on:click="discardOnBoardItem(ability)" />
+                            <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
+                              v-on:click="discardOnBoardItem(ability)" />
                           </div>
                         </div>
                         <div class="onCardNoHover">
@@ -224,69 +262,77 @@
                 </div>
 
                 <!-- Discarded cards -->
-                <div v-if="cardsDiscarded.length>0" >
-                  <h3>Discarded</h3>
+                <div v-if="cardsDiscarded.length>0">
+                  <h3 :class="dark ? 'text-light' : 'text-dark'">Discarded</h3>
                   <div class="row" style="display: table-cell" id="abilitiesDiscardedSection">
                     <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
                       v-for="ability in cardsDiscarded" :key="ability.image">
                       <div class="col card-wrap-play">
-                        <img v-bind:src="'data/'+ability.image"  class="image rounded played"></img>
-                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
+                        <img v-bind:src="'data/'+ability.image" class="image rounded played"></img>
+                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0"
+                          class="enhancement above">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
+                            <img v-for="enhancement in ability.top" style="width: 1.3em"
+                              :src="'data/'+enhancement.image" />
                           </div>
                         </span>
-                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0"
+                          class="enhancement">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;"
+                              :src="'data/'+enhancement.image" />
                           </div>
                         </span>
-                      <!-- On-cards buttons -->
-                      <div class="iconContainer">
-                        <div class="bottomIconContainer">
-                          <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
-                            v-on:click="destroyCard(ability)" />
-                          <img src="data/icons/keep-on-board.png" class="bottomIcon"
-                            style="width:3em" v-on:click="keepAbilityManyTurns(ability)" />
-                        </div>
+                        <!-- On-cards buttons -->
+                        <div class="iconContainer">
+                          <div class="bottomIconContainer">
+                            <img src="data/icons/lost.png" class="bottomIcon" style="width:3em"
+                              v-on:click="destroyCard(ability)" />
+                            <img src="data/icons/keep-on-board.png" class="bottomIcon" style="width:3em"
+                              v-on:click="keepAbilityManyTurns(ability)" />
+                          </div>
 
-                        <div class="topIconContainer">
-                          <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
-                            v-on:click="fetchCard(ability)" />
-                          <img src="data/icons/keep-on-board-one-turn.png"
-                            class="bottomIcon" style="width:3em" v-on:click="keepAbilityOneTurn(ability)" />
+                          <div class="topIconContainer">
+                            <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
+                              v-on:click="fetchCard(ability)" />
+                            <img src="data/icons/keep-on-board-one-turn.png" class="bottomIcon" style="width:3em"
+                              v-on:click="keepAbilityOneTurn(ability)" />
+                          </div>
                         </div>
-                      </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <!--  Lost cards -->
-                <div v-if="cardsDestroyed.length>0"  >
-                  <h3>Lost</h3>
+                <div v-if="cardsDestroyed.length>0">
+                  <h3 :class="dark ? 'text-light' : 'text-dark'">Lost</h3>
                   <div class="row mt-3" style="display: table-cell" id="abilitiesDestroyedSection">
                     <div style="display: inline-block; padding-top: 1em;" class="abilityContainer"
                       v-for="ability in cardsDestroyed" :key="ability.image">
                       <div class="col">
-                        <img v-bind:src="'data/'+ability.image"  class="image rounded destroyed"></img>
-                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0" class="enhancement above">
+                        <img v-bind:src="'data/'+ability.image" class="image rounded destroyed"></img>
+                        <span style="pointer-events: none;" v-if="ability.top != null && ability.top.length > 0"
+                          class="enhancement above">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                            <img v-for="enhancement in ability.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
+                            <img v-for="enhancement in ability.top" style="width: 1.3em"
+                              :src="'data/'+enhancement.image" />
                           </div>
                         </span>
-                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0" class="enhancement">
+                        <span style="pointer-events: none;" v-if="ability.bottom != null && ability.bottom.length > 0"
+                          class="enhancement">
                           <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                            <img v-for="enhancement in ability.bottom" style="width: 1.3em;"
+                              :src="'data/'+enhancement.image" />
                           </div>
                         </span>
-                      <!-- On-cards buttons -->
-                      <div class="iconContainer">
-                        <div class="topIconContainer">
-                          <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
-                            v-on:click="fetchCard(ability)" />
+                        <!-- On-cards buttons -->
+                        <div class="iconContainer">
+                          <div class="topIconContainer">
+                            <img src="data/icons/recover.png" class="bottomIcon" style="width:3em"
+                              v-on:click="fetchCard(ability)" />
+                          </div>
                         </div>
-                      </div>
                       </div>
                     </div>
                   </div>
@@ -294,19 +340,21 @@
               </div>
             </div>
             <div class="col-lg-7 border-right" v-else id="abilitiesSection">
-              Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a> section first !
+              <p :class="dark ? 'text-light' : 'text-dark'">Build your deck in the <a href="#"
+                  :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal"
+                  v-on:click="setMenu('abilities')">Abilities</a> section first !</p>
             </div>
 
             <!-- Right side of the play screen-->
             <div class="col-lg-5" style="padding-top: 1em; padding-bottom: 1em">
-              <h3>Modifiers</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'">Modifiers</h3>
               <!-- Curse / Blessing -->
               <div v-if="hasEnabledCurses" class="row no-gutters" style="padding-left: 0.3em;">
                 <div class="col-auto">
                   <button v-on:click="addBlessing()" class="btn btn-sm" style="outline: none; box-shadow: none;">
                     <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-01.png'" class="smallimage rounded" />
                     <div v-if="blessings > 0" class="onCardNoHover">
-                     <h2> {{ blessings }}</h2>
+                      <h2> {{ blessings }}</h2>
                     </div>
                     <div v-else class="onCardHover">
                       <h3>Blessing </h3>
@@ -314,7 +362,7 @@
                   </button>
                 </div>
                 <div class="col-auto">
-                  <button v-on:click="addCurse()" class="btn btn-sm" style="outline: none; box-shadow: none;"w>
+                  <button v-on:click="addCurse()" class="btn btn-sm" style="outline: none; box-shadow: none;" w>
                     <img v-bind:src="'data/attack-modifiers/base/player-mod/am-pm-21.png'" class="smallimage rounded" />
                     <div v-if="curses > 0" class="onCardNoHover">
                       <h2>{{ curses }}</h2>
@@ -359,15 +407,17 @@
 
               </div>
 
-              <hr />
+              <hr :class="dark ? 'border-light' : 'border-white'"/>
 
-              <h3>Gear</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'">Gear</h3>
 
               <div class="row justify-content-center no-gutters" id="gear">
                 <div v-if="gearChosen.length == 0" class="smallCardContainer">
-                    Choose your equipment in the <a href="#" v-on:click="setMenu('gear')">Gear</a> section !
+                  <p :class="dark ? 'text-light' : 'text-dark'">Choose your equipment in the <a href="#"
+                      v-on:click="setMenu('gear')">Gear</a> section !</p>
                 </div>
-                <div style="display: inline-block;" class="smallCardContainer"  v-for="gear in gearChosen" :key="gear.xws">
+                <div style="display: inline-block;" class="smallCardContainer" v-for="gear in gearChosen"
+                  :key="gear.xws">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+gear.image" class="smallimage rounded "
                       v-bind:class="[{tapped: gear.played && !gear.lost}, {played: gear.lost}]"></img>
@@ -391,38 +441,38 @@
                 </div>
               </div>
 
-              <hr />
+              <hr :class="dark ? 'border-light' : 'border-white'"/>
 
-              <h3>Battle Goals</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'">Battle Goals</h3>
 
               <div class="row" style="display: table-cell;">
 
                 <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer">
-                  <div class="col-sm mt-2" >
+                  <div class="col-sm mt-2">
                     <img v-bind:src="'data/battle-goals/battlegoal-back.png'" class="smallimage rounded" />
                     <div class="iconContainer">
                       <div class="middleIconContainer">
-                        <button type="button" class="add btn btn-light"
-                          v-on:click="drawBattleGoals()">Draw</button>
+                        <button type="button" class="add btn btn-light" v-on:click="drawBattleGoals()">Draw</button>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer" v-for="goal in battleGoalsDrawn">
+                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer"
+                  v-for="goal in battleGoalsDrawn">
                   <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+goal.image" class="smallimage rounded"></img>
                     <div class="iconContainer">
                       <div class="topIconContainer">
-                        <button type="button" class="add btn btn-light"
-                          v-on:click="pickBattleGoal(goal)">Pick</button>
+                        <button type="button" class="add btn btn-light" v-on:click="pickBattleGoal(goal)">Pick</button>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer" v-for="goal in battleGoalPicked">
-                  <div class="col-sm mt-2" >
+                <div style="display: inline-block; padding-top: 1em;" class="smallCardContainer"
+                  v-for="goal in battleGoalPicked">
+                  <div class="col-sm mt-2">
                     <img v-bind:src="'data/'+goal.image" class="smallimage rounded"></img>
 
                     <div class="iconContainer">
@@ -433,8 +483,8 @@
 
                     </div>
 
-                    <div class="onBottomCardNoHover" >
-                      <h4 >{{goalCounter}}</h4>
+                    <div class="onBottomCardNoHover">
+                      <h4>{{goalCounter}}</h4>
                     </div>
                   </div>
                 </div>
@@ -456,11 +506,13 @@
             <div class="col-md-3">
               <div class="row">
                 <div class="col-lg-5">
-                  <h3>{{ classNames[className] || 'Class' }} </h3>
+                  <h3 :class="dark ? 'text-light' : 'text-dark'">{{ classNames[className] || 'Class' }} </h3>
                 </div>
                 <div class="col-lg-7 row">
-                  <input type="button" data-toggle="modal" data-target="#perksModal" class="col btn btn-secondary" value="Show perks"/>
-                  <input type="button" data-toggle="modal" data-target="#characterSelectionModal" class="col btn btn-secondary" value="Switch class"/>
+                  <input type="button" data-toggle="modal" data-target="#perksModal" class="col btn btn-secondary"
+                    value="Show perks" :class="dark ? 'btn-light' : 'btn-dark'" />
+                  <input type="button" data-toggle="modal" data-target="#characterSelectionModal"
+                    class="col btn btn-secondary" value="Switch class" :class="dark ? 'btn-light' : 'btn-dark'"/>
                 </div>
               </div>
               <div v-for="modifier in modifiers">
@@ -477,7 +529,7 @@
             <!-- SPECIAL MODIFIERS FRONT -->
             <div class="col-md-3 border-right border-left">
               <div class="row">
-                <h3>Special Modifier Deck</h3>
+                <h3 :class="dark ? 'text-light' : 'text-dark'">Special Modifier Deck</h3>
               </div>
               <div v-for="modifier in modifiersSpecial">
                 <div class="row">
@@ -494,7 +546,7 @@
             <!-- BASE DECK FRONT -->
             <div class="col-md-3 border-right">
               <div class="row">
-                <h3>Base Deck</h3>
+                <h3 :class="dark ? 'text-light' : 'text-dark'">Base Deck</h3>
               </div>
               <div v-for="modifier in modifiersBase">
                 <div class="row">
@@ -509,8 +561,8 @@
             </div>
 
             <!-- FINAL DECK -->
-            <div class="col-md-3 bg-light">
-              <h3>Final Modifier Deck</h3>
+            <div class="col-md-3">
+              <h3 :class="dark ? 'text-light' : 'text-dark'">Final Modifier Deck</h3>
               <div class="row">
                 <div class="modifierContainer" v-for='card in modifiersChosen'>
                   <div class="col mt-3 " v-on:click="removeModifier(card)">
@@ -525,27 +577,21 @@
 
       <!-- ABILITIES -->
       <div class="col-lg-12 container-fluid" v-if="menu == 'abilities'">
-        <!-- PER CATEGORY CARDS --> 
+        <!-- PER CATEGORY CARDS -->
+
         <div class="row">
-          <div class="col-lg-9 " >
-            <div class="btn-toolbar row mb-3 justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-              <div class="col-lg-6">
-                <h5 style="display: inline;">Character Level:</h5>
-                <button v-for='theLevel in 9' class="btn btn-light "
-                  v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel" style="display: inline;">
-                  <h5 style="display: inline;">{{ theLevel }}</h5>
-                </button>
-                <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
-                  Switch Class
-                </button>
-              </div>
-              <form class="input-group col-lg-3 border" v-bind:class="{ disabled: true }">              
-                <input type="text" class="form-control border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
-              </form>
-            </div>
-          </div>  
-          <div class="col-lg-3" style="text-align: center;">
-              <h3 v-if='abilityCategory != null' >Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
+          <div class="col-md-9 border">
+            <h3 class="align-baseline" style="display: inline;">Character Level:</h3>
+            <button v-for='theLevel in 9' class="btn btn-light align-baseline"
+              v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
+              <h3>{{ theLevel }}</h3>
+            </button>
+            <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
+              Switch Class
+            </button>
+          </div>
+          <div v-if='abilityCategory != null' class="col-lg-3 alignCenter">
+            <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
         </div>
         <div class="row" v-if='abilityCategory != null'>
@@ -593,15 +639,32 @@
               </form>
             </div>      
           </div>
+        <div class="col-lg-9">
+          <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+            <form class="input-group col-lg-4" @submit="addItemById">
+              <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon">Add item by ID</div>
+              </div>
+              <input type="text" class="form-control" placeholder="ID" aria-label="Input group example"
+                v-model="idToAdd" aria-describedby="btnGroupAddon">
+              <button v-on:click="addItemById()" class="button btn btn-secondary">Add</button>
+            </form>
+            
+            <form class="input-group col-lg-3 border" >
+              <input type="text" class="form-control border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
+            </form>
+
+          </div>      
         </div>
         <div class="row ">
           <div class="col-lg-9 border-right container-fluid">
             <!-- Categories of items -->
 
-            <div class="row " >
-              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear' v-if='((gearCategory == null || gearCat == gearCategory) && gearSearchExp.length == 0)'>
+            <div class="row ">
+              <div class="col-auto mt-3 abilityContainer" v-for='gearCat in allGear'
+                v-if='gearCategory == null || gearCat == gearCategory'>
                 <a href="#" v-on:click="displayGearCategory(gearCat)">
-                  <img src="data/items/back.png" class="image rounded"/>
+                  <img src="data/items/back.png" class="image rounded" />
                   <h4 class="onCardNoHover"> {{ gearCat.name }}</h4>
                 </a>
               </div>
@@ -646,11 +709,12 @@
       <!-- ENHANCEMENT -->
       <div class="col-lg-12 container-fluid" id="enhancement" v-if="menu == 'enhancement'">
         <div v-if="abilitiesChosen.length == 0" id="enhancementClassChosen" class="text-center">
-            Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a> section first !
+          Build your deck in the <a href="#" :data-toggle="!classChosen? 'modal': false"
+            data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a> section first !
         </div>
         <div v-else>
-          <div class="row" >
-            <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-9 border">
               <h3 v-if="cardToEnhance == null">Choose a card to upgrade</h3>
               <h3 v-if="cardToEnhance != null && enhancementMode == ''">Select the part of the card to upgrade</h3>
               <h3 v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
@@ -662,63 +726,84 @@
               <h3>Deck</h3>
             </div>
           </div>
-          <div class="row" >
+          <div class="row">
             <div class="col-md-9 mt-3 container-fluid">
               <div class="row">
                 <div class="col-lg-8">
                   <div class="container" v-if="cardToEnhance != null && enhancementMode != ''">
 
                     <div class="row mt-5">
-                      <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'base' ? enhancementDisplay = 'base' : enhancementDisplay = ''">+1    </button>
+                      <button class="col-2 btn btn-secondary"
+                        v-on:click="enhancementDisplay != 'base' ? enhancementDisplay = 'base' : enhancementDisplay = ''">+1
+                      </button>
                       <div class="col-lg-10">
-                        <button v-on:click="addEnhancement(base)" v-if="enhancementDisplay === 'base'" v-for="base in baseEnhancements" class="btn btn-secondary">{{ base.name }}</button>
+                        <button v-on:click="addEnhancement(base)" v-if="enhancementDisplay === 'base'"
+                          v-for="base in baseEnhancements" class="btn btn-secondary">{{ base.name }}</button>
                       </div>
                     </div>
                     <div class="row">
-                      <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'buff' ? enhancementDisplay = 'buff' : enhancementDisplay = ''">Buffs   </button>
+                      <button class="col-2 btn btn-secondary"
+                        v-on:click="enhancementDisplay != 'buff' ? enhancementDisplay = 'buff' : enhancementDisplay = ''">Buffs
+                      </button>
                       <div class="col-lg-10">
-                        <button v-on:click="addEnhancement(buff)" v-if="enhancementDisplay === 'buff'" v-for="buff in buffEnhancements" class="btn btn-secondary">{{ buff.name }}</button>
+                        <button v-on:click="addEnhancement(buff)" v-if="enhancementDisplay === 'buff'"
+                          v-for="buff in buffEnhancements" class="btn btn-secondary">{{ buff.name }}</button>
                       </div>
                     </div>
                     <div class="row">
-                      <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'debuff' ? enhancementDisplay = 'debuff' : enhancementDisplay = ''">Debuffs </button>
+                      <button class="col-2 btn btn-secondary"
+                        v-on:click="enhancementDisplay != 'debuff' ? enhancementDisplay = 'debuff' : enhancementDisplay = ''">Debuffs
+                      </button>
                       <div class="col-lg-10">
-                        <button v-on:click="addEnhancement(debuff)" v-if="enhancementDisplay === 'debuff'" v-for="debuff in debuffEnhancements" class="btn btn-secondary">{{ debuff.name }}</button>
+                        <button v-on:click="addEnhancement(debuff)" v-if="enhancementDisplay === 'debuff'"
+                          v-for="debuff in debuffEnhancements" class="btn btn-secondary">{{ debuff.name }}</button>
                       </div>
                     </div>
                     <div class="row">
-                      <button class="col-2 btn btn-secondary" v-on:click="enhancementDisplay != 'elem' ? enhancementDisplay = 'elem' : enhancementDisplay = ''">Elements</button>
+                      <button class="col-2 btn btn-secondary"
+                        v-on:click="enhancementDisplay != 'elem' ? enhancementDisplay = 'elem' : enhancementDisplay = ''">Elements</button>
                       <div class="col-lg-10">
-                        <button v-on:click="addEnhancement(elem)" v-if="enhancementDisplay === 'elem'" v-for="elem in elementEnhancements" class="btn btn-secondary">{{ elem.name }}</button>
+                        <button v-on:click="addEnhancement(elem)" v-if="enhancementDisplay === 'elem'"
+                          v-for="elem in elementEnhancements" class="btn btn-secondary">{{ elem.name }}</button>
                       </div>
                     </div>
                     <div class="row">
-                      <button v-on:click="addEnhancement(jump)" class="col-2 btn btn-secondary" v-on:click="enhancementDisplay = 'jump'">Jump    </button>
+                      <button v-on:click="addEnhancement(jump)" class="col-2 btn btn-secondary"
+                        v-on:click="enhancementDisplay = 'jump'">Jump </button>
                     </div>
                     <div class="row">
-                      <button v-on:click="addEnhancement(hex)" class="col-2 btn btn-secondary" v-on:click="enhancementDisplay = 'hex'">Hex     </button>
+                      <button v-on:click="addEnhancement(hex)" class="col-2 btn btn-secondary"
+                        v-on:click="enhancementDisplay = 'hex'">Hex </button>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-lg-4" >
+                <div class="col-lg-4">
                   <div class="card-wrap">
-                    <div >
-                      <img v-if="cardToEnhance != null" v-bind:id="cardToEnhance.xws" v-bind:src="'data/'+cardToEnhance.image"  class="biggerImage rounded"/>
-                      <a href="#" style="color: black;" v-on:click="enhancementMode != 'bottom' ? enhancementMode = 'bottom' : enhancementMode = ''">
+                    <div>
+                      <img v-if="cardToEnhance != null" v-bind:id="cardToEnhance.xws"
+                        v-bind:src="'data/'+cardToEnhance.image" class="biggerImage rounded" />
+                      <a href="#" style="color: black;"
+                        v-on:click="enhancementMode != 'bottom' ? enhancementMode = 'bottom' : enhancementMode = ''">
                         <h3 class="card-caption">Upgrade bottom</h3>
                       </a>
-                      <span v-if="cardToEnhance != null && cardToEnhance.bottom != null && cardToEnhance.bottom.length > 0"style="padding-top: 30%"  class="enhancement">
-                        <a v-for="enhancement in cardToEnhance.bottom" href="#" v-on:click="removeEnhancement(cardToEnhance.bottom, enhancement)">
-                          <img class="float-right enhancementIcon" :src="'data/'+enhancement.image"/>
+                      <span
+                        v-if="cardToEnhance != null && cardToEnhance.bottom != null && cardToEnhance.bottom.length > 0"
+                        style="padding-top: 30%" class="enhancement">
+                        <a v-for="enhancement in cardToEnhance.bottom" href="#"
+                          v-on:click="removeEnhancement(cardToEnhance.bottom, enhancement)">
+                          <img class="float-right enhancementIcon" :src="'data/'+enhancement.image" />
                         </a>
                       </span>
-                      <a href="#" style="color: black;" v-on:click="enhancementMode != 'top' ? enhancementMode = 'top' : enhancementMode = ''">
+                      <a href="#" style="color: black;"
+                        v-on:click="enhancementMode != 'top' ? enhancementMode = 'top' : enhancementMode = ''">
                         <h3 class="card-caption above">Upgrade top </h3>
                       </a>
-                      <span v-if="cardToEnhance != null && cardToEnhance.top != null && cardToEnhance.top.length > 0" style="padding-top: 30%" class="enhancement above">
-                        <a v-for="enhancement in cardToEnhance.top" href="#" v-on:click="removeEnhancement(cardToEnhance.top, enhancement)">
-                          <img class="float-right enhancementIcon" :src="'data/'+enhancement.image"/>
+                      <span v-if="cardToEnhance != null && cardToEnhance.top != null && cardToEnhance.top.length > 0"
+                        style="padding-top: 30%" class="enhancement above">
+                        <a v-for="enhancement in cardToEnhance.top" href="#"
+                          v-on:click="removeEnhancement(cardToEnhance.top, enhancement)">
+                          <img class="float-right enhancementIcon" :src="'data/'+enhancement.image" />
                         </a>
                       </span>
                     </div>
@@ -731,7 +816,8 @@
               <div class="centerAbilities">
                 <div v-for='(card,i) in abilitiesChosen'>
                   <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]">
-                    <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" v-on:click="cardToEnhance = card" class="image rounded"></img>
+                    <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" v-on:click="cardToEnhance = card"
+                      class="image rounded"></img>
                   </div>
                 </div>
               </div>
@@ -765,7 +851,8 @@
               <a
                 href="https://github.com/orichalque/yet-an-other-gloomhaven-companion">https://github.com/orichalque/yet-an-other-gloomhaven-companion</a><br />
               If you encounter any bug, or have suggestions, please open an issue so that we can correct it asap.<br />
-              Thanks to:</p>
+              Thanks to:
+            </p>
 
             <ul>
               <li><a href="https://github.com/any2cards/gloomhaven">https://github.com/any2cards/gloomhaven</a></li>
@@ -812,11 +899,13 @@
             <button class="btn btn-secondary" v-bind:class="{active: version === 'crimsonscales'}"
               v-on:click="loadDatabaseVersion('crimsonscales')">Crimson Scales</button>
             <hr />
-            <button class="btn btn-secondary" data-toggle="collapse" data-target="#spoilers" aria-expanded="false" aria-controls="spoilers">Show spoilers</button>
+            <button class="btn btn-secondary" data-toggle="collapse" data-target="#spoilers" aria-expanded="false"
+              aria-controls="spoilers">Show spoilers</button>
 
             <div class="collapse" id="spoilers">
               <p></p>
-              <button v-if="version=='vanilla'" class="btn btn-dark" v-bind:class="{ disabled: hasOpenedXEnvelope }" type="button" v-on:click="loadXEnvelope()">
+              <button v-if="version=='vanilla'" class="btn btn-dark" v-bind:class="{ disabled: hasOpenedXEnvelope }"
+                type="button" v-on:click="loadXEnvelope()">
                 <span v-if="!hasOpenedXEnvelope">Open envelope X</span>
                 <span v-else>Envelope X opened</span>
               </button>
@@ -841,15 +930,22 @@
           <div class="modal-body container">
             <div class="row border-bottom">
               <div class="col parentImage" v-for='ability in abilities' v-if='!ability.hidden'>
-                <input type="image" class="smallerImage rounded" v-bind:class="{selected: abilityCategory != null && abilityCategory != ability}" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
+                <input type="image" class="smallerImage rounded"
+                  v-bind:class="{selected: abilityCategory != null && abilityCategory != ability}"
+                  v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
               </div>
             </div>
-            <button data-toggle="collapse" v-if="version === 'vanilla' || version === 'crimsonscales'" style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary" v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false" aria-controls="lockedClasses">Show locked classes</button>
+            <button data-toggle="collapse" v-if="version === 'vanilla' || version === 'crimsonscales'"
+              style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary"
+              v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false"
+              aria-controls="lockedClasses">Show locked classes</button>
 
             <div v-if="showLockedClasses" class="row collapse" id="lockedClasses">
               <div class="col parentImage" v-for='ability in abilities' v-if='ability.hidden'>
-                <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
-                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="stopHidingAbility(ability)" src="data/layers/locked_layer.png">
+                <input type="image" class="smallerImage rounded" v-on:click="displayAbilities(ability)"
+                  v-bind:src="'data/'+ability.cards[0].image" />
+                <input type="image" v-if="ability.hidden" class="layer rounded" v-on:click="stopHidingAbility(ability)"
+                  src="data/layers/locked_layer.png">
               </div>
             </div>
           </div>
@@ -878,24 +974,30 @@
               <li>Customize your abilities with some enhancements</li>
               <li>Play !</li>
             </ul>
-            <hr/>
+            <hr />
             <h3>Symbols</h3>
             <ul class="container">
-              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/tap.png"/>: Spend item </li>
-              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/recover.png"/>: Recover ability or item</li>
-              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/lost.png"/>: Consume item or lose card</li>
-              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/keep-on-board.png"/>: Persistent bonus</li>
-              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/keep-on-board-one-turn.png"/>: Round bonus</li>
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/tap.png" />: Spend item
+              </li>
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/recover.png" />: Recover
+                ability or item</li>
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/lost.png" />: Consume
+                item or lose card</li>
+              <li class="row"><img style="width: 2em; background-color: grey; " src="data/icons/keep-on-board.png" />:
+                Persistent bonus</li>
+              <li class="row"><img style="width: 2em; background-color: grey; "
+                  src="data/icons/keep-on-board-one-turn.png" />: Round bonus</li>
               <li class="row">+1: Use persistent item or ability </li>
             </ul>
-            <hr/>
+            <hr />
             <h3>Options</h3>
             <ul class="container">
               <li>Set expansion : Access to new classes</li>
               <li>Accept card : Display a button to add a card from another class to your hand</li>
               <li>Sort modifiers : Display a button to sort the first X modifiers of your draw pile</li>
               <li>Quick curse : Display buttons to add a curse or a blessing to your modifiers draw pile</li>
-              <li>Gameplay data saving : Toggle the saving of the state of your board (abilities, modifiers, gear and battle goals)</li>
+              <li>Gameplay data saving : Toggle the saving of the state of your board (abilities, modifiers, gear and
+                battle goals)</li>
             </ul>
           </div>
         </div>
@@ -916,7 +1018,7 @@
 
           <div class="modal-body">
             <p>This is only a picture to remind you which perks are available for your class </p>
-            <img v-if="abilityCategory != null" style="width: 100%" :src="'data/perks/'+abilityCategory.name+'.png'"/>
+            <img v-if="abilityCategory != null" style="width: 100%" :src="'data/perks/'+abilityCategory.name+'.png'" />
           </div>
 
           <div class="modal-footer">
@@ -937,7 +1039,9 @@
 
           <div class="modal-body container">
             <div class="col parentImage" v-for='ability in abilities' v-if='ability.canExchangeCards'>
-              <input type="image" class="smallerImage rounded" v-bind:class="{selected: chosenCardExchanger != null && chosenCardExchanger != ability}" v-on:click="displayAbilitiesToExchange(ability)" v-bind:src="'data/'+ability.cards[0].image" />
+              <input type="image" class="smallerImage rounded"
+                v-bind:class="{selected: chosenCardExchanger != null && chosenCardExchanger != ability}"
+                v-on:click="displayAbilitiesToExchange(ability)" v-bind:src="'data/'+ability.cards[0].image" />
             </div>
             <div v-if="chosenCardExchanger != null" id="cardsToExchange">
               <div class="col-md-9">
@@ -961,7 +1065,7 @@
 
     <!-- Sort modifiers modal -->
     <div class="modal fade" id="sortModifierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+      aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -970,30 +1074,35 @@
 
           <div class="modal-body container">
             <h3 class="align-baseline" style="display: inline;">Cards to display:</h3>
-              <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]" v-on:click="cardsToDisplayCurrent = 0">
-                <h3>0</h3>
-              </button>
-              <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
-                v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]" v-on:click="cardsToDisplayCurrent = cardsToDisplay">
-                <h3>{{ cardsToDisplay }}</h3>
-              </button>
+            <button class="btn btn-light align-baseline" v-bind:class="[{'btn-dark': cardsToDisplayCurrent == 0}]"
+              v-on:click="cardsToDisplayCurrent = 0">
+              <h3>0</h3>
+            </button>
+            <button v-for='cardsToDisplay in 9' class="btn btn-light align-baseline"
+              v-bind:class="[{'btn-dark': cardsToDisplay == cardsToDisplayCurrent}]"
+              v-on:click="cardsToDisplayCurrent = cardsToDisplay">
+              <h3>{{ cardsToDisplay }}</h3>
+            </button>
 
-              <div id="sortableModifiers" class="row mt-3 align-items-end">
-                <!--
+            <div id="sortableModifiers" class="row mt-3 align-items-end">
+              <!--
                 <div class="col-1 " v-bind:class="'order-'+(cardsToDisplayCurrent - cardsToDisplay) "v-for='cardsToDisplay in cardsToDisplayCurrent'>
                   <img v-bind:src="'data/'+modifiersDrawPile[cardsToDisplay - 1].image" style="width:8em" class="image rounded" />
                 </div>
                 -->
-                <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
-                  <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
-                  <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
-                </div>
+              <div class="col-auto" v-for='(card, index) in modifiersDrawPile' :key='card.xws'>
+                <img v-if="index >= cardsToDisplayCurrent" src="data/attack-modifiers/back/top.png"
+                  style="width:8em; border: 2px solid #ffffff;" class="image rounded" />
+                <img v-else v-bind:src="'data/'+card.image" style="width:8em; border: 2px solid #ffffff;"
+                  class="image rounded" />
               </div>
+            </div>
 
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="cardsToDisplayCurrent = 0">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+              v-on:click="cardsToDisplayCurrent = 0">Close</button>
           </div>
         </div>
       </div>
@@ -1001,7 +1110,7 @@
 
     <!-- Short Rest modal -->
     <div class="modal" id="shortRestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+      aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -1011,39 +1120,47 @@
             <div class="row" v-if='abilityCategory != null'>
               <div class="col-md-6 d-flex justify-content-center centerAbilities">
                 <div v-if="cardToLose!=null">
-                    <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image"
-                      class="image rounded"></img>
+                  <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image" class="image rounded"></img>
 
-                    <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0" class="enhancement above">
-                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
-                      </div>
-                    </span>
-                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">
-                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
-                      </div>
-                    </span>
+                  <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0"
+                    class="enhancement above">
+                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                      <img v-for="enhancement in cardToLose.top" style="width: 1.3em"
+                        :src="'data/'+enhancement.image" />
+                    </div>
+                  </span>
+                  <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0"
+                    class="enhancement">
+                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                      <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;"
+                        :src="'data/'+enhancement.image" />
+                    </div>
+                  </span>
                 </div>
                 <div style="padding-top: 10px;">
-                  <button title = "Lose one health point a draw a different card" v-if="!rerolling" type="button" class="btn btn-secondary"  v-on:click="reroll()">Reroll</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="rest()">Lose Card</button>
+                  <button title="Lose one health point a draw a different card" v-if="!rerolling" type="button"
+                    class="btn btn-secondary" v-on:click="reroll()">Reroll</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="rest()">Lose
+                    Card</button>
                 </div>
               </div>
               <div class="col-md-6 mt-6">
                 <div class="centerAbilities">
                   <div v-for='(card,i) in cardsToRestore'>
-                    <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]" >
+                    <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]">
                       <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
 
-                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0" class="enhancement above">
+                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0"
+                        class="enhancement above">
                         <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
+                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image" />
                         </div>
                       </span>
-                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">
+                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0"
+                        class="enhancement">
                         <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                          <img v-for="enhancement in card.bottom" style="width: 1.3em;"
+                            :src="'data/'+enhancement.image" />
                         </div>
                       </span>
                     </div>
@@ -1061,7 +1178,7 @@
 
     <!-- Long Rest modal -->
     <div class="modal" id="longRestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+      aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -1071,39 +1188,47 @@
             <div class="row" v-if='abilityCategory != null'>
               <div class="col-md-6 d-flex justify-content-center centerAbilities">
                 <div v-if="cardToLose!=null">
-                    <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image"
-                      class="image rounded"></img>
+                  <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image" class="image rounded"></img>
 
-                    <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0" class="enhancement above">
-                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                        <img v-for="enhancement in cardToLose.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
-                      </div>
-                    </span>
-                    <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0" class="enhancement">
-                      <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                        <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
-                      </div>
-                    </span>
+                  <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0"
+                    class="enhancement above">
+                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
+                      <img v-for="enhancement in cardToLose.top" style="width: 1.3em"
+                        :src="'data/'+enhancement.image" />
+                    </div>
+                  </span>
+                  <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0"
+                    class="enhancement">
+                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
+                      <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;"
+                        :src="'data/'+enhancement.image" />
+                    </div>
+                  </span>
                 </div>
                 <div v-else>Select a card to lose</div>
                 <div style="padding-top: 10px;">
-                  <button v-if='islongRestBtnEnabled' type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="longRest()">Lose Card</button>
+                  <button v-if='islongRestBtnEnabled' type="button" class="btn btn-secondary" data-dismiss="modal"
+                    v-on:click="longRest()">Lose Card</button>
                 </div>
               </div>
               <div class="col-md-6 mt-6">
                 <div class="centerAbilities">
                   <div v-for='(card,i) in cardsToRestore'>
-                    <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]" v-on:click="pickCardToLoseLongRest(card)">
+                    <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]"
+                      v-on:click="pickCardToLoseLongRest(card)">
                       <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
 
-                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0" class="enhancement above">
+                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0"
+                        class="enhancement above">
                         <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image"/>
+                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image" />
                         </div>
                       </span>
-                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0" class="enhancement">
+                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0"
+                        class="enhancement">
                         <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                          <img v-for="enhancement in card.bottom" style="width: 1.3em;" :src="'data/'+enhancement.image"/>
+                          <img v-for="enhancement in card.bottom" style="width: 1.3em;"
+                            :src="'data/'+enhancement.image" />
                         </div>
                       </span>
                     </div>
@@ -1119,8 +1244,9 @@
       </div>
     </div>
 
-  <!-- Modal -->
-    <div class="modal fade" id="greenAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal -->
+    <div class="modal fade" id="greenAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body rounded alert-info">
@@ -1134,19 +1260,20 @@
     </div>
 
 
-      <!-- Modal -->
-      <div class="modal fade" id="redAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-body rounded alert-danger">
-              {{ alert }}
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
+    <!-- Modal -->
+    <div class="modal fade" id="redAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body rounded alert-danger">
+            {{ alert }}
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
         </div>
       </div>
+    </div>
 
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
       <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do
