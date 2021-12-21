@@ -529,7 +529,7 @@
         <!-- PER CATEGORY CARDS -->
         <div class="row " >
           <div class="col-lg-9 border row justify-content-between">
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <h4 style="display: inline;">Character Level:</h3>
               <button v-for='theLevel in 9' class="btn btn-light "
                 v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
@@ -539,19 +539,21 @@
                 Switch Class
               </button>
             </div>
-            <div class="input-group col-md-3 " >
+            <div class="input-group col-lg-3 no-border " >
               <div class="input-group-prepend">
-                <div class="input-group-text" id="btnGroupAddon">Filter</div>
+                <div class="input-group-text" id="btnGroupAddon">
+                  Filter
+                </div>
               </div>
-              <input class="border-0" type="text" placeholder="Name" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
+              <input class="border-0 shadow-none" style="outline: none;" type="text" placeholder="Name" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
             </div>
           </div>
-          <div v-if='abilityCategory != null' class="col-md-3 border alignCenter">
+          <div v-if='abilityCategory != null' class="border col-lg-3 alignCenter">
             <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
         </div>
-        <div class="row" v-if='abilityCategory != null'>
-          <div class="col-md-9">
+        <div class="row mr-3" v-if='abilityCategory != null'>
+          <div class="col-lg-9">
             <div class="row" v-if="abilitySearchExp.length == 0">
               <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards'
                 v-if="i != 0 && card.level <= level">
@@ -575,7 +577,7 @@
             </div>
 
           </div>
-          <div class="col-md-3 mt-3 bg-light border">
+          <div class="col-lg-3 mt-3 ">
             <div class="centerAbilities">
               <div v-for='(card,i) in abilitiesChosen'>
                 <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]" v-on:click="removeAbility(card)">
