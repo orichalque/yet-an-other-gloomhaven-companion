@@ -19,7 +19,7 @@ html,body .wrapper .container-fluid {
 height: 100%;
 }
 
-p, span, a, h3, h1, button, .input-group-text {
+p, span, a, h3, h5, h1, button, .input-group-text, ::placeholder {
   font-family: 'Crimson Text', serif;
 }
 
