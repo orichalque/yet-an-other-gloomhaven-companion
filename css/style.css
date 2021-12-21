@@ -434,8 +434,21 @@ h4, b {
   display: block;       
 }
 
+.darkInputText::placeholder {
+  color: #f8f9fa;
+}
 
+.darkInputText{
+  background-color: #343a40;
+}
 
+.lightInputText {
+  color: #f8f9fa;
+}
+
+.lightInputText::placeholder {
+  color: #343a40;
+}
 
 [v-cloak] {
   display: none;
