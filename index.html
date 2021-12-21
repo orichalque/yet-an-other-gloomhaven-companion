@@ -540,7 +540,7 @@
               </button>
             </div>
             <div class="input-group col-lg-3 border " >              
-              <input class="border-0" style="outline: none;" type="text" placeholder="Filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
+              <input class="border-0" style="outline: none;" type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
             </div>
           </div>
           <div v-if='abilityCategory != null' class="col-lg-3 alignCenter">
@@ -588,18 +588,12 @@
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
         <div class="col-lg-9">
           <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-            <form class="input-group col-lg-4" @submit="addItemById">
-              <div class="input-group-prepend">
-                <div class="input-group-text" id="btnGroupAddon">Add item by ID</div>
-              </div>
-              <input type="text" class="form-control" placeholder="ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
+            <form id="addItemByID" class="input-group col-lg-4 border" @submit="addItemById">
+              <input type="text" class="form-control border-0 shadow-none" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
             </form>
             
-            <form class="input-group col-lg-3" >
-              <div class="input-group-prepend">
-                <div class="input-group-text" id="btnGroupAddon">Filter</div>
-              </div>
-              <input type="text" class="form-control" placeholder="Name" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
+            <form class="input-group col-lg-3 border" >
+              <input type="text" class="form-control border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
             </form>
 
           </div>      
