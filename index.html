@@ -519,52 +519,48 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
 
       <!-- ABILITIES -->
       <div class="col-lg-12 container-fluid" v-if="menu == 'abilities'">
-        <!-- PER CATEGORY CARDS -->
-        <div class="row " >
-          <div class="col-lg-9 row justify-content-between">
-            <div class="col-lg-6">
-              <h5 style="display: inline;">Character Level:</h5>
-              <button v-for='theLevel in 9' class="btn btn-light "
-                v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
-                <h3>{{ theLevel }}</h>
-              </button>
-              <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
-                Switch Class
-              </button>
+        <!-- PER CATEGORY CARDS --> 
+        <div class="row">
+          <div class="col-lg-9 " >
+            <div class="btn-toolbar row mb-3 justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="col-lg-6">
+                <h5 style="display: inline;">Character Level:</h5>
+                <button v-for='theLevel in 9' class="btn btn-light "
+                  v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel" style="display: inline;">
+                  <h5 style="display: inline;">{{ theLevel }}</h5>
+                </button>
+                <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
+                  Switch Class
+                </button>
+              </div>
+              <form class="input-group col-lg-3 border" v-bind:class="{ disabled: true }">              
+                <input type="text" class="form-control border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
+              </form>
             </div>
-            <div class="input-group col-lg-3 border " >              
-              <input class="border-0" style="outline: none;" type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
-            </div>
-          </div>
-          <div v-if='abilityCategory != null' class="col-lg-3 alignCenter">
-            <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
+          </div>  
+          <div class="col-lg-3" style="text-align: center;">
+              <h3 v-if='abilityCategory != null' >Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
           </div>
         </div>
-        <div class="row mr-3" v-if='abilityCategory != null'>
-          <div class="col-lg-9">
+        <div class="row" v-if='abilityCategory != null'>
+          <div class="col-lg-9 border-right container-fluid">
             <div class="row" v-if="abilitySearchExp.length == 0">
-              <div class="abilityContainer" v-for='(card,i) in abilityCategory.cards'
-                v-if="i != 0 && card.level <= level">
-                <div class="col mt-3" v-on:click="addAbility(card)">
-                  <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"
-                    v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
-                </div>
+              <div class="col-auto mt-3 abilityContainer" v-for='(card,i) in abilityCategory.cards' v-if="i != 0 && card.level <= level" v-on:click="addAbility(card)">
+                <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"
+                  v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
               </div>
             </div>
 
             <div class="row" v-else>
-              <div class="abilityContainer" v-for='card in filteredAbilities' v-if="card != abilityCategory.cards[0]" >
-                <div class="col mt-3" v-on:click="addAbility(card)" >
-                  <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"
-                    v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
-                </div>
+              <div class="col-auto mt-3 abilityContainer" v-for='card in filteredAbilities' v-if="card != abilityCategory.cards[0]" v-on:click="addAbility(card)" >
+                <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"
+                  v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
               </div>
               <div v-if="filteredAbilities.length == 0">
                 <h4>No match.</h4>
@@ -572,7 +568,7 @@
             </div>
 
           </div>
-          <div class="col-lg-3 mt-3 ">
+          <div class="col-lg-3">
             <div class="centerAbilities">
               <div v-for='(card,i) in abilitiesChosen'>
                 <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]" v-on:click="removeAbility(card)">
@@ -586,17 +582,17 @@
 
       <!-- GEAR -->
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
-        <div class="col-lg-9">
-          <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-            <form id="addItemByID" class="input-group col-lg-4 border" @submit="addItemById">
-              <input type="text" class="form-control border-0 shadow-none" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
-            </form>
-            
-            <form class="input-group col-lg-3 border" >
-              <input type="text" class="form-control border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
-            </form>
-
-          </div>      
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+              <form id="addItemByID" class="input-group col-lg-4 border" @submit="addItemById">
+                <input type="text" class="form-control border-0 shadow-none" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
+              </form>
+              <form class="input-group col-lg-3 border" >
+                <input type="text" class="form-control border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
+              </form>
+            </div>      
+          </div>
         </div>
         <div class="row ">
           <div class="col-lg-9 border-right container-fluid">
