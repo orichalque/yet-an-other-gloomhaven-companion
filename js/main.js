@@ -374,8 +374,19 @@ new Vue({
         },
         updateModifiersDraggable(){
             this.$nextTick(() => { this.draggableModifiers() })
-        }
+        },
+        swapMode() {
+            this.dark = !this.dark;
+            if (this.dark) {
+                document.body.classList.add('bg-dark')
+                document.body.classList.remove('bg-light')
+            } else {
+                document.body.classList.add('bg-light')
+                document.body.classList.remove('bg-dark')
+            }
+            this.$forceUpdate()
 
+        }
     },
     beforeMount(){
         $("#addItemByID").submit(function(e) {
