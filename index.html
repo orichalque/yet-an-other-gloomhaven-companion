@@ -579,7 +579,6 @@
       <!-- ABILITIES -->
       <div class="col-lg-12 container-fluid" v-if="menu == 'abilities'">
         <!-- PER CATEGORY CARDS -->
-<<<<<<< HEAD
         <div class="row " >
           <div class="col-lg-9 row justify-content-between">
             <div class="col-lg-6">
@@ -595,18 +594,6 @@
             <div class="input-group col-lg-3 border " >              
               <input class="border-0" style="outline: none;" type="text" placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
             </div>
-=======
-        <div class="row">
-          <div class="col-md-9 border">
-            <h3 class="align-baseline" style="display: inline;">Character Level:</h3>
-            <button v-for='theLevel in 9' class="btn btn-light align-baseline"
-              v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
-              <h3>{{ theLevel }}</h3>
-            </button>
-            <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
-              Switch Class
-            </button>
->>>>>>> c3840b3 ([52] started implementing dark mode)
           </div>
           <div v-if='abilityCategory != null' class="col-lg-3 alignCenter">
             <h3>Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
@@ -653,18 +640,8 @@
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
         <div class="col-lg-9">
           <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-<<<<<<< HEAD
             <form id="addItemByID" class="input-group col-lg-4 border" @submit="addItemById">
               <input type="text" class="form-control border-0 shadow-none" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
-=======
-            <form class="input-group col-lg-4" @submit="addItemById">
-              <div class="input-group-prepend">
-                <div class="input-group-text" id="btnGroupAddon">Add item by ID</div>
-              </div>
-              <input type="text" class="form-control" placeholder="ID" aria-label="Input group example"
-                v-model="idToAdd" aria-describedby="btnGroupAddon">
-              <button v-on:click="addItemById()" class="button btn btn-secondary">Add</button>
->>>>>>> c3840b3 ([52] started implementing dark mode)
             </form>
             
             <form class="input-group col-lg-3 border" >
