@@ -52,7 +52,7 @@
     <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top navbar-dark bg-dark py-0">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <h4>Gloomhaven Deckbuilder</h4>
+          <h4 class="titlefont">Gloomhaven Deckbuilder</h4>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
           aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -528,24 +528,19 @@
       <div class="col-lg-12 container-fluid" v-if="menu == 'abilities'">
         <!-- PER CATEGORY CARDS -->
         <div class="row " >
-          <div class="col-lg-9 border row justify-content-between">
+          <div class="col-lg-9 row justify-content-between">
             <div class="col-lg-6">
-              <h4 style="display: inline;">Character Level:</h3>
+              <h5 style="display: inline;">Character Level:</h5>
               <button v-for='theLevel in 9' class="btn btn-light "
                 v-bind:class="[{'btn-dark': theLevel == level}]" v-on:click="level = theLevel">
-                <h3>{{ theLevel }}</h3>
+                <h3>{{ theLevel }}</h>
               </button>
               <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
                 Switch Class
               </button>
             </div>
-            <div class="input-group col-lg-3 no-border " >
-              <div class="input-group-prepend">
-                <div class="input-group-text" id="btnGroupAddon">
-                  Filter
-                </div>
-              </div>
-              <input class="border-0 shadow-none" style="outline: none;" type="text" placeholder="Name" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
+            <div class="input-group col-lg-3 border " >              
+              <input class="border-0" style="outline: none;" type="text" placeholder="Filter" aria-label="Input group example" v-model="abilitySearchExp" v-on:input="filterAbilities">
             </div>
           </div>
           <div v-if='abilityCategory != null' class="border col-lg-3 alignCenter">
@@ -665,7 +660,7 @@
         </div>
         <div v-else>
           <div class="row" >
-            <div class="col-md-9 border">
+            <div class="col-md-9">
               <h3 v-if="cardToEnhance == null">Choose a card to upgrade</h3>
               <h3 v-if="cardToEnhance != null && enhancementMode == ''">Select the part of the card to upgrade</h3>
               <h3 v-if="cardToEnhance != null && enhancementMode != ''">Upgrade {{enhancementMode }}</h3>
