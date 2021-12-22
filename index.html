@@ -605,8 +605,7 @@
                 </button>
               </div>
               <form class="input-group col-lg-3 border" :class="[dark ? 'border-light' : 'border-dark']">
-                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light"  style="outline: none;"  placeholder="Name filter" v-model="abilitySearchExp" v-on:input="filterAbilities">
-                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;" placeholder="Name filter" v-model="abilitySearchExp" v-on:input="filterAbilities">
+                <input type="text" :class="dark ? ['darkInputText', 'text-light']: ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none"  style="outline: none;"  placeholder="Name filter" v-model="abilitySearchExp" v-on:input="filterAbilities">                
               </form>
             </div>
           </div>
@@ -653,13 +652,10 @@
         <div class="row">
           <div class="col-lg-9">
             <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-              <form id="addItemByID" class="input-group col-lg-4 border" @submit="addItemById" :class="dark ? 'border-light' : 'border-dark'">
-                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light" style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
-                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
-              </form>
+              <form id="addItemByID" class="input-group col-lg-4 border" id="addItemById" @submit="addItemById" :class="dark ? 'border-light' : 'border-dark'">
+                <input type="text" :class=" dark ? ['darkInputText', 'text-light'] : ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">              </form>
               <form class="input-group col-lg-3 border" :class="dark ? 'border-light' : 'border-dark'">
-                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
-                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
+                <input type="text" :class=" dark ? ['darkInputText', 'text-light'] : ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">                
               </form>
             </div>
           </div>
