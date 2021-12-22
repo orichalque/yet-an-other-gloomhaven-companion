@@ -166,6 +166,7 @@ new Vue({
             Cookies.set("hasEnabledSaveGameplayData", JSON.stringify(this.hasEnabledSaveGameplayData), { expires: 365})
             Cookies.set("version", JSON.stringify(this.version), { expires: 365 })
             Cookies.set("level", JSON.stringify(this.level), { expires: 365 })
+            Cookies.set("darkMode", JSON.stringify(this.dark), { expires: 365 })
 
             if (this.hasEnabledSaveGameplayData) {
                 this.saveGamePlayData()
@@ -294,6 +295,12 @@ new Vue({
             if (theLevel != null)
                 this.level = JSON.parse(theLevel)
 
+            darkMode = Cookies.get("darkMode")
+            if (darkMode != null) {
+                this.dark = JSON.parse(darkMode)
+                this.initColorMode();
+            }
+
             this.$forceUpdate()
             this.newGame();
         },
@@ -375,8 +382,7 @@ new Vue({
         updateModifiersDraggable(){
             this.$nextTick(() => { this.draggableModifiers() })
         },
-        swapMode() {
-            this.dark = !this.dark;
+        initColorMode() {
             if (this.dark) {
                 document.body.classList.add('bg-dark')
                 document.body.classList.remove('bg-light')
@@ -385,7 +391,10 @@ new Vue({
                 document.body.classList.remove('bg-dark')
             }
             this.$forceUpdate()
-
+        },
+        swapMode() {
+            this.dark = !this.dark;
+            this.initColorMode(); 
         }
     },
     beforeMount(){
@@ -394,6 +403,7 @@ new Vue({
         });
         this.loadDatabase()
         this.loadData()
+        this.initColorMode()
         if (this.hasEnabledSaveGameplayData) {
             this.loadGamePlayData()
         }
