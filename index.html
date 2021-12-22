@@ -518,14 +518,14 @@
             <!-- CATEGORY DECK FRONT -->
             <div class="col-md-3">
               <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                   <h3 :class="dark ? 'text-light' : 'text-dark'">{{ classNames[className] || 'Class' }} </h3>
                 </div>
-                <div class="col-lg-7 row">
-                  <input type="button" data-toggle="modal" data-target="#perksModal" class="col btn btn-secondary mr-2"
+                <div class="col-lg-8 row justify-content-around">
+                  <input type="button" data-toggle="modal" data-target="#perksModal" class="col-lg-5 btn btn-secondary"
                     value="Show perks" :class="dark ? 'btn-light' : 'btn-dark'" />
                   <input type="button" data-toggle="modal" data-target="#characterSelectionModal"
-                    class="col btn btn-secondary" value="Switch class" :class="dark ? 'btn-light' : 'btn-dark'" />
+                    class="col-lg-5 btn btn-secondary" value="Switch class" :class="dark ? 'btn-light' : 'btn-dark'" />
                 </div>
               </div>
               <div v-for="modifier in modifiers">
@@ -595,7 +595,7 @@
           <div class="col-lg-9 ">
             <div class="btn-toolbar row mb-3 justify-content-between" role="toolbar"
               aria-label="Toolbar with button groups">
-              <div class="col-lg-6">
+              <div class="col-lg-9">
                 <h5 style="display: inline;" :class="dark ? 'text-light' : 'text-dark'">Character Level:</h5>
                 <button v-for='theLevel in 9' class="btn" :class="[((theLevel == level && dark) || (theLevel != level && !dark)) ? 'btn-light' : 'btn-dark']"  v-on:click="level = theLevel" style="display: inline;">
                   <h5 style="display: inline;">{{ theLevel }}</h5>
