@@ -605,13 +605,9 @@
                   Switch Class
                 </button>
               </div>
-              <form class="input-group col-lg-3 border" v-bind:class="{ disabled: true }" :class="[dark ? 'border-light' : 'border-dark', {disabled : true}]">
-                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light" style="outline: none;"
-                  placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp"
-                  v-on:input="filterAbilities">
-                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;"
-                  placeholder="Name filter" aria-label="Input group example" v-model="abilitySearchExp"
-                  v-on:input="filterAbilities">
+              <form class="input-group col-lg-3 border" :class="[dark ? 'border-light' : 'border-dark']">
+                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light"  style="outline: none;"  placeholder="Name filter" v-model="abilitySearchExp" v-on:input="filterAbilities">
+                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;" placeholder="Name filter" v-model="abilitySearchExp" v-on:input="filterAbilities">
               </form>
             </div>
           </div>
@@ -636,7 +632,7 @@
                   v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
               </div>
               <div v-if="filteredAbilities.length == 0">
-                <h4>No match.</h4>
+                <h4 :class="dark ? 'text-light' : 'text-dark'">No match.</h4>
               </div>
             </div>
 
@@ -657,19 +653,14 @@
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
         <div class="row">
           <div class="col-lg-9">
-            <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar"
-              aria-label="Toolbar with button groups">
+            <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
               <form id="addItemByID" class="input-group col-lg-4 border" @submit="addItemById" :class="dark ? 'border-light' : 'border-dark'">
-                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light" style="outline: none;" placeholder="Add item by ID"
-                  aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
-                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;" placeholder="Add item by ID"
-                  aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
+                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light" style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
+                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
               </form>
               <form class="input-group col-lg-3 border" :class="dark ? 'border-light' : 'border-dark'">
-                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp"
-                  v-on:input="filterGear" aria-describedby="btnGroupAddon">
-                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp"
-                  v-on:input="filterGear" aria-describedby="btnGroupAddon">
+                <input v-if="dark" type="text" class="pt-2 pb-2 border-0 shadow-none darkInputText text-light" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
+                <input v-if="!dark" type="text" class="pt-2 pb-2 border-0 shadow-none lightInputText text-dark" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">
               </form>
             </div>
           </div>
@@ -688,10 +679,10 @@
               </div>
 
               <div class="col-auto mt-3" v-if='allGear.length == 0'>
-                <h4>Will be here soon.</h4>
+                <h4 :class="dark ? 'text-light' : 'text-dark'">Will be here soon.</h4>
               </div>
               <div class="col-auto mt-3" v-if='(gearSearchExp.length != 0 && filteredGear.length == 0)'>
-                <h4>No match.</h4>
+                <h4 :class="dark ? 'text-light' : 'text-dark'">No match.</h4>
               </div>
             </div>
 
