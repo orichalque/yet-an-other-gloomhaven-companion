@@ -79,11 +79,16 @@ var gearManagement = {
         },
         addItemById: function() {
             var id = parseInt(this.idToAdd)
+            var found = false
             this.allGear.forEach(cat => cat.items.forEach(item => {
                 if ((item.points +1) == id) {
                     this.addGear(item)
+                    found = true;
                 }
             }))
+            if(found == false) {
+                alert("Invalid ID")
+            }
             this.idToAdd = ""
         },
         updateGearPosition: function(oldIndex, newIndex) {
