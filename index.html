@@ -732,7 +732,7 @@
               <h3 :class="dark ? 'text-light' : 'text-dark'">Deck {{ abilitiesChosen.length }} / {{
                 abilityCategory.max }} </h3>
             </div>
-            <div v-else class="col-md-3 border-bottom border-top border-right border-left alignCenter">
+            <div v-else class="col-md-3 alignCenter">
               <h3 :class="dark ? 'text-light' : 'text-dark'">Deck</h3>
             </div>
           </div>
@@ -822,7 +822,7 @@
               </div>
 
             </div>
-            <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3">
+            <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3 border-left" :class="dark ? 'border-light' : 'border-dark'">
               <div class="centerAbilities">
                 <div v-for='(card,i) in abilitiesChosen'>
                   <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]">
