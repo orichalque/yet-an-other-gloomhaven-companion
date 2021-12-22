@@ -50,8 +50,7 @@
 <body class="darkbody">
   <main id="app" class="wrapper">
     <!-- Navigation -->
-    <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top py-0"
-      :class="dark ? ['navbar-light', 'bg-light'] : ['navbar-dark', 'bg-dark']">
+    <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top py-0 border-bottom navbar-dark bg-dark" :class="dark ? 'border-light' : 'border-dark'">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <h4 class="titlefont">Gloomhaven Deckbuilder</h4>
@@ -63,31 +62,31 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item py-0" v-bind:class="{active: menu === 'home'}">
-              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+              <a class="nav-link" href="#"
                 v-on:click="setMenu('home')">Play</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'abilities'}">
-              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+              <a class="nav-link" href="#"
                 :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal"
                 v-on:click="setMenu('abilities')">Abilities</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'enhancement'}">
-              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+              <a class="nav-link" href="#"
                 v-on:click="setMenu('enhancement')">Enhancement</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
-              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+              <a class="nav-link" href="#"
                 :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal"
                 v-on:click="setMenu('modifiers')">Modifiers</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
-              <a class="nav-link" :class="dark ? 'text-dark' : 'text-light'" href="#"
+              <a class="nav-link" href="#"
                 v-on:click="setMenu('gear')">Gear</a>
             </li>
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='gameoptions'}">
-              <a class="nav-link dropdown-toggle" :class="dark ? 'text-dark' : 'text-light'" id="navbarDropdown2"
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown2"
                 data-toggle="dropdown" role="button" aria-expanded="false" href="#">Options</a>
-              <div class="dropdown-menu" :class="dark ? 'text-dark' : 'text-light'" aria-labelledby="navbarDropdown2">
+              <div class="dropdown-menu" :class="dark ? 'dropdown-menu-dark' : ''"  aria-labelledby="navbarDropdown2">
                 <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Set expansion</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" v-on:click="hasEnabledCardExchange = !hasEnabledCardExchange">
@@ -115,9 +114,9 @@
               </div>
             </li>
             <li class="nav-item dropdown" v-bind:class="[{active: menu ==='about'}]">
-              <a class="nav-link dropdown-toggle" :class="dark ? 'text-dark' : 'text-light'" id="navbarDropdown2"
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown2"
                 data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+              <div class="dropdown-menu" :class="dark ? 'dropdown-menu-dark' : ''" aria-labelledby="navbarDropdown2">
                 <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
                 <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>
                 <form class="dropdown-item" id="donate" class="dropdown-item"
@@ -132,7 +131,7 @@
               </div>
             </li>
             <li class="nav-item py-0">
-              <a :class="dark ? 'text-dark' : 'text-light'" class="nav-link" href="#" v-on:click="saveData()">Save</a>
+              <a  class="nav-link" href="#" v-on:click="saveData()">Save</a>
             </li>
           </ul>
         </div>
