@@ -438,10 +438,15 @@ h4, b {
   color: #adaeaf;
 }
 
-.darkInputText{
+.darkInputText  {
   color: #343a40;
   background-color: #343a40;
 
+}
+
+.form-group {
+  color: #343a40;
+  background-color: #343a40;
 }
 
 .lightInputText {
