@@ -39,11 +39,12 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css" integrity="sha512-gRH0EcIcYBFkQTnbpO8k0WlsD20x5VzjhOA1Og8+ZUAhcMUCvd+APD35FJw3GzHAP3e+mP28YcDJxVr745loHw==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="vendor/cookiealert/css/cookiealert.css">
   <link href="css/style.css" rel="stylesheet">
   <script src="vendor/jquery/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
 </head>
 
 <body class="darkbody">
@@ -605,7 +606,7 @@
               </div>
               <form onsubmit="return false" class="input-group col-lg-3 border" :class="[dark ? 'border-light' : 'border-dark']">
                 <input type="text" :class="dark ? ['darkInputText', 'text-light']: ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none"  style="outline: none;"  placeholder="Name filter" v-model="abilitySearchExp" v-on:input="filterAbilities">
-                <span id="searchclear" class="fa fa-times" v-on:click="abilitySearchExp = ''" ></span>                
+                <span id="searchclear" class="bi-x-lg" v-on:click="abilitySearchExp = ''" ></span>                
               </form>
             </div>
           </div>
@@ -654,11 +655,11 @@
             <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
               <form id="addItemByID" onsubmit="return false" class="input-group col-lg-4 border" @submit="addItemById" :class="dark ? 'border-light' : 'border-dark'">
                 <input type="text" :class=" dark ? ['darkInputText', 'text-light'] : ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">              
-                <span id="searchclear" class="fa fa-times" v-on:click="idToAdd = ''" ></span>
+                <span id="searchclear" class="bi-x-lg" v-on:click="idToAdd = ''" ></span>
               </form>
               <form onsubmit="return false" class="input-group col-lg-3 border" :class="dark ? 'border-light' : 'border-dark'">
                 <input type="text" :class=" dark ? ['darkInputText', 'text-light'] : ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">                
-                <span id="searchclear" class="fa fa-times" v-on:click="gearSearchExp = ''" ></span>
+                <span id="searchclear" class="bi-x-lg" v-on:click="gearSearchExp = ''" ></span>
               </form>
             </div>
           </div>
