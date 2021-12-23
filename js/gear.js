@@ -102,7 +102,7 @@ var gearManagement = {
             if (this.gearSearchExp != "" && this.gearSearchExp != null) {
                 this.allGear.forEach(cat => {
                     cat.items.forEach(item => {
-                        if (item.name.includes(this.gearSearchExp)) {
+                        if (item.name.includes(this.gearSearchExp.toLowerCase())) {
                             this.filteredGear.push(item);
                         }
                     })

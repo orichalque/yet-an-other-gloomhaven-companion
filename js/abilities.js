@@ -351,7 +351,7 @@ var abilitiesManagement = {
         filterAbilities: function(evt) {
             this.filteredAbilities = []
             this.abilityCategory.cards.forEach(c => {
-                if (c.name.includes(this.abilitySearchExp)) {
+                if (c.name.includes(this.abilitySearchExp.toLowerCase())) {
                     this.filteredAbilities.push(c);
                 }
             });
