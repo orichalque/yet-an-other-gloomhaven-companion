@@ -1308,7 +1308,7 @@
       </div>
     </div>
 
-    <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert">
+    <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert" :class="dark ? ['text-dark', 'bg-light'] : ['text-light', 'bg-dark']">
       <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do
         not have to re-enter them every time you launch this application. </span><a href="https://cookiesandyou.com/"
         target="_blank">Learn more</a>
