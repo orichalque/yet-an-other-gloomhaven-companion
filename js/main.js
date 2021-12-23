@@ -398,9 +398,6 @@ new Vue({
         }
     },
     beforeMount(){
-        $("#addItemByID").submit(function(e) {
-            e.preventDefault();
-        });
         this.loadDatabase()
         this.loadData()
         this.initColorMode()
