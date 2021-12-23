@@ -84,8 +84,8 @@ var gearManagement = {
                     found = true;
                 }
             }))
-            if(found == false) {
-                alert("Invalid ID")
+            if(!found) {
+                this.showRedAlert('Invalid ID')
             }
             this.idToAdd = ""
         },
