@@ -97,6 +97,7 @@ var modifiersManagement = {
                 this.modifierCategory = null
             } else {
                 this.modifierCategory = param
+                console.log(this.modifierCategory);
             }
         },
         addModifier: function(card) {
