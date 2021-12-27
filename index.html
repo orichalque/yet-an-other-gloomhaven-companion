@@ -542,7 +542,7 @@
             <!-- SPECIAL MODIFIERS FRONT -->
             <div class="col-md-3 border-right border-left" :class="dark ? 'border-light' : 'border-dark'">
               <div class="row">
-                <h3 class="ml-3" :class="dark ? 'text-light' : 'text-dark'">Special Modifier Deck</h3>
+                <h3 class="ml-3" :class="dark ? 'text-light' : 'text-dark'">Special</h3>
               </div>
               <div v-for="modifier in modifiersSpecial">
                 <div class="row">
@@ -559,7 +559,7 @@
             <!-- BASE DECK FRONT -->
             <div class="col-md-3 border-right" :class="dark ? 'border-light' : 'border-dark'">
               <div class="row">
-                <h3 class="ml-3" :class="dark ? 'text-light' : 'text-dark'">Base Deck</h3>
+                <h3 class="ml-3" :class="dark ? 'text-light' : 'text-dark'">Standard</h3>
               </div>
               <div v-for="modifier in modifiersBase">
                 <div class="row">
@@ -575,7 +575,7 @@
 
             <!-- FINAL DECK -->
             <div class="col-md-3">
-              <h3 :class="dark ? 'text-light' : 'text-dark'">Final Modifier Deck</h3>
+              <h3 :class="dark ? 'text-light' : 'text-dark'">Final Deck</h3>
               <div class="row">
                 <div class="modifierContainer" v-for='card in modifiersChosen'>
                   <div class="col mt-3 " v-on:click="removeModifier(card)">
