@@ -83,7 +83,6 @@ new Vue({
                         g.name = g.name.replaceAll('-', ' ');                    
 
                     })
-                    console.log(JSON.stringify(this.allGear))
                     break
                 default:
                     console.log("loaded vanilla by default")
