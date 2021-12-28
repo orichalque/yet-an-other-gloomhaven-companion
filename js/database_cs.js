@@ -603,7 +603,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-08",
-                "image": "attack-modifiers/HT/am-ht-08.jpg",
+                "image": "attack-modifiers/HT/am-ht-05.jpg",
                 "xws": "amhollowpact08"
             },
             {
