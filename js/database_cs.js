@@ -23,7 +23,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bo-02",
-                "image": "attack-modifiers/BO/am-bo-02.jpg",
+                "image": "attack-modifiers/BO/am-bo-01.jpg",
                 "xws": "ambombard02"
             },
             {
@@ -33,7 +33,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bo-04",
-                "image": "attack-modifiers/BO/am-bo-04.jpg",
+                "image": "attack-modifiers/BO/am-bo-03.jpg",
                 "xws": "ambombard04"
             },
             {
@@ -43,7 +43,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bo-06",
-                "image": "attack-modifiers/BO/am-bo-06.jpg",
+                "image": "attack-modifiers/BO/am-bo-05.jpg",
                 "xws": "ambombard06"
             },
             {
@@ -53,7 +53,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bo-08",
-                "image": "attack-modifiers/BO/am-bo-08.jpg",
+                "image": "attack-modifiers/BO/am-bo-07.jpg",
                 "xws": "ambombard08"
             },
             {
@@ -63,7 +63,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bo-10",
-                "image": "attack-modifiers/BO/am-bo-10.jpg",
+                "image": "attack-modifiers/BO/am-bo-09.jpg",
                 "xws": "ambombard10"
             },
             {
@@ -88,17 +88,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bo-15",
-                "image": "attack-modifiers/BO/am-bo-15.jpg",
+                "image": "attack-modifiers/BO/am-bo-14.jpg",
                 "xws": "ambombard15"
             },
             {
                 "name": "am-bo-16",
-                "image": "attack-modifiers/BO/am-bo-16.jpg",
+                "image": "attack-modifiers/BO/am-bo-14.jpg",
                 "xws": "ambombard16"
             },
             {
                 "name": "am-bo-17",
-                "image": "attack-modifiers/BO/am-bo-17.jpg",
+                "image": "attack-modifiers/BO/am-bo-14.jpg",
                 "xws": "ambombard17"
             }
         ]
@@ -113,12 +113,12 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bk-02",
-                "image": "attack-modifiers/BK/am-bk-02.jpg",
+                "image": "attack-modifiers/BK/am-bk-01.jpg",
                 "xws": "ambrightspark02"
             },
             {
                 "name": "am-bk-03",
-                "image": "attack-modifiers/BK/am-bk-03.jpg",
+                "image": "attack-modifiers/BK/am-bk-01.jpg",
                 "xws": "ambrightspark03"
             },
             {
@@ -133,7 +133,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bk-06",
-                "image": "attack-modifiers/BK/am-bk-06.jpg",
+                "image": "attack-modifiers/BK/am-bk-05.jpg",
                 "xws": "ambrightspark06"
             },
             {
@@ -148,7 +148,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bk-09",
-                "image": "attack-modifiers/BK/am-bk-09.jpg",
+                "image": "attack-modifiers/BK/am-bk-08.jpg",
                 "xws": "ambrightspark09"
             },
             {
@@ -158,7 +158,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bk-11",
-                "image": "attack-modifiers/BK/am-bk-11.jpg",
+                "image": "attack-modifiers/BK/am-bk-10.jpg",
                 "xws": "ambrightspark11"
             },
             {
@@ -188,12 +188,12 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-bk-17",
-                "image": "attack-modifiers/BK/am-bk-17.jpg",
+                "image": "attack-modifiers/BK/am-bk-16.jpg",
                 "xws": "ambrightspark17"
             },
             {
                 "name": "am-bk-18",
-                "image": "attack-modifiers/BK/am-bk-18.jpg",
+                "image": "attack-modifiers/BK/am-bk-16.jpg",
                 "xws": "ambrightspark18"
             }
         ]
@@ -208,7 +208,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cg-02",
-                "image": "attack-modifiers/CG/am-cg-02.jpg",
+                "image": "attack-modifiers/CG/am-cg-01.jpg",
                 "xws": "amchainguard02"
             },
             {
@@ -218,7 +218,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cg-04",
-                "image": "attack-modifiers/CG/am-cg-04.jpg",
+                "image": "attack-modifiers/CG/am-cg-03.jpg",
                 "xws": "amchainguard04"
             },
             {
@@ -228,7 +228,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cg-06",
-                "image": "attack-modifiers/CG/am-cg-06.jpg",
+                "image": "attack-modifiers/CG/am-cg-05.jpg",
                 "xws": "amchainguard06"
             },
             {
@@ -238,7 +238,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cg-08",
-                "image": "attack-modifiers/CG/am-cg-08.jpg",
+                "image": "attack-modifiers/CG/am-cg-07.jpg",
                 "xws": "amchainguard08"
             },
             {
@@ -248,12 +248,12 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cg-10",
-                "image": "attack-modifiers/CG/am-cg-10.jpg",
+                "image": "attack-modifiers/CG/am-cg-09.jpg",
                 "xws": "amchainguard10"
             },
             {
                 "name": "am-cg-11",
-                "image": "attack-modifiers/CG/am-cg-11.jpg",
+                "image": "attack-modifiers/CG/am-cg-09.jpg",
                 "xws": "amchainguard11"
             },
             {
@@ -278,7 +278,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cg-16",
-                "image": "attack-modifiers/CG/am-cg-16.jpg",
+                "image": "attack-modifiers/CG/am-cg-15.jpg",
                 "xws": "amchainguard16"
             },
             {
@@ -288,7 +288,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cg-18",
-                "image": "attack-modifiers/CG/am-cg-18.jpg",
+                "image": "attack-modifiers/CG/am-cg-17.jpg",
                 "xws": "amchainguard18"
             }
         ]
@@ -308,17 +308,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cf-03",
-                "image": "attack-modifiers/CF/am-cf-03.jpg",
+                "image": "attack-modifiers/CF/am-cf-02.jpg",
                 "xws": "amchieftain03"
             },
             {
                 "name": "am-cf-04",
-                "image": "attack-modifiers/CF/am-cf-04.jpg",
+                "image": "attack-modifiers/CF/am-cf-02.jpg",
                 "xws": "amchieftain04"
             },
             {
                 "name": "am-cf-05",
-                "image": "attack-modifiers/CF/am-cf-05.jpg",
+                "image": "attack-modifiers/CF/am-cf-02.jpg",
                 "xws": "amchieftain05"
             },
             {
@@ -338,7 +338,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cf-09",
-                "image": "attack-modifiers/CF/am-cf-09.jpg",
+                "image": "attack-modifiers/CF/am-cf-08.jpg",
                 "xws": "amchieftain09"
             },
             {
@@ -348,7 +348,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cf-11",
-                "image": "attack-modifiers/CF/am-cf-11.jpg",
+                "image": "attack-modifiers/CF/am-cf-10.jpg",
                 "xws": "amchieftain11"
             },
             {
@@ -363,7 +363,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cf-14",
-                "image": "attack-modifiers/CF/am-cf-14.jpg",
+                "image": "attack-modifiers/CF/am-cf-13.jpg",
                 "xws": "amchieftain14"
             },
             {
@@ -373,7 +373,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-cf-16",
-                "image": "attack-modifiers/CF/am-cf-16.jpg",
+                "image": "attack-modifiers/CF/am-cf-15.jpg",
                 "xws": "amchieftain16"
             },
             {
@@ -393,7 +393,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-fk-02",
-                "image": "attack-modifiers/FK/am-fk-02.jpg",
+                "image": "attack-modifiers/FK/am-fk-01.jpg",
                 "xws": "amfireknight02"
             },
             {
@@ -403,17 +403,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-fk-04",
-                "image": "attack-modifiers/FK/am-fk-04.jpg",
+                "image": "attack-modifiers/FK/am-fk-03.jpg",
                 "xws": "amfireknight04"
             },
             {
                 "name": "am-fk-05",
-                "image": "attack-modifiers/FK/am-fk-05.jpg",
+                "image": "attack-modifiers/FK/am-fk-03.jpg",
                 "xws": "amfireknight05"
             },
             {
                 "name": "am-fk-06",
-                "image": "attack-modifiers/FK/am-fk-06.jpg",
+                "image": "attack-modifiers/FK/am-fk-03.jpg",
                 "xws": "amfireknight06"
             },
             {
@@ -428,12 +428,12 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-fk-09",
-                "image": "attack-modifiers/FK/am-fk-09.jpg",
+                "image": "attack-modifiers/FK/am-fk-07.jpg",
                 "xws": "amfireknight09"
             },
             {
                 "name": "am-fk-10",
-                "image": "attack-modifiers/FK/am-fk-10.jpg",
+                "image": "attack-modifiers/FK/am-fk-08.jpg",
                 "xws": "amfireknight10"
             },
             {
@@ -448,17 +448,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-fk-13",
-                "image": "attack-modifiers/FK/am-fk-13.jpg",
+                "image": "attack-modifiers/FK/am-fk-12.jpg",
                 "xws": "amfireknight13"
             },
             {
                 "name": "am-fk-14",
-                "image": "attack-modifiers/FK/am-fk-14.jpg",
+                "image": "attack-modifiers/FK/am-fk-12.jpg",
                 "xws": "amfireknight14"
             },
             {
                 "name": "am-fk-15",
-                "image": "attack-modifiers/FK/am-fk-15.jpg",
+                "image": "attack-modifiers/FK/am-fk-12.jpg",
                 "xws": "amfireknight15"
             },
             {
@@ -468,7 +468,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-fk-17",
-                "image": "attack-modifiers/FK/am-fk-17.jpg",
+                "image": "attack-modifiers/FK/am-fk-16.jpg",
                 "xws": "amfireknight17"
             },
             {
@@ -478,7 +478,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-fk-19",
-                "image": "attack-modifiers/FK/am-fk-19.jpg",
+                "image": "attack-modifiers/FK/am-fk-18.jpg",
                 "xws": "amfireknight19"
             }
         ]
@@ -503,7 +503,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-hp-04",
-                "image": "attack-modifiers/HP/am-hp-04.jpg",
+                "image": "attack-modifiers/HP/am-hp-03.jpg",
                 "xws": "amhierophant04"
             },
             {
@@ -528,7 +528,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-hp-09",
-                "image": "attack-modifiers/HP/am-hp-09.jpg",
+                "image": "attack-modifiers/HP/am-hp-08.jpg",
                 "xws": "amhierophant09"
             },
             {
@@ -538,17 +538,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-hp-11",
-                "image": "attack-modifiers/HP/am-hp-11.jpg",
+                "image": "attack-modifiers/HP/am-hp-10.jpg",
                 "xws": "amhierophant11"
             },
             {
                 "name": "am-hp-12",
-                "image": "attack-modifiers/HP/am-hp-12.jpg",
+                "image": "attack-modifiers/HP/am-hp-10.jpg",
                 "xws": "amhierophant12"
             },
             {
                 "name": "am-hp-13",
-                "image": "attack-modifiers/HP/am-hp-13.jpg",
+                "image": "attack-modifiers/HP/am-hp-10.jpg",
                 "xws": "amhierophant13"
             },
             {
@@ -558,7 +558,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-hp-15",
-                "image": "attack-modifiers/HP/am-hp-15.jpg",
+                "image": "attack-modifiers/HP/am-hp-14.jpg",
                 "xws": "amhierophant15"
             }
         ]
@@ -573,7 +573,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-02",
-                "image": "attack-modifiers/HT/am-ht-02.jpg",
+                "image": "attack-modifiers/HT/am-ht-01.jpg",
                 "xws": "amhollowpact02"
             },
             {
@@ -583,7 +583,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-04",
-                "image": "attack-modifiers/HT/am-ht-04.jpg",
+                "image": "attack-modifiers/HT/am-ht-03.jpg",
                 "xws": "amhollowpact04"
             },
             {
@@ -598,7 +598,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-07",
-                "image": "attack-modifiers/HT/am-ht-07.jpg",
+                "image": "attack-modifiers/HT/am-ht-06.jpg",
                 "xws": "amhollowpact07"
             },
             {
@@ -608,12 +608,12 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-09",
-                "image": "attack-modifiers/HT/am-ht-09.jpg",
+                "image": "attack-modifiers/HT/am-ht-06.jpg",
                 "xws": "amhollowpact09"
             },
             {
                 "name": "am-ht-10",
-                "image": "attack-modifiers/HT/am-ht-10.jpg",
+                "image": "attack-modifiers/HT/am-ht-06.jpg",
                 "xws": "amhollowpact10"
             },
             {
@@ -623,7 +623,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-12",
-                "image": "attack-modifiers/HT/am-ht-12.jpg",
+                "image": "attack-modifiers/HT/am-ht-03.jpg",
                 "xws": "amhollowpact12"
             },
             {
@@ -648,12 +648,12 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-17",
-                "image": "attack-modifiers/HT/am-ht-17.jpg",
+                "image": "attack-modifiers/HT/am-ht-15.jpg",
                 "xws": "amhollowpact17"
             },
             {
                 "name": "am-ht-18",
-                "image": "attack-modifiers/HT/am-ht-18.jpg",
+                "image": "attack-modifiers/HT/am-ht-16.jpg",
                 "xws": "amhollowpact18"
             },
             {
@@ -663,7 +663,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-20",
-                "image": "attack-modifiers/HT/am-ht-20.jpg",
+                "image": "attack-modifiers/HT/am-ht-19.jpg",
                 "xws": "amhollowpact20"
             },
             {
@@ -673,7 +673,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-ht-22",
-                "image": "attack-modifiers/HT/am-ht-22.jpg",
+                "image": "attack-modifiers/HT/am-ht-21.jpg",
                 "xws": "amhollowpact22"
             },
             {
@@ -723,7 +723,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-lu-08",
-                "image": "attack-modifiers/LU/am-lu-08.jpg",
+                "image": "attack-modifiers/LU/am-lu-07.jpg",
                 "xws": "amluminary08"
             },
             {
@@ -733,7 +733,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-lu-10",
-                "image": "attack-modifiers/LU/am-lu-10.jpg",
+                "image": "attack-modifiers/LU/am-lu-09.jpg",
                 "xws": "amluminary10"
             },
             {
@@ -743,7 +743,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-lu-12",
-                "image": "attack-modifiers/LU/am-lu-12.jpg",
+                "image": "attack-modifiers/LU/am-lu-11.jpg",
                 "xws": "amluminary12"
             },
             {
@@ -768,7 +768,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-mi-03",
-                "image": "attack-modifiers/MI/am-mi-03.jpg",
+                "image": "attack-modifiers/MI/am-mi-02.jpg",
                 "xws": "ammirefoot03"
             },
             {
@@ -778,17 +778,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-mi-05",
-                "image": "attack-modifiers/MI/am-mi-05.jpg",
+                "image": "attack-modifiers/MI/am-mi-04.jpg",
                 "xws": "ammirefoot05"
             },
             {
                 "name": "am-mi-06",
-                "image": "attack-modifiers/MI/am-mi-06.jpg",
+                "image": "attack-modifiers/MI/am-mi-04.jpg",
                 "xws": "ammirefoot06"
             },
             {
                 "name": "am-mi-07",
-                "image": "attack-modifiers/MI/am-mi-07.jpg",
+                "image": "attack-modifiers/MI/am-mi-04.jpg",
                 "xws": "ammirefoot07"
             },
             {
@@ -798,7 +798,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-mi-09",
-                "image": "attack-modifiers/MI/am-mi-09.jpg",
+                "image": "attack-modifiers/MI/am-mi-08.jpg",
                 "xws": "ammirefoot09"
             },
             {
@@ -808,17 +808,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-mi-11",
-                "image": "attack-modifiers/MI/am-mi-11.jpg",
+                "image": "attack-modifiers/MI/am-mi-10.jpg",
                 "xws": "ammirefoot11"
             },
             {
                 "name": "am-mi-12",
-                "image": "attack-modifiers/MI/am-mi-12.jpg",
+                "image": "attack-modifiers/MI/am-mi-10.jpg",
                 "xws": "ammirefoot12"
             },
             {
                 "name": "am-mi-13",
-                "image": "attack-modifiers/MI/am-mi-13.jpg",
+                "image": "attack-modifiers/MI/am-mi-10.jpg",
                 "xws": "ammirefoot13"
             },
             {
@@ -828,7 +828,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-mi-15",
-                "image": "attack-modifiers/MI/am-mi-15.jpg",
+                "image": "attack-modifiers/MI/am-mi-14.jpg",
                 "xws": "ammirefoot15"
             },
             {
@@ -838,17 +838,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-mi-17",
-                "image": "attack-modifiers/MI/am-mi-17.jpg",
+                "image": "attack-modifiers/MI/am-mi-16.jpg",
                 "xws": "ammirefoot17"
             },
             {
                 "name": "am-mi-18",
-                "image": "attack-modifiers/MI/am-mi-18.jpg",
+                "image": "attack-modifiers/MI/am-mi-16.jpg",
                 "xws": "ammirefoot18"
             },
             {
                 "name": "am-mi-19",
-                "image": "attack-modifiers/MI/am-mi-19.jpg",
+                "image": "attack-modifiers/MI/am-mi-16.jpg",
                 "xws": "ammirefoot19"
             },
             {
@@ -858,7 +858,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-mi-21",
-                "image": "attack-modifiers/MI/am-mi-21.jpg",
+                "image": "attack-modifiers/MI/am-mi-20.jpg",
                 "xws": "ammirefoot21"
             }
         ]
@@ -883,7 +883,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-sr-04",
-                "image": "attack-modifiers/SR/am-sr-04.jpg",
+                "image": "attack-modifiers/SR/am-sr-03.jpg",
                 "xws": "amspiritcaller04"
             },
             {
@@ -898,12 +898,12 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-sr-07",
-                "image": "attack-modifiers/SR/am-sr-07.jpg",
+                "image": "attack-modifiers/SR/am-sr-05.jpg",
                 "xws": "amspiritcaller07"
             },
             {
                 "name": "am-sr-08",
-                "image": "attack-modifiers/SR/am-sr-08.jpg",
+                "image": "attack-modifiers/SR/am-sr-06.jpg",
                 "xws": "amspiritcaller08"
             },
             {
@@ -913,7 +913,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-sr-10",
-                "image": "attack-modifiers/SR/am-sr-10.jpg",
+                "image": "attack-modifiers/SR/am-sr-09.jpg",
                 "xws": "amspiritcaller10"
             },
             {
@@ -923,7 +923,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-sr-12",
-                "image": "attack-modifiers/SR/am-sr-12.jpg",
+                "image": "attack-modifiers/SR/am-sr-11.jpg",
                 "xws": "amspiritcaller12"
             },
             {
@@ -933,17 +933,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-sr-14",
-                "image": "attack-modifiers/SR/am-sr-14.jpg",
+                "image": "attack-modifiers/SR/am-sr-13.jpg",
                 "xws": "amspiritcaller14"
             },
             {
                 "name": "am-sr-15",
-                "image": "attack-modifiers/SR/am-sr-15.jpg",
+                "image": "attack-modifiers/SR/am-sr-13.jpg",
                 "xws": "amspiritcaller15"
             },
             {
                 "name": "am-sr-16",
-                "image": "attack-modifiers/SR/am-sr-16.jpg",
+                "image": "attack-modifiers/SR/am-sr-13.jpg",
                 "xws": "amspiritcaller16"
             },
             {
@@ -973,7 +973,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-st-02",
-                "image": "attack-modifiers/ST/am-st-02.jpg",
+                "image": "attack-modifiers/ST/am-st-01.jpg",
                 "xws": "amstarslinger02"
             },
             {
@@ -993,7 +993,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-st-06",
-                "image": "attack-modifiers/ST/am-st-06.jpg",
+                "image": "attack-modifiers/ST/am-st-05.jpg",
                 "xws": "amstarslinger06"
             },
             {
@@ -1008,7 +1008,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-st-09",
-                "image": "attack-modifiers/ST/am-st-09.jpg",
+                "image": "attack-modifiers/ST/am-st-08.jpg",
                 "xws": "amstarslinger09"
             },
             {
@@ -1018,7 +1018,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-st-11",
-                "image": "attack-modifiers/ST/am-st-11.jpg",
+                "image": "attack-modifiers/ST/am-st-10.jpg",
                 "xws": "amstarslinger11"
             },
             {
@@ -1028,7 +1028,7 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-st-13",
-                "image": "attack-modifiers/ST/am-st-13.jpg",
+                "image": "attack-modifiers/ST/am-st-12.jpg",
                 "xws": "amstarslinger13"
             },
             {
@@ -1038,17 +1038,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-st-15",
-                "image": "attack-modifiers/ST/am-st-15.jpg",
+                "image": "attack-modifiers/ST/am-st-14.jpg",
                 "xws": "amstarslinger15"
             },
             {
                 "name": "am-st-16",
-                "image": "attack-modifiers/ST/am-st-16.jpg",
+                "image": "attack-modifiers/ST/am-st-14.jpg",
                 "xws": "amstarslinger16"
             },
             {
                 "name": "am-st-17",
-                "image": "attack-modifiers/ST/am-st-17.jpg",
+                "image": "attack-modifiers/ST/am-st-14.jpg",
                 "xws": "amstarslinger17"
             }
         ]
