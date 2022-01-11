@@ -146,57 +146,162 @@ new Vue({
             this.$forceUpdate()
 
         },
+        buildData: function() {
+            var data = new Object();
+            console.log(this.abilityCategory.name)
+            data.abilityCategoryName = this.abilityCategory.name
+
+            data.abilitiesChosen = this.abilitiesChosen.map(card => {
+                var cardToSave = new Object()
+                cardToSave.name = card.name
+                cardToSave.top = card.top
+                cardToSave.bottom = card.bottom
+                return cardToSave
+            })
+            data.modifiersChosen = this.modifiersChosen.map(mod => {
+                var modifier = new Object()
+                modifier.name = mod.name
+                return modifier
+            })
+            data.gearChosen = this.gearChosen.map(gear => {
+                var gearToSave = new Object()
+                gearToSave.name = gear.name
+                return gearToSave
+            })
+
+            data.classDisplayed = this.classDisplayed
+            data.level = this.level
+
+            data.options = new Object();
+            data.options.hasEnabledModifierDisplay = this.hasEnabledModifierDisplay
+            data.options.hasEnabledCardExchange = this.hasEnabledCardExchange
+            data.options.hasOpenedXEnvelope = this.hasOpenedXEnvelope
+            data.options.hasEnabledCurses = this.hasEnabledCurses
+            data.options.version = this.version            
+            data.options.dark = this.dark
+            data.options.hasEnabledSaveGameplayData = this.hasEnabledSaveGameplayData
+            
+            return data
+        }, 
+        exportData: function() {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.buildData())));
+            element.setAttribute('download', "save.json");          
+            element.style.display = 'none';
+            document.body.appendChild(element);          
+            element.click();          
+            document.body.removeChild(element);
+        },
+        importData: function() {
+            $("#import-input").trigger("click")
+        },
+        readDataFile: async function(event) {
+            const file = event.target.files.item(0)
+            //const text = await file.text();
+            file.text().then(value => {this.loadData(JSON.parse(value))})            
+        },
         saveData: function() {
+            var data = this.buildData()
+
             // character
-            if (this.abilityCategory != null)
-                Cookies.set("class", JSON.stringify(this.abilityCategory.name), { expires: 365})
-
-            Cookies.set("abilities", JSON.stringify(this.abilitiesChosen), { expires: 365 })
-            Cookies.set("modifiers", JSON.stringify(this.modifiersChosen), { expires: 365 })
-            Cookies.set("gear", JSON.stringify(this.gearChosen), { expires: 365 })
-
-            Cookies.set("classDisplayed", JSON.stringify(this.classDisplayed), { expires: 365 })
-
+            Cookies.set("class", JSON.stringify(data.abilityCategoryName), { expires: 365})
+            Cookies.set("abilities", JSON.stringify(data.abilitiesChosen), { expires: 365 })
+            Cookies.set("modifiers", JSON.stringify(data.modifiersChosen), { expires: 365 })
+            Cookies.set("gear", JSON.stringify(data.gearChosen), { expires: 365 })
+            Cookies.set("classDisplayed", JSON.stringify(data.classDisplayed), { expires: 365 })
+            Cookies.set("level", JSON.stringify(data.level), { expires: 365 })
+            
             // game options
-            Cookies.set("hasEnabledModifierDisplay", JSON.stringify(this.hasEnabledModifierDisplay), { expires: 365 })
-            Cookies.set("hasEnabledCardExchange", JSON.stringify(this.hasEnabledCardExchange), { expires: 365})
-            Cookies.set("hasOpenedXEnvelope", JSON.stringify(this.hasOpenedXEnvelope), { expires: 365})
-            Cookies.set("hasEnabledCurses", JSON.stringify(this.hasEnabledCurses), { expires: 365})
-            Cookies.set("hasEnabledSaveGameplayData", JSON.stringify(this.hasEnabledSaveGameplayData), { expires: 365})
-            Cookies.set("version", JSON.stringify(this.version), { expires: 365 })
-            Cookies.set("level", JSON.stringify(this.level), { expires: 365 })
-            Cookies.set("darkMode", JSON.stringify(this.dark), { expires: 365 })
+            Cookies.set("hasEnabledModifierDisplay", JSON.stringify(data.options.hasEnabledModifierDisplay), { expires: 365 })
+            Cookies.set("hasEnabledCardExchange", JSON.stringify(data.options.hasEnabledCardExchange), { expires: 365})
+            Cookies.set("hasOpenedXEnvelope", JSON.stringify(data.options.hasOpenedXEnvelope), { expires: 365})
+            Cookies.set("hasEnabledCurses", JSON.stringify(data.options.hasEnabledCurses), { expires: 365})
+            Cookies.set("hasEnabledSaveGameplayData", JSON.stringify(data.options.hasEnabledSaveGameplayData), { expires: 365})
+            Cookies.set("version", JSON.stringify(data.options.version), { expires: 365 })
+            Cookies.set("darkMode", JSON.stringify(data.options.dark), { expires: 365 })
 
-            if (this.hasEnabledSaveGameplayData) {
+            if (data.options.hasEnabledSaveGameplayData) {
                 this.saveGamePlayData()
             }
 
             this.showGreenAlert("Data saved!")
         },
-        loadData: function() {
-            openedX = Cookies.get("hasOpenedXEnvelope")
-            if (openedX != null) {
-                XEnvelope = JSON.parse(openedX)
-                if (XEnvelope) {
-                    this.loadXEnvelope()
-                }
+        buildCookieData: function() {
+            var data = new Object();
+
+            var tmp = Cookies.get("class")
+            if (tmp != null) {
+                data.abilityCategoryName = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("abilities")
+            if (tmp != null) {
+                data.abilitiesChosen = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("modifiers")
+            if (tmp != null) {
+                data.modifiersChosen = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("gear")
+            if (tmp != null) {
+                data.gearChosen = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("classDisplayed")
+            if (tmp != null) {
+                data.classDisplayed = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("level")
+            if (tmp != null) {
+                data.level = JSON.parse(tmp)
             }
 
-            classCookie = Cookies.get('class')
-            if (classCookie != null) {
-                theClass = JSON.parse(classCookie)
+            data.options = new Object();
+            tmp = Cookies.get("hasEnabledModifierDisplay")
+            if (tmp != null) {
+                data.options.hasEnabledModifierDisplay = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("hasEnabledCardExchange")
+            if (tmp != null) {
+                data.options.hasEnabledCardExchange = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("hasOpenedXEnvelope")
+            if (tmp != null) {
+                data.options.hasOpenedXEnvelope = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("hasEnabledCurses")
+            if (tmp != null) {
+                data.options.hasEnabledCurses = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("version")
+            if (tmp != null) {
+                data.options.version = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("dark")
+            if (tmp != null) {
+                data.options.dark = JSON.parse(tmp)
+            }
+            tmp = Cookies.get("hasEnabledSaveGameplayData")
+            if (tmp != null) {
+                data.options.hasEnabledSaveGameplayData = JSON.parse(tmp)
+            }         
+
+            return data
+        },
+        loadCookieData: function() {
+            var data = this.buildCookieData()
+            this.loadData(data)
+        },
+        loadData: function(data) {
+            if (data.abilityCategoryName != null) {
                 this.abilities.forEach( ability => {
-                    if (ability.name == theClass) {
+                    if (ability.name == data.abilityCategoryName) {
                         this.displayAbilities(ability)
                         this.abilityCategory.hidden = false
                     }
                 })
             }
 
-            abilityCookie = Cookies.get('abilities')
-            if (abilityCookie != null) {
-                oldAbilities = JSON.parse(abilityCookie)
-                oldAbilities.forEach(ability => {
+            if (data.abilitiesChosen != null) {
+                data.abilitiesChosen.forEach(ability => {
                     this.abilities.forEach(cat => {
                         cat.cards.forEach(card => {
                             if (card.name === ability.name) {
@@ -213,26 +318,10 @@ new Vue({
                 })
             }
 
-            gearCookie = Cookies.get('gear')
-            if (gearCookie != null) {
-                oldGear = JSON.parse(gearCookie)
-                oldGear.forEach(gear => {
-                    this.allGear.forEach(cat => {
-                        cat.items.forEach(item => {
-                            if (gear.name === item.name) {
-                                this.gearChosen.push(item)
-                            }
-                        })
-                    })
-                })
-            }
-
-            modifierCookie = Cookies.get("modifiers");
-            if (modifierCookie != null) {
-                var oldModifiers = JSON.parse(modifierCookie);
-                if (oldModifiers != null) {
+            if (data.modifiersChosen != null) {
+                if (data.modifiersChosen != null) {
                     this.modifiersChosen = []
-                    oldModifiers.forEach(modifier => {
+                    data.modifiersChosen.forEach(modifier => {
 
                         this.modifiersBase.forEach(cat => {
                             cat.cards.forEach(card => {
@@ -259,45 +348,62 @@ new Vue({
                         })
                     })
                 }
-
             }
 
-            cardExchange = Cookies.get("hasEnabledCardExchange")
-            if (cardExchange != null)
-                this.hasEnabledCardExchange = JSON.parse(cardExchange)
+            if (data.gearChosen != null) {
+                data.gearChosen.forEach(gear => {
+                    this.allGear.forEach(cat => {
+                        cat.items.forEach(item => {
+                            if (gear.name === item.name) {
+                                this.gearChosen.push(item)
+                            }
+                        })
+                    })
+                })
+            }            
 
-            modifierDisplay = Cookies.get("hasEnabledModifierDisplay")
-            if (modifierDisplay != null)
-                this.hasEnabledModifierDisplay = JSON.parse(modifierDisplay)
-
-            curseEnabled = Cookies.get("hasEnabledCurses")
-            if (curseEnabled != null) {
-                this.hasEnabledCurses = JSON.parse(curseEnabled)
-            }
-
-            hasEnabledSaveGameplayDataCookie = Cookies.get("hasEnabledSaveGameplayData")
-            if (hasEnabledSaveGameplayDataCookie != null) {
-                this.hasEnabledSaveGameplayData = JSON.parse(hasEnabledSaveGameplayDataCookie)
-            }
-
-            classNotHidden = Cookies.get("classDisplayed")
-            if (classNotHidden != null) {
-                this.classDisplayed = JSON.parse(classNotHidden)
+            if (data.classDisplayed != null) {
+                this.classDisplayed = data.classDisplayed
                 this.abilities.forEach(ab => {
                     if (this.classDisplayed.includes(ab.name)) {
                         ab.hidden = false
                     }
                 })
             }
+            
+            if (data.level != null) {
+                this.level = data.level
+            }
+            
+            if (data.options.hasEnabledModifierDisplay != null) {
+                this.hasEnabledModifierDisplay = data.options.hasEnabledModifierDisplay
+            }
+            
+            if (data.options.hasEnabledCardExchange != null) {
+                this.hasEnabledCardExchange = data.options.hasEnabledCardExchange
+            }
 
-            theLevel = Cookies.get("level")
-            if (theLevel != null)
-                this.level = JSON.parse(theLevel)
+            if (data.options.hasOpenedXEnvelope != null) {
+                if (data.options.hasOpenedXEnvelope) {
+                    this.loadXEnvelope()
+                }
+            }
 
-            darkMode = Cookies.get("darkMode")
-            if (darkMode != null) {
-                this.dark = JSON.parse(darkMode)
+            if (data.options.hasEnabledCurses != null) {
+                this.hasEnabledCurses = data.options.hasEnabledCurses
+            }
+
+            if (data.options.version != null) {
+                this.version = data.options.version
+            }
+
+            if (data.options.dark != null) {
+                this.dark = data.options.dark
                 this.initColorMode();
+            }
+
+            if (data.options.hasEnabledSaveGameplayData != null) {
+                this.hasEnabledSaveGameplayData = data.options.hasEnabledSaveGameplayData
             }
 
             this.$forceUpdate()
@@ -398,7 +504,7 @@ new Vue({
     },
     beforeMount(){
         this.loadDatabase()
-        this.loadData()
+        this.loadCookieData()
         this.initColorMode()
         if (this.hasEnabledSaveGameplayData) {
             this.loadGamePlayData()
