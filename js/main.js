@@ -148,7 +148,6 @@ new Vue({
         },
         buildData: function() {
             var data = new Object();
-            console.log(this.abilityCategory.name)
             data.abilityCategoryName = this.abilityCategory.name
 
             data.abilitiesChosen = this.abilitiesChosen.map(card => {
@@ -160,7 +159,7 @@ new Vue({
             })
             data.modifiersChosen = this.modifiersChosen.map(mod => {
                 var modifier = new Object()
-                modifier.name = mod.name
+                modifier.name = mod.name                
                 return modifier
             })
             data.gearChosen = this.gearChosen.map(gear => {
@@ -239,7 +238,7 @@ new Vue({
             }
             tmp = Cookies.get("modifiers")
             if (tmp != null) {
-                data.modifiersChosen = JSON.parse(tmp)
+                data.modifiersChosen = JSON.parse(tmp)                
             }
             tmp = Cookies.get("gear")
             if (tmp != null) {
@@ -333,7 +332,7 @@ new Vue({
 
                         this.modifiersSpecial.forEach(catModif => {
                             catModif.cards.forEach(card => {
-                                if (card.name === modifier.name) {
+                                if (card.name === modifier.name) {            
                                     this.modifiersChosen.push(card)
                                 }
                             })
@@ -342,7 +341,7 @@ new Vue({
                         this.modifiers.forEach(catModif => {
                             catModif.cards.forEach(card => {
                                 if (card.name === modifier.name) {
-                                    this.modifiersChosen.push(card)
+                                    this.modifiersChosen.push(card)                                
                                 }
                             })
                         })
