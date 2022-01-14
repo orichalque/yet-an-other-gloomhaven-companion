@@ -183,9 +183,18 @@ new Vue({
             return data
         }, 
         exportData: function() {
+            var data;
+
+            try {
+                data = this.buildData()
+            } catch (error) {
+                this.showRedAlert("Export failure: Invalid data.\n Please make sure that a class is defined.")
+                return;
+            }
+            
             var element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.buildData())));
-            element.setAttribute('download', "save.json");          
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(data)));
+            element.setAttribute('download', "gloomhaven-deck_export.json");          
             element.style.display = 'none';
             document.body.appendChild(element);          
             element.click();          
@@ -197,7 +206,15 @@ new Vue({
         readDataFile: async function(event) {
             const file = event.target.files.item(0)
             //const text = await file.text();
-            file.text().then(value => {this.loadData(JSON.parse(value))})            
+            file.text().then(value => {
+                try {
+                    var data = JSON.parse(value)                
+                    this.loadData(JSON.parse(value))    
+                    this.showGreenAlert("Import success.")
+                } catch (error) {
+                    this.showRedAlert("Could not import data file.")
+                }                                
+            })            
         },
         saveData: function() {
             var data = this.buildData()
@@ -289,7 +306,7 @@ new Vue({
             var data = this.buildCookieData()
             this.loadData(data)
         },
-        loadData: function(data) {
+        loadData: function(data) {            
             if (data.abilityCategoryName != null) {
                 this.abilities.forEach( ability => {
                     if (ability.name == data.abilityCategoryName) {
