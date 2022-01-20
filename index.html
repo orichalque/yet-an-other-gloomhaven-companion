@@ -123,8 +123,7 @@
                 data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
               <div class="dropdown-menu" :class="dark ? 'dropdown-menu-dark' : ''" aria-labelledby="navbarDropdown2">
                 <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
-                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>
-                
+                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>              
                 <div class="dropdown-divider"></div>
                 <form class="dropdown-item" id="donate" class="dropdown-item"
                   action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -699,7 +698,6 @@
                 <h4 class="onCardNoHover"> {{ item.points +1 }}</h4>
               </div>
             </div>
-
             <div class="row" v-if="gearCategory != null && gearCategory.items.length > 0  && gearSearchExp.length == 0">
               <div v-for='item in gearCategory.items' class="col-auto mt-3 abilityContainer">
                 <img v-bind:class="[{selected: gearChosen.includes(item)}]" class="image rounded"

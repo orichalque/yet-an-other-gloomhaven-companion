@@ -422,6 +422,12 @@ new Vue({
                 this.hasEnabledSaveGameplayData = data.options.hasEnabledSaveGameplayData
             }
 
+            darkMode = Cookies.get("darkMode")
+            if (darkMode != null) {
+                this.dark = JSON.parse(darkMode)
+                this.initColorMode();
+            }
+
             this.$forceUpdate()
             this.newGame();
         },
