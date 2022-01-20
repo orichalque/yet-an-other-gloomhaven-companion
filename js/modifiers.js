@@ -26,8 +26,8 @@ var modifiersManagement = {
           Cookies.set("modifiersDrawPile", JSON.stringify(this.modifiersDrawPile), { expires: 365 })
           Cookies.set("modifiersDiscardPile", JSON.stringify(this.modifiersDiscardPile), { expires: 365 })
           Cookies.set("lastDrawnModifier", JSON.stringify(this.lastDrawnModifier), { expires: 365 })
-          Cookies.set("blessings", JSON.stringify(this.blessings), { expires: 365 })
-          Cookies.set("curses", JSON.stringify(this.curses), { expires: 365 })
+          Cookies.set("blessingsGameplayData", JSON.stringify(this.blessings), { expires: 365 })
+          Cookies.set("cursesGameplayData", JSON.stringify(this.curses), { expires: 365 })
         },
         loadModifierGamePlayData: function () {
 
@@ -81,11 +81,11 @@ var modifiersManagement = {
             }
 
             // Load number of blessings/curses
-            blessingsCookie = Cookies.get("blessings")
+            blessingsCookie = Cookies.get("blessingsGameplayData")
             if (blessingsCookie != null)
                 this.blessings = JSON.parse(blessingsCookie)
 
-            cursesCookie = Cookies.get("curses")
+            cursesCookie = Cookies.get("cursesGameplayData")
             if (cursesCookie != null)
                 this.curses = JSON.parse(cursesCookie)
 
@@ -99,7 +99,7 @@ var modifiersManagement = {
                 this.modifierCategory = param
             }
         },
-        addModifier: function(card) {
+        addModifier: function(card) {   
             if (!this.modifiersChosen.includes(card)) {
                 this.modifiersChosen.push(card)
                 this.modifiersDrawPile.push(card)
@@ -194,7 +194,7 @@ var modifiersManagement = {
         },
         resetModifiers: function() {
             this.shuffleModifiersDeck()
-            this.modifiersDrawPile.forEach(card => {if(this.checkIfCurseOrBless(card)) this.removeModifier(card)})
+            //this.modifiersDrawPile.forEach(card => {if(this.checkIfCurseOrBless(card)) this.removeModifier(card)})
             this.blessings = this.getBlessings()
             this.curses = this.getCurses()
         },
