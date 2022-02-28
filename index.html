@@ -1084,7 +1084,7 @@
                   <div class="abilityContainer" v-for='(card,i) in chosenCardExchanger.cards'
                     v-if="i != 0 && card.canBeExchanged">
                     <div class="col mt-3" v-on:click="acceptAbility(card)">
-                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded" :class="[{picked: cardsInHand.includes(card)}]"></img>
                     </div>
                   </div>
                 </div>
