@@ -1162,22 +1162,7 @@
             <div class="row" v-if='abilityCategory != null'>
               <div class="col-md-6 d-flex justify-content-center centerAbilities">
                 <div v-if="cardToLose!=null">
-                  <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image" class="image rounded"></img>
-
-                  <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0"
-                    class="enhancement above">
-                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                      <img v-for="enhancement in cardToLose.top" style="width: 1.3em"
-                        :src="'data/'+enhancement.image" />
-                    </div>
-                  </span>
-                  <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0"
-                    class="enhancement">
-                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                      <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;"
-                        :src="'data/'+enhancement.image" />
-                    </div>
-                  </span>
+                  <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image" class="image rounded"></img>              
                 </div>
                 <div style="padding-top: 10px;">
                   <button title="Lose one health point a draw a different card" v-if="!rerolling" type="button"
@@ -1190,21 +1175,7 @@
                 <div class="centerAbilities">
                   <div v-for='(card,i) in cardsToRestore'>
                     <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]">
-                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
-
-                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0"
-                        class="enhancement above">
-                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image" />
-                        </div>
-                      </span>
-                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0"
-                        class="enhancement">
-                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                          <img v-for="enhancement in card.bottom" style="width: 1.3em;"
-                            :src="'data/'+enhancement.image" />
-                        </div>
-                      </span>
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>                    
                     </div>
                   </div>
                 </div>
@@ -1231,21 +1202,6 @@
               <div class="col-md-6 d-flex justify-content-center centerAbilities">
                 <div v-if="cardToLose!=null">
                   <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image" class="image rounded"></img>
-
-                  <span style="pointer-events: none;" v-if="cardToLose.top != null && cardToLose.top.length > 0"
-                    class="enhancement above">
-                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                      <img v-for="enhancement in cardToLose.top" style="width: 1.3em"
-                        :src="'data/'+enhancement.image" />
-                    </div>
-                  </span>
-                  <span style="pointer-events: none;" v-if="cardToLose.bottom!= null && cardToLose.bottom.length > 0"
-                    class="enhancement">
-                    <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                      <img v-for="enhancement in cardToLose.bottom" style="width: 1.3em;"
-                        :src="'data/'+enhancement.image" />
-                    </div>
-                  </span>
                 </div>
                 <div v-else>Select a card to lose</div>
                 <div style="padding-top: 10px;">
@@ -1258,21 +1214,7 @@
                   <div v-for='(card,i) in cardsToRestore'>
                     <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]"
                       v-on:click="pickCardToLoseLongRest(card)">
-                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
-
-                      <span style="pointer-events: none;" v-if="card.top != null && card.top.length > 0"
-                        class="enhancement above">
-                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column; ">
-                          <img v-for="enhancement in card.top" style="width: 1.3em" :src="'data/'+enhancement.image" />
-                        </div>
-                      </span>
-                      <span style="pointer-events: none;" v-if="card.bottom != null && card.bottom.length > 0"
-                        class="enhancement">
-                        <div style="padding-top: 10%; padding-left: 70%; display:flex; flex-direction:column;">
-                          <img v-for="enhancement in card.bottom" style="width: 1.3em;"
-                            :src="'data/'+enhancement.image" />
-                        </div>
-                      </span>
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>                     
                     </div>
                   </div>
                 </div>
