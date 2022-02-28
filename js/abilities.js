@@ -159,7 +159,9 @@ var abilitiesManagement = {
         },
         acceptAbility: function(card) {
             card.duration = 0
-            this.cardsInHand.push(card)
+            if (!this.cardsInHand.includes(card)) {
+                this.cardsInHand.push(card)
+            }            
         },
         removeAbility: function(card) {
             indexOfCardToRemove = this.abilitiesChosen.indexOf(card)
@@ -366,7 +368,7 @@ var abilitiesManagement = {
             } else {
                 this.twoAbilitiesSelected.forEach(card => {
                     if(card.canBeExchanged){
-                        this.removeAbility(card)
+                        this.cardsInHand.pop(card)
                     } else {
                         this.playCard(card)
                     }
