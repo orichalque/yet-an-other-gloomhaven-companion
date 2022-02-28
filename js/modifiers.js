@@ -154,15 +154,18 @@ var modifiersManagement = {
         shuffleModifiersDeck: function() {
             this.modifiersDrawPile = this.modifiersChosen.slice()
 
+            this.shuffle()
+
+            this.lastDrawnModifier = null
+            this.modifiersDiscardPile = []
+        },
+        shuffle: function() {
             // JavaScript implementation of the Durstenfeld shuffle, an optimized version of Fisher-Yates
             // More here: https://stackoverflow.com/a/12646864
             for (let i = this.modifiersDrawPile.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [this.modifiersDrawPile[i], this.modifiersDrawPile[j]] = [this.modifiersDrawPile[j], this.modifiersDrawPile[i]];
             }
-
-            this.lastDrawnModifier = null
-            this.modifiersDiscardPile = []
         },
         displaySpecialModifiers: function() {
             if(this.specialModifiers){
@@ -183,6 +186,7 @@ var modifiersManagement = {
                 .filter(element => !this.modifiersDrawPile.includes(element))
 
             if(availableBlessings.length > 0) this.addModifier(availableBlessings[0])
+            this.shuffle();
         },
         addCurse: function() {
             const availableCurses = this.modifiersSpecial
@@ -191,6 +195,7 @@ var modifiersManagement = {
                 .filter(element => !this.modifiersDrawPile.includes(element))
 
             if(availableCurses.length > 0) this.addModifier(availableCurses[0])
+            this.shuffle();
         },
         resetModifiers: function() {
             this.shuffleModifiersDeck()
