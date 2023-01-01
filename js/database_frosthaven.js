@@ -4,7 +4,7 @@ classNames_frosthaven = {
     df: 'Drifter',
     dw: 'Deathwalker',
     ge: 'Geminate',
-    ne: 'Necromancer',
+    ne: 'Boneshaper',
 }
 
 attack_modifiers_categories_frosthaven = [
@@ -682,140 +682,210 @@ abilities_frosthaven = [
             {
             "name": "bb-back",
             "points": 0,
-            "image": "character-ability-cards/BB/bb-back.png",
+            "image": "character-ability-cards/BB/fh-bb-back.png",
             "xws": "bbback",
             "level": 0
           },
           {
             "name": "blurry jab",
             "points": 3,
-            "image": "character-ability-cards/BB/blurry-jab.png",
+            "image": "character-ability-cards/BB/fh-blurry-jab.png",
             "xws": "blurryjab",
             "level": 1
           },
           {
             "name": "borrowed time",
             "points": 4,
-            "image": "character-ability-cards/BB/borrowed-time.png",
+            "image": "character-ability-cards/BB/fh-borrowed-time.png",
             "xws": "borrowedtime",
             "level": 0
           },
           {
+            "name": "breakneck speed",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-breakneck-speed.png",
+            "xws": "breakneckspeed",
+            "level": 5
+          },
+          {
             "name": "cascading reaction",
             "points": 5,
-            "image": "character-ability-cards/BB/cascading-reaction.png",
+            "image": "character-ability-cards/BB/fh-cascading-reaction.png",
             "xws": "cascadingreaction",
             "level": 1
           },
           {
             "name": "double time",
             "points": 6,
-            "image": "character-ability-cards/BB/double-time.png",
+            "image": "character-ability-cards/BB/fh-double-time.png",
             "xws": "doubletime",
             "level": 3
           },
           {
             "name": "drive recharge",
             "points": 7,
-            "image": "character-ability-cards/BB/drive-recharge.png",
+            "image": "character-ability-cards/BB/fh-drive-recharge.png",
             "xws": "driverecharge",
             "level": 1
           },
           {
             "name": "experimental adjustment",
             "points": 8,
-            "image": "character-ability-cards/BB/experimental-adjustment.png",
+            "image": "character-ability-cards/BB/fh-experimental-adjustment.png",
             "xws": "experimentaladjustment",
             "level": 0
           },
           {
+            "name": "fastest alive",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-fastest-alive.png",
+            "xws": "fastestalive",
+            "level": 8
+          },
+          {
+            "name": "flashing flurry",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-flashing-flurry.png",
+            "xws": "flashingflurry",
+            "level": 5
+          },
+          {
+            "name": "fractured timeline",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-fractured-timeline.png",
+            "xws": "fracturedtimeline",
+            "level": 9
+          },
+          {
             "name": "hit and run",
             "points": 9,
-            "image": "character-ability-cards/BB/hit-and-run.png",
+            "image": "character-ability-cards/BB/fh-hit-and-run.png",
             "xws": "hitandrun",
             "level": 1
           },
           {
             "name": "kinetic transfer",
             "points": 10,
-            "image": "character-ability-cards/BB/kinetic-transfer.png",
+            "image": "character-ability-cards/BB/fh-kinetic-transfer.png",
             "xws": "kinetictransfer",
             "level": 1
           },
           {
             "name": "make it count",
             "points": 11,
-            "image": "character-ability-cards/BB/make-it-count.png",
+            "image": "character-ability-cards/BB/fh-make-it-count.png",
             "xws": "makeitcount",
             "level": 3
           },
           {
             "name": "overdrive",
             "points": 12,
-            "image": "character-ability-cards/BB/overdrive.png",
+            "image": "character-ability-cards/BB/fh-overdrive.png",
             "xws": "overdrive",
             "level": 1
           },
           {
+            "name": "phasing blades",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-phasing-blades.png",
+            "xws": "phasingblades",
+            "level": 7
+          },
+          {
             "name": "potential energy",
             "points": 13,
-            "image": "character-ability-cards/BB/potential-energy.png",
+            "image": "character-ability-cards/BB/fh-potential-energy.png",
             "xws": "potentialenergy",
             "level": 4
           },
           {
             "name": "power leak",
             "points": 14,
-            "image": "character-ability-cards/BB/power-leak.png",
+            "image": "character-ability-cards/BB/fh-power-leak.png",
             "xws": "powerleak",
             "level": 1
           },
           {
             "name": "precision timing",
             "points": 15,
-            "image": "character-ability-cards/BB/precision-timing.png",
+            "image": "character-ability-cards/BB/fh-precision-timing.png",
             "xws": "precisiontiming",
             "level": 4
           },
           {
+            "name": "quantum uncertainty",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-quantum-uncertainty.png",
+            "xws": "quantumuncertainty",
+            "level": 8
+          },
+          {
             "name": "reckless augmentation",
             "points": 16,
-            "image": "character-ability-cards/BB/reckless-augmentation.png",
+            "image": "character-ability-cards/BB/fh-reckless-augmentation.png",
             "xws": "recklessaugmentation",
             "level": 2
           },
           {
+            "name": "reverse the flow",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-reverse-the-flow.png",
+            "xws": "reversetheflow",
+            "level": 9
+          },
+          {
+            "name": "rushed to the end",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-rushed-to-the-end.png",
+            "xws": "rushedtotheend",
+            "level": 7
+          },
+          {
             "name": "sand in the hourglass",
             "points": 17,
-            "image": "character-ability-cards/BB/sand-in-the-hourglass.png",
+            "image": "character-ability-cards/BB/fh-sand-in-the-hourglass.png",
             "xws": "sandinthehourglass",
             "level": 0
           },
           {
             "name": "sap speed",
             "points": 18,
-            "image": "character-ability-cards/BB/sap-speed.png",
+            "image": "character-ability-cards/BB/fh-sap-speed.png",
             "xws": "sapspeed",
             "level": 1
           },
           {
+            "name": "stab them all",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-stab-them-all.png",
+            "xws": "stabthemall",
+            "level": 6
+          },
+          {
             "name": "systems reboot",
             "points": 19,
-            "image": "character-ability-cards/BB/systems-reboot.png",
+            "image": "character-ability-cards/BB/fh-systems-reboot.png",
             "xws": "systemsreboot",
             "level": 2
           },
           {
             "name": "temporal displacement",
             "points": 20,
-            "image": "character-ability-cards/BB/temporal-displacement.png",
+            "image": "character-ability-cards/BB/fh-temporal-displacement.png",
             "xws": "temporaldisplacement",
             "level": 1
           },
           {
+            "name": "the-knifes-edge",
+            "points": 4,
+            "image": "character-ability-cards/BB/fh-the-knifes-edge.png",
+            "xws": "theknifesedge",
+            "level": 6
+          },
+          {
             "name": "twin strike",
             "points": 21,
-            "image": "character-ability-cards/BB/twin-strike.png",
+            "image": "character-ability-cards/BB/fh-twin-strike.png",
             "xws": "twinstrike",
             "level": 1
           }
@@ -830,140 +900,210 @@ abilities_frosthaven = [
             {
                 "name": "bn-back",
                 "points": 24,
-                "image": "character-ability-cards/BN/bn-back.png",
+                "image": "character-ability-cards/BN/fh-bn-back.png",
                 "xws": "bnback",
                 "level": 0
             },
             {
             "name": "air support",
             "points": 22,
-            "image": "character-ability-cards/BN/air-support.png",
+            "image": "character-ability-cards/BN/fh-air-support.png",
             "xws": "airsupport",
             "level": 4
           },
           {
             "name": "at all costs",
             "points": 23,
-            "image": "character-ability-cards/BN/at-all-costs.png",
+            "image": "character-ability-cards/BN/fh-at-all-costs.png",
             "xws": "atallcosts",
             "level": 1
           },
           {
+            "name": "barricade",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-barricade.png",
+            "xws": "barricade",
+            "level": 6
+          },
+          {
             "name": "boldening blow",
             "points": 25,
-            "image": "character-ability-cards/BN/boldening-blow.png",
+            "image": "character-ability-cards/BN/fh-boldening-blow.png",
             "xws": "boldeningblow",
             "level": 4
           },
           {
+            "name": "bolstering shout",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-bolstering-shout.png",
+            "xws": "bolsteringshout",
+            "level": 6
+          },
+          {
             "name": "combined effort",
             "points": 26,
-            "image": "character-ability-cards/BN/combined-effort.png",
+            "image": "character-ability-cards/BN/fh-combined-effort.png",
             "xws": "combinedeffort",
             "level": 1
           },
           {
             "name": "deflecting maneuver",
             "points": 27,
-            "image": "character-ability-cards/BN/deflecting-maneuver.png",
+            "image": "character-ability-cards/BN/fh-deflecting-maneuver.png",
             "xws": "deflectingmaneuver",
             "level": 1
           },
           {
             "name": "driving inspiration",
             "points": 28,
-            "image": "character-ability-cards/BN/driving-inspiration.png",
+            "image": "character-ability-cards/BN/fh-driving-inspiration.png",
             "xws": "drivinginspiration",
             "level": 0
           },
           {
+            "name": "explosive epicenter",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-explosive-epicenter.png",
+            "xws": "explosiveepicenter",
+            "level": 5
+          },
+          {
+            "name": "hail of spears",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-hail-of-spears.png",
+            "xws": "hailofspears",
+            "level": 9
+          },
+          {
             "name": "head of the hammer",
             "points": 29,
-            "image": "character-ability-cards/BN/head-of-the-hammer.png",
+            "image": "character-ability-cards/BN/fh-head-of-the-hammer.png",
             "xws": "headofthehammer",
             "level": 3
           },
           {
+            "name": "hold-the-line",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-hold-the-line.png",
+            "xws": "holdtheline",
+            "level": 5
+          },
+          {
             "name": "incendiary throw",
             "points": 30,
-            "image": "character-ability-cards/BN/incendiary-throw.png",
+            "image": "character-ability-cards/BN/fh-incendiary-throw.png",
             "xws": "incendiarythrow",
             "level": 0
           },
           {
             "name": "javelin",
             "points": 31,
-            "image": "character-ability-cards/BN/javelin.png",
+            "image": "character-ability-cards/BN/fh-javelin.png",
             "xws": "javelin",
             "level": 1
           },
           {
+            "name": "lead from afar",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-lead-from-afar.png",
+            "xws": "leadfromafar",
+            "level": 7
+          },
+          {
             "name": "let them come",
             "points": 32,
-            "image": "character-ability-cards/BN/let-them-come.png",
+            "image": "character-ability-cards/BN/fh-let-them-come.png",
             "xws": "letthemcome",
             "level": 3
           },
           {
             "name": "meat grinder",
             "points": 33,
-            "image": "character-ability-cards/BN/meat-grinder.png",
+            "image": "character-ability-cards/BN/fh-meat-grinder.png",
             "xws": "meatgrinder",
             "level": 2
           },
           {
             "name": "pincer movement",
             "points": 34,
-            "image": "character-ability-cards/BN/pincer-movement.png",
+            "image": "character-ability-cards/BN/fh-pincer-movement.png",
             "xws": "pincermovement",
             "level": 1
           },
           {
             "name": "pinning charge",
             "points": 35,
-            "image": "character-ability-cards/BN/pinning-charge.png",
+            "image": "character-ability-cards/BN/fh-pinning-charge.png",
             "xws": "pinningcharge",
             "level": 2
           },
           {
             "name": "rallying cry",
             "points": 36,
-            "image": "character-ability-cards/BN/rallying-cry.png",
+            "image": "character-ability-cards/BN/fh-rallying-cry.png",
             "xws": "rallyingcry",
             "level": 1
           },
           {
             "name": "regroup",
             "points": 37,
-            "image": "character-ability-cards/BN/regroup.png",
+            "image": "character-ability-cards/BN/fh-regroup.png",
             "xws": "regroup",
             "level": 1
           },
           {
             "name": "resolved courage",
             "points": 38,
-            "image": "character-ability-cards/BN/resolved-courage.png",
+            "image": "character-ability-cards/BN/fh-resolved-courage.png",
             "xws": "resolvedcourage",
             "level": 0
           },
           {
             "name": "set for the charge",
             "points": 39,
-            "image": "character-ability-cards/BN/set-for-the-charge.png",
+            "image": "character-ability-cards/BN/fh-set-for-the-charge.png",
             "xws": "setforthecharge",
             "level": 1
           },
           {
+            "name": "sweeping aid",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-sweeping-aid.png",
+            "xws": "sweepingaid",
+            "level": 8
+          },
+          {
+            "name": "take no prisoners",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-take-no-prisoners.png",
+            "xws": "takenoprisoners",
+            "level": 9
+          },
+          {
+            "name": "taunting howl",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-taunting-howl.png",
+            "xws": "tauntinghowl",
+            "level": 8
+          },
+          {
             "name": "tip of the spear",
             "points": 40,
-            "image": "character-ability-cards/BN/tip-of-the-spear.png",
+            "image": "character-ability-cards/BN/fh-tip-of-the-spear.png",
             "xws": "tipofthespear",
             "level": 1
           },
           {
+            "name": "tri thrust",
+            "points": 4,
+            "image": "character-ability-cards/BN/fh-tri-thrust.png",
+            "xws": "trithrust",
+            "level": 7
+          },
+          {
             "name": "unbreakable wall",
             "points": 41,
-            "image": "character-ability-cards/BN/unbreakable-wall.png",
+            "image": "character-ability-cards/BN/fh-unbreakable-wall.png",
             "xws": "unbreakablewall",
             "level": 1
           }
@@ -978,154 +1118,224 @@ abilities_frosthaven = [
             {
                 "name": "df-back",
                 "points": 48,
-                "image": "character-ability-cards/DF/df-back.png",
+                "image": "character-ability-cards/DF/fh-df-back.png",
                 "xws": "dfback",
                 "level": 0
             },
             {
+              "name": "accurate strikes",
+              "points": 4,
+              "image": "character-ability-cards/DF/fh-accurate-strikes.png",
+              "xws": "accuratestrikes",
+              "level": 6
+            },
+            {
+              "name": "against all odds",
+              "points": 4,
+              "image": "character-ability-cards/DF/fh-against-all-odds.png",
+              "xws": "againstallodds",
+              "level": 8
+            },
+            {
             "name": "bloodletting",
             "points": 42,
-            "image": "character-ability-cards/DF/bloodletting.png",
+            "image": "character-ability-cards/DF/fh-bloodletting.png",
             "xws": "bloodletting",
             "level": 1
           },
           {
+            "name": "break through",
+            "points": 4,
+            "image": "character-ability-cards/DF/fh-break-through.png",
+            "xws": "breakthrough",
+            "level": 5
+          },
+          {
             "name": "chunk of flesh",
             "points": 43,
-            "image": "character-ability-cards/DF/chunk-of-flesh.png",
+            "image": "character-ability-cards/DF/fh-chunk-of-flesh.png",
             "xws": "chunkofflesh",
             "level": 4
           },
           {
+            "name": "consume stamina",
+            "points": 4,
+            "image": "character-ability-cards/DF/fh-consume-stamina.png",
+            "xws": "consumestamina",
+            "level": 6
+          },
+          {
             "name": "continuous health",
             "points": 44,
-            "image": "character-ability-cards/DF/continuous-health.png",
+            "image": "character-ability-cards/DF/fh-continuous-health.png",
             "xws": "continuoushealth",
             "level": 1
           },
           {
             "name": "crushing weight",
             "points": 45,
-            "image": "character-ability-cards/DF/crushing-weight.png",
+            "image": "character-ability-cards/DF/fh-crushing-weight.png",
             "xws": "crushingweight",
             "level": 1
           },
           {
             "name": "deadly shot",
             "points": 46,
-            "image": "character-ability-cards/DF/deadly-shot.png",
+            "image": "character-ability-cards/DF/fh-deadly-shot.png",
             "xws": "deadlyshot",
             "level": 1
           },
           {
             "name": "destructive fury",
             "points": 47,
-            "image": "character-ability-cards/DF/destructive-fury.png",
+            "image": "character-ability-cards/DF/fh-destructive-fury.png",
             "xws": "destructivefury",
             "level": 0
           },
           {
             "name": "draining arrows",
             "points": 49,
-            "image": "character-ability-cards/DF/draining-arrows.png",
+            "image": "character-ability-cards/DF/fh-draining-arrows.png",
             "xws": "drainingarrows",
             "level": 1
           },
           {
             "name": "dual bow",
             "points": 50,
-            "image": "character-ability-cards/DF/dual-bow.png",
+            "image": "character-ability-cards/DF/fh-dual-bow.png",
             "xws": "dualbow",
             "level": 3
           },
           {
             "name": "ever forward",
             "points": 51,
-            "image": "character-ability-cards/DF/ever-forward.png",
+            "image": "character-ability-cards/DF/fh-ever-forward.png",
             "xws": "everforward",
             "level": 2
           },
           {
+            "name": "everlasting",
+            "points": 4,
+            "image": "character-ability-cards/DF/fh-everlasting.png",
+            "xws": "everlasting",
+            "level": 9
+          },
+          {
             "name": "fierce barrage",
             "points": 52,
-            "image": "character-ability-cards/DF/fierce-barrage.png",
+            "image": "character-ability-cards/DF/fh-fierce-barrage.png",
             "xws": "fiercebarrage",
             "level": 3
           },
           {
             "name": "fortitude",
             "points": 53,
-            "image": "character-ability-cards/DF/fortitude.png",
+            "image": "character-ability-cards/DF/fh-fortitude.png",
             "xws": "fortitude",
             "level": 0
           },
           {
             "name": "gift of the prey",
             "points": 54,
-            "image": "character-ability-cards/DF/gift-of-the-prey.png",
+            "image": "character-ability-cards/DF/fh-gift-of-the-prey.png",
             "xws": "giftoftheprey",
             "level": 4
           },
           {
+            "name": "inevitable conclusion",
+            "points": 4,
+            "image": "character-ability-cards/DF/fh-inevitable-conclusion.png",
+            "xws": "inevitableconclusion",
+            "level": 8
+          },
+          {
+            "name": "like the wind",
+            "points": 4,
+            "image": "character-ability-cards/DF/fh-like-the-wind.png",
+            "xws": "likethewind",
+            "level": 7
+          },
+          {
             "name": "no remorse",
             "points": 55,
-            "image": "character-ability-cards/DF/no-remorse.png",
+            "image": "character-ability-cards/DF/fh-no-remorse.png",
             "xws": "noremorse",
             "level": 0
           },
           {
             "name": "precision aim",
             "points": 56,
-            "image": "character-ability-cards/DF/precision-aim.png",
+            "image": "character-ability-cards/DF/fh-precision-aim.png",
             "xws": "precisionaim",
             "level": 1
           },
           {
             "name": "prudent preparation",
             "points": 57,
-            "image": "character-ability-cards/DF/prudent-preparation.png",
+            "image": "character-ability-cards/DF/fh-prudent-preparation.png",
             "xws": "prudentpreparation",
             "level": 1
           },
           {
             "name": "relentless",
             "points": 58,
-            "image": "character-ability-cards/DF/relentless.png",
+            "image": "character-ability-cards/DF/fh-relentless.png",
             "xws": "relentless",
             "level": 1
           },
           {
             "name": "shockwave",
             "points": 59,
-            "image": "character-ability-cards/DF/shockwave.png",
+            "image": "character-ability-cards/DF/fh-shockwave.png",
             "xws": "shockwave",
             "level": 2
           },
           {
+            "name": "survivalist",
+            "points": 4,
+            "image": "character-ability-cards/DF/fh-survivalist.png",
+            "xws": "survivalist",
+            "level": 5
+          },
+          {
             "name": "sustained momentum",
             "points": 60,
-            "image": "character-ability-cards/DF/sustained-momentum.png",
+            "image": "character-ability-cards/DF/fh-sustained-momentum.png",
             "xws": "sustainedmomentum",
             "level": 1
           },
           {
             "name": "unbreakable",
             "points": 61,
-            "image": "character-ability-cards/DF/unbreakable.png",
+            "image": "character-ability-cards/DF/fh-unbreakable.png",
             "xws": "unbreakable",
             "level": 1
           },
           {
+            "name": "unending fight",
+            "points": 4,
+            "image": "character-ability-cards/DF/fh-unending-fight.png",
+            "xws": "unendingfight",
+            "level": 7
+          },
+          {
+            "name": "use every part",
+            "points": 4,
+            "image": "character-ability-cards/DF/fh-use-every-part.png",
+            "xws": "useeverypart",
+            "level": 9
+          },
+          {
             "name": "vile assault",
             "points": 62,
-            "image": "character-ability-cards/DF/vile-assault.png",
+            "image": "character-ability-cards/DF/fh-vile-assault.png",
             "xws": "vileassault",
             "level": 1
           },
           {
             "name": "violent inheritance",
             "points": 63,
-            "image": "character-ability-cards/DF/violent-inheritance.png",
+            "image": "character-ability-cards/DF/fh-violent-inheritance.png",
             "xws": "violentinheritance",
             "level": 1
           }
@@ -1140,150 +1350,220 @@ abilities_frosthaven = [
           {
             "name": "dw-back",
             "points": 71,
-            "image": "character-ability-cards/DW/dw-back.png",
+            "image": "character-ability-cards/DW/fh-dw-back.png",
             "xws": "dwback",
             "level": 0
           },
             {
             "name": "anger of the dead",
             "points": 64,
-            "image": "character-ability-cards/DW/anger-of-the-dead.png",
+            "image": "character-ability-cards/DW/fh-anger-of-the-dead.png",
             "xws": "angerofthedead",
             "level": 1
           },
           {
             "name": "black barrage",
             "points": 65,
-            "image": "character-ability-cards/DW/black-barrage.png",
+            "image": "character-ability-cards/DW/fh-black-barrage.png",
             "xws": "blackbarrage",
             "level": 1
           },
           {
+            "name": "black-lance",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-black-lance.png",
+            "xws": "blacklance",
+            "level": 9
+          },
+          {
             "name": "call of doom",
             "points": 66,
-            "image": "character-ability-cards/DW/call-of-doom.png",
+            "image": "character-ability-cards/DW/fh-call-of-doom.png",
             "xws": "callofdoom",
             "level": 1
           },
           {
             "name": "call to the abyss",
             "points": 67,
-            "image": "character-ability-cards/DW/call-to-the-abyss.png",
+            "image": "character-ability-cards/DW/fh-call-to-the-abyss.png",
             "xws": "calltotheabyss",
             "level": 1
           },
           {
             "name": "dark fog",
             "points": 68,
-            "image": "character-ability-cards/DW/dark-fog.png",
+            "image": "character-ability-cards/DW/fh-dark-fog.png",
             "xws": "darkfog",
             "level": 2
           },
           {
             "name": "dead bolt",
             "points": 69,
-            "image": "character-ability-cards/DW/dead-bolt.png",
+            "image": "character-ability-cards/DW/fh-dead-bolt.png",
             "xws": "deadbolt",
             "level": 3
           },
           {
             "name": "deepening despair",
             "points": 70,
-            "image": "character-ability-cards/DW/deepening-despair.png",
+            "image": "character-ability-cards/DW/fh-deepening-despair.png",
             "xws": "deepeningdespair",
             "level": 2
           },
           {
+            "name": "dominate",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-dominate.png",
+            "xws": "dominate",
+            "level": 5
+          },
+          {
             "name": "eclipse",
             "points": 74,
-            "image": "character-ability-cards/DW/eclipse.png",
+            "image": "character-ability-cards/DW/fh-eclipse.png",
             "xws": "eclipse",
             "level": 1
           },
           {
             "name": "fleeting dusk",
             "points": 75,
-            "image": "character-ability-cards/DW/fleeting-dusk.png",
+            "image": "character-ability-cards/DW/fh-fleeting-dusk.png",
             "xws": "fleetingdusk",
             "level": 4
           },
           {
             "name": "fluid night",
             "points": 76,
-            "image": "character-ability-cards/DW/fluid-night.png",
+            "image": "character-ability-cards/DW/fh-fluid-night.png",
             "xws": "fluidnight",
             "level": 1
           },
           {
             "name": "forceful spirits",
             "points": 77,
-            "image": "character-ability-cards/DW/forceful-spirits.png",
+            "image": "character-ability-cards/DW/fh-forceful-spirits.png",
             "xws": "forcefulspirits",
             "level": 0
           },
           {
+            "name": "frozen in fear",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-frozen-in-fear.png",
+            "xws": "frozeninfear",
+            "level": 8
+          },
+          {
+            "name": "hungry grasps",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-hungry-grasps.png",
+            "xws": "hungrygrasps",
+            "level": 7
+          },
+          {
+            "name": "lashing tendrils",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-lashing-tendrils.png",
+            "xws": "lashingtendrils",
+            "level": 8
+          },
+          {
             "name": "lingering rot",
             "points": 78,
-            "image": "character-ability-cards/DW/lingering-rot.png",
+            "image": "character-ability-cards/DW/fh-lingering-rot.png",
             "xws": "lingeringrot",
             "level": 1
           },
           {
+            "name": "medium",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-medium.png",
+            "xws": "medium",
+            "level": 5
+          },
+          {
+            "name": "profileration of the abyss",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-proliferation-of-the-abyss.png",
+            "xws": "proliferationoftheabyss",
+            "level": 7
+          },
+          {
             "name": "pulled across",
             "points": 79,
-            "image": "character-ability-cards/DW/pulled-across.png",
+            "image": "character-ability-cards/DW/fh-pulled-across.png",
             "xws": "pulledacross",
             "level": 4
           },
           {
             "name": "rest in the shade",
             "points": 80,
-            "image": "character-ability-cards/DW/rest-in-the-shade.png",
+            "image": "character-ability-cards/DW/fh-rest-in-the-shade.png",
             "xws": "restintheshade",
             "level": 0
           },
           {
-            "name": "restless souls",
+            "name": "restless spirits",
             "points": 81,
-            "image": "character-ability-cards/DW/restless-souls.png",
+            "image": "character-ability-cards/DW/fh-restless-spirits.png",
             "xws": "restlesssouls",
-            "level": 1
+            "level": 2
           },
           {
             "name": "ritual sacrafice",
             "points": 82,
-            "image": "character-ability-cards/DW/ritual-sacrafice.png",
+            "image": "character-ability-cards/DW/fh-ritual-sacrafice.png",
             "xws": "ritualsacrafice",
             "level": 3
           },
           {
             "name": "shadow step",
             "points": 83,
-            "image": "character-ability-cards/DW/shadow-step.png",
+            "image": "character-ability-cards/DW/fh-shadow-step.png",
             "xws": "shadowstep",
             "level": 1
           },
           {
             "name": "strength of the abyss",
             "points": 84,
-            "image": "character-ability-cards/DW/strength-of-the-abyss.png",
+            "image": "character-ability-cards/DW/fh-strength-of-the-abyss.png",
             "xws": "strengthoftheabyss",
             "level": 1
           },
           {
             "name": "sunless apparition",
             "points": 85,
-            "image": "character-ability-cards/DW/sunless-apparition.png",
+            "image": "character-ability-cards/DW/fh-sunless-apparition.png",
             "xws": "sunlessapparition",
             "level": 1
           },
           {
+            "name": "the night takes shape",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-the-night-takes-shape.png",
+            "xws": "thenighttakesshape",
+            "level": 6
+          },
+          {
+            "name": "vengeful storm",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-vengeful-storm.png",
+            "xws": "vengefulstorm",
+            "level": 6
+          },
+          {
             "name": "wave of anguish",
             "points": 86,
-            "image": "character-ability-cards/DW/wave-of-anguish.png",
+            "image": "character-ability-cards/DW/fh-wave-of-anguish.png",
             "xws": "waveofanguish",
             "level": 0
-          }
+          },
+          {
+            "name": "when your time comes",
+            "points": 4,
+            "image": "character-ability-cards/DW/fh-when-your-time-comes.png",
+            "xws": "whenyourtimecomes",
+            "level": 9
+          },
         ]
     },
     {
@@ -1295,177 +1575,247 @@ abilities_frosthaven = [
           {
             "name": "ge-back",
             "points": 96,
-            "image": "character-ability-cards/GE/ge-back-left.png",
+            "image": "character-ability-cards/GE/fh-ge-back.png",
             "xws": "gebackleft",
             "level": 0
           },
-            {
-            "name": "ambitious dare",
-            "points": 87,
-            "image": "character-ability-cards/GE/ambitious-dare.png",
-            "xws": "ambitiousdare",
-            "level": 1
+          {
+            "name": "accelerated metabolism",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-accelerated-metabolism.png",
+            "xws": "acceleratedmetabolism",
+            "level": 8
+          },
+          {
+            "name": "alluring pheromones",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-alluring-pheromones.png",
+            "xws": "alluringpheromones",
+            "level": 7
           },
           {
             "name": "changeling's boon",
             "points": 88,
-            "image": "character-ability-cards/GE/changelings-boon.png",
+            "image": "character-ability-cards/GE/fh-changelings-boon.png",
             "xws": "changelingsboon",
             "level": 1
           },
           {
+            "name": "chitinous horde",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-chitinous-horde.png",
+            "xws": "chitinoushorde",
+            "level": 5
+          },
+          {
+            "name": "corrosive acids",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-corrosive-acids.png",
+            "xws": "corrosiveacids",
+            "level": 6
+          },
+          {
             "name": "drag down",
             "points": 89,
-            "image": "character-ability-cards/GE/drag-down.png",
+            "image": "character-ability-cards/GE/fh-drag-down.png",
             "xws": "dragdown",
             "level": 1
           },
           {
-            "name": "draining pincers",
-            "points": 90,
-            "image": "character-ability-cards/GE/draining-pincers.png",
-            "xws": "drainingpincers",
-            "level": 0
+            "name": "dragonfly surge",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-dragonfly-surge.png",
+            "xws": "dragonflysurge",
+            "level": 3
           },
           {
-            "name": "fire bugs",
-            "points": 91,
-            "image": "character-ability-cards/GE/fire-bugs.png",
-            "xws": "firebugs",
-            "level": 3
+            "name": "draining pincers",
+            "points": 90,
+            "image": "character-ability-cards/GE/fh-draining-pincers.png",
+            "xws": "drainingpincers",
+            "level": 1
+          },
+          {
+            "name": "feeding frenzy",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-feeding-frenzy.png",
+            "xws": "feedingfrenzy",
+            "level": 0
           },
           {
             "name": "firefly swarm",
             "points": 92,
-            "image": "character-ability-cards/GE/firefly-swarm.png",
+            "image": "character-ability-cards/GE/fh-firefly-swarm.png",
             "xws": "fireflyswarm",
             "level": 1
           },
           {
             "name": "flailing tendrils",
             "points": 93,
-            "image": "character-ability-cards/GE/flailing-tendrils.png",
+            "image": "character-ability-cards/GE/fh-flailing-tendrils.png",
             "xws": "flailingtendrils",
             "level": 1
           },
           {
-            "name": "flaring hatred",
-            "points": 94,
-            "image": "character-ability-cards/GE/flaring-hatred.png",
-            "xws": "flaringhatred",
+            "name": "formless grace",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-formless-grace.png",
+            "xws": "formlessgrace",
+            "level": 5
+          },
+          {
+            "name": "hail of thorns",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-hail-of-thorns.png",
+            "xws": "hailofthorns",
             "level": 1
           },
           {
-            "name": "frost heave",
-            "points": 95,
-            "image": "character-ability-cards/GE/frost-heave.png",
-            "xws": "frostheave",
-            "level": 1
+            "name": "harbinger of ruin",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-harbinger-of-ruin.png",
+            "xws": "harbingerofruin",
+            "level": 9
           },
           {
             "name": "harvest the essence",
             "points": 100,
-            "image": "character-ability-cards/GE/harvest-the-essence.png",
+            "image": "character-ability-cards/GE/fh-harvest-the-essence.png",
             "xws": "harvesttheessence",
             "level": 1
           },
           {
             "name": "hirudotherapy",
             "points": 101,
-            "image": "character-ability-cards/GE/hirudotherapy.png",
+            "image": "character-ability-cards/GE/fh-hirudotherapy.png",
             "xws": "hirudotherapy",
-            "level": 0
+            "level": 6
           },
           {
             "name": "hornbeetle carapace",
             "points": 102,
-            "image": "character-ability-cards/GE/hornbeetle-carapace.png",
+            "image": "character-ability-cards/GE/fh-hornbeetle-carapace.png",
             "xws": "hornbeetlecarapace",
             "level": 1
           },
           {
-            "name": "hornet stinger",
+            "name": "hornet stingers",
             "points": 103,
-            "image": "character-ability-cards/GE/hornet-stinger.png",
-            "xws": "hornetstinger",
+            "image": "character-ability-cards/GE/fh-hornet-stingers.png",
+            "xws": "hornetstingers",
+            "level": 1
+          },
+          {
+            "name": "icebound quills",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-icebound-quills.png",
+            "xws": "iceboundquills",
             "level": 1
           },
           {
             "name": "into my embrace",
             "points": 104,
-            "image": "character-ability-cards/GE/into-my-embrace.png",
+            "image": "character-ability-cards/GE/fh-into-my-embrace.png",
             "xws": "intomyembrace",
             "level": 1
           },
           {
             "name": "locust host",
             "points": 105,
-            "image": "character-ability-cards/GE/locust-host.png",
+            "image": "character-ability-cards/GE/fh-locust-host.png",
             "xws": "locusthost",
             "level": 2
           },
           {
+            "name": "luminous descent",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-luminous-descent.png",
+            "xws": "luminousdescent",
+            "level": 4
+          },
+          {
             "name": "mandible storm",
             "points": 106,
-            "image": "character-ability-cards/GE/mandible-storm.png",
+            "image": "character-ability-cards/GE/fh-mandible-storm.png",
             "xws": "mandiblestorm",
             "level": 3
           },
           {
             "name": "mind spike",
             "points": 107,
-            "image": "character-ability-cards/GE/mind-spike.png",
+            "image": "character-ability-cards/GE/fh-mind-spike.png",
             "xws": "mindspike",
-            "level": 0
+            "level": 1
           },
           {
-            "name": "radiant flight",
-            "points": 108,
-            "image": "character-ability-cards/GE/radiant-flight.png",
-            "xws": "radiantflight",
-            "level": 4
+            "name": "oscillating entity",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-oscillating-entity.png",
+            "xws": "oscillatingentity",
+            "level": 8
+          },
+          {
+            "name": "reckless jab",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-reckless-jab.png",
+            "xws": "recklessjab",
+            "level": 0
           },
           {
             "name": "reshape the guise",
             "points": 109,
-            "image": "character-ability-cards/GE/reshape-the-guise.png",
+            "image": "character-ability-cards/GE/fh-reshape-the-guise.png",
             "xws": "reshapetheguise",
             "level": 0
           },
           {
-            "name": "rupturing skin",
-            "points": 110,
-            "image": "character-ability-cards/GE/rupturing-skin.png",
-            "xws": "rupturingskin",
-            "level": 2
-          },
-          {
             "name": "scarab flight",
             "points": 111,
-            "image": "character-ability-cards/GE/scarab-flight.png",
+            "image": "character-ability-cards/GE/fh-scarab-flight.png",
             "xws": "scarabflight",
             "level": 1
           },
           {
             "name": "selfless offering",
             "points": 112,
-            "image": "character-ability-cards/GE/selfless-offering.png",
+            "image": "character-ability-cards/GE/fh-selfless-offering.png",
             "xws": "selflessoffering",
             "level": 1
           },
           {
-            "name": "sweeping stingers",
-            "points": 113,
-            "image": "character-ability-cards/GE/sweeping-stingers.png",
-            "xws": "sweepingstingers",
-            "level": 1
+            "name": "smoldering hatred",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-smoldering-hatred.png",
+            "xws": "smolderinghatred",
+            "level": 0
           },
           {
             "name": "thresh and flail",
-            "points": 114,
-            "image": "character-ability-cards/GE/thresh-and-flail.png",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-thresh-and-flail.png",
             "xws": "threshandflail",
             "level": 4
+          },
+          {
+            "name": "two pronged entrapment",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-two-pronged-entrapment.png",
+            "xws": "twoprongedentrapment",
+            "level": 7
+          },
+          {
+            "name": "venomous barbs",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-venomous-barbs.png",
+            "xws": "venomousbarbs",
+            "level": 2
+          },
+          {
+            "name": "voice of salvation",
+            "points": 4,
+            "image": "character-ability-cards/GE/fh-voice-of-salvation.png",
+            "xws": "voiceofsalvation",
+            "level": 9
           }
         ]
     },
@@ -1479,156 +1829,226 @@ abilities_frosthaven = [
           {
             "name": "ne-back",
             "points": 129,
-            "image": "character-ability-cards/NE/ne-back.png",
+            "image": "character-ability-cards/NE/fh-bo-back.png",
             "xws": "anback",
             "level": 0
           },
             {
             "name": "angry spirits",
             "points": 115,
-            "image": "character-ability-cards/NE/angry-spirits.png",
+            "image": "character-ability-cards/NE/fh-angry-spirits.png",
             "xws": "angryspirits",
-            "level": 2
+            "level": 1
+          },
+          {
+            "name": "approach oblivion",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-approach-oblivion.png",
+            "xws": "approachoblivion",
+            "level": 0
+          },
+          {
+            "name": "behold the shrouded sun",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-behold-the-shrouded-sun.png",
+            "xws": "beholdtheshroudedsun",
+            "level": 9
           },
           {
             "name": "bone dagger",
             "points": 116,
-            "image": "character-ability-cards/NE/bone-dagger.png",
+            "image": "character-ability-cards/NE/fh-bone-dagger.png",
             "xws": "bonedagger",
-            "level": 3
-          },
-          {
-            "name": "called from beyond",
-            "points": 117,
-            "image": "character-ability-cards/NE/called-from-beyond.png",
-            "xws": "calledfrombeyond",
-            "level": 1
+            "level": 2
           },
           {
             "name": "command the wretched",
             "points": 118,
-            "image": "character-ability-cards/NE/command-the-wretched.png",
+            "image": "character-ability-cards/NE/fh-command-the-wretched.png",
             "xws": "commandthewretched",
             "level": 1
           },
           {
+            "name": "critical failure",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-critical-failure.png",
+            "xws": "criticalfailure",
+            "level": 4
+          },
+          {
             "name": "damned horde",
             "points": 119,
-            "image": "character-ability-cards/NE/damned-horde.png",
+            "image": "character-ability-cards/NE/fh-damned-horde.png",
             "xws": "damnedhorde",
             "level": 1
           },
           {
             "name": "dark tidings",
             "points": 120,
-            "image": "character-ability-cards/NE/dark-tidings.png",
+            "image": "character-ability-cards/NE/fh-dark-tidings.png",
             "xws": "darktidings",
             "level": 1
           },
           {
+            "name": "decaying-will",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-decaying-will.png",
+            "xws": "decayingwill",
+            "level": 1
+          },
+          {
+            "name": "endless-numbers",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-endless-numbers.png",
+            "xws": "endlessnumbers",
+            "level": 8
+          },
+          {
             "name": "eternal torment",
             "points": 121,
-            "image": "character-ability-cards/NE/eternal-torment.png",
+            "image": "character-ability-cards/NE/fh-eternal-torment.png",
             "xws": "eternaltorment",
             "level": 1
           },
           {
             "name": "exploding corpse",
             "points": 122,
-            "image": "character-ability-cards/NE/exploding-corpse.png",
+            "image": "character-ability-cards/NE/fh-exploding-corpse.png",
             "xws": "explodingcorpse",
             "level": 0
           },
           {
             "name": "fell remedy",
             "points": 123,
-            "image": "character-ability-cards/NE/fell-remedy.png",
+            "image": "character-ability-cards/NE/fh-fell-remedy.png",
             "xws": "fellremedy",
             "level": 1
           },
           {
             "name": "flesh shield",
             "points": 124,
-            "image": "character-ability-cards/NE/flesh-shield.png",
+            "image": "character-ability-cards/NE/fh-flesh-shield.png",
             "xws": "fleshshield",
             "level": 4
           },
           {
             "name": "flow of the black river",
             "points": 125,
-            "image": "character-ability-cards/NE/flow-of-the-black-river.png",
+            "image": "character-ability-cards/NE/fh-flow-of-the-black-river.png",
             "xws": "flowoftheblackriver",
             "level": 1
           },
           {
             "name": "grave digging",
             "points": 126,
-            "image": "character-ability-cards/NE/grave-digging.png",
+            "image": "character-ability-cards/NE/fh-grave-digging.png",
             "xws": "gravedigging",
             "level": 3
           },
           {
             "name": "life in death",
             "points": 127,
-            "image": "character-ability-cards/NE/life-in-death.png",
+            "image": "character-ability-cards/NE/fh-life-in-death.png",
             "xws": "lifeindeath",
             "level": 1
           },
           {
             "name": "malicious conversion",
             "points": 128,
-            "image": "character-ability-cards/NE/malicious-conversion.png",
+            "image": "character-ability-cards/NE/fh-malicious-conversion.png",
             "xws": "maliciousconversion",
             "level": 1
           },
           {
             "name": "putrid cloud",
             "points": 130,
-            "image": "character-ability-cards/NE/putrid-cloud.png",
+            "image": "character-ability-cards/NE/fh-putrid-cloud.png",
             "xws": "putridcloud",
-            "level": 2
+            "level": 3
           },
           {
-            "name": "ritual dagger",
-            "points": 131,
-            "image": "character-ability-cards/NE/ritual-dagger.png",
-            "xws": "ritualdagger",
+            "name": "recycled limbs",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-recycled-limbs.png",
+            "xws": "recycledlimbs",
+            "level": 7
+          },
+          {
+            "name": "returned servant",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-returned-servant.png",
+            "xws": "returnedservant",
             "level": 1
+          },
+          {
+            "name": "rotting multitude",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-rotting-multitude.png",
+            "xws": "rottingmultitude",
+            "level": 6
+          },
+          {
+            "name": "solid bones",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-solid-bones.png",
+            "xws": "solidbones",
+            "level": 5
+          },
+          {
+            "name": "soul claim",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-soul-claim.png",
+            "xws": "soul-claim",
+            "level": 7
           },
           {
             "name": "transfer of essence",
             "points": 132,
-            "image": "character-ability-cards/NE/transfer-of-essence.png",
+            "image": "character-ability-cards/NE/fh-transfer-of-essence.png",
             "xws": "transferofessence",
             "level": 1
           },
           {
-            "name": "unearthed horror",
-            "points": 133,
-            "image": "character-ability-cards/NE/unearthed-horror.png",
-            "xws": "unearthedhorror",
-            "level": 1
+            "name": "twisted decree",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-twisted-decree.png",
+            "xws": "twisteddecree",
+            "level": 6
           },
           {
-            "name": "willing sacrifice",
-            "points": 134,
-            "image": "character-ability-cards/NE/willing-sacrifice.png",
-            "xws": "willingsacrifice",
-            "level": 0
+            "name": "unearthed horror",
+            "points": 133,
+            "image": "character-ability-cards/NE/fh-unearthed-horror.png",
+            "xws": "unearthedhorror",
+            "level": 2
+          },
+          {
+            "name": "unforgivable-methods",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-unforgivable-methods.png",
+            "xws": "unforgivablemethods",
+            "level": 5
+          },
+          {
+            "name": "unholy prowess",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-unholy-prowess.png",
+            "xws": "unholyprowess",
+            "level": 9
+          },
+          {
+            "name": "wailing from beyond",
+            "points": 4,
+            "image": "character-ability-cards/NE/fh-wailing-from-beyond.png",
+            "xws": "wailingfrombeyond",
+            "level": 8
           },
           {
             "name": "wrath of the turned earth",
             "points": 135,
-            "image": "character-ability-cards/NE/wrath-of-the-turned-earth.png",
+            "image": "character-ability-cards/NE/fh-wrath-of-the-turned-earth.png",
             "xws": "wrathoftheturnedearth",
             "level": 0
-          },
-          {
-            "name": "wretched advance",
-            "points": 136,
-            "image": "character-ability-cards/NE/wretched-advance.png",
-            "xws": "wretchedadvance",
-            "level": 4
           }
         ]
     }
