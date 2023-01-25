@@ -933,17 +933,17 @@ attack_modifiers_categories_cs = [
             },
             {
                 "name": "am-sr-14",
-                "image": "attack-modifiers/SR/am-sr-13.jpg",
+                "image": "attack-modifiers/SR/am-sr-14.jpg",
                 "xws": "amspiritcaller14"
             },
             {
                 "name": "am-sr-15",
-                "image": "attack-modifiers/SR/am-sr-13.jpg",
+                "image": "attack-modifiers/SR/am-sr-14.jpg",
                 "xws": "amspiritcaller15"
             },
             {
                 "name": "am-sr-16",
-                "image": "attack-modifiers/SR/am-sr-13.jpg",
+                "image": "attack-modifiers/SR/am-sr-14.jpg",
                 "xws": "amspiritcaller16"
             },
             {
