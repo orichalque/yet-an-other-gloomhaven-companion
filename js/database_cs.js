@@ -12,6 +12,130 @@ classNames_cs = {
     st: 'Starslinger',
 }
 
+attack_modifiers_special_cs = {
+    "cards" : [    
+        {
+        "name": "cs-am-sa-back",
+        "points": 918,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-back.png",
+        "xws": "csamsaback"
+      },
+      {
+        "name": "cs-am-sa-01",
+        "points": 919,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-01.png",
+        "xws": "csamsa01"
+      },
+      {
+        "name": "cs-am-sa-02",
+        "points": 920,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-02.png",
+        "xws": "csamsa02"
+      },
+      {
+        "name": "cs-am-sa-03",
+        "points": 921,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-03.png",
+        "xws": "csamsa03"
+      },
+      {
+        "name": "cs-am-sa-04",
+        "points": 922,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-04.png",
+        "xws": "csamsa04"
+      },
+      {
+        "name": "cs-am-sa-05",
+        "points": 923,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-05.png",
+        "xws": "csamsa05"
+      },
+      {
+        "name": "cs-am-sa-06",
+        "points": 924,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-06.png",
+        "xws": "csamsa06"
+      },
+      {
+        "name": "cs-am-sa-07",
+        "points": 925,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-07.png",
+        "xws": "csamsa07"
+      },
+      {
+        "name": "cs-am-sa-08",
+        "points": 926,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-08.png",
+        "xws": "csamsa08"
+      },
+      {
+        "name": "cs-am-sa-09",
+        "points": 927,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-09.png",
+        "xws": "csamsa09"
+      },
+      {
+        "name": "cs-am-sa-10",
+        "points": 928,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-10.png",
+        "xws": "csamsa10"
+      },
+      {
+        "name": "cs-am-sa-11",
+        "points": 929,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-11.png",
+        "xws": "csamsa11"
+      },
+      {
+        "name": "cs-am-sa-12",
+        "points": 930,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-12.png",
+        "xws": "csamsa12"
+      },
+      {
+        "name": "cs-am-sa-13",
+        "points": 931,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-13.png",
+        "xws": "csamsa13"
+      },
+      {
+        "name": "cs-am-sa-14",
+        "points": 932,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-14.png",
+        "xws": "csamsa14"
+      },
+      {
+        "name": "cs-am-sa-15",
+        "points": 933,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-15.png",
+        "xws": "csamsa15"
+      },
+      {
+        "name": "cs-am-sa-16",
+        "points": 934,
+        "expansion": "Crimson Scales",
+        "image": "attack-modifiers/sanctuary/cs-am-sa-16.png",
+        "xws": "csamsa16"
+      }
+    ]
+}
+
 attack_modifiers_categories_cs = [
     {
         "name": "am-bo",
