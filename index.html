@@ -1259,6 +1259,22 @@
       </div>
     </div>
 
+      <!-- Modal -->
+      <div class="modal fade" id="confirmationDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body rounded alert-info">
+            {{ alert }}
+          </div>
+          <div class="modal-footer rounded alert-info">
+            <button type="button" class="btn btn-primary yesbutton" data-dismiss="modal" id="yesConfirmationButton">Yes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert" :class="dark ? ['text-dark', 'bg-light'] : ['text-light', 'bg-dark']">
       <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do
         not have to re-enter them every time you launch this application. </span><a href="https://cookiesandyou.com/"

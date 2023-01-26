@@ -197,12 +197,21 @@ var modifiersManagement = {
             if(availableCurses.length > 0) this.addModifier(availableCurses[0])
             this.shuffle();
         },
-        resetModifiers: function() {
+        resetModifiers: function() {                        
+            if (this.modifiersDrawPile.filter(card => this.checkIfCurseOrBless(card)).length > 0) {
+                this.showConfirmationDialog("Do you want to remove the blessing and curse cards from your modifiers deck ?",
+                () => {
+                    this.modifiersDrawPile.forEach(card => {
+                        if(this.checkIfCurseOrBless(card)) {
+                            this.removeModifier(card)
+                        }
+                    })
+                })
+            }
             this.shuffleModifiersDeck()
-            //this.modifiersDrawPile.forEach(card => {if(this.checkIfCurseOrBless(card)) this.removeModifier(card)})
             this.blessings = this.getBlessings()
             this.curses = this.getCurses()
-        },
+        },        
         updateModifierPosition: function(oldIndex, newIndex) {
             this.modifiersDrawPile.move(oldIndex, newIndex)
         },
