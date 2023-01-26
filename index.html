@@ -626,7 +626,7 @@
               <div class="col-auto mt-3 abilityContainer" v-for='(card,i) in abilityCategory.cards'
                 v-if="i != 0 && card.level <= level" v-on:click="addAbility(card)">
                 <img v-bind:id="card.xws" v-bind:src="'data/'+card.image"
-                  v-bind:class="[{selected: abilitiesChosen.includes(card)}]" class="image rounded"></img>
+                  v-bind:class="[{picked: abilitiesChosen.includes(card)}]" class="image rounded"></img>
               </div>
             </div>
 
