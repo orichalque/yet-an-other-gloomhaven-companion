@@ -20,7 +20,7 @@ new Vue({
         turn: 1,
         level: 1,
         specialClassMode : '',
-        specialClassValue : 0,
+        specialClassValue : 0
     },
     methods: {
         setMenu: function (param) {
@@ -142,7 +142,7 @@ new Vue({
 
             this.resetBattlegoals()
             this.resetModifiers()
-
+            
             this.turn = 1
             this.$forceUpdate()
 
@@ -462,6 +462,11 @@ new Vue({
             this.alert = alert
             $('#greenAlert').modal('show')
         },
+        showConfirmationDialog: function(alert, callback) {
+            this.alert = alert
+            document.getElementById("yesConfirmationButton").addEventListener("click", callback)
+            $("#confirmationDialog").modal('show')            
+        },
         draggableAbilities: function() {
             draggableAbilities = []
             this.createSortableAbilities('abilitiesInHandSection', this.cardsInHand, draggableAbilities)
@@ -490,7 +495,7 @@ new Vue({
                             if (event.oldIndex >= this.cardsToDisplayCurrent) // the card comes from the outside
                                 this.cardsToDisplayCurrent = event.newIndex
                         }
-
+ 
                         if (event.newIndex >= this.cardsToDisplayCurrent) { // we move a modif outside of the visibility area
                             if (event.oldIndex < this.cardsToDisplayCurrent)
                                 this.cardsToDisplayCurrent --
