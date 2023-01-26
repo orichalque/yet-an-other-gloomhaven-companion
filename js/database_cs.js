@@ -13,126 +13,126 @@ classNames_cs = {
 }
 
 attack_modifiers_special_cs = {
-    "cards" : [    
+    "cards": [
         {
-        "name": "cs-am-sa-back",
-        "points": 918,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-back.png",
-        "xws": "csamsaback"
-      },
-      {
-        "name": "cs-am-sa-01",
-        "points": 919,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-01.png",
-        "xws": "csamsa01"
-      },
-      {
-        "name": "cs-am-sa-02",
-        "points": 920,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-02.png",
-        "xws": "csamsa02"
-      },
-      {
-        "name": "cs-am-sa-03",
-        "points": 921,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-03.png",
-        "xws": "csamsa03"
-      },
-      {
-        "name": "cs-am-sa-04",
-        "points": 922,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-04.png",
-        "xws": "csamsa04"
-      },
-      {
-        "name": "cs-am-sa-05",
-        "points": 923,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-05.png",
-        "xws": "csamsa05"
-      },
-      {
-        "name": "cs-am-sa-06",
-        "points": 924,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-06.png",
-        "xws": "csamsa06"
-      },
-      {
-        "name": "cs-am-sa-07",
-        "points": 925,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-07.png",
-        "xws": "csamsa07"
-      },
-      {
-        "name": "cs-am-sa-08",
-        "points": 926,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-08.png",
-        "xws": "csamsa08"
-      },
-      {
-        "name": "cs-am-sa-09",
-        "points": 927,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-09.png",
-        "xws": "csamsa09"
-      },
-      {
-        "name": "cs-am-sa-10",
-        "points": 928,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-10.png",
-        "xws": "csamsa10"
-      },
-      {
-        "name": "cs-am-sa-11",
-        "points": 929,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-11.png",
-        "xws": "csamsa11"
-      },
-      {
-        "name": "cs-am-sa-12",
-        "points": 930,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-12.png",
-        "xws": "csamsa12"
-      },
-      {
-        "name": "cs-am-sa-13",
-        "points": 931,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-13.png",
-        "xws": "csamsa13"
-      },
-      {
-        "name": "cs-am-sa-14",
-        "points": 932,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-14.png",
-        "xws": "csamsa14"
-      },
-      {
-        "name": "cs-am-sa-15",
-        "points": 933,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-15.png",
-        "xws": "csamsa15"
-      },
-      {
-        "name": "cs-am-sa-16",
-        "points": 934,
-        "expansion": "Crimson Scales",
-        "image": "attack-modifiers/sanctuary/cs-am-sa-16.png",
-        "xws": "csamsa16"
-      }
+            "name": "cs-am-sa-back",
+            "points": 918,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-back.png",
+            "xws": "csamsaback"
+        },
+        {
+            "name": "cs-am-sa-01",
+            "points": 919,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-01.png",
+            "xws": "csamsa01"
+        },
+        {
+            "name": "cs-am-sa-02",
+            "points": 920,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-02.png",
+            "xws": "csamsa02"
+        },
+        {
+            "name": "cs-am-sa-03",
+            "points": 921,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-03.png",
+            "xws": "csamsa03"
+        },
+        {
+            "name": "cs-am-sa-04",
+            "points": 922,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-04.png",
+            "xws": "csamsa04"
+        },
+        {
+            "name": "cs-am-sa-05",
+            "points": 923,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-05.png",
+            "xws": "csamsa05"
+        },
+        {
+            "name": "cs-am-sa-06",
+            "points": 924,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-06.png",
+            "xws": "csamsa06"
+        },
+        {
+            "name": "cs-am-sa-07",
+            "points": 925,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-07.png",
+            "xws": "csamsa07"
+        },
+        {
+            "name": "cs-am-sa-08",
+            "points": 926,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-08.png",
+            "xws": "csamsa08"
+        },
+        {
+            "name": "cs-am-sa-09",
+            "points": 927,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-09.png",
+            "xws": "csamsa09"
+        },
+        {
+            "name": "cs-am-sa-10",
+            "points": 928,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-10.png",
+            "xws": "csamsa10"
+        },
+        {
+            "name": "cs-am-sa-11",
+            "points": 929,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-11.png",
+            "xws": "csamsa11"
+        },
+        {
+            "name": "cs-am-sa-12",
+            "points": 930,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-12.png",
+            "xws": "csamsa12"
+        },
+        {
+            "name": "cs-am-sa-13",
+            "points": 931,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-13.png",
+            "xws": "csamsa13"
+        },
+        {
+            "name": "cs-am-sa-14",
+            "points": 932,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-14.png",
+            "xws": "csamsa14"
+        },
+        {
+            "name": "cs-am-sa-15",
+            "points": 933,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-15.png",
+            "xws": "csamsa15"
+        },
+        {
+            "name": "cs-am-sa-16",
+            "points": 934,
+            "expansion": "Crimson Scales",
+            "image": "attack-modifiers/sanctuary/cs-am-sa-16.png",
+            "xws": "csamsa16"
+        }
     ]
 }
 
@@ -1358,6 +1358,12 @@ abilities_cs = [
                 "image": "character-ability-cards/BO/unexpected-bombshell.jpg",
                 "xws": "unexpectedbombshell",
                 "level": 1
+            },
+            {
+                "name": "pummeling chain",
+                "image": "character-ability-cards/BO/toa-msa-bombard.png",
+                "xws": "pummelingchain",
+                "level": 0
             }
         ]
     },
@@ -1372,6 +1378,12 @@ abilities_cs = [
                 "image": "character-ability-cards/BK/BK-back.jpg",
                 "xws": "brightsparkback",
                 "level": 0
+            },
+            {
+                "name": "creative spark",
+                "image": "character-ability-cards/BK/toa-msa-brightspark.png",
+                "xws": "creativespark",
+                "level": 1
             },
             {
                 "name": "acquire funding",
@@ -1566,6 +1578,11 @@ abilities_cs = [
                 "image": "character-ability-cards/CG/CG-back.jpg",
                 "xws": "chainguardback",
                 "level": 0
+            }, {
+                "name": "rope pit",
+                "image": "character-ability-cards/CG/toa-msa-chainguard.png",
+                "xws": "ropepit",
+                "level": 1
             },
             {
                 "name": "agonizing clamp",
@@ -1754,6 +1771,11 @@ abilities_cs = [
                 "image": "character-ability-cards/CF/CF-back.jpg",
                 "xws": "chieftainback",
                 "level": 0
+            }, {
+                "name": "call of the wild",
+                "image": "character-ability-cards/CF/toa-msa-chieftain.png",
+                "xws": "callofthewild",
+                "level": 1
             },
             {
                 "name": "agile predator",
@@ -1942,6 +1964,11 @@ abilities_cs = [
                 "image": "character-ability-cards/FK/FK-back.jpg",
                 "xws": "fireknightback",
                 "level": 0
+            }, {
+                "name": "improvised methods",
+                "image": "character-ability-cards/FK/toa-msa-fire-knight.png",
+                "xws": "improvisedmethods",
+                "level": 1
             },
             {
                 "name": "backdraft",
@@ -2130,6 +2157,11 @@ abilities_cs = [
                 "image": "character-ability-cards/HP/HP-back.jpg",
                 "xws": "hierophantback",
                 "level": 0
+            }, {
+                "name": "uplifting ascension",
+                "image": "character-ability-cards/HP/toa-msa-hierophant.png",
+                "xws": "uplifting ascension",
+                "level": 1
             },
             {
                 "name": "aspiration",
@@ -2372,6 +2404,11 @@ abilities_cs = [
                 "image": "character-ability-cards/HT/HT-back.jpg",
                 "xws": "hollowpactback",
                 "level": 0
+            }, {
+                "name": "the void consumes",
+                "image": "character-ability-cards/HT/toa-msa-hollowpact.png",
+                "xws": "thevoidconsumes",
+                "level": 1
             },
             {
                 "name": "borrowed vitality",
@@ -2560,6 +2597,11 @@ abilities_cs = [
                 "image": "character-ability-cards/LU/LU-back.jpg",
                 "xws": "luminaryback",
                 "level": 0
+            }, {
+                "name": "drawn into the light",
+                "image": "character-ability-cards/LU/toa-msa-luminary.png",
+                "xws": "drawnintothelight",
+                "level": 1
             },
             {
                 "name": "blackened rage",
@@ -2754,6 +2796,11 @@ abilities_cs = [
                 "image": "character-ability-cards/MI/MI-back.jpg",
                 "xws": "mirefootback",
                 "level": 0
+            }, {
+                "name": "giant slayer",
+                "image": "character-ability-cards/MI/toa-msa-mirefoot.png",
+                "xws": "giant slayer",
+                "level": 1
             },
             {
                 "name": "airborne spores",
@@ -2942,6 +2989,11 @@ abilities_cs = [
                 "image": "character-ability-cards/SR/SR-back.jpg",
                 "xws": "spiritcallerback",
                 "level": 0
+            }, {
+                "name": "terror of the deep",
+                "image": "character-ability-cards/SR/toa-msa-spirit-caller.png",
+                "xws": "terrorofthedeep",
+                "level": 1
             },
             {
                 "name": "burning pit",
@@ -3130,6 +3182,11 @@ abilities_cs = [
                 "image": "character-ability-cards/ST/ST-back.jpg",
                 "xws": "starslingerback",
                 "level": 0
+            }, {
+                "name": "deflection",
+                "image": "character-ability-cards/ST/toa-msa-starslinger.png",
+                "xws": "deflection",
+                "level": 1
             },
             {
                 "name": "absolute magnitude",
