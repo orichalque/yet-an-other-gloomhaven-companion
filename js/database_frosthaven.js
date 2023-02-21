@@ -11,96 +11,111 @@ attack_modifiers_categories_frosthaven = [
     {
         "name": "am-bb",
         "cards": [
-            {
-              "name": "am-bb-01",
-              "points": 0,
-              "image": "attack-modifiers/BB/am-bb-01.png",
-              "xws": "ambb01"
-            },
-            {
-              "name": "am-bb-02",
-              "points": 1,
-              "image": "attack-modifiers/BB/am-bb-02.png",
-              "xws": "ambb02"
-            },
-            {
-              "name": "am-bb-03",
-              "points": 2,
-              "image": "attack-modifiers/BB/am-bb-03.png",
-              "xws": "ambb03"
-            },
-            {
-              "name": "am-bb-04",
-              "points": 3,
-              "image": "attack-modifiers/BB/am-bb-04.png",
-              "xws": "ambb04"
-            },
-            {
-              "name": "am-bb-09",
-              "points": 8,
-              "image": "attack-modifiers/BB/am-bb-04.png",
-              "xws": "ambb09"
-            },
-            {
-              "name": "am-bb-05",
-              "points": 4,
-              "image": "attack-modifiers/BB/am-bb-05.png",
-              "xws": "ambb05"
-            },
-            {
-              "name": "am-bb-06",
-              "points": 5,
-              "image": "attack-modifiers/BB/am-bb-05.png",
-              "xws": "ambb06"
-            },
-            {
-              "name": "am-bb-07",
-              "points": 6,
-              "image": "attack-modifiers/BB/am-bb-07.png",
-              "xws": "ambb07"
-            },
-            {
-              "name": "am-bb-08",
-              "points": 7,
-              "image": "attack-modifiers/BB/am-bb-07.png",
-              "xws": "ambb08"
-            },
-            {
-              "name": "am-bb-10",
-              "points": 9,
-              "image": "attack-modifiers/BB/am-bb-07.png",
-              "xws": "ambb10"
-            },
-            {
-              "name": "am-bb-11",
-              "points": 10,
-              "image": "attack-modifiers/BB/am-bb-07.png",
-              "xws": "ambb11"
-            },
-            {
-              "name": "am-bb-12",
-              "points": 11,
-              "image": "attack-modifiers/BB/am-bb-07.png",
-              "xws": "ambb12"
-            },
-            {
-              "name": "am-bb-13",
-              "points": 12,
-              "image": "attack-modifiers/BB/am-bb-07.png",
-              "xws": "ambb13"
-            },
-            {
-              "name": "am-bb-14",
-              "points": 13,
-              "image": "attack-modifiers/BB/am-bb-14.png",
-              "xws": "ambb14"
-            },
-            {
-              "name": "am-bb-15",
-              "points": 14,
-              "image": "attack-modifiers/BB/am-bb-14.png",
-              "xws": "ambb15"
-            }
+          {
+            "name": "fh-am-bb-01",
+            "points": 745,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-01.png",
+            "xws": "fhambb01"
+          },
+          {
+            "name": "fh-am-bb-02",
+            "points": 746,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-02.png",
+            "xws": "fhambb02"
+          },
+          {
+            "name": "fh-am-bb-03",
+            "points": 747,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-03.png",
+            "xws": "fhambb03"
+          },
+          {
+            "name": "fh-am-bb-04",
+            "points": 748,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-04.png",
+            "xws": "fhambb04"
+          },
+          {
+            "name": "fh-am-bb-05",
+            "points": 749,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-05.png",
+            "xws": "fhambb05"
+          },
+          {
+            "name": "fh-am-bb-06",
+            "points": 750,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-06.png",
+            "xws": "fhambb06"
+          },
+          {
+            "name": "fh-am-bb-07",
+            "points": 751,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-07.png",
+            "xws": "fhambb07"
+          },
+          {
+            "name": "fh-am-bb-08",
+            "points": 752,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-08.png",
+            "xws": "fhambb08"
+          },
+          {
+            "name": "fh-am-bb-09",
+            "points": 753,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-09.png",
+            "xws": "fhambb09"
+          },
+          {
+            "name": "fh-am-bb-10",
+            "points": 754,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-10.png",
+            "xws": "fhambb10"
+          },
+          {
+            "name": "fh-am-bb-11",
+            "points": 755,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-11.png",
+            "xws": "fhambb11"
+          },
+          {
+            "name": "fh-am-bb-12",
+            "points": 756,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-12.png",
+            "xws": "fhambb12"
+          },
+          {
+            "name": "fh-am-bb-13",
+            "points": 757,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-13.png",
+            "xws": "fhambb13"
+          },
+          {
+            "name": "fh-am-bb-14",
+            "points": 758,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-14.png",
+            "xws": "fhambb14"
+          },
+          {
+            "name": "fh-am-bb-15",
+            "points": 759,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/BB/fh-am-bb-15.png",
+            "xws": "fhambb15"
+          }
         ]
     },
     {
