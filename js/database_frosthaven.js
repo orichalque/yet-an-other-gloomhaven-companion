@@ -1583,7 +1583,7 @@ abilities_frosthaven = [
     },
     {
         "name": "ge",
-        "max": 7,
+        "max": 14,
         "hidden": false,
         "position": 5,
         "cards": [
