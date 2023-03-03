@@ -1,4 +1,5 @@
 classNames_cs = {
+    aa: 'Amber Aegis',
     bo: 'Bombard',
     bk: 'Brightspark',
     cg: 'Chainguard',
@@ -8,1177 +9,1698 @@ classNames_cs = {
     ht: 'Hollowpact',
     lu: 'Luminary',
     mi: 'Mirefoot',
+    qa: 'Artificier',
+    rm: 'Ruinmaw',
     sr: 'Spiritcaller',
     st: 'Starslinger',
-}
-
-attack_modifiers_special_cs = {
-    "cards": [
+},
+    attack_modifiers_special_cs = {
+        "cards": [
+            {
+                "name": "cs-am-sa-01",
+                "points": 919, "image": "attack-modifiers/sanctuary/cs-am-sa-01.png",
+                "xws": "csamsa01"
+            },
+            {
+                "name": "cs-am-sa-02",
+                "points": 920, "image": "attack-modifiers/sanctuary/cs-am-sa-02.png",
+                "xws": "csamsa02"
+            },
+            {
+                "name": "cs-am-sa-03",
+                "points": 921, "image": "attack-modifiers/sanctuary/cs-am-sa-03.png",
+                "xws": "csamsa03"
+            },
+            {
+                "name": "cs-am-sa-04",
+                "points": 922, "image": "attack-modifiers/sanctuary/cs-am-sa-04.png",
+                "xws": "csamsa04"
+            },
+            {
+                "name": "cs-am-sa-05",
+                "points": 923, "image": "attack-modifiers/sanctuary/cs-am-sa-05.png",
+                "xws": "csamsa05"
+            },
+            {
+                "name": "cs-am-sa-06",
+                "points": 924, "image": "attack-modifiers/sanctuary/cs-am-sa-06.png",
+                "xws": "csamsa06"
+            },
+            {
+                "name": "cs-am-sa-07",
+                "points": 925, "image": "attack-modifiers/sanctuary/cs-am-sa-07.png",
+                "xws": "csamsa07"
+            },
+            {
+                "name": "cs-am-sa-08",
+                "points": 926, "image": "attack-modifiers/sanctuary/cs-am-sa-08.png",
+                "xws": "csamsa08"
+            },
+            {
+                "name": "cs-am-sa-09",
+                "points": 927, "image": "attack-modifiers/sanctuary/cs-am-sa-09.png",
+                "xws": "csamsa09"
+            },
+            {
+                "name": "cs-am-sa-10",
+                "points": 928, "image": "attack-modifiers/sanctuary/cs-am-sa-10.png",
+                "xws": "csamsa10"
+            },
+            {
+                "name": "cs-am-sa-11",
+                "points": 929, "image": "attack-modifiers/sanctuary/cs-am-sa-11.png",
+                "xws": "csamsa11"
+            },
+            {
+                "name": "cs-am-sa-12",
+                "points": 930, "image": "attack-modifiers/sanctuary/cs-am-sa-12.png",
+                "xws": "csamsa12"
+            },
+            {
+                "name": "cs-am-sa-13",
+                "points": 931, "image": "attack-modifiers/sanctuary/cs-am-sa-13.png",
+                "xws": "csamsa13"
+            },
+            {
+                "name": "cs-am-sa-14",
+                "points": 932, "image": "attack-modifiers/sanctuary/cs-am-sa-14.png",
+                "xws": "csamsa14"
+            },
+            {
+                "name": "cs-am-sa-15",
+                "points": 933, "image": "attack-modifiers/sanctuary/cs-am-sa-15.png",
+                "xws": "csamsa15"
+            },
+            {
+                "name": "cs-am-sa-16",
+                "points": 934, "image": "attack-modifiers/sanctuary/cs-am-sa-16.png",
+                "xws": "csamsa16"
+            }
+        ]
+    },
+    attack_modifiers_categories_cs = [
         {
-            "name": "cs-am-sa-back",
-            "points": 918,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-back.png",
-            "xws": "csamsaback"
+            "name": "am-aa",
+            "cards": [
+                {
+                    "name": "cs-am-aa-01",
+                    "image": "attack-modifiers/AA/cs-am-aa-01.png",
+                    "xws": "csamaa01"
+                },
+                {
+                    "name": "cs-am-aa-02",
+                    "image": "attack-modifiers/AA/cs-am-aa-02.png",
+                    "xws": "csamaa02"
+                },
+                {
+                    "name": "cs-am-aa-03",
+                    "image": "attack-modifiers/AA/cs-am-aa-03.png",
+                    "xws": "csamaa03"
+                },
+                {
+                    "name": "cs-am-aa-04",
+                    "image": "attack-modifiers/AA/cs-am-aa-04.png",
+                    "xws": "csamaa04"
+                },
+                {
+                    "name": "cs-am-aa-05",
+                    "image": "attack-modifiers/AA/cs-am-aa-05.png",
+                    "xws": "csamaa05"
+                },
+                {
+                    "name": "cs-am-aa-06",
+                    "image": "attack-modifiers/AA/cs-am-aa-06.png",
+                    "xws": "csamaa06"
+                },
+                {
+                    "name": "cs-am-aa-07",
+                    "image": "attack-modifiers/AA/cs-am-aa-07.png",
+                    "xws": "csamaa07"
+                },
+                {
+                    "name": "cs-am-aa-08",
+                    "image": "attack-modifiers/AA/cs-am-aa-08.png",
+                    "xws": "csamaa08"
+                },
+                {
+                    "name": "cs-am-aa-09",
+                    "image": "attack-modifiers/AA/cs-am-aa-09.png",
+                    "xws": "csamaa09"
+                },
+                {
+                    "name": "cs-am-aa-10",
+                    "image": "attack-modifiers/AA/cs-am-aa-10.png",
+                    "xws": "csamaa10"
+                },
+                {
+                    "name": "cs-am-aa-11",
+                    "image": "attack-modifiers/AA/cs-am-aa-11.png",
+                    "xws": "csamaa11"
+                },
+                {
+                    "name": "cs-am-aa-12",
+                    "image": "attack-modifiers/AA/cs-am-aa-12.png",
+                    "xws": "csamaa12"
+                },
+                {
+                    "name": "cs-am-aa-13",
+                    "image": "attack-modifiers/AA/cs-am-aa-13.png",
+                    "xws": "csamaa13"
+                },
+                {
+                    "name": "cs-am-aa-14",
+                    "image": "attack-modifiers/AA/cs-am-aa-14.png",
+                    "xws": "csamaa14"
+                },
+                {
+                    "name": "cs-am-aa-15",
+                    "image": "attack-modifiers/AA/cs-am-aa-15.png",
+                    "xws": "csamaa15"
+                },
+                {
+                    "name": "cs-am-aa-16",
+                    "image": "attack-modifiers/AA/cs-am-aa-16.png",
+                    "xws": "csamaa16"
+                },
+                {
+                    "name": "cs-am-aa-17",
+                    "image": "attack-modifiers/AA/cs-am-aa-17.png",
+                    "xws": "csamaa17"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-01",
-            "points": 919,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-01.png",
-            "xws": "csamsa01"
+            "name": "am-bo",
+            "cards": [
+                {
+                    "name": "am-bo-01",
+                    "image": "attack-modifiers/BO/am-bo-01.jpg",
+                    "xws": "ambombard01"
+                },
+                {
+                    "name": "am-bo-02",
+                    "image": "attack-modifiers/BO/am-bo-01.jpg",
+                    "xws": "ambombard02"
+                },
+                {
+                    "name": "am-bo-03",
+                    "image": "attack-modifiers/BO/am-bo-03.jpg",
+                    "xws": "ambombard03"
+                },
+                {
+                    "name": "am-bo-04",
+                    "image": "attack-modifiers/BO/am-bo-03.jpg",
+                    "xws": "ambombard04"
+                },
+                {
+                    "name": "am-bo-05",
+                    "image": "attack-modifiers/BO/am-bo-05.jpg",
+                    "xws": "ambombard05"
+                },
+                {
+                    "name": "am-bo-06",
+                    "image": "attack-modifiers/BO/am-bo-05.jpg",
+                    "xws": "ambombard06"
+                },
+                {
+                    "name": "am-bo-07",
+                    "image": "attack-modifiers/BO/am-bo-07.jpg",
+                    "xws": "ambombard07"
+                },
+                {
+                    "name": "am-bo-08",
+                    "image": "attack-modifiers/BO/am-bo-07.jpg",
+                    "xws": "ambombard08"
+                },
+                {
+                    "name": "am-bo-09",
+                    "image": "attack-modifiers/BO/am-bo-09.jpg",
+                    "xws": "ambombard09"
+                },
+                {
+                    "name": "am-bo-10",
+                    "image": "attack-modifiers/BO/am-bo-09.jpg",
+                    "xws": "ambombard10"
+                },
+                {
+                    "name": "am-bo-11",
+                    "image": "attack-modifiers/BO/am-bo-11.jpg",
+                    "xws": "ambombard11"
+                },
+                {
+                    "name": "am-bo-12",
+                    "image": "attack-modifiers/BO/am-bo-12.jpg",
+                    "xws": "ambombard12"
+                },
+                {
+                    "name": "am-bo-13",
+                    "image": "attack-modifiers/BO/am-bo-13.jpg",
+                    "xws": "ambombard13"
+                },
+                {
+                    "name": "am-bo-14",
+                    "image": "attack-modifiers/BO/am-bo-14.jpg",
+                    "xws": "ambombard14"
+                },
+                {
+                    "name": "am-bo-15",
+                    "image": "attack-modifiers/BO/am-bo-14.jpg",
+                    "xws": "ambombard15"
+                },
+                {
+                    "name": "am-bo-16",
+                    "image": "attack-modifiers/BO/am-bo-14.jpg",
+                    "xws": "ambombard16"
+                },
+                {
+                    "name": "am-bo-17",
+                    "image": "attack-modifiers/BO/am-bo-14.jpg",
+                    "xws": "ambombard17"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-02",
-            "points": 920,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-02.png",
-            "xws": "csamsa02"
+            "name": "am-bk",
+            "cards": [
+                {
+                    "name": "am-bk-01",
+                    "image": "attack-modifiers/BK/am-bk-01.jpg",
+                    "xws": "ambrightspark01"
+                },
+                {
+                    "name": "am-bk-02",
+                    "image": "attack-modifiers/BK/am-bk-01.jpg",
+                    "xws": "ambrightspark02"
+                },
+                {
+                    "name": "am-bk-03",
+                    "image": "attack-modifiers/BK/am-bk-01.jpg",
+                    "xws": "ambrightspark03"
+                },
+                {
+                    "name": "am-bk-04",
+                    "image": "attack-modifiers/BK/am-bk-04.jpg",
+                    "xws": "ambrightspark04"
+                },
+                {
+                    "name": "am-bk-05",
+                    "image": "attack-modifiers/BK/am-bk-05.jpg",
+                    "xws": "ambrightspark05"
+                },
+                {
+                    "name": "am-bk-06",
+                    "image": "attack-modifiers/BK/am-bk-05.jpg",
+                    "xws": "ambrightspark06"
+                },
+                {
+                    "name": "am-bk-07",
+                    "image": "attack-modifiers/BK/am-bk-07.jpg",
+                    "xws": "ambrightspark07"
+                },
+                {
+                    "name": "am-bk-08",
+                    "image": "attack-modifiers/BK/am-bk-08.jpg",
+                    "xws": "ambrightspark08"
+                },
+                {
+                    "name": "am-bk-09",
+                    "image": "attack-modifiers/BK/am-bk-08.jpg",
+                    "xws": "ambrightspark09"
+                },
+                {
+                    "name": "am-bk-10",
+                    "image": "attack-modifiers/BK/am-bk-10.jpg",
+                    "xws": "ambrightspark10"
+                },
+                {
+                    "name": "am-bk-11",
+                    "image": "attack-modifiers/BK/am-bk-10.jpg",
+                    "xws": "ambrightspark11"
+                },
+                {
+                    "name": "am-bk-12",
+                    "image": "attack-modifiers/BK/am-bk-12.jpg",
+                    "xws": "ambrightspark12"
+                },
+                {
+                    "name": "am-bk-13",
+                    "image": "attack-modifiers/BK/am-bk-13.jpg",
+                    "xws": "ambrightspark13"
+                },
+                {
+                    "name": "am-bk-14",
+                    "image": "attack-modifiers/BK/am-bk-14.jpg",
+                    "xws": "ambrightspark14"
+                },
+                {
+                    "name": "am-bk-15",
+                    "image": "attack-modifiers/BK/am-bk-15.jpg",
+                    "xws": "ambrightspark15"
+                },
+                {
+                    "name": "am-bk-16",
+                    "image": "attack-modifiers/BK/am-bk-16.jpg",
+                    "xws": "ambrightspark16"
+                },
+                {
+                    "name": "am-bk-17",
+                    "image": "attack-modifiers/BK/am-bk-16.jpg",
+                    "xws": "ambrightspark17"
+                },
+                {
+                    "name": "am-bk-18",
+                    "image": "attack-modifiers/BK/am-bk-16.jpg",
+                    "xws": "ambrightspark18"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-03",
-            "points": 921,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-03.png",
-            "xws": "csamsa03"
+            "name": "am-cg",
+            "cards": [
+                {
+                    "name": "am-cg-01",
+                    "image": "attack-modifiers/CG/am-cg-01.jpg",
+                    "xws": "amchainguard01"
+                },
+                {
+                    "name": "am-cg-02",
+                    "image": "attack-modifiers/CG/am-cg-01.jpg",
+                    "xws": "amchainguard02"
+                },
+                {
+                    "name": "am-cg-03",
+                    "image": "attack-modifiers/CG/am-cg-03.jpg",
+                    "xws": "amchainguard03"
+                },
+                {
+                    "name": "am-cg-04",
+                    "image": "attack-modifiers/CG/am-cg-03.jpg",
+                    "xws": "amchainguard04"
+                },
+                {
+                    "name": "am-cg-05",
+                    "image": "attack-modifiers/CG/am-cg-05.jpg",
+                    "xws": "amchainguard05"
+                },
+                {
+                    "name": "am-cg-06",
+                    "image": "attack-modifiers/CG/am-cg-05.jpg",
+                    "xws": "amchainguard06"
+                },
+                {
+                    "name": "am-cg-07",
+                    "image": "attack-modifiers/CG/am-cg-07.jpg",
+                    "xws": "amchainguard07"
+                },
+                {
+                    "name": "am-cg-08",
+                    "image": "attack-modifiers/CG/am-cg-07.jpg",
+                    "xws": "amchainguard08"
+                },
+                {
+                    "name": "am-cg-09",
+                    "image": "attack-modifiers/CG/am-cg-09.jpg",
+                    "xws": "amchainguard09"
+                },
+                {
+                    "name": "am-cg-10",
+                    "image": "attack-modifiers/CG/am-cg-09.jpg",
+                    "xws": "amchainguard10"
+                },
+                {
+                    "name": "am-cg-11",
+                    "image": "attack-modifiers/CG/am-cg-09.jpg",
+                    "xws": "amchainguard11"
+                },
+                {
+                    "name": "am-cg-12",
+                    "image": "attack-modifiers/CG/am-cg-12.jpg",
+                    "xws": "amchainguard12"
+                },
+                {
+                    "name": "am-cg-13",
+                    "image": "attack-modifiers/CG/am-cg-13.jpg",
+                    "xws": "amchainguard13"
+                },
+                {
+                    "name": "am-cg-14",
+                    "image": "attack-modifiers/CG/am-cg-14.jpg",
+                    "xws": "amchainguard14"
+                },
+                {
+                    "name": "am-cg-15",
+                    "image": "attack-modifiers/CG/am-cg-15.jpg",
+                    "xws": "amchainguard15"
+                },
+                {
+                    "name": "am-cg-16",
+                    "image": "attack-modifiers/CG/am-cg-15.jpg",
+                    "xws": "amchainguard16"
+                },
+                {
+                    "name": "am-cg-17",
+                    "image": "attack-modifiers/CG/am-cg-17.jpg",
+                    "xws": "amchainguard17"
+                },
+                {
+                    "name": "am-cg-18",
+                    "image": "attack-modifiers/CG/am-cg-17.jpg",
+                    "xws": "amchainguard18"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-04",
-            "points": 922,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-04.png",
-            "xws": "csamsa04"
+            "name": "am-cf",
+            "cards": [
+                {
+                    "name": "am-cf-01",
+                    "image": "attack-modifiers/CF/am-cf-01.jpg",
+                    "xws": "amchieftain01"
+                },
+                {
+                    "name": "am-cf-02",
+                    "image": "attack-modifiers/CF/am-cf-02.jpg",
+                    "xws": "amchieftain02"
+                },
+                {
+                    "name": "am-cf-03",
+                    "image": "attack-modifiers/CF/am-cf-02.jpg",
+                    "xws": "amchieftain03"
+                },
+                {
+                    "name": "am-cf-04",
+                    "image": "attack-modifiers/CF/am-cf-02.jpg",
+                    "xws": "amchieftain04"
+                },
+                {
+                    "name": "am-cf-05",
+                    "image": "attack-modifiers/CF/am-cf-02.jpg",
+                    "xws": "amchieftain05"
+                },
+                {
+                    "name": "am-cf-06",
+                    "image": "attack-modifiers/CF/am-cf-06.jpg",
+                    "xws": "amchieftain06"
+                },
+                {
+                    "name": "am-cf-07",
+                    "image": "attack-modifiers/CF/am-cf-07.jpg",
+                    "xws": "amchieftain07"
+                },
+                {
+                    "name": "am-cf-08",
+                    "image": "attack-modifiers/CF/am-cf-08.jpg",
+                    "xws": "amchieftain08"
+                },
+                {
+                    "name": "am-cf-09",
+                    "image": "attack-modifiers/CF/am-cf-08.jpg",
+                    "xws": "amchieftain09"
+                },
+                {
+                    "name": "am-cf-10",
+                    "image": "attack-modifiers/CF/am-cf-10.jpg",
+                    "xws": "amchieftain10"
+                },
+                {
+                    "name": "am-cf-11",
+                    "image": "attack-modifiers/CF/am-cf-10.jpg",
+                    "xws": "amchieftain11"
+                },
+                {
+                    "name": "am-cf-12",
+                    "image": "attack-modifiers/CF/am-cf-12.jpg",
+                    "xws": "amchieftain12"
+                },
+                {
+                    "name": "am-cf-13",
+                    "image": "attack-modifiers/CF/am-cf-13.jpg",
+                    "xws": "amchieftain13"
+                },
+                {
+                    "name": "am-cf-14",
+                    "image": "attack-modifiers/CF/am-cf-13.jpg",
+                    "xws": "amchieftain14"
+                },
+                {
+                    "name": "am-cf-15",
+                    "image": "attack-modifiers/CF/am-cf-15.jpg",
+                    "xws": "amchieftain15"
+                },
+                {
+                    "name": "am-cf-16",
+                    "image": "attack-modifiers/CF/am-cf-15.jpg",
+                    "xws": "amchieftain16"
+                },
+                {
+                    "name": "am-cf-17",
+                    "image": "attack-modifiers/CF/am-cf-17.jpg",
+                    "xws": "amchieftain17"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-05",
-            "points": 923,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-05.png",
-            "xws": "csamsa05"
+            "name": "am-fk",
+            "cards": [
+                {
+                    "name": "am-fk-01",
+                    "image": "attack-modifiers/FK/am-fk-01.jpg",
+                    "xws": "amfireknight01"
+                },
+                {
+                    "name": "am-fk-02",
+                    "image": "attack-modifiers/FK/am-fk-01.jpg",
+                    "xws": "amfireknight02"
+                },
+                {
+                    "name": "am-fk-03",
+                    "image": "attack-modifiers/FK/am-fk-03.jpg",
+                    "xws": "amfireknight03"
+                },
+                {
+                    "name": "am-fk-04",
+                    "image": "attack-modifiers/FK/am-fk-03.jpg",
+                    "xws": "amfireknight04"
+                },
+                {
+                    "name": "am-fk-05",
+                    "image": "attack-modifiers/FK/am-fk-03.jpg",
+                    "xws": "amfireknight05"
+                },
+                {
+                    "name": "am-fk-06",
+                    "image": "attack-modifiers/FK/am-fk-03.jpg",
+                    "xws": "amfireknight06"
+                },
+                {
+                    "name": "am-fk-07",
+                    "image": "attack-modifiers/FK/am-fk-07.jpg",
+                    "xws": "amfireknight07"
+                },
+                {
+                    "name": "am-fk-08",
+                    "image": "attack-modifiers/FK/am-fk-08.jpg",
+                    "xws": "amfireknight08"
+                },
+                {
+                    "name": "am-fk-09",
+                    "image": "attack-modifiers/FK/am-fk-07.jpg",
+                    "xws": "amfireknight09"
+                },
+                {
+                    "name": "am-fk-10",
+                    "image": "attack-modifiers/FK/am-fk-08.jpg",
+                    "xws": "amfireknight10"
+                },
+                {
+                    "name": "am-fk-11",
+                    "image": "attack-modifiers/FK/am-fk-11.jpg",
+                    "xws": "amfireknight11"
+                },
+                {
+                    "name": "am-fk-12",
+                    "image": "attack-modifiers/FK/am-fk-12.jpg",
+                    "xws": "amfireknight12"
+                },
+                {
+                    "name": "am-fk-13",
+                    "image": "attack-modifiers/FK/am-fk-12.jpg",
+                    "xws": "amfireknight13"
+                },
+                {
+                    "name": "am-fk-14",
+                    "image": "attack-modifiers/FK/am-fk-12.jpg",
+                    "xws": "amfireknight14"
+                },
+                {
+                    "name": "am-fk-15",
+                    "image": "attack-modifiers/FK/am-fk-12.jpg",
+                    "xws": "amfireknight15"
+                },
+                {
+                    "name": "am-fk-16",
+                    "image": "attack-modifiers/FK/am-fk-16.jpg",
+                    "xws": "amfireknight16"
+                },
+                {
+                    "name": "am-fk-17",
+                    "image": "attack-modifiers/FK/am-fk-16.jpg",
+                    "xws": "amfireknight17"
+                },
+                {
+                    "name": "am-fk-18",
+                    "image": "attack-modifiers/FK/am-fk-18.jpg",
+                    "xws": "amfireknight18"
+                },
+                {
+                    "name": "am-fk-19",
+                    "image": "attack-modifiers/FK/am-fk-18.jpg",
+                    "xws": "amfireknight19"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-06",
-            "points": 924,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-06.png",
-            "xws": "csamsa06"
+            "name": "am-hp",
+            "cards": [
+                {
+                    "name": "am-hp-01",
+                    "image": "attack-modifiers/HP/am-hp-01.jpg",
+                    "xws": "amhierophant01"
+                },
+                {
+                    "name": "am-hp-02",
+                    "image": "attack-modifiers/HP/am-hp-02.jpg",
+                    "xws": "amhierophant02"
+                },
+                {
+                    "name": "am-hp-03",
+                    "image": "attack-modifiers/HP/am-hp-03.jpg",
+                    "xws": "amhierophant03"
+                },
+                {
+                    "name": "am-hp-04",
+                    "image": "attack-modifiers/HP/am-hp-03.jpg",
+                    "xws": "amhierophant04"
+                },
+                {
+                    "name": "am-hp-05",
+                    "image": "attack-modifiers/HP/am-hp-05.jpg",
+                    "xws": "amhierophant05"
+                },
+                {
+                    "name": "am-hp-06",
+                    "image": "attack-modifiers/HP/am-hp-06.jpg",
+                    "xws": "amhierophant06"
+                },
+                {
+                    "name": "am-hp-07",
+                    "image": "attack-modifiers/HP/am-hp-07.jpg",
+                    "xws": "amhierophant07"
+                },
+                {
+                    "name": "am-hp-08",
+                    "image": "attack-modifiers/HP/am-hp-08.jpg",
+                    "xws": "amhierophant08"
+                },
+                {
+                    "name": "am-hp-09",
+                    "image": "attack-modifiers/HP/am-hp-08.jpg",
+                    "xws": "amhierophant09"
+                },
+                {
+                    "name": "am-hp-10",
+                    "image": "attack-modifiers/HP/am-hp-10.jpg",
+                    "xws": "amhierophant10"
+                },
+                {
+                    "name": "am-hp-11",
+                    "image": "attack-modifiers/HP/am-hp-10.jpg",
+                    "xws": "amhierophant11"
+                },
+                {
+                    "name": "am-hp-12",
+                    "image": "attack-modifiers/HP/am-hp-10.jpg",
+                    "xws": "amhierophant12"
+                },
+                {
+                    "name": "am-hp-13",
+                    "image": "attack-modifiers/HP/am-hp-10.jpg",
+                    "xws": "amhierophant13"
+                },
+                {
+                    "name": "am-hp-14",
+                    "image": "attack-modifiers/HP/am-hp-14.jpg",
+                    "xws": "amhierophant14"
+                },
+                {
+                    "name": "am-hp-15",
+                    "image": "attack-modifiers/HP/am-hp-14.jpg",
+                    "xws": "amhierophant15"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-07",
-            "points": 925,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-07.png",
-            "xws": "csamsa07"
+            "name": "am-ht",
+            "cards": [
+                {
+                    "name": "am-ht-01",
+                    "image": "attack-modifiers/HT/am-ht-01.jpg",
+                    "xws": "amhollowpact01"
+                },
+                {
+                    "name": "am-ht-02",
+                    "image": "attack-modifiers/HT/am-ht-01.jpg",
+                    "xws": "amhollowpact02"
+                },
+                {
+                    "name": "am-ht-03",
+                    "image": "attack-modifiers/HT/am-ht-03.jpg",
+                    "xws": "amhollowpact03"
+                },
+                {
+                    "name": "am-ht-04",
+                    "image": "attack-modifiers/HT/am-ht-03.jpg",
+                    "xws": "amhollowpact04"
+                },
+                {
+                    "name": "am-ht-05",
+                    "image": "attack-modifiers/HT/am-ht-05.jpg",
+                    "xws": "amhollowpact05"
+                },
+                {
+                    "name": "am-ht-06",
+                    "image": "attack-modifiers/HT/am-ht-06.jpg",
+                    "xws": "amhollowpact06"
+                },
+                {
+                    "name": "am-ht-07",
+                    "image": "attack-modifiers/HT/am-ht-06.jpg",
+                    "xws": "amhollowpact07"
+                },
+                {
+                    "name": "am-ht-08",
+                    "image": "attack-modifiers/HT/am-ht-05.jpg",
+                    "xws": "amhollowpact08"
+                },
+                {
+                    "name": "am-ht-09",
+                    "image": "attack-modifiers/HT/am-ht-06.jpg",
+                    "xws": "amhollowpact09"
+                },
+                {
+                    "name": "am-ht-10",
+                    "image": "attack-modifiers/HT/am-ht-06.jpg",
+                    "xws": "amhollowpact10"
+                },
+                {
+                    "name": "am-ht-11",
+                    "image": "attack-modifiers/HT/am-ht-11.jpg",
+                    "xws": "amhollowpact11"
+                },
+                {
+                    "name": "am-ht-12",
+                    "image": "attack-modifiers/HT/am-ht-03.jpg",
+                    "xws": "amhollowpact12"
+                },
+                {
+                    "name": "am-ht-13",
+                    "image": "attack-modifiers/HT/am-ht-13.jpg",
+                    "xws": "amhollowpact13"
+                },
+                {
+                    "name": "am-ht-14",
+                    "image": "attack-modifiers/HT/am-ht-14.jpg",
+                    "xws": "amhollowpact14"
+                },
+                {
+                    "name": "am-ht-15",
+                    "image": "attack-modifiers/HT/am-ht-15.jpg",
+                    "xws": "amhollowpact15"
+                },
+                {
+                    "name": "am-ht-16",
+                    "image": "attack-modifiers/HT/am-ht-16.jpg",
+                    "xws": "amhollowpact16"
+                },
+                {
+                    "name": "am-ht-17",
+                    "image": "attack-modifiers/HT/am-ht-15.jpg",
+                    "xws": "amhollowpact17"
+                },
+                {
+                    "name": "am-ht-18",
+                    "image": "attack-modifiers/HT/am-ht-16.jpg",
+                    "xws": "amhollowpact18"
+                },
+                {
+                    "name": "am-ht-19",
+                    "image": "attack-modifiers/HT/am-ht-19.jpg",
+                    "xws": "amhollowpact19"
+                },
+                {
+                    "name": "am-ht-20",
+                    "image": "attack-modifiers/HT/am-ht-19.jpg",
+                    "xws": "amhollowpact20"
+                },
+                {
+                    "name": "am-ht-21",
+                    "image": "attack-modifiers/HT/am-ht-21.jpg",
+                    "xws": "amhollowpact21"
+                },
+                {
+                    "name": "am-ht-22",
+                    "image": "attack-modifiers/HT/am-ht-21.jpg",
+                    "xws": "amhollowpact22"
+                },
+                {
+                    "name": "am-ht-23",
+                    "image": "attack-modifiers/HT/am-ht-23.jpg",
+                    "xws": "amhollowpact23"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-08",
-            "points": 926,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-08.png",
-            "xws": "csamsa08"
+            "name": "am-lu",
+            "cards": [
+                {
+                    "name": "am-lu-01",
+                    "image": "attack-modifiers/LU/am-lu-01.jpg",
+                    "xws": "amluminary01"
+                },
+                {
+                    "name": "am-lu-02",
+                    "image": "attack-modifiers/LU/am-lu-02.jpg",
+                    "xws": "amluminary02"
+                },
+                {
+                    "name": "am-lu-03",
+                    "image": "attack-modifiers/LU/am-lu-03.jpg",
+                    "xws": "amluminary03"
+                },
+                {
+                    "name": "am-lu-04",
+                    "image": "attack-modifiers/LU/am-lu-04.jpg",
+                    "xws": "amluminary04"
+                },
+                {
+                    "name": "am-lu-05",
+                    "image": "attack-modifiers/LU/am-lu-05.jpg",
+                    "xws": "amluminary05"
+                },
+                {
+                    "name": "am-lu-06",
+                    "image": "attack-modifiers/LU/am-lu-06.jpg",
+                    "xws": "amluminary06"
+                },
+                {
+                    "name": "am-lu-07",
+                    "image": "attack-modifiers/LU/am-lu-07.jpg",
+                    "xws": "amluminary07"
+                },
+                {
+                    "name": "am-lu-08",
+                    "image": "attack-modifiers/LU/am-lu-07.jpg",
+                    "xws": "amluminary08"
+                },
+                {
+                    "name": "am-lu-09",
+                    "image": "attack-modifiers/LU/am-lu-09.jpg",
+                    "xws": "amluminary09"
+                },
+                {
+                    "name": "am-lu-10",
+                    "image": "attack-modifiers/LU/am-lu-09.jpg",
+                    "xws": "amluminary10"
+                },
+                {
+                    "name": "am-lu-11",
+                    "image": "attack-modifiers/LU/am-lu-11.jpg",
+                    "xws": "amluminary11"
+                },
+                {
+                    "name": "am-lu-12",
+                    "image": "attack-modifiers/LU/am-lu-11.jpg",
+                    "xws": "amluminary12"
+                },
+                {
+                    "name": "am-lu-13",
+                    "image": "attack-modifiers/LU/am-lu-13.jpg",
+                    "xws": "amluminary13"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-09",
-            "points": 927,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-09.png",
-            "xws": "csamsa09"
+            "name": "am-mi",
+            "cards": [
+                {
+                    "name": "am-mi-01",
+                    "image": "attack-modifiers/MI/am-mi-01.jpg",
+                    "xws": "ammirefoot01"
+                },
+                {
+                    "name": "am-mi-02",
+                    "image": "attack-modifiers/MI/am-mi-02.jpg",
+                    "xws": "ammirefoot02"
+                },
+                {
+                    "name": "am-mi-03",
+                    "image": "attack-modifiers/MI/am-mi-02.jpg",
+                    "xws": "ammirefoot03"
+                },
+                {
+                    "name": "am-mi-04",
+                    "image": "attack-modifiers/MI/am-mi-04.jpg",
+                    "xws": "ammirefoot04"
+                },
+                {
+                    "name": "am-mi-05",
+                    "image": "attack-modifiers/MI/am-mi-04.jpg",
+                    "xws": "ammirefoot05"
+                },
+                {
+                    "name": "am-mi-06",
+                    "image": "attack-modifiers/MI/am-mi-04.jpg",
+                    "xws": "ammirefoot06"
+                },
+                {
+                    "name": "am-mi-07",
+                    "image": "attack-modifiers/MI/am-mi-04.jpg",
+                    "xws": "ammirefoot07"
+                },
+                {
+                    "name": "am-mi-08",
+                    "image": "attack-modifiers/MI/am-mi-08.jpg",
+                    "xws": "ammirefoot08"
+                },
+                {
+                    "name": "am-mi-09",
+                    "image": "attack-modifiers/MI/am-mi-08.jpg",
+                    "xws": "ammirefoot09"
+                },
+                {
+                    "name": "am-mi-10",
+                    "image": "attack-modifiers/MI/am-mi-10.jpg",
+                    "xws": "ammirefoot10"
+                },
+                {
+                    "name": "am-mi-11",
+                    "image": "attack-modifiers/MI/am-mi-10.jpg",
+                    "xws": "ammirefoot11"
+                },
+                {
+                    "name": "am-mi-12",
+                    "image": "attack-modifiers/MI/am-mi-10.jpg",
+                    "xws": "ammirefoot12"
+                },
+                {
+                    "name": "am-mi-13",
+                    "image": "attack-modifiers/MI/am-mi-10.jpg",
+                    "xws": "ammirefoot13"
+                },
+                {
+                    "name": "am-mi-14",
+                    "image": "attack-modifiers/MI/am-mi-14.jpg",
+                    "xws": "ammirefoot14"
+                },
+                {
+                    "name": "am-mi-15",
+                    "image": "attack-modifiers/MI/am-mi-14.jpg",
+                    "xws": "ammirefoot15"
+                },
+                {
+                    "name": "am-mi-16",
+                    "image": "attack-modifiers/MI/am-mi-16.jpg",
+                    "xws": "ammirefoot16"
+                },
+                {
+                    "name": "am-mi-17",
+                    "image": "attack-modifiers/MI/am-mi-16.jpg",
+                    "xws": "ammirefoot17"
+                },
+                {
+                    "name": "am-mi-18",
+                    "image": "attack-modifiers/MI/am-mi-16.jpg",
+                    "xws": "ammirefoot18"
+                },
+                {
+                    "name": "am-mi-19",
+                    "image": "attack-modifiers/MI/am-mi-16.jpg",
+                    "xws": "ammirefoot19"
+                },
+                {
+                    "name": "am-mi-20",
+                    "image": "attack-modifiers/MI/am-mi-20.jpg",
+                    "xws": "ammirefoot20"
+                },
+                {
+                    "name": "am-mi-21",
+                    "image": "attack-modifiers/MI/am-mi-20.jpg",
+                    "xws": "ammirefoot21"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-10",
-            "points": 928,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-10.png",
-            "xws": "csamsa10"
+            "name": "am-qa",
+            "cards": [
+                {
+                    "name": "cs-am-qa-01",
+                    "image": "attack-modifiers/QA/cs-am-qa-01.png",
+                    "xws": "csamqa01"
+                },
+                {
+                    "name": "cs-am-qa-02",
+                    "image": "attack-modifiers/QA/cs-am-qa-02.png",
+                    "xws": "csamqa02"
+                },
+                {
+                    "name": "cs-am-qa-03",
+                    "image": "attack-modifiers/QA/cs-am-qa-03.png",
+                    "xws": "csamqa03"
+                },
+                {
+                    "name": "cs-am-qa-04",
+                    "image": "attack-modifiers/QA/cs-am-qa-04.png",
+                    "xws": "csamqa04"
+                },
+                {
+                    "name": "cs-am-qa-05",
+                    "image": "attack-modifiers/QA/cs-am-qa-05.png",
+                    "xws": "csamqa05"
+                },
+                {
+                    "name": "cs-am-qa-06",
+                    "image": "attack-modifiers/QA/cs-am-qa-06.png",
+                    "xws": "csamqa06"
+                },
+                {
+                    "name": "cs-am-qa-07",
+                    "image": "attack-modifiers/QA/cs-am-qa-07.png",
+                    "xws": "csamqa07"
+                },
+                {
+                    "name": "cs-am-qa-08",
+                    "image": "attack-modifiers/QA/cs-am-qa-08.png",
+                    "xws": "csamqa08"
+                },
+                {
+                    "name": "cs-am-qa-09",
+                    "image": "attack-modifiers/QA/cs-am-qa-09.png",
+                    "xws": "csamqa09"
+                },
+                {
+                    "name": "cs-am-qa-10",
+                    "image": "attack-modifiers/QA/cs-am-qa-10.png",
+                    "xws": "csamqa10"
+                },
+                {
+                    "name": "cs-am-qa-11",
+                    "image": "attack-modifiers/QA/cs-am-qa-11.png",
+                    "xws": "csamqa11"
+                },
+                {
+                    "name": "cs-am-qa-12",
+                    "image": "attack-modifiers/QA/cs-am-qa-12.png",
+                    "xws": "csamqa12"
+                },
+                {
+                    "name": "cs-am-qa-13",
+                    "image": "attack-modifiers/QA/cs-am-qa-13.png",
+                    "xws": "csamqa13"
+                },
+                {
+                    "name": "cs-am-qa-14",
+                    "image": "attack-modifiers/QA/cs-am-qa-14.png",
+                    "xws": "csamqa14"
+                },
+                {
+                    "name": "cs-am-qa-15",
+                    "image": "attack-modifiers/QA/cs-am-qa-15.png",
+                    "xws": "csamqa15"
+                },
+                {
+                    "name": "cs-am-qa-16",
+                    "image": "attack-modifiers/QA/cs-am-qa-16.png",
+                    "xws": "csamqa16"
+                },
+                {
+                    "name": "cs-am-qa-17",
+                    "image": "attack-modifiers/QA/cs-am-qa-17.png",
+                    "xws": "csamqa17"
+                }
+            ]
+        }, {
+            "name": "am-rm",
+            "cards": [
+                {
+                    "name": "cs-am-rm-01",
+                    "image": "attack-modifiers/RM/cs-am-rm-01.png",
+                    "xws": "csamrm01"
+                },
+                {
+                    "name": "cs-am-rm-02",
+                    "image": "attack-modifiers/RM/cs-am-rm-02.png",
+                    "xws": "csamrm02"
+                },
+                {
+                    "name": "cs-am-rm-03",
+                    "image": "attack-modifiers/RM/cs-am-rm-03.png",
+                    "xws": "csamrm03"
+                },
+                {
+                    "name": "cs-am-rm-04",
+                    "image": "attack-modifiers/RM/cs-am-rm-04.png",
+                    "xws": "csamrm04"
+                },
+                {
+                    "name": "cs-am-rm-05",
+                    "image": "attack-modifiers/RM/cs-am-rm-05.png",
+                    "xws": "csamrm05"
+                },
+                {
+                    "name": "cs-am-rm-06",
+                    "image": "attack-modifiers/RM/cs-am-rm-06.png",
+                    "xws": "csamrm06"
+                },
+                {
+                    "name": "cs-am-rm-07",
+                    "image": "attack-modifiers/RM/cs-am-rm-07.png",
+                    "xws": "csamrm07"
+                },
+                {
+                    "name": "cs-am-rm-08",
+                    "image": "attack-modifiers/RM/cs-am-rm-08.png",
+                    "xws": "csamrm08"
+                },
+                {
+                    "name": "cs-am-rm-09",
+                    "image": "attack-modifiers/RM/cs-am-rm-09.png",
+                    "xws": "csamrm09"
+                },
+                {
+                    "name": "cs-am-rm-10",
+                    "image": "attack-modifiers/RM/cs-am-rm-10.png",
+                    "xws": "csamrm10"
+                },
+                {
+                    "name": "cs-am-rm-11",
+                    "image": "attack-modifiers/RM/cs-am-rm-11.png",
+                    "xws": "csamrm11"
+                },
+                {
+                    "name": "cs-am-rm-12",
+                    "image": "attack-modifiers/RM/cs-am-rm-12.png",
+                    "xws": "csamrm12"
+                },
+                {
+                    "name": "cs-am-rm-13",
+                    "image": "attack-modifiers/RM/cs-am-rm-13.png",
+                    "xws": "csamrm13"
+                },
+                {
+                    "name": "cs-am-rm-14",
+                    "image": "attack-modifiers/RM/cs-am-rm-14.png",
+                    "xws": "csamrm14"
+                },
+                {
+                    "name": "cs-am-rm-15",
+                    "image": "attack-modifiers/RM/cs-am-rm-15.png",
+                    "xws": "csamrm15"
+                },
+                {
+                    "name": "cs-am-rm-16",
+                    "image": "attack-modifiers/RM/cs-am-rm-16.png",
+                    "xws": "csamrm16"
+                },
+                {
+                    "name": "cs-am-rm-17",
+                    "image": "attack-modifiers/RM/cs-am-rm-17.png",
+                    "xws": "csamrm17"
+                },
+                {
+                    "name": "cs-am-rm-18",
+                    "image": "attack-modifiers/RM/cs-am-rm-18.png",
+                    "xws": "csamrm18"
+                },
+                {
+                    "name": "cs-am-rm-19",
+                    "image": "attack-modifiers/RM/cs-am-rm-19.png",
+                    "xws": "csamrm19"
+                },
+                {
+                    "name": "cs-am-rm-20",
+                    "image": "attack-modifiers/RM/cs-am-rm-20.png",
+                    "xws": "csamrm20"
+                },
+                {
+                    "name": "cs-am-rm-21",
+                    "image": "attack-modifiers/RM/cs-am-rm-21.png",
+                    "xws": "csamrm21"
+                },
+                {
+                    "name": "cs-am-rm-22",
+                    "image": "attack-modifiers/RM/cs-am-rm-22.png",
+                    "xws": "csamrm22"
+                },
+                {
+                    "name": "cs-am-rm-23",
+                    "image": "attack-modifiers/RM/cs-am-rm-23.png",
+                    "xws": "csamrm23"
+                },
+                {
+                    "name": "cs-pe-rm-back",
+                    "image": "attack-modifiers/RM/cs-pe-rm-back.png",
+                    "xws": "cspermback"
+                },
+                {
+                    "name": "cs-pe-rm-01",
+                    "image": "attack-modifiers/RM/cs-pe-rm-01.png",
+                    "xws": "csperm01"
+                },
+                {
+                    "name": "cs-pe-rm-02",
+                    "image": "attack-modifiers/RM/cs-pe-rm-02.png",
+                    "xws": "csperm02"
+                },
+                {
+                    "name": "cs-pe-rm-03",
+                    "image": "attack-modifiers/RM/cs-pe-rm-03.png",
+                    "xws": "csperm03"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-11",
-            "points": 929,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-11.png",
-            "xws": "csamsa11"
+            "name": "am-sr",
+            "cards": [
+                {
+                    "name": "am-sr-01",
+                    "image": "attack-modifiers/SR/am-sr-01.jpg",
+                    "xws": "amspiritcaller01"
+                },
+                {
+                    "name": "am-sr-02",
+                    "image": "attack-modifiers/SR/am-sr-02.jpg",
+                    "xws": "amspiritcaller02"
+                },
+                {
+                    "name": "am-sr-03",
+                    "image": "attack-modifiers/SR/am-sr-03.jpg",
+                    "xws": "amspiritcaller03"
+                },
+                {
+                    "name": "am-sr-04",
+                    "image": "attack-modifiers/SR/am-sr-03.jpg",
+                    "xws": "amspiritcaller04"
+                },
+                {
+                    "name": "am-sr-05",
+                    "image": "attack-modifiers/SR/am-sr-05.jpg",
+                    "xws": "amspiritcaller05"
+                },
+                {
+                    "name": "am-sr-06",
+                    "image": "attack-modifiers/SR/am-sr-06.jpg",
+                    "xws": "amspiritcaller06"
+                },
+                {
+                    "name": "am-sr-07",
+                    "image": "attack-modifiers/SR/am-sr-05.jpg",
+                    "xws": "amspiritcaller07"
+                },
+                {
+                    "name": "am-sr-08",
+                    "image": "attack-modifiers/SR/am-sr-06.jpg",
+                    "xws": "amspiritcaller08"
+                },
+                {
+                    "name": "am-sr-09",
+                    "image": "attack-modifiers/SR/am-sr-09.jpg",
+                    "xws": "amspiritcaller09"
+                },
+                {
+                    "name": "am-sr-10",
+                    "image": "attack-modifiers/SR/am-sr-09.jpg",
+                    "xws": "amspiritcaller10"
+                },
+                {
+                    "name": "am-sr-11",
+                    "image": "attack-modifiers/SR/am-sr-11.jpg",
+                    "xws": "amspiritcaller11"
+                },
+                {
+                    "name": "am-sr-12",
+                    "image": "attack-modifiers/SR/am-sr-11.jpg",
+                    "xws": "amspiritcaller12"
+                },
+                {
+                    "name": "am-sr-13",
+                    "image": "attack-modifiers/SR/am-sr-13.jpg",
+                    "xws": "amspiritcaller13"
+                },
+                {
+                    "name": "am-sr-14",
+                    "image": "attack-modifiers/SR/am-sr-14.jpg",
+                    "xws": "amspiritcaller14"
+                },
+                {
+                    "name": "am-sr-15",
+                    "image": "attack-modifiers/SR/am-sr-14.jpg",
+                    "xws": "amspiritcaller15"
+                },
+                {
+                    "name": "am-sr-16",
+                    "image": "attack-modifiers/SR/am-sr-14.jpg",
+                    "xws": "amspiritcaller16"
+                },
+                {
+                    "name": "am-sr-17",
+                    "image": "attack-modifiers/SR/am-sr-17.jpg",
+                    "xws": "amspiritcaller17"
+                },
+                {
+                    "name": "am-sr-18",
+                    "image": "attack-modifiers/SR/am-sr-18.jpg",
+                    "xws": "amspiritcaller18"
+                },
+                {
+                    "name": "am-sr-19",
+                    "image": "attack-modifiers/SR/am-sr-19.jpg",
+                    "xws": "amspiritcaller19"
+                }
+            ]
         },
         {
-            "name": "cs-am-sa-12",
-            "points": 930,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-12.png",
-            "xws": "csamsa12"
-        },
-        {
-            "name": "cs-am-sa-13",
-            "points": 931,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-13.png",
-            "xws": "csamsa13"
-        },
-        {
-            "name": "cs-am-sa-14",
-            "points": 932,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-14.png",
-            "xws": "csamsa14"
-        },
-        {
-            "name": "cs-am-sa-15",
-            "points": 933,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-15.png",
-            "xws": "csamsa15"
-        },
-        {
-            "name": "cs-am-sa-16",
-            "points": 934,
-            "expansion": "Crimson Scales",
-            "image": "attack-modifiers/sanctuary/cs-am-sa-16.png",
-            "xws": "csamsa16"
+            "name": "am-st",
+            "cards": [
+                {
+                    "name": "am-st-01",
+                    "image": "attack-modifiers/ST/am-st-01.jpg",
+                    "xws": "amstarslinger01"
+                },
+                {
+                    "name": "am-st-02",
+                    "image": "attack-modifiers/ST/am-st-01.jpg",
+                    "xws": "amstarslinger02"
+                },
+                {
+                    "name": "am-st-03",
+                    "image": "attack-modifiers/ST/am-st-03.jpg",
+                    "xws": "amstarslinger03"
+                },
+                {
+                    "name": "am-st-04",
+                    "image": "attack-modifiers/ST/am-st-04.jpg",
+                    "xws": "amstarslinger04"
+                },
+                {
+                    "name": "am-st-05",
+                    "image": "attack-modifiers/ST/am-st-05.jpg",
+                    "xws": "amstarslinger05"
+                },
+                {
+                    "name": "am-st-06",
+                    "image": "attack-modifiers/ST/am-st-05.jpg",
+                    "xws": "amstarslinger06"
+                },
+                {
+                    "name": "am-st-07",
+                    "image": "attack-modifiers/ST/am-st-07.jpg",
+                    "xws": "amstarslinger07"
+                },
+                {
+                    "name": "am-st-08",
+                    "image": "attack-modifiers/ST/am-st-08.jpg",
+                    "xws": "amstarslinger08"
+                },
+                {
+                    "name": "am-st-09",
+                    "image": "attack-modifiers/ST/am-st-08.jpg",
+                    "xws": "amstarslinger09"
+                },
+                {
+                    "name": "am-st-10",
+                    "image": "attack-modifiers/ST/am-st-10.jpg",
+                    "xws": "amstarslinger10"
+                },
+                {
+                    "name": "am-st-11",
+                    "image": "attack-modifiers/ST/am-st-10.jpg",
+                    "xws": "amstarslinger11"
+                },
+                {
+                    "name": "am-st-12",
+                    "image": "attack-modifiers/ST/am-st-12.jpg",
+                    "xws": "amstarslinger12"
+                },
+                {
+                    "name": "am-st-13",
+                    "image": "attack-modifiers/ST/am-st-12.jpg",
+                    "xws": "amstarslinger13"
+                },
+                {
+                    "name": "am-st-14",
+                    "image": "attack-modifiers/ST/am-st-14.jpg",
+                    "xws": "amstarslinger14"
+                },
+                {
+                    "name": "am-st-15",
+                    "image": "attack-modifiers/ST/am-st-14.jpg",
+                    "xws": "amstarslinger15"
+                },
+                {
+                    "name": "am-st-16",
+                    "image": "attack-modifiers/ST/am-st-14.jpg",
+                    "xws": "amstarslinger16"
+                },
+                {
+                    "name": "am-st-17",
+                    "image": "attack-modifiers/ST/am-st-14.jpg",
+                    "xws": "amstarslinger17"
+                }
+            ]
         }
     ]
-}
-
-attack_modifiers_categories_cs = [
-    {
-        "name": "am-bo",
-        "cards": [
-            {
-                "name": "am-bo-01",
-                "image": "attack-modifiers/BO/am-bo-01.jpg",
-                "xws": "ambombard01"
-            },
-            {
-                "name": "am-bo-02",
-                "image": "attack-modifiers/BO/am-bo-01.jpg",
-                "xws": "ambombard02"
-            },
-            {
-                "name": "am-bo-03",
-                "image": "attack-modifiers/BO/am-bo-03.jpg",
-                "xws": "ambombard03"
-            },
-            {
-                "name": "am-bo-04",
-                "image": "attack-modifiers/BO/am-bo-03.jpg",
-                "xws": "ambombard04"
-            },
-            {
-                "name": "am-bo-05",
-                "image": "attack-modifiers/BO/am-bo-05.jpg",
-                "xws": "ambombard05"
-            },
-            {
-                "name": "am-bo-06",
-                "image": "attack-modifiers/BO/am-bo-05.jpg",
-                "xws": "ambombard06"
-            },
-            {
-                "name": "am-bo-07",
-                "image": "attack-modifiers/BO/am-bo-07.jpg",
-                "xws": "ambombard07"
-            },
-            {
-                "name": "am-bo-08",
-                "image": "attack-modifiers/BO/am-bo-07.jpg",
-                "xws": "ambombard08"
-            },
-            {
-                "name": "am-bo-09",
-                "image": "attack-modifiers/BO/am-bo-09.jpg",
-                "xws": "ambombard09"
-            },
-            {
-                "name": "am-bo-10",
-                "image": "attack-modifiers/BO/am-bo-09.jpg",
-                "xws": "ambombard10"
-            },
-            {
-                "name": "am-bo-11",
-                "image": "attack-modifiers/BO/am-bo-11.jpg",
-                "xws": "ambombard11"
-            },
-            {
-                "name": "am-bo-12",
-                "image": "attack-modifiers/BO/am-bo-12.jpg",
-                "xws": "ambombard12"
-            },
-            {
-                "name": "am-bo-13",
-                "image": "attack-modifiers/BO/am-bo-13.jpg",
-                "xws": "ambombard13"
-            },
-            {
-                "name": "am-bo-14",
-                "image": "attack-modifiers/BO/am-bo-14.jpg",
-                "xws": "ambombard14"
-            },
-            {
-                "name": "am-bo-15",
-                "image": "attack-modifiers/BO/am-bo-14.jpg",
-                "xws": "ambombard15"
-            },
-            {
-                "name": "am-bo-16",
-                "image": "attack-modifiers/BO/am-bo-14.jpg",
-                "xws": "ambombard16"
-            },
-            {
-                "name": "am-bo-17",
-                "image": "attack-modifiers/BO/am-bo-14.jpg",
-                "xws": "ambombard17"
-            }
-        ]
-    },
-    {
-        "name": "am-bk",
-        "cards": [
-            {
-                "name": "am-bk-01",
-                "image": "attack-modifiers/BK/am-bk-01.jpg",
-                "xws": "ambrightspark01"
-            },
-            {
-                "name": "am-bk-02",
-                "image": "attack-modifiers/BK/am-bk-01.jpg",
-                "xws": "ambrightspark02"
-            },
-            {
-                "name": "am-bk-03",
-                "image": "attack-modifiers/BK/am-bk-01.jpg",
-                "xws": "ambrightspark03"
-            },
-            {
-                "name": "am-bk-04",
-                "image": "attack-modifiers/BK/am-bk-04.jpg",
-                "xws": "ambrightspark04"
-            },
-            {
-                "name": "am-bk-05",
-                "image": "attack-modifiers/BK/am-bk-05.jpg",
-                "xws": "ambrightspark05"
-            },
-            {
-                "name": "am-bk-06",
-                "image": "attack-modifiers/BK/am-bk-05.jpg",
-                "xws": "ambrightspark06"
-            },
-            {
-                "name": "am-bk-07",
-                "image": "attack-modifiers/BK/am-bk-07.jpg",
-                "xws": "ambrightspark07"
-            },
-            {
-                "name": "am-bk-08",
-                "image": "attack-modifiers/BK/am-bk-08.jpg",
-                "xws": "ambrightspark08"
-            },
-            {
-                "name": "am-bk-09",
-                "image": "attack-modifiers/BK/am-bk-08.jpg",
-                "xws": "ambrightspark09"
-            },
-            {
-                "name": "am-bk-10",
-                "image": "attack-modifiers/BK/am-bk-10.jpg",
-                "xws": "ambrightspark10"
-            },
-            {
-                "name": "am-bk-11",
-                "image": "attack-modifiers/BK/am-bk-10.jpg",
-                "xws": "ambrightspark11"
-            },
-            {
-                "name": "am-bk-12",
-                "image": "attack-modifiers/BK/am-bk-12.jpg",
-                "xws": "ambrightspark12"
-            },
-            {
-                "name": "am-bk-13",
-                "image": "attack-modifiers/BK/am-bk-13.jpg",
-                "xws": "ambrightspark13"
-            },
-            {
-                "name": "am-bk-14",
-                "image": "attack-modifiers/BK/am-bk-14.jpg",
-                "xws": "ambrightspark14"
-            },
-            {
-                "name": "am-bk-15",
-                "image": "attack-modifiers/BK/am-bk-15.jpg",
-                "xws": "ambrightspark15"
-            },
-            {
-                "name": "am-bk-16",
-                "image": "attack-modifiers/BK/am-bk-16.jpg",
-                "xws": "ambrightspark16"
-            },
-            {
-                "name": "am-bk-17",
-                "image": "attack-modifiers/BK/am-bk-16.jpg",
-                "xws": "ambrightspark17"
-            },
-            {
-                "name": "am-bk-18",
-                "image": "attack-modifiers/BK/am-bk-16.jpg",
-                "xws": "ambrightspark18"
-            }
-        ]
-    },
-    {
-        "name": "am-cg",
-        "cards": [
-            {
-                "name": "am-cg-01",
-                "image": "attack-modifiers/CG/am-cg-01.jpg",
-                "xws": "amchainguard01"
-            },
-            {
-                "name": "am-cg-02",
-                "image": "attack-modifiers/CG/am-cg-01.jpg",
-                "xws": "amchainguard02"
-            },
-            {
-                "name": "am-cg-03",
-                "image": "attack-modifiers/CG/am-cg-03.jpg",
-                "xws": "amchainguard03"
-            },
-            {
-                "name": "am-cg-04",
-                "image": "attack-modifiers/CG/am-cg-03.jpg",
-                "xws": "amchainguard04"
-            },
-            {
-                "name": "am-cg-05",
-                "image": "attack-modifiers/CG/am-cg-05.jpg",
-                "xws": "amchainguard05"
-            },
-            {
-                "name": "am-cg-06",
-                "image": "attack-modifiers/CG/am-cg-05.jpg",
-                "xws": "amchainguard06"
-            },
-            {
-                "name": "am-cg-07",
-                "image": "attack-modifiers/CG/am-cg-07.jpg",
-                "xws": "amchainguard07"
-            },
-            {
-                "name": "am-cg-08",
-                "image": "attack-modifiers/CG/am-cg-07.jpg",
-                "xws": "amchainguard08"
-            },
-            {
-                "name": "am-cg-09",
-                "image": "attack-modifiers/CG/am-cg-09.jpg",
-                "xws": "amchainguard09"
-            },
-            {
-                "name": "am-cg-10",
-                "image": "attack-modifiers/CG/am-cg-09.jpg",
-                "xws": "amchainguard10"
-            },
-            {
-                "name": "am-cg-11",
-                "image": "attack-modifiers/CG/am-cg-09.jpg",
-                "xws": "amchainguard11"
-            },
-            {
-                "name": "am-cg-12",
-                "image": "attack-modifiers/CG/am-cg-12.jpg",
-                "xws": "amchainguard12"
-            },
-            {
-                "name": "am-cg-13",
-                "image": "attack-modifiers/CG/am-cg-13.jpg",
-                "xws": "amchainguard13"
-            },
-            {
-                "name": "am-cg-14",
-                "image": "attack-modifiers/CG/am-cg-14.jpg",
-                "xws": "amchainguard14"
-            },
-            {
-                "name": "am-cg-15",
-                "image": "attack-modifiers/CG/am-cg-15.jpg",
-                "xws": "amchainguard15"
-            },
-            {
-                "name": "am-cg-16",
-                "image": "attack-modifiers/CG/am-cg-15.jpg",
-                "xws": "amchainguard16"
-            },
-            {
-                "name": "am-cg-17",
-                "image": "attack-modifiers/CG/am-cg-17.jpg",
-                "xws": "amchainguard17"
-            },
-            {
-                "name": "am-cg-18",
-                "image": "attack-modifiers/CG/am-cg-17.jpg",
-                "xws": "amchainguard18"
-            }
-        ]
-    },
-    {
-        "name": "am-cf",
-        "cards": [
-            {
-                "name": "am-cf-01",
-                "image": "attack-modifiers/CF/am-cf-01.jpg",
-                "xws": "amchieftain01"
-            },
-            {
-                "name": "am-cf-02",
-                "image": "attack-modifiers/CF/am-cf-02.jpg",
-                "xws": "amchieftain02"
-            },
-            {
-                "name": "am-cf-03",
-                "image": "attack-modifiers/CF/am-cf-02.jpg",
-                "xws": "amchieftain03"
-            },
-            {
-                "name": "am-cf-04",
-                "image": "attack-modifiers/CF/am-cf-02.jpg",
-                "xws": "amchieftain04"
-            },
-            {
-                "name": "am-cf-05",
-                "image": "attack-modifiers/CF/am-cf-02.jpg",
-                "xws": "amchieftain05"
-            },
-            {
-                "name": "am-cf-06",
-                "image": "attack-modifiers/CF/am-cf-06.jpg",
-                "xws": "amchieftain06"
-            },
-            {
-                "name": "am-cf-07",
-                "image": "attack-modifiers/CF/am-cf-07.jpg",
-                "xws": "amchieftain07"
-            },
-            {
-                "name": "am-cf-08",
-                "image": "attack-modifiers/CF/am-cf-08.jpg",
-                "xws": "amchieftain08"
-            },
-            {
-                "name": "am-cf-09",
-                "image": "attack-modifiers/CF/am-cf-08.jpg",
-                "xws": "amchieftain09"
-            },
-            {
-                "name": "am-cf-10",
-                "image": "attack-modifiers/CF/am-cf-10.jpg",
-                "xws": "amchieftain10"
-            },
-            {
-                "name": "am-cf-11",
-                "image": "attack-modifiers/CF/am-cf-10.jpg",
-                "xws": "amchieftain11"
-            },
-            {
-                "name": "am-cf-12",
-                "image": "attack-modifiers/CF/am-cf-12.jpg",
-                "xws": "amchieftain12"
-            },
-            {
-                "name": "am-cf-13",
-                "image": "attack-modifiers/CF/am-cf-13.jpg",
-                "xws": "amchieftain13"
-            },
-            {
-                "name": "am-cf-14",
-                "image": "attack-modifiers/CF/am-cf-13.jpg",
-                "xws": "amchieftain14"
-            },
-            {
-                "name": "am-cf-15",
-                "image": "attack-modifiers/CF/am-cf-15.jpg",
-                "xws": "amchieftain15"
-            },
-            {
-                "name": "am-cf-16",
-                "image": "attack-modifiers/CF/am-cf-15.jpg",
-                "xws": "amchieftain16"
-            },
-            {
-                "name": "am-cf-17",
-                "image": "attack-modifiers/CF/am-cf-17.jpg",
-                "xws": "amchieftain17"
-            }
-        ]
-    },
-    {
-        "name": "am-fk",
-        "cards": [
-            {
-                "name": "am-fk-01",
-                "image": "attack-modifiers/FK/am-fk-01.jpg",
-                "xws": "amfireknight01"
-            },
-            {
-                "name": "am-fk-02",
-                "image": "attack-modifiers/FK/am-fk-01.jpg",
-                "xws": "amfireknight02"
-            },
-            {
-                "name": "am-fk-03",
-                "image": "attack-modifiers/FK/am-fk-03.jpg",
-                "xws": "amfireknight03"
-            },
-            {
-                "name": "am-fk-04",
-                "image": "attack-modifiers/FK/am-fk-03.jpg",
-                "xws": "amfireknight04"
-            },
-            {
-                "name": "am-fk-05",
-                "image": "attack-modifiers/FK/am-fk-03.jpg",
-                "xws": "amfireknight05"
-            },
-            {
-                "name": "am-fk-06",
-                "image": "attack-modifiers/FK/am-fk-03.jpg",
-                "xws": "amfireknight06"
-            },
-            {
-                "name": "am-fk-07",
-                "image": "attack-modifiers/FK/am-fk-07.jpg",
-                "xws": "amfireknight07"
-            },
-            {
-                "name": "am-fk-08",
-                "image": "attack-modifiers/FK/am-fk-08.jpg",
-                "xws": "amfireknight08"
-            },
-            {
-                "name": "am-fk-09",
-                "image": "attack-modifiers/FK/am-fk-07.jpg",
-                "xws": "amfireknight09"
-            },
-            {
-                "name": "am-fk-10",
-                "image": "attack-modifiers/FK/am-fk-08.jpg",
-                "xws": "amfireknight10"
-            },
-            {
-                "name": "am-fk-11",
-                "image": "attack-modifiers/FK/am-fk-11.jpg",
-                "xws": "amfireknight11"
-            },
-            {
-                "name": "am-fk-12",
-                "image": "attack-modifiers/FK/am-fk-12.jpg",
-                "xws": "amfireknight12"
-            },
-            {
-                "name": "am-fk-13",
-                "image": "attack-modifiers/FK/am-fk-12.jpg",
-                "xws": "amfireknight13"
-            },
-            {
-                "name": "am-fk-14",
-                "image": "attack-modifiers/FK/am-fk-12.jpg",
-                "xws": "amfireknight14"
-            },
-            {
-                "name": "am-fk-15",
-                "image": "attack-modifiers/FK/am-fk-12.jpg",
-                "xws": "amfireknight15"
-            },
-            {
-                "name": "am-fk-16",
-                "image": "attack-modifiers/FK/am-fk-16.jpg",
-                "xws": "amfireknight16"
-            },
-            {
-                "name": "am-fk-17",
-                "image": "attack-modifiers/FK/am-fk-16.jpg",
-                "xws": "amfireknight17"
-            },
-            {
-                "name": "am-fk-18",
-                "image": "attack-modifiers/FK/am-fk-18.jpg",
-                "xws": "amfireknight18"
-            },
-            {
-                "name": "am-fk-19",
-                "image": "attack-modifiers/FK/am-fk-18.jpg",
-                "xws": "amfireknight19"
-            }
-        ]
-    },
-    {
-        "name": "am-hp",
-        "cards": [
-            {
-                "name": "am-hp-01",
-                "image": "attack-modifiers/HP/am-hp-01.jpg",
-                "xws": "amhierophant01"
-            },
-            {
-                "name": "am-hp-02",
-                "image": "attack-modifiers/HP/am-hp-02.jpg",
-                "xws": "amhierophant02"
-            },
-            {
-                "name": "am-hp-03",
-                "image": "attack-modifiers/HP/am-hp-03.jpg",
-                "xws": "amhierophant03"
-            },
-            {
-                "name": "am-hp-04",
-                "image": "attack-modifiers/HP/am-hp-03.jpg",
-                "xws": "amhierophant04"
-            },
-            {
-                "name": "am-hp-05",
-                "image": "attack-modifiers/HP/am-hp-05.jpg",
-                "xws": "amhierophant05"
-            },
-            {
-                "name": "am-hp-06",
-                "image": "attack-modifiers/HP/am-hp-06.jpg",
-                "xws": "amhierophant06"
-            },
-            {
-                "name": "am-hp-07",
-                "image": "attack-modifiers/HP/am-hp-07.jpg",
-                "xws": "amhierophant07"
-            },
-            {
-                "name": "am-hp-08",
-                "image": "attack-modifiers/HP/am-hp-08.jpg",
-                "xws": "amhierophant08"
-            },
-            {
-                "name": "am-hp-09",
-                "image": "attack-modifiers/HP/am-hp-08.jpg",
-                "xws": "amhierophant09"
-            },
-            {
-                "name": "am-hp-10",
-                "image": "attack-modifiers/HP/am-hp-10.jpg",
-                "xws": "amhierophant10"
-            },
-            {
-                "name": "am-hp-11",
-                "image": "attack-modifiers/HP/am-hp-10.jpg",
-                "xws": "amhierophant11"
-            },
-            {
-                "name": "am-hp-12",
-                "image": "attack-modifiers/HP/am-hp-10.jpg",
-                "xws": "amhierophant12"
-            },
-            {
-                "name": "am-hp-13",
-                "image": "attack-modifiers/HP/am-hp-10.jpg",
-                "xws": "amhierophant13"
-            },
-            {
-                "name": "am-hp-14",
-                "image": "attack-modifiers/HP/am-hp-14.jpg",
-                "xws": "amhierophant14"
-            },
-            {
-                "name": "am-hp-15",
-                "image": "attack-modifiers/HP/am-hp-14.jpg",
-                "xws": "amhierophant15"
-            }
-        ]
-    },
-    {
-        "name": "am-ht",
-        "cards": [
-            {
-                "name": "am-ht-01",
-                "image": "attack-modifiers/HT/am-ht-01.jpg",
-                "xws": "amhollowpact01"
-            },
-            {
-                "name": "am-ht-02",
-                "image": "attack-modifiers/HT/am-ht-01.jpg",
-                "xws": "amhollowpact02"
-            },
-            {
-                "name": "am-ht-03",
-                "image": "attack-modifiers/HT/am-ht-03.jpg",
-                "xws": "amhollowpact03"
-            },
-            {
-                "name": "am-ht-04",
-                "image": "attack-modifiers/HT/am-ht-03.jpg",
-                "xws": "amhollowpact04"
-            },
-            {
-                "name": "am-ht-05",
-                "image": "attack-modifiers/HT/am-ht-05.jpg",
-                "xws": "amhollowpact05"
-            },
-            {
-                "name": "am-ht-06",
-                "image": "attack-modifiers/HT/am-ht-06.jpg",
-                "xws": "amhollowpact06"
-            },
-            {
-                "name": "am-ht-07",
-                "image": "attack-modifiers/HT/am-ht-06.jpg",
-                "xws": "amhollowpact07"
-            },
-            {
-                "name": "am-ht-08",
-                "image": "attack-modifiers/HT/am-ht-05.jpg",
-                "xws": "amhollowpact08"
-            },
-            {
-                "name": "am-ht-09",
-                "image": "attack-modifiers/HT/am-ht-06.jpg",
-                "xws": "amhollowpact09"
-            },
-            {
-                "name": "am-ht-10",
-                "image": "attack-modifiers/HT/am-ht-06.jpg",
-                "xws": "amhollowpact10"
-            },
-            {
-                "name": "am-ht-11",
-                "image": "attack-modifiers/HT/am-ht-11.jpg",
-                "xws": "amhollowpact11"
-            },
-            {
-                "name": "am-ht-12",
-                "image": "attack-modifiers/HT/am-ht-03.jpg",
-                "xws": "amhollowpact12"
-            },
-            {
-                "name": "am-ht-13",
-                "image": "attack-modifiers/HT/am-ht-13.jpg",
-                "xws": "amhollowpact13"
-            },
-            {
-                "name": "am-ht-14",
-                "image": "attack-modifiers/HT/am-ht-14.jpg",
-                "xws": "amhollowpact14"
-            },
-            {
-                "name": "am-ht-15",
-                "image": "attack-modifiers/HT/am-ht-15.jpg",
-                "xws": "amhollowpact15"
-            },
-            {
-                "name": "am-ht-16",
-                "image": "attack-modifiers/HT/am-ht-16.jpg",
-                "xws": "amhollowpact16"
-            },
-            {
-                "name": "am-ht-17",
-                "image": "attack-modifiers/HT/am-ht-15.jpg",
-                "xws": "amhollowpact17"
-            },
-            {
-                "name": "am-ht-18",
-                "image": "attack-modifiers/HT/am-ht-16.jpg",
-                "xws": "amhollowpact18"
-            },
-            {
-                "name": "am-ht-19",
-                "image": "attack-modifiers/HT/am-ht-19.jpg",
-                "xws": "amhollowpact19"
-            },
-            {
-                "name": "am-ht-20",
-                "image": "attack-modifiers/HT/am-ht-19.jpg",
-                "xws": "amhollowpact20"
-            },
-            {
-                "name": "am-ht-21",
-                "image": "attack-modifiers/HT/am-ht-21.jpg",
-                "xws": "amhollowpact21"
-            },
-            {
-                "name": "am-ht-22",
-                "image": "attack-modifiers/HT/am-ht-21.jpg",
-                "xws": "amhollowpact22"
-            },
-            {
-                "name": "am-ht-23",
-                "image": "attack-modifiers/HT/am-ht-23.jpg",
-                "xws": "amhollowpact23"
-            }
-        ]
-    },
-    {
-        "name": "am-lu",
-        "cards": [
-            {
-                "name": "am-lu-01",
-                "image": "attack-modifiers/LU/am-lu-01.jpg",
-                "xws": "amluminary01"
-            },
-            {
-                "name": "am-lu-02",
-                "image": "attack-modifiers/LU/am-lu-02.jpg",
-                "xws": "amluminary02"
-            },
-            {
-                "name": "am-lu-03",
-                "image": "attack-modifiers/LU/am-lu-03.jpg",
-                "xws": "amluminary03"
-            },
-            {
-                "name": "am-lu-04",
-                "image": "attack-modifiers/LU/am-lu-04.jpg",
-                "xws": "amluminary04"
-            },
-            {
-                "name": "am-lu-05",
-                "image": "attack-modifiers/LU/am-lu-05.jpg",
-                "xws": "amluminary05"
-            },
-            {
-                "name": "am-lu-06",
-                "image": "attack-modifiers/LU/am-lu-06.jpg",
-                "xws": "amluminary06"
-            },
-            {
-                "name": "am-lu-07",
-                "image": "attack-modifiers/LU/am-lu-07.jpg",
-                "xws": "amluminary07"
-            },
-            {
-                "name": "am-lu-08",
-                "image": "attack-modifiers/LU/am-lu-07.jpg",
-                "xws": "amluminary08"
-            },
-            {
-                "name": "am-lu-09",
-                "image": "attack-modifiers/LU/am-lu-09.jpg",
-                "xws": "amluminary09"
-            },
-            {
-                "name": "am-lu-10",
-                "image": "attack-modifiers/LU/am-lu-09.jpg",
-                "xws": "amluminary10"
-            },
-            {
-                "name": "am-lu-11",
-                "image": "attack-modifiers/LU/am-lu-11.jpg",
-                "xws": "amluminary11"
-            },
-            {
-                "name": "am-lu-12",
-                "image": "attack-modifiers/LU/am-lu-11.jpg",
-                "xws": "amluminary12"
-            },
-            {
-                "name": "am-lu-13",
-                "image": "attack-modifiers/LU/am-lu-13.jpg",
-                "xws": "amluminary13"
-            }
-        ]
-    },
-    {
-        "name": "am-mi",
-        "cards": [
-            {
-                "name": "am-mi-01",
-                "image": "attack-modifiers/MI/am-mi-01.jpg",
-                "xws": "ammirefoot01"
-            },
-            {
-                "name": "am-mi-02",
-                "image": "attack-modifiers/MI/am-mi-02.jpg",
-                "xws": "ammirefoot02"
-            },
-            {
-                "name": "am-mi-03",
-                "image": "attack-modifiers/MI/am-mi-02.jpg",
-                "xws": "ammirefoot03"
-            },
-            {
-                "name": "am-mi-04",
-                "image": "attack-modifiers/MI/am-mi-04.jpg",
-                "xws": "ammirefoot04"
-            },
-            {
-                "name": "am-mi-05",
-                "image": "attack-modifiers/MI/am-mi-04.jpg",
-                "xws": "ammirefoot05"
-            },
-            {
-                "name": "am-mi-06",
-                "image": "attack-modifiers/MI/am-mi-04.jpg",
-                "xws": "ammirefoot06"
-            },
-            {
-                "name": "am-mi-07",
-                "image": "attack-modifiers/MI/am-mi-04.jpg",
-                "xws": "ammirefoot07"
-            },
-            {
-                "name": "am-mi-08",
-                "image": "attack-modifiers/MI/am-mi-08.jpg",
-                "xws": "ammirefoot08"
-            },
-            {
-                "name": "am-mi-09",
-                "image": "attack-modifiers/MI/am-mi-08.jpg",
-                "xws": "ammirefoot09"
-            },
-            {
-                "name": "am-mi-10",
-                "image": "attack-modifiers/MI/am-mi-10.jpg",
-                "xws": "ammirefoot10"
-            },
-            {
-                "name": "am-mi-11",
-                "image": "attack-modifiers/MI/am-mi-10.jpg",
-                "xws": "ammirefoot11"
-            },
-            {
-                "name": "am-mi-12",
-                "image": "attack-modifiers/MI/am-mi-10.jpg",
-                "xws": "ammirefoot12"
-            },
-            {
-                "name": "am-mi-13",
-                "image": "attack-modifiers/MI/am-mi-10.jpg",
-                "xws": "ammirefoot13"
-            },
-            {
-                "name": "am-mi-14",
-                "image": "attack-modifiers/MI/am-mi-14.jpg",
-                "xws": "ammirefoot14"
-            },
-            {
-                "name": "am-mi-15",
-                "image": "attack-modifiers/MI/am-mi-14.jpg",
-                "xws": "ammirefoot15"
-            },
-            {
-                "name": "am-mi-16",
-                "image": "attack-modifiers/MI/am-mi-16.jpg",
-                "xws": "ammirefoot16"
-            },
-            {
-                "name": "am-mi-17",
-                "image": "attack-modifiers/MI/am-mi-16.jpg",
-                "xws": "ammirefoot17"
-            },
-            {
-                "name": "am-mi-18",
-                "image": "attack-modifiers/MI/am-mi-16.jpg",
-                "xws": "ammirefoot18"
-            },
-            {
-                "name": "am-mi-19",
-                "image": "attack-modifiers/MI/am-mi-16.jpg",
-                "xws": "ammirefoot19"
-            },
-            {
-                "name": "am-mi-20",
-                "image": "attack-modifiers/MI/am-mi-20.jpg",
-                "xws": "ammirefoot20"
-            },
-            {
-                "name": "am-mi-21",
-                "image": "attack-modifiers/MI/am-mi-20.jpg",
-                "xws": "ammirefoot21"
-            }
-        ]
-    },
-    {
-        "name": "am-sr",
-        "cards": [
-            {
-                "name": "am-sr-01",
-                "image": "attack-modifiers/SR/am-sr-01.jpg",
-                "xws": "amspiritcaller01"
-            },
-            {
-                "name": "am-sr-02",
-                "image": "attack-modifiers/SR/am-sr-02.jpg",
-                "xws": "amspiritcaller02"
-            },
-            {
-                "name": "am-sr-03",
-                "image": "attack-modifiers/SR/am-sr-03.jpg",
-                "xws": "amspiritcaller03"
-            },
-            {
-                "name": "am-sr-04",
-                "image": "attack-modifiers/SR/am-sr-03.jpg",
-                "xws": "amspiritcaller04"
-            },
-            {
-                "name": "am-sr-05",
-                "image": "attack-modifiers/SR/am-sr-05.jpg",
-                "xws": "amspiritcaller05"
-            },
-            {
-                "name": "am-sr-06",
-                "image": "attack-modifiers/SR/am-sr-06.jpg",
-                "xws": "amspiritcaller06"
-            },
-            {
-                "name": "am-sr-07",
-                "image": "attack-modifiers/SR/am-sr-05.jpg",
-                "xws": "amspiritcaller07"
-            },
-            {
-                "name": "am-sr-08",
-                "image": "attack-modifiers/SR/am-sr-06.jpg",
-                "xws": "amspiritcaller08"
-            },
-            {
-                "name": "am-sr-09",
-                "image": "attack-modifiers/SR/am-sr-09.jpg",
-                "xws": "amspiritcaller09"
-            },
-            {
-                "name": "am-sr-10",
-                "image": "attack-modifiers/SR/am-sr-09.jpg",
-                "xws": "amspiritcaller10"
-            },
-            {
-                "name": "am-sr-11",
-                "image": "attack-modifiers/SR/am-sr-11.jpg",
-                "xws": "amspiritcaller11"
-            },
-            {
-                "name": "am-sr-12",
-                "image": "attack-modifiers/SR/am-sr-11.jpg",
-                "xws": "amspiritcaller12"
-            },
-            {
-                "name": "am-sr-13",
-                "image": "attack-modifiers/SR/am-sr-13.jpg",
-                "xws": "amspiritcaller13"
-            },
-            {
-                "name": "am-sr-14",
-                "image": "attack-modifiers/SR/am-sr-14.jpg",
-                "xws": "amspiritcaller14"
-            },
-            {
-                "name": "am-sr-15",
-                "image": "attack-modifiers/SR/am-sr-14.jpg",
-                "xws": "amspiritcaller15"
-            },
-            {
-                "name": "am-sr-16",
-                "image": "attack-modifiers/SR/am-sr-14.jpg",
-                "xws": "amspiritcaller16"
-            },
-            {
-                "name": "am-sr-17",
-                "image": "attack-modifiers/SR/am-sr-17.jpg",
-                "xws": "amspiritcaller17"
-            },
-            {
-                "name": "am-sr-18",
-                "image": "attack-modifiers/SR/am-sr-18.jpg",
-                "xws": "amspiritcaller18"
-            },
-            {
-                "name": "am-sr-19",
-                "image": "attack-modifiers/SR/am-sr-19.jpg",
-                "xws": "amspiritcaller19"
-            }
-        ]
-    },
-    {
-        "name": "am-st",
-        "cards": [
-            {
-                "name": "am-st-01",
-                "image": "attack-modifiers/ST/am-st-01.jpg",
-                "xws": "amstarslinger01"
-            },
-            {
-                "name": "am-st-02",
-                "image": "attack-modifiers/ST/am-st-01.jpg",
-                "xws": "amstarslinger02"
-            },
-            {
-                "name": "am-st-03",
-                "image": "attack-modifiers/ST/am-st-03.jpg",
-                "xws": "amstarslinger03"
-            },
-            {
-                "name": "am-st-04",
-                "image": "attack-modifiers/ST/am-st-04.jpg",
-                "xws": "amstarslinger04"
-            },
-            {
-                "name": "am-st-05",
-                "image": "attack-modifiers/ST/am-st-05.jpg",
-                "xws": "amstarslinger05"
-            },
-            {
-                "name": "am-st-06",
-                "image": "attack-modifiers/ST/am-st-05.jpg",
-                "xws": "amstarslinger06"
-            },
-            {
-                "name": "am-st-07",
-                "image": "attack-modifiers/ST/am-st-07.jpg",
-                "xws": "amstarslinger07"
-            },
-            {
-                "name": "am-st-08",
-                "image": "attack-modifiers/ST/am-st-08.jpg",
-                "xws": "amstarslinger08"
-            },
-            {
-                "name": "am-st-09",
-                "image": "attack-modifiers/ST/am-st-08.jpg",
-                "xws": "amstarslinger09"
-            },
-            {
-                "name": "am-st-10",
-                "image": "attack-modifiers/ST/am-st-10.jpg",
-                "xws": "amstarslinger10"
-            },
-            {
-                "name": "am-st-11",
-                "image": "attack-modifiers/ST/am-st-10.jpg",
-                "xws": "amstarslinger11"
-            },
-            {
-                "name": "am-st-12",
-                "image": "attack-modifiers/ST/am-st-12.jpg",
-                "xws": "amstarslinger12"
-            },
-            {
-                "name": "am-st-13",
-                "image": "attack-modifiers/ST/am-st-12.jpg",
-                "xws": "amstarslinger13"
-            },
-            {
-                "name": "am-st-14",
-                "image": "attack-modifiers/ST/am-st-14.jpg",
-                "xws": "amstarslinger14"
-            },
-            {
-                "name": "am-st-15",
-                "image": "attack-modifiers/ST/am-st-14.jpg",
-                "xws": "amstarslinger15"
-            },
-            {
-                "name": "am-st-16",
-                "image": "attack-modifiers/ST/am-st-14.jpg",
-                "xws": "amstarslinger16"
-            },
-            {
-                "name": "am-st-17",
-                "image": "attack-modifiers/ST/am-st-14.jpg",
-                "xws": "amstarslinger17"
-            }
-        ]
-    }
-]
 abilities_cs = [
+    {
+        "name": "aa",
+        "max": 11,
+        "hidden": true,
+        "position": 1,
+        "cards": [{
+            "name": "aa-back",
+            "image": "character-ability-cards/AA/cs-aa-back.png",
+            "xws": "aaback",
+            "level": 0,
+        },
+        {
+            "name": "alate dispersion",
+            "image": "character-ability-cards/AA/cs-alate-dispersion.png",
+            "xws": "alatedispersion",
+            "level": 4,
+        },
+        {
+            "name": "rockspine termite",
+            "image": "character-ability-cards/AA/cs-alate-dispersion.png",
+            "xws": "alatedispersion",
+            "level": 4,
+        },
+        {
+            "name": "anti-venom",
+            "image": "character-ability-cards/AA/cs-anti-venom.png",
+            "xws": "antivenom",
+            "level": 1,
+        },
+        {
+            "name": "assimilate adversaries",
+            "image": "character-ability-cards/AA/cs-assimilate-adversaries.png",
+            "xws": "assimilateadversaries",
+            "level": 6,
+        },
+        {
+            "name": "birthing chambers",
+            "image": "character-ability-cards/AA/cs-birthing-chambers.png",
+            "xws": "birthingchambers",
+            "level": 5,
+        },
+        {
+            "name": "ghostshimmer bee",
+            "image": "character-ability-cards/AA/cs-birthing-chambers.png",
+            "xws": "birthingchambers",
+            "level": 5,
+        },
+        {
+            "name": "burning stingers",
+            "image": "character-ability-cards/AA/cs-burning-stingers.png",
+            "xws": "burningstingers",
+            "level": 1,
+        },
+        {
+            "name": "burrow under",
+            "image": "character-ability-cards/AA/cs-burrow-under.png",
+            "xws": "burrowunder",
+            "level": 5,
+        },
+        {
+            "name": "clad in spikes",
+            "image": "character-ability-cards/AA/cs-clad-in-spikes.png",
+            "xws": "cladinspikes",
+            "level": 2,
+        },
+        {
+            "name": "coordinated infestation",
+            "image": "character-ability-cards/AA/cs-coordinated-infestation.png",
+            "xws": "coordinatedinfestation",
+            "level": 8,
+        },
+        {
+            "name": "corrosive spittle",
+            "image": "character-ability-cards/AA/cs-corrosive-spittle.png",
+            "xws": "corrosivespittle",
+            "level": 1,
+        },
+        {
+            "name": "divide and conquer",
+            "image": "character-ability-cards/AA/cs-divide-and-conquer.png",
+            "xws": "divideandconquer",
+            "level": 9,
+        },
+        {
+            "name": "beta aegis",
+            "image": "character-ability-cards/AA/cs-divide-and-conquer.png",
+            "xws": "divideandconquer",
+            "level": 9,
+        },
+        {
+            "name": "encasing webs",
+            "image": "character-ability-cards/AA/cs-encasing-webs.png",
+            "xws": "encasingwebs",
+            "level": 1,
+        },
+        {
+            "name": "erupting mandibles",
+            "image": "character-ability-cards/AA/cs-erupting-mandibles.png",
+            "xws": "eruptingmandibles",
+            "level": 8,
+        },
+        {
+            "name": "ferocious proliferation",
+            "image": "character-ability-cards/AA/cs-ferocious-proliferation.png",
+            "xws": "ferociousproliferation",
+            "level": 4,
+        },
+        {
+            "name": "firespitter ant",
+            "image": "character-ability-cards/AA/cs-ferocious-proliferation.png",
+            "xws": "ferociousproliferation",
+            "level": 4,
+        },
+        {
+            "name": "frantic migration",
+            "image": "character-ability-cards/AA/cs-frantic-migration.png",
+            "xws": "franticmigration",
+            "level": 6,
+        },
+        {
+            "name": "horned carapace",
+            "image": "character-ability-cards/AA/cs-horned-carapace.png",
+            "xws": "hornedcarapace",
+            "level": 1,
+        },
+        {
+            "name": "lacerating horde",
+            "image": "character-ability-cards/AA/cs-lacerating-horde.png",
+            "xws": "laceratinghorde",
+            "level": 7,
+        },
+        {
+            "name": "maddening chatter",
+            "image": "character-ability-cards/AA/cs-maddening-chatter.png",
+            "xws": "maddeningchatter",
+            "level": 3,
+        },
+        {
+            "name": "march of multitudes",
+            "image": "character-ability-cards/AA/cs-march-of-multitudes.png",
+            "xws": "marchofmultitudes",
+            "level": 0,
+        },
+        {
+            "name": "nurture the weak",
+            "image": "character-ability-cards/AA/cs-nurture-the-weak.png",
+            "xws": "nurturetheweak",
+            "level": 1,
+        },
+        {
+            "name": "overwhelming swarm",
+            "image": "character-ability-cards/AA/cs-overwhelming-swarm.png",
+            "xws": "overwhelmingswarm",
+            "level": 0,
+        },
+        {
+            "name": "primal pheromones",
+            "image": "character-ability-cards/AA/cs-primal-pheromones.png",
+            "xws": "primalpheromones",
+            "level": 0,
+        },
+        {
+            "name": "repel intruders",
+            "image": "character-ability-cards/AA/cs-repel-intruders.png",
+            "xws": "repelintruders",
+            "level": 1,
+        },
+        {
+            "name": "firespitter ant",
+            "image": "character-ability-cards/AA/cs-repel-intruders.png",
+            "xws": "repelintruders",
+            "level": 1,
+        },
+        {
+            "name": "retribution of the hive",
+            "image": "character-ability-cards/AA/cs-retribution-of-the-hive.png",
+            "xws": "retributionofthehive",
+            "level": 1,
+        },
+        {
+            "name": "seek nourishment",
+            "image": "character-ability-cards/AA/cs-seek-nourishment.png",
+            "xws": "seeknourishment",
+            "level": 1,
+        },
+        {
+            "name": "ghostshimmer bee",
+            "image": "character-ability-cards/AA/cs-seek-nourishment.png",
+            "xws": "seeknourishment",
+            "level": 1,
+        },
+        {
+            "name": "sentry swarm",
+            "image": "character-ability-cards/AA/cs-sentry-swarm.png",
+            "xws": "sentryswarm",
+            "level": 1,
+        },
+        {
+            "name": "shelter the nest",
+            "image": "character-ability-cards/AA/cs-shelter-the-nest.png",
+            "xws": "shelterthenest",
+            "level": 1,
+        },
+        {
+            "name": "rockspine termite",
+            "image": "character-ability-cards/AA/cs-shelter-the-nest.png",
+            "xws": "shelterthenest",
+            "level": 1,
+        },
+        {
+            "name": "stalk the prey",
+            "image": "character-ability-cards/AA/cs-stalk-the-prey.png",
+            "xws": "stalktheprey",
+            "level": 7,
+        },
+        {
+            "name": "deathshroud spider",
+            "image": "character-ability-cards/AA/cs-stalk-the-prey.png",
+            "xws": "stalktheprey",
+            "level": 7,
+        },
+        {
+            "name": "steelsilk weaver",
+            "image": "character-ability-cards/AA/cs-steelsilk-weaver.png",
+            "xws": "steelsilkweaver",
+            "level": 2,
+        },
+        {
+            "name": "supreme authority",
+            "image": "character-ability-cards/AA/cs-supreme-authority.png",
+            "xws": "supremeauthority",
+            "level": 9,
+        },
+        {
+            "name": "violent outlash",
+            "image": "character-ability-cards/AA/cs-violent-outlash.png",
+            "xws": "violentoutlash",
+            "level": 3,
+        }
+        ]
+    },
     {
         "name": "bo",
         "max": 9,
@@ -2979,6 +3501,411 @@ abilities_cs = [
         ]
     },
     {
+        "name": "qa",
+        "max": 11,
+        "hidden": true,
+        "position": 9,
+        "cards": [
+            {
+                "name": "qa-back",
+                "image": "character-ability-cards/QA/cs-qa-back.png",
+                "xws": "qaback",
+                "level": 0,
+            },
+            {
+                "name": "annihilating contraption",
+                "image": "character-ability-cards/QA/cs-annihilating-contraption.png",
+                "xws": "annihilatingcontraption",
+                "level": 9,
+            },
+            {
+                "name": "clockwork ravager",
+                "image": "character-ability-cards/QA/cs-annihilating-contraption.png",
+                "xws": "annihilatingcontraption",
+                "level": 9,
+            },
+            {
+                "name": "double-barrel railcaster",
+                "image": "character-ability-cards/QA/cs-double-barrel-railcaster.png",
+                "xws": "doublebarrelrailcaster",
+                "level": 8,
+            },
+            {
+                "name": "elemental condenser",
+                "image": "character-ability-cards/QA/cs-elemental-condenser.png",
+                "xws": "elementalcondenser",
+                "level": 2,
+            },
+            {
+                "name": "energy transmission",
+                "image": "character-ability-cards/QA/cs-energy-transmission.png",
+                "xws": "energytransmission",
+                "level": 4,
+            },
+            {
+                "name": "fragmentation grenade",
+                "image": "character-ability-cards/QA/cs-fragmentation-grenade.png",
+                "xws": "fragmentationgrenade",
+                "level": 1,
+            },
+            {
+                "name": "galvanic coil",
+                "image": "character-ability-cards/QA/cs-galvanic-coil.png",
+                "xws": "galvaniccoil",
+                "level": 6,
+            },
+            {
+                "name": "gravity inverter module",
+                "image": "character-ability-cards/QA/cs-gravity-inverter-module.png",
+                "xws": "gravityinvertermodule",
+                "level": 1,
+            },
+            {
+                "name": "improvised exosuit",
+                "image": "character-ability-cards/QA/cs-improvised-exosuit.png",
+                "xws": "improvisedexosuit",
+                "level": 0,
+            },
+            {
+                "name": "hollow carapace",
+                "image": "character-ability-cards/QA/cs-improvised-exosuit.png",
+                "xws": "improvisedexosuit",
+                "level": 0,
+            },
+            {
+                "name": "improvised mortar",
+                "image": "character-ability-cards/QA/cs-improvised-mortar.png",
+                "xws": "improvisedmortar",
+                "level": 1,
+            },
+            {
+                "name": "clockwork bombard",
+                "image": "character-ability-cards/QA/cs-improvised-mortar.png",
+                "xws": "improvisedmortar",
+                "level": 1,
+            },
+            {
+                "name": "instant relocation matrix",
+                "image": "character-ability-cards/QA/cs-instant-relocation-matrix.png",
+                "xws": "instantrelocationmatrix",
+                "level": 8,
+            },
+            {
+                "name": "jury-rigged machine",
+                "image": "character-ability-cards/QA/cs-jury-rigged-machine.png",
+                "xws": "juryriggedmachine",
+                "level": 1,
+            },
+            {
+                "name": "clockwork soldier",
+                "image": "character-ability-cards/QA/cs-jury-rigged-machine.png",
+                "xws": "juryriggedmachine",
+                "level": 1,
+            },
+            {
+                "name": "launch skywards",
+                "image": "character-ability-cards/QA/cs-launch-skywards.png",
+                "xws": "launchskywards",
+                "level": 5,
+            },
+            {
+                "name": "clockwork drone",
+                "image": "character-ability-cards/QA/cs-launch-skywards.png",
+                "xws": "launchskywards",
+                "level": 5,
+            },
+            {
+                "name": "march of machines",
+                "image": "character-ability-cards/QA/cs-march-of-machines.png",
+                "xws": "marchofmachines",
+                "level": 6,
+            },
+            {
+                "name": "oscillating projector",
+                "image": "character-ability-cards/QA/cs-oscillating-projector.png",
+                "xws": "oscillatingprojector",
+                "level": 5,
+            },
+            {
+                "name": "particle ray beam",
+                "image": "character-ability-cards/QA/cs-particle-ray-beam.png",
+                "xws": "particleraybeam",
+                "level": 1,
+            },
+            {
+                "name": "perfected exosuit",
+                "image": "character-ability-cards/QA/cs-perfected-exosuit.png",
+                "xws": "perfectedexosuit",
+                "level": 9,
+            },
+            {
+                "name": "phase field emitter",
+                "image": "character-ability-cards/QA/cs-phase-field-emitter.png",
+                "xws": "phasefieldemitter",
+                "level": 1,
+            },
+            {
+                "name": "power modulation",
+                "image": "character-ability-cards/QA/cs-power-modulation.png",
+                "xws": "powermodulation",
+                "level": 0,
+            },
+            {
+                "name": "ransack clutter",
+                "image": "character-ability-cards/QA/cs-ransack-clutter.png",
+                "xws": "ransackclutter",
+                "level": 4,
+            },
+            {
+                "name": "recycle parts",
+                "image": "character-ability-cards/QA/cs-recycle-parts.png",
+                "xws": "recycleparts",
+                "level": 1,
+            },
+            {
+                "name": "reinforce armor",
+                "image": "character-ability-cards/QA/cs-reinforce-armor.png",
+                "xws": "reinforcearmor",
+                "level": 7,
+            },
+            {
+                "name": "remote control",
+                "image": "character-ability-cards/QA/cs-remote-control.png",
+                "xws": "remotecontrol",
+                "level": 0,
+            },
+            {
+                "name": "repurpose leftovers",
+                "image": "character-ability-cards/QA/cs-repurpose-leftovers.png",
+                "xws": "repurposeleftovers",
+                "level": 1,
+            },
+            {
+                "name": "retrofit weapons",
+                "image": "character-ability-cards/QA/cs-retrofit-weapons.png",
+                "xws": "retrofitweapons",
+                "level": 3,
+            },
+            {
+                "name": "salvage grappler",
+                "image": "character-ability-cards/QA/cs-salvage-grappler.png",
+                "xws": "salvagegrappler",
+                "level": 1,
+            },
+            {
+                "name": "seeker missiles",
+                "image": "character-ability-cards/QA/cs-seeker-missiles.png",
+                "xws": "seekermissiles",
+                "level": 7,
+            },
+            {
+                "name": "clockwork rocket",
+                "image": "character-ability-cards/QA/cs-seeker-missiles.png",
+                "xws": "seekermissiles",
+                "level": 7,
+            },
+            {
+                "name": "trajectory diverter",
+                "image": "character-ability-cards/QA/cs-trajectory-diverter.png",
+                "xws": "trajectorydiverter",
+                "level": 2,
+            },
+            {
+                "name": "trudging bulwark",
+                "image": "character-ability-cards/QA/cs-trudging-bulwark.png",
+                "xws": "trudgingbulwark",
+                "level": 3,
+            },
+            {
+                "name": "clockwork guardian",
+                "image": "character-ability-cards/QA/cs-trudging-bulwark.png",
+                "xws": "trudgingbulwark",
+                "level": 3,
+            }
+        ]
+    },
+    {
+        "name": "rm",
+        "max": 11,
+        "hidden": true,
+        "position": 10,
+        "cards": [
+            {
+                "name": "rm-back",
+                "image": "character-ability-cards/RM/cs-rm-back.png",
+                "xws": "rmback",
+                "level": 0,
+            },
+            {
+                "name": "belly of the beast",
+                "image": "character-ability-cards/RM/cs-belly-of-the-beast.png",
+                "xws": "bellyofthebeast",
+                "level": 9,
+            },
+            {
+                "name": "berserk barrage",
+                "image": "character-ability-cards/RM/cs-berserk-barrage.png",
+                "xws": "berserkbarrage",
+                "level": 1,
+            },
+            {
+                "name": "burning bile",
+                "image": "character-ability-cards/RM/cs-burning-bile.png",
+                "xws": "burningbile",
+                "level": 1,
+            },
+            {
+                "name": "caustic claws", "image": "character-ability-cards/RM/cs-caustic-claws.png",
+                "xws": "causticclaws",
+                "level": 1,
+            },
+            {
+                "name": "cornered animal", "image": "character-ability-cards/RM/cs-cornered-animal.png",
+                "xws": "corneredanimal",
+                "level": 0,
+            },
+            {
+                "name": "corrosive spew", "image": "character-ability-cards/RM/cs-corrosive-spew.png",
+                "xws": "corrosivespew",
+                "level": 6,
+            },
+            {
+                "name": "devour whole", "image": "character-ability-cards/RM/cs-devour-whole.png",
+                "xws": "devourwhole",
+                "level": 8,
+            },
+            {
+                "name": "easy prey", "image": "character-ability-cards/RM/cs-easy-prey.png",
+                "xws": "easyprey",
+                "level": 1,
+            },
+            {
+                "name": "fatal frenzy", "image": "character-ability-cards/RM/cs-fatal-frenzy.png",
+                "xws": "fatalfrenzy",
+                "level": 2,
+            },
+            {
+                "name": "feast of flesh", "image": "character-ability-cards/RM/cs-feast-of-flesh.png",
+                "xws": "feastofflesh",
+                "level": 1,
+            },
+            {
+                "name": "feral lunge", "image": "character-ability-cards/RM/cs-feral-lunge.png",
+                "xws": "ferallunge",
+                "level": 1,
+            },
+            {
+                "name": "ferocious fling", "image": "character-ability-cards/RM/cs-ferocious-fling.png",
+                "xws": "ferociousfling",
+                "level": 3,
+            },
+            {
+                "name": "fight or flight", "image": "character-ability-cards/RM/cs-fight-or-flight.png",
+                "xws": "fightorflight",
+                "level": 1,
+            },
+            {
+                "name": "heartripper", "image": "character-ability-cards/RM/cs-heartripper.png",
+                "xws": "heartripper",
+                "level": 8,
+            },
+            {
+                "name": "indomitable craving", "image": "character-ability-cards/RM/cs-indomitable-craving.png",
+                "xws": "indomitablecraving",
+                "level": 7,
+            },
+            {
+                "name": "lie in wait", "image": "character-ability-cards/RM/cs-lie-in-wait.png",
+                "xws": "lieinwait",
+                "level": 4,
+            },
+            {
+                "name": "nourishing meal",
+                "image": "character-ability-cards/RM/cs-nourishing-meal.png",
+                "xws": "nourishingmeal",
+                "level": 1,
+            },
+            {
+                "name": "pouncing predator",
+                "image": "character-ability-cards/RM/cs-pouncing-predator.png",
+                "xws": "pouncingpredator",
+                "level": 6,
+            },
+            {
+                "name": "ravenous roar",
+                "image": "character-ability-cards/RM/cs-ravenous-roar.png",
+                "xws": "ravenousroar",
+                "level": 4,
+            },
+            {
+                "name": "reckless attack",
+                "image": "character-ability-cards/RM/cs-reckless-attack.png",
+                "xws": "recklessattack",
+                "level": 1,
+            },
+            {
+                "name": "rend and mutilate",
+                "image": "character-ability-cards/RM/cs-rend-and-mutilate.png",
+                "xws": "rendandmutilate",
+                "level": 5,
+            },
+            {
+                "name": "rip and tear",
+                "image": "character-ability-cards/RM/cs-rip-and-tear.png",
+                "xws": "ripandtear",
+                "level": 9,
+            },
+            {
+                "name": "savage stalker",
+                "image": "character-ability-cards/RM/cs-savage-stalker.png",
+                "xws": "savagestalker",
+                "level": 3,
+            },
+            {
+                "name": "scrape and scrounge",
+                "image": "character-ability-cards/RM/cs-scrape-and-scrounge.png",
+                "xws": "scrapeandscrounge",
+                "level": 0,
+            },
+            {
+                "name": "seize",
+                "image": "character-ability-cards/RM/cs-seize.png",
+                "xws": "seize",
+                "level": 0,
+            },
+            {
+                "name": "slake thirst",
+                "image": "character-ability-cards/RM/cs-slake-thirst.png",
+                "xws": "slakethirst",
+                "level": 2,
+            },
+            {
+                "name": "strip the flesh",
+                "image": "character-ability-cards/RM/cs-strip-the-flesh.png",
+                "xws": "striptheflesh",
+                "level": 1,
+            },
+            {
+                "name": "survival instincts",
+                "image": "character-ability-cards/RM/cs-survival-instincts.png",
+                "xws": "survivalinstincts",
+                "level": 7,
+            },
+            {
+                "name": "terrifying howl",
+                "image": "character-ability-cards/RM/cs-terrifying-howl.png",
+                "xws": "terrifyinghowl",
+                "level": 1,
+            },
+            {
+                "name": "voracious hunter",
+                "image": "character-ability-cards/RM/cs-voracious-hunter.png",
+                "xws": "voracioushunter",
+                "level": 5,
+            }
+        ]
+    },
+    {
         "name": "sr",
         "max": 10,
         "hidden": true,
@@ -3869,120 +4796,103 @@ allItems_cs = [
             },
             {
                 "name": "slug crossbow",
-                "points": 83,
-                "expansion": "Crimson Scales",
+                "points": 83, 
                 "image": "items/cs/cs-84-slug-crossbow.png",
                 "xws": "slugcrossbow"
             },
             {
                 "name": "refined slug crossbow",
-                "points": 84,
-                "expansion": "Crimson Scales",
+                "points": 84, 
                 "image": "items/cs/cs-85-refined-slug-crossbow.png",
                 "xws": "refinedslugcrossbow"
             },
             {
                 "name": "bulwark banner",
-                "points": 85,
-                "expansion": "Crimson Scales",
+                "points": 85, 
                 "image": "items/cs/cs-86-bulwark-banner.png",
                 "xws": "bulwarkbanner"
             },
             {
                 "name": "refined bulwark banner",
-                "points": 86,
-                "expansion": "Crimson Scales",
+                "points": 86, 
                 "image": "items/cs/cs-87-refined-bulwark-banner.png",
                 "xws": "refinedbulwarkbanner"
             },
             {
                 "name": "remote beetle",
-                "points": 87,
-                "expansion": "Crimson Scales",
+                "points": 87, 
                 "image": "items/cs/cs-88-remote-beetle.png",
                 "xws": "remotebeetle"
             },
             {
                 "name": "refined remote beetle",
-                "points": 88,
-                "expansion": "Crimson Scales",
+                "points": 88, 
                 "image": "items/cs/cs-89-refined-remote-beetle.png",
                 "xws": "refinedremotebeetle"
             },
             {
                 "name": "blazing boots",
-                "points": 89,
-                "expansion": "Crimson Scales",
+                "points": 89, 
                 "image": "items/cs/cs-90-blazing-boots.png",
                 "xws": "blazingboots"
             },
             {
                 "name": "refined blazing boots",
-                "points": 90,
-                "expansion": "Crimson Scales",
+                "points": 90, 
                 "image": "items/cs/cs-91-refined-blazing-boots.png",
                 "xws": "refinedblazingboots"
             },
             {
                 "name": "viper blowgun",
-                "points": 91,
-                "expansion": "Crimson Scales",
+                "points": 91, 
                 "image": "items/cs/cs-92-viper-blowgun.png",
                 "xws": "viperblowgun"
             },
             {
                 "name": "refined viper blowgun",
-                "points": 92,
-                "expansion": "Crimson Scales",
+                "points": 92, 
                 "image": "items/cs/cs-93-refined-viper-blowgun.png",
                 "xws": "refinedviperblowgun"
             },
             {
                 "name": "frost stone",
-                "points": 93,
-                "expansion": "Crimson Scales",
+                "points": 93, 
                 "image": "items/cs/cs-94-frost-stone.png",
                 "xws": "froststone"
             },
             {
                 "name": "storm stone",
-                "points": 94,
-                "expansion": "Crimson Scales",
+                "points": 94, 
                 "image": "items/cs/cs-95-storm-stone.png",
                 "xws": "stormstone"
             },
             {
                 "name": "inferno stone",
-                "points": 95,
-                "expansion": "Crimson Scales",
+                "points": 95, 
                 "image": "items/cs/cs-96-inferno-stone.png",
                 "xws": "infernostone"
             },
             {
                 "name": "tremor stone",
-                "points": 96,
-                "expansion": "Crimson Scales",
+                "points": 96, 
                 "image": "items/cs/cs-97-tremor-stone.png",
                 "xws": "tremorstone"
             },
             {
                 "name": "brilliant stone",
-                "points": 97,
-                "expansion": "Crimson Scales",
+                "points": 97, 
                 "image": "items/cs/cs-98-brilliant-stone.png",
                 "xws": "brilliantstone"
             },
             {
                 "name": "dark stone",
                 "points": 98,
-                "expansion": "Crimson Scales",
                 "image": "items/cs/cs-99-dark-stone.png",
                 "xws": "darkstone"
             },
             {
                 "name": "wonder stone",
-                "points": 99,
-                "expansion": "Crimson Scales",
+                "points": 99, 
                 "image": "items/cs/cs-100-wonder-stone.png",
                 "xws": "wonderstone"
             }
