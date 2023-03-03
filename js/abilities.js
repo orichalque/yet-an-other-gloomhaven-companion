@@ -131,6 +131,7 @@ var abilitiesManagement = {
                 this.classChosen = false;
             } else {
                 this.displayModifiers(param.name)
+                console.log(param.name)
                 this.abilityCategory = param
                 this.abilityCategory.cards.sort((a, b) => a.level - b.level)
             }
