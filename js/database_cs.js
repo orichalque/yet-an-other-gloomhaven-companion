@@ -4897,5 +4897,100 @@ allItems_cs = [
                 "xws": "wonderstone"
             }
         ]
+    },
+    {
+        "name": "Rewards",
+        "items": [
+            {
+                "name": "rockspine bulwark",
+                "points": 0,
+                "image": "items/cs/cs-aa01-rockspine-bulwark.png",
+                "xws": "rockspinebulwark"
+            },
+            {
+                "name": "ghostshimmer honey",
+                "points": 1,
+                "image": "items/cs/cs-aa02-ghostshimmer-honey.png",
+                "xws": "ghostshimmerhoney"
+            },
+            {
+                "name": "steelsilk spinneret",
+                "points": 2,
+                "image": "items/cs/cs-aa03-steelsilk-spinneret.png",
+                "xws": "steelsilkspinneret"
+            },
+            {
+                "name": "power modulator",
+                "points": 3,
+                "image": "items/cs/cs-qa01-power-modulator.png",
+                "xws": "powermodulator"
+            },
+            {
+                "name": "steam piston hammer",
+                "points": 4,
+                "image": "items/cs/cs-qa02a-steam-piston-hammer.png",
+                "xws": "steampistonhammer"
+            },
+            {
+                "name": "spider climb gloves",
+                "points": 5,
+                "image": "items/cs/cs-qa03a-spider-climb-gloves.png",
+                "xws": "spiderclimbgloves"
+            },
+            {
+                "name": "gravity inversion pads",
+                "points": 6,
+                "image": "items/cs/cs-qa04-gravity-inversion-pads.png",
+                "xws": "gravityinversionpads"
+            },
+            {
+                "name": "delicate model",
+                "points": 7,
+                "image": "items/cs/cs-qa05-delicate-model.png",
+                "xws": "delicatemodel"
+            },
+            {
+                "name": "auscudec of the makers",
+                "points": 8,
+                "image": "items/cs/cs-qa06-auscudec-of-the-makers.png",
+                "xws": "auscudecofthemakers"
+            },
+            {
+                "name": "serrated edge",
+                "points": 9,
+                "image": "items/cs/cs-rm01a-serrated-edge.png",
+                "xws": "serratededge"
+            },
+            {
+                "name": "grisly boots",
+                "points": 10,
+                "image": "items/cs/cs-rm02-grisly-boots.png",
+                "xws": "grislyboots"
+            },
+            {
+                "name": "terrorscale saber",
+                "points": 11,
+                "image": "items/cs/cs-rm03-terrorscale-saber.png",
+                "xws": "terrorscalesaber"
+            },
+            {
+                "name": "terrorscale crossblades",
+                "points": 12,
+                "image": "items/cs/cs-rm04-terrorscale-crossblades.png",
+                "xws": "terrorscalecrossblades"
+            },
+            {
+                "name": "rite of ruin",
+                "points": 13,
+                "image": "items/cs/cs-rm05-rite-of-ruin.png",
+                "xws": "riteofruin"
+            },
+            {
+                "name": "savage cuirass",
+                "points": 14,
+                "image": "items/cs/cs-rm06-savage-cuirass.png",
+                "xws": "savagecuirass"
+            }
+        ]
     }
 ]
