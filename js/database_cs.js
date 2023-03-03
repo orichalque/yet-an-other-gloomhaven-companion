@@ -3367,7 +3367,7 @@ abilities_cs = [
 ]
 allItems_cs = [
     {
-        "name": "1-83",
+        "name": "1-100",
         "items": [
             {
                 "name": "orb of confusion",
@@ -3866,6 +3866,125 @@ allItems_cs = [
                 "points": 82,
                 "image": "items/cs/83-sphere-of-currents.jpg",
                 "xws": "83sphereofcurrents"
+            },
+            {
+                "name": "slug crossbow",
+                "points": 83,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-84-slug-crossbow.png",
+                "xws": "slugcrossbow"
+            },
+            {
+                "name": "refined slug crossbow",
+                "points": 84,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-85-refined-slug-crossbow.png",
+                "xws": "refinedslugcrossbow"
+            },
+            {
+                "name": "bulwark banner",
+                "points": 85,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-86-bulwark-banner.png",
+                "xws": "bulwarkbanner"
+            },
+            {
+                "name": "refined bulwark banner",
+                "points": 86,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-87-refined-bulwark-banner.png",
+                "xws": "refinedbulwarkbanner"
+            },
+            {
+                "name": "remote beetle",
+                "points": 87,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-88-remote-beetle.png",
+                "xws": "remotebeetle"
+            },
+            {
+                "name": "refined remote beetle",
+                "points": 88,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-89-refined-remote-beetle.png",
+                "xws": "refinedremotebeetle"
+            },
+            {
+                "name": "blazing boots",
+                "points": 89,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-90-blazing-boots.png",
+                "xws": "blazingboots"
+            },
+            {
+                "name": "refined blazing boots",
+                "points": 90,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-91-refined-blazing-boots.png",
+                "xws": "refinedblazingboots"
+            },
+            {
+                "name": "viper blowgun",
+                "points": 91,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-92-viper-blowgun.png",
+                "xws": "viperblowgun"
+            },
+            {
+                "name": "refined viper blowgun",
+                "points": 92,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-93-refined-viper-blowgun.png",
+                "xws": "refinedviperblowgun"
+            },
+            {
+                "name": "frost stone",
+                "points": 93,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-94-frost-stone.png",
+                "xws": "froststone"
+            },
+            {
+                "name": "storm stone",
+                "points": 94,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-95-storm-stone.png",
+                "xws": "stormstone"
+            },
+            {
+                "name": "inferno stone",
+                "points": 95,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-96-inferno-stone.png",
+                "xws": "infernostone"
+            },
+            {
+                "name": "tremor stone",
+                "points": 96,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-97-tremor-stone.png",
+                "xws": "tremorstone"
+            },
+            {
+                "name": "brilliant stone",
+                "points": 97,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-98-brilliant-stone.png",
+                "xws": "brilliantstone"
+            },
+            {
+                "name": "dark stone",
+                "points": 98,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-99-dark-stone.png",
+                "xws": "darkstone"
+            },
+            {
+                "name": "wonder stone",
+                "points": 99,
+                "expansion": "Crimson Scales",
+                "image": "items/cs/cs-100-wonder-stone.png",
+                "xws": "wonderstone"
             }
         ]
     }
