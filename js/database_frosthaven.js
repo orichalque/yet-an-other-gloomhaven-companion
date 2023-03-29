@@ -3,6 +3,7 @@ classNames_frosthaven = {
     bn: 'Banner Spear',
     df: 'Drifter',
     dw: 'Deathwalker',
+    ff: 'Frozen Fist',
     ge: 'Geminate',
     ne: 'Boneshaper',
 }
@@ -491,6 +492,186 @@ attack_modifiers_categories_frosthaven = [
               "image": "attack-modifiers/DW/am-dw-19.png",
               "xws": "amdw20"
             }
+        ]
+    },
+    {
+        "name": "am-ff",
+        "cards": [
+          {
+            "name": "fh-am-ff-back",
+            "points": 409,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-back.png",
+            "xws": "fhamffback"
+          },
+          {
+            "name": "fh-am-ff-01",
+            "points": 410,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-01.png",
+            "xws": "fhamff01"
+          },
+          {
+            "name": "fh-am-ff-02",
+            "points": 411,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-02.png",
+            "xws": "fhamff02"
+          },
+          {
+            "name": "fh-am-ff-03",
+            "points": 412,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-03.png",
+            "xws": "fhamff03"
+          },
+          {
+            "name": "fh-am-ff-04",
+            "points": 413,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-04.png",
+            "xws": "fhamff04"
+          },
+          {
+            "name": "fh-am-ff-05",
+            "points": 414,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-05.png",
+            "xws": "fhamff05"
+          },
+          {
+            "name": "fh-am-ff-06",
+            "points": 415,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-06.png",
+            "xws": "fhamff06"
+          },
+          {
+            "name": "fh-am-ff-07",
+            "points": 416,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-07.png",
+            "xws": "fhamff07"
+          },
+          {
+            "name": "fh-am-ff-08",
+            "points": 417,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-08.png",
+            "xws": "fhamff08"
+          },
+          {
+            "name": "fh-am-ff-09",
+            "points": 418,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-09.png",
+            "xws": "fhamff09"
+          },
+          {
+            "name": "fh-am-ff-10",
+            "points": 419,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-10.png",
+            "xws": "fhamff10"
+          },
+          {
+            "name": "fh-am-ff-11",
+            "points": 420,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-11.png",
+            "xws": "fhamff11"
+          },
+          {
+            "name": "fh-am-ff-12",
+            "points": 421,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-12.png",
+            "xws": "fhamff12"
+          },
+          {
+            "name": "fh-am-ff-13",
+            "points": 422,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-13.png",
+            "xws": "fhamff13"
+          },
+          {
+            "name": "fh-am-ff-14",
+            "points": 423,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-14.png",
+            "xws": "fhamff14"
+          },
+          {
+            "name": "fh-am-ff-15",
+            "points": 424,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-15.png",
+            "xws": "fhamff15"
+          },
+          {
+            "name": "fh-am-ff-16",
+            "points": 425,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-16.png",
+            "xws": "fhamff16"
+          },
+          {
+            "name": "fh-am-ff-17",
+            "points": 426,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-17.png",
+            "xws": "fhamff17"
+          },
+          {
+            "name": "fh-pe-ff-back",
+            "points": 427,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-back.png",
+            "xws": "fhpeffback"
+          },
+          {
+            "name": "fh-pe-ff-01",
+            "points": 428,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-01.png",
+            "xws": "fhpeff01"
+          },
+          {
+            "name": "sure footing",
+            "points": 429,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-01.png",
+            "xws": "fhpeff01"
+          },
+          {
+            "name": "fh-pe-ff-02",
+            "points": 430,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-02.png",
+            "xws": "fhpeff02"
+          },
+          {
+            "name": "the mountain's boon",
+            "points": 431,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-02.png",
+            "xws": "fhpeff02"
+          },
+          {
+            "name": "fh-pe-ff-03",
+            "points": 432,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-03.png",
+            "xws": "fhpeff03"
+          },
+          {
+            "name": "thick-skinned",
+            "points": 433,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-03.png",
+            "xws": "fhpeff03"
+          },
         ]
     },
     {
@@ -1578,6 +1759,295 @@ abilities_frosthaven = [
             "image": "character-ability-cards/DW/fh-when-your-time-comes.png",
             "xws": "whenyourtimecomes",
             "level": 9
+          },
+        ]
+    },
+    {
+        "name": "ff",
+        "max": 8,
+        "hidden": true,
+        "position": 7,
+        "cards": [
+          
+          {
+            "name": "ff-back",
+            "points": 238,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-ff-back.png",
+            "xws": "ffback",
+            "level": "-",
+            "initiative": "-",
+            "cardno": "-"
+          },
+          {
+            "name": "bring down the mountain",
+            "points": 239,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-bring-down-the-mountain.png",
+            "xws": "bringdownthemountain",
+            "level": "9",
+            "initiative": "09",
+            "cardno": "385"
+          },
+          {
+            "name": "cold boulder",
+            "points": 240,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-cold-boulder.png",
+            "xws": "coldboulder",
+            "level": "1",
+            "initiative": "70",
+            "cardno": "361"
+          },
+          {
+            "name": "crushing crystals",
+            "points": 241,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-crushing-crystals.png",
+            "xws": "crushingcrystals",
+            "level": "2",
+            "initiative": "67",
+            "cardno": "372"
+          },
+          {
+            "name": "draw of the bedrock",
+            "points": 242,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-draw-of-the-bedrock.png",
+            "xws": "drawofthebedrock",
+            "level": "2",
+            "initiative": "10",
+            "cardno": "371"
+          },
+          {
+            "name": "draw strength",
+            "points": 243,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-draw-strength.png",
+            "xws": "drawstrength",
+            "level": "8",
+            "initiative": "28",
+            "cardno": "384"
+          },
+          {
+            "name": "encased punch",
+            "points": 244,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-encased-punch.png",
+            "xws": "encasedpunch",
+            "level": "1",
+            "initiative": "19",
+            "cardno": "364"
+          },
+          {
+            "name": "freezing shell",
+            "points": 245,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-freezing-shell.png",
+            "xws": "freezingshell",
+            "level": 0,
+            "initiative": "17",
+            "cardno": "370"
+          },
+          {
+            "name": "frost eruption",
+            "points": 246,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-frost-eruption.png",
+            "xws": "frosteruption",
+            "level": "1",
+            "initiative": "61",
+            "cardno": "362"
+          },
+          {
+            "name": "frozen over",
+            "points": 247,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-frozen-over.png",
+            "xws": "frozenover",
+            "level": "3",
+            "initiative": "20",
+            "cardno": "374"
+          },
+          {
+            "name": "frozen spike",
+            "points": 248,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-frozen-spike.png",
+            "xws": "frozenspike",
+            "level": "9",
+            "initiative": "33",
+            "cardno": "386"
+          },
+          {
+            "name": "fury of the mountain",
+            "points": 249,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-fury-of-the-mountain.png",
+            "xws": "furyofthemountain",
+            "level": "1",
+            "initiative": "23",
+            "cardno": "363"
+          },
+          {
+            "name": "gift of the mountain",
+            "points": 250,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-gift-of-the-mountain.png",
+            "xws": "giftofthemountain",
+            "level": "7",
+            "initiative": "73",
+            "cardno": "381"
+          },
+          {
+            "name": "glacier slam",
+            "points": 251,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-glacier-slam.png",
+            "xws": "glacierslam",
+            "level": "6",
+            "initiative": "84",
+            "cardno": "380"
+          },
+          {
+            "name": "ice blast",
+            "points": 252,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-ice-blast.png",
+            "xws": "iceblast",
+            "level": "1",
+            "initiative": "32",
+            "cardno": "367"
+          },
+          {
+            "name": "ice uppercut",
+            "points": 253,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-ice-uppercut.png",
+            "xws": "iceuppercut",
+            "level": "5",
+            "initiative": "15",
+            "cardno": "378"
+          },
+          {
+            "name": "lacerating eruption",
+            "points": 254,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-lacerating-eruption.png",
+            "xws": "laceratingeruption",
+            "level": "3",
+            "initiative": "51",
+            "cardno": "373"
+          },
+          {
+            "name": "one with the mountain",
+            "points": 255,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-one-with-the-mountain.png",
+            "xws": "onewiththemountain",
+            "level": "1",
+            "initiative": "83",
+            "cardno": "360"
+          },
+          {
+            "name": "packed solid",
+            "points": 256,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-packed-solid.png",
+            "xws": "packedsolid",
+            "level": "4",
+            "initiative": "55",
+            "cardno": "376"
+          },
+          {
+            "name": "piercing pummel",
+            "points": 257,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-piercing-pummel.png",
+            "xws": "piercingpummel",
+            "level": "1",
+            "initiative": "30",
+            "cardno": "366"
+          },
+          {
+            "name": "preserved fury",
+            "points": 258,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-preserved-fury.png",
+            "xws": "preservedfury",
+            "level": "5",
+            "initiative": "49",
+            "cardno": "377"
+          },
+          {
+            "name": "primal bellow",
+            "points": 259,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-primal-bellow.png",
+            "xws": "primalbellow",
+            "level": 0,
+            "initiative": "84",
+            "cardno": "369"
+          },
+          {
+            "name": "seeing stars",
+            "points": 260,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-seeing-stars.png",
+            "xws": "seeingstars",
+            "level": "7",
+            "initiative": "29",
+            "cardno": "382"
+          },
+          {
+            "name": "shard launch",
+            "points": 261,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-shard-launch.png",
+            "xws": "shardlaunch",
+            "level": 0,
+            "initiative": "52",
+            "cardno": "368"
+          },
+          {
+            "name": "shattering blow",
+            "points": 262,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-shattering-blow.png",
+            "xws": "shatteringblow",
+            "level": "8",
+            "initiative": "18",
+            "cardno": "383"
+          },
+          {
+            "name": "the mountain's fist",
+            "points": 263,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-the-mountains-fist.png",
+            "xws": "themountainsfist",
+            "level": "4",
+            "initiative": "16",
+            "cardno": "375"
+          },
+          {
+            "name": "thick frost",
+            "points": 264,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-thick-frost.png",
+            "xws": "thickfrost",
+            "level": "6",
+            "initiative": "21",
+            "cardno": "379"
+          },
+          {
+            "name": "voice from below",
+            "points": 265,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/FF/fh-voice-from-below.png",
+            "xws": "voicefrombelow",
+            "level": "1",
+            "initiative": "22",
+            "cardno": "365"
           },
         ]
     },
