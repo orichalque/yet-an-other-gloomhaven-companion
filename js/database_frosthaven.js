@@ -2,6 +2,7 @@ classNames_frosthaven = {
     bb: 'Blink Blade',
     bn: 'Banner Spear',
     df: 'Drifter',
+    dt: 'Deepwraith',
     dw: 'Deathwalker',
     ff: 'Frozen Fist',
     ge: 'Geminate',
@@ -367,6 +368,193 @@ attack_modifiers_categories_frosthaven = [
               "image": "attack-modifiers/DF/am-df-17.png",
               "xws": "amdf22"
             }
+        ]
+    },
+    {
+        "name": "am-dt",
+        "cards": [
+          {
+            "name": "fh-am-dt-back",
+            "points": 358,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-back.png",
+            "xws": "fhamdtback"
+          },
+          {
+            "name": "fh-am-dt-01",
+            "points": 359,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-01.png",
+            "xws": "fhamdt01"
+          },
+          {
+            "name": "fh-am-dt-02",
+            "points": 360,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-02.png",
+            "xws": "fhamdt02"
+          },
+          {
+            "name": "fh-am-dt-03",
+            "points": 361,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-03.png",
+            "xws": "fhamdt03"
+          },
+          {
+            "name": "fh-am-dt-04",
+            "points": 362,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-04.png",
+            "xws": "fhamdt04"
+          },
+          {
+            "name": "fh-am-dt-05",
+            "points": 363,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-05.png",
+            "xws": "fhamdt05"
+          },
+          {
+            "name": "fh-am-dt-06",
+            "points": 364,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-06.png",
+            "xws": "fhamdt06"
+          },
+          {
+            "name": "fh-am-dt-07",
+            "points": 365,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-07.png",
+            "xws": "fhamdt07"
+          },
+          {
+            "name": "fh-am-dt-08",
+            "points": 366,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-08.png",
+            "xws": "fhamdt08"
+          },
+          {
+            "name": "fh-am-dt-09",
+            "points": 367,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-09.png",
+            "xws": "fhamdt09"
+          },
+          {
+            "name": "fh-am-dt-10",
+            "points": 368,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-10.png",
+            "xws": "fhamdt10"
+          },
+          {
+            "name": "fh-am-dt-11",
+            "points": 369,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-11.png",
+            "xws": "fhamdt11"
+          },
+          {
+            "name": "fh-am-dt-12",
+            "points": 370,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-12.png",
+            "xws": "fhamdt12"
+          },
+          {
+            "name": "fh-am-dt-13",
+            "points": 371,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-13.png",
+            "xws": "fhamdt13"
+          },
+          {
+            "name": "fh-am-dt-14",
+            "points": 372,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-14.png",
+            "xws": "fhamdt14"
+          },
+          {
+            "name": "fh-am-dt-15",
+            "points": 373,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-15.png",
+            "xws": "fhamdt15"
+          },
+          {
+            "name": "fh-am-dt-16",
+            "points": 374,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-16.png",
+            "xws": "fhamdt16"
+          },
+          {
+            "name": "fh-am-dt-17",
+            "points": 375,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-17.png",
+            "xws": "fhamdt17"
+          },
+          {
+            "name": "fh-am-dt-18",
+            "points": 376,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-18.png",
+            "xws": "fhamdt18"
+          },
+          {
+            "name": "fh-pe-dt-back",
+            "points": 377,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-back.png",
+            "xws": "fhpedtback"
+          },
+          {
+            "name": "fh-pe-dt-01",
+            "points": 378,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-01.png",
+            "xws": "fhpedt01"
+          },
+          {
+            "name": "grisly claim",
+            "points": 379,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-01.png",
+            "xws": "fhpedt01"
+          },
+          {
+            "name": "fh-pe-dt-02",
+            "points": 380,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-02.png",
+            "xws": "fhpedt02"
+          },
+          {
+            "name": "decorated veteran",
+            "points": 381,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-02.png",
+            "xws": "fhpedt02"
+          },
+          {
+            "name": "fh-pe-dt-03",
+            "points": 382,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-03.png",
+            "xws": "fhpedt03"
+          },
+          {
+            "name": "unseen predator",
+            "points": 383,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-03.png",
+            "xws": "fhpedt03"
+          },
         ]
     },
     {
@@ -1534,6 +1722,314 @@ abilities_frosthaven = [
             "image": "character-ability-cards/DF/fh-violent-inheritance.png",
             "xws": "violentinheritance",
             "level": 1
+          }
+        ]
+    },
+    {
+        "name": "dt",
+        "max": 10,
+        "hidden": true,
+        "position": 4,
+        "cards": [
+          {
+            "name": "dt-back",
+            "points": 175,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-dt-back.png",
+            "xws": "dtback",
+            "level": "-",
+            "initiative": "-",
+            "cardno": "-"
+          },
+          {
+            "name": "black night of the deep",
+            "points": 176,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-black-night-of-the-deep.png",
+            "xws": "blacknightofthedeep",
+            "level": "9",
+            "initiative": "26",
+            "cardno": "472"
+          },
+          {
+            "name": "black scythe",
+            "points": 177,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-black-scythe.png",
+            "xws": "blackscythe",
+            "level": "1",
+            "initiative": "45",
+            "cardno": "453"
+          },
+          {
+            "name": "claw of doom",
+            "points": 178,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-claw-of-doom.png",
+            "xws": "clawofdoom",
+            "level": "6",
+            "initiative": "30",
+            "cardno": "466"
+          },
+          {
+            "name": "consume the helpless",
+            "points": 179,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-consume-the-helpless.png",
+            "xws": "consumethehelpless",
+            "level": "9",
+            "initiative": "12",
+            "cardno": "473"
+          },
+          {
+            "name": "crippling terror",
+            "points": 180,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-crippling-terror.png",
+            "xws": "cripplingterror",
+            "level": "3",
+            "initiative": "15",
+            "cardno": "460"
+          },
+          {
+            "name": "crushing darkness",
+            "points": 181,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-crushing-darkness.png",
+            "xws": "crushingdarkness",
+            "level": "4",
+            "initiative": "40",
+            "cardno": "462"
+          },
+          {
+            "name": "death spiral",
+            "points": 182,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-death-spiral.png",
+            "xws": "deathspiral",
+            "level": "5",
+            "initiative": "48",
+            "cardno": "465"
+          },
+          {
+            "name": "dire frenzy",
+            "points": 183,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-dire-frenzy.png",
+            "xws": "direfrenzy",
+            "level": "7",
+            "initiative": "26",
+            "cardno": "469"
+          },
+          {
+            "name": "extra decoration",
+            "points": 184,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-extra-decoration.png",
+            "xws": "extradecoration",
+            "level": "5",
+            "initiative": "92",
+            "cardno": "464"
+          },
+          {
+            "name": "grim trophies",
+            "points": 185,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-grim-trophies.png",
+            "xws": "grimtrophies",
+            "level": "4",
+            "initiative": "18",
+            "cardno": "463"
+          },
+          {
+            "name": "hasten the end",
+            "points": 186,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-hasten-the-end.png",
+            "xws": "hastentheend",
+            "level": "7",
+            "initiative": "65",
+            "cardno": "468"
+          },
+          {
+            "name": "haunting brutality",
+            "points": 187,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-haunting-brutality.png",
+            "xws": "hauntingbrutality",
+            "level": "1",
+            "initiative": "23",
+            "cardno": "457"
+          },
+          {
+            "name": "hollow aura",
+            "points": 188,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-hollow-aura.png",
+            "xws": "hollowaura",
+            "level": "1",
+            "initiative": "88",
+            "cardno": "446"
+          },
+          {
+            "name": "ink cloud",
+            "points": 189,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-ink-cloud.png",
+            "xws": "inkcloud",
+            "level": "1",
+            "initiative": "28",
+            "cardno": "449"
+          },
+          {
+            "name": "lacerating stabs",
+            "points": 190,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-lacerating-stabs.png",
+            "xws": "laceratingstabs",
+            "level": "1",
+            "initiative": "14",
+            "cardno": "450"
+          },
+          {
+            "name": "lie in wait",
+            "points": 191,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-lie-in-wait.png",
+            "xws": "lieinwait",
+            "level": "2",
+            "initiative": "98",
+            "cardno": "459"
+          },
+          {
+            "name": "mantle of dread",
+            "points": 192,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-mantle-of-dread.png",
+            "xws": "mantleofdread",
+            "level": "1",
+            "initiative": "96",
+            "cardno": "452"
+          },
+          {
+            "name": "morbid camouflage",
+            "points": 193,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-morbid-camouflage.png",
+            "xws": "morbidcamouflage",
+            "level": "1",
+            "initiative": "31",
+            "cardno": "456"
+          },
+          {
+            "name": "pinning spines",
+            "points": 194,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-pinning-spines.png",
+            "xws": "pinningspines",
+            "level": "3",
+            "initiative": "25",
+            "cardno": "461"
+          },
+          {
+            "name": "rip from the bone",
+            "points": 195,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-rip-from-the-bone.png",
+            "xws": "ripfromthebone",
+            "level": "8",
+            "initiative": "11",
+            "cardno": "471"
+          },
+          {
+            "name": "skewer the flesh",
+            "points": 196,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-skewer-the-flesh.png",
+            "xws": "skewertheflesh",
+            "level": "1",
+            "initiative": "86",
+            "cardno": "447"
+          },
+          {
+            "name": "skull collection",
+            "points": 197,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-skull-collection.png",
+            "xws": "skullcollection",
+            "level": "1",
+            "initiative": "22",
+            "cardno": "445"
+          },
+          {
+            "name": "slipping into death",
+            "points": 198,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-slipping-into-death.png",
+            "xws": "slippingintodeath",
+            "level": "2",
+            "initiative": "89",
+            "cardno": "458"
+          },
+          {
+            "name": "soul hunger",
+            "points": 199,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-soul-hunger.png",
+            "xws": "soulhunger",
+            "level": "1",
+            "initiative": "91",
+            "cardno": "455"
+          },
+          {
+            "name": "staring into the abyss",
+            "points": 200,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-staring-into-the-abyss.png",
+            "xws": "staringintotheabyss",
+            "level": "1",
+            "initiative": "63",
+            "cardno": "451"
+          },
+          {
+            "name": "succumb to fear",
+            "points": 201,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-succumb-to-fear.png",
+            "xws": "succumbtofear",
+            "level": "1",
+            "initiative": "20",
+            "cardno": "448"
+          },
+          {
+            "name": "the remorseless deep",
+            "points": 202,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-the-remorseless-deep.png",
+            "xws": "theremorselessdeep",
+            "level": "6",
+            "initiative": "22",
+            "cardno": "467"
+          },
+          {
+            "name": "tumultuous panic",
+            "points": 203,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-tumultuous-panic.png",
+            "xws": "tumultuouspanic",
+            "level": "1",
+            "initiative": "66",
+            "cardno": "454"
+          },
+          {
+            "name": "unseen horror",
+            "points": 204,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/DT/fh-unseen-horror.png",
+            "xws": "unseenhorror",
+            "level": "8",
+            "initiative": "19",
+            "cardno": "470"
           }
         ]
     },
