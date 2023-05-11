@@ -1,12 +1,14 @@
 classNames_frosthaven = {
     bb: 'Blink Blade',
     bn: 'Banner Spear',
+    cr: 'Crashing Tide',
     df: 'Drifter',
     dt: 'Deepwraith',
     dw: 'Deathwalker',
     ff: 'Frozen Fist',
     ge: 'Geminate',
     ne: 'Boneshaper',
+    sd: 'Snowdancer',
 }
 
 attack_modifiers_categories_frosthaven = [
@@ -234,6 +236,186 @@ attack_modifiers_categories_frosthaven = [
         ]
     },
     {
+        "name": "am-cr",
+        "cards": [
+            {
+              "name": "fh-am-cr-01",
+              "points": 305,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-01.png",
+              "xws": "fhamcr01"
+            },
+            {
+              "name": "fh-am-cr-02",
+              "points": 306,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-02.png",
+              "xws": "fhamcr02"
+            },
+            {
+              "name": "fh-am-cr-03",
+              "points": 307,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-03.png",
+              "xws": "fhamcr03"
+            },
+            {
+              "name": "fh-am-cr-04",
+              "points": 308,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-04.png",
+              "xws": "fhamcr04"
+            },
+            {
+              "name": "fh-am-cr-05",
+              "points": 309,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-05.png",
+              "xws": "fhamcr05"
+            },
+            {
+              "name": "fh-am-cr-06",
+              "points": 310,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-06.png",
+              "xws": "fhamcr06"
+            },
+            {
+              "name": "fh-am-cr-07",
+              "points": 311,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-07.png",
+              "xws": "fhamcr07"
+            },
+            {
+              "name": "fh-am-cr-08",
+              "points": 312,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-08.png",
+              "xws": "fhamcr08"
+            },
+            {
+              "name": "fh-am-cr-09",
+              "points": 313,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-09.png",
+              "xws": "fhamcr09"
+            },
+            {
+              "name": "fh-am-cr-10",
+              "points": 314,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-10.png",
+              "xws": "fhamcr10"
+            },
+            {
+              "name": "fh-am-cr-11",
+              "points": 315,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-11.png",
+              "xws": "fhamcr11"
+            },
+            {
+              "name": "fh-am-cr-12",
+              "points": 316,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-12.png",
+              "xws": "fhamcr12"
+            },
+            {
+              "name": "fh-am-cr-13",
+              "points": 317,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-13.png",
+              "xws": "fhamcr13"
+            },
+            {
+              "name": "fh-am-cr-14",
+              "points": 318,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-14.png",
+              "xws": "fhamcr14"
+            },
+            {
+              "name": "fh-am-cr-15",
+              "points": 319,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-15.png",
+              "xws": "fhamcr15"
+            },
+            {
+              "name": "fh-am-cr-16",
+              "points": 320,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-16.png",
+              "xws": "fhamcr16"
+            },
+            {
+              "name": "fh-am-cr-17",
+              "points": 321,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-17.png",
+              "xws": "fhamcr17"
+            },
+            {
+              "name": "fh-am-cr-18",
+              "points": 322,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-18.png",
+              "xws": "fhamcr18"
+            },
+            {
+              "name": "fh-am-cr-19",
+              "points": 323,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-am-cr-19.png",
+              "xws": "fhamcr19"
+            },
+            {
+              "name": "fh-pe-cr-01",
+              "points": 325,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-pe-cr-01.png",
+              "xws": "fhpecr01"
+            },
+            {
+              "name": "resilient shell",
+              "points": 326,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-pe-cr-01.png",
+              "xws": "fhpecr01"
+            },
+            {
+              "name": "fh-pe-cr-02",
+              "points": 327,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-pe-cr-02.png",
+              "xws": "fhpecr02"
+            },
+            {
+              "name": "curl up",
+              "points": 328,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-pe-cr-02.png",
+              "xws": "fhpecr02"
+            },
+            {
+              "name": "fh-pe-cr-03",
+              "points": 329,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-pe-cr-03.png",
+              "xws": "fhpecr03"
+            },
+            {
+              "name": "aquatic predator",
+              "points": 330,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers/CR/fh-pe-cr-03.png",
+              "xws": "fhpecr03"
+            }
+        ]
+    },
+    {
         "name": "am-df",
         "cards": [
             {
@@ -370,189 +552,176 @@ attack_modifiers_categories_frosthaven = [
             }
         ]
     },
+
     {
         "name": "am-dt",
         "cards": [
           {
-            "name": "fh-am-dt-back",
-            "points": 358,
-            "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-back.png",
-            "xws": "fhamdtback"
-          },
-          {
             "name": "fh-am-dt-01",
             "points": 359,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-01.png",
+            "image": "attack-modifiers/DT/fh-am-dt-01.png",
             "xws": "fhamdt01"
           },
           {
             "name": "fh-am-dt-02",
             "points": 360,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-02.png",
+            "image": "attack-modifiers/DT/fh-am-dt-02.png",
             "xws": "fhamdt02"
           },
           {
             "name": "fh-am-dt-03",
             "points": 361,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-03.png",
+            "image": "attack-modifiers/DT/fh-am-dt-03.png",
             "xws": "fhamdt03"
           },
           {
             "name": "fh-am-dt-04",
             "points": 362,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-04.png",
+            "image": "attack-modifiers/DT/fh-am-dt-04.png",
             "xws": "fhamdt04"
           },
           {
             "name": "fh-am-dt-05",
             "points": 363,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-05.png",
+            "image": "attack-modifiers/DT/fh-am-dt-05.png",
             "xws": "fhamdt05"
           },
           {
             "name": "fh-am-dt-06",
             "points": 364,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-06.png",
+            "image": "attack-modifiers/DT/fh-am-dt-06.png",
             "xws": "fhamdt06"
           },
           {
             "name": "fh-am-dt-07",
             "points": 365,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-07.png",
+            "image": "attack-modifiers/DT/fh-am-dt-07.png",
             "xws": "fhamdt07"
           },
           {
             "name": "fh-am-dt-08",
             "points": 366,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-08.png",
+            "image": "attack-modifiers/DT/fh-am-dt-08.png",
             "xws": "fhamdt08"
           },
           {
             "name": "fh-am-dt-09",
             "points": 367,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-09.png",
+            "image": "attack-modifiers/DT/fh-am-dt-09.png",
             "xws": "fhamdt09"
           },
           {
             "name": "fh-am-dt-10",
             "points": 368,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-10.png",
+            "image": "attack-modifiers/DT/fh-am-dt-10.png",
             "xws": "fhamdt10"
           },
           {
             "name": "fh-am-dt-11",
             "points": 369,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-11.png",
+            "image": "attack-modifiers/DT/fh-am-dt-11.png",
             "xws": "fhamdt11"
           },
           {
             "name": "fh-am-dt-12",
             "points": 370,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-12.png",
+            "image": "attack-modifiers/DT/fh-am-dt-12.png",
             "xws": "fhamdt12"
           },
           {
             "name": "fh-am-dt-13",
             "points": 371,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-13.png",
+            "image": "attack-modifiers/DT/fh-am-dt-13.png",
             "xws": "fhamdt13"
           },
           {
             "name": "fh-am-dt-14",
             "points": 372,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-14.png",
+            "image": "attack-modifiers/DT/fh-am-dt-14.png",
             "xws": "fhamdt14"
           },
           {
             "name": "fh-am-dt-15",
             "points": 373,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-15.png",
+            "image": "attack-modifiers/DT/fh-am-dt-15.png",
             "xws": "fhamdt15"
           },
           {
             "name": "fh-am-dt-16",
             "points": 374,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-16.png",
+            "image": "attack-modifiers/DT/fh-am-dt-16.png",
             "xws": "fhamdt16"
           },
           {
             "name": "fh-am-dt-17",
             "points": 375,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-17.png",
+            "image": "attack-modifiers/DT/fh-am-dt-17.png",
             "xws": "fhamdt17"
           },
           {
             "name": "fh-am-dt-18",
             "points": 376,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-am-dt-18.png",
+            "image": "attack-modifiers/DT/fh-am-dt-18.png",
             "xws": "fhamdt18"
-          },
-          {
-            "name": "fh-pe-dt-back",
-            "points": 377,
-            "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-back.png",
-            "xws": "fhpedtback"
           },
           {
             "name": "fh-pe-dt-01",
             "points": 378,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-01.png",
+            "image": "attack-modifiers/DT/fh-pe-dt-01.png",
             "xws": "fhpedt01"
           },
           {
             "name": "grisly claim",
             "points": 379,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-01.png",
+            "image": "attack-modifiers/DT/fh-pe-dt-01.png",
             "xws": "fhpedt01"
           },
           {
             "name": "fh-pe-dt-02",
             "points": 380,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-02.png",
+            "image": "attack-modifiers/DT/fh-pe-dt-02.png",
             "xws": "fhpedt02"
           },
           {
             "name": "decorated veteran",
             "points": 381,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-02.png",
+            "image": "attack-modifiers/DT/fh-pe-dt-02.png",
             "xws": "fhpedt02"
           },
           {
             "name": "fh-pe-dt-03",
             "points": 382,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-03.png",
+            "image": "attack-modifiers/DT/fh-pe-dt-03.png",
             "xws": "fhpedt03"
           },
           {
             "name": "unseen predator",
             "points": 383,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/DT/fh-pe-dt-03.png",
+            "image": "attack-modifiers/DT/fh-pe-dt-03.png",
             "xws": "fhpedt03"
           },
         ]
@@ -686,178 +855,164 @@ attack_modifiers_categories_frosthaven = [
         "name": "am-ff",
         "cards": [
           {
-            "name": "fh-am-ff-back",
-            "points": 409,
-            "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-back.png",
-            "xws": "fhamffback"
-          },
-          {
             "name": "fh-am-ff-01",
             "points": 410,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-01.png",
+            "image": "attack-modifiers/FF/fh-am-ff-01.png",
             "xws": "fhamff01"
           },
           {
             "name": "fh-am-ff-02",
             "points": 411,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-02.png",
+            "image": "attack-modifiers/FF/fh-am-ff-02.png",
             "xws": "fhamff02"
           },
           {
             "name": "fh-am-ff-03",
             "points": 412,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-03.png",
+            "image": "attack-modifiers/FF/fh-am-ff-03.png",
             "xws": "fhamff03"
           },
           {
             "name": "fh-am-ff-04",
             "points": 413,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-04.png",
+            "image": "attack-modifiers/FF/fh-am-ff-04.png",
             "xws": "fhamff04"
           },
           {
             "name": "fh-am-ff-05",
             "points": 414,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-05.png",
+            "image": "attack-modifiers/FF/fh-am-ff-05.png",
             "xws": "fhamff05"
           },
           {
             "name": "fh-am-ff-06",
             "points": 415,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-06.png",
+            "image": "attack-modifiers/FF/fh-am-ff-06.png",
             "xws": "fhamff06"
           },
           {
             "name": "fh-am-ff-07",
             "points": 416,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-07.png",
+            "image": "attack-modifiers/FF/fh-am-ff-07.png",
             "xws": "fhamff07"
           },
           {
             "name": "fh-am-ff-08",
             "points": 417,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-08.png",
+            "image": "attack-modifiers/FF/fh-am-ff-08.png",
             "xws": "fhamff08"
           },
           {
             "name": "fh-am-ff-09",
             "points": 418,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-09.png",
+            "image": "attack-modifiers/FF/fh-am-ff-09.png",
             "xws": "fhamff09"
           },
           {
             "name": "fh-am-ff-10",
             "points": 419,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-10.png",
+            "image": "attack-modifiers/FF/fh-am-ff-10.png",
             "xws": "fhamff10"
           },
           {
             "name": "fh-am-ff-11",
             "points": 420,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-11.png",
+            "image": "attack-modifiers/FF/fh-am-ff-11.png",
             "xws": "fhamff11"
           },
           {
             "name": "fh-am-ff-12",
             "points": 421,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-12.png",
+            "image": "attack-modifiers/FF/fh-am-ff-12.png",
             "xws": "fhamff12"
           },
           {
             "name": "fh-am-ff-13",
             "points": 422,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-13.png",
+            "image": "attack-modifiers/FF/fh-am-ff-13.png",
             "xws": "fhamff13"
           },
           {
             "name": "fh-am-ff-14",
             "points": 423,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-14.png",
+            "image": "attack-modifiers/FF/fh-am-ff-14.png",
             "xws": "fhamff14"
           },
           {
             "name": "fh-am-ff-15",
             "points": 424,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-15.png",
+            "image": "attack-modifiers/FF/fh-am-ff-15.png",
             "xws": "fhamff15"
           },
           {
             "name": "fh-am-ff-16",
             "points": 425,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-16.png",
+            "image": "attack-modifiers/FF/fh-am-ff-16.png",
             "xws": "fhamff16"
           },
           {
             "name": "fh-am-ff-17",
             "points": 426,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-am-ff-17.png",
+            "image": "attack-modifiers/FF/fh-am-ff-17.png",
             "xws": "fhamff17"
-          },
-          {
-            "name": "fh-pe-ff-back",
-            "points": 427,
-            "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-back.png",
-            "xws": "fhpeffback"
           },
           {
             "name": "fh-pe-ff-01",
             "points": 428,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-01.png",
+            "image": "attack-modifiers/FF/fh-pe-ff-01.png",
             "xws": "fhpeff01"
           },
           {
             "name": "sure footing",
             "points": 429,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-01.png",
+            "image": "attack-modifiers/FF/fh-pe-ff-01.png",
             "xws": "fhpeff01"
           },
           {
             "name": "fh-pe-ff-02",
             "points": 430,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-02.png",
+            "image": "attack-modifiers/FF/fh-pe-ff-02.png",
             "xws": "fhpeff02"
           },
           {
             "name": "the mountain's boon",
             "points": 431,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-02.png",
+            "image": "attack-modifiers/FF/fh-pe-ff-02.png",
             "xws": "fhpeff02"
           },
           {
             "name": "fh-pe-ff-03",
             "points": 432,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-03.png",
+            "image": "attack-modifiers/FF/fh-pe-ff-03.png",
             "xws": "fhpeff03"
           },
           {
             "name": "thick-skinned",
             "points": 433,
             "expansion": "Frosthaven",
-            "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-03.png",
+            "image": "attack-modifiers/FF/fh-pe-ff-03.png",
             "xws": "fhpeff03"
           },
         ]
@@ -1049,6 +1204,172 @@ attack_modifiers_categories_frosthaven = [
               "points": 109,
               "image": "attack-modifiers/NE/am-ne-12.png",
               "xws": "amne13"
+            }
+        ]
+    },
+        {
+        "name": "am-sd",
+        "cards": [
+            {
+              "name": "fh-am-sd-01",
+              "points": 584,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-01.png",
+              "xws": "fhamsd01"
+            },
+            {
+              "name": "fh-am-sd-02",
+              "points": 585,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-02.png",
+              "xws": "fhamsd02"
+            },
+            {
+              "name": "fh-am-sd-03",
+              "points": 586,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-03.png",
+              "xws": "fhamsd03"
+            },
+            {
+              "name": "fh-am-sd-04",
+              "points": 587,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-04.png",
+              "xws": "fhamsd04"
+            },
+            {
+              "name": "fh-am-sd-05",
+              "points": 588,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-05.png",
+              "xws": "fhamsd05"
+            },
+            {
+              "name": "fh-am-sd-06",
+              "points": 589,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-06.png",
+              "xws": "fhamsd06"
+            },
+            {
+              "name": "fh-am-sd-07",
+              "points": 590,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-07.png",
+              "xws": "fhamsd07"
+            },
+            {
+              "name": "fh-am-sd-08",
+              "points": 591,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-08.png",
+              "xws": "fhamsd08"
+            },
+            {
+              "name": "fh-am-sd-09",
+              "points": 592,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-09.png",
+              "xws": "fhamsd09"
+            },
+            {
+              "name": "fh-am-sd-10",
+              "points": 593,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-10.png",
+              "xws": "fhamsd10"
+            },
+            {
+              "name": "fh-am-sd-11",
+              "points": 594,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-11.png",
+              "xws": "fhamsd11"
+            },
+            {
+              "name": "fh-am-sd-12",
+              "points": 595,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-12.png",
+              "xws": "fhamsd12"
+            },
+            {
+              "name": "fh-am-sd-13",
+              "points": 596,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-13.png",
+              "xws": "fhamsd13"
+            },
+            {
+              "name": "fh-am-sd-14",
+              "points": 597,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-14.png",
+              "xws": "fhamsd14"
+            },
+            {
+              "name": "fh-am-sd-15",
+              "points": 598,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-15.png",
+              "xws": "fhamsd15"
+            },
+            {
+              "name": "fh-am-sd-16",
+              "points": 599,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-16.png",
+              "xws": "fhamsd16"
+            },
+            {
+              "name": "fh-am-sd-17",
+              "points": 600,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-am-sd-17.png",
+              "xws": "fhamsd17"
+            },
+            {
+              "name": "fh-pe-sd-01",
+              "points": 602,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-pe-sd-01.png",
+              "xws": "fhpesd01"
+            },
+            {
+              "name": "heart of the storm",
+              "points": 603,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-pe-sd-01.png",
+              "xws": "fhpesd01"
+            },
+            {
+              "name": "fh-pe-sd-02",
+              "points": 604,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-pe-sd-02.png",
+              "xws": "fhpesd02"
+            },
+            {
+              "name": "winter's breath",
+              "points": 605,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-pe-sd-02.png",
+              "xws": "fhpesd02"
+            },
+            {
+              "name": "fh-pe-sd-03",
+              "points": 606,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-pe-sd-03.png",
+              "xws": "fhpesd03"
+            },
+            {
+              "name": "blinding flurries",
+              "points": 607,
+              "expansion": "Frosthaven",
+              "image": "attack-modifiers//SD/fh-pe-sd-03.png",
+              "xws": "fhpesd03"
             }
         ]
     }
@@ -1494,10 +1815,370 @@ abilities_frosthaven = [
         ]
     },
     {
+        "name": "cr",
+        "max": 12,
+        "hidden": true,
+        "position": 3,
+        "cards": [
+          {
+            "name": "cr-back",
+            "points": 111,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-cr-back.png",
+            "xws": "crback",
+            "level": "-",
+            "initiative": "-",
+            "cardno": "-",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "blood in the water",
+            "points": 112,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-blood-in-the-water.png",
+            "xws": "bloodinthewater",
+            "level": "2",
+            "initiative": "53",
+            "cardno": "490",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "chaotic refraction",
+            "points": 113,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-chaotic-refraction.png",
+            "xws": "chaoticrefraction",
+            "level": "4",
+            "initiative": "26",
+            "cardno": "493",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "cleansing swell",
+            "points": 114,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-cleansing-swell.png",
+            "xws": "cleansingswell",
+            "level": "1",
+            "initiative": "45",
+            "cardno": "481",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "clean sweep",
+            "points": 115,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-clean-sweep.png",
+            "xws": "cleansweep",
+            "level": "4",
+            "initiative": "65",
+            "cardno": "494",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "crashing surge",
+            "points": 116,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-crashing-surge.png",
+            "xws": "crashingsurge",
+            "level": "1",
+            "initiative": "34",
+            "cardno": "483",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "cresting force",
+            "points": 117,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-cresting-force.png",
+            "xws": "crestingforce",
+            "level": "1",
+            "initiative": "87",
+            "cardno": "482",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "crush armor",
+            "points": 118,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-crush-armor.png",
+            "xws": "crusharmor",
+            "level": 0,
+            "initiative": "42",
+            "cardno": "488",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "death on all sides",
+            "points": 119,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-death-on-all-sides.png",
+            "xws": "deathonallsides",
+            "level": "8",
+            "initiative": "73",
+            "cardno": "501",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "down to the depths",
+            "points": 120,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-down-to-the-depths.png",
+            "xws": "downtothedepths",
+            "level": "1",
+            "initiative": "74",
+            "cardno": "478",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "drown beneath the waves",
+            "points": 121,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-drown-beneath-the-waves.png",
+            "xws": "drownbeneaththewaves",
+            "level": "7",
+            "initiative": "09",
+            "cardno": "500",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "dug in",
+            "points": 122,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-dug-in.png",
+            "xws": "dugin",
+            "level": "7",
+            "initiative": "76",
+            "cardno": "499",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "ebb and flow",
+            "points": 123,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-ebb-and-flow.png",
+            "xws": "ebbandflow",
+            "level": "8",
+            "initiative": "24",
+            "cardno": "502",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "endless cycle",
+            "points": 124,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-endless-cycle.png",
+            "xws": "endlesscycle",
+            "level": "3",
+            "initiative": "08",
+            "cardno": "492",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "high tide",
+            "points": 125,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-high-tide.png",
+            "xws": "hightide",
+            "level": "9",
+            "initiative": "90",
+            "cardno": "503",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "low tide",
+            "points": 126,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-low-tide.png",
+            "xws": "lowtide",
+            "level": "9",
+            "initiative": "10",
+            "cardno": "504",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "mighty claws",
+            "points": 127,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-mighty-claws.png",
+            "xws": "mightyclaws",
+            "level": "1",
+            "initiative": "23",
+            "cardno": "484",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "overwhelming wave",
+            "points": 128,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-overwhelming-wave.png",
+            "xws": "overwhelmingwave",
+            "level": "1",
+            "initiative": "86",
+            "cardno": "474",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "pool of power",
+            "points": 129,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-pool-of-power.png",
+            "xws": "poolofpower",
+            "level": "1",
+            "initiative": "41",
+            "cardno": "479",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "powerful pincer",
+            "points": 130,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-powerful-pincer.png",
+            "xws": "powerfulpincer",
+            "level": "6",
+            "initiative": "70",
+            "cardno": "497",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "rancid brine",
+            "points": 131,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-rancid-brine.png",
+            "xws": "rancidbrine",
+            "level": "1",
+            "initiative": "62",
+            "cardno": "476",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "rising flood",
+            "points": 132,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-rising-flood.png",
+            "xws": "risingflood",
+            "level": 0,
+            "initiative": "49",
+            "cardno": "486",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "sharp chitin",
+            "points": 133,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-sharp-chitin.png",
+            "xws": "sharpchitin",
+            "level": "1",
+            "initiative": "25",
+            "cardno": "477",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "shuck",
+            "points": 134,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-shuck.png",
+            "xws": "shuck",
+            "level": "3",
+            "initiative": "55",
+            "cardno": "491",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "skitter",
+            "points": 135,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-skitter.png",
+            "xws": "skitter",
+            "level": "1",
+            "initiative": "51",
+            "cardno": "480",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "smashing torrent",
+            "points": 136,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-smashing-torrent.png",
+            "xws": "smashingtorrent",
+            "level": "2",
+            "initiative": "79",
+            "cardno": "489",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "sodden soil",
+            "points": 137,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-sodden-soil.png",
+            "xws": "soddensoil",
+            "level": "5",
+            "initiative": "17",
+            "cardno": "496",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "soft flesh",
+            "points": 138,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-soft-flesh.png",
+            "xws": "softflesh",
+            "level": "1",
+            "initiative": "75",
+            "cardno": "475",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "submerge",
+            "points": 139,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-submerge.png",
+            "xws": "submerge",
+            "level": "1",
+            "initiative": "68",
+            "cardno": "485",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "tidal blast",
+            "points": 140,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-tidal-blast.png",
+            "xws": "tidalblast",
+            "level": "5",
+            "initiative": "71",
+            "cardno": "495",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "twilight grasp",
+            "points": 141,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-twilight-grasp.png",
+            "xws": "twilightgrasp",
+            "level": "6",
+            "initiative": "33",
+            "cardno": "498",
+            "character-xws": "crashing tide"
+          },
+          {
+            "name": "undertow",
+            "points": 142,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/CR/fh-undertow.png",
+            "xws": "undertow",
+            "level": 0,
+            "initiative": "15",
+            "cardno": "487",
+            "character-xws": "crashing tide"
+          }
+        ]
+    },
+    {
         "name": "df",
         "max": 12,
         "hidden": false,
-        "position": 3,
+        "position": 2,
         "cards": [
             {
                 "name": "df-back",
@@ -1729,7 +2410,7 @@ abilities_frosthaven = [
         "name": "dt",
         "max": 10,
         "hidden": true,
-        "position": 4,
+        "position": 10,
         "cards": [
           {
             "name": "dt-back",
@@ -2262,7 +2943,7 @@ abilities_frosthaven = [
         "name": "ff",
         "max": 8,
         "hidden": true,
-        "position": 7,
+        "position": 8,
         "cards": [
           
           {
@@ -3030,6 +3711,388 @@ abilities_frosthaven = [
             "image": "character-ability-cards/NE/fh-wrath-of-the-turned-earth.png",
             "xws": "wrathoftheturnedearth",
             "level": 0
+          }
+        ]
+    },
+        {
+        "name": "sd",
+        "max": 11,
+        "hidden": true,
+        "position": 7,
+        "cards": [
+          {
+            "name": "sd-back",
+            "points": 470,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-sd-back.png",
+            "xws": "sdback",
+            "level": "-",
+            "initiative": "-",
+            "cardno": "-",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "birds in a tempest",
+            "points": 471,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-birds-in-a-tempest.png",
+            "xws": "birdsinatempest",
+            "level": "2",
+            "initiative": "18",
+            "cardno": "344",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "2 white owls",
+            "points": 472,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-birds-in-a-tempest.png",
+            "xws": "birdsinatempest",
+            "level": "2",
+            "initiative": "18",
+            "cardno": "344",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "biting frost",
+            "points": 473,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-biting-frost.png",
+            "xws": "bitingfrost",
+            "level": "4",
+            "initiative": "16",
+            "cardno": "349",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "blinding vortex",
+            "points": 474,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-blinding-vortex.png",
+            "xws": "blindingvortex",
+            "level": 0,
+            "initiative": "31",
+            "cardno": "342",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "blizzard",
+            "points": 475,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-blizzard.png",
+            "xws": "blizzard",
+            "level": "1",
+            "initiative": "71",
+            "cardno": "330",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "chilling impact",
+            "points": 476,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-chilling-impact.png",
+            "xws": "chillingimpact",
+            "level": "1",
+            "initiative": "31",
+            "cardno": "332",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "cold snap",
+            "points": 477,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-cold-snap.png",
+            "xws": "coldsnap",
+            "level": "3",
+            "initiative": "86",
+            "cardno": "346",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "cold therapy",
+            "points": 478,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-cold-therapy.png",
+            "xws": "coldtherapy",
+            "level": "1",
+            "initiative": "20",
+            "cardno": "340",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "cross winds",
+            "points": 479,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-cross-winds.png",
+            "xws": "crosswinds",
+            "level": "1",
+            "initiative": "32",
+            "cardno": "338",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "enticing breeze",
+            "points": 480,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-enticing-breeze.png",
+            "xws": "enticingbreeze",
+            "level": "1",
+            "initiative": "76",
+            "cardno": "331",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "freezing storm",
+            "points": 481,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-freezing-storm.png",
+            "xws": "freezingstorm",
+            "level": "7",
+            "initiative": "81",
+            "cardno": "354",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "frigid growth",
+            "points": 482,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-frigid-growth.png",
+            "xws": "frigidgrowth",
+            "level": "1",
+            "initiative": "70",
+            "cardno": "339",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "frozen brand",
+            "points": 483,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-frozen-brand.png",
+            "xws": "frozenbrand",
+            "level": "6",
+            "initiative": "33",
+            "cardno": "353",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "gathering force",
+            "points": 484,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-gathering-force.png",
+            "xws": "gatheringforce",
+            "level": "1",
+            "initiative": "89",
+            "cardno": "333",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "lifting gust",
+            "points": 485,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-lifting-gust.png",
+            "xws": "liftinggust",
+            "level": "1",
+            "initiative": "27",
+            "cardno": "335",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "nature's breath",
+            "points": 486,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-natures-breath.png",
+            "xws": "naturesbreath",
+            "level": "1",
+            "initiative": "90",
+            "cardno": "334",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "snow fox",
+            "points": 487,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-natures-breath.png",
+            "xws": "naturesbreath",
+            "level": "1",
+            "initiative": "90",
+            "cardno": "334",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "polar vortex",
+            "points": 488,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-polar-vortex.png",
+            "xws": "polarvortex",
+            "level": "3",
+            "initiative": "61",
+            "cardno": "347",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "refreshing flurry",
+            "points": 489,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-refreshing-flurry.png",
+            "xws": "refreshingflurry",
+            "level": "6",
+            "initiative": "95",
+            "cardno": "352",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "polar cat",
+            "points": 490,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-refreshing-flurry.png",
+            "xws": "refreshingflurry",
+            "level": "6",
+            "initiative": "95",
+            "cardno": "352",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "shifting snow",
+            "points": 491,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-shifting-snow.png",
+            "xws": "shiftingsnow",
+            "level": "5",
+            "initiative": "17",
+            "cardno": "351",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "snowball",
+            "points": 492,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-snowball.png",
+            "xws": "snowball",
+            "level": "1",
+            "initiative": "23",
+            "cardno": "336",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "snowblind",
+            "points": 493,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-snowblind.png",
+            "xws": "snowblind",
+            "level": "9",
+            "initiative": "83",
+            "cardno": "359",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "storm wall",
+            "points": 494,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-storm-wall.png",
+            "xws": "stormwall",
+            "level": "7",
+            "initiative": "30",
+            "cardno": "355",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "surging blow",
+            "points": 495,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-surging-blow.png",
+            "xws": "surgingblow",
+            "level": "8",
+            "initiative": "73",
+            "cardno": "356",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "the endless white",
+            "points": 496,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-the-endless-white.png",
+            "xws": "theendlesswhite",
+            "level": "8",
+            "initiative": "05",
+            "cardno": "357",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "the spirit's call",
+            "points": 497,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-the-spirits-call.png",
+            "xws": "thespiritscall",
+            "level": 0,
+            "initiative": "45",
+            "cardno": "343",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "tornado",
+            "points": 498,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-tornado.png",
+            "xws": "tornado",
+            "level": "2",
+            "initiative": "59",
+            "cardno": "345",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "whipping gale",
+            "points": 499,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-whipping-gale.png",
+            "xws": "whippinggale",
+            "level": "5",
+            "initiative": "79",
+            "cardno": "350",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "whiteout",
+            "points": 500,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-whiteout.png",
+            "xws": "whiteout",
+            "level": "1",
+            "initiative": "21",
+            "cardno": "337",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "white winds",
+            "points": 501,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-white-winds.png",
+            "xws": "whitewinds",
+            "level": 0,
+            "initiative": "11",
+            "cardno": "341",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "winds of change",
+            "points": 502,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-winds-of-change.png",
+            "xws": "windsofchange",
+            "level": "9",
+            "initiative": "15",
+            "cardno": "358",
+            "character-xws": "snowdancer"
+          },
+          {
+            "name": "zephyr barrier",
+            "points": 503,
+            "expansion": "Frosthaven",
+            "image": "character-ability-cards/frosthaven/SD/fh-zephyr-barrier.png",
+            "xws": "zephyrbarrier",
+            "level": "4",
+            "initiative": "40",
+            "cardno": "348",
+            "character-xws": "snowdancer"
           }
         ]
     }
