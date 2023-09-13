@@ -50,7 +50,8 @@
 <body class="darkbody">
   <main id="app" class="wrapper">
     <!-- Navigation -->
-    <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top py-0 border-bottom navbar-dark bg-dark" :class="dark ? 'border-light' : 'border-dark'">
+    <nav class="navbar ng-faded navbar-expand-lg navbar-fixed-top py-0 border-bottom navbar-dark bg-dark"
+      :class="dark ? 'border-light' : 'border-dark'">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <h4 class="titlefont">Gloomhaven Deckbuilder</h4>
@@ -62,31 +63,26 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item py-0" v-bind:class="{active: menu === 'home'}">
-              <a class="nav-link" href="#"
-                v-on:click="setMenu('home')">Play</a>
+              <a class="nav-link" href="#" v-on:click="setMenu('home')">Play</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'abilities'}">
-              <a class="nav-link" href="#"
-                :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal"
-                v-on:click="setMenu('abilities')">Abilities</a>
+              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false"
+                data-target="#characterSelectionModal" v-on:click="setMenu('abilities')">Abilities</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu === 'enhancement'}">
-              <a class="nav-link" href="#"
-                v-on:click="setMenu('enhancement')">Enhancement</a>
+              <a class="nav-link" href="#" v-on:click="setMenu('enhancement')">Enhancement</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='modifiers'}">
-              <a class="nav-link" href="#"
-                :data-toggle="!classChosen? 'modal': false" data-target="#characterSelectionModal"
-                v-on:click="setMenu('modifiers')">Modifiers</a>
+              <a class="nav-link" href="#" :data-toggle="!classChosen? 'modal': false"
+                data-target="#characterSelectionModal" v-on:click="setMenu('modifiers')">Modifiers</a>
             </li>
             <li class="nav-item py-0" v-bind:class="{active: menu ==='gear'}">
-              <a class="nav-link" href="#"
-                v-on:click="setMenu('gear')">Gear</a>
+              <a class="nav-link" href="#" v-on:click="setMenu('gear')">Gear</a>
             </li>
             <li class="nav-item dropdown" v-bind:class="{active: menu ==='gameoptions'}">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown2"
-                data-toggle="dropdown" role="button" aria-expanded="false" href="#">Options</a>
-              <div class="dropdown-menu" :class="dark ? 'dropdown-menu-dark' : ''"  aria-labelledby="navbarDropdown2">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button"
+                aria-expanded="false" href="#">Options</a>
+              <div class="dropdown-menu" :class="dark ? 'dropdown-menu-dark' : ''" aria-labelledby="navbarDropdown2">
                 <a class="dropdown-item" data-target="#versionModal" data-toggle="modal" href="#">Set expansion</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" v-on:click="hasEnabledCardExchange = !hasEnabledCardExchange">
@@ -112,18 +108,18 @@
                   <i v-else>Gameplay data saving</i>
                 </a>
                 <div class="dropdown-divider"></div>
-        
+
                 <a class="dropdown-item" href="#" v-on:click="importData()">Import data</a>
-                <a class="dropdown-item" href="#" v-on:click="exportData()">Export data</a>    
-                <input id="import-input" type="file" name="name" style="display: none;" @change="readDataFile"/>          
+                <a class="dropdown-item" href="#" v-on:click="exportData()">Export data</a>
+                <input id="import-input" type="file" name="name" style="display: none;" @change="readDataFile" />
               </div>
             </li>
             <li class="nav-item dropdown" v-bind:class="[{active: menu ==='about'}]">
-              <a class="nav-link dropdown-toggle"  id="navbarDropdown2"
-                data-toggle="dropdown" role="button" aria-expanded="false" href="#">About</a>
+              <a class="nav-link dropdown-toggle" id="navbarDropdown2" data-toggle="dropdown" role="button"
+                aria-expanded="false" href="#">About</a>
               <div class="dropdown-menu" :class="dark ? 'dropdown-menu-dark' : ''" aria-labelledby="navbarDropdown2">
                 <a class="dropdown-item" data-target="#helpModal" data-toggle="modal" href="#">Help</a>
-                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>              
+                <a class="dropdown-item" data-target="#aboutModal" data-toggle="modal" href="#">More</a>
                 <div class="dropdown-divider"></div>
                 <form class="dropdown-item" id="donate" class="dropdown-item"
                   action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -137,7 +133,7 @@
               </div>
             </li>
             <li class="nav-item py-0">
-              <a  class="nav-link" href="#" v-on:click="saveData()">Save</a>
+              <a class="nav-link" href="#" v-on:click="saveData()">Save</a>
             </li>
           </ul>
         </div>
@@ -595,29 +591,35 @@
       </div>
 
       <!-- ABILITIES -->
-      <div class="col-lg-12 container-fluid" v-if="menu == 'abilities'" >
+      <div class="col-lg-12 container-fluid" v-if="menu == 'abilities'">
         <!-- PER CATEGORY CARDS -->
-        <div class="row sticky-top" style="z-index: 100;" :class="dark? 'bg-dark' : 'bg-light'" >
+        <div class="row sticky-top" style="z-index: 100;" :class="dark? 'bg-dark' : 'bg-light'">
           <div class="col-lg-9 ">
             <div class="btn-toolbar row mb-3 justify-content-between" role="toolbar"
               aria-label="Toolbar with button groups">
               <div class="col-lg-9">
                 <h5 style="display: inline;" :class="dark ? 'text-light' : 'text-dark'">Character Level:</h5>
-                <button v-for='theLevel in 9' class="btn" :class="[((theLevel == level && dark) || (theLevel != level && !dark)) ? 'btn-light' : 'btn-dark']"  v-on:click="level = theLevel" style="display: inline;">
+                <button v-for='theLevel in 9' class="btn"
+                  :class="[((theLevel == level && dark) || (theLevel != level && !dark)) ? 'btn-light' : 'btn-dark']"
+                  v-on:click="level = theLevel" style="display: inline;">
                   <h5 style="display: inline;">{{ theLevel }}</h5>
                 </button>
                 <button data-toggle="modal" data-target="#characterSelectionModal" class="btn btn-secondary">
                   Switch Class
                 </button>
               </div>
-              <form onsubmit="return false" class="input-group col-lg-3 border" :class="[dark ? 'border-light' : 'border-dark']">
-                <input type="text" :class="dark ? ['darkInputText', 'text-light']: ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none"  style="outline: none;"  placeholder="Name filter" v-model="abilitySearchExp" v-on:input="filterAbilities">
-                <span id="searchclear" class="bi-x-lg" v-on:click="abilitySearchExp = ''" ></span>                
+              <form onsubmit="return false" class="input-group col-lg-3 border"
+                :class="[dark ? 'border-light' : 'border-dark']">
+                <input type="text" :class="dark ? ['darkInputText', 'text-light']: ['lightInputText', 'text-dark']"
+                  class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Name filter"
+                  v-model="abilitySearchExp" v-on:input="filterAbilities">
+                <span id="searchclear" class="bi-x-lg" v-on:click="abilitySearchExp = ''"></span>
               </form>
             </div>
           </div>
-          <div class="col-lg-3"  style="text-align: center;">
-            <h3 v-if='abilityCategory != null' :class="dark ? 'text-light' : 'text-dark'">Deck {{ abilitiesChosen.length }} / {{ abilityCategory.max }} </h3>
+          <div class="col-lg-3" style="text-align: center;">
+            <h3 v-if='abilityCategory != null' :class="dark ? 'text-light' : 'text-dark'">Deck {{ abilitiesChosen.length
+              }} / {{ abilityCategory.max }} </h3>
           </div>
         </div>
         <div class="row" v-if='abilityCategory != null'>
@@ -658,14 +660,22 @@
       <div class="col-lg-12 container-fluid" id="gear" v-if="menu == 'gear'">
         <div class="row">
           <div class="col-lg-9">
-            <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-              <form id="addItemByID" onsubmit="return false" class="input-group col-lg-4 border" @submit="addItemById" :class="dark ? 'border-light' : 'border-dark'">
-                <input type="text" :class=" dark ? ['darkInputText', 'text-light'] : ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Add item by ID" aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">              
-                <span id="searchclear" class="bi-x-lg" v-on:click="idToAdd = ''" ></span>
+            <div class="btn-toolbar mb-3 row justify-content-between" role="toolbar"
+              aria-label="Toolbar with button groups">
+              <form id="addItemByID" onsubmit="return false" class="input-group col-lg-4 border" @submit="addItemById"
+                :class="dark ? 'border-light' : 'border-dark'">
+                <input type="text" :class=" dark ? ['darkInputText', 'text-light'] : ['lightInputText', 'text-dark']"
+                  class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Add item by ID"
+                  aria-label="Input group example" v-model="idToAdd" aria-describedby="btnGroupAddon">
+                <span id="searchclear" class="bi-x-lg" v-on:click="idToAdd = ''"></span>
               </form>
-              <form onsubmit="return false" class="input-group col-lg-3 border" :class="dark ? 'border-light' : 'border-dark'">
-                <input type="text" :class=" dark ? ['darkInputText', 'text-light'] : ['lightInputText', 'text-dark']" class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Name filter" aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear" aria-describedby="btnGroupAddon">                
-                <span id="searchclear" class="bi-x-lg" v-on:click="gearSearchExp = ''" ></span>
+              <form onsubmit="return false" class="input-group col-lg-3 border"
+                :class="dark ? 'border-light' : 'border-dark'">
+                <input type="text" :class=" dark ? ['darkInputText', 'text-light'] : ['lightInputText', 'text-dark']"
+                  class="pt-2 pb-2 border-0 shadow-none" style="outline: none;" placeholder="Name filter"
+                  aria-label="Input group example" v-model="gearSearchExp" v-on:input="filterGear"
+                  aria-describedby="btnGroupAddon">
+                <span id="searchclear" class="bi-x-lg" v-on:click="gearSearchExp = ''"></span>
               </form>
             </div>
           </div>
@@ -827,7 +837,8 @@
               </div>
 
             </div>
-            <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3 border-left" :class="dark ? 'border-light' : 'border-dark'">
+            <div v-if="abilitiesChosen.length > 0" class="col-md-3 mt-3 border-left"
+              :class="dark ? 'border-light' : 'border-dark'">
               <div class="centerAbilities">
                 <div v-for='(card,i) in abilitiesChosen'>
                   <div v-bind:class="[{crop: abilitiesChosen.length -1 !== i}]">
@@ -919,6 +930,8 @@
               v-on:click="loadDatabaseVersion('frosthaven')">Frosthaven</button>
             <button class="btn btn-secondary" v-bind:class="{active: version === 'crimsonscales'}"
               v-on:click="loadDatabaseVersion('crimsonscales')">Crimson Scales</button>
+            <button class="btn btn-secondary" v-bind:class="{active: version === 'trailofashes'}"
+              v-on:click="loadDatabaseVersion('trailofashes')">Trail of Ashes</button>
             <hr :class="dark ? 'border-light' : 'border-dark'" />
             <button class="btn btn-secondary" data-toggle="collapse" data-target="#spoilers" aria-expanded="false"
               aria-controls="spoilers">Show spoilers</button>
@@ -960,7 +973,8 @@
                   v-on:click="displayAbilities(ability)" v-bind:src="'data/'+ability.cards[0].image" />
               </div>
             </div>
-            <button data-toggle="collapse" v-if="version === 'vanilla' || version === 'crimsonscales' || version === 'frosthaven'"
+            <button data-toggle="collapse"
+              v-if="version === 'vanilla' || version === 'crimsonscales' || version === 'frosthaven'"
               style="margin-top: 1em" data-target="#lockedClasses" class="btn btn-secondary"
               v-on:click="showLockedClasses = ! showLockedClasses" aria-expanded="false"
               aria-controls="lockedClasses">Show locked classes</button>
@@ -1084,7 +1098,8 @@
                   <div class="abilityContainer" v-for='(card,i) in chosenCardExchanger.cards'
                     v-if="i != 0 && card.canBeExchanged">
                     <div class="col mt-3" v-on:click="acceptAbility(card)">
-                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded" :class="[{picked: cardsInHand.includes(card)}]"></img>
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"
+                        :class="[{picked: cardsInHand.includes(card)}]"></img>
                     </div>
                   </div>
                 </div>
@@ -1162,7 +1177,7 @@
             <div class="row" v-if='abilityCategory != null'>
               <div class="col-md-6 d-flex justify-content-center centerAbilities">
                 <div v-if="cardToLose!=null">
-                  <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image" class="image rounded"></img>              
+                  <img v-bind:id="cardToLose.xws" v-bind:src="'data/'+cardToLose.image" class="image rounded"></img>
                 </div>
                 <div style="padding-top: 10px;">
                   <button title="Lose one health point a draw a different card" v-if="!rerolling" type="button"
@@ -1175,7 +1190,7 @@
                 <div class="centerAbilities">
                   <div v-for='(card,i) in cardsToRestore'>
                     <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]">
-                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>                    
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
                     </div>
                   </div>
                 </div>
@@ -1214,7 +1229,7 @@
                   <div v-for='(card,i) in cardsToRestore'>
                     <div v-bind:class="[{crop: cardsToRestore.length -1 !== i}]"
                       v-on:click="pickCardToLoseLongRest(card)">
-                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>                     
+                      <img v-bind:id="card.xws" v-bind:src="'data/'+card.image" class="image rounded"></img>
                     </div>
                   </div>
                 </div>
@@ -1259,8 +1274,8 @@
       </div>
     </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="confirmationDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- Modal -->
+    <div class="modal fade" id="confirmationDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -1268,14 +1283,16 @@
             {{ alert }}
           </div>
           <div class="modal-footer rounded alert-info">
-            <button type="button" class="btn btn-primary yesbutton" data-dismiss="modal" id="yesConfirmationButton">Yes</button>
+            <button type="button" class="btn btn-primary yesbutton" data-dismiss="modal"
+              id="yesConfirmationButton">Yes</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           </div>
         </div>
       </div>
     </div>
 
-    <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert" :class="dark ? ['text-dark', 'bg-light'] : ['text-light', 'bg-dark']">
+    <div v-if="!getAcceptedCookie()" class="alert text-center" role="alert"
+      :class="dark ? ['text-dark', 'bg-light'] : ['text-light', 'bg-dark']">
       <b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to store the cards you picked. This makes sure you do
         not have to re-enter them every time you launch this application. </span><a href="https://cookiesandyou.com/"
         target="_blank">Learn more</a>
@@ -1298,6 +1315,7 @@
   <script src="js/database_jotl.js"></script>
   <script src="js/database_frosthaven.js"></script>
   <script src="js/database_cs.js"></script>
+  <script src="js/database_toa.js"></script>
   <script src="js/abilities.js"></script>
   <script src="js/modifiers.js"></script>
   <script src="js/gear.js"></script>
