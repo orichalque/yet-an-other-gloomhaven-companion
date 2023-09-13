@@ -1569,7 +1569,6 @@ abilities_frosthaven = [
         "max": 10,
         "hidden": false,
         "position": 2,
-        
         "cards": [
             {
             "name": "bb-back",

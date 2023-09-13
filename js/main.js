@@ -84,6 +84,10 @@ new Vue({
 
                     })
                     break
+                case 'trailofashes': 
+                    console.log("loaded trail of ashes")
+                    this.loadTrailOfAshes()
+                    break
                 default:
                     console.log("loaded vanilla by default")
                     this.version = 'vanilla'
@@ -114,6 +118,12 @@ new Vue({
             this.modifiersSpecial.push(attack_modifiers_special_cs)            
             this.abilities = abilities_cs
             this.allGear = allItems_cs
+        },
+        loadTrailOfAshes: function() {
+            this.classNames = classNames_toa
+            this.modifiers = attack_modifiers_categories_toa
+            this.abilities = abilities_toa
+            this.addGear = allItems_toa
         },
         loadXEnvelope: function() {
             if (! this.hasOpenedXEnvelope) {
