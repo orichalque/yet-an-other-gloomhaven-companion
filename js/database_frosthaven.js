@@ -9,6 +9,7 @@ classNames_frosthaven = {
     ge: 'Geminate',
     ne: 'Boneshaper',
     sd: 'Snowdancer',
+    ta: 'Trapper',
 }
 
 attack_modifiers_categories_frosthaven = [
@@ -1014,6 +1015,165 @@ attack_modifiers_categories_frosthaven = [
             "expansion": "Frosthaven",
             "image": "attack-modifiers/frosthaven/FF/fh-pe-ff-03.png",
             "xws": "fhpeff03"
+          },
+        ]
+    },
+    {
+        "name": "am-ta",
+        "cards": [
+          {
+            "name": "fh-am-ta-back",
+            "points": 1147,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-back.png",
+            "xws": "fhamtaback"
+          },
+          {
+            "name": "fh-am-ta-01",
+            "points": 1148,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-01.png",
+            "xws": "fhamta01"
+          },
+          {
+            "name": "fh-am-ta-02",
+            "points": 1149,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-02.png",
+            "xws": "fhamta02"
+          },
+          {
+            "name": "fh-am-ta-03",
+            "points": 1150,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-03.png",
+            "xws": "fhamta03"
+          },
+          {
+            "name": "fh-am-ta-04",
+            "points": 1151,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-04.png",
+            "xws": "fhamta04"
+          },
+          {
+            "name": "fh-am-ta-05",
+            "points": 1152,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-05.png",
+            "xws": "fhamta05"
+          },
+          {
+            "name": "fh-am-ta-06",
+            "points": 1153,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-06.png",
+            "xws": "fhamta06"
+          },
+          {
+            "name": "fh-am-ta-07",
+            "points": 1154,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-07.png",
+            "xws": "fhamta07"
+          },
+          {
+            "name": "fh-am-ta-08",
+            "points": 1155,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-08.png",
+            "xws": "fhamta08"
+          },
+          {
+            "name": "fh-am-ta-09",
+            "points": 1156,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-09.png",
+            "xws": "fhamta09"
+          },
+          {
+            "name": "fh-am-ta-10",
+            "points": 1157,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-10.png",
+            "xws": "fhamta10"
+          },
+          {
+            "name": "fh-am-ta-11",
+            "points": 1158,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-11.png",
+            "xws": "fhamta11"
+          },
+          {
+            "name": "fh-am-ta-12",
+            "points": 1159,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-12.png",
+            "xws": "fhamta12"
+          },
+          {
+            "name": "fh-am-ta-13",
+            "points": 1160,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-13.png",
+            "xws": "fhamta13"
+          },
+          {
+            "name": "fh-am-ta-14",
+            "points": 1161,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-14.png",
+            "xws": "fhamta14"
+          },
+          {
+            "name": "fh-am-ta-15",
+            "points": 1162,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-15.png",
+            "xws": "fhamta15"
+          },
+          {
+            "name": "fh-am-ta-16",
+            "points": 1163,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-16.png",
+            "xws": "fhamta16"
+          },
+          {
+            "name": "fh-am-ta-17",
+            "points": 1164,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-17.png",
+            "xws": "fhamta17"
+          },
+          {
+            "name": "fh-am-ta-18",
+            "points": 1165,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-18.png",
+            "xws": "fhamta18"
+          },
+          {
+            "name": "fh-am-ta-19",
+            "points": 1166,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-19.png",
+            "xws": "fhamta19"
+          },
+          {
+            "name": "fh-am-ta-20",
+            "points": 1167,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-20.png",
+            "xws": "fhamta20"
+          },
+          {
+            "name": "fh-am-ta-21",
+            "points": 1168,
+            "expansion": "Frosthaven",
+            "image": "attack-modifiers/TA/fh-am-ta-21.png",
+            "xws": "fhamta21"
           },
         ]
     },
@@ -4094,7 +4254,356 @@ abilities_frosthaven = [
             "character-xws": "snowdancer"
           }
         ]
-    }
+    },
+    {
+      "name": "ta",
+      "max": 9,
+      "hidden": true,
+      "position": 7,
+      "cards": [
+        {
+          "name": "ta-back",
+          "points": 1152,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-ta-back.png",
+          "xws": "taback",
+          "level": "-",
+          "initiative": "-",
+          "cardno": "-",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "boar catcher",
+          "points": 1153,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-boar-catcher.png",
+          "xws": "boarcatcher",
+          "level": "1",
+          "initiative": "20",
+          "cardno": "275",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "cage of thorns",
+          "points": 1154,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-cage-of-thorns.png",
+          "xws": "cageofthorns",
+          "level": "6",
+          "initiative": "55",
+          "cardno": "294",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "caltrops",
+          "points": 1155,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-caltrops.png",
+          "xws": "caltrops",
+          "level": "1",
+          "initiative": "25",
+          "cardno": "273",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "dangerous cargo",
+          "points": 1156,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-dangerous-cargo.png",
+          "xws": "dangerouscargo",
+          "level": "9",
+          "initiative": "23",
+          "cardno": "299",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "dangerous ground",
+          "points": 1157,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-dangerous-ground.png",
+          "xws": "dangerousground",
+          "level": "4",
+          "initiative": "31",
+          "cardno": "289",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "dismantle",
+          "points": 1158,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-dismantle.png",
+          "xws": "dismantle",
+          "level": "X",
+          "initiative": "72",
+          "cardno": "282",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "electrified net",
+          "points": 1159,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-electrified-net.png",
+          "xws": "electrifiednet",
+          "level": "1",
+          "initiative": "53",
+          "cardno": "277",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "enticing bait",
+          "points": 1160,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-enticing-bait.png",
+          "xws": "enticingbait",
+          "level": "1",
+          "initiative": "30",
+          "cardno": "279",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "exploding decoy",
+          "points": 1161,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-exploding-decoy.png",
+          "xws": "explodingdecoy",
+          "level": "1",
+          "initiative": "62",
+          "cardno": "280",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "extra teeth",
+          "points": 1162,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-extra-teeth.png",
+          "xws": "extrateeth",
+          "level": "3",
+          "initiative": "22",
+          "cardno": "287",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "flurry of nails",
+          "points": 1163,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-flurry-of-nails.png",
+          "xws": "flurryofnails",
+          "level": "1",
+          "initiative": "68",
+          "cardno": "281",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "foxhole",
+          "points": 1164,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-foxhole.png",
+          "xws": "foxhole",
+          "level": "7",
+          "initiative": "90",
+          "cardno": "296",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "defense grid",
+          "points": 1165,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-foxhole.png",
+          "xws": "foxhole",
+          "level": "7",
+          "initiative": "90",
+          "cardno": "296",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "furry facade",
+          "points": 1166,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-furry-facade.png",
+          "xws": "furryfacade",
+          "level": "1",
+          "initiative": "85",
+          "cardno": "274",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "shaggy lure",
+          "points": 1167,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-furry-facade.png",
+          "xws": "furryfacade",
+          "level": "1",
+          "initiative": "85",
+          "cardno": "274",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "grasping hazards",
+          "points": 1168,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-grasping-hazards.png",
+          "xws": "graspinghazards",
+          "level": "7",
+          "initiative": "08",
+          "cardno": "295",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "honeypot",
+          "points": 1169,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-honeypot.png",
+          "xws": "honeypot",
+          "level": "1",
+          "initiative": "18",
+          "cardno": "278",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "improvised improvement",
+          "points": 1170,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-improvised-improvement.png",
+          "xws": "improvisedimprovement",
+          "level": "X",
+          "initiative": "58",
+          "cardno": "284",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "lure of the snare",
+          "points": 1171,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-lure-of-the-snare.png",
+          "xws": "lureofthesnare",
+          "level": "5",
+          "initiative": "59",
+          "cardno": "291",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "magnetic shards",
+          "points": 1172,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-magnetic-shards.png",
+          "xws": "magneticshards",
+          "level": "8",
+          "initiative": "37",
+          "cardno": "298",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "mother of all traps",
+          "points": 1173,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-mother-of-all-traps.png",
+          "xws": "motherofalltraps",
+          "level": "9",
+          "initiative": "86",
+          "cardno": "300",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "path of pain",
+          "points": 1174,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-path-of-pain.png",
+          "xws": "pathofpain",
+          "level": "2",
+          "initiative": "38",
+          "cardno": "286",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "persistent pitfalls",
+          "points": 1175,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-persistent-pitfalls.png",
+          "xws": "persistentpitfalls",
+          "level": "6",
+          "initiative": "13",
+          "cardno": "293",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "proficient hunter",
+          "points": 1176,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-proficient-hunter.png",
+          "xws": "proficienthunter",
+          "level": "5",
+          "initiative": "26",
+          "cardno": "292",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "pyrotechnics",
+          "points": 1177,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-pyrotechnics.png",
+          "xws": "pyrotechnics",
+          "level": "3",
+          "initiative": "80",
+          "cardno": "288",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "spike pit",
+          "points": 1178,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-spike-pit.png",
+          "xws": "spikepit",
+          "level": "1",
+          "initiative": "47",
+          "cardno": "276",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "spike strip",
+          "points": 1179,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-spike-strip.png",
+          "xws": "spikestrip",
+          "level": "8",
+          "initiative": "67",
+          "cardno": "297",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "spring-loaded",
+          "points": 1180,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-spring-loaded.png",
+          "xws": "springloaded",
+          "level": "X",
+          "initiative": "15",
+          "cardno": "283",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "stalker's spoils",
+          "points": 1181,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-stalkers-spoils.png",
+          "xws": "stalkersspoils",
+          "level": "4",
+          "initiative": "10",
+          "cardno": "290",
+          "character-xws": "trapper"
+        },
+        {
+          "name": "unavoidable outcome",
+          "points": 1182,
+          "expansion": "Frosthaven",
+          "image": "character-ability-cards/frosthaven/TA/fh-unavoidable-outcome.png",
+          "xws": "unavoidableoutcome",
+          "level": "2",
+          "initiative": "45",
+          "cardno": "285",
+          "character-xws": "trapper"
+        }
+      ]
+  }
 ]
 
 allItems_frosthaven = [
