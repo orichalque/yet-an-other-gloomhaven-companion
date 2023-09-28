@@ -4427,17 +4427,6 @@ abilities_frosthaven = [
           "character-xws": "trapper"
         },
         {
-          "name": "shaggy lure",
-          "points": 1167,
-          "expansion": "Frosthaven",
-          "image": "character-ability-cards/frosthaven/TA/fh-furry-facade.png",
-          "xws": "furryfacade",
-          "level": "1",
-          "initiative": "85",
-          "cardno": "274",
-          "character-xws": "trapper"
-        },
-        {
           "name": "grasping hazards",
           "points": 1168,
           "expansion": "Frosthaven",
