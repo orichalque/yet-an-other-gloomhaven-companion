@@ -604,12 +604,12 @@ classNames_cs = {
                 },
                 {
                     "name": "am-fk-09",
-                    "image": "attack-modifiers/FK/am-fk-07.jpg",
+                    "image": "attack-modifiers/FK/am-fk-09.jpg",
                     "xws": "amfireknight09"
                 },
                 {
                     "name": "am-fk-10",
-                    "image": "attack-modifiers/FK/am-fk-08.jpg",
+                    "image": "attack-modifiers/FK/am-fk-10.jpg",
                     "xws": "amfireknight10"
                 },
                 {
