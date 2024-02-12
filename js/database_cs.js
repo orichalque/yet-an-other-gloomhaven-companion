@@ -3721,6 +3721,12 @@ abilities_cs = [
                 "image": "character-ability-cards/QA/cs-trudging-bulwark.png",
                 "xws": "trudgingbulwark",
                 "level": 3,
+            },
+            {
+                "name": "adaptive engineering",
+                "image": "character-ability-cards/QA/toa-msa-artificer.png",
+                "xws": "adaptiveengineering",
+                "level": 1,
             }
         ]
     },
