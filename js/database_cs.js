@@ -15,6 +15,7 @@ classNames_cs = {
     st: 'Starslinger',
 },
     attack_modifiers_special_cs = {
+        "name": "sanctuary",
         "cards": [
             {
                 "name": "cs-am-sa-01",
