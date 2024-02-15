@@ -115,7 +115,9 @@ new Vue({
         loadDatabaseCrimsonScales: function() {
             this.classNames = classNames_cs
             this.modifiers = attack_modifiers_categories_cs
-            this.modifiersSpecial.push(attack_modifiers_special_cs)            
+            if (!this.modifiersSpecial.find(element => element.name == sanctuaryName))) {
+                this.modifiersSpecial.push(attack_modifiers_special_cs)
+            }
             this.abilities = abilities_cs
             this.allGear = allItems_cs
         },

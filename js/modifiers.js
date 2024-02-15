@@ -2,7 +2,7 @@ const curseName = 'curse'
 const blessingName = 'bless'
 const nullName = 'am-p-19'
 const twoXName = 'am-p-20'
-const sanctuaryNamePrefix = 'cs-am-sa-'
+const sanctuaryName = 'sanctuary'
 
 var modifiersManagement = {
     data: {
@@ -143,7 +143,7 @@ var modifiersManagement = {
             return this.modifiersSpecial.find(element => element.name == curseName).cards.includes(card) || false
         },
         checkIfSanctuary: function(card) {
-            const sanctuaryCards = this.modifiersSpecial.find(element => element.name.startsWith(sanctuaryNamePrefix))
+            const sanctuaryCards = this.modifiersSpecial.find(element => element.name == sanctuaryName))
             if (sanctuaryCards != null) {
                 return sanctuaryCards.cards.includes(card)
             } else return false
