@@ -143,7 +143,7 @@ var modifiersManagement = {
             return this.modifiersSpecial.find(element => element.name == curseName).cards.includes(card) || false
         },
         checkIfSanctuary: function(card) {
-            const sanctuaryCards = this.modifiersSpecial.find(element => element.name == sanctuaryName))
+            const sanctuaryCards = this.modifiersSpecial.find(element => element.name == sanctuaryName)
             if (sanctuaryCards != null) {
                 return sanctuaryCards.cards.includes(card)
             } else return false
